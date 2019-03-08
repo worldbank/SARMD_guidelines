@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Harmonized data quality check | South Asia Micro Database (SARMD) User Guidelines</title>
+  <meta name="description" content="SARMD User Guidelines">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Harmonized data quality check | South Asia Micro Database (SARMD) User Guidelines" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="SARMD User Guidelines" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Harmonized data quality check | South Asia Micro Database (SARMD) User Guidelines" />
+  
+  <meta name="twitter:description" content="SARMD User Guidelines" />
+  
+
+<meta name="author" content="South Asia Region Team for Statistical Development (SAR TSD)">
+
+
+<meta name="date" content="2019-03-08">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="metadata.html">
+<link rel="next" href="application.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARMD User Guidelines</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i>Content</a></li>
+<li class="chapter" data-level="1" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i><b>1</b> Metadata overview</a><ul>
+<li class="chapter" data-level="1.1" data-path="metadata.html"><a href="metadata.html#inventory"><i class="fa fa-check"></i><b>1.1</b> Inventory</a></li>
+<li class="chapter" data-level="1.2" data-path="metadata.html"><a href="metadata.html#household-survey-description-by-country"><i class="fa fa-check"></i><b>1.2</b> Household survey description by country</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="metadata.html"><a href="metadata.html#afghanistan"><i class="fa fa-check"></i><b>1.2.1</b> Afghanistan</a></li>
+<li class="chapter" data-level="1.2.2" data-path="metadata.html"><a href="metadata.html#bangladesh"><i class="fa fa-check"></i><b>1.2.2</b> Bangladesh</a></li>
+<li class="chapter" data-level="1.2.3" data-path="metadata.html"><a href="metadata.html#bhutan"><i class="fa fa-check"></i><b>1.2.3</b> Bhutan</a></li>
+<li class="chapter" data-level="1.2.4" data-path="metadata.html"><a href="metadata.html#india"><i class="fa fa-check"></i><b>1.2.4</b> India</a></li>
+<li class="chapter" data-level="1.2.5" data-path="metadata.html"><a href="metadata.html#maldives"><i class="fa fa-check"></i><b>1.2.5</b> Maldives</a></li>
+<li class="chapter" data-level="1.2.6" data-path="metadata.html"><a href="metadata.html#nepal"><i class="fa fa-check"></i><b>1.2.6</b> Nepal</a></li>
+<li class="chapter" data-level="1.2.7" data-path="metadata.html"><a href="metadata.html#pakistan"><i class="fa fa-check"></i><b>1.2.7</b> Pakistan</a></li>
+<li class="chapter" data-level="1.2.8" data-path="metadata.html"><a href="metadata.html#sri-lanka"><i class="fa fa-check"></i><b>1.2.8</b> Sri Lanka</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="metadata.html"><a href="metadata.html#sample-size"><i class="fa fa-check"></i><b>1.3</b> Sample size</a></li>
+<li class="chapter" data-level="1.4" data-path="metadata.html"><a href="metadata.html#food"><i class="fa fa-check"></i><b>1.4</b> Food</a></li>
+<li class="chapter" data-level="1.5" data-path="metadata.html"><a href="metadata.html#non-food"><i class="fa fa-check"></i><b>1.5</b> Non-food</a></li>
+<li class="chapter" data-level="1.6" data-path="metadata.html"><a href="metadata.html#durable-assets"><i class="fa fa-check"></i><b>1.6</b> Durable assets</a></li>
+<li class="chapter" data-level="1.7" data-path="metadata.html"><a href="metadata.html#housing"><i class="fa fa-check"></i><b>1.7</b> Housing</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i><b>2</b> Harmonized data quality check</a><ul>
+<li class="chapter" data-level="2.1" data-path="qcheck.html"><a href="qcheck.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>2.1</b> Basic survey characteristics</a></li>
+<li class="chapter" data-level="2.2" data-path="qcheck.html"><a href="qcheck.html#demographics"><i class="fa fa-check"></i><b>2.2</b> Demographics</a></li>
+<li class="chapter" data-level="2.3" data-path="qcheck.html"><a href="qcheck.html#education"><i class="fa fa-check"></i><b>2.3</b> Education</a></li>
+<li class="chapter" data-level="2.4" data-path="qcheck.html"><a href="qcheck.html#durable-assets-1"><i class="fa fa-check"></i><b>2.4</b> Durable assets</a></li>
+<li class="chapter" data-level="2.5" data-path="qcheck.html"><a href="qcheck.html#housing-1"><i class="fa fa-check"></i><b>2.5</b> Housing</a></li>
+<li class="chapter" data-level="2.6" data-path="qcheck.html"><a href="qcheck.html#labor"><i class="fa fa-check"></i><b>2.6</b> Labor</a></li>
+<li class="chapter" data-level="2.7" data-path="qcheck.html"><a href="qcheck.html#poverty"><i class="fa fa-check"></i><b>2.7</b> Poverty</a></li>
+<li class="chapter" data-level="2.8" data-path="qcheck.html"><a href="qcheck.html#inequality"><i class="fa fa-check"></i><b>2.8</b> Inequality</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>3</b> Analytical notes</a><ul>
+<li class="chapter" data-level="3.1" data-path="application.html"><a href="application.html#nonlinear-relationship-between-expenditure-and-asset-acquisition"><i class="fa fa-check"></i><b>3.1</b> Nonlinear relationship between expenditure and asset acquisition</a></li>
+<li class="chapter" data-level="3.2" data-path="application.html"><a href="application.html#household-composition-and-poverty"><i class="fa fa-check"></i><b>3.2</b> Household composition and poverty</a></li>
+<li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#note-3"><i class="fa fa-check"></i><b>3.3</b> Note 3</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i>Final Words</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">South Asia Micro Database (SARMD) User Guidelines</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="qcheck" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Harmonized data quality check</h1>
+<p>This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures.</p>
+<div id="basic-survey-characteristics" class="section level2">
+<h2><span class="header-section-number">2.1</span> Basic survey characteristics</h2>
+<p>The essential variables that identify each dataset and should always be included are <strong>countrycode</strong>, <strong>year</strong>, <strong>survey</strong>, <strong>vermast</strong>, <strong>veralt</strong>, <strong>idh</strong>, and <strong>idp</strong>. Weights are defined as <strong>wgt</strong> and <strong>pop_wgt=wgtxhsize</strong>. The dates of the survey are recorded as <strong>int_year</strong> and <strong>int_month</strong>. The geographical location within the country’s administrative division is recorded as <strong>subnatid1</strong>, and in some cases, <strong>subnatid2</strong> may provide a more specific location. <strong>psu</strong> <strong>strata</strong> <strong>spdef</strong></p>
+</div>
+<div id="demographics" class="section level2">
+<h2><span class="header-section-number">2.2</span> Demographics</h2>
+<p>Demographic variables consist of <strong>age</strong>, <strong>male</strong>, <strong>hsize</strong>, <strong>relationcs</strong>, <strong>relationharm</strong> and <strong>marital</strong>. Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure <a href="qcheck.html#fig:pyramid">2.1</a> allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;figures/Pyramid.png&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:pyramid"></span>
+<img src="figures/Pyramid.png" alt="Population Pyramid for Afghanistan (2013)" width="80%" />
+<p class="caption">
+Figure 2.1: Population Pyramid for Afghanistan (2013)
+</p>
+</div>
+<p>see Figure <a href="qcheck.html#fig:pyramid">2.1</a> at <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid</a></p>
+</div>
+<div id="education" class="section level2">
+<h2><span class="header-section-number">2.3</span> Education</h2>
+<p>The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. In Afghanistan, for 2016-17, the adult literacy rate was found to be 35 percent, up from 24 percent in 2005. For Afghanistan, the youth literacy rate was found to be 54 percent, indicating considerable progress since 2005 when it was 31 percent.</p>
+</div>
+<div id="durable-assets-1" class="section level2">
+<h2><span class="header-section-number">2.4</span> Durable assets</h2>
+<p>This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire.</p>
+<p>Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure <a href="qcheck.html#fig:assets">2.2</a> displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;figures/Assets.png&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:assets"></span>
+<img src="figures/Assets.png" alt="Harmonized asset ownership in latest household survey round" width="80%" />
+<p class="caption">
+Figure 2.2: Harmonized asset ownership in latest household survey round
+</p>
+</div>
+<p>see Figure <a href="qcheck.html#fig:assets">2.2</a> at <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;figures/Scatter.png&quot;</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:scatter"></span>
+<img src="figures/Scatter.png" alt="Access to refrigerator and access to electricity across surveys" width="80%" />
+<p class="caption">
+Figure 2.3: Access to refrigerator and access to electricity across surveys
+</p>
+</div>
+<p>see Figure <a href="qcheck.html#fig:scatter">2.3</a> at <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Scatter" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Scatter</a></p>
+<p>Figure <a href="qcheck.html#fig:scatter">2.3</a> shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity.</p>
+</div>
+<div id="housing-1" class="section level2">
+<h2><span class="header-section-number">2.5</span> Housing</h2>
+<p>The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing.</p>
+</div>
+<div id="labor" class="section level2">
+<h2><span class="header-section-number">2.6</span> Labor</h2>
+</div>
+<div id="poverty" class="section level2">
+<h2><span class="header-section-number">2.7</span> Poverty</h2>
+<p>This section presents the latest data on regional extreme poverty rates using the international poverty line of US$1.90 in 2011 purchasing power parity dollars. Even though, Afghanistan is missing, the ALCS 2016-17 recorded a sharp deterioration in welfare of the Afghan population. The proportion of population living below the national poverty line increased from 34 percent in 2007-08 to 55 percent in 2016-17. The latest poverty figures imply that at the time of the survey, close to 16 million Afghans lived in poverty.</p>
+</div>
+<div id="inequality" class="section level2">
+<h2><span class="header-section-number">2.8</span> Inequality</h2>
+<p>The Gini index for Afghanistan showed a small decrease between the surveys of 2011-12 and 2016-17, from 0.30 to 0.29.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="metadata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="application.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-qcheck.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

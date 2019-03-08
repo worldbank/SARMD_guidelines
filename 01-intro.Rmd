@@ -1,7 +1,6 @@
-# Introduction {#intro}
+# Introduction {-}
 
-This document overviews the data availability of household consumption surveys and challenges for poverty measurement in the region of South Asia. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (Serajuddin, Uematsu,
-Wieser, Yoshida, & Dabalen, 2015). Esta seccion no me gusta.  
+This document overviews the data availability of household consumption surveys in the region of South Asia and their challenges for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). 
 
 Cost of living adjustments and a consumer price index (CPI) are also necessary to count the poor across countries using a common currency and a global poverty line. At present, data on purchasing power parity (PPP) comes from the International Comparison Program (ICP) collected in 2011, which is absent for Afghanistan. 
 
@@ -11,4 +10,12 @@ In the South Asia region, four out of five extreme poor reside in India. Banglad
 
 Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and the Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. In the case of Afghanistan, poverty is increasing as violence continues to affect the security of livelihoods and economic activity in the country. 
 
-These guidelines are organized as follows. Chapter 1 presents the metadata analysis, which may be broadly described as an overview of the household survey questionnaires. This section studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. Chapter 2 presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. Chapter 3 presents three analytical notes that have resulted from the analysis. 
+# Content {-}
+
+These guidelines are organized as follows:
+
+Chapter 1 presents the metadata analysis, which may be broadly described as an overview of the household survey questionnaires. This section studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. 
+
+Chapter 2 presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
+
+Chapter 3 presents three examples of how harmonized data in SARMD may be used for research purposes. 

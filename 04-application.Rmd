@@ -14,6 +14,14 @@ Figure ?? demostrates how for a group of several assets, asset ownership is high
 
 The adverse effects of high fertility on household welfare are clearly shown in the much higher poverty rates among large households and households with relatively many children. Having more children directly contributes to household poverty in South Asia. The average household size and the number of children in the household varies among countries as shown in Table ??. A child is defined as a person of less than 15 years of age. 
 
-The average household size declines with the per capita consumption quintiles as shown in Figure ??. The average household size is estimated at 9.66 in the poorest per capita consumption quintile of Afghanistan as compared to only 3.91 in the richest per capita consumption quintile of Sri Lanka. 
+The average household size declines with the per capita consumption quintiles as shown in Figure \@ref(fig:children). The average household size is estimated at 9.66 in the poorest per capita consumption quintile of Afghanistan as compared to only 3.91 in the richest per capita consumption quintile of Sri Lanka. 
+
+
+```{r children, fig.cap='Average household size by per capita consumption quintile', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Children.png")
+```
+
+see Figure \@ref(fig:children) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children
+
 
 ## Note 3

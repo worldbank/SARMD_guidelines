@@ -3,14 +3,23 @@
 This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
 
 ## Basic survey characteristics
-The essential variables that identify each dataset and should always be included are countrycode, year, survey, vermast, veralt, idh, and idp. Weights are defined as wgt and pop_wgt=wgt*hsize. The dates of the survey are recorded as int_year and int_month. The geographical location within the country’s administrative division is recorded as subnatid1, and in some cases, subnatid2 may provide a more specific location. 
-psu 
-strata 
-spdef 
+
+The essential variables that identify each dataset and should always be included are **countrycode**, **year**, **survey**, **vermast**, **veralt**, **idh**, and **idp**. Weights are defined as **wgt** and **pop_wgt=wgtxhsize**. The dates of the survey are recorded as **int_year** and **int_month**. The geographical location within the country’s administrative division is recorded as **subnatid1**, and in some cases, **subnatid2** may provide a more specific location. 
+**psu**
+**strata**
+**spdef** 
 
 ## Demographics
-Demographic variables consist of age, male, hsize, relationcs, relationharm and marital. 
-Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure ?? allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. 
+
+Demographic variables consist of **age**, **male**, **hsize**, **relationcs**, **relationharm** and **marital**. 
+Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. 
+
+```{r pyramid, fig.cap='Population Pyramid for Afghanistan (2013)', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Pyramid.png")
+```
+
+see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid 
+
 
 ## Education
 
@@ -21,9 +30,23 @@ In Afghanistan, for 2016-17, the adult literacy rate was found to be 35 percent,
 
 This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire. 
 
-Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure ?? displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
+Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
 
-Figure ?? shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
+```{r assets, fig.cap='Harmonized asset ownership in latest household survey round', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Assets.png")
+```
+
+see Figure \@ref(fig:assets) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets 
+
+
+```{r scatter, fig.cap='Access to refrigerator and access to electricity across surveys', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Scatter.png")
+```
+
+see Figure \@ref(fig:scatter) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Scatter 
+
+
+Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
 
 ## Housing
 The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
