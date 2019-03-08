@@ -1,7 +1,7 @@
 # Introduction {#intro}
 
 This document overviews the data availability of household consumption surveys and challenges for poverty measurement in the region of South Asia. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (Serajuddin, Uematsu,
-Wieser, Yoshida, & Dabalen, 2015). 
+Wieser, Yoshida, & Dabalen, 2015). Esta seccion no me gusta.  
 
 Cost of living adjustments and a consumer price index (CPI) are also necessary to count the poor across countries using a common currency and a global poverty line. At present, data on purchasing power parity (PPP) comes from the International Comparison Program (ICP) collected in 2011, which is absent for Afghanistan. 
 
