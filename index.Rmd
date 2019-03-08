@@ -1,0 +1,36 @@
+--- 
+title: "South Asia Micro Database (SARMD) User Guidelines"
+author: "South Asia Region Team for Statistical Development (SAR TSD)"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "SARMD User Guidelines"
+---
+
+# Welcome
+
+The region of **South Asia** consists of eight countries for which there is at least satisfactory data
+availability. Even though the region does not lack data, it suffers from **low frequency and comparability
+over time and across countries**. The main welfare measure used in the region to measure poverty, the
+consumption per capita aggregate, is constructed by adding up expenditures of four expenditure components:
+
+(i) food expenditures; 
+(ii) non-food, non-durable expenditures; 
+(iii) expenditures on durables; and
+(iv) expenditures on housing. 
+
+This document offers a series of guidelines to any researcher interested in
+working with regionally-comparable estimates of demographic characteristics, education, housing, and
+poverty incidence provided by the South Asia Micro Database (SARMD).
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

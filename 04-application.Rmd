@@ -1,0 +1,19 @@
+# Analytical notes {#application}
+
+Some _significant_ applications are demonstrated in this chapter.
+
+## Nonlinear relationship between expenditure and asset acquisition
+
+An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. If one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent (Wolfram, Shelef, and Gertler 2012). 
+
+We model the nonlinear relationship between income and asset acquisition as in Gertler, Shelef, Wolfram & Fuchs (2016). This paper provides a simple theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A nonlinear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase an energy-using asset. Households faced with credit constraints become much more likely to purchase energy-using assets with once their income passes a threshold level. We begin by documenting an S-shaped relationship between expenditure and durable asset ownership. Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
+
+Figure ?? demostrates how for a group of several assets, asset ownership is high in the Maldives and lower in the rest of South Asia. Filmer and Pritchett, 2001, argue that the first principal component of the household’s ownership of physical assets is highly correlated with household expenditure and can be used as a reasonable proxy. 
+
+## Household composition and poverty
+
+The adverse effects of high fertility on household welfare are clearly shown in the much higher poverty rates among large households and households with relatively many children. Having more children directly contributes to household poverty in South Asia. The average household size and the number of children in the household varies among countries as shown in Table ??. A child is defined as a person of less than 15 years of age. 
+
+The average household size declines with the per capita consumption quintiles as shown in Figure ??. The average household size is estimated at 9.66 in the poorest per capita consumption quintile of Afghanistan as compared to only 3.91 in the richest per capita consumption quintile of Sri Lanka. 
+
+## Note 3
