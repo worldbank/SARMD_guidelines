@@ -23,12 +23,23 @@ see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_
 
 ## Education
 
+**atschool**, **ed_mod_age**, **educat4**, **educat5**, **educat7**, **educy**, **everattend**, **literacy**
+
 The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. 
 In Afghanistan, for 2016-17, the adult literacy rate was found to be 35 percent, up from 24 percent in 2005. For Afghanistan, the youth literacy rate was found to be 54 percent, indicating considerable progress since 2005 when it was 31 percent. 
 
 ## Durable assets
 
-This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire. 
+```{r table2, echo=FALSE, results='asis'}
+cat('| S| Se| Pe| Pe|
+|------------:|-----------:|------------:|--------------:|
+|      bicycle|    computer|    landphone|   refrigerator|
+|      buffalo|         cow|     motorcar| sewing machine|
+|    cellphone|         fan|   motorcycle|     television|
+|      chicken|        lamp|        radio|washing machine|')
+```
+
+This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken, and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire. 
 
 Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
 

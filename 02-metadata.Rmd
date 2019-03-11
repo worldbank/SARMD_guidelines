@@ -1,8 +1,13 @@
 # Metadata overview {#metadata}
 
-This chapter provides a user guide and a dynamic dashboard to the household surveys metadata in SAR and MNA. It presents an overview of the available household surveys conducted in these two regions and includes topics like availability, coverage, representativeness, and structural breaks in variables. It helps users find the data they are interested in, locate specific datasets and variables, understand what the data are measuring and how the data have been created, assess the quality of the data, and reduce workload cleaning data.
+This chapter provides an overview of household surveys metadata in SAR and MNA with the support of a series of accompanying Tableau dynamic dashboards. The South Asia Micro Database (SARMD) consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region, contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table xx shows the latest available household surveys in SARMD. 
 
-We consider four main components for a nominal consumption aggregate. The first is food expenditures. The food component should include food consumed outside the home, such as at restaurants, cafés, etc. The ideal reference period should be a week (reference), but in this analysis we have found reference periods still vary from monthly to biweekly to daily. The second component, non-food expenditures, includes items like soap, cleaning supplies, newspapers, personal care items, clothing, footwear, kitchen equipment, curtains, bedcovers, etc. Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. The fourth component is rent, which is obtained either by asking how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent. 
+```{r table}
+library(readr)
+latest <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv")
+knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
+```
+
 
 ## Inventory
 
@@ -67,33 +72,58 @@ knitr::include_graphics("figures/Survey_size.png")
 
 see Figure \@ref(fig:ssize) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines 
 
-## Food
 
-Food at home, outside of home, and food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods. Food baskets and their collection periods vary even within the same country over time. 
-Number of items 
-Diary vs. Recall: 
-Quantity and/or Value 
-Reference period 
-Self-production and food away from home 
-Transfers 
+## Expenditure components
 
-## Non-food
+We consider four main components for a nominal consumption aggregate: 
+
+### Food
+
+The first is food expenditures, include food consumed by households from purchases, home production and transfers. This is sometimes thought to be easier to measure than non-food. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent. Surveys typically combine a household expenditure diary, however, this is not common in South Asia where most information on food is collected based on weekly recalling what a household has consumed and purchased. 
+
+The ideal reference period should be a week (reference), but in this analysis we have found reference periods still vary from monthly to biweekly to daily. In recent years, the Indian National Sample Survey Organization has experimented with  7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated by LSMS surveys, but has recently moved into the forefront of research. 
+
+In many (but not all) surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). The food component should include food produced and consumed at home, as well as consumed outside the home, such as at restaurants, cafés, etc. Food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods. 
+
+Food baskets and their collection periods vary even within the same country over time. 
+
+Tabla para comparar:
+-Number of items 
+-Quantity and/or Value 
+-Diary vs. Recall: 
+-Reference period 
+-Self-production and food away from home 
+-Transfers 
+
+### Non-food
+
+The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes somt less frequently but regularly purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc. 
+
+Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. 
 
 Non-food expenditures should include at least alcoholic beverages, tobacco, clothing, water, electricity, fuels, furnishings, health, transport, communication, recreation, and education. Monthly is the most frequent collection period for non-food expenditures. A homogenous definition of what constitutes non-food expenditures is required. Both food and non-food expenditures have insufficient coverage on transfers. 
+
+Tabla para comparar:
 Number of items 
 Diary vs. Recall: 
 Quantity and/or Value 
 Reference period 
 Transfers 
 
-## Durable assets
+### Durable assets
+
+The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. 
+
+Long-lived goods (automobiles, appliances, furniture) have a  positive and significant impact on living standards. 
 
 Durable goods should at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year). 
 Number of assets 
 Collection method: Quantity and/or Value 
 Comparison between countries 
 
-## Housing
+### Housing
+
+The fourth component is rent, which is obtained either by asking how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent. Imputations are often quite suspect—for example, those for imputed rent for owner-occupiers in an economy where house tenancy is very rare.
 
 Rent should be self-reported or at least include enough housing characteristics to impute. India and Pakistan still lack sufficient data to measure rents. 
 Household characteristics: 

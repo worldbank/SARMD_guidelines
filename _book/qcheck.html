@@ -140,7 +140,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="application.html"><a href="application.html#household-composition-and-poverty"><i class="fa fa-check"></i><b>3.2</b> Household composition and poverty</a></li>
 <li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#note-3"><i class="fa fa-check"></i><b>3.3</b> Note 3</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i>Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -182,11 +182,48 @@ Figure 2.1: Population Pyramid for Afghanistan (2013)
 </div>
 <div id="education" class="section level2">
 <h2><span class="header-section-number">2.3</span> Education</h2>
+<p><strong>atschool</strong>, <strong>ed_mod_age</strong>, <strong>educat4</strong>, <strong>educat5</strong>, <strong>educat7</strong>, <strong>educy</strong>, <strong>everattend</strong>, <strong>literacy</strong></p>
 <p>The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. In Afghanistan, for 2016-17, the adult literacy rate was found to be 35 percent, up from 24 percent in 2005. For Afghanistan, the youth literacy rate was found to be 54 percent, indicating considerable progress since 2005 when it was 31 percent.</p>
 </div>
 <div id="durable-assets-1" class="section level2">
 <h2><span class="header-section-number">2.4</span> Durable assets</h2>
-<p>This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">S</th>
+<th align="right">Se</th>
+<th align="right">Pe</th>
+<th align="right">Pe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">bicycle</td>
+<td align="right">computer</td>
+<td align="right">landphone</td>
+<td align="right">refrigerator</td>
+</tr>
+<tr class="even">
+<td align="right">buffalo</td>
+<td align="right">cow</td>
+<td align="right">motorcar</td>
+<td align="right">sewing machine</td>
+</tr>
+<tr class="odd">
+<td align="right">cellphone</td>
+<td align="right">fan</td>
+<td align="right">motorcycle</td>
+<td align="right">television</td>
+</tr>
+<tr class="even">
+<td align="right">chicken</td>
+<td align="right">lamp</td>
+<td align="right">radio</td>
+<td align="right">washing machine</td>
+</tr>
+</tbody>
+</table>
+<p>This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken, and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire.</p>
 <p>Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure <a href="qcheck.html#fig:assets">2.2</a> displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;figures/Assets.png&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:assets"></span>
