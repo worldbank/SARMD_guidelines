@@ -22,17 +22,17 @@
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
 
-<meta name="author" content="South Asia Region Team for Statistical Development (SAR TSD)">
+<meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
 
 
-<meta name="date" content="2019-03-10">
+<meta name="date" content="2019-03-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="content.html">
+<link rel="prev" href="introduction-to-south-asia.html">
 <link rel="next" href="qcheck.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -105,8 +105,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i>Content</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-south-asia.html"><a href="introduction-to-south-asia.html"><i class="fa fa-check"></i>Introduction to South Asia</a><ul>
+<li class="chapter" data-level="" data-path="introduction-to-south-asia.html"><a href="introduction-to-south-asia.html#poverty-measurement"><i class="fa fa-check"></i>Poverty measurement</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i><b>1</b> Metadata overview</a><ul>
 <li class="chapter" data-level="1.1" data-path="metadata.html"><a href="metadata.html#inventory"><i class="fa fa-check"></i><b>1.1</b> Inventory</a></li>
 <li class="chapter" data-level="1.2" data-path="metadata.html"><a href="metadata.html#household-survey-description-by-country"><i class="fa fa-check"></i><b>1.2</b> Household survey description by country</a><ul>
@@ -140,7 +142,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>3</b> Analytical notes</a><ul>
 <li class="chapter" data-level="3.1" data-path="application.html"><a href="application.html#nonlinear-relationship-between-expenditure-and-asset-acquisition"><i class="fa fa-check"></i><b>3.1</b> Nonlinear relationship between expenditure and asset acquisition</a></li>
 <li class="chapter" data-level="3.2" data-path="application.html"><a href="application.html#household-composition-and-poverty"><i class="fa fa-check"></i><b>3.2</b> Household composition and poverty</a></li>
-<li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#note-3"><i class="fa fa-check"></i><b>3.3</b> Note 3</a></li>
+<li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#gender-equality-in-education"><i class="fa fa-check"></i><b>3.3</b> Gender equality in education</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -165,7 +167,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="metadata" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Metadata overview</h1>
-<p>This chapter provides an overview of household surveys metadata in SAR and MNA with the support of a series of accompanying Tableau dynamic dashboards. The South Asia Micro Database (SARMD) consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region, contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table xx shows the latest available household surveys in SARMD.</p>
+<p>This chapter provides an overview of household surveys metadata in SAR and MNA with the support of a series of accompanying Tableau dynamic dashboards.</p>
+<p>The South Asia Micro Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region, contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table <a href="metadata.html#tab:latest">1.1</a> shows the latest available household surveys in SARMD.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)</code></pre></div>
 <pre><code>## Warning: package &#39;readr&#39; was built under R version 3.5.2</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">latest &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv&quot;</span>)</code></pre></div>
@@ -178,7 +181,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## )</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(latest,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Latest household surveys available in SARMD&#39;</span>)</code></pre></div>
 <table>
-<caption><span id="tab:table">Table 1.1: </span>Latest household surveys available in SARMD</caption>
+<caption><span id="tab:latest">Table 1.1: </span>Latest household surveys available in SARMD</caption>
 <thead>
 <tr class="header">
 <th align="left">Country</th>
@@ -240,7 +243,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </table>
 <div id="inventory" class="section level2">
 <h2><span class="header-section-number">1.1</span> Inventory</h2>
-<p>Considering that the South Asia region (SAR) has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure <a href="metadata.html#fig:inv">1.1</a> presents the surveys that make part of the South Asia Micro Database (SARMD). Four countries have released recent rounds of household surveys (Pakistan 2015, Bangladesh 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (Afghanistan 2016, Maldives 2016, India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. Extreme data deprivation may be measured as having less than two data points in a ten year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India.</p>
+<p>Considering that the South Asia region (SAR) has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure <a href="metadata.html#fig:inv">1.1</a> presents the surveys that make part of the South Asia Micro Database (SARMD). Four countries have released recent rounds of household surveys (Pakistan 2015, Bangladesh 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (Afghanistan 2016, Maldives 2016, India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey.</p>
+<p>Extreme data deprivation may be measured as having less than two data points in a ten year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;figures/Inventory.png&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:inv"></span>
 <img src="figures/Inventory.png" alt="SARMD Inventory" width="80%" />
@@ -255,17 +259,19 @@ Figure 1.1: SARMD Inventory
 <p>The content of these surveys varies widely and their comparison over time even within the same country is a major challenge. We provide a brief overview of survey collection for each country below:</p>
 <div id="afghanistan" class="section level3">
 <h3><span class="header-section-number">1.2.1</span> Afghanistan</h3>
-<p>The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas.</p>
-<p>The Central Statistics Organization (CSO) (<a href="http://cso.gov.af/" class="uri">http://cso.gov.af/</a>) has used this survey to find that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population.</p>
+<p>The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces for the latest round between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas.</p>
+<p>The Central Statistics Organization (CSO) (<a href="http://cso.gov.af/" class="uri">http://cso.gov.af/</a>) has used this survey to report that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population.</p>
 </div>
 <div id="bangladesh" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> Bangladesh</h3>
-<p>The Bangladesh Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (<a href="http://bbs.gov.bd/" class="uri">http://bbs.gov.bd/</a>) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations).</p>
+<p>The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (<a href="http://bbs.gov.bd/" class="uri">http://bbs.gov.bd/</a>) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations).</p>
 <p>Based on the HIES 2016, the BBS reports that poverty reduced substantially between 2010 and 2016. In 2010 the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%.</p>
 </div>
 <div id="bhutan" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Bhutan</h3>
 <p>The Bhutan Living Standards Survey (BLSS) 2017 is the fourth in a series of living standards surveys undertaken by the National Statistics Bureau (NSB) (<a href="http://nsb.gov.bt" class="uri">http://nsb.gov.bt</a>). Earlier surveys were done in 2003, 2007, and 2012 to collect information on the demographics, education, health, employment, housing, access to services, asset ownership, credit, self-perceived poverty, and happiness of the population. The BLSS 2017 included 11,660 households with 48,639 individuals. The sample for BLSS 2017 was designed to provide estimates for a large number of indicators on the living conditions of Bhutanese in both urban and rural areas of the twenty Dzongkhags, including the four Thromdes (Thimphu, Phuentsholing, Gelephu and Samdrup Jongkhar).</p>
+<p>The NSB reports a population poverty rate of 8.2% in 2017.The 2017 BLSS shows that the mean monthly household expenditure for the country is Nu33,542: Nu45,508 in urban areas, and Nu26,937 in rural areas. The mean monthly per capita household expenditure is Nu7,939. The monthly per capita household expenditure ofNu11,452 in urban areas is 85% higher than that in rural areas (Nu6,174). The mean per capita expenditure of households in the richest per capita consumption quintile of Nu17,802 is more than seven times that of households in the poorest per capita consumption quintile (Nu2,468).</p>
+<p>The NSB has also analyzed subjective happiness ratings by dzongkhags. Pema Gatshel is the happiest Dzongkhag (94%) followed by Samtse (more than 88%) and Trongsa Dzongkhags (more than 86%). The exception is Dagana Dzongkhag, where only four in every 10 respondents reported they are happy.</p>
 </div>
 <div id="india" class="section level3">
 <h3><span class="header-section-number">1.2.4</span> India</h3>
@@ -306,27 +312,356 @@ Figure 1.2: Sample Size
 <p>We consider four main components for a nominal consumption aggregate:</p>
 <div id="food" class="section level3">
 <h3><span class="header-section-number">1.4.1</span> Food</h3>
-<p>The first is food expenditures, include food consumed by households from purchases, home production and transfers. This is sometimes thought to be easier to measure than non-food. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent. Surveys typically combine a household expenditure diary, however, this is not common in South Asia where most information on food is collected based on weekly recalling what a household has consumed and purchased.</p>
-<p>The ideal reference period should be a week (reference), but in this analysis we have found reference periods still vary from monthly to biweekly to daily. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated by LSMS surveys, but has recently moved into the forefront of research.</p>
-<p>In many (but not all) surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). The food component should include food produced and consumed at home, as well as consumed outside the home, such as at restaurants, cafés, etc. Food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods.</p>
-<p>Food baskets and their collection periods vary even within the same country over time.</p>
-<p>Number of items Diary vs. Recall: Quantity and/or Value Reference period Self-production and food away from home Transfers</p>
+<p>The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Surveys typically combine a household expenditure diary with the rest of the questionnaire. However, having a food consumption diary is not common in South Asia where most information on food is collected based on weekly recalling what a household has consumed and purchased.</p>
+<p>The ideal reference period should be a week, but in this analysis we have found reference periods still vary from monthly to biweekly to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated by LSMS surveys, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible. In some cases, food baskets and their collection periods vary even within the same country over time.</p>
+<p>In many (but not all) surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). However, this is not the norm. For example, the Afghanistan Living Conditions Survey 2016 asks what was the amount o each item used in the last seven days, but the price of each item is collected separately through a market price survey.</p>
+<p>The food component should include food produced and consumed at home, as well as consumed outside the home, such as at restaurants, cafés, etc. Food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods. It is more common to find questions regarding tranfers to the household than transfers from the household to other households.</p>
+<p>Tabla para comparar: -Number of items -Quantity and/or Value -Diary vs. Recall: -Reference period -Self-production and food away from home -Transfers</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Food" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Food</a>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+food &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/food.csv&quot;</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Number of food items` = col_double(),
+##   `Collection method` = col_character(),
+##   `Quantity and/or Value` = col_character(),
+##   Transfers = col_logical()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(food,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Food&#39;</span>)</code></pre></div>
+<table>
+<caption><span id="tab:food">Table 1.2: </span>Food</caption>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="right">Number of food items</th>
+<th align="left">Collection method</th>
+<th align="left">Quantity and/or Value</th>
+<th align="left">Transfers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan, 2016</td>
+<td align="right">92</td>
+<td align="left">Recall (weekly)</td>
+<td align="left">Quantity</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Bangladesh, 2016</td>
+<td align="right">NA</td>
+<td align="left">Recall (daily)</td>
+<td align="left">Both</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Bhutan, 2017</td>
+<td align="right">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">India, 2017</td>
+<td align="right">134</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Maldives, 2016</td>
+<td align="right">146</td>
+<td align="left">Recall (weekly)</td>
+<td align="left">Both</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Nepal, 2016</td>
+<td align="right">97</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan, 2015</td>
+<td align="right">170</td>
+<td align="left">Recal (biweekly)</td>
+<td align="left">Both</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Sri Lanka, 2016</td>
+<td align="right">198</td>
+<td align="left">Recall (weekly)</td>
+<td align="left">Both</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="non-food" class="section level3">
 <h3><span class="header-section-number">1.4.2</span> Non-food</h3>
-<p>The second component, non-food expenditures, includes items like soap, cleaning supplies, newspapers, personal care items, clothing, footwear, kitchen equipment, curtains, bedcovers, etc. Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year.</p>
-<p>Frequently purchased goods and services (e.g. soap, transport expenditure, airtime, etc.) !Less frequently but regularly purchased items (e.g. clothing, kitchen equipment, etc.) exclude: !Business-related expenses !Large occasional expenditures such as marriages, funerals (why?) !Remittances paid; gifts and transfers out !Taxes paid !Repayment of loans, interest payments, purchase of financial assets !Purchase price of assets (e.g. home and durable goods) 2</p>
-<p>Non-food expenditures should include at least alcoholic beverages, tobacco, clothing, water, electricity, fuels, furnishings, health, transport, communication, recreation, and education. Monthly is the most frequent collection period for non-food expenditures. A homogenous definition of what constitutes non-food expenditures is required. Both food and non-food expenditures have insufficient coverage on transfers. Number of items Diary vs. Recall: Quantity and/or Value Reference period Transfers</p>
+<p>The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc. Non-food expenditures should at least include alcoholic beverages, tobacco, clothing, water, electricity, fuels, furnishings, health, transport, communication, recreation, and education. A homogenous definition of what constitutes non-food expenditures is required.</p>
+<p>Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. Monthly is the most frequent collection period for non-food expenditures.</p>
+<p>Both food and non-food expenditures have insufficient coverage on transfers.</p>
+<p>Tabla para comparar: Number of items Diary vs. Recall: Quantity and/or Value Reference period Transfers</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood</a>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+nonfood &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/nonfood.csv&quot;</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Number of non-food items` = col_logical(),
+##   `Collection method` = col_logical(),
+##   `Quantity and/or Value` = col_logical(),
+##   Transfers = col_logical()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(nonfood,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Non-Food&#39;</span>)</code></pre></div>
+<table>
+<caption><span id="tab:nonfood">Table 1.3: </span>Non-Food</caption>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">Number of non-food items</th>
+<th align="left">Collection method</th>
+<th align="left">Quantity and/or Value</th>
+<th align="left">Transfers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Bangladesh, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Bhutan, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">India, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Maldives, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Nepal, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan, 2015</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Sri Lanka, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="durable-assets" class="section level3">
 <h3><span class="header-section-number">1.4.3</span> Durable assets</h3>
-<p>The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time.</p>
-<p>Durable goods should at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year). Number of assets Collection method: Quantity and/or Value Comparison between countries</p>
+<p>The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards. The use of durable goods over time may be measured if surveys at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year).</p>
+<p>Number of assets Collection method: Quantity and/or Value Comparison between countries</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+durables &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/durables.csv&quot;</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Number of durable items` = col_logical(),
+##   `Collection method` = col_logical(),
+##   `Quantity and/or Value` = col_logical(),
+##   Transfers = col_logical()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(durables,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Durables&#39;</span>)</code></pre></div>
+<table>
+<caption><span id="tab:durables">Table 1.4: </span>Durables</caption>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">Number of durable items</th>
+<th align="left">Collection method</th>
+<th align="left">Quantity and/or Value</th>
+<th align="left">Transfers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Bangladesh, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Bhutan, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">India, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Maldives, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Nepal, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan, 2015</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Sri Lanka, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="housing" class="section level3">
 <h3><span class="header-section-number">1.4.4</span> Housing</h3>
-<p>The fourth component is rent, which is obtained either by asking how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent.</p>
-<p>Rent should be self-reported or at least include enough housing characteristics to impute. India and Pakistan still lack sufficient data to measure rents. Household characteristics: Type of dwelling Area of dwelling Number of bedrooms Number of bathrooms Kitchen Material of the walls, roof, and floor Garage Services (electricity, sanitation, main water source) Rent (actual vs. self-reported vs. imputed)</p>
+<p>The fourth component is rent, which is in some cases observed directly for households who rent their house or apartment. For the rest, rent is obtained either by asking a household how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent. India and Pakistan still lack sufficient data to measure rents.</p>
+<p>Household characteristics: Type of dwelling Area of dwelling Number of bedrooms Number of bathrooms Kitchen Material of the walls, roof, and floor Garage Services (electricity, sanitation, main water source) Rent (actual vs. self-reported vs. imputed)</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Housing" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Housing</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+housing &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/housing.csv&quot;</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Number of durable items` = col_logical(),
+##   `Collection method` = col_logical(),
+##   `Quantity and/or Value` = col_logical(),
+##   Transfers = col_logical()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(housing,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Housing&#39;</span>)</code></pre></div>
+<table>
+<caption><span id="tab:housing">Table 1.5: </span>Housing</caption>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">Number of durable items</th>
+<th align="left">Collection method</th>
+<th align="left">Quantity and/or Value</th>
+<th align="left">Transfers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Afghanistan, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Bangladesh, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Bhutan, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">India, 2017</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Maldives, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Nepal, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan, 2015</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+<tr class="even">
+<td align="left">Sri Lanka, 2016</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
@@ -336,7 +671,7 @@ Figure 1.2: Sample Size
           </div>
         </div>
       </div>
-<a href="content.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduction-to-south-asia.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="qcheck.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

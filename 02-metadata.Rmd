@@ -1,8 +1,10 @@
 # Metadata overview {#metadata}
 
-This chapter provides an overview of household surveys metadata in SAR and MNA with the support of a series of accompanying Tableau dynamic dashboards. The South Asia Micro Database (SARMD) consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region, contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table xx shows the latest available household surveys in SARMD. 
+This chapter provides an overview of household surveys metadata in SAR and MNA with the support of a series of accompanying Tableau dynamic dashboards. 
 
-```{r table}
+The South Asia Micro Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region, contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table \@ref(tab:latest) shows the latest available household surveys in SARMD. 
+
+```{r latest}
 library(readr)
 latest <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv")
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
@@ -11,7 +13,9 @@ knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available
 
 ## Inventory
 
-Considering that the South Asia region (SAR) has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure \@ref(fig:inv) presents the surveys that make part of the South Asia Micro Database (SARMD). Four countries have released recent rounds of household surveys (Pakistan 2015, Bangladesh 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (Afghanistan 2016, Maldives 2016, India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. Extreme data deprivation may be measured as having less than two data points in a ten year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
+Considering that the South Asia region (SAR) has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure \@ref(fig:inv) presents the surveys that make part of the South Asia Micro Database (SARMD). Four countries have released recent rounds of household surveys (Pakistan 2015, Bangladesh 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (Afghanistan 2016, Maldives 2016, India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. 
+
+Extreme data deprivation may be measured as having less than two data points in a ten year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
 
 ```{r inv, fig.cap='SARMD Inventory', out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("figures/Inventory.png")
@@ -25,19 +29,24 @@ The content of these surveys varies widely and their comparison over time even w
 
 ### Afghanistan
 
-The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas. 
+The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces for the latest round between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas. 
 
-The Central Statistics Organization (CSO) (http://cso.gov.af/) has used this survey to find that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population. 
+The Central Statistics Organization (CSO) (http://cso.gov.af/) has used this survey to report that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population. 
 
 ### Bangladesh
 
-The Bangladesh Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (http://bbs.gov.bd/) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations). 
+The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (http://bbs.gov.bd/) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations). 
 
 Based on the HIES 2016, the BBS reports that poverty reduced substantially between 2010 and 2016. In 2010 the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%. 
 
 ### Bhutan
 
 The Bhutan Living Standards Survey (BLSS) 2017 is the fourth in a series of living standards surveys undertaken by the National Statistics Bureau (NSB) (http://nsb.gov.bt). Earlier surveys were done in 2003, 2007, and 2012 to collect information on the demographics, education, health, employment, housing, access to services, asset ownership, credit, self-perceived poverty, and happiness of the population. The BLSS 2017 included 11,660 households with 48,639 individuals. The sample for BLSS 2017 was designed to provide estimates for a large number of indicators on the living conditions of Bhutanese in both urban and rural areas of the twenty Dzongkhags, including the four Thromdes (Thimphu, Phuentsholing, Gelephu and Samdrup Jongkhar). 
+
+The NSB reports a population poverty rate of 8.2% in 2017.The 2017 BLSS shows that the mean monthly household expenditure for the country is Nu33,542: Nu45,508 in urban areas, and Nu26,937 in rural areas. The mean monthly per capita household expenditure is Nu7,939. The monthly per capita household expenditure ofNu11,452 in urban areas is 85% higher than that in rural areas (Nu6,174). The mean per capita expenditure of households in the richest per capita consumption quintile of Nu17,802 is more than seven times that of households in the poorest per capita consumption quintile (Nu2,468).
+
+The NSB has also analyzed subjective happiness ratings by dzongkhags. Pema Gatshel is the happiest Dzongkhag (94%) followed by Samtse (more than 88%) and Trongsa Dzongkhags (more than 86%). The exception is Dagana Dzongkhag, where only four in every 10 respondents reported they are happy. 
+
 
 ### India
 
@@ -79,13 +88,13 @@ We consider four main components for a nominal consumption aggregate:
 
 ### Food
 
-The first is food expenditures, include food consumed by households from purchases, home production and transfers. This is sometimes thought to be easier to measure than non-food. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent. Surveys typically combine a household expenditure diary, however, this is not common in South Asia where most information on food is collected based on weekly recalling what a household has consumed and purchased. 
+The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Surveys typically combine a household expenditure diary with the rest of the questionnaire. However, having a food consumption diary is not common in South Asia where most information on food is collected based on weekly recalling what a household has consumed and purchased. 
 
-The ideal reference period should be a week (reference), but in this analysis we have found reference periods still vary from monthly to biweekly to daily. In recent years, the Indian National Sample Survey Organization has experimented with  7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated by LSMS surveys, but has recently moved into the forefront of research. 
+The ideal reference period should be a week, but in this analysis we have found reference periods still vary from monthly to biweekly to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with  7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated by LSMS surveys, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible. In some cases, food baskets and their collection periods vary even within the same country over time. 
 
-In many (but not all) surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). The food component should include food produced and consumed at home, as well as consumed outside the home, such as at restaurants, cafés, etc. Food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods. 
+In many (but not all) surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). However, this is not the norm. For example, the Afghanistan Living Conditions Survey 2016 asks what was the amount o each item used in the last seven days, but the price of each item is collected separately through a market price survey. 
 
-Food baskets and their collection periods vary even within the same country over time. 
+The food component should include food produced and consumed at home, as well as consumed outside the home, such as at restaurants, cafés, etc. Food transfers are currently measured unevenly with different collection methods and for unsteady baskets of goods. It is more common to find questions regarding tranfers to the household than transfers from the household to other households. 
 
 Tabla para comparar:
 -Number of items 
@@ -95,13 +104,22 @@ Tabla para comparar:
 -Self-production and food away from home 
 -Transfers 
 
+https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Food?
+
+```{r food}
+library(readr)
+food <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/food.csv")
+knitr::kable(food,booktabs=TRUE, caption = 'Food')
+```
+
 ### Non-food
 
-The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes somt less frequently but regularly purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc. 
+The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc. Non-food expenditures should  at least include alcoholic beverages, tobacco, clothing, water, electricity, fuels, furnishings, health, transport, communication, recreation, and education. A homogenous definition of what constitutes non-food expenditures is required. 
 
-Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. 
+Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. Monthly is the most frequent collection period for non-food expenditures. 
 
-Non-food expenditures should include at least alcoholic beverages, tobacco, clothing, water, electricity, fuels, furnishings, health, transport, communication, recreation, and education. Monthly is the most frequent collection period for non-food expenditures. A homogenous definition of what constitutes non-food expenditures is required. Both food and non-food expenditures have insufficient coverage on transfers. 
+Both food and non-food expenditures have insufficient coverage on transfers. 
+
 
 Tabla para comparar:
 Number of items 
@@ -110,22 +128,34 @@ Quantity and/or Value
 Reference period 
 Transfers 
 
+https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood?
+
+```{r nonfood}
+library(readr)
+nonfood <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/nonfood.csv")
+knitr::kable(nonfood,booktabs=TRUE, caption = 'Non-Food')
+```
+
 ### Durable assets
 
-The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. 
+The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. Long-lived goods (automobiles, appliances, furniture) have a  positive and significant impact on living standards. The use of durable goods over time may be measured if surveys at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year). 
 
-Long-lived goods (automobiles, appliances, furniture) have a  positive and significant impact on living standards. 
-
-Durable goods should at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year). 
 Number of assets 
 Collection method: Quantity and/or Value 
 Comparison between countries 
 
+https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables
+
+```{r durables}
+library(readr)
+durables <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/durables.csv")
+knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
+```
+
 ### Housing
 
-The fourth component is rent, which is obtained either by asking how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent. Imputations are often quite suspect—for example, those for imputed rent for owner-occupiers in an economy where house tenancy is very rare.
+The fourth component is rent, which is in some cases observed directly for households who rent their house or apartment. For the rest, rent is obtained either by asking a household how much would you expect to receive each month for this house if you rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent. India and Pakistan still lack sufficient data to measure rents. 
 
-Rent should be self-reported or at least include enough housing characteristics to impute. India and Pakistan still lack sufficient data to measure rents. 
 Household characteristics: 
 Type of dwelling 
 Area of dwelling 
@@ -136,3 +166,12 @@ Material of the walls, roof, and floor
 Garage 
 Services (electricity, sanitation, main water source) 
 Rent (actual vs. self-reported vs. imputed) 
+
+https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Housing
+
+```{r housing}
+library(readr)
+housing <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/housing.csv")
+knitr::kable(housing,booktabs=TRUE, caption = 'Housing')
+```
+

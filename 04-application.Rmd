@@ -2,20 +2,9 @@
 
 Some _significant_ applications are demonstrated in this chapter.
 
-## Nonlinear relationship between expenditure and asset acquisition
+## Household composition and expenditures
 
-An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. If one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent (Wolfram, Shelef, and Gertler 2012). 
-
-We model the nonlinear relationship between income and asset acquisition as in Gertler, Shelef, Wolfram & Fuchs (2016). This paper provides a simple theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A nonlinear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase an energy-using asset. Households faced with credit constraints become much more likely to purchase energy-using assets with once their income passes a threshold level. We begin by documenting an S-shaped relationship between expenditure and durable asset ownership. Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
-
-Figure ?? demostrates how for a group of several assets, asset ownership is high in the Maldives and lower in the rest of South Asia. Filmer and Pritchett, 2001, argue that the first principal component of the household’s ownership of physical assets is highly correlated with household expenditure and can be used as a reasonable proxy. 
-
-## Household composition and poverty
-
-The adverse effects of high fertility on household welfare are clearly shown in the much higher poverty rates among large households and households with relatively many children. Having more children directly contributes to household poverty in South Asia. The average household size and the number of children in the household varies among countries as shown in Table ??. A child is defined as a person of less than 15 years of age. 
-
-The average household size declines with the per capita consumption quintiles as shown in Figure \@ref(fig:children). The average household size is estimated at 9.66 in the poorest per capita consumption quintile of Afghanistan as compared to only 3.91 in the richest per capita consumption quintile of Sri Lanka. 
-
+Figure \@ref(fig:children) shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
 
 ```{r children, fig.cap='Average household size by per capita consumption quintile', out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("figures/Children.png")
@@ -24,4 +13,26 @@ knitr::include_graphics("figures/Children.png")
 see Figure \@ref(fig:children) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children
 
 
-## Note 3
+## Gender inequality in literacy
+
+The most vulnerable group in terms of low literacy is women older than 65 years. Even among younger adults and children, the difference in literacy rates between men and women is wide. Afghanistan has one of the lowest literacy rates in the world. In 2011, it was estimated at about 31% of the adult population (15 years or older). 
+
+```{r literacy, fig.cap='Female Literacy Rate (15-65 years)', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Literacy.png")
+```
+
+see Figure \@ref(fig:literacy) at https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy
+
+
+## Nonlinear relationship between expenditure and asset acquisition
+
+Energy-using appliances, such as refrigerators, are taken for granted among households in developed countries. However, in developing countries these assets are still scarce and owning a refrigerator can have important consequences on the well-being of a family. This note explains who owns this kind of assets in South Asia with the use of harmonized data from SARMD. Refrigerators, for example, can be common in urban areas of New Delhi and be virtually non-existent in central Afghanistan. The distribution of assets among the population is an indicator in the fight against extreme poverty. Even in developed countries, the possession of valuable assets that facilitate family labor in a meaningful way are quick indicators of economic development in a region and the purchasing power of households.
+
+https://tab.worldbank.org/#/site/WBG/views/Note1/Dashboard1
+
+An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. If one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent (Wolfram, Shelef, and Gertler 2012). 
+
+We model the nonlinear relationship between income and asset acquisition as in Gertler, Shelef, Wolfram & Fuchs (2016). This paper provides a simple theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A nonlinear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase an energy-using asset. Households faced with credit constraints become much more likely to purchase energy-using assets with once their income passes a threshold level. We begin by documenting an S-shaped relationship between expenditure and durable asset ownership. Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
+
+Figure ?? demostrates how for a group of several assets, asset ownership is high in the Maldives and lower in the rest of South Asia. Filmer and Pritchett, 2001, argue that the first principal component of the household’s ownership of physical assets is highly correlated with household expenditure and can be used as a reasonable proxy. 
+

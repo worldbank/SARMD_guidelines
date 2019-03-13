@@ -4,12 +4,28 @@ This chapter presents the harmonized data from the South Asia Micro Database (SA
 
 ## Basic survey characteristics
 
+
+```{r table0, echo=FALSE, results='asis'}
+cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
+|------------:|-----------:|------------:|--------------:|
+|      year|         idh|     int_year| psu|
+|    survey|         idp|   int_month|     strata|
+|      vermast|        wgt|        subnatid1|spdef|')
+```
+
+
 The essential variables that identify each dataset and should always be included are **countrycode**, **year**, **survey**, **vermast**, **veralt**, **idh**, and **idp**. Weights are defined as **wgt** and **pop_wgt=wgtxhsize**. The dates of the survey are recorded as **int_year** and **int_month**. The geographical location within the country’s administrative division is recorded as **subnatid1**, and in some cases, **subnatid2** may provide a more specific location. 
 **psu**
 **strata**
 **spdef** 
 
 ## Demographics
+
+```{r table1, echo=FALSE, results='asis'}
+cat('|      age|    male|    hsize|
+|------------:|-----------:|------------:|
+|      relationcs|        relationharm|        marital|')
+```
 
 Demographic variables consist of **age**, **male**, **hsize**, **relationcs**, **relationharm** and **marital**. 
 Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. 
@@ -23,17 +39,20 @@ see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_
 
 ## Education
 
-**atschool**, **ed_mod_age**, **educat4**, **educat5**, **educat7**, **educy**, **everattend**, **literacy**
+```{r table2, echo=FALSE, results='asis'}
+cat('|      atschool|    ed_mod_age|    everattend|   literacy|
+|------------:|-----------:|------------:|--------------:|
+|      educat4|        educat5|        educat7|educy|')
+```
 
 The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. 
-In Afghanistan, for 2016-17, the adult literacy rate was found to be 35 percent, up from 24 percent in 2005. For Afghanistan, the youth literacy rate was found to be 54 percent, indicating considerable progress since 2005 when it was 31 percent. 
+
 
 ## Durable assets
 
-```{r table2, echo=FALSE, results='asis'}
-cat('| S| Se| Pe| Pe|
+```{r table3, echo=FALSE, results='asis'}
+cat('|      bicycle|    computer|    landphone|   refrigerator|
 |------------:|-----------:|------------:|--------------:|
-|      bicycle|    computer|    landphone|   refrigerator|
 |      buffalo|         cow|     motorcar| sewing machine|
 |    cellphone|         fan|   motorcycle|     television|
 |      chicken|        lamp|        radio|washing machine|')

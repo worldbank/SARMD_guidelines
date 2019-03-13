@@ -1,6 +1,6 @@
 --- 
 title: "South Asia Micro Database (SARMD) User Guidelines"
-author: "South Asia Region Team for Statistical Development (SAR TSD)"
+author: "South Asia Region Team for Statistical Development (SARTSD)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -22,7 +22,7 @@ ii. non-food, non-durable expenditures;
 iii. expenditures on durables; and
 iv. expenditures on housing. 
 
-The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, is spatially and temporally adjusted, converted into 2011 purchasing power parity (PPP) dollars, and used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to this measure, in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide.
+The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, in order to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to this measure, in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide.
 
 Even though the region of South Asia does not lack data, these poverty measures rely on household survey data that suffers from low frequency and comparability over time and across countries. The content, length, and complexity of these surveys varies between countries, and even within countries over time. These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, and household welfare provided by the South Asia Micro Database (SARMD).
 
