@@ -1,9 +1,9 @@
-Country,Number of food items ,Collection method,Quantity and/or Value ,Transfers
-"Afghanistan, 2016",92,Recall (weekly),Quantity,
-"Bangladesh, 2016",,Recall (daily),Both,
-"Bhutan, 2017			",,,,
-"India, 2017",134,,,
-"Maldives, 2016",146,"Recall (weekly)	",Both,
-"Nepal, 2016",97,,,
-"Pakistan, 2015",170,Recal (biweekly),Both,
-"Sri Lanka, 2016",198,"Recall (weekly)	",Both,
+Country,Number of food items ,Collection method,Quantity and/or Value 
+"Afghanistan, 2016",92,"Recall (weekly)	",Quantity
+"Bangladesh, 2016",151,Diary (daily),Both
+"Bhutan, 2017			",115,"Recall (weekly, monthly, yearly)	",Both
+"India, 2011",134,Recall (multiple),Both
+"Maldives, 2016",146,"Recall (weekly)	",Both
+"Nepal, 2015",97,"Recall (weekly)	",Both
+"Pakistan, 2015",170,Recal (biweekly),Both
+"Sri Lanka, 2016",198,"Recall (weekly)	",Both

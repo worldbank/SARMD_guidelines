@@ -87,5 +87,15 @@ The living conditions of the Afghan population are to a large extent determined 
 
 This section presents the latest data on regional extreme poverty rates using the international poverty line of US$1.90 in 2011 purchasing power parity dollars. Even though, Afghanistan is missing, the ALCS 2016-17 recorded a sharp deterioration in welfare of the Afghan population. The proportion of population living below the national poverty line increased from 34 percent in 2007-08 to 55 percent in 2016-17. The latest poverty figures imply that at the time of the survey, close to 16 million Afghans lived in poverty. 
 
+Urban poverty lower than rural poverty. 
+
+
+datalibweb, country(PAK) year(2015) type(GMD) mod(ALL) vermast(01) veralt(02) surveyid(PSLM)
+gen welf_ppp = welfare/cpi2011/icp2011/365
+gen poor190 = welf_ppp < 1.9
+sum poor190 [aw=weight_h]
+
+
+
 ## Inequality
 The Gini index for Afghanistan showed a small decrease between the surveys of 2011-12 and 2016-17, from 0.30 to 0.29. 
