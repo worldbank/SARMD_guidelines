@@ -1,9 +1,12 @@
-Country,Number of durable items ,Collection method,Quantity and/or Value ,Transfers
-"Afghanistan, 2016",,,,
-"Bangladesh, 2016",,,,
-"Bhutan, 2017			",,,,
-"India, 2017",,,,
-"Maldives, 2016",,,,
-"Nepal, 2016",,,,
-"Pakistan, 2015",,,,
-"Sri Lanka, 2016",,,,
+Country,Number of assets,Quantity,Value
+"Afghanistan, 2016",18,Yes,Yes
+.,7,Yes,Yes
+"Bangladesh, 2016",27,Yes,Yes
+"Bhutan, 2017",13,No,No
+.,9,Yes,No
+.,23,Yes,Yes
+"India, 2011",53,"Yes, but only if recently purchased","Yes, but only if recently purchased"
+"Maldives, 2016",16,Yes,Yes
+"Nepal, 2016",23,Yes,Yes
+"Pakistan, 2015",67,No,"Yes, but only if recently purchased"
+"Sri Lanka, 2016",25,Yes,Yes

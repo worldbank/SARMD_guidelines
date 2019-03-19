@@ -25,7 +25,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
 
 
-<meta name="date" content="2019-03-13">
+<meta name="date" content="2019-03-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -140,9 +140,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.8" data-path="qcheck.html"><a href="qcheck.html#inequality"><i class="fa fa-check"></i><b>2.8</b> Inequality</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="application.html"><a href="application.html"><i class="fa fa-check"></i><b>3</b> Analytical notes</a><ul>
-<li class="chapter" data-level="3.1" data-path="application.html"><a href="application.html#nonlinear-relationship-between-expenditure-and-asset-acquisition"><i class="fa fa-check"></i><b>3.1</b> Nonlinear relationship between expenditure and asset acquisition</a></li>
-<li class="chapter" data-level="3.2" data-path="application.html"><a href="application.html#household-composition-and-poverty"><i class="fa fa-check"></i><b>3.2</b> Household composition and poverty</a></li>
-<li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#gender-equality-in-education"><i class="fa fa-check"></i><b>3.3</b> Gender equality in education</a></li>
+<li class="chapter" data-level="3.1" data-path="application.html"><a href="application.html#household-composition-and-expenditures"><i class="fa fa-check"></i><b>3.1</b> Household composition and expenditures</a></li>
+<li class="chapter" data-level="3.2" data-path="application.html"><a href="application.html#gender-inequality-in-literacy"><i class="fa fa-check"></i><b>3.2</b> Gender inequality in literacy</a></li>
+<li class="chapter" data-level="3.3" data-path="application.html"><a href="application.html#nonlinear-relationship-between-expenditure-and-asset-acquisition"><i class="fa fa-check"></i><b>3.3</b> Nonlinear relationship between expenditure and asset acquisition</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -314,6 +314,8 @@ Figure 2.3: Access to refrigerator and access to electricity across surveys
 <div id="poverty" class="section level2">
 <h2><span class="header-section-number">2.7</span> Poverty</h2>
 <p>This section presents the latest data on regional extreme poverty rates using the international poverty line of US$1.90 in 2011 purchasing power parity dollars. Even though, Afghanistan is missing, the ALCS 2016-17 recorded a sharp deterioration in welfare of the Afghan population. The proportion of population living below the national poverty line increased from 34 percent in 2007-08 to 55 percent in 2016-17. The latest poverty figures imply that at the time of the survey, close to 16 million Afghans lived in poverty.</p>
+<p>Urban poverty lower than rural poverty.</p>
+<p>datalibweb, country(PAK) year(2015) type(GMD) mod(ALL) vermast(01) veralt(02) surveyid(PSLM) gen welf_ppp = welfare/cpi2011/icp2011/365 gen poor190 = welf_ppp &lt; 1.9 sum poor190 [aw=weight_h]</p>
 </div>
 <div id="inequality" class="section level2">
 <h2><span class="header-section-number">2.8</span> Inequality</h2>

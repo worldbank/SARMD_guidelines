@@ -25,7 +25,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
 
 
-<meta name="date" content="2019-03-14">
+<meta name="date" content="2019-03-19">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -265,7 +265,7 @@ Figure 1.1: SARMD Inventory
 <div id="bangladesh" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> Bangladesh</h3>
 <p>The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (<a href="http://bbs.gov.bd/" class="uri">http://bbs.gov.bd/</a>) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations).</p>
-<p>Based on the HIES 2016, the BBS reports that poverty reduced substantially between 2010 and 2016. In 2010 the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%.</p>
+<p>Based on the HIES 2016, the BBS reports that poverty reduced substantially between 2010 and 2016. In 2010, the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%.</p>
 </div>
 <div id="bhutan" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Bhutan</h3>
@@ -490,18 +490,19 @@ nonfood &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cla
 </div>
 <div id="durable-assets" class="section level3">
 <h3><span class="header-section-number">1.4.3</span> Durable assets</h3>
-<p>The third component is consumer flows from durable goods that deliver useful services to a consumer through repeated use over an extended period of time. Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards. The use of durable goods over time may be measured if surveys at least include quantity, date of purchase, and how much they cost at the time of purchase. Methodologies to measure flows from durable items still differ (e.g. Pakistan 2015 asks only if items were purchased in the last year).</p>
-<p>Number of assets Collection method: Quantity and/or Value Comparison between countries</p>
-<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables</a></p>
+<p>The third component is consumer flows from durable assets. The most important finding regarding the collection of data on durable assets through household surveys in South Asia is that the data collection methods followed can be very different. This section provides a summary for data collection methods for durable assets for the household surveys available in SARMD.</p>
+<p>It is expected for data collection methods to vary over time and from one country to another. However, even for items within a country’s particular survey we can see different data collection methods. For example, even though both cows and cars may be considered productive assets, the information available for these two assets within a survey may be very different and would be contained in different sections of the survey. Even for more similar goods, like a washing machine and a sewing machine, the information provided by a survey may differ. For that reason, we found it necessary to characterize each item’s data collection method separately. Data available for household assets (e.g. a car) may be different from data available from agricultural assets (e.g. a tractor). Some assets are grouped together, while others are collected individually, and some may even have their own section in the survey. This is the case for cellphones, which are durable assets, but are usually given special treatment and collected separately in the surveys.</p>
+<p>Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards. These durable assets may deliver useful services to a consumer through repeated use over an extended period of time. For that reason, surveys should collect data on all assets available to the household, not just the ones purchased recently. This is unfortunately the case for India 2011 and Pakistan 2015. Pakistan 2015 asks only if items were purchased in the last year. India 2011 only collects specific details for those assets acquired in the last 30 days or in the last year.</p>
+<p>To measure the flows from using durable goods over extended periods of time, we need to know their quantity, date of purchase, and how much they cost at the time of purchase vs. their current value. Nepal AHS 2016 represents the standard practice a survey should be following. This survey asks whether the assets are available, their quantity, age, purchase and current values, and whether the assets were paid for or received as gift. Asking how many years ago was a survey acquired provides more information than asking whether the asset was purchased in the last 12 months. The most incomplete example, would have to be Pakistan 2015, which focuses only on assets acquired in the last year and only measures values, not quantities.</p>
+<p>Table <a href="metadata.html#tab:durables">1.4</a> provides a quick comparison between countries by presenting the number of assets collected, and their collection method (i.e. quantity and/or value).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
 durables &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/durables.csv&quot;</span>)</code></pre></div>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Country = col_character(),
-##   `Number of durable items` = col_logical(),
-##   `Collection method` = col_logical(),
-##   `Quantity and/or Value` = col_logical(),
-##   Transfers = col_logical()
+##   `Number of assets` = col_double(),
+##   Quantity = col_character(),
+##   Value = col_character()
 ## )</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(durables,<span class="dt">booktabs=</span><span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&#39;Durables&#39;</span>)</code></pre></div>
 <table>
@@ -509,71 +510,81 @@ durables &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span cl
 <thead>
 <tr class="header">
 <th align="left">Country</th>
-<th align="left">Number of durable items</th>
-<th align="left">Collection method</th>
-<th align="left">Quantity and/or Value</th>
-<th align="left">Transfers</th>
+<th align="right">Number of assets</th>
+<th align="left">Quantity</th>
+<th align="left">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Afghanistan, 2016</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="right">18</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
+<td align="left">.</td>
+<td align="right">7</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
 <td align="left">Bangladesh, 2016</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="right">27</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">Bhutan, 2017</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-</tr>
-<tr class="even">
-<td align="left">India, 2017</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="right">13</td>
+<td align="left">No</td>
+<td align="left">No</td>
 </tr>
 <tr class="odd">
+<td align="left">.</td>
+<td align="right">9</td>
+<td align="left">Yes</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="left">.</td>
+<td align="right">23</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
+</tr>
+<tr class="odd">
+<td align="left">India, 2011</td>
+<td align="right">53</td>
+<td align="left">Yes, but only if recently purchased</td>
+<td align="left">Yes, but only if recently purchased</td>
+</tr>
+<tr class="even">
 <td align="left">Maldives, 2016</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-</tr>
-<tr class="even">
-<td align="left">Nepal, 2016</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="right">16</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="odd">
-<td align="left">Pakistan, 2015</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="left">Nepal, 2016</td>
+<td align="right">23</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
 </tr>
 <tr class="even">
+<td align="left">Pakistan, 2015</td>
+<td align="right">67</td>
+<td align="left">No</td>
+<td align="left">Yes, but only if recently purchased</td>
+</tr>
+<tr class="odd">
 <td align="left">Sri Lanka, 2016</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
-<td align="left">NA</td>
+<td align="right">25</td>
+<td align="left">Yes</td>
+<td align="left">Yes</td>
 </tr>
 </tbody>
 </table>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables</a></p>
 </div>
 <div id="housing" class="section level3">
 <h3><span class="header-section-number">1.4.4</span> Housing</h3>
