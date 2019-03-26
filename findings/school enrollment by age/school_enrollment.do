@@ -69,53 +69,6 @@ foreach country of local countries {
 
 
 
-
-******************************* Graphs V2 *******************************
-
-use appended_data.dta, clear
-replace atschool=atschool_v2 if atschool==. & countrycode=="AFG" & year==2007
-local age_trim "age<=30"
-collapse (mean) atschool [aw=wgt], by(countrycode year age male urban)
-
-preserve
-
-foreach country of local countries {
-	restore
-	preserve
-	display "`country'"
-	keep if countrycode=="`country'"
-	twoway (line atschool age if male==1 & urban==1 & `age_trim')  /* 
- */      (line atschool age if male==0 & urban==1 & `age_trim')  /* 
- */      (line atschool age if male==1 & urban==0 & `age_trim')  /* 
- */      (line atschool age if male==0 & urban==0 & `age_trim'), /* 
- */ legend(order(1 "Urban Male" 2 "Urban Female" 3 "Rural Male" 4 "Rural Female")) /* 
- */ by(countrycode year, title(Percentage attending school (`country')))
- 
-	graph export `country'_school_enrollment.pdf, replace
-}
-
-
-
-
-
-
-
-mata
-//mata drop _ind*()
-mata set mataoptimize on
-mata set matafavor speed
-
-void _ind_ids(string matrix R) {
-	i = strtoreal(st_local("i"))
-	vars = tokens(st_local("vars"))
-	for (j =1; j<=cols(vars); j++) {
-		//printf("j=%s\n", R[i,j])
-		st_local(vars[j], R[i,j] )
-	} 
-} // end of IDs variables
-
-end
-
 /*==================================================
            Alternative version 1
 ==================================================*/
@@ -124,7 +77,7 @@ cd ""
 
 local reponame "sarmd"
 local countries "LKA"
-local years     ""
+local years     "2016"
 local surveys   ""
 
 
@@ -163,51 +116,20 @@ foreach country of local countries {
 	
 		datalibweb, countr(`country') year(`year') type(SARMD) clear 
 		
-		* by(countrycode year age male urban)
-		datalibweb, countr(BGD) year(2016) type(SARMD)
-		
-		mean atschool [aw=wgt] if age < 25, over(age male urban)
-		
-		
-		* logistic atschool c.age##i.male##i.urban  [w=int(wgt)] if (age < 25) // Estimate a two-way anova model
-		
-		* anova atschool c.age##i.male##i.urban  [aw=wgt] if (age < 25) // Estimate a two-way anova model
-		
-		* margins i.age##(i.male#i.urban) [aw=wgt] if (age < 25)
-		* margins i.male#i.urban [aw=wgt] if (age < 25), at(age = (1(1)25) )
-		* margins i.age##(i.male#i.urban) [aw=wgt] if (age < 25), continuous
-		* margins i.male#i.urban [aw=wgt] if (age < 25)
-		
+		mean atschool [aw=wgt] if age < 25, over(age male urban) // same as anova
 		anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) // Estimate a two-way anova model
-		* margins i.age##(i.male#i.urban) [aw=wgt] if (age < 25)
-		
-		
 		
 		tempfile g u gu a
-		margins i.age#i.male#i.urban [aw=wgt] if (age < 25), saving(`gu')
 		margins i.age##i.male         [aw=wgt] if (age < 25), saving(`g')
 		margins i.age##i.urban        [aw=wgt] if (age < 25), saving(`u')
-		* margins age [aw=wgt] if (age < 25), saving(`a')
 		
 		combomarginsplot  `u' `g', noci recast(line) legend(cols(2) position(6)) /* 
 		 */ plotopts(lpattern(l)) by(_filenumber) labels("Urban/rural" "Gender")
 		
 		
-		marginsplot, noci ytitle(school attendance)  /* 
-		 */ recast(line) plotdimension(urban) // Plot the cell means
-		
-		marginsplot, noci ytitle(school attendance)  /* 
-		 */ recast(line) bydimension(urban) // Plot the cell means
-		
-		
-		
-		
-		
 	}
 	
 }
-
-
 
 
 /*==================================================
