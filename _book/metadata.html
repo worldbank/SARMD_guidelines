@@ -25,7 +25,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
 
 
-<meta name="date" content="2019-03-26">
+<meta name="date" content="2019-03-27">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,6 +50,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -133,9 +170,20 @@
 <hr />
 <p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Cover"><img src="figures/Bubbles.png" /></a></p>
 <p>This chapter provides an overview of household surveys metadata in South Asia with the support of a series of accompanying Tableau dynamic dashboards. You may acess the Tableau dashboards by clicking on them and on the figures’ titles.</p>
-<p>The South Asia Micro Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table <a href="metadata.html#tab:latest2">1.1</a> shows the latest available household surveys in SARMD.</p>
+<p>The South Asia Micro Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table <a href="#tab:latest2"><strong>??</strong></a> shows the latest available household surveys in SARMD.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+latest &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv&quot;</span>, 
+    <span class="dt">col_names =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Name of the survey` = col_character(),
+##   `National Statistics Office` = col_character(),
+##   `Sample size: Number of households` = col_double()
+## )</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(latest, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>, <span class="dt">caption =</span> <span class="st">&quot;Latest household surveys available in SARMD&quot;</span>)</code></pre></div>
 <table>
-<caption><span id="tab:latest2">Table 1.1: </span>Latest household surveys available in SARMD</caption>
+<caption><span id="tab:latest">Table 1.1: </span>Latest household surveys available in SARMD</caption>
 <thead>
 <tr class="header">
 <th align="left">Country</th>
@@ -148,49 +196,49 @@
 <tr class="odd">
 <td align="left">Afghanistan, 2016</td>
 <td align="left">Living Conditions Survey</td>
-<td align="left">Central Statistics Organization</td>
+<td align="left"><a href="http://cso.gov.af/">Central Statistics Organization</a></td>
 <td align="right">NA</td>
 </tr>
 <tr class="even">
 <td align="left">Bangladesh, 2016</td>
 <td align="left">Household Income and Expenditure Survey</td>
-<td align="left">Bangladesh Bureau of Statistics</td>
+<td align="left"><a href="http://bbs.gov.bd/">Bangladesh Bureau of Statistics</a></td>
 <td align="right">46068</td>
 </tr>
 <tr class="odd">
 <td align="left">Bhutan, 2017</td>
 <td align="left">Living Standards Survey</td>
-<td align="left">National Statistics Bureau</td>
+<td align="left"><a href="http://nsb.gov.bt">National Statistics Bureau</a></td>
 <td align="right">11396</td>
 </tr>
 <tr class="even">
 <td align="left">India, 2017</td>
 <td align="left">National Sample Survey</td>
-<td align="left">Ministry of Statistics and Programme Implementation</td>
+<td align="left"><a href="http://mospi.gov.in/">Ministry of Statistics and Programme Implementation</a></td>
 <td align="right">NA</td>
 </tr>
 <tr class="odd">
 <td align="left">Maldives, 2016</td>
 <td align="left">Household Income and Expenditure Survey</td>
-<td align="left">National Bureau of Statistics</td>
+<td align="left"><a href="http://statisticsmaldives.gov.mv/">National Bureau of Statistics</a></td>
 <td align="right">4910</td>
 </tr>
 <tr class="even">
 <td align="left">Nepal, 2016</td>
 <td align="left">Annual Household Survey</td>
-<td align="left">Central Bureau of Statistics</td>
+<td align="left"><a href="http://cbs.gov.np/">Central Bureau of Statistics</a></td>
 <td align="right">4500</td>
 </tr>
 <tr class="odd">
 <td align="left">Pakistan, 2015</td>
 <td align="left">Social and Living Standards Measurement Survey</td>
-<td align="left">Pakistan Bureau of Statistics</td>
+<td align="left"><a href="http://www.pbs.gov.pk/">Pakistan Bureau of Statistics</a></td>
 <td align="right">24238</td>
 </tr>
 <tr class="even">
 <td align="left">Sri Lanka, 2016</td>
 <td align="left">Household Income and Expenditure Survey</td>
-<td align="left">Department of Census and Statistics</td>
+<td align="left"><a href="http://www.statistics.gov.lk/">Department of Census and Statistics</a></td>
 <td align="right">21756</td>
 </tr>
 </tbody>
@@ -274,7 +322,6 @@ Figure 1.2: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata
 <p>The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food items. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Surveys sometimes include a household food expenditure diary, but this is not common in South Asia where most information on food is collected based on recalling what a household has consumed and purchased over the last seven days.</p>
 <p>The ideal reference period should be a week, but in this analysis we have found reference periods still vary from yearly, to monthly, to biweekly, to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible.</p>
 <p>In most cases, countries modify their food baskets and change their data collection methods over time. A wide mixture of data collection methods characterizes the most recent rounds of household surveys. Bangladesh HIES 2016 collects daily household food consumption (both quantity and value) for a period of 14 days. In addition, it collects weekly consumption of a series of spices. Bhutan LSS 2017 collects food consumption (both quantity and value) by asking the respondent to recall their consumption in the last seven days, the last thirty days, and the last year. In some cases, such as Afghanistan LCS 2016, the female respondents are the ones asked about household food consumption. These methods can be so diverse that we provide a brief description for the latest survey available for each country in Table <a href="metadata.html#tab:food">1.2</a>.</p>
-<pre><code>## Warning: package &#39;readr&#39; was built under R version 3.5.2</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Country = col_character(),
