@@ -1,76 +1,18 @@
-************************** Schooling by age *************************
-************************** Javier Parada ****************************
-************************** March 21, 2019 ***************************
-
-*************************** Set directory ***************************
-
-if ("`c(hostname)'" == "wbgmsbdat001") {
-	global hostdrive "D:"
-}
-else {
-	global hostdrive "\\Wbgmsbdat001"
-}
-cd "${hostdrive}\SOUTH ASIA MICRO DATABASE\05.projects_requ\01.SARMD_Guidelines\02. qcheck\02. sar qcheck\08. new notes\01. school enrollment\" 
-
-*************** Import SAR inventory from excel table ***************
-
-clear all
-
-import excel "${hostdrive}\SOUTH ASIA MICRO DATABASE\05.projects_requ\01.SARMD_Guidelines\02. qcheck\02. sar qcheck\01. sarmd inventory\inventory.xlsx", sheet("inventory") firstrow allstring clear
-
-levelsof countries, local(countries)
-
-foreach country of local countries {
-	display "`country'"
-	levelsof years if (countries == "`country'"), local(`country'_years)
-	foreach year of local `country'_years { 
-		levelsof SARMD if (countries == "`country'" & years == "`year'"), local(`country'_`year'_address) clean	
-	}
-}
-
-/******************** Create appended dataset ************************
-
-gen countrycode=""
-save "appended_data.dta", 
-
-* Loop over sarmd
-foreach country of local countries {
-	foreach year of local `country'_years { 
-	 cap ``country'_`year'_address'
-		if (_rc) continue
-			append using appended_data.dta, force
-			save "appended_data.dta", replace
-	}
-}
-*/
-
-******************************* Graphs *******************************
-
-use appended_data.dta, clear
-replace atschool=atschool_v2 if atschool==. & countrycode=="AFG" & year==2007
-local age_trim "age<=30"
-collapse (mean) atschool [aw=wgt], by(countrycode year age male urban)
-
-preserve
-
-foreach country of local countries {
-	restore,	preserve
-	display "`country'"
-	keep if countrycode=="`country'"
-	twoway (line atschool age if male==1 & urban==1 & `age_trim')  /* 
- */      (line atschool age if male==0 & urban==1 & `age_trim')  /* 
- */      (line atschool age if male==1 & urban==0 & `age_trim')  /* 
- */      (line atschool age if male==0 & urban==0 & `age_trim'), /* 
- */ legend(order(1 "Urban Male" 2 "Urban Female" 3 "Rural Male" 4 "Rural Female")) /* 
- */ by(countrycode year, title(Percentage attending school (`country')))
- 
-	graph export `country'_school_enrollment.pdf, replace
-}
-
+/*==================================================
+project:       School attendance in SAR using SARMF
+Author:        Javier Parada and Andres Castaneda 
+Dependencies:  The World Bank
+----------------------------------------------------
+Creation Date:    21 Mar 2019 
+Modification Date:   
+Do-file version:    01
+References:         
+Output:             STata graph
+==================================================*/
 
 
 /*==================================================
-           Alternative version 1
+           Set up
 ==================================================*/
 
 cd ""
@@ -80,7 +22,9 @@ local countries "LKA"
 local years     "2016"
 local surveys   ""
 
-
+/*==================================================
+           Alternative version 1
+==================================================*/
 
 *---------- Get repo
 datalibweb, repo(create `reponame', force) type(SARMD)
@@ -99,7 +43,6 @@ if ("`countries'" == "") {
 
 *---------- Export to MATA
 mata: R = st_sdata(.,tokens(st_local("varlist")))
-
 
 *---------- Loop over countries
 foreach country of local countries {
@@ -126,12 +69,147 @@ foreach country of local countries {
 		combomarginsplot  `u' `g', noci recast(line) legend(cols(2) position(6)) /* 
 		 */ plotopts(lpattern(l)) by(_filenumber) labels("Urban/rural" "Gender")
 		
-		
 	}
-	
 }
 
 
 /*==================================================
            Alternative version 2
 ==================================================*/
+
+cd ""
+
+local reponame "sarmd"
+local countries ""
+local years     ""
+local surveys   ""
+
+
+
+*---------- Get repo
+datalibweb, repo(create `reponame', force) type(SARMD)
+contract country years survname 
+ds
+local varlist "`r(varlist)'"
+
+*---------- Evaluate initical conditions
+*countries
+if ("`countries'" == "") {
+	levelsof country, local(countries)
+}
+
+*---------- Export to MATA
+mata: R = st_sdata(.,tokens(st_local("varlist")))
+
+*---------- Loop over countries
+drop _all
+tempfile cy // countries and years
+save `cy', emptyok 
+
+qui foreach country of local countries {
+	
+	
+	mata: st_local("years",    /*   set local years 
+	 */           invtokens(   /*    create tokens out of matrix
+	 */          select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
+	 */            " "))     // separator (second temr in )
+	
+	local years: list uniq years // in case of more than one survey 
+	
+	if ("`country'" == "IND") {
+		local surveyid "IND_2011_NSS68-SCH10"
+	}
+	else local surveyid ""
+	
+	foreach year of local years {
+	
+		cap {
+			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
+
+			keep atschool age male urban wgt
+			anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) // Estimate a two-way anova model
+			
+			tempfile g
+			margins i.age##i.male##i.urban        [aw=wgt] if (age < 25), saving(`g')
+			
+			use `g', clear 
+			gen country = "`country'"
+			gen year    = `year'
+			
+			append using `cy'
+			save `cy', replace 
+		}
+		if (_rc) {
+			noi disp in red "Error on `country' `year'"
+		}
+		else {
+			noi disp in y "`country' `year' Done."
+		}
+
+	}
+}
+
+use `cy', clear
+
+/*==================================================
+           fix Data
+==================================================*/
+
+rename (_margin _m1 _m2 _m3) (atsch age male urban)
+label var atsch "School attendance (%)"
+replace atsch = atsch*100
+
+bysort country: egen my = max(year) // max year
+replace my = (my == year)
+
+gen ctryear = country + " - " + strofreal(year)
+
+
+* Here your can save the data already clean
+
+/*==================================================
+      Types of graphs (you can do many more)
+==================================================*/
+
+
+*---------- Last year of each country
+twoway (line atsch age if male == . & urban==., lpattern(l))  /* 
+ */    (line atsch age if male == 1 & urban==., lpattern(l))  /* 
+ */    (line atsch age if male == 0 & urban==., lpattern(l))  /* 
+ */     if my == 1,                                           /* 
+ */     legend(order(1 "Total" 2 "Male" 3 "Female" )          /* 
+ */          position(6) rows(1))                             /* 
+ */     by(ctryear, title("School Attendance by gender in"    /* 
+ */                       "latest year available"))           /* 
+ */     note("")
+
+ 
+*---------- by year in one country
+
+local country "BTN"
+
+twoway (line atsch age if male == . & urban==., lpattern(l))  /* 
+ */    (line atsch age if male == . & urban==1, lpattern(l))  /* 
+ */    (line atsch age if male == . & urban==0, lpattern(l))  /* 
+ */     if country == "`country'",                            /* 
+ */     legend(order(1 "Total" 2 "Urban" 3 "Rural" )          /* 
+ */          position(6) rows(1))                             /* 
+ */     by(year, title("School Attendance by Urban/rural in"       /* 
+ */                       "latest year available"))          
+
+
+exit 
+/* End of do-file */
+
+><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+Notes:
+1.
+2.
+3.
+
+
+Version Control:
+
+ 
+
