@@ -12,12 +12,9 @@ This chapter provides an overview of household surveys metadata in South Asia wi
 
 The South Asia Micro Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. Table \@ref(tab:latest2) shows the latest available household surveys in SARMD. 
 
-```{r latest, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=TRUE}
+```{r latest, echo=TRUE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
 latest <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv",col_names = TRUE)
-```
-
-```{r latest2, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=TRUE}
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
 
