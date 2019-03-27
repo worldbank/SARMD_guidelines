@@ -150,6 +150,8 @@ We provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Information on self-production
 - Information on transfers to and from the household 
 
+[![](figures/Food.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Food)
+
 
 ### Non-food
 
@@ -166,13 +168,15 @@ Quantity and/or Value
 Reference period 
 Transfers 
 
-https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood?
+[Tableau Dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood)
 
 ```{r nonfood, echo=FALSE}
 library(readr)
 nonfood <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/nonfood.csv")
 knitr::kable(nonfood,booktabs=TRUE, caption = 'Non-Food')
 ```
+
+[![](figures/Nonfood.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood)
 
 ### Durable assets
 
@@ -192,7 +196,7 @@ durables <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/durables.c
 knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 ```
 
-
+[![](figures/Durables.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables)
 
 ### Housing
 
@@ -229,7 +233,7 @@ The most relevant dwelling characteristics displayed in the [Tableau dashboard](
 - Travel time to reach services 
 - Others such as access to an Internet connection
 
-
+[![](figures/Housing.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Housing)
 
 
 
