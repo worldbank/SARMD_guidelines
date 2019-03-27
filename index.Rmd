@@ -4,24 +4,32 @@ author: "South Asia Region Team for Statistical Development (SARTSD)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-documentclass: book
+documentclass: krantz
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
+fontsize: 13 pt
+monofont: "Source Code Pro"
+monofontoptions: "Scale=0.7"
 github-repo: rstudio/bookdown-demo
 description: "SARMD User Guidelines"
 ---
 
-# Overview {-}
+# Preface {-}
+***
 
-The region of South Asia consists of eight countries for which there is at least satisfactory data availability. The nationally representative cross-sectional household surveys described in these user guidelines form the basis to measure consumption-based poverty in South Asia. These surveys focus on households as both consuming and producing units of analysis for which a nominal measure of total household expenditures is constructed by adding up four expenditure components:
+![](figures/sarmap.png)
+
+***
+These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, labor, and household welfare provided by the South Asia Micro Database (SARMD). The region of South Asia consists of eight countries (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) for which there is at least satisfactory data availability. SARMD provides access to the nationally representative cross-sectional household surveys that form the basis to measure consumption-based poverty in South Asia. These household surveys focus on households as both consuming and producing units of analysis for which a nominal measure of total household expenditures is constructed by adding up four expenditure components:
 
 i. food expenditures; 
 ii. non-food, non-durable expenditures; 
 iii. expenditures on durables; and
 iv. expenditures on housing. 
 
-The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to this measure, in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide.
+The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to the extreme poverty headcounts in the Poverty and Shared Prosperity (2018), in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide. Even though the region of South Asia does not lack data, these poverty headcounts and other welfare measures rely on household survey data that suffers from low frequency and comparability over time and across countries. This book overviews how the content, length, and complexity of these household surveys varies between countries, and even within countries over time. It then provides a guide for the harmonization of variables across the region.
 
-Even though the region of South Asia does not lack data, these poverty measures rely on household survey data that suffers from low frequency and comparability over time and across countries. The content, length, and complexity of these surveys varies between countries, and even within countries over time. These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, and household welfare provided by the South Asia Micro Database (SARMD).
+Harmonization facilitates the use of household data at a regional level, especially when harmonized variables are constructed carefully. We provide a few examples on how SARMD may be used for research purposes. In the simple example below, household access to at least one bicycle (Yes=1, No=0) is averaged at a subnational (state or province) level and plotted in a map for the most recent survey available in each country.  Even though survey characteristics vary and data comes from different years, having access to a bicycle seems to be significantly more common for households in Eastern India than in other areas of South Asia. These Tableau dashboards may be accessed and modified by clicking on them, which allows the user to explore the content of SARMD and learn what kind of data is available to study household welfare in South Asia.
 
+[![](figures/bicycle.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Subnational/Subnational)

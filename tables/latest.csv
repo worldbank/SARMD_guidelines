@@ -1,9 +1,9 @@
-﻿Country,Name of the survey,National Statistics Office,Sample size: Number of households
-"Afghanistan, 2016",Living Conditions Survey,Central Statistics Organization,
-"Bangladesh, 2016",Household Income and Expenditure Survey,Bangladesh Bureau of Statistics,"46,068"
-"Bhutan, 2017",Living Standards Survey,National Statistics Bureau,"11,396"
-"India, 2017",National Sample Survey,Ministry of Statistics and Programme Implementation,
-"Maldives, 2016",Household Income and Expenditure Survey,National Bureau of Statistics,"4,910"
-"Nepal, 2016",Annual Household Survey,Central Bureau of Statistics,"4,500"
-"Pakistan, 2015",Social and Living Standards Measurement Survey,Pakistan Bureau of Statistics,"24,238"
-"Sri Lanka, 2016",Household Income and Expenditure Survey,Department of Census and Statistics,"21,756"
+Country	Name of the survey	National Statistics Office	Sample size: Number of households
+"Afghanistan, 2016"	Living Conditions Survey	[Central Statistics Organization](http://cso.gov.af/)	
+"Bangladesh, 2016"	Household Income and Expenditure Survey	Bangladesh Bureau of Statistics	"46,068"
+"Bhutan, 2017"	Living Standards Survey	National Statistics Bureau	"11,396"
+"India, 2017"	National Sample Survey	Ministry of Statistics and Programme Implementation	
+"Maldives, 2016"	Household Income and Expenditure Survey	National Bureau of Statistics	"4,910"
+"Nepal, 2016"	Annual Household Survey	Central Bureau of Statistics	"4,500"
+"Pakistan, 2015"	Social and Living Standards Measurement Survey	Pakistan Bureau of Statistics	"24,238"
+"Sri Lanka, 2016"	Household Income and Expenditure Survey	Department of Census and Statistics	"21,756"
