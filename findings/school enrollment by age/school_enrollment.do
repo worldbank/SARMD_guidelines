@@ -1,5 +1,5 @@
 /*==================================================
-project:       School attendance in SAR using SARMF
+project:       School attendance in SAR using SARMD
 Author:        Javier Parada and Andres Castaneda 
 Dependencies:  The World Bank
 ----------------------------------------------------
@@ -7,7 +7,7 @@ Creation Date:    21 Mar 2019
 Modification Date:   
 Do-file version:    01
 References:         
-Output:             STata graph
+Output:             Stata graph
 ==================================================*/
 
 
@@ -35,7 +35,7 @@ local varlist "`r(varlist)'"
 cap which combomarginsplot 
 if (_rc) ssc install combomarginsplot 
 
-*---------- Evaluate initical conditions
+*---------- Evaluate initial conditions
 *countries
 if ("`countries'" == "") {
 	levelsof country, local(countries)
