@@ -4,7 +4,7 @@ Author:        Javier Parada and Andres Castaneda
 Dependencies:  The World Bank
 ----------------------------------------------------
 Creation Date:    21 Mar 2019 
-Modification Date:   
+Modification Date:   28 Mar 2019
 Do-file version:    01
 References:         
 Output:             Stata graph
@@ -19,7 +19,7 @@ cd ""
 
 local reponame "sarmd"
 local countries "LKA"
-local years     "2016"
+local years     "2016" 
 local surveys   ""
 
 cap which combomarginsplot 
@@ -36,32 +36,34 @@ drop _freq
 ds
 local varlist "`r(varlist)'"
 
-cap which combomarginsplot 
-if (_rc) ssc install combomarginsplot 
-
 *---------- Evaluate initial conditions
-*countries
+
 if ("`countries'" == "") {
-	levelsof country, local(countries)
+	levelsof country, local(countries) /* list countries if not specified */
 }
 
 *---------- Export to MATA
-mata: R = st_sdata(.,tokens(st_local("varlist")))
+mata: R = st_sdata(.,tokens(st_local("varlist"))) /* replace with putmata? */
 
 *---------- Loop over countries
 foreach country of local countries {
-	
+
 	
 	if ("`years'" == "") {
 		mata: st_local("years",                     /*   set local years 
 		 */       invtokens(                        /*    create tokens out of matrix
 		 */       select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
-		 */       " "))                            // separator (second temr in )
+		 */       " "))                            // separator (second term in )
 	}
 	 
 	foreach year of local years {
-	
-		datalibweb, countr(`country') year(`year') type(SARMD) clear 
+
+		if ("`country'" == "IND" & "`year'"=="2011") {
+			local surveyid "NSS68-SCH1.0-T1"
+		}
+		else local surveyid ""
+		
+		datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
 		
 		mean atschool [aw=wgt] if age < 25, over(age male urban) // same as anova
 		anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) // Estimate a two-way anova model
@@ -93,10 +95,11 @@ local surveys   ""
 *---------- Get repo
 datalibweb, repo(create `reponame', force) type(SARMD)
 contract country years survname 
+drop _freq
 ds
 local varlist "`r(varlist)'"
 
-*---------- Evaluate initical conditions
+*---------- Evaluate initial conditions
 *countries
 if ("`countries'" == "") {
 	levelsof country, local(countries)
@@ -112,18 +115,19 @@ save `cy', emptyok
 
 qui foreach country of local countries {
 	
-	
-	mata: st_local("years",    /*   set local years 
-	 */           invtokens(   /*    create tokens out of matrix
+	mata: st_local("years",                   /*   set local years 
+	 */          invtokens(                   /*    create tokens out of matrix
 	 */          select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
-	 */            " "))     // separator (second temr in )
+	 */          " "))                          // separator (second term in )
 	
 	local years: list uniq years // in case of more than one survey 
 	
-	if ("`country'" == "IND") {
-		local surveyid "IND_2011_NSS68-SCH10"
+
+	if ("`country'" == "IND" & "`year'"=="2011") {
+		local surveyid "NSS68-SCH1.0-T1"
 	}
 	else local surveyid ""
+	
 	
 	foreach year of local years {
 	
