@@ -22,6 +22,9 @@ local countries "LKA"
 local years     "2016"
 local surveys   ""
 
+cap which combomarginsplot 
+if (_rc) ssc install combomarginsplot 
+
 /*==================================================
            Alternative version 1
 ==================================================*/
@@ -29,11 +32,9 @@ local surveys   ""
 *---------- Get repo
 datalibweb, repo(create `reponame', force) type(SARMD)
 contract country years survname 
+drop _freq
 ds
 local varlist "`r(varlist)'"
-
-cap which combomarginsplot 
-if (_rc) ssc install combomarginsplot 
 
 *---------- Evaluate initical conditions
 *countries
