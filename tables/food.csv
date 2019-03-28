@@ -1,4 +1,4 @@
-Country,Number of food items ,Collection method,Quantity and/or Value 
+"Country, Year",Number of food items ,Collection method,Quantity and/or Value 
 "Afghanistan, 2016",92,"Recall (weekly)	",Quantity
 "Bangladesh, 2016",151,Diary (daily),Both
 "Bhutan, 2017			",115,"Recall (weekly, monthly, yearly)	",Both

@@ -1,6 +1,9 @@
 # Analytical notes {#application}
+***
 
 Some _significant_ applications are demonstrated in this chapter.
+
+## School attendance by age
 
 ## Household composition and expenditures
 
