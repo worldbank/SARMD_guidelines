@@ -163,7 +163,7 @@ We provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 
 ### Non-food
 
-The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc.  In most cases, the non-food expenditures component has to be constructed by aggregating expenditures on goods and services from different sections of a survey. 
+The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases items like clothing, footwear, kitchen equipment, curtains, bedcovers, etc.  In most cases, the non-food expenditures component must be constructed by aggregating expenditures on goods and services from different sections of a survey. 
 
 A homogenous definition of what constitutes non-food expenditures is required. The Classification of Individual Consumption According to Purpose (COICOP) is the international reference classification for household expenditures. We define non-food expenditures as categories 2-12 of the COICOP:
 
