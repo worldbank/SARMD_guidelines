@@ -50,10 +50,10 @@ foreach country of local countries {
 	
 	
 	if ("`years'" == "") {
-		mata: st_local("years",                         /*   set local years 
-		 */           invtokens(                        /*    create tokens out of matrix
-		 */              select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
-		 */            " "))                            // separator (second temr in )
+		mata: st_local("years",                     /*   set local years 
+		 */       invtokens(                        /*    create tokens out of matrix
+		 */       select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
+		 */       " "))                            // separator (second temr in )
 	}
 	 
 	foreach year of local years {
