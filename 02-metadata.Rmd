@@ -21,7 +21,7 @@ Extreme data deprivation may be measured as having less than two data points in 
 knitr::include_graphics("figures/Inventory.png")
 ```
 
-[![](figures/Inventory_map.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Map "Number of surveys avaialable in SARMD by country.")
+[![](figures/Inventory_map.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Map "Number of surveys available in SARMD by country.")
 
 ## Sample size
 
@@ -132,7 +132,19 @@ food <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/food.csv")
 knitr::kable(food,booktabs=TRUE, caption = 'Mixture of collection methods for food at home')
 ```
 
-Food baskets are usually organized by categories into cereals, meat, fish, dairy, fruits, vegetables, spices, and sweets. Alcohol and tobacco are considered non-food items for measuring purposes, but it is common to find them in the food section of a questionnaire. In most surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). However, this is not the norm. For example, the Afghanistan LCS 2016 asks what was the amount of 92 items used in the last seven days, but the price of each item is collected separately through a market price survey. 
+Food is composed of all edible goods that are purchased and consumed by the household with the purpose of nourishing. Food baskets are usually organized by categories into:
+
+1. Cereals and cereal products; 
+2. Meat; 
+3. Fish and other seafood;
+4. Milk, other dairy products and eggs; 
+5. Oils and fats; 
+6. Fruit and nuts; 
+7. Vegetables, tubers, plantains, cooking bananas and pulses; 
+8. Sugar, confectionery and desserts; 
+9. Salt, sauces and condiments, spices and culinary herbs and seeds.
+
+Alcohol and tobacco are considered non-food items for measuring purposes, but it is common to find them in the food section of a questionnaire. In most surveys, households report both quantities and expenditures for most of the foods they purchase (e.g. three kilograms of rice for 5 rupees). However, this is not the norm. For example, the Afghanistan LCS 2016 asks what was the amount of 92 items used in the last seven days, but the price of each item is collected separately through a market price survey. 
 
 Besides food produced and consumed at home, the food component should include food consumed outside the home, both formally such as at restaurants and cafés, and informally, such as small snacks and drinks. This component is usually recorded separately and is more likely to suffer from measurement error. An agreement on how these expenditures should be recorded has not been reached. For example, Afghanistan LCS 2016 asks for the total amount spent on food and drinks outside of home in the last month. In contrast, Bhutan LSS 2017 asks how many times did the household consume food for breakfast, lunch, dinner, snack, etc. outside of home in the last 7 days and what was the average value of the purchase. 
 
