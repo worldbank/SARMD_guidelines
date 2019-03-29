@@ -1,3 +1,5 @@
+# (PART) Analytical notes {-}
+
 # Analytical notes {#application}
 ***
 

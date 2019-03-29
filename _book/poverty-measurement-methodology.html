@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>About the Authors | South Asia Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 2 Poverty measurement methodology | South Asia Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="About the Authors | South Asia Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 2 Poverty measurement methodology | South Asia Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="About the Authors | South Asia Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 2 Poverty measurement methodology | South Asia Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="content.html">
+<link rel="prev" href="introduction-to-poverty-measurement.html">
+<link rel="next" href="metadata.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -132,24 +132,80 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="about-the-authors" class="section level1 unnumbered">
-<h1>About the Authors</h1>
+<div id="poverty-measurement-methodology" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Poverty measurement methodology</h1>
 <hr />
-<p>The South Asia Region Team for Statistical Development (SARTSD) consists of:</p>
-<ul>
-<li><p>Raul Andres Castañeda Aguilar</p></li>
-<li><p>Jayne Jungsun Yoo</p></li>
-<li><p>Francisco Javier Parada Gomez Urquiza</p></li>
-</ul>
-<p>Please let us know if you have any questions and do not hesitate to share any of your feedback: <a href="mailto:fparadagomezurqu@worldbank.org"><img src="figures/mail.png" /></a></p>
+<p>The World Bank set a target of reducing extreme poverty to less than 3 percent by 2030 and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line.</p>
+<p>This book overviews the data availability of household consumption surveys in the region of South Asia and their challenges for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (<span class="citation">Serajuddin et al. (<a href="#ref-serajuddin2015data">2015</a>)</span>). Spatial and temporal adjustments are necessary to take into account differences in costs of living.</p>
+<p>First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation.</p>
+<p>Second, spatial price differences, typically between urban and rural areas, can also be large and it is important to take them into account. In South Asia, price levels for rural households are often lower than for urban households. The ideal way to control for spatial differences in prices is to use a Paasche or Laspeyres index to account for differences in the cost of living across space.</p>
+<p>Third, it is necessary to convert expenditures to a common currency taking into account purchasing power. At present, data on purchasing power parity (PPP) comes from the International Comparison Program (ICP) collected in 2011, which is absent for Afghanistan. Purchasing power parities (PPPs) are the rates of currency conversion that equalise the purchasing power of different currencies by eliminating the differences in price levels between countries. In their simplest form, PPPs show the ratio of prices in national currencies of the same good or service in different countries. PPPs are also calculated for groups of products and for each of the various levels of aggregation up to and including GDP. The basket of goods and services priced is a sample of all those that are a part of final expenditure: household consumption, government services, capital formation and net exports, covered by GDP. This indicator is measured in terms of national currency per US dollar.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Country</th>
+<th align="center">Currency</th>
+<th align="center">ICP 2011</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Afghanistan</td>
+<td align="center">Afghan afghani</td>
+<td align="center">17.72?</td>
+</tr>
+<tr class="even">
+<td align="center">Bangladesh</td>
+<td align="center">Bangladeshi taka</td>
+<td align="center">24.8493</td>
+</tr>
+<tr class="odd">
+<td align="center">Bhutan</td>
+<td align="center">Bhutanese ngultrum</td>
+<td align="center">16.96292</td>
+</tr>
+<tr class="even">
+<td align="center">India</td>
+<td align="center">Indian rupee</td>
+<td align="center">13.98707</td>
+</tr>
+<tr class="odd">
+<td align="center">Maldives</td>
+<td align="center">Maldivian rufiyaa</td>
+<td align="center">10.67606</td>
+</tr>
+<tr class="even">
+<td align="center">Nepal</td>
+<td align="center">Nepalese rupee</td>
+<td align="center">25.75928</td>
+</tr>
+<tr class="odd">
+<td align="center">Pakistan</td>
+<td align="center">Pakistani rupee</td>
+<td align="center">25.41426</td>
+</tr>
+<tr class="even">
+<td align="center">Sri Lanka</td>
+<td align="center">Sri Lankan rupee</td>
+<td align="center">42.21894</td>
+</tr>
+</tbody>
+</table>
+<p>A fourth adjustment is dividing total household expenditure by some measure of the number of people in the household, and to assign the resulting per capita welfare measure to each household member as an individual. Later in the applications, we show how larger households typically have lower per capita expenditure levels than smaller households. In South Asia, the consequences of dividing total household expenditures by a greater number of individuals would not be complete without considering the extent of economies of scale within the household and a discussion of how much children and the elderly typically consume compared to adults.</p>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-serajuddin2015data">
+<p>Serajuddin, Umar, Hiroki Uematsu, Christina Wieser, Nobuo Yoshida, and Andrew Dabalen. 2015. <em>Data Deprivation: Another Deprivation to End</em>. The World Bank Policy Research working paper; no. WPS 7252.</p>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="content.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction-to-poverty-measurement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="metadata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -179,7 +235,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-metadata.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -188,7 +244,7 @@ gitbook.start({
 },
 "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
 "toc": {
-"collapse": "section",
+"collapse": "subsection",
 "scroll_highlight": true
 }
 });

@@ -1,0 +1,11 @@
+Measure,Description
+Gini,A measure of inequality between 0 (everyone has the same income) and 100 (richest person has all the income).
+Headcount,% of population living in households with consumption per person below the poverty line.
+Mean,Average monthly household per capita consumption expenditure from the survey in 2011 PPP.
+Median,Median of monthly household per capita consumption expenditure from the survey in 2011 PPP.
+MLD,"Mean log deviation is an index of inequality, given by the mean across the population of the log of the overall mean divided by individual income."
+Population,Country's population in millions.
+Povgap,"The mean shortfall of income from the poverty line. The mean is based on the entire population treating the nonpoor as having a shortfall of zero, and the shortfall is expressed as a proportion of the poverty line."
+Povline,Poverty line in 2011 PPP per day. The default poverty line is $1.90 per day.
+Squared,"The mean squared shortfall of income from the poverty line. The mean is based on the entire population treating the nonpoor as having a shortfall of zero, and the shortfall is expressed as a proportion of the poverty line (and then squared)."
+Watts,"This is the mean across the population of the proportionate poverty gaps, as measured by the log of the ratio of the poverty line to income, where the mean is formed over the whole population, counting the nonpoor as having a zero poverty gap."
