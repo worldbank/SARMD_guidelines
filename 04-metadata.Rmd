@@ -1,8 +1,3 @@
-
-# (PART) Metadata Analysis {-}
-
- Hola amigos
- 
 # Metadata Analysis {#metadata}
 
 ***

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>South Asia Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 1 Introduction to poverty measures in South Asia | South Asia Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="South Asia Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 1 Introduction to poverty measures in South Asia | South Asia Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="South Asia Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 1 Introduction to poverty measures in South Asia | South Asia Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="about-the-authors.html">
+<link rel="prev" href="content.html">
+<link rel="next" href="poverty-measurement-methodology.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -132,29 +132,173 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">South Asia Micro Database (SARMD) User Guidelines</h1>
-<p class="author"><em>South Asia Region Team for Statistical Development (SARTSD)</em></p>
-<p class="date"><em>2019-03-29</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<div id="introduction-to-poverty-measures-in-south-asia" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to poverty measures in South Asia</h1>
 <hr />
-<div class="figure">
-<img src="figures/sarmap.png" title="South Asia Region" />
-
-</div>
-<hr />
-<p>These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, labor, and household welfare provided by the South Asia Micro Database (SARMD). The region of South Asia consists of eight countries (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) for which there is at least satisfactory data availability. SARMD provides access to the nationally representative cross-sectional household surveys that form the basis to measure consumption-based poverty in South Asia. These household surveys focus on households as both consuming and producing units of analysis for which a nominal measure of total household expenditures is constructed by adding four expenditure components:</p>
-<ol style="list-style-type: lower-roman">
-<li>food expenditures;</li>
-<li>non-food, non-durable expenditures;</li>
-<li>expenditures on durables; and</li>
-<li>expenditures on housing.</li>
-</ol>
-<p>The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to the extreme poverty headcounts in the <a href="http://www.worldbank.org/en/publication/poverty-and-shared-prosperity">Poverty and Shared Prosperity Report (2018)</a>, in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide. Even though the region of South Asia does not lack data, these poverty headcounts and other welfare measures rely on household survey data that suffers from low frequency and comparability over time and across countries. This book overviews how the content, length, and complexity of the household surveys collected in the region vary between countries, and even within countries over time. It then provides a guide for the harmonization of variables across the region.</p>
-<p>Harmonization facilitates the use of household data at a regional level, especially when harmonized variables are constructed carefully. We provide a few examples on how the harmonized variables in SARMD may be used for research purposes. In the simple example below, household access to at least one bicycle (Yes=1, No=0) is averaged at a subnational (state or province) level and plotted in a map for the most recent survey available in each country. Even though survey characteristics vary and data comes from different years, having access to a bicycle seems to be significantly more common for households in Eastern India than in other areas of South Asia. These Tableau dashboards may be accessed by clicking on them and modified by using the filters provided, which allows the user to explore SARMD and learn what kind of data is available to study household welfare in South Asia.</p>
-<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Subnational/Subnational" title="Try clicking on this map."><img src="figures/bicycle.png" /></a></p>
+<p>According to the <a href="http://www.worldbank.org/en/publication/poverty-and-shared-prosperity">Poverty and Shared Prosperity Report (2018)</a>, Nigeria may already have overtaken India as the country with the most extreme poor in the world. At a regional level, the number of poor in South Asia dropped to 216 million people in 2015, compared to half a billion in 1990. Still, to achieve the <a href="https://www.un.org/sustainabledevelopment/poverty/">Sustainable Development Goals</a>, progress in poverty reduction needs to continue in India and the rest of South Asia.</p>
+<p>In 2015, South Asia accounted for 29% of the people living in extreme poverty worldwide (216 million extreme poor in South Asia out of the estimated 736 million extreme poor worldwide). Four out of five extreme poor in the South Asia region reside in India. Despite a poverty rate of 13.4 percent, India’s large population of 1.3 billion results in a high absolute number of poor (approximately 176 million poor people in 2015). Bangladesh has made remarkable progress in reducing poverty, but its large population still maintains it in second place within the region in terms of absolute number of poor (24.4 million extreme poor in 2016). The third place is Pakistan, which has a larger population than Bangladesh, but a smaller amount of extreme poor (9.9 million extreme poor in 2015). Pakistan has seen a consistent and significant decline in poverty over the 14 years from 2001 to 2015. Bhutan and Sri Lanka are considered development success stories where extreme poverty has become rare, although a large share of the population subsists on slightly more than the extreme poverty line. In the Maldives, extreme poverty is nearly nonexistent according to the latest survey data.</p>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Country = col_character(),
+##   `Survey year(s)` = col_character(),
+##   Population = col_number(),
+##   `Number of poor (millions)` = col_double(),
+##   `Poverty rate (%)` = col_double(),
+##   `Poverty gap (%)` = col_double(),
+##   `Poverty gap/rate (%)` = col_double()
+## )</code></pre>
+<p><img src="bookdown-demo_files/figure-html/pspr-1.png" width="672" /><img src="bookdown-demo_files/figure-html/pspr-2.png" width="672" /></p>
+<table>
+<caption><span id="tab:pspr">Table 1.1: </span>Poverty Measures in Poverty and Shared Prosperity Report (2018)</caption>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">Survey year(s)</th>
+<th align="right">Population</th>
+<th align="right">Number of poor (millions)</th>
+<th align="right">Poverty rate (%)</th>
+<th align="right">Poverty gap (%)</th>
+<th align="right">Poverty gap/rate (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">India</td>
+<td align="left">2011.5</td>
+<td align="right">1311.19</td>
+<td align="right">175.7</td>
+<td align="right">13.42</td>
+<td align="right">2.4</td>
+<td align="right">17.7</td>
+</tr>
+<tr class="even">
+<td align="left">Bangladesh</td>
+<td align="left">2010 and 2016</td>
+<td align="right">160.53</td>
+<td align="right">24.4</td>
+<td align="right">15.16</td>
+<td align="right">2.8</td>
+<td align="right">18.1</td>
+</tr>
+<tr class="odd">
+<td align="left">Pakistan</td>
+<td align="left">2013.5 and 2015.5</td>
+<td align="right">190.38</td>
+<td align="right">9.9</td>
+<td align="right">5.23</td>
+<td align="right">0.7</td>
+<td align="right">13.2</td>
+</tr>
+<tr class="even">
+<td align="left">Nepal</td>
+<td align="left">2010.17</td>
+<td align="right">28.57</td>
+<td align="right">2.0</td>
+<td align="right">7.03</td>
+<td align="right">1.4</td>
+<td align="right">19.8</td>
+</tr>
+<tr class="odd">
+<td align="left">Sri Lanka</td>
+<td align="left">2012.5 and 2016</td>
+<td align="right">25.00</td>
+<td align="right">0.2</td>
+<td align="right">0.77</td>
+<td align="right">0.1</td>
+<td align="right">11.7</td>
+</tr>
+<tr class="even">
+<td align="left">Bhutan</td>
+<td align="left">2012 and 2017</td>
+<td align="right">0.81</td>
+<td align="right">0.0</td>
+<td align="right">1.66</td>
+<td align="right">0.3</td>
+<td align="right">16.3</td>
+</tr>
+<tr class="odd">
+<td align="left">Maldives</td>
+<td align="left">2009.5</td>
+<td align="right">0.37</td>
+<td align="right">0.0</td>
+<td align="right">4.08</td>
+<td align="right">0.8</td>
+<td align="right">20.3</td>
+</tr>
+<tr class="even">
+<td align="left">Afghanistan</td>
+<td align="left">NA</td>
+<td align="right">35.53</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## Linking to GEOS 3.6.1, GDAL 2.2.3, PROJ 4.9.3</code></pre>
+<pre><code>## Loading required package: sp</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and remains predominantly rural, with the highest share of labor force in agriculture (73%) in the region as of 2016. The Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. In the case of Afghanistan, poverty is increasing as violence continues to affect the security of livelihoods and economic activity in the country.</p>
+<p>The World Bank’s poverty measures for South Asia provided by <a href="http://iresearch.worldbank.org/PovcalNet/home.aspx">PovcalNet</a> are shown in the following figure:</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Poverty/PovcalNet" title="The user may interact with this Tableau dashboard by clicking on the figure."><img src="figures/Povcalnet.png" /></a></p>
+<p>Table <a href="introduction-to-poverty-measures-in-south-asia.html#tab:povcalnet">1.2</a> provides a description of the poverty measures provided by PovcalNet:</p>
+<pre><code>## Parsed with column specification:
+## cols(
+##   Measure = col_character(),
+##   Description = col_character()
+## )</code></pre>
+<table>
+<caption><span id="tab:povcalnet">Table 1.2: </span>Poverty Measures in PovcalNet</caption>
+<thead>
+<tr class="header">
+<th align="left">Measure</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Gini</td>
+<td align="left">A measure of inequality between 0 (everyone has the same income) and 100 (richest person has all the income).</td>
+</tr>
+<tr class="even">
+<td align="left">Headcount</td>
+<td align="left">% of population living in households with consumption per person below the poverty line.</td>
+</tr>
+<tr class="odd">
+<td align="left">Mean</td>
+<td align="left">Average monthly household per capita consumption expenditure from the survey in 2011 PPP.</td>
+</tr>
+<tr class="even">
+<td align="left">Median</td>
+<td align="left">Median of monthly household per capita consumption expenditure from the survey in 2011 PPP.</td>
+</tr>
+<tr class="odd">
+<td align="left">MLD</td>
+<td align="left">Mean log deviation is an index of inequality, given by the mean across the population of the log of the overall mean divided by individual income.</td>
+</tr>
+<tr class="even">
+<td align="left">Population</td>
+<td align="left">Country’s population in millions.</td>
+</tr>
+<tr class="odd">
+<td align="left">Povgap</td>
+<td align="left">The mean shortfall of income from the poverty line. The mean is based on the entire population treating the nonpoor as having a shortfall of zero, and the shortfall is expressed as a proportion of the poverty line.</td>
+</tr>
+<tr class="even">
+<td align="left">Povline</td>
+<td align="left">Poverty line in 2011 PPP per day. The default poverty line is $1.90 per day.</td>
+</tr>
+<tr class="odd">
+<td align="left">Squared</td>
+<td align="left">The mean squared shortfall of income from the poverty line. The mean is based on the entire population treating the nonpoor as having a shortfall of zero, and the shortfall is expressed as a proportion of the poverty line (and then squared).</td>
+</tr>
+<tr class="even">
+<td align="left">Watts</td>
+<td align="left">This is the mean across the population of the proportionate poverty gaps, as measured by the log of the ratio of the poverty line to income, where the mean is formed over the whole population, counting the nonpoor as having a zero poverty gap.</td>
+</tr>
+</tbody>
+</table>
 
 </div>
             </section>
@@ -162,8 +306,8 @@
           </div>
         </div>
       </div>
-
-<a href="about-the-authors.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="content.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="poverty-measurement-methodology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -193,7 +337,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-poverty.Rmd",
 "text": "Edit"
 },
 "history": {
