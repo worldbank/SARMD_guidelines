@@ -4,7 +4,7 @@ author: "South Asia Region Team for Statistical Development (SARTSD)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
-documentclass: krantz
+documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes

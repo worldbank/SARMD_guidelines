@@ -3,7 +3,7 @@
 
 The South Asia Region Team for Statistical Development (SARTSD) consists of: 
 
-- Raul Andres Castaneda Aguilar
+- Raul Andres Castañeda Aguilar
 
 - Jayne Jungsun Yoo
 
@@ -14,11 +14,11 @@ Please let us know if you have any questions and do not hesitate to share any of
 # Content {-}
 ***
 
-**Chapter 1** presents the Metadata Analysis, which may be broadly described as an overview of the household survey questionnaires and other survey characteristics. This chapter studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. 
+**Part 1** presents the Metadata Analysis, which may be broadly described as an overview of the household survey questionnaires and other survey characteristics. This chapter studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. 
 
-**Chapter 2** presents the harmonized variables in the South Asia Micro Database (SARMD). We inspect the quality of these harmonized variables and verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time. Changes in poverty and inequality measures are also analyzed over time. 
+**Part 2** presents the harmonized variables in the South Asia Micro Database (SARMD). We inspect the quality of these harmonized variables and verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time. Changes in poverty and inequality measures are also analyzed over time. 
 
-**Chapter 3** presents some examples of how harmonized data in SARMD may be used for research purposes. 
+**Part 3** presents some examples of how harmonized data in SARMD may be used for research purposes. 
 
 
 ## Introduction to poverty measurement {-}

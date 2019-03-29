@@ -1,5 +1,10 @@
 
+# (PART) Metadata Analysis {-}
+
+ Hola amigos
+ 
 # Metadata Analysis {#metadata}
+
 ***
 [![](figures/Bubbles.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Cover "The user may learn more about sample size with this Tableau dashboard by clicking on the figure.")
 
