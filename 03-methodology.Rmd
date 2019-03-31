@@ -1,19 +1,29 @@
 # Poverty measurement methodology 
 ***
 
-The World Bank set a target of reducing extreme poverty to less than 3 percent by 2030 and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
+The World Bank set a target of reducing extreme poverty to [less than 3 percent by 2030](https://sdg-tracker.org/no-poverty) and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
 
 This book overviews the data availability of household consumption surveys in the region of South Asia and their challenges for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Spatial and temporal adjustments are necessary to take into account differences in costs of living. 
 
-First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. 
+First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. The following figure displays how the CPI has changed for each country in South Asia over time. 
+
+```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)"}
+library(readr)
+cpi <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/cpi.csv",col_names = TRUE, col_types = cols())
+
+library(ggplot2)
+ggplot(data=cpi, aes(x=year, y=cpi, group=country)) +
+  geom_line(aes(linetype=country))+
+  geom_point(aes(shape=country))
+```
 
 Second, spatial price differences, typically between urban and rural areas, can also be large and it is important to take them into account. In South Asia, price levels for rural households are often lower than for urban households. The ideal way to control for spatial differences in prices is to use a Paasche or Laspeyres index to account for differences in the cost of living across space. 
 
-Third, it is necessary to convert expenditures to a common currency taking into account purchasing power. At present, data on purchasing power parity (PPP) comes from the International Comparison Program (ICP) collected in 2011, which is absent for Afghanistan. Purchasing power parities (PPPs) are the rates of currency conversion that equalise the purchasing power of different currencies by eliminating the differences in price levels between countries. In their simplest form, PPPs show the ratio of prices in national currencies of the same good or service in different countries. PPPs are also calculated for groups of products and for each of the various levels of aggregation up to and including GDP. The basket of goods and services priced is a sample of all those that are a part of final expenditure: household consumption, government services, capital formation and net exports, covered by GDP. This indicator is measured in terms of national currency per US dollar.
+Third, it is necessary to convert expenditures to a common currency taking into account purchasing power. At present, data on purchasing power parity (PPP) comes from the International Comparison Program (ICP) collected in 2011, which is absent for Afghanistan. Purchasing power parities (PPPs) are the rates of currency conversion that equalize the purchasing power of different currencies by eliminating the differences in price levels between countries. In their simplest form, PPPs show the ratio of prices in national currencies of the same good or service in different countries. PPPs are also calculated for groups of products and for each of the various levels of aggregation up to and including GDP. The basket of goods and services priced is a sample of all those that are a part of final expenditure: household consumption, government services, capital formation and net exports, covered by GDP. This indicator is measured in terms of national currency per US dollar.
 
 |   Country   	|      Currency      	| ICP 2011 	|
 |:-----------:	|:------------------:	|:--------:	|
-| Afghanistan 	|   Afghan afghani   	|  17.72?  	|
+| Afghanistan 	|   Afghan afghani   	|     NA  	|
 |  Bangladesh 	|  Bangladeshi taka  	|  24.8493 	|
 |    Bhutan   	| Bhutanese ngultrum 	| 16.96292 	|
 |    India    	|    Indian rupee    	| 13.98707 	|
@@ -23,3 +33,22 @@ Third, it is necessary to convert expenditures to a common currency taking into 
 |  Sri Lanka  	|  Sri Lankan rupee  	| 42.21894 	|
 
 A fourth adjustment is dividing total household expenditure by some measure of the number of people in the household, and to assign the resulting per capita welfare measure to each household member as an individual. Later in the applications, we show how larger households typically have lower per capita expenditure levels than smaller households. In South Asia, the consequences of dividing total household expenditures by a greater number of individuals would not be complete without considering the extent of economies of scale within the household and a discussion of how much children and the elderly typically consume compared to adults. 
+
+A headcount ratio may be calculated in STATA as in the example below:
+
+```markdown
+# Example: Calculating poverty headcounts with 1.90 poverty line
+gen welfare=total_exp/hsize
+welf_ppp = welfare/cpi2011/icp2011/365
+gen poor190 = wefl_ppp < 1.90
+sum poor190 [aw=wgt]
+```
+```{r,eval=FALSE,echo=FALSE}
+The FGT measures devised by Foster, Greer and Thorbecke (1984) remain the most commonly used to measure poverty. They are defined as:
+
+$$\begin{equation}
+P_{\alpha}=\frac{1}{N}\sum^{N}_{i=1}I_{i}\left(\frac{\bar{u}-u_{i}}{\bar{u}}\right)^{\alpha}
+\end{equation}$$
+
+where N is the sample size, $$\bar{u}$$ is the scalar-valued poverty line, $$u_{i}$$ is the flow-based measure of welfare (income, expenditures, assets), $$I_{i}$$ is an indicator variable taking value one if $u_{i} < \bar{u}$ and zero otherwise, and $$\alpha$$ is a parameter reflecting the weight placed on the severity of poverty. Setting $$\alpha =0$$ yields the poverty headcount ratio $P_{0}$ (the share of a population falling below the poverty line). The higher order measures, $$P_{1}$$ and $$P_{2}$$, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from $$P_{0}$$ to $$P_{1}$$ to $$P_{2}$$, the $$P_{\alpha}$$ measure gets more and more sensitive to extremely low incomes.
+```

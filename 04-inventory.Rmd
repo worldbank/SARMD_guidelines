@@ -1,0 +1,127 @@
+# (PART) Metadata Analysis {-}
+
+# SARMD Inventory {#metadata}
+
+***
+[![](figures/Bubbles.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Cover "The user may learn more about sample size with this Tableau dashboard by clicking on the figure.")
+
+SARMD is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. This chapter provides an inventory of household surveys available in the South Asia Micro Database (SARMD) with the support of a series of accompanying Tableau dynamic dashboards. You may access the Tableau dashboards by clicking on them and on the figures' titles.
+
+The datasets may be accessed in STATA as shown in the next example:
+
+```markdown
+# Example: Opening a dataset in SARMD using STATA
+datalibweb, country(BGD) years(2016) type(SARMD) clear
+```
+
+Table \@ref(tab:latest) shows the latest available household surveys in SARMD and provides links to the National Statistics Offices' websites.
+
+```{r latest, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+library(readr)
+latest <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/latest.csv",col_names = TRUE, col_types = cols())
+knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
+```
+
+
+## Inventory
+
+Considering that the South Asia region has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure \@ref(fig:inv) presents the surveys that make part of the South Asia Micro Database (SARMD). Six countries have released recent rounds of household surveys (Pakistan 2015, Afghanistan 2016, Bangladesh 2016, Maldives 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. 
+
+Extreme data deprivation may be measured as having less than two data points in a ten-year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
+
+```{r inv, echo=FALSE, fig.cap='[SARMD Inventory](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability)', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Inventory.png")
+```
+
+[![](figures/Inventory_map.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Map "Number of surveys available in SARMD by country.")
+
+## Sample size
+
+India’s household survey is by far the largest covering 100,000 households in the 2009 and 2011 rounds as shown in Figure \@ref(fig:ssize). Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
+
+```{r ssize, echo=FALSE, fig.cap='[Sample Size](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines)', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("figures/Survey_size.png")
+```
+
+## Country descriptions
+
+The content of these household surveys varies widely and their comparison over time even within the same country is a major challenge. We provide a brief overview of survey collection for each country below: 
+
+### Afghanistan
+
+```{r afg, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Afghanistan.svg")
+```
+
+The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces for the latest round between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas. 
+
+The Central Statistics Organization (CSO) (http://cso.gov.af/) has used the ALCS 2016 to report that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population. 
+
+### Bangladesh
+
+```{r bgd,  echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Bangladesh.svg")
+```
+
+The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (http://bbs.gov.bd/) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations). 
+
+Based on the HIES 2016, the BBS reports that poverty was reduced substantially between 2010 and 2016. In 2010, the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%. 
+
+### Bhutan
+
+```{r btn,  echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Bhutan.svg")
+```
+
+The Bhutan Living Standards Survey (BLSS) 2017 is the fourth in a series of living standards surveys undertaken by the National Statistics Bureau (NSB) (http://nsb.gov.bt). Earlier surveys were done in 2003, 2007, and 2012 to collect information on the demographics, education, health, employment, housing, access to services, asset ownership, credit, self-perceived poverty, and happiness of the population. The BLSS 2017 included 11,660 households with 48,639 individuals. The sample for BLSS 2017 was designed to provide estimates for many indicators on the living conditions of Bhutanese in both urban and rural areas of the twenty Dzongkhags, including the four Thromdes (Thimphu, Phuentsholing, Gelephu and Samdrup Jongkhar). 
+
+The NSB reports a population poverty rate of 8.2% in 2017. The 2017 BLSS shows that the mean monthly household expenditure for the country is Nu33,542: Nu45,508 in urban areas, and Nu26,937 in rural areas. The mean monthly per capita household expenditure is Nu7,939. The monthly per capita household expenditure ofNu11,452 in urban areas is 85% higher than that in rural areas (Nu6,174). The mean per capita expenditure of households in the richest per capita consumption quintile of Nu17,802 is more than seven times that of households in the poorest per capita consumption quintile (Nu2,468).
+
+The NSB has also analyzed subjective happiness ratings by dzongkhags. Pema Gatshel is the happiest Dzongkhag (94%) followed by Samtse (more than 88%) and Trongsa Dzongkhags (more than 86%). The exception is Dagana Dzongkhag, where only four in every 10 respondents reported they are happy. Dagana also stands out as the Dzongkhag with the highest poverty rate. 
+
+### India
+
+```{r ind, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_India.svg")
+```
+
+Despite India's remarkable progress in reducing poverty, poverty remains widespread especially in the highly-populated Eastern states of Bihar, Chhattisgarh, Jharkhand, Madhya Pradesh, Odisha, and Uttar Pradesh. The national poverty estimates for India are based on rounds of Household Consumption Expenditure Surveys conducted by the National Sample Survey Office (NSSO) (http://mospi.gov.in/). The 68th round (July 2011-June 2012) of NSS is designated to measure household consumer expenditure, employment, and unemployment. The 68th round is the most recent round for which consumption data is currently available in SARMD. The survey covers the whole of the Indian Union except interior villages of Nagaland situated beyond five kilometers of the bus route and villages in Andaman and Nicobar Islands which remain inaccessible throughout the year. 
+
+In the 68th round two schedule types exist. The two schedule types differ by their reference periods (in the 68th round, Schedule Type 1 and Schedule Type 2 use the same reference periods as in the 66th round). Sample households were divided into two sets: Schedule Type 1 was canvassed in one set and Schedule Type 2 in the other. Schedule Type 1 requires that for certain non-food items (clothing, bedding, footwear, education, medical (institutional), durable goods), the same household should report data for two reference periods: the last 30 days and the last 365 days. For these same non-food items, the reference period used in Schedule Type 2 is only the last 365 days. As in the 66th round, items of food, pan, tobacco and intoxicants (food-plus category) are split into 2 blocks, block 5.1 and block 5.2, instead of being placed in a single block. Block 5.1 consists of cereals, pulses, milk and milk products, sugar and salt. This block has a reference period of 30 days in both Schedule Type 1 and Schedule Type 2. Block 5.2 consists of the other items of food, along with pan, tobacco and intoxicants. This block is assigned a reference period of last 30 days in Schedule Type 1 and a reference period of last 7 days in Schedule Type 2. 
+
+### Maldives
+
+```{r mdv, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Maldives.svg")
+```
+
+The latest round of the Maldives Household Income and Expenditure Survey (HIES) took place in 2016 with other rounds conducted in 2003 and 2009-10. The sample (4,910 households and 26,453 individuals) was designed by the National Bureau of Statistics (NBS) (http://statisticsmaldives.gov.mv/) in such a way that the results are representative for each of the 20 individual atolls and the capital Male’. The HIES 2016 questionnaire was completely revised and includes important survey improvements, particularly in the measurement of poverty, which also hinders comparability with past survey years (@maldives_2018). Improvements include the inclusion of rent and durable goods in the construction of the welfare aggregate, and change from diary to recall of food items. According to the national poverty line, the poverty is highest in Gdh. atoll and the lowest is in V. atoll. The Gini coefficient for Maldives is 0.313, and is slightly higher in Male’ than in the Atolls. 
+
+
+### Nepal
+
+```{r npl, echo=FALSE, out.width='35%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Nepal.svg.png")
+```
+
+National poverty estimates in Nepal are produced by the Central Bureau of Statistics (CBS) (http://cbs.gov.np/). The last national poverty update in Nepal was based on the 2010 Nepal Living Standard Survey (NLSS-III). Three rounds of the Nepal Living Standards Surveys (NLSS) have been carried out in 1995/96, 2003/04, and 2010/11. These surveys follow the World Bank’s Living Standards Measurement Survey methodology and cover a wide range of topics: demography, consumption, income, access to facilities, housing, education, health, employment, credit, remittances, etc. While the data from the next round of the NLSS is unlikely to be available until the end of 2019, the CBS has conducted five rounds of the Annual Household Survey (AHS) from 2012-13 to 2016-17. Before the release of the next national poverty rate estimates from NLSS-IV, the World Bank plans to prepare the poverty update report using the recent AHS. 
+
+The new administrative division of Nepal consists of seven provinces, some of which have not been named yet. These seven provinces are currently referred as Province No. 1, Province No. 2, Province No. 3, Gandaki, Province No. 5, Karnali, and Sudurpashchim. This new administrative division of Nepal was implemented with the new constitution on September 20, 2015. Before 2015, instead of provinces, Nepal was divided into developmental regions and administrative zones. 
+
+### Pakistan
+
+```{r pak, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Pakistan.svg")
+```
+
+The latest round of the Pakistan Social and Living Standards Measurement Survey (PSLM) 2015-2016 conducted by the Pakistan Bureau of Statistics (PBS) (http://www.pbs.gov.pk/) covers 24,238 households. It provides information on household income, savings, liabilities, consumption expenditures, and consumption patterns at national and provincial levels. Before this survey, six rounds were conducted during 2004-05, 2005-06, 2007-08, 2010-11, 2011-12 and 2013-14. The PSLM covers all urban and rural areas of the four provinces of Pakistan (Punjab, Khyber Pakhtunkhwa, Sindh, and Balochistan) excluding Federally Administered Tribal Areas (FATA) and military restricted areas. 
+
+The incidence of poverty is uneven across Pakistan's provinces. Khyber Pakhtunkhwa is the province with the lowest poverty headcount in 2015, while Balochistan accounts for the highest poverty rate. As in the rest of the region, poverty is higher in rural areas than in urban areas. 
+
+### Sri Lanka
+
+```{r lka, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+knitr::include_graphics("figures/Flag_of_Sri_Lanka.svg")
+```
+
+The Household Income and Expenditure Survey (HIES) conducted by the Department of Census and Statistics (DCS) (http://www.statistics.gov.lk/) is the main data source used to calculate poverty indices for Sri Lanka. The HIES 2016 is the ninth in the HIES series and was conducted in January-December 2016. SARMD also contains four of the previous rounds conducted in 2002, 2006, 2009, and 2012. THE HIES covers all 9 provinces (Central Province, Eastern Province, North Central Province, Northern Province, North Western Province, Sabaragamuwa, Southern Province, Uva, and Western Province) and 25 districts in the country. The survey provides information on household income and consumption expenditure to measure changes in living conditions. According to the DCS, the poverty headcount ratio declined from 6.7% in 2012/13 to 4.1% in 2016. Despite progress, pockets of deep poverty remain in the North and the East. Among the districts, Kilinochchi district reported the highest headcount index (18.2%) and Colombo had the lowest (0.9%). 
