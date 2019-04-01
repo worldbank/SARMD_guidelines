@@ -11,7 +11,7 @@ The datasets may be accessed in STATA as shown in the next example:
 
 ```markdown
 # Example: Opening a dataset in SARMD using STATA
-datalibweb, country(BGD) years(2016) type(SARMD) clear
+  datalibweb, country(BGD) years(2016) type(SARMD) clear
 ```
 
 Table \@ref(tab:latest) shows the latest available household surveys in SARMD and provides links to the National Statistics Offices' websites.
