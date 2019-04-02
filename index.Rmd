@@ -2,17 +2,15 @@
 title: "South Asia Micro Database (SARMD) User Guidelines"
 author: "South Asia Region Team for Statistical Development (SARTSD)"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
 bibliography: [book.bib, packages.bib]
+description: SARMD User Guidelines
+fontsize: 13 pt
+github-repo: randrescastaneda/SARMD_guidelines  # Thist must be changed to an official GIT repo
+monofont: "Source Code Pro"
+monofontoptions: Scale=0.7
+site: bookdown::bookdown_site
 biblio-style: apalike
 link-citations: yes
-fontsize: 13 pt
-monofont: "Source Code Pro"
-monofontoptions: "Scale=0.7"
-github-repo: rstudio/bookdown-demo
-description: "SARMD User Guidelines"
 ---
 
 # Preface {-}
