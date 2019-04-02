@@ -12,7 +12,7 @@ Some _significant_ applications are demonstrated in this chapter.
 Figure \@ref(fig:children) shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
 
 ```{r children, fig.cap='Average household size by per capita consumption quintile', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("figures/Children.png")
+knitr::include_graphics("./figures/Children.png")
 ```
 
 see Figure \@ref(fig:children) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children
@@ -23,7 +23,7 @@ see Figure \@ref(fig:children) at https://tab.worldbank.org/#/site/WBG/views/SAR
 The most vulnerable group in terms of low literacy is women older than 65 years. Even among younger adults and children, the difference in literacy rates between men and women is wide. Afghanistan has one of the lowest literacy rates in the world. In 2011, it was estimated at about 31% of the adult population (15 years or older). 
 
 ```{r literacy, fig.cap='Female Literacy Rate (15-65 years)', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("figures/Literacy.png")
+knitr::include_graphics("./figures/Literacy.png")
 ```
 
 see Figure \@ref(fig:literacy) at https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy

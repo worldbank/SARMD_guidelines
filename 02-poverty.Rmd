@@ -25,8 +25,7 @@ The latest poverty measures from the Poverty and Shared Prosperity Report (2018)
 
 ```{r pspr, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 
-library(readr)
-pspr <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/pspr.csv",col_names = TRUE, col_types = cols())
+pspr <- read_csv("./tables/pspr.csv",col_names = TRUE, col_types = cols())
 
 # Table
 knitr::kable(pspr,booktabs=TRUE, caption = 'Poverty Measures in Poverty and Shared Prosperity Report (2018)')
@@ -68,7 +67,7 @@ The World Bank’s poverty measures for South Asia provided by [PovcalNet](http:
 
 ```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
-povcalnet <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/povcalnet.csv",col_names = TRUE, col_types = cols())
+povcalnet <- read_csv("./tables/povcalnet.csv",col_names = TRUE, col_types = cols())
 knitr::kable(povcalnet,booktabs=TRUE, caption = 'Poverty Measures in PovcalNet')
 ```
 

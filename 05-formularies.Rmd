@@ -13,7 +13,7 @@ In most cases, countries modify their food baskets and change their data collect
 
 ```{r food, echo=FALSE, messages=FALSE, warning=FALSE}
 library(readr)
-food <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/food.csv", col_types = cols())
+food <- read_csv("./tables/food.csv", col_types = cols())
 knitr::kable(food,booktabs=TRUE, caption = 'Mixture of collection methods for food at home')
 ```
 
@@ -71,7 +71,7 @@ Similarly to what found studying the food component, non-food items are also col
 
 ```{r nonfood, echo=FALSE}
 library(readr)
-nonfood <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/nonfood.csv", col_types = cols())
+nonfood <- read_csv("./tables/nonfood.csv", col_types = cols())
 knitr::kable(nonfood,booktabs=TRUE, caption = 'Non-Food')
 ```
 
@@ -98,7 +98,7 @@ Table \@ref(tab:durables) provides a quick comparison between countries by prese
 
 ```{r durables, echo=FALSE}
 library(readr)
-durables <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/durables.csv", col_types = cols())
+durables <- read_csv("./tables/durables.csv", col_types = cols())
 knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 ```
 
@@ -122,7 +122,7 @@ In the rest of the countries, households are asked for their hypothetical rental
 
 ```{r housing, echo=FALSE}
 library(readr)
-housing <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/housing.csv", col_types = cols())
+housing <- read_csv("./tables/housing.csv", col_types = cols())
 knitr::kable(housing,booktabs=TRUE, caption = 'Housing')
 ```
 

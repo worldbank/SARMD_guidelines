@@ -35,7 +35,7 @@ Demographic variables consist of **age**, **male**, **hsize**, **relationcs**, *
 Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. 
 
 ```{r pyramid, fig.cap='Population Pyramid for Afghanistan (2013)', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("figures/Pyramid.png")
+knitr::include_graphics("./figures/Pyramid.png")
 ```
 
 see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid 
@@ -67,14 +67,14 @@ This section analyzes whether the sixteen asset variables in SARMD have been ade
 Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
 
 ```{r assets, fig.cap='Harmonized asset ownership in latest household survey round', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("figures/Assets.png")
+knitr::include_graphics("./figures/Assets.png")
 ```
 
 see Figure \@ref(fig:assets) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets 
 
 
 ```{r scatter, fig.cap='Access to refrigerator and access to electricity across surveys', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("figures/Scatter.png")
+knitr::include_graphics("./figures/Scatter.png")
 ```
 
 see Figure \@ref(fig:scatter) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Scatter 
