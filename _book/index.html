@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>South Asia Micro Database (SARMD) User Guidelines | South Asia Micro Database (SARMD)   User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
 
   <meta property="og:title" content="South Asia Micro Database (SARMD) User Guidelines | South Asia Micro Database (SARMD)   User Guidelines" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="SARMD User Guidelines" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta name="github-repo" content="randrescastaneda/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="South Asia Micro Database (SARMD) User Guidelines | South Asia Micro Database (SARMD)   User Guidelines" />
@@ -33,10 +33,9 @@
   
   
 
-<link rel="next" href="about-the-authors.html">
+<link rel="next" href="introduction.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -68,8 +67,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
-<li class="chapter" data-level="" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i>Content</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="1" data-path="introduction-to-poverty-measures-in-south-asia.html"><a href="introduction-to-poverty-measures-in-south-asia.html"><i class="fa fa-check"></i><b>1</b> Introduction to poverty measures in South Asia</a></li>
 <li class="chapter" data-level="2" data-path="poverty-measurement-methodology.html"><a href="poverty-measurement-methodology.html"><i class="fa fa-check"></i><b>2</b> Poverty measurement methodology</a></li>
 <li class="part"><span><b>I Metadata Analysis</b></span></li>
@@ -112,6 +110,8 @@
 <li class="chapter" data-level="6.4" data-path="application.html"><a href="application.html#nonlinear-relationship-between-expenditure-and-asset-acquisition"><i class="fa fa-check"></i><b>6.4</b> Nonlinear relationship between expenditure and asset acquisition</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="part"><span><b>IV Temporal sections</b></span></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -140,10 +140,7 @@
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
 <hr />
-<div class="figure">
-<img src="figures/sarmap.png" title="South Asia Region" />
-
-</div>
+<p><img src="figures/sarmap.png" title="South Asia Region" /></p>
 <hr />
 <p>These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, labor, and household welfare provided by the South Asia Micro Database (SARMD). The region of South Asia consists of eight countries (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) for which there is at least satisfactory data availability. SARMD provides access to the nationally representative cross-sectional household surveys that form the basis to measure consumption-based poverty in South Asia. These household surveys focus on households as both consuming and producing units of analysis for which a nominal measure of total household expenditures is constructed by adding four expenditure components:</p>
 <ol style="list-style-type: lower-roman">
@@ -153,8 +150,6 @@
 <li>expenditures on housing.</li>
 </ol>
 <p>The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to the extreme poverty headcounts in the <a href="http://www.worldbank.org/en/publication/poverty-and-shared-prosperity">Poverty and Shared Prosperity Report (2018)</a>, in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide. Even though the region of South Asia does not lack data, these poverty headcounts and other welfare measures rely on household survey data that suffers from low frequency and comparability over time and across countries. This book overviews how the content, length, and complexity of the household surveys collected in the region vary between countries, and even within countries over time. It then provides a guide for the harmonization of variables across the region.</p>
-<p>Harmonization facilitates the use of household data at a regional level, especially when harmonized variables are constructed carefully. We provide a few examples on how the harmonized variables in SARMD may be used for research purposes. In the simple example below, household access to at least one bicycle (Yes=1, No=0) is averaged at a subnational (state or province) level and plotted in a map for the most recent survey available in each country. Even though survey characteristics vary and data comes from different years, having access to a bicycle seems to be significantly more common for households in Eastern India than in other areas of South Asia. These Tableau dashboards may be accessed by clicking on them and modified by using the filters provided, which allows the user to explore SARMD and learn what kind of data is available to study household welfare in South Asia.</p>
-<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Subnational/Subnational" title="Try clicking on this map."><img src="figures/bicycle.png" /></a></p>
 
 </div>
             </section>
@@ -163,7 +158,7 @@
         </div>
       </div>
 
-<a href="about-the-authors.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -183,7 +178,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -193,14 +188,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
-"text": "Edit"
-},
-"history": {
 "link": null,
 "text": null
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["SARMD-Guidelines.pdf", "SARMD-Guidelines.epub"],
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
