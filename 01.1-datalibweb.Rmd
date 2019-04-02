@@ -15,7 +15,7 @@ Using the Datalibweb system has several advantage:
 ## Request access to the system
 Access to regional harmonized collections like SARMD or to the original/raw dataset is not given to users automatically---as it is the case with global harmonization such as the GMD---unless the dataset is marked with Public access for internal use, which is not the case for SARMD. Users need to contact the regional/collection focal point and ask for permission to use the data. Each user will have different profiles of subscription to the different collections and surveys depending on the purpose of the work in which the data is going to be used.  Without any subscription, users will be able to check the availability of the data, and query relevant metadata of all surveys. 
 
-To get access to the SARMD, send an email to contact: [Francisco Javier Parada Gomez Urquiza](mailto:fparadagomezurqu@worldbank.org) and the [datalibweb team](mailto:datalibweb@worldbank.org), specifying the following:
+To get access to the SARMD, send an email to  [Francisco Javier Parada Gomez Urquiza](mailto:fparadagomezurqu@worldbank.org) and the [datalibweb team](mailto:datalibweb@worldbank.org), specifying the following:
 
 * Small description of the project in which you're planning to use and what is the survey or collection.
 * Who is the TTL in charge of the project.
