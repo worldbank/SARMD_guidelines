@@ -38,7 +38,7 @@ cat('|      age|    male|    hsize|
 |      relationcs|        relationharm|        marital|')
 ```
 
-There are currently six essential demographic variables in SARMD: **age**, **male (0/1)**, **hsize**, **relationcs**, **relationharm** and **marital**. 
+There are currently six essential demographic variables in SARMD: **age**,  **hsize**, **male (0/1)**, **relationcs**, **relationharm** and **marital**. 
 
 ### age
 
@@ -60,7 +60,33 @@ Sex ratio is used to describe the number of females per 1000 of males. In India,
 
 ### relationcs
 
+This variable refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories as:
+
+- Household Head
+- Husband/Wife
+- Son/Daughter
+- Grandchildren
+- Grandfather/Grandmother
+- Father or mother
+- Father-in-law/Mother-in-law
+- Brother or sister 
+- Brother-in-law/sister-in-law 
+- Nephew or niece
+- Domestic servants
+- Employee
+- Other family relative
+- Unrelated member
+
 ### relationharm
+
+This variable refers to the simplified categories that indicate the relationship of an individual to the household head: 
+
+- Household Head
+- Spouse
+- Children
+- Parents
+- Other relatives
+- Non-relatives
 
 ### marital
 
