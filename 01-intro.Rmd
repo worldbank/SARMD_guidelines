@@ -1,26 +1,28 @@
-# About the Authors {-}
+# Introduction {-}
 ***
+The South Asia Region Monitoring Database (SARMD) is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period.
 
-The South Asia Region Team for Statistical Development (SARTSD) consists of: 
+The SARMD follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. However, given that the GMD encompasses a limited numbers of variables, the SARMD collection provides the users with a larger set of harmonized variables that---though not avaialable for comparability with countries from other regions---are comparable across the countries of the South Asia Region.As the GMD expands, new variables would be incorporated into SARMD until both datasers are identical and users can be referred to GMD only.
 
-- Raul Andres Castañeda Aguilar
+Harmonization facilitates the use of household data at a regional level, especially when harmonized variables are constructed carefully. We provide a few examples on how the harmonized variables in SARMD may be used for research purposes. In the simple example below, household access to at least one bicycle (Yes=1, No=0) is averaged at a subnational (state or province) level and plotted in a map for the most recent survey available in each country.  Even though survey characteristics vary and data comes from different years, having access to a bicycle seems to be significantly more common for households in Eastern India than in other areas of South Asia. These Tableau dashboards may be accessed by clicking on them and modified by using the filters provided, which allows the user to explore SARMD and learn what kind of data is available to study household welfare in South Asia.
 
-- Jayne Jungsun Yoo
+[![](figures/bicycle.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Subnational/Subnational "Try clicking on this map.")
 
-- Francisco Javier Parada Gomez Urquiza
+This book provides the user of SARMD a complete understanding of the harmonization in three main areas:
 
-Please let us know if you have any questions and do not hesitate to share any of your feedback: [![](figures/mail.png)](mailto:fparadagomezurqu@worldbank.org "Contact Us")
+**Part 1** presents the metadata analysis of the SARMD, which may be broadly described as an overview of the household survey questionnaires and other survey characteristics. This part studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. 
 
-# Content {-}
-***
+**Part 2** presents the harmonized variables in the South Asia Micro Database (SARMD). We inspect the quality of these harmonized variables and verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A *static quality check* evaluates the coherence of each variable and its consistency with the rest of the variables in the dataset. At the individual level, let's take variable `age` as an example. This variable, which simply refers to the age of the individual, might be required to pass the following quality checks:
 
-**Part 1** presents the Metadata Analysis, which may be broadly described as an overview of the household survey questionnaires and other survey characteristics. This part studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures. 
+* It should not have negative values. (internal coherence)
+* All its values should fall within a reasonable age spam (e.g., 0-120).[^agespam]
+* Number of working years should not be greater than `age`. (internal consistency with other variables).
 
-**Part 2** presents the harmonized variables in the South Asia Micro Database (SARMD). We inspect the quality of these harmonized variables and verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time. Changes in poverty and inequality measures are also analyzed over time. 
+At the household level, for example, households that report access to a television and, at the same time, do not have access to electricity may raise questions on whether these variables were harmonized correctly or whether the inconsistency comes from the raw data. 
 
-**Part 3** presents some examples of how harmonized data in SARMD may be used for research purposes. 
+On the other hand, a *dynamic quality check* evaluates the inconsistencies in measurement of harmonized data and provides a better overview on whether categorical variables have changed over time. Changes in poverty and inequality measures are also analyzed over time. 
+
+**Part 3** presents a set of socieconomic findings at the regional level using SARMD. Each of the findings in this seciton is just a small example of all the possible analyses that can be done with SARMD. One of the main value added of these examples is the they come with the Stata code used to replicate the results. In this way, we expect the user gets not only familiar with SARMD, but also uses these pieces of code as starting points for their own projects. 
 
 
-
-
-
+[^agespam]: Even though it is possible to find in the survey people older than 120 years old, it is not only unlikely but also problematic for anonimization. 
