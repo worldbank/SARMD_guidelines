@@ -1,10 +1,7 @@
 "Country, Year",Number of assets,Quantity,Value
-"Afghanistan, 2016",18,Yes,Yes
-.,7,Yes,Yes
+"Afghanistan, 2016",18 <br> 7 ,Yes <br> Yes,Yes <br> Yes
 "Bangladesh, 2016",27,Yes,Yes
-"Bhutan, 2017",13,No,No
-.,9,Yes,No
-.,23,Yes,Yes
+"Bhutan, 2017",13 <br> 9 <br> 23,No <br> Yes <br> Yes,No <br> No <br> Yes
 "India, 2011",53,"Yes, but only if recently purchased","Yes, but only if recently purchased"
 "Maldives, 2016",16,Yes,Yes
 "Nepal, 2016",23,Yes,Yes
