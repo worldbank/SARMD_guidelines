@@ -1,5 +1,5 @@
 --- 
-title: "South Asia Micro Database (SARMD) User Guidelines"
+title: "South Asia Micro Database (SARMD) <br> User Guidelines"
 author: "South Asia Region Team for Statistical Development (SARTSD)"
 date: "`r Sys.Date()`"
 geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"
