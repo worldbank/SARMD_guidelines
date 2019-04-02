@@ -46,11 +46,13 @@ The youngest country in the region is Afghanistan.
 
 [![](figures/dem_age.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-### male
-
 ### hsize
 
 Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
+
+[![](figures/dem_hsize.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+### male
 
 ### relationcs
 
