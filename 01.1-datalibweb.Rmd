@@ -36,3 +36,20 @@ net install datalibweb
 ### Option 2. Manual Installation
 * Get the file from this [link](http://eca/povdata/datalibweb/_ado/datalibweb.zip)
 * Copy with replacement all the files into c:/ado, without changing the folder structure.
+
+## Citing datalibweb:
+
+`datalibweb` is a Stata program developed and supported by the Global Poverty Team for Statistical Development of the World Bank, contributed by many different teams: 
+* Stata front-end application: Minh Cong Nguyen, R. Andrés Castañeda Aguilar, José Montes, and João Pedro Azevedo, with support from Paul Andres Corral Rodas
+* Plugin, IT coordinator/support: Paul Ricci, Louis Wahsieh Elliott, Antonio Ramos-Izquierdo
+* SharePoint web application: Intekhab Alam Sheikh, Monisha Menon, Nishant Nitin Trivedi
+* Overall datalibweb project supervision: João Pedro Azevedo and Minh Cong Nguyen. 
+
+`datalibweb` was based on the initial effort of `datalib` created by R.Andrés Castañeda Aguilar and João Pedro Azevedo in LAC TSD; and Datalib2 created by Cesar Cancho and João Pedro Azevedo in ECA TSD.
+
+Please cite the use of `datalibweb` and SARMD in one or several of the following ways depending on the nature of your work. 
+
+1. "Source: SARMD (SARTSD/World Bank)"
+2. "Source: SARMD Harmonization (SARTSD)"
+3. SARTSD `r regmatches(Sys.Date(), regexpr("[0-9]{4}", Sys.Date()))` DATALIBWEB: SARMD Ex-post Harmonization. Countries: [country names/years (separated by semi-colon)]. As of [date of access (dd/mm/yyyy)]
+
