@@ -3,6 +3,15 @@
 
 Replicability, security, and efficiency are principles to work with SARMD. This is why, the entire collection is only avaialable through the [datalibweb](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/datalibweb.aspx) system. Datalibweb is a data system specifically designed to enable users to access the most up to date versions of non-harmonized (original/raw) and harmonized datasets of different collections across Global Practices. SARMD is one of them. This section, thus, is mainly a compilation of excerpts from the documentaiton provided by the [Global Team for Statistical Development](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/Main.aspx) (GTSD) in the Poverty and Equity Global practice. 
 
+Using the Datalibweb system has several advantage:
+* Instant access to raw and harmonized surveys ready to use for country or regional level analysis.
+* Automatically generated time-deflated variables and poverty lines.
+* User friendly interactive interface  in Stata
+* A suitable Stata command for replicability, research, and programing purposes.
+* Ability to combine different country surveys and survey years. 
+* Merging raw data and modules of harmonized collections on the fly (option in progress). 
+
+
 ## Request access to the system
 Access to regional harmonized collections like SARMD or to the original/raw dataset is not given to users automatically---as it is the case with global harmonization such as the GMD---unless the dataset is marked with Public access for internal use, which is not the case for SARMD. Users need to contact the regional/collection focal point and ask for permission to use the data. Each user will have different profiles of subscription to the different collections and surveys depending on the purpose of the work in which the data is going to be used.  Without any subscription, users will be able to check the availability of the data, and query relevant metadata of all surveys. 
 
