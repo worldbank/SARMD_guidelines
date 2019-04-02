@@ -1,3 +1,19 @@
+---  
+title: "South Asia Micro Database (SARMD) User Guidelines" 
+author: "South Asia Region Team for Statistical Development (SARTSD)" 
+date: "`r Sys.Date()`" 
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm" 
+site: bookdown::bookdown_site 
+output: bookdown::gitbook 
+documentclass: book 
+bibliography: [book.bib, packages.bib] 
+biblio-style: apalike 
+link-citations: yes 
+fontsize: 13 pt 
+monofont: "Source Code Pro" 
+monofontoptions: "Scale=0.7" 
+github-repo: rstudio/bookdown-demo 
+description: "SARMD User Guidelines" 
 --- 
 title: "South Asia Micro Database (SARMD) User Guidelines" 
 author: "South Asia Region Team for Statistical Development (SARTSD)" 
@@ -13,19 +29,3 @@ monofontoptions: "Scale=0.7"
 github-repo: randrescastaneda/SARMD_guidelines  # Thist must be changed to an official GIT repo
 description: "SARMD User Guidelines" 
 --- 
-
-# Preface {-}
-***
-
-![](figures/sarmap.png "South Asia Region")
-
-***
-These user guidelines provide help to any researcher interested in working with regionally-comparable estimates of poverty incidence, demographic characteristics, education, labor, and household welfare provided by the South Asia Micro Database (SARMD). The region of South Asia consists of eight countries (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) for which there is at least satisfactory data availability. SARMD provides access to the nationally representative cross-sectional household surveys that form the basis to measure consumption-based poverty in South Asia. These household surveys focus on households as both consuming and producing units of analysis for which a nominal measure of total household expenditures is constructed by adding four expenditure components:
-
-i. food expenditures; 
-ii. non-food, non-durable expenditures; 
-iii. expenditures on durables; and
-iv. expenditures on housing. 
-
-The main welfare measure used in the region to measure poverty, the expenditures per capita aggregate, must be spatially and temporally adjusted, and converted into 2011 purchasing power parity (PPP) dollars, to be used to calculate the proportion of people below the extreme poverty line of $1.90 per person per day. According to the extreme poverty headcounts in the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.org/en/publication/poverty-and-shared-prosperity), in 2015, South Asia accounted for 29% of the estimated 736 million people living in extreme poverty worldwide. Even though the region of South Asia does not lack data, these poverty headcounts and other welfare measures rely on household survey data that suffers from low frequency and comparability over time and across countries. This book overviews how the content, length, and complexity of the household surveys collected in the region vary between countries, and even within countries over time. It then provides a guide for the harmonization of variables across the region.
-

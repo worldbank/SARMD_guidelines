@@ -1,12 +1,17 @@
 # (PART) Quality Check {-}
 
 # Harmonized variables {#qcheck}
-
 ***
 
+Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. The following Tableau dashboards display which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
+
+```{r,eval=FALSE,echo=FALSE}
 This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
+```
 
 ## Basic survey characteristics
+
+[![](figures/harm_1.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 
 ```{r table0, echo=FALSE, results='asis'}
@@ -24,6 +29,8 @@ The essential variables that identify each dataset and should always be included
 **spdef** 
 
 ## Demographics
+
+[![](figures/harm_2.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ```{r table1, echo=FALSE, results='asis'}
 cat('|      age|    male|    hsize|
@@ -43,6 +50,8 @@ see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_
 
 ## Education
 
+[![](figures/harm_3.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ```{r table2, echo=FALSE, results='asis'}
 cat('|      atschool|    ed_mod_age|    everattend|   literacy|
 |------------:|-----------:|------------:|--------------:|
@@ -53,6 +62,8 @@ The adult literacy rate – referring to the population aged 15 and over – is 
 
 
 ## Durable assets
+
+[![](figures/harm_4.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ```{r table3, echo=FALSE, results='asis'}
 cat('|      bicycle|    computer|    landphone|   refrigerator|
@@ -83,11 +94,20 @@ see Figure \@ref(fig:scatter) at https://tab.worldbank.org/#/site/WBG/views/SAR_
 Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
 
 ## Housing
+
+[![](figures/harm_5.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
 
 ## Labor
 
-## Poverty
+[![](figures/harm_6.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+## Welfare
+
+[![](figures/harm_7.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+### Poverty
 
 This section presents the latest data on regional extreme poverty rates using the international poverty line of US$1.90 in 2011 purchasing power parity dollars. Even though, Afghanistan is missing, the ALCS 2016-17 recorded a sharp deterioration in welfare of the Afghan population. The proportion of population living below the national poverty line increased from 34 percent in 2007-08 to 55 percent in 2016-17. The latest poverty figures imply that at the time of the survey, close to 16 million Afghans lived in poverty. 
 
@@ -101,5 +121,5 @@ sum poor190 [aw=weight_h]
 
 
 
-## Inequality
+### Inequality
 The Gini index for Afghanistan showed a small decrease between the surveys of 2011-12 and 2016-17, from 0.30 to 0.29. 
