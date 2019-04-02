@@ -23,30 +23,46 @@ cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
 ```
 
 
-The essential variables that identify each dataset and should always be included are **countrycode**, **year**, **survey**, **vermast**, **veralt**, **idh**, and **idp**. Weights are defined as **wgt** and **pop_wgt=wgtxhsize**. The dates of the survey are recorded as **int_year** and **int_month**. The geographical location within the country’s administrative division is recorded as **subnatid1**, and in some cases, **subnatid2** may provide a more specific location. 
+The essential variables that identify each dataset are **countrycode**, **year**, **survey**, **vermast**, **veralt**, **idh**, and **idp**. Weights are defined as **wgt** and **pop_wgt=wgtxhsize**. The dates of the survey are recorded as **int_year** and **int_month**. The geographical location within the country’s administrative division is recorded as **subnatid1**, and in some cases, **subnatid2** may provide a more specific location. 
 **psu**
 **strata**
 **spdef** 
 
-## Demographics
+## Demographic variables
 
 [![](figures/harm_2.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-```{r table1, echo=FALSE, results='asis'}
+```{r table1, echo=FALSE, results='asis', eval=FALSE}
 cat('|      age|    male|    hsize|
 |------------:|-----------:|------------:|
 |      relationcs|        relationharm|        marital|')
 ```
 
-Demographic variables consist of **age**, **male**, **hsize**, **relationcs**, **relationharm** and **marital**. 
-Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. 
+There are currently six essential demographic variables in SARMD: **age**, **male (0/1)**, **hsize**, **relationcs**, **relationharm** and **marital**. 
 
-```{r pyramid, fig.cap='Population Pyramid for Afghanistan (2013)', out.width='80%', fig.asp=.75, fig.align='center'}
+### age
+
+The youngest country in the region is Afghanistan. 
+
+[![](figures/dem_age.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+### male
+
+### hsize
+
+Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
+
+### relationcs
+
+### relationharm
+
+### marital
+
+Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.  
+
+```{r pyramid, echo=FALSE, fig.cap='[Population Pyramid for Afghanistan (2013)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid)', fig.align='center'}
 knitr::include_graphics("./figures/Pyramid.png")
 ```
-
-see Figure \@ref(fig:pyramid) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid 
-
 
 ## Education
 

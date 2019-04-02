@@ -131,7 +131,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="part"><span><b>II Quality Check</b></span></li>
 <li class="chapter" data-level="5" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i><b>5</b> Harmonized variables</a><ul>
 <li class="chapter" data-level="5.1" data-path="qcheck.html"><a href="qcheck.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>5.1</b> Basic survey characteristics</a></li>
-<li class="chapter" data-level="5.2" data-path="qcheck.html"><a href="qcheck.html#demographics"><i class="fa fa-check"></i><b>5.2</b> Demographics</a></li>
+<li class="chapter" data-level="5.2" data-path="qcheck.html"><a href="qcheck.html#demographic-variables"><i class="fa fa-check"></i><b>5.2</b> Demographic variables</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="qcheck.html"><a href="qcheck.html#age"><i class="fa fa-check"></i><b>5.2.1</b> age</a></li>
+<li class="chapter" data-level="5.2.2" data-path="qcheck.html"><a href="qcheck.html#male"><i class="fa fa-check"></i><b>5.2.2</b> male</a></li>
+<li class="chapter" data-level="5.2.3" data-path="qcheck.html"><a href="qcheck.html#hsize"><i class="fa fa-check"></i><b>5.2.3</b> hsize</a></li>
+<li class="chapter" data-level="5.2.4" data-path="qcheck.html"><a href="qcheck.html#relationcs"><i class="fa fa-check"></i><b>5.2.4</b> relationcs</a></li>
+<li class="chapter" data-level="5.2.5" data-path="qcheck.html"><a href="qcheck.html#relationharm"><i class="fa fa-check"></i><b>5.2.5</b> relationharm</a></li>
+<li class="chapter" data-level="5.2.6" data-path="qcheck.html"><a href="qcheck.html#marital"><i class="fa fa-check"></i><b>5.2.6</b> marital</a></li>
+</ul></li>
 <li class="chapter" data-level="5.3" data-path="qcheck.html"><a href="qcheck.html#education"><i class="fa fa-check"></i><b>5.3</b> Education</a></li>
 <li class="chapter" data-level="5.4" data-path="qcheck.html"><a href="qcheck.html#durable-assets-1"><i class="fa fa-check"></i><b>5.4</b> Durable assets</a></li>
 <li class="chapter" data-level="5.5" data-path="qcheck.html"><a href="qcheck.html#housing-1"><i class="fa fa-check"></i><b>5.5</b> Housing</a></li>
@@ -208,36 +215,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tr>
 </tbody>
 </table>
-<p>The essential variables that identify each dataset and should always be included are <strong>countrycode</strong>, <strong>year</strong>, <strong>survey</strong>, <strong>vermast</strong>, <strong>veralt</strong>, <strong>idh</strong>, and <strong>idp</strong>. Weights are defined as <strong>wgt</strong> and <strong>pop_wgt=wgtxhsize</strong>. The dates of the survey are recorded as <strong>int_year</strong> and <strong>int_month</strong>. The geographical location within the country’s administrative division is recorded as <strong>subnatid1</strong>, and in some cases, <strong>subnatid2</strong> may provide a more specific location. <strong>psu</strong> <strong>strata</strong> <strong>spdef</strong></p>
+<p>The essential variables that identify each dataset are <strong>countrycode</strong>, <strong>year</strong>, <strong>survey</strong>, <strong>vermast</strong>, <strong>veralt</strong>, <strong>idh</strong>, and <strong>idp</strong>. Weights are defined as <strong>wgt</strong> and <strong>pop_wgt=wgtxhsize</strong>. The dates of the survey are recorded as <strong>int_year</strong> and <strong>int_month</strong>. The geographical location within the country’s administrative division is recorded as <strong>subnatid1</strong>, and in some cases, <strong>subnatid2</strong> may provide a more specific location. <strong>psu</strong> <strong>strata</strong> <strong>spdef</strong></p>
 </div>
-<div id="demographics" class="section level2">
-<h2><span class="header-section-number">5.2</span> Demographics</h2>
+<div id="demographic-variables" class="section level2">
+<h2><span class="header-section-number">5.2</span> Demographic variables</h2>
 <p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing" title="The user may interact with this Tableau dashboard by clicking on the figure."><img src="figures/harm_2.png" /></a></p>
-<table>
-<thead>
-<tr class="header">
-<th align="right">age</th>
-<th align="right">male</th>
-<th align="right">hsize</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">relationcs</td>
-<td align="right">relationharm</td>
-<td align="right">marital</td>
-</tr>
-</tbody>
-</table>
-<p>Demographic variables consist of <strong>age</strong>, <strong>male</strong>, <strong>hsize</strong>, <strong>relationcs</strong>, <strong>relationharm</strong> and <strong>marital</strong>. Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. Population pyramids such as the one provided in Figure <a href="qcheck.html#fig:pyramid">5.1</a> allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">include_graphics</span>(<span class="st">&quot;./figures/Pyramid.png&quot;</span>)</code></pre></div>
+<p>There are currently six essential demographic variables in SARMD: <strong>age</strong>, <strong>male (0/1)</strong>, <strong>hsize</strong>, <strong>relationcs</strong>, <strong>relationharm</strong> and <strong>marital</strong>.</p>
+<div id="age" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> age</h3>
+<p>The youngest country in the region is Afghanistan.</p>
+<p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart" title="The user may interact with this Tableau dashboard by clicking on the figure."><img src="figures/dem_age.png" /></a></p>
+</div>
+<div id="male" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> male</h3>
+</div>
+<div id="hsize" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> hsize</h3>
+<p>Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries.</p>
+</div>
+<div id="relationcs" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> relationcs</h3>
+</div>
+<div id="relationharm" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> relationharm</h3>
+</div>
+<div id="marital" class="section level3">
+<h3><span class="header-section-number">5.2.6</span> marital</h3>
+<p>Population pyramids such as the one provided in Figure <a href="qcheck.html#fig:pyramid">5.1</a> allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.</p>
 <div class="figure" style="text-align: center"><span id="fig:pyramid"></span>
-<img src="figures/Pyramid.png" alt="Population Pyramid for Afghanistan (2013)" width="80%" />
+<img src="figures/Pyramid.png" alt="[Population Pyramid for Afghanistan (2013)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid)" width="763" />
 <p class="caption">
-Figure 5.1: Population Pyramid for Afghanistan (2013)
+Figure 5.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid">Population Pyramid for Afghanistan (2013)</a>
 </p>
 </div>
-<p>see Figure <a href="qcheck.html#fig:pyramid">5.1</a> at <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid" class="uri">https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid</a></p>
+</div>
 </div>
 <div id="education" class="section level2">
 <h2><span class="header-section-number">5.3</span> Education</h2>
