@@ -21,3 +21,18 @@ To get access to the SARMD, send an email to  [Francisco Javier Parada Gomez Urq
 * Who is the TTL in charge of the project.
 * Names and UPIs of the people who will be working directly with that data
 
+## Install the `datalibweb` command in Stata
+
+The Datalibweb system can be accessed through the `datalibweb` Stata command. This command is already installed in all the computers of the World Bank with an official Stata licence. In case it is not installed in your computer you could do the following
+
+### Option 1. Direct Installation
+* Close all Stata sessions
+* Enter the following lines in Stata 
+```
+net from "http://eca/povdata/datalibweb/_ado"`
+net install datalibweb
+```
+
+### Option 2. Manual Installation
+* Get the file from this [link](http://eca/povdata/datalibweb/_ado/datalibweb.zip)
+* Copy with replacement all the files into c:/ado, without changing the folder structure.
