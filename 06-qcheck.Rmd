@@ -54,6 +54,10 @@ Household size is close to seven in Afghanistan, Pakistan and Maldives, and much
 
 ### male
 
+Sex ratio is used to describe the number of females per 1000 of males. In India, and some other countries in South Asia, this ratio may be heavily skewed towards men.
+
+[![](figures/dem_male.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ### relationcs
 
 ### relationharm
