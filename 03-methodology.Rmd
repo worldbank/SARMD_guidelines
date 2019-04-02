@@ -9,7 +9,7 @@ First, a consumer price index (CPI) is necessary to measure by how much the gene
 
 ```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)"}
 library(readr)
-cpi <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/cpi.csv",col_names = TRUE, col_types = cols())
+cpi <- read_csv("./tables/cpi.csv",col_names = TRUE, col_types = cols())
 
 library(ggplot2)
 ggplot(data=cpi, aes(x=year, y=cpi, group=country)) +

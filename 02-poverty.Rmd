@@ -2,16 +2,22 @@
 ***
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, tidy=TRUE, cache=FALSE, message=FALSE}
-library(sf)          # classes and functions for vector data
-library(sp)          # classes and functions for vector data
-library(raster)      # classes and functions for raster data
-library(spData)      # load geographic data
-library(spDataLarge)
-library(ggplot2)
+
+pkg <-  c("sf", "sp", "raster", "spData", "ggplot2", "dplyr", "readr")
+new.pkg <- pkg[!(pkg %in% installed.packages()[,"Package"])]
+
+if (length(new.pkg)) install.packages(new.pkg) # Install missing packages
+inst = lapply(pkg, library, character.only = TRUE) # load them
+
 ```
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, tidy=TRUE, cache=FALSE}
-world_asia = world[world$name_long == "Afghanistan" | world$name_long == "Bangladesh" |world$name_long == "Bhutan" | world$name_long == "India" |world$name_long == "Maldives" | world$name_long == "Nepal" |world$name_long == "Pakistan" | world$name_long == "Sri Lanka", ]
+SAR_countries <- c("Afghanistan" ,"Bangladesh" ,"Bhutan" ,
+                   "India" ,"Maldives" ,"Nepal" ,"Pakistan" ,"Sri Lanka")
+
+world_asia <- world %>% 
+                    filter(name_long %in% SAR_countries)
+
 #plot(world_asia["name_long"],)
 # plot(st_geometry(world_asia), expandBB = c(0, 0, 0, 0))
 # https://github.com/Robinlovelace/geocompr/blob/master/code/chapters/02-spatial-data.R
@@ -25,8 +31,7 @@ The latest poverty measures from the Poverty and Shared Prosperity Report (2018)
 
 ```{r pspr, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 
-library(readr)
-pspr <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/pspr.csv",col_names = TRUE, col_types = cols())
+pspr <- read_csv("./tables/pspr.csv",col_names = TRUE, col_types = cols())
 
 # Table
 knitr::kable(pspr,booktabs=TRUE, caption = 'Poverty Measures in Poverty and Shared Prosperity Report (2018)')
@@ -68,7 +73,7 @@ The World Bank’s poverty measures for South Asia provided by [PovcalNet](http:
 
 ```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
-povcalnet <- read_csv("~/SARMD_User_Guidelines/SARMD_guidelines/tables/povcalnet.csv",col_names = TRUE, col_types = cols())
+povcalnet <- read_csv("./tables/povcalnet.csv",col_names = TRUE, col_types = cols())
 knitr::kable(povcalnet,booktabs=TRUE, caption = 'Poverty Measures in PovcalNet')
 ```
 
