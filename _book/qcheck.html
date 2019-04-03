@@ -139,7 +139,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.2.5" data-path="qcheck.html"><a href="qcheck.html#relationharm"><i class="fa fa-check"></i><b>5.2.5</b> relationharm</a></li>
 <li class="chapter" data-level="5.2.6" data-path="qcheck.html"><a href="qcheck.html#marital"><i class="fa fa-check"></i><b>5.2.6</b> marital</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="qcheck.html"><a href="qcheck.html#education"><i class="fa fa-check"></i><b>5.3</b> Education</a></li>
+<li class="chapter" data-level="5.3" data-path="qcheck.html"><a href="qcheck.html#education"><i class="fa fa-check"></i><b>5.3</b> Education</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="qcheck.html"><a href="qcheck.html#literacy"><i class="fa fa-check"></i><b>5.3.1</b> literacy</a></li>
+<li class="chapter" data-level="5.3.2" data-path="qcheck.html"><a href="qcheck.html#atschool"><i class="fa fa-check"></i><b>5.3.2</b> atschool</a></li>
+<li class="chapter" data-level="5.3.3" data-path="qcheck.html"><a href="qcheck.html#everattend"><i class="fa fa-check"></i><b>5.3.3</b> everattend</a></li>
+<li class="chapter" data-level="5.3.4" data-path="qcheck.html"><a href="qcheck.html#ed_mod_age"><i class="fa fa-check"></i><b>5.3.4</b> ed_mod_age</a></li>
+<li class="chapter" data-level="5.3.5" data-path="qcheck.html"><a href="qcheck.html#educy"><i class="fa fa-check"></i><b>5.3.5</b> educy</a></li>
+<li class="chapter" data-level="5.3.6" data-path="qcheck.html"><a href="qcheck.html#educat4"><i class="fa fa-check"></i><b>5.3.6</b> educat4</a></li>
+<li class="chapter" data-level="5.3.7" data-path="qcheck.html"><a href="qcheck.html#educat5"><i class="fa fa-check"></i><b>5.3.7</b> educat5</a></li>
+<li class="chapter" data-level="5.3.8" data-path="qcheck.html"><a href="qcheck.html#educat7"><i class="fa fa-check"></i><b>5.3.8</b> educat7</a></li>
+</ul></li>
 <li class="chapter" data-level="5.4" data-path="qcheck.html"><a href="qcheck.html#durable-assets-1"><i class="fa fa-check"></i><b>5.4</b> Durable assets</a></li>
 <li class="chapter" data-level="5.5" data-path="qcheck.html"><a href="qcheck.html#housing-1"><i class="fa fa-check"></i><b>5.5</b> Housing</a></li>
 <li class="chapter" data-level="5.6" data-path="qcheck.html"><a href="qcheck.html#labor"><i class="fa fa-check"></i><b>5.6</b> Labor</a></li>
@@ -223,7 +232,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>There are currently six essential demographic variables in SARMD: <strong>age</strong>, <strong>hsize</strong>, <strong>male (0/1)</strong>, <strong>relationcs</strong>, <strong>relationharm</strong> and <strong>marital</strong>.</p>
 <div id="age" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> age</h3>
-<p>The youngest country in the region is Afghanistan.</p>
+<p>The youngest country in the region is Afghanistan. The oldest is Sri Lanka.</p>
 <p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart" title="The user may interact with this Tableau dashboard by clicking on the figure."><img src="figures/dem_age.png" /></a></p>
 </div>
 <div id="hsize" class="section level3">
@@ -270,6 +279,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="marital" class="section level3">
 <h3><span class="header-section-number">5.2.6</span> marital</h3>
+<p>This variables classifies individuals according to their marital status into this simplified categories:</p>
+<ul>
+<li>Never Married</li>
+<li>Married</li>
+<li>Divorced/separated</li>
+<li>Widowed</li>
+<li>Living Together</li>
+</ul>
 <p>Population pyramids such as the one provided in Figure <a href="qcheck.html#fig:pyramid">5.1</a> allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.</p>
 <div class="figure" style="text-align: center"><span id="fig:pyramid"></span>
 <img src="figures/Pyramid.png" alt="[Population Pyramid for Afghanistan (2013)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid)" width="763" />
@@ -282,25 +299,32 @@ Figure 5.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demograp
 <div id="education" class="section level2">
 <h2><span class="header-section-number">5.3</span> Education</h2>
 <p><a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing" title="The user may interact with this Tableau dashboard by clicking on the figure."><img src="figures/harm_3.png" /></a></p>
-<table>
-<thead>
-<tr class="header">
-<th align="right">atschool</th>
-<th align="right">ed_mod_age</th>
-<th align="right">everattend</th>
-<th align="right">literacy</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">educat4</td>
-<td align="right">educat5</td>
-<td align="right">educat7</td>
-<td align="right">educy</td>
-</tr>
-</tbody>
-</table>
+<p>There are currently eight essential education variables in SARMD: literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, and educat7.</p>
+<div id="literacy" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> literacy</h3>
 <p>The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress.</p>
+</div>
+<div id="atschool" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> atschool</h3>
+</div>
+<div id="everattend" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> everattend</h3>
+</div>
+<div id="ed_mod_age" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> ed_mod_age</h3>
+</div>
+<div id="educy" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> educy</h3>
+</div>
+<div id="educat4" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> educat4</h3>
+</div>
+<div id="educat5" class="section level3">
+<h3><span class="header-section-number">5.3.7</span> educat5</h3>
+</div>
+<div id="educat7" class="section level3">
+<h3><span class="header-section-number">5.3.8</span> educat7</h3>
+</div>
 </div>
 <div id="durable-assets-1" class="section level2">
 <h2><span class="header-section-number">5.4</span> Durable assets</h2>

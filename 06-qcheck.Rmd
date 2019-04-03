@@ -42,7 +42,7 @@ There are currently six essential demographic variables in SARMD: **age**,  **hs
 
 ### age
 
-The youngest country in the region is Afghanistan. 
+The youngest country in the region is Afghanistan. The oldest is Sri Lanka. 
 
 [![](figures/dem_age.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
 
@@ -90,7 +90,7 @@ This variable refers to the simplified categories that indicate the relationship
 
 ### marital
 
-This variables classifies
+This variables classifies individuals according to their marital status into this simplified categories: 
 
 - Never Married
 - Married 
@@ -108,13 +108,33 @@ knitr::include_graphics("./figures/Pyramid.png")
 
 [![](figures/harm_3.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-```{r table2, echo=FALSE, results='asis'}
+There are currently eight essential education variables in SARMD: literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, and educat7.
+
+```{r table2, echo=FALSE, eval=FALSE, results='asis'}
 cat('|      atschool|    ed_mod_age|    everattend|   literacy|
 |------------:|-----------:|------------:|--------------:|
 |      educat4|        educat5|        educat7|educy|')
 ```
 
+### literacy
+
 The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. 
+
+### atschool
+
+### everattend
+
+### ed_mod_age
+
+### educy
+
+Should not include pre-school. 
+
+### educat4
+
+### educat5
+
+### educat7
 
 
 ## Durable assets
