@@ -123,13 +123,12 @@ qui foreach country of local countries {
 	local years: list uniq years // in case of more than one survey 
 	
 
-	if ("`country'" == "IND" & "`year'"=="2011") {
-		local surveyid "NSS68-SCH1.0-T1"
-	}
-	else local surveyid ""
-	
-	
 	foreach year of local years {
+	
+		if ("`country'" == "IND" & "`year'"=="2011") {
+			local surveyid "NSS68-SCH1.0-T1"
+		}
+		else local surveyid ""
 	
 		cap {
 			datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
@@ -148,10 +147,10 @@ qui foreach country of local countries {
 			save `cy', replace 
 		}
 		if (_rc) {
-			noi disp in red "Error on `country' `year'"
+			noi disp in red "Error on `country' `year' `surveyid'"
 		}
 		else {
-			noi disp in y "`country' `year' Done."
+			noi disp in y "`country' `year' `surveyid' Done."
 		}
 
 	}
