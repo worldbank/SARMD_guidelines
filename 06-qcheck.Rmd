@@ -120,6 +120,8 @@ cat('|      atschool|    ed_mod_age|    everattend|   literacy|
 
 The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. 
 
+[![](figures/Literacy.png)](https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ### atschool
 
 ### everattend
@@ -132,10 +134,15 @@ Should not include pre-school.
 
 ### educat4
 
+[![](figures/educat4_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ### educat5
+
+[![](figures/educat5_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### educat7
 
+[![](figures/educat7_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ## Durable assets
 
