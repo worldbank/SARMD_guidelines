@@ -23,6 +23,7 @@ else {
 
 cd "${hostdrive}\SOUTH ASIA MICRO DATABASE\05.projects_requ\01.SARMD_Guidelines\02. qcheck\02. sar qcheck\08. new notes\03. welfare distribution and assets\"
 
+local assets = "bicycle cellphone computer electricity everattend fan landphone literacy motorcar motorcycle ownhouse piped_water radio refrigerator sewage_toilet sewingmachine television washingmachine"
 local reponame  "sarmd"
 local countries ""
 local years     ""
@@ -85,21 +86,24 @@ qui foreach country of local countries {
 			sort ln_welfare
 			kdensity ln_welfare [aw = wgt], gen(newvarx newvard) normal
 			label var newvard "Household density"
-
+			
 			* Generate cumulative percentages for access to assets
-			gen cum_mean_refrigerator = sum(refrigerator*wgt)/sum(wgt) if refrigerator < .
-			gen cum_mean_electricity  = sum(electricity*wgt)/sum(wgt) if electricity < .
+			foreach asset of local assets{
+				cap gen cum_mean_`asset' = sum(`asset'*wgt)/sum(wgt) if `asset' < .
+			}
 
 			* Label new variables
 			label var cum_mean_refrigerator "Refrigerator"
 			label var cum_mean_electricity "Electricity"
+			label var cum_mean_bicycle "Bicycle"
+
 
 			scalar pline_190=ln(1.90)
 			scalar pline_320=ln(3.20)
 			scalar pline_550=ln(5.50)
 			scalar list
 
-			local asset "refrigerator"
+			local asset "bicycle"
 
 			* Graph
 			graph twoway ///
@@ -109,7 +113,7 @@ qui foreach country of local countries {
 				xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50") ///
 				ytitle("Fraction of households with `asset'") ///
 				xtitle("Daily expenditure per person in 2011 USD (PPP) (ln scale)") ///
-				title("Refrigerator Ownership and Household Expenditure Level", size(medium)) ///
+				title("Access to `asset' and Household Expenditure Level", size(medium)) ///
 				subtitle("`country' `year'", size(medium)) ///
 				scheme(s1color)
 			
@@ -137,11 +141,15 @@ qui foreach country of local countries {
 }
 
 
+* Graph of asset by country 
+
+local asset "bicycle"
+
 foreach country of local countries{
 
-	mata: st_local("name",                   /*   set local years 
+	mata: st_local("name",                   /*   set local name 
 	 */          invtokens(                   /*    create tokens out of matrix
-	 */          select(R[.,4], R[.,1] :== st_local("country"))', /*  select years
+	 */          select(R[.,4], R[.,1] :== st_local("country"))', /*  select name
 	 */          " "))                          // separator (second term in )
 	
 	local name: list uniq name // in case of more than one survey 
@@ -149,11 +157,11 @@ foreach country of local countries{
 	use `cy', clear
 
 	keep if country=="`country'"
-
+	 
 	graph twoway ///
 		(line newvard newvarx, lcolor(black) lpattern(dash)) ///
 		(line cum_mean_`asset' ln_welfare, lcolor(black)), ///
-		by(year, title("Refrigerator Ownership and Household Expenditure Level in `name'", size(medium))) ///
+		by(year, title("Access to `asset' and Household Expenditure Level in `name'", size(medium))) ///
 		xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol(red)) /// 
 		xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50", labsize(vsmall)) ///
 		ytitle("Fraction of households with `asset'") ///
