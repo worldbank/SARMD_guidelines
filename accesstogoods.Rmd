@@ -1,0 +1,13 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Access to Goods/Servies {-}
+***
+
+
+**Part 1** test1
+
+**Part 2** test2
+
