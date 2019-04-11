@@ -72,6 +72,11 @@ qui foreach country of local countries {
 				
 			datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
 			
+			* Fix v2
+			cap rename welfare_v2 welfare
+			cap rename cpi_v2 cpi
+			cap rename ppp_v2 ppp
+			
 			* Generate household density by per capita expenditures
 			gen ln_welfare=ln(welfare/ppp/cpi/365*12)
 			gen pline_190=ln(1.90)
@@ -103,7 +108,7 @@ qui foreach country of local countries {
 			scalar pline_550=ln(5.50)
 			scalar list
 
-			local asset "bicycle"
+			local asset "refrigerator"
 
 			* Graph
 			graph twoway ///
@@ -143,7 +148,7 @@ qui foreach country of local countries {
 
 * Graph of asset by country 
 
-local asset "bicycle"
+local asset "refrigerator"
 
 foreach country of local countries{
 
@@ -171,4 +176,37 @@ foreach country of local countries{
 	
 	graph export `country'.png, replace
 
+}
+
+* Graph latest by country
+
+use `cy', clear
+
+keep if country=="AFG" & year==2011 | country=="BGD" & year==2016 | country=="BTN" & year==2017 | country=="IND" & year==2011 | country=="MDV" & year==2016 | country=="NPL" & year==2010 | country=="PAK" & year==2013 | country=="LKA" & year==2016
+
+tostring year, replace
+gen country_year=country + " " + year
+replace country_year="Afghanistan 2011" if country_year=="AFG 2011"
+replace country_year="Bangladesh 2016" if country_year=="BGD 2016"
+replace country_year="Bhutan 2017" if country_year=="BTN 2017"
+replace country_year="India 2011" if country_year=="IND 2011"
+replace country_year="Sri Lanka 2016" if country_year=="LKA 2016"
+replace country_year="Maldives 2016" if country_year=="MDV 2016"
+replace country_year="Nepal 2010" if country_year=="NPL 2010"
+replace country_year="Pakistan 2013" if country_year=="PAK 2013"
+
+foreach asset of local assets{
+
+	graph twoway ///
+		(line newvard newvarx, lcolor(black) lpattern(dash)) ///
+		(line cum_mean_`asset' ln_welfare, lcolor(black)), ///
+		by(country_year, cols(4) title("Access to `asset' and household expenditure levels in South Asia", size(medium))) ///
+		xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol(red)) /// 
+		xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50", labsize(vsmall) angle(vertical)) ///
+		ytitle("Fraction of households with `asset'") ///
+		ylabel(, nogrid) ///
+		xtitle("Daily expenditure per person in 2011 USD (PPP) (ln scale)") ///
+		scheme(s1color)
+	
+	graph export sar_latest_`asset'.png, replace
 }
