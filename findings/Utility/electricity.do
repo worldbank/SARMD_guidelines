@@ -25,7 +25,7 @@ local surveys   ""
 *houselanding electricity piped_water sewage_toilet electricity electricity landphone electricity computer electricity
 *---------- Get repo
 datalibweb, repo(create `reponame', force) type(SARMD)
-s
+
 contract country years survname 
 ds
 local varlist "`r(varlist)'"
@@ -43,8 +43,7 @@ mata: R = st_sdata(.,tokens(st_local("varlist")))
 drop _all
 tempfile cy // countries and years
 save `cy', emptyok 
-loc varlist electricity welfare wgt landholding water_source improved_water piped_water pipedwater_acc sewage_toilet toilet_acc improved_sanitation ///
-				landphone cellphone computer internet 
+loc varlist electricity cellphone
 			/*///
 			improved_water piped_water pipedwater_acc sewage_toilet toilet_acc improved_sanitation ///
 			electricity landphone cellphone computer internet radio television fan sewingmachine ///
@@ -54,8 +53,8 @@ loc varlist electricity welfare wgt landholding water_source improved_water pipe
 			*/
 			
 
-*qui foreach country of local countries {
-loc country "IND"	
+qui foreach country of local countries {
+*loc country "IND"	
 	
 	mata: st_local("years",    /*   set local years 
 	 */           invtokens(   /*    create tokens out of matrix
@@ -64,16 +63,19 @@ loc country "IND"
 	
 	local years: list uniq years // in case of more than one survey 
 	
-	if ("`country'" == "IND") {
-		local surveyid "IND_2011_NSS68-SCH10"
-	}
+
+
 	else local surveyid ""
 	
 	foreach year of local years {
 	
-		*cap {
+		cap {
+			if ("`country'" == "IND" & "`year'"=="2011") {
+															local surveyid "NSS68-SCH1.0-T1"
+									  }
+			else local surveyid ""
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
-s
+
 			/*keep atschool age male urban wgt
 			anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) // Estimate a two-way anova model
 			
@@ -90,8 +92,9 @@ s
 			keep countrycode year `varlist' welfare wgt
 			*quintile 
 			egen q= xtile(welfare), weights(wgt) nq(5)
+			egen p= xtile(welfare), weights(wgt) nq(10)
 			*gen b40=(q==1|q==2)
-			collapse (firstnm) countrycode (mean) `varlist' year [aw=wgt], by( q)
+			collapse (firstnm) countrycode (mean) `varlist' (sum) pop=wgt [aw=wgt], by( year q)
 			
 			append using `cy'
 			save `cy', replace 
@@ -113,17 +116,37 @@ use `cy', clear
 *drop if year<2000
 drop if country=="AFG"
 ta q ,gen(q)
-bys country: egen yearma=max(year)
+ta p ,gen(p)
+*bys country: egen yearma=max(year)
 *bys country: egen yearmi=min(year)
-keep if yearma==year
+*keep if yearma==year
 *bys country: egen count=count(year)
 *drop if count<4
-loc varlist electricity welfare wgt landholding water_source improved_water piped_water pipedwater_acc sewage_toilet toilet_acc improved_sanitation ///
-				landphone cellphone computer internet 
-cd "C:\Users\WB502818\Documents\SARMD_guidelines\figures"
+loc varlist electricity cellphone 
+*cd "C:\Users\WB502818\Documents\SARMD_guidelines\figures"
+cd "C:\Users\WB502818\Desktop\DELETE"
 foreach v of local varlist {
 di in red "`v'"
-line `v' year  if q1==1 ||line electricity year if q5==1 , by(countrycode) legend(label(1 "Bottom 20") label(2 "Top 20")) ytitle("`v'")
+line `v' year  if q1==1 & year>=2000||line `v' year if q5==1 & year>=2000, by(countrycode) legend(label(1 "Bottom 20") label(2 "Top 20")) ytitle("`v'")
 
 graph export `v'.png, replace
+}
+loc varlist electricity cellphone 
+*cd "C:\Users\WB502818\Documents\SARMD_guidelines\figures"
+cd "C:\Users\WB502818\Desktop\DELETE"
+bys country: egen yearma=max(year)
+keep if yearma==year
+foreach v of local varlist {
+gen all_`v'=`v'*pop
+}
+collapse (sum) all_electricity all_cellphone (sum) pop , by(year q)
+loc varlist electricity cellphone
+foreach v of local varlist {
+gen r_`v'=all_`v'/pop
+}
+
+foreach v of local varlist {
+line r_`v' year  if q==1 ||line r_`v' year if q==5 , legend(label(1 "Bottom 20") label(2 "Top 20")) ytitle("`v'")
+
+graph export `v'_all.png, replace
 }
