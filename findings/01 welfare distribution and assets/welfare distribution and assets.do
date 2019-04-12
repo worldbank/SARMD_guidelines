@@ -24,13 +24,16 @@ else {
            Alternative version 2
 ==================================================*/
 
-cd "${hostdrive}\SOUTH ASIA MICRO DATABASE\05.projects_requ\01.SARMD_Guidelines\02. qcheck\02. sar qcheck\08. new notes\03. welfare distribution and assets\"
+cd "${hostdrive}\SOUTH ASIA MICRO DATABASE\05.projects_requ\01.SARMD_Guidelines\02. qcheck\02. sar qcheck\08. new notes\03. welfare distribution and assets\version 1\"
 
 local assets = "bicycle cellphone computer electricity everattend fan landphone literacy motorcar motorcycle ownhouse piped_water radio refrigerator sewage_toilet sewingmachine television washingmachine"
 local reponame  "sarmd"
 local countries ""
 local years     ""
 local surveys   ""
+
+local iff "if newvarx>=0 & newvarx<=4"
+local iff2 "if ln_welfare>=0 & ln_welfare<=4"
 
 *---------- Get repo
 datalibweb, repo(create `reponame', force) type(SARMD)
@@ -112,17 +115,18 @@ qui foreach country of local countries {
 
 			local asset "refrigerator"
 
+			
 			* Graph
 			graph twoway ///
-				(line newvard newvarx, lcolor(black) lpattern(dash)) ///
-				(line cum_mean_`asset' ln_welfare, lcolor(black)), ///
+				(line newvard newvarx `iff', lcolor(black) lpattern(dash)) ///
+				(line cum_mean_`asset' ln_welfare `iff2', lcolor(black)), ///
 				xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol(red)) /// 
 				xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50") ///
 				ytitle("Fraction of households with `asset'") ///
 				xtitle("Daily expenditure per person in 2011 USD (PPP) (ln scale)") ///
 				title("Access to `asset' and Household Expenditure Level", size(medium)) ///
-				subtitle("`country' `year'", size(medium)) 
-			
+				subtitle("`country' `year'", size(medium)) ///
+							
 			graph export `country'_`year'.png, replace
 			
 			keep ln_welfare newvard newvarx cum_mean_*
@@ -165,8 +169,8 @@ foreach country of local countries{
 	keep if country=="`country'"
 	 
 	graph twoway ///
-		(line newvard newvarx, lcolor(black) lpattern(dash)) ///
-		(line cum_mean_`asset' ln_welfare, lcolor(black)), ///
+		(line newvard newvarx `iff', lcolor(black) lpattern(dash)) ///
+		(line cum_mean_`asset' ln_welfare `iff2', lcolor(black)), ///
 		by(year, style(compact) title("Access to `asset' and Household Expenditure Level in `name'", size(medium))) ///
 		xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol(red)) /// 
 		xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50", labsize(vsmall)) ///
@@ -200,14 +204,15 @@ local assets = "bicycle cellphone computer electricity everattend fan landphone 
 foreach asset of local assets{
 
 	graph twoway ///
-		(line newvard newvarx, lcolor(black) lpattern(dash) lwidth(thin)) ///
-		(line cum_mean_`asset' ln_welfare, lcolor(black) lpattern(solid) lwidth(thin)), ///
+		(line newvard newvarx `iff', lcolor(black) lpattern(dash) lwidth(thin)) ///
+		(line cum_mean_`asset' ln_welfare `iff2', lcolor(black) lpattern(solid) lwidth(thin)), ///
 		by(country_year, cols(4) style(compact) title("Access to `asset' and household expenditure levels in South Asia", size(medium))) ///
-		xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol(red) lpattern(solid)) /// 
+		xline(`=scalar(pline_190)' `=scalar(pline_320)' `=scalar(pline_550)', lwidth(vthin) lcol("38 139 210") lpattern(solid)) /// 
 		xlabel(`=scalar(pline_190)' "1.90" `=scalar(pline_320)' "3.20" `=scalar(pline_550)' "5.50", labsize(vsmall) angle(vertical)) ///
 		ytitle("Fraction of households with `asset'") ///
 		ylabel(, nogrid) ///
-		xtitle("Daily expenditure per person in 2011 USD (PPP) (ln scale)") 
+		xtitle("Daily expenditure per person in 2011 USD (PPP) (ln scale)") ///
+		legend(row(1)) subtitle(,fcolor(white))
 	
 	graph export sar_latest_`asset'.png, replace
 }
