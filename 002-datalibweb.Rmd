@@ -14,14 +14,14 @@ Using the datalibweb system has several advantages:
 
 
 ## Request access to the system
-Access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically (as it is the case with global harmonization such as the GMD) unless the dataset is granted public access for internal use, which is not the case for SARMD. Users need to contact the regional/collection focal point and ask for permission to use the data. Each user will have different profiles of subscription to the different collections and surveys depending on the purpose of the work in which the data is going to be used.  Without any subscription, users will be able to check the availability of the data, and query relevant metadata of all surveys. 
+Access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically (unlike with global harmonization such as the GMD) unless the dataset is granted public access for internal use, which is not the case for SARMD. Users need to contact the regional/collection focal point and ask for permission to use the data. Each user will have different profiles of subscription to the different collections and surveys depending on the purpose of the work in which the data is going to be used.  Without any subscription, users will be able to check the availability of the data, and query relevant metadata of all surveys. 
 
 To get access to SARMD, send an email to  [Francisco Javier Parada Gomez Urquiza](mailto:fparadagomezurqu@worldbank.org) and the [datalibweb team](mailto:datalibweb@worldbank.org), specifying the following:
 
 * Small description of the project in which you are planning to use the data 
 * Particular survey, country, year or collection that you are interested in accessing
 * Who is the TTL in charge of the project
-* Names and UPIs of the people who will be working directly with that data
+* Names and UPIs of the people who will be working directly with the data
 
 ## Install the `datalibweb` command in Stata
 
