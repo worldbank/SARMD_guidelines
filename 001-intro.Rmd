@@ -33,6 +33,6 @@ At the household level, for example, a high number of households that report hav
 
 On the other hand, a *dynamic quality check* evaluates the inconsistencies in measurement of harmonized data and provides a better overview on whether categorical variables have changed over time. In this section, changes in poverty and inequality measures are also analyzed over time. 
 
-**Part 3** presents a set of socioeconomic findings at the regional level using SARMD. Each of the findings in this section is a brief example of the potential analyses that may be conducted using SARMD. These examples provide the Stata code that may be used to replicate the results. That way, users become more familiar with SARMD and may use these pieces of code as starting points for their own projects. 
+**Part 3** presents a set of socioeconomic findings at the regional level using SARMD. Each of these findings is a brief example of the potential analyses that may be conducted using SARMD. These examples provide the Stata code that may be used to replicate the results. That way, users become more familiar with SARMD and may use these pieces of code as starting points for their own projects. 
 
 [^agespam]: Even though it is possible to find in surveys people older than 120 years, it is not only unlikely, but also problematic for anonymization. 
