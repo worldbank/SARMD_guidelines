@@ -3,9 +3,9 @@
 
 The World Bank set a target of reducing extreme poverty to [less than 3 percent by 2030](https://sdg-tracker.org/no-poverty) and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
 
-This book overviews the data availability of household consumption surveys in the region of South Asia and their challenges for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Spatial and temporal adjustments are necessary to take into account differences in costs of living. 
+In this book, we  overview the data availability of household consumption surveys in the region of South Asia and the procedure followed for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Several spatial and temporal adjustments are necessary to take into account differences in costs of living. 
 
-First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. The following figure displays how the CPI has changed for each country in South Asia over time. 
+First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure \@ref(fig:cpi) displays how the CPI has changed for each country in South Asia over time. 
 
 ```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)"}
 library(readr)
@@ -45,7 +45,7 @@ The FGT measures devised by @fgt remain the most commonly used to measure povert
 
 # Calculate real per capita expenditures by turning nominal  
 # per capita expenditures into 2011 purchasing power parity (PPP) dollars
-  welf_ppp = welfare/cpi2011/icp2011/365
+  welf_ppp = welfare/cpi2011/icp2011/365*30
 
 # Generate a dummy variable to determine whether real per capita expenditures
 # fall below the 1.90 2011 PPP dollars poverty line
@@ -64,5 +64,7 @@ P_{\alpha}=\frac{1}{N}\sum^{N}_{i=1}I_{i}\left(\frac{\bar{u}-u_{i}}{\bar{u}}\rig
 
 where N is the sample size, $$\bar{u}$$ is the scalar-valued poverty line, $$u_{i}$$ is the flow-based measure of welfare (income, expenditures, assets), $$I_{i}$$ is an indicator variable taking value one if $u_{i} < \bar{u}$ and zero otherwise, and $$\alpha$$ is a parameter reflecting the weight placed on the severity of poverty. Setting $$\alpha =0$$ yields the poverty headcount ratio $P_{0}$ (the share of a population falling below the poverty line). The higher order measures, $$P_{1}$$ and $$P_{2}$$, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from $$P_{0}$$ to $$P_{1}$$ to $$P_{2}$$, the $$P_{\alpha}$$ measure gets more and more sensitive to extremely low incomes.
 ```
+
+The variable `welfare` contains the monthly nominal expenditures per capita in local currency. Once turned into 2011 USD (PPP), these values may be compared over time and between countries as in the following dashboard. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty. 
 
 [![](figures/dist_welfare.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Distribution "The user may interact with this Tableau dashboard by clicking on the figure.")
