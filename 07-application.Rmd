@@ -5,6 +5,10 @@
 
 Some _significant_ applications are demonstrated in this chapter.
 
+```{r worldpop, out.width='100%', fig.asp=1, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE, fig.cap='South Asia Population Estimates from [WorldPop](https://www.worldpop.org/)', fig.align='center'}
+knitr::include_graphics("./figures/map_asia_2020_morado.png")
+```
+
 ## School attendance by age
 
 ## Household composition and expenditures
