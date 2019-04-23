@@ -5,6 +5,26 @@
 
 Some _significant_ applications are demonstrated in this chapter.
 
+## Understanding poverty through household and individual level characteristics
+
+Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include a household's location, the age, education, and gender of the household head, and household size. These characteristics may be classified at the individual (age, gender, marital status), household (housing, access to assets), community (urban/rural), and regional (state/province) levels. 
+
+In this section, we provide a template for any user attempting to explain the levels of expenditure per capita (the dependent variable) as a function of a variety of harmonized independent variables contained in SARMD. A typical analysis of expenditures per capita may look something like this:
+
+Equation 1
+
+$$
+
+\begin{equation} 
+\ln (\frac{y}{1.90}) = \beta +\beta X+\varepsilon 
+\end{equation} 
+
+$$
+
+where $X$ are the independent variables and $\beta$ are the coefficients that are to be estimated
+
+## WorldPop
+
 ```{r worldpop, out.width='100%', fig.asp=1, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE, fig.cap='South Asia Population Estimates from [WorldPop](https://www.worldpop.org/)', fig.align='center'}
 knitr::include_graphics("./figures/map_asia_2020_morado.png")
 ```
