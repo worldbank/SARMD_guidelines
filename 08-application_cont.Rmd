@@ -1,0 +1,32 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# (PART) Analytical notes {-}
+
+# Analytical notes {#application}
+
+## Household Composition and Poverty
+
+## Certain types of household are more susceptible to poverty {-}
+
+
+```{r hhtype, fig.cap='Household Type and Probability', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+knitr::include_graphics("./figures/poor_hhtype.png")
+```
+
+Among differnt household types, couple with children and single parent households are more susceptible to poverty. According to multinomial logit analysis, controlling for demographic conditions including age, education level, and household size, probability of being in lowerst quintile level is higher among parents and single parent household in most of the countries in the region. Households classified as couple with children also include grand parents and grand children and the share of female singe parents is bigger than male single parents. The finding shows that households with old or female caregivers may need more social protection to support their children as well as their own welfare. 
+
+
+## Aceess to Goods
+
+## Cell phones are more common than access to electricity {-}
+***
+
+```{r children, fig.cap='Access to Cell Phone and Electricity', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
+knitr::include_graphics("./figures/cellphone.png")
+```
+
+There has been a global phenomenon that more people have access to mobile phones. South Asia region is no exception on this where a large share of poor people have access to mobile phones than to electricity or improved water. In XXX, only X percent of people living in low- and middle-income countries had access to mobile phones. In XX, that number rose to a whopping XX percent. This was true even in sub-Saharan Africa, where there were 76 mobile cellular subscriptions for every 100 people, while only 68 percent of the region's population had access to an improved water source.
+
