@@ -14,14 +14,14 @@ Using the datalibweb system has several advantages:
 
 
 ## Request access to the system
-Access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically (as it is the case with global harmonization such as the GMD) unless the dataset is granted public access for internal use, which is not the case for SARMD. Users need to contact the regional/collection focal point and ask for permission to use the data. Each user will have different profiles of subscription to the different collections and surveys depending on the purpose of the work in which the data is going to be used.  Without any subscription, users will be able to check the availability of the data, and query relevant metadata of all surveys. 
+Unlike GMD, access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically . Most datasets in SARMD are not public and the user must be granted access for internal use. Each user must submit a request for the different collections and surveys specifying the purpose of the data request. Users must contact the regional/collection focal point and ask for permission to use the data. Without any subscription, users will only be able to check the availability of the data, and query relevant metadata of all surveys.  
 
 To get access to SARMD, send an email to  [Francisco Javier Parada Gomez Urquiza](mailto:fparadagomezurqu@worldbank.org) and the [datalibweb team](mailto:datalibweb@worldbank.org), specifying the following:
 
 * Small description of the project in which you are planning to use the data 
 * Particular survey, country, year or collection that you are interested in accessing
 * Who is the TTL in charge of the project
-* Names and UPIs of the people who will be working directly with that data
+* Names and UPIs of the people who will be working directly with the data
 
 ## Install the `datalibweb` command in Stata
 
@@ -54,11 +54,11 @@ where,
 * `TYPE` refers to the collection name. In the case of the South Asia region the user would refer to SARMD or, at the global level, to the GMD collection type. 
 * `MODULE` refers to the module of the collection. In the case of SARMD, it could be `IND`, which refers to the questions at the individual level, or `FULL`, which refers to the whole survey. 
 
-For example, if the user wanted to load the most recent version of the harmonized Pakistani Household Survey of 2015, he would refer to the file `PAK_2015_PSLM_v01_M_v02_A_SARMD_IND.dta`. In this case, PSLM refers to the acronym of the Pakistan Social and Living Standards Measurement Survey, v01_M shows that the version of the raw data has not changed since it is still 01, and v02_A shows that the most recent version of the harmonization is 02. 
+For example, if the user wanted to load the most recent version of the harmonized Pakistani Household Survey of 2015, she would refer to the file `PAK_2015_PSLM_v01_M_v02_A_SARMD_IND.dta`. In this case, PSLM refers to the acronym of the Pakistan Social and Living Standards Measurement Survey. v01_M means that the version of the raw data has not changed since it is still the first. v02_A means that the most recent version of the harmonization is 02. 
 
 
 ## Using `datalibweb`
-Using `datalibweb` is straightforward. You may read the help file, which is detailed and clear, but you can also dive right in to get your data. There are two possible ways to access a dataset:
+Using `datalibweb` is straightforward. You may read the help file, which is detailed and clear, but you may also dive right in to get your data. There are two possible ways to access a dataset:
 
 
 ### Clicking on the Stata results window  {-}
