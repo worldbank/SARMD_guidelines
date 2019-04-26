@@ -9,18 +9,18 @@ Some _significant_ applications are demonstrated in this chapter.
 
 Sustainable Development Goal 4 has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Enrollment in primary education in South Asia has increased but XX million primary age children remain out of school. Equality in primary education between girls and boys has improved, but not at all levels of education.
 
-SARMD has the following harmonized variables: 
+SARMD has the following harmonized variables at the individual level (when `age>=ed_mod_age` ): 
 
 | Variable	    | Description                     	                |
 |-------------	|-------------------------------------------------	|
-| `atschool`	| Individual attending school (Yes=1, No=0)	|
-| `everattend`| Individual ever attended school (Yes=1, No=0)	| 
-| `literacy`	| Individual can read and write (Yes=1, No=0)	|
+| `ed_mod_age`| Age at which education module is applied	          | 
+| `atschool`	| Individual attending school     (1 = Yes 0 = No)	  |
+| `everattend`| Individual ever attended school (1 = Yes 0 = No)    | 
+| `literacy`	| Individual can read and write   (1 = Yes 0 = No)	  |
 | `educy`	    | Years of education	| 
-| `ed_mod_age`| Age at which education module is applied	| 
-| `educat4` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
-| `educat5` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
-| `educat7` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
+| `educat4` 	| 1 = No education 2 = Primary (complete or incomplete) 3 = Secondary (complete or incomplete) 4 = Tertiary (complete or incomplete) 	| 
+| `educat5` 	| 1 = No education 2 = Primary incomplete 3 = Primary complete but secondary incomplete 4 = Secondary complete 5 = Some tertiary  	| 
+| `educat7` 	| 1 = No education 2 = Primary incomplete 3 = Primary complete 4 = Secondary incomplete 5 = Secondary complete 6 = Higher than secondary but not university 7 = University incomplete or complete | 
 
 
 ## Understanding poverty through household and individual level characteristics
