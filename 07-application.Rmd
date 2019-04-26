@@ -5,6 +5,24 @@
 
 Some _significant_ applications are demonstrated in this chapter.
 
+## School attendance by age
+
+Sustainable Development Goal 4 has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Enrollment in primary education in South Asia has increased but XX million primary age children remain out of school. Equality in primary education between girls and boys has improved, but not at all levels of education.
+
+SARMD has the following harmonized variables: 
+
+| Variable	    | Description                     	                |
+|-------------	|-------------------------------------------------	|
+| `atschool`	| Individual attending school (Yes=1, No=0)	|
+| `everattend`| Individual ever attended school (Yes=1, No=0)	| 
+| `literacy`	| Individual can read and write (Yes=1, No=0)	|
+| `educy`	    | Years of education	| 
+| `ed_mod_age`| Age at which education module is applied	| 
+| `educat4` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
+| `educat5` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
+| `educat7` 	| 1 = No education 2 = Primary (complete or incomplete) 3 Secondary (complete or incomplete) 4 Tertiary (complete or incomplete) 	| 
+
+
 ## Understanding poverty through household and individual level characteristics
 
 Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include a household's location, the age, education, and gender of the household head, and household size. These characteristics may be classified at the individual (age, gender, marital status), household (housing, access to assets), community (urban/rural), and regional (state/province) levels. 
@@ -13,15 +31,17 @@ In this section, we provide a template for any user attempting to explain the le
 
 Equation 1
 
+$$f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}$$
+
 $$
 
 \begin{equation} 
-\ln (\frac{y}{1.90}) = \beta +\beta X+\varepsilon 
+  \ln (\frac{y_{i)}}{1.90}) = \beta_{0} +\beta X_{i}+\varepsilon _{i}
 \end{equation} 
 
 $$
 
-where $X$ are the independent variables and $\beta$ are the coefficients that are to be estimated. 
+where $X_{i}$ are the independent variables for household $i$ and $\beta$ are the coefficients we are tring to estimate. 
 
 ```markdown
 gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
@@ -38,7 +58,9 @@ latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types =
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
 
-## School attendance by age
+
+
+
 
 
 ## Nonlinear relationship between expenditure and asset acquisition
