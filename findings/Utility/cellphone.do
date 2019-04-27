@@ -72,6 +72,7 @@ qui foreach id of local ids {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 			*RENAME VARIABLE NAMES
 			set trace off
+			gen cellnoelect=(cellphone==1&electricity==0)
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
 			cap rename cpi_v2 cpi
@@ -83,9 +84,9 @@ qui foreach id of local ids {
 			gen cell=`r(mean)'
 			su electricity if q==1 [aw=wgt]
 			gen elect=`r(mean)'
-			su cellphone if q==1 & electricity!=1 [aw=wgt]
-			gen cellnoelect=`r(mean)'
-			contract countrycode year cell elect cellnoelect
+			su cellnoelect if q==1 [aw=wgt]
+			gen cellnoel=`r(mean)'
+			contract countrycode year cell elect cellnoel
 			append using `cy'
 			save `cy', replace
 			
@@ -110,13 +111,13 @@ keep if n>1
 
 label var cell "Cell Phone"	
 label var elect "Electricity"	
-label var cellnoelect "Cell Phone w/o Electricity"
+label var cellnoel "Cell Phone w/o Electricity"
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cell elect cellnoelect if countrycode=="`c'", ///
+	graph bar cell elect cellnoel if countrycode=="`c'", ///
 	over( year) name("`c'", replace) title("Access to Cell Phone & Electricity among Poor")  subtitle("`c'")	///
 	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order(1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity"))
+	legend(order(ring(0) position(8) 1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity"))
 
 
 	graph export "${path}/`c'.png", replace	

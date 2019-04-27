@@ -27,6 +27,7 @@ bys country: egen myr=max(years)
 keep if years==myr
 contract country years survname 
 ds
+keep if country=="BGD"
 gen id=country+"_"+strofreal(years)
 
 local varlist "`r(varlist)'"
@@ -35,6 +36,8 @@ di in red "`r(varlist)'"
 qui su years
 loc y1 `r(min)'
 loc y2 `r(max)'
+
+
 
 *---------- Evaluate initical conditions
 *countries
@@ -174,7 +177,9 @@ qui foreach id of local ids {
 			foreach v in 0_17 18_24 25_34 35_54 55p {
 			bys idh: egen fsparch`v'=max(fsparch`v'_)
 			}
-
+			* grand parents and grand children 
+			s
+			
 			gen byte hhtype = 0
 			local i 1
 			foreach v of varlist onep coup coupch sparch nrel extf norel {
