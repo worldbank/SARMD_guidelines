@@ -38,8 +38,6 @@ local countries "PAK"
 local years     "2015" 
 local surveys   ""
 
-cap which combomarginsplot 
-if (_rc) ssc install combomarginsplot 
 
 /*==================================================
            Alternative version 1
