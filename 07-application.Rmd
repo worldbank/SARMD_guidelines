@@ -33,15 +33,13 @@ The most vulnerable group in terms of low literacy is women older than 65 years.
 knitr::include_graphics("./figures/Literacy.png")
 ```
 
-Primary, secondary and tertiary education are defined differently in each country. Secondary education, in particular, has significantly different meanings accross countries as shown in this [dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Frequency). 
-
-In Bangladesh, the education system is divided into three levels: 
+Primary, secondary and tertiary education are defined differently in each country. Secondary education, in particular, has significantly different meanings across countries as shown in this [dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Frequency). In Bangladesh, the education system is divided into three levels: 
 
 * Primary Level (Class 1–5). Students receive their Primary School Certificate at the end of 5th grade. 
 * Secondary Level (6-10) or (9-12 at some schools). Students receive their Secondary School Certificate at the end of 10th grade (similar to India and Pakistan). This is equivalent to GCSE in England and the first two years of high school in the United States. There is no middle school system in Bangladesh. 
 * Tertiary Level (University)
 
-In contrast, Sri Lanka's education structure is divided into five parts: primary (kindergarden through grade 5), junior secondary (grades 6-9), senior secondary (grades 10-11), collegiate (grades 12-13), and tertiary (university). These differences in education systems mean that the relationships between `age`, `ed_mod_age`, `educy`, `educat4`, `educat5`, and `educat7` vary by country. The following table displays the values of `ed_mod_age` and provides a summary for how primary, secondary and tertiary school are defined: 
+In contrast, Sri Lanka's education structure is divided into five parts: primary (kindergarden through grade 5), junior secondary (grades 6-9), senior secondary (grades 10-11), collegiate (grades 12-13), and tertiary (university). These differences in education systems mean that the relationships between `age`, `ed_mod_age`, `educy`, `educat4`, `educat5`, and `educat7` vary by country. The following table displays each country's most recent value for `ed_mod_age` and provides a summary for how primary, secondary and tertiary school have been harmonized in SARMD: 
 
 ```{r harmonizededuc, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
@@ -60,7 +58,43 @@ knitr::kable(harmonized_educ,booktabs=TRUE, caption = 'Harmonized education leve
 | Pakistan    	|      4     	|   1-8   	|    9-12   	|    13-   	|
 | Sri Lanka   	|      5     	|   1-6   	|    7-12   	|    13-   	|
 
+Our analysis of school enrollment of school-age children and young adults (`age<25`) consists of studying how `atschool` changes over time in each country depending on `male` and `urban`. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figures in the following Tableau dashboard:
 
+[![](figures/atschool_graph.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+This analysis has provided the following findings:
+
+### Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40">
+
+Afghanistan has one of the youngest populations in the world, making quality education particularly critical for the rapidly growing numbers of school aged boys and girls. Afghanistan has the widest gap between male/female and urban/rural enrollment rates. The education system is K–12, that is from kindergarten (K) for 4-6 year-olds through twelfth grade (12) for 17-19 year-olds. Long distance to school and reluctance to send children to school are by far the most common reasons for not starting school (mentioned for 37 and 25 percent of those who never attended school), whereas the need for child labor and perceived irrelevance of further education were the most important reasons for terminating education.
+
+### Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40">
+
+In Bangladesh, all citizens must undertake twelve years of compulsory education which consists of eight years at primary school level and six years at high school level. Primary and secondary education is financed by the state and free of charge in public schools. Enrollment rates still fall rapidly. The enrollment rates by age have the shape of an inverted U. Enrollment rates fall faster for male students than for female students. 
+
+### Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40">
+
+Primary education is provided free for six years. Secondary education lasts six years and is divided into the lower, middle and higher secondary levels with a duration of two years each. Figures show how Bhutan has achieved nearly-universal primary education over time and how the male/female and urban/rural gaps have narrowed. 
+ 
+### India         <img src="figures/Flag_of_India.svg" width="40">
+
+Unfortunately, surveys from India do not collect enough information about individuals' general educational level. 
+
+### Maldives      <img src="figures/Flag_of_Maldives.svg" width="40">
+
+Our figures show that universal primary education has been achieved.
+
+### Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="40">
+
+Primary education in Nepal called consists of grades one through eight. Secondary education are grades nine and ten, and Higher Secondary Levels cover grades eleven and twelve. Pre-primary education is available in some areas, and students usually begin grade one at age six. A Basic Education Examination is given on grade eight. A national Secondary Education Exam examination is conducted at the end of grade 10. Completing grade 12 examination leads to the School Leaver's Certificate. 
+
+### Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40">
+
+The education system in Pakistan is divided into six levels: preschool (for the age from 3 to 5 years), primary (grades one through five), middle (grades six through eight), high (grades nine and ten, leading to the Secondary School Certificate), intermediate (grades eleven and twelve, leading to a Higher Secondary School Certificate), and university programs leading to undergraduate and graduate degrees.
+
+### Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40">
+
+Sri Lanka's education structure is divided into five parts: primary, junior secondary, senior secondary, collegiate, and tertiary. Primary education lasts five to six years (Kindergarden through grade 5) and at the end of this period, the students may elect to write a national exam called the Scholarship exam. This exam allows students with exceptional skills to move on to better schools. After primary education, the junior secondary level (referred to as middle school in some schools) lasts for 4 years (Grades 6-9) followed by 2 years (Grades 10-11) of the senior secondary level which is the preparation for the General Certificate of Education (G.C.E) Ordinary Level (O/Ls). According to the Sri Lankan law, it is compulsory that all children go to school till grade 9 (age 14) at which point they can choose to continue their education or drop out and engage in apprenticeship for a job or farming. This is very clear in our figures where enrollment rates drop from almost 100 shortly after 15 years old. 
 
 ## Understanding poverty through household and individual level characteristics
 
