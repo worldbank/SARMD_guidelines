@@ -5,11 +5,16 @@
 
 Some _significant_ applications are demonstrated in this chapter.
 
-## School attendance by age
+## School enrollment in South Asia
 
-Sustainable Development Goal 4 has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Enrollment in primary education in South Asia has increased but XX million primary age children remain out of school. Equality in primary education between girls and boys has improved, but not at all levels of education.
+Countries in South Asia (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) have achieved different levels of progress regarding school enrollment. Sri Lanka achieved near-universal primary education decades ago, while Afghanistan and Pakistan still lag significantly behind other South Asian countries. In this analysis, we compare the education levels achieved across countries considering their different education systems. 
 
-SARMD has the following harmonized variables at the individual level (when `age>=ed_mod_age` ): 
+In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary
+education. These investments have led to more children retained in school. According to @students_sar, enrollment in South Asia’s primary schools rose from 75.0 percent in 2000 to 89.0 percent in 2010, bringing it closer to that of the Latin America and the Caribbean (94.0 percent) and East Asia and the Pacific (94.8 percent) regions. Between 1999 and 2010, the number of out-of-school children ages 8–14 years fell from 35 million to 13 million, and the number of out-of-school girls in the region dropped by 59 percent.
+
+[Sustainable Development Goal 4](https://www.un.org/sustainabledevelopment/education/) has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Equality in primary education between girls and boys has improved, but not at all levels of education. 
+
+The South Asia Regional Micro Database (SARMD) contains the following harmonized variables at the individual level (when `age>=ed_mod_age`) to monitor progress towards the achievement of these goals:  
 
 | Variable	    | Description                     	                |
 |-------------	|-------------------------------------------------	|
@@ -21,6 +26,40 @@ SARMD has the following harmonized variables at the individual level (when `age>
 | `educat4` 	| 1 = No education 2 = Primary (complete or incomplete) 3 = Secondary (complete or incomplete) 4 = Tertiary (complete or incomplete) 	| 
 | `educat5` 	| 1 = No education 2 = Primary incomplete 3 = Primary complete but secondary incomplete 4 = Secondary complete 5 = Some tertiary  	| 
 | `educat7` 	| 1 = No education 2 = Primary incomplete 3 = Primary complete 4 = Secondary incomplete 5 = Secondary complete 6 = Higher than secondary but not university 7 = University incomplete or complete | 
+
+The most vulnerable group in terms of low literacy is women older than 65 years. Even among younger adults and children, the difference in literacy rates between men and women is wide. Figure \@ref(fig:literacy) allows you to display average literacy rates at a subnational level. Afghanistan has one of the lowest literacy rates in the world. In 2011, it was estimated at about 31% of the adult population (15 years or older).  
+
+```{r literacy, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, fig.cap='[Female Literacy Rate (15-65 years)](https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy)', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("./figures/Literacy.png")
+```
+
+Primary, secondary and tertiary education are defined differently in each country. Secondary education, in particular, has significantly different meanings accross countries as shown in this [dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Frequency). 
+
+In Bangladesh, the education system is divided into three levels: 
+
+* Primary Level (Class 1–5). Students receive their Primary School Certificate at the end of 5th grade. 
+* Secondary Level (6-10) or (9-12 at some schools). Students receive their Secondary School Certificate at the end of 10th grade (similar to India and Pakistan). This is equivalent to GCSE in England and the first two years of high school in the United States. There is no middle school system in Bangladesh. 
+* Tertiary Level (University)
+
+In contrast, Sri Lanka's education structure is divided into five parts: primary (kindergarden through grade 5), junior secondary (grades 6-9), senior secondary (grades 10-11), collegiate (grades 12-13), and tertiary (university). These differences in education systems mean that the relationships between `age`, `ed_mod_age`, `educy`, `educat4`, `educat5`, and `educat7` vary by country. The following table displays the values of `ed_mod_age` and provides a summary for how primary, secondary and tertiary school are defined: 
+
+```{r harmonizededuc, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+library(readr)
+harmonized_educ <- read_csv("./tables/harmonized_educ.csv",col_names = TRUE, col_types = cols())
+knitr::kable(harmonized_educ,booktabs=TRUE, caption = 'Harmonized education levels')
+```
+
+| Country     	| ed_mod_age 	| Primary (Grades) 	| Secondary (Grades) | Tertiary 	|
+|-------------	|:-----------:|:---------:|:-----------:|:---------:|
+| Afghanistan 	|      6     	|   1-6   	|    7-12   	|    13-   	|
+| Bangladesh  	|      5     	|   1-5   	|    6-12   	|    13-   	|
+| Bhutan      	|      2     	|   1-9   	|   10-12   	|    13-   	|
+| India       	|      NA   	|   1-5   	|    6-12   	|    13-   	|
+| Maldives    	|      5     	|   1-5   	|    6-12   	|    13-   	|
+| Nepal       	|      5     	|   1-6   	|    7-12   	|    13-   	|
+| Pakistan    	|      4     	|   1-8   	|    9-12   	|    13-   	|
+| Sri Lanka   	|      5     	|   1-6   	|    7-12   	|    13-   	|
+
 
 
 ## Understanding poverty through household and individual level characteristics
@@ -93,16 +132,6 @@ knitr::include_graphics("./figures/Children.png")
 
 see Figure \@ref(fig:children) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children
 
-
-## Gender inequality in literacy
-
-The most vulnerable group in terms of low literacy is women older than 65 years. Even among younger adults and children, the difference in literacy rates between men and women is wide. Afghanistan has one of the lowest literacy rates in the world. In 2011, it was estimated at about 31% of the adult population (15 years or older). 
-
-```{r literacy, fig.cap='Female Literacy Rate (15-65 years)', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("./figures/Literacy.png")
-```
-
-see Figure \@ref(fig:literacy) at https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy
 
 
 
