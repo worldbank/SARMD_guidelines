@@ -63,9 +63,7 @@ knitr::kable(harmonized_educ,booktabs=TRUE, caption = 'Harmonized education leve
 | Pakistan    	|      4     	|   1-8   	|    9-12   	|    13-   	|
 | Sri Lanka   	|      5     	|   1-6   	|    7-12   	|    13-   	|
 
-Our analysis of school enrollment of school-age children and young adults (`age<25`) consists of studying how `atschool` changes over time in each country depending on `male` and `urban`. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figures in the following Tableau dashboard, while enrollment rates in Afghanistan, Bangladesh, Nepal, and Pakistan still have the shape of an inverted U:
-
-[![](figures/atschool_graph.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
+Our analysis of school enrollment of school-age children and young adults (`age<25`) consists of studying how `atschool` changes over time in each country depending on `male` and `urban`. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figures in the following Tableau dashboards, while enrollment rates in Afghanistan, Bangladesh, Nepal, and Pakistan still have the shape of an inverted U. 
 
 This analysis has provided the following findings:
 
