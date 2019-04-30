@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # (PART) Analytical notes {-}
 
 # Analytical notes {#application}
@@ -58,7 +63,7 @@ knitr::kable(harmonized_educ,booktabs=TRUE, caption = 'Harmonized education leve
 | Pakistan    	|      4     	|   1-8   	|    9-12   	|    13-   	|
 | Sri Lanka   	|      5     	|   1-6   	|    7-12   	|    13-   	|
 
-Our analysis of school enrollment of school-age children and young adults (`age<25`) consists of studying how `atschool` changes over time in each country depending on `male` and `urban`. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figures in the following Tableau dashboard:
+Our analysis of school enrollment of school-age children and young adults (`age<25`) consists of studying how `atschool` changes over time in each country depending on `male` and `urban`. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figures in the following Tableau dashboard, while enrollment rates in Afghanistan, Bangladesh, Nepal, and Pakistan still have the shape of an inverted U:
 
 [![](figures/atschool_graph.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
 
@@ -68,33 +73,69 @@ This analysis has provided the following findings:
 
 Afghanistan has one of the youngest populations in the world, making quality education particularly critical for the rapidly growing numbers of school aged boys and girls. Afghanistan has the widest gap between male/female and urban/rural enrollment rates. The education system is K–12, that is from kindergarten (K) for 4-6 year-olds through twelfth grade (12) for 17-19 year-olds. Long distance to school and reluctance to send children to school are by far the most common reasons for not starting school (mentioned for 37 and 25 percent of those who never attended school), whereas the need for child labor and perceived irrelevance of further education were the most important reasons for terminating education.
 
+[![](figures/atschool_afg.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ### Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40">
 
-In Bangladesh, all citizens must undertake twelve years of compulsory education which consists of eight years at primary school level and six years at high school level. Primary and secondary education is financed by the state and free of charge in public schools. Enrollment rates still fall rapidly. The enrollment rates by age have the shape of an inverted U. Enrollment rates fall faster for male students than for female students. 
+In Bangladesh, all citizens must undertake twelve years of compulsory education which consists of eight years at the primary school level and six years at the high school level. Primary and secondary education is financed by the state and free of charge in public schools. Still, enrollment rates fall rapidly especially after age 9. Enrollment rates fall faster for male students than for female students until both lines intersect. At higher levels of education, female enrollment is lower than male enrollment. 
+
+[![](figures/atschool_bgd.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40">
 
-Primary education is provided free for six years. Secondary education lasts six years and is divided into the lower, middle and higher secondary levels with a duration of two years each. Figures show how Bhutan has achieved nearly-universal primary education over time and how the male/female and urban/rural gaps have narrowed. 
+The following figures show how Bhutan has achieved nearly-universal primary education over time and how the male/female and urban/rural gaps have narrowed. In Bhutan, primary education is provided free for six years. Secondary education lasts six years and is divided into the lower, middle and higher secondary levels with a duration of two years each. 
+
+[![](figures/atschool_btn.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
  
 ### India         <img src="figures/Flag_of_India.svg" width="40">
 
-Unfortunately, surveys from India do not collect enough information about individuals' general educational level. 
+Unfortunately, surveys from India do not collect enough information about individuals' general educational level to complete this analysis. 
 
 ### Maldives      <img src="figures/Flag_of_Maldives.svg" width="40">
 
-Our figures show that universal primary education has been achieved.
+Our figures show how universal primary education has been achieved in Maldives. Still, a wide gap between male and female enrollment rates remains at higher levels of education.
 
+[![](figures/atschool_mdv.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
+ 
 ### Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="40">
 
-Primary education in Nepal called consists of grades one through eight. Secondary education are grades nine and ten, and Higher Secondary Levels cover grades eleven and twelve. Pre-primary education is available in some areas, and students usually begin grade one at age six. A Basic Education Examination is given on grade eight. A national Secondary Education Exam examination is conducted at the end of grade 10. Completing grade 12 examination leads to the School Leaver's Certificate. 
+Primary education in Nepal consists of grades one through eight. Secondary education are grades nine and ten, and Higher Secondary Levels cover grades eleven and twelve. Pre-primary education is available in some areas, and students usually begin grade one at age six. A Basic Education Examination is given on grade eight. A national Secondary Education Exam examination is conducted at the end of grade 10. Completing grade 12 examination leads to the School Leaver's Certificate. However, it is clear from the figures that enrollment rates start to fall before reaching grade 12. 
+
+[![](figures/atschool_npl.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40">
 
-The education system in Pakistan is divided into six levels: preschool (for the age from 3 to 5 years), primary (grades one through five), middle (grades six through eight), high (grades nine and ten, leading to the Secondary School Certificate), intermediate (grades eleven and twelve, leading to a Higher Secondary School Certificate), and university programs leading to undergraduate and graduate degrees.
+In Pakistan, the gap between urban and rural enrollment rates is very clear. There also seems to be a great increase in enrollment of young children from 2013 to 2015. The education system in Pakistan is divided into six levels: preschool (for the age from 3 to 5 years), primary (grades one through five), middle (grades six through eight), high (grades nine and ten, leading to the Secondary School Certificate), intermediate (grades eleven and twelve, leading to a Higher Secondary School Certificate), and university programs leading to undergraduate and graduate degrees.
+
+[![](figures/atschool_pak.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40">
 
-Sri Lanka's education structure is divided into five parts: primary, junior secondary, senior secondary, collegiate, and tertiary. Primary education lasts five to six years (Kindergarden through grade 5) and at the end of this period, the students may elect to write a national exam called the Scholarship exam. This exam allows students with exceptional skills to move on to better schools. After primary education, the junior secondary level (referred to as middle school in some schools) lasts for 4 years (Grades 6-9) followed by 2 years (Grades 10-11) of the senior secondary level which is the preparation for the General Certificate of Education (G.C.E) Ordinary Level (O/Ls). According to the Sri Lankan law, it is compulsory that all children go to school till grade 9 (age 14) at which point they can choose to continue their education or drop out and engage in apprenticeship for a job or farming. This is very clear in our figures where enrollment rates drop from almost 100 shortly after 15 years old. 
+Sri Lanka's education structure is divided into five parts: primary, junior secondary, senior secondary, collegiate, and tertiary. Primary education lasts five to six years (Kindergarden through grade 5) and at the end of this period, the students may elect to write a national exam called the Scholarship exam. This exam allows students with exceptional skills to move on to better schools. After primary education, the junior secondary level (referred to as middle school in some schools) lasts for 4 years (Grades 6-9) followed by 2 years (Grades 10-11) of the senior secondary level which is the preparation for the General Certificate of Education (G.C.E) Ordinary Level (O/Ls). According to the Sri Lankan law, it is compulsory that all children go to school till grade 9 (age 14) at which point they can choose to continue their education or drop out and engage in apprenticeship for a job or farming. This is very clear in our figures where enrollment rates drop shortly after age 15. 
+
+[![](figures/atschool_lka.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_atschool/atschool "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+You may access our full Stata do-file by clicking the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/school_enrollment_by_age.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
+
+```markdown
+# Example: Measuring school enrollment by age, gender and urban/rural
+
+# Open dataset
+datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
+
+# Generate enrollment rates 
+mean atschool [aw=wgt] if age < 25, over(age male urban) // same as anova
+anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) 
+		
+tempfile g u gu a
+margins i.age##i.male         [aw=wgt] if (age < 25), saving(`g')
+margins i.age##i.urban        [aw=wgt] if (age < 25), saving(`u')
+
+# Plot figure		
+combomarginsplot  `u' `g', noci recast(line) legend(cols(2) position(6)) /* 
+		 */ plotopts(lpattern(l)) by(_filenumber) labels("Urban/rural" "Gender")
+```
+
 
 ## Understanding poverty through household and individual level characteristics
 
