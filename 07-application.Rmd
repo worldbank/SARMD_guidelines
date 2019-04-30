@@ -10,6 +10,45 @@ output:
 
 Some _significant_ applications are demonstrated in this chapter.
 
+
+
+
+## Welfare and asset ownership in South Asia
+
+Energy-using appliances, such as refrigerators, are taken for granted among households in developed countries. However, in South Asia these assets are still scarce and owning a refrigerator, for example, can have important consequences on the well-being of a family. Refrigerators are common in urban areas of New Delhi and are almost non-existent in central Afghanistan. We study how asset ownership increases with welfare with the use of harmonized data from SARMD. The possession of valuable assets that facilitate family labor in a meaningful way are quick indicators of household purchasing power and economic development in a region. In microeconomics, an Engel curve describes how household expenditure on a particular good or service varies with household's purchasing power. For normal goods, the Engel curve has a positive gradient. That is, as purchasing power increases, the quantity of assets demanded increases. For inferior goods, the Engel curve has a negative gradient. 
+
+```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="Engel Curve"}
+library(readr)
+engel <- read_csv("./tables/engel.csv",col_names = TRUE, col_types = cols())
+
+```
+
+
+| Variable	    | Description                     	                |
+|-------------	|-------------------------------------------------	|
+| `bicycle`     | Household has access to a bicycle  (1 = Yes 0 = No)   | 
+| `cellphone`	  | Household has access to a cellphone  (1 = Yes 0 = No) |
+| `computer`    | Household has access to a computer  (1 = Yes 0 = No) |
+| `landphone`    | Household has access to a landphone  (1 = Yes 0 = No) |
+| `motorcar`    | Household has access to a motorcar  (1 = Yes 0 = No) |
+| `motorcycle`    | Household has access to a motorcycle  (1 = Yes 0 = No) |
+| `radio`    | Household has access to a radio  (1 = Yes 0 = No) |
+| `refrigerator`    | Household has access to a refrigerator  (1 = Yes 0 = No) |
+| `sewingmachine`	  | Household has access to a sewingmachine  (1 = Yes 0 = No) |
+| `television`    | Household has access to a television  (1 = Yes 0 = No) |
+| `washingmachine`    | Household has access to a washingmachine  (1 = Yes 0 = No) |
+
+
+https://tab.worldbank.org/#/site/WBG/views/Note1/Dashboard1
+
+An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. If one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent (Wolfram, Shelef, and Gertler 2012). 
+
+We model the nonlinear relationship between income and asset acquisition as in Gertler, Shelef, Wolfram & Fuchs (2016). This paper provides a simple theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A nonlinear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase an energy-using asset. Households faced with credit constraints become much more likely to purchase energy-using assets with once their income passes a threshold level. We begin by documenting an S-shaped relationship between expenditure and durable asset ownership. Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
+
+Figure ?? demostrates how for a group of several assets, asset ownership is high in the Maldives and lower in the rest of South Asia. Filmer and Pritchett, 2001, argue that the first principal component of the household’s ownership of physical assets is highly correlated with household expenditure and can be used as a reasonable proxy. 
+
+
+
 ## School enrollment in South Asia
 
 Countries in South Asia (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) have achieved different levels of progress regarding school enrollment. Sri Lanka achieved near-universal primary education decades ago, while Afghanistan and Pakistan still lag significantly behind other South Asian countries. In this analysis, we compare the education levels achieved across countries considering their different education systems. 
@@ -173,19 +212,6 @@ knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available
 
 
 
-
-
-## Nonlinear relationship between expenditure and asset acquisition
-
-Energy-using appliances, such as refrigerators, are taken for granted among households in developed countries. However, in developing countries these assets are still scarce and owning a refrigerator can have important consequences on the well-being of a family. This note explains who owns this kind of assets in South Asia with the use of harmonized data from SARMD. Refrigerators, for example, can be common in urban areas of New Delhi and be virtually non-existent in central Afghanistan. The distribution of assets among the population is an indicator in the fight against extreme poverty. Even in developed countries, the possession of valuable assets that facilitate family labor in a meaningful way are quick indicators of economic development in a region and the purchasing power of households.
-
-https://tab.worldbank.org/#/site/WBG/views/Note1/Dashboard1
-
-An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. If one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent (Wolfram, Shelef, and Gertler 2012). 
-
-We model the nonlinear relationship between income and asset acquisition as in Gertler, Shelef, Wolfram & Fuchs (2016). This paper provides a simple theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A nonlinear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase an energy-using asset. Households faced with credit constraints become much more likely to purchase energy-using assets with once their income passes a threshold level. We begin by documenting an S-shaped relationship between expenditure and durable asset ownership. Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
-
-Figure ?? demostrates how for a group of several assets, asset ownership is high in the Maldives and lower in the rest of South Asia. Filmer and Pritchett, 2001, argue that the first principal component of the household’s ownership of physical assets is highly correlated with household expenditure and can be used as a reasonable proxy. 
 
 ## WorldPop
 
