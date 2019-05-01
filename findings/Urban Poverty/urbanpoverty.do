@@ -36,7 +36,7 @@ gen id=country+"_"+strofreal(years)
 local varlist "`r(varlist)'"
 di in red "`r(varlist)'"
 
-
+ssss
 *---------- Evaluate initical conditions
 *countries
 if ("`countries'" == "") {
