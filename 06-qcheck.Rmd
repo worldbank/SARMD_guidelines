@@ -52,6 +52,17 @@ Household size is close to seven in Afghanistan, Pakistan and Maldives, and much
 
 [![](figures/dem_hsize.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
 
+[//]: # (## Household composition and expenditures)
+
+
+The following dashboard shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
+
+```{r children, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, fig.cap='Average household size by per capita consumption quintile', out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("./figures/Children.png")
+```
+
+[![](figures/Children.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children "The user may interact with this Tableau dashboard by clicking on the figure.")
+
 ### male
 
 Sex ratio is used to describe the number of females per 1000 of males. In India, and some other countries in South Asia, this ratio may be heavily skewed towards men.
