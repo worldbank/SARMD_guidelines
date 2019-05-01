@@ -17,7 +17,7 @@ Some _significant_ applications are demonstrated in this chapter.
 
 Energy-using appliances, such as refrigerators, are taken for granted among households in developed countries. However, in South Asia these assets are still scarce and owning a refrigerator, for example, can have important consequences on the well-being of a family. Refrigerators may be common in urban areas of New Delhi, but they are almost non-existent in central Afghanistan. We study how asset ownership increases with welfare with the help of harmonized data from SARMD. The possession of valuable assets that facilitate family labor in a meaningful way are quick indicators of household purchasing power and economic development in the region. 
 
-In microeconomics, an Engel curve describes how household expenditure on a particular good or service varies with household's purchasing power. For normal goods, the Engel curve has a positive gradient. That is, as purchasing power increases, the quantity of assets demanded increases. For inferior goods, the Engel curve has a negative gradient. 
+In microeconomics, an Engel curve describes how household expenditure on a good or service varies with household's purchasing power. For normal goods, the Engel curve has a positive gradient. That is, as purchasing power increases, the quantity of assets demanded increases. For inferior goods, the Engel curve has a negative gradient. 
 
 ```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="Engel curves for normal goods"}
 library(readr)
@@ -48,21 +48,28 @@ Therefore, we do not know the quantity of assets demanded by each household and 
 
 An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ energy use. @wolframm estimated that if one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent. 
 
-The following dashboard shows how high access to a refrigerator may be in the Maldives, compared to the rest of the countries: 
+The following dashboard shows how high access to a refrigerator may be in the Maldives, compared to the rest of the countries. The user may use the filters to display the same figure for a different durable asset. 
 
 [![](figures/refri.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 We model a non-linear relationship between welfare and access to assets as in @fuchs. They provide a theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A non-linear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase energy-using assets. Households faced with credit constraints only become likely to purchase energy-using assets once their income passes a threshold level. 
 
-We document an S-shaped relationship between expenditures and durable asset access Figure 1 plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
+We document an S-shaped relationship between households' per capita expenditures and access to durable assets in the figures below:
+
+[![](figures/Assets_and_Welfare.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_access_to_assets/AssetsandWelfare "The user may interact with this Tableau dashboard by clicking on the figure.")
+
+### Bicycle
 
 
 
 
 
 
-```{r, eval=FALSE}
+
+```{r, eval=FALSE, echo=FALSE}
 https://tab.worldbank.org/#/site/WBG/views/Note1/Dashboard1
+
+  plots the share of households that own refrigerators, televisions, and washing machines in India (2011) against household expenditure. 
 
 An estimated 368 million people live without electricity in their homes in South Asia, and even among those who have access, many do not own basic assets such as refrigerators, televisions, or washing machines. We study household decisions to acquire assets in the presence of rising incomes. Table ?? demonstrates the low penetration that these energy-consuming assets have in South Asia.  
 
