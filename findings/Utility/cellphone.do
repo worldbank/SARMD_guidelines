@@ -39,8 +39,6 @@ if ("`countries'" == "") {
 	levelsof country, local(countries)
 }
 	levelsof id, local(ids)
-*---------- Export to MATA
-*mata: R = st_sdata(.,tokens(st_local("varlist")))
 
 *---------- Loop over countries
 drop _all
@@ -53,25 +51,19 @@ set trace off
 qui foreach id of local ids {
 		tokenize `id', parse("_")
 		local country = "`1'"
-		*noi di in yellow "`vermast_p'";
+
 		local year = "`3'"	
-	
-	/*mata: st_local("years",    /*   set local years 
-	 */           invtokens(   /*    create tokens out of matrix
-	 */          select(R[.,2], R[.,1] :== st_local("country"))', /*  select years
-	 */            " "))     // separator (second temr in )
-	*di in red "`years'"
-	local years: list uniq years // in case of more than one survey 
-	*/
+
 	if ("`country'" == "IND" & `year'==2011) {
 		local surveyid "IND_2011_NSS68-SCH10"
-		*local year "2011"
+
 	}
 	else local surveyid ""
 	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
-			*RENAME VARIABLE NAMES
+
 			set trace off
+			gen cellnoelect=(cellphone==1&electricity==0)
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
 			cap rename cpi_v2 cpi
@@ -80,12 +72,12 @@ qui foreach id of local ids {
 			if _rc==0 {
 			quantiles welfare [aw=wgt], gen(q) n(5)
 			su cellphone if q==1 [aw=wgt]
-			gen cell=`r(mean)'
+			gen cell=`r(mean)'*100
 			su electricity if q==1 [aw=wgt]
-			gen elect=`r(mean)'
-			su cellphone if q==1 & electricity!=1 [aw=wgt]
-			gen cellnoelect=`r(mean)'
-			contract countrycode year cell elect cellnoelect
+			gen elect=`r(mean)'*100
+			su cellnoelect if q==1 [aw=wgt]
+			gen cellnoel=`r(mean)'*100
+			contract countrycode year cell elect cellnoel
 			append using `cy'
 			save `cy', replace
 			
@@ -107,23 +99,21 @@ keep if year==myr|year==miyr
 bys country: egen n=count(year)
 keep if n>1
 
-
 label var cell "Cell Phone"	
 label var elect "Electricity"	
-label var cellnoelect "Cell Phone w/o Electricity"
+label var cellnoel "Cell Phone w/o Electricity"
+
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cell elect cellnoelect if countrycode=="`c'", ///
-	over( year) name("`c'", replace) title("Access to Cell Phone & Electricity among Poor")  subtitle("`c'")	///
+	graph bar cell elect cellnoel if countrycode=="`c'", ///
+	over( year) name("`c'", replace)  subtitle("`c'")	///
 	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order(1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity"))
+	legend(order( 1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
 
 
 	graph export "${path}/`c'.png", replace	
 	}
+	
+grc1leg AFG BGD BTN LKA NPL PAK, ycommon title("Access to Cell Phone & Electricity among Poor (%)")  
+graph export "${path}/all.png", replace	
 
-	grc1leg  `countiries',  ///
-	title("Access to Cell Phone & Electricity among Poor")  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order(1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity"))
-	graph export "${path}/all.png", replace	 

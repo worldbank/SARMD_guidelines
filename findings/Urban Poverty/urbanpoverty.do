@@ -104,8 +104,8 @@ use `cy', clear
 levelsof countrycode, loc(countries)
 	glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Urban Poverty"	
 	foreach c of loc countries {
-	twoway line value year  if countrycode=="`c'", ///
-		name("`c'", replace) title("Urban Poverty")  subtitle("`c'")
+	graph bar value  if countrycode=="`c'", ///
+	over(year )	name("`c'", replace) title("Urban Poverty")  subtitle("`c'")
 	graph export "${path}/`c'.png", replace	
 	}
 

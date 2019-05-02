@@ -36,3 +36,22 @@ eststo model2_b: svy: logit poor_int `controls' if relationharm==1
 
 * Present results			
 esttab model1_a model1_b model2_a model2_b, se
+
+* Multinomial Logit 
+** Dependent var: Household Type
+			qui mlogit hhtype i.p age i.male i.educat4 i.urban hsize if hhtype>=3&hhtype<=6
+			qui margins i.p , atmeans predict(outcome(3))
+			qui marginsplot, name(coup, replace) 
+			qui margins i.p , atmeans predict(outcome(4))
+			qui marginsplot, name(sparent, replace) 
+			qui margins i.p , atmeans predict(outcome(5))
+			qui marginsplot, name(threegen, replace) 
+			qui margins i.p , atmeans predict(outcome(6))
+			qui marginsplot, name(extf, replace)
+			graph combine coup sparent threegen extf, title("Household Composition by Percentile", size(medium)) subtitle("`country' `year'", size(medium)) 
+							
+			*graph export "${path}/`country'_`year'.png", replace			
+** Dependent var: Being poor
+			qui mlogit q1 i.hhtype age i.male i.educat4 i.urban hsize if hhtype>=3&hhtype<=6
+			qui margins i.hhtype  , atmeans predict(outcome(1))
+			qui marginsplot, name(`country', replace) subtitle("`country' `year'", size(medium)) 
