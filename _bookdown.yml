@@ -28,7 +28,7 @@ rmd_files: [
   
   "PartAnalysis.Rmd",
   "welfareAssets.Rmd",
-  "SchoollEnrollment.Rmd",
+  "SchoolEnrollment.Rmd",
   "HHComposition.Rmd",
 ]
 
