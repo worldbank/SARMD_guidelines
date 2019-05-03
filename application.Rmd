@@ -1,18 +1,6 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
-# (PART) Analytical notes {-}
+# Welfare and access to durable assets in South Asia
 
-# Analytical notes {#application}
 ***
-
-In this chapter, we present some applications of SARMD for research purposes. The user may access the Stata do-files to replicate and modify these analytical notes. We also allow users the possibility to interact with the Tableau dashboards by clicking on them. 
-
-
-## Welfare and access to durable assets in South Asia
-
 > **Abstract:** 
 >
 > Economic inequality may cover a wide variety of topics, most commonly, the distribution of income, expenditures, and wealth. In this analysis, we study the unequal distribution of durable assets between different groups in South Asia. We find that the cumulative percentage of access to assets by expenditures per capita rarely behaves as a flat line, which means distribution of access to assets is unequal. For most assets, including energy-using assets such as refrigerators and televisions, we see a positive relationship between access and expenditures per capita. In contrast, it is also possible for assets (for example, bicycles) to become less accessible as households become richer, suggesting they may have the characteristics of inferior goods. We find access to most assets has increased rapidly, although unevenly for different levels of welfare. A few exceptions are assets that may be becoming obsolete, such as radios and land phones, for which access has decreased over time across the region for all levels of welfare. 
@@ -216,7 +204,8 @@ Filmer and Pritchett, 2001, argue that the first principal component of the hous
 
 ```
 
-## School enrollment in South Asia
+
+# School enrollment in South Asia
 
 
 > **Abstract:** 
