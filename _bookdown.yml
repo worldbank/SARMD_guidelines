@@ -11,10 +11,25 @@ language:
     chapter_name: "Chapter "
 
 rmd_files: [
-  "index.rmd",
+  "index.Rmd",
   "intro.Rmd",
 
+  "PartBasics.Rmd",
   "datalibweb.Rmd",
+  "poverty.Rmd",
+  "methodology.Rmd",
+  
+  "Partmetadata.Rmd",
+  "inventory.Rmd",
+  "formularies.Rmd", 
+  
+  "PartqualityControl.Rmd",
+  "qcheck.Rmd",
+  
+  "PartAnalysis.Rmd",
+  "welfareAssets.Rmd",
+  "SchoollEnrollment.Rmd",
+  "HHComposition.Rmd",
 ]
 
 before_chapter_script: "_common.R"
