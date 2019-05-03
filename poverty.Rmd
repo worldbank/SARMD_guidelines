@@ -1,4 +1,4 @@
-# Introduction to poverty measures in South Asia
+# Poverty measures in South Asia
 ***
 
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, tidy=TRUE, cache=FALSE, message=FALSE}
