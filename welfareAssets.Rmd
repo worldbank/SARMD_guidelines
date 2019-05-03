@@ -9,11 +9,13 @@ Energy-using appliances, such as refrigerators, are taken for granted among hous
 
 In microeconomics, an Engel curve describes how household expenditure on a good or service varies with household's purchasing power. For normal goods, the Engel curve has a positive gradient. That is, as purchasing power increases, the quantity of assets demanded increases. For inferior goods, the Engel curve has a negative gradient. 
 
-```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="Engel curves for normal goods"}
-library(readr)
-engel <- read_csv("./tables/engel.csv",col_names = TRUE, col_types = cols())
-library(ggplot2)
-ggplot(data=engel, aes(x=Wealth, y=Quantity))  +   geom_line(aes(linetype=types))
+```{r angel, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="Engel curves for normal goods"}
+
+read_csv("./tables/engel.csv", 
+         col_names = TRUE, col_types = cols()) %>% 
+  ggplot(aes(x=Wealth, y=Quantity))  +   
+    geom_line(aes(linetype=types))
+
 ```
 
 The harmonized asset variables in SARMD indicate, not the quantity demanded, but whether households have access to assets. For example: 

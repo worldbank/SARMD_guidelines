@@ -157,8 +157,7 @@ sum `controls' if relationharm==1 [aw=pop_wgt]
 eststo: reg ln_welfare_perc `controls' if relationharm==1 [aw=pop_wgt]
 esttab
 ```
-```{r latest, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-library(readr)
+```{r shcregtable, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types = cols())
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
