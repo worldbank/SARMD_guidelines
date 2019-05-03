@@ -1,4 +1,4 @@
----  
+---
 title: "South Asia Regional Micro Database (SARMD) User Guidelines" 
 author: ["South Asia Region Team for Statistical Development (SARTSD)", "R.Andres Castaneda", "Jayne Junqsun Yoo", "Francisco Javier Parada Gomez Urquiza"]
 date: "`r Sys.Date()`" 
@@ -17,4 +17,8 @@ monofontoptions: "Scale=0.7"
 github-repo: randrescastaneda/SARMD_guidelines
 description: "SARMD User Guidelines" 
 documentclass: book 
---- 
+---
+
+# Welcome {-} 
+
+This is a test
