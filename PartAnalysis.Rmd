@@ -1,0 +1,7 @@
+# (PART) Analytical Notes {-}
+
+# Introduction to Analytical notes {#analysis}
+***
+
+In this part, we present some applications of SARMD for research purposes. The user may access the Stata do-files to replicate and modify these analytical notes. We also allow users the possibility to interact with the Tableau dashboards by clicking on them. 
+
