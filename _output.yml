@@ -7,7 +7,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">SARMD User Guidelines</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+        <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
     download: ["pdf", "epub"]
     
 bookdown::pdf_book:
@@ -18,5 +18,4 @@ bookdown::pdf_book:
   keep_tex: yes
 
 bookdown::epub_book: default
-
-documentclass: book
+  stylesheet: style.css
