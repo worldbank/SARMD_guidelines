@@ -1,16 +1,6 @@
 # Poverty measures in South Asia
 ***
 
-```{r, echo=FALSE, warning=FALSE, error=FALSE, tidy=TRUE, cache=FALSE, message=FALSE}
-
-pkg <-  c("sf", "sp", "raster", "spData", "ggplot2", "dplyr", "readr")
-new.pkg <- pkg[!(pkg %in% installed.packages()[,"Package"])]
-
-if (length(new.pkg)) install.packages(new.pkg) # Install missing packages
-inst = lapply(pkg, library, character.only = TRUE) # load them
-
-```
-
 ```{r, echo=FALSE, warning=FALSE, error=FALSE, tidy=TRUE, cache=FALSE}
 SAR_countries <- c("Afghanistan" ,"Bangladesh" ,"Bhutan" ,
                    "India" ,"Maldives" ,"Nepal" ,"Pakistan" ,"Sri Lanka")
