@@ -30,6 +30,8 @@ rmd_files: [
   "welfareAssets.Rmd",
   "SchoolEnrollment.Rmd",
   "HHComposition.Rmd",
+  
+  "references.Rmd",
 ]
 
 before_chapter_script: "_common.R"
