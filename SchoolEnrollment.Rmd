@@ -1,6 +1,6 @@
 # School enrollment in South Asia
-***
 
+***
 > **Abstract:** 
 >
 > School enrollment over age has the shape of a pleateau (or trapezoid) in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, we find evidence of school enrollment having the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are still concerning even among primary school children aged 4 to 12 years.
@@ -108,13 +108,13 @@ Sri Lanka's education structure is divided into five parts: primary, junior seco
 
 You may access our full Stata do-file by clicking the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/school_enrollment_by_age.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
 
-```markdown
-# Example: Measuring school enrollment by age, gender and urban/rural
+```stata
+* Example: Measuring school enrollment by age, gender and urban/rural
 
-# Open dataset
+* Open dataset
 datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
 
-# Generate enrollment rates 
+* Generate enrollment rates 
 mean atschool [aw=wgt] if age < 25, over(age male urban) // same as anova
 anova atschool i.age##i.male##i.urban  [aw=wgt] if (age < 25) 
 		
@@ -122,7 +122,7 @@ tempfile g u gu a
 margins i.age##i.male         [aw=wgt] if (age < 25), saving(`g')
 margins i.age##i.urban        [aw=wgt] if (age < 25), saving(`u')
 
-# Plot figure		
+* Plot figure		
 combomarginsplot  `u' `g', noci recast(line) legend(cols(2) position(6)) /* 
 		 */ plotopts(lpattern(l)) by(_filenumber) labels("Urban/rural" "Gender")
 ```
@@ -139,16 +139,14 @@ Equation 1
 $$f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}$$
 
 $$
-
 \begin{equation} 
   \ln (\frac{y_{i)}}{1.90}) = \beta_{0} +\beta X_{i}+\varepsilon _{i}
 \end{equation} 
-
 $$
 
 where $X_{i}$ are the independent variables for household $i$ and $\beta$ are the coefficients we are tring to estimate. 
 
-```markdown
+```stata
 gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
 gen age_squared=age^2
 local controls "age age_squared i.male hsize educy i.educat7 i.literacy \\
@@ -157,6 +155,7 @@ sum `controls' if relationharm==1 [aw=pop_wgt]
 eststo: reg ln_welfare_perc `controls' if relationharm==1 [aw=pop_wgt]
 esttab
 ```
+
 ```{r shcregtable, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types = cols())
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
