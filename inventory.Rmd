@@ -7,15 +7,14 @@ SARMD is a regional database of socio-economic indicators established in 2014 an
 
 This chapter provides an inventory of household surveys available in the South Asia Micro Database (SARMD) with the support of a series of accompanying Tableau dynamic dashboards. You may access the Tableau dashboards by clicking on them and on the figures' titles. The datasets may be accessed in STATA as shown in the next example:
 
-```markdown
-# Example: Opening a dataset in SARMD using STATA
+```stata
+* Example: Opening a dataset in SARMD using STATA
   datalibweb, country(BGD) years(2016) type(SARMD) clear
 ```
 
 Table \@ref(tab:latest) shows the latest available household surveys in SARMD and provides links to the National Statistics Offices' websites.
 
 ```{r latest, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-library(readr)
 latest <- read_csv("./tables/latest.csv",col_names = TRUE, col_types = cols())
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
