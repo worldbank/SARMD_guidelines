@@ -21,4 +21,8 @@ documentclass: book
 
 # Welcome {-} 
 
+```{r echo=FALSE}
+knitr::include_graphics("figures/SAR-Emblem.png")
+```
+
 This is a test
