@@ -1,6 +1,6 @@
 # (PART) Metadata Analysis {-}
 
-# Introduction to the metadata analysis section {#metadata}
+# Introduction to metadata analysis {#metadata .unnumbered}
 
 ***
 In this section 
