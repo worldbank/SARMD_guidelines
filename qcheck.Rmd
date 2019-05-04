@@ -1,6 +1,4 @@
-# (PART) Quality Check {-}
-
-# Harmonized variables {#qcheck}
+# Harmonized variables
 ***
 
 Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. The following Tableau dashboards display which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.

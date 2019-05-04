@@ -1,0 +1,5 @@
+# (PART) Basics {-}
+
+# Introduction to foundamentals of SARMD {#basics .unnumbered}
+
+The goal of the first part 

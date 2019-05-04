@@ -17,7 +17,6 @@ The ideal reference period should be a week, but in this analysis we have found 
 In most cases, countries modify their food baskets and change their data collection methods over time. A wide mixture of data collection methods characterizes the most recent rounds of household surveys. Bangladesh HIES 2016 collects daily household food consumption (both quantity and value) for a period of 14 days. In addition, it collects weekly consumption of a series of spices. Bhutan LSS 2017 collects food consumption (both quantity and value) by asking the respondent to recall their consumption in the last seven days, the last thirty days, and the last year. In some cases, such as Afghanistan LCS 2016, the female respondents are the ones asked about household food consumption. These methods can be very diverse and we provide a brief description for the latest survey available for each country in Table \@ref(tab:food). 
 
 ```{r food, echo=FALSE, messages=FALSE, warning=FALSE}
-library(readr)
 food <- read_csv("./tables/food.csv", col_types = cols())
 knitr::kable(food,booktabs=TRUE, caption = 'Mixture of collection methods for food at home')
 ```
@@ -77,7 +76,6 @@ Still, each country may determine its own definition of what constitutes non-foo
 Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. Monthly is the most frequent collection period for non-food expenditures. Both food and non-food expenditures have insufficient coverage on transfers. 
 
 ```{r nonfood, echo=FALSE,eval=FALSE}
-library(readr)
 nonfood <- read_csv("./tables/nonfood.csv", col_types = cols())
 knitr::kable(nonfood,booktabs=TRUE, caption = 'Non-Food')
 ```
@@ -106,7 +104,6 @@ To measure the flows from using durable goods over extended periods of time, we 
 Table \@ref(tab:durables) provides a quick comparison between countries by presenting the number of assets collected, and their collection method (i.e. quantity and/or value). In addition, we provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables) where the user may identify which surveys collect insufficient information regarding durable assets. 
 
 ```{r durables, echo=FALSE}
-library(readr)
 durables <- read_csv("./tables/durables.csv", col_types = cols())
 knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 
@@ -134,7 +131,6 @@ For Bangladesh HIES 2016, the housing expenditure component may include the thre
 In the rest of the countries, households are asked for their hypothetical rental values, not for the value of their dwelling. Table \@ref(tab:housing) summarizes how each survey collects rent or dwelling values for households who own their dwelling. For Bhutan LSS 2017, households were asked for the amount of rent they pay for their dwelling in a month. People who own their dwelling or stay in rent-free houses were asked to estimate the monthly house rent for their dwellings. The question was "How much would you pay if you had to rent this dwelling?". A similar question is included in the surveys Maldives HIES 2016, Nepal AHS 2016 and Sri Lanka HIES 2016. India 2011 and Pakistan 2015 still lack enough data to measure rents. 
 
 ```{r housing, echo=FALSE}
-library(readr)
 housing <- read_csv("./tables/housing.csv", col_types = cols())
 knitr::kable(housing,booktabs=TRUE, caption = 'Housing')
 ```

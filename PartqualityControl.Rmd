@@ -1,0 +1,6 @@
+# (PART) Quality Check {-}
+
+# Introduction to quality control {#qcheck .unnumbered}
+
+***
+In this section 
