@@ -64,6 +64,7 @@ qui foreach id of local ids {
 
 			set trace off
 			gen cellnoelect=(cellphone==1&electricity==0)
+			gen cellelect=(cellphone==1&electricity==1)		
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
 			cap rename cpi_v2 cpi
@@ -77,7 +78,9 @@ qui foreach id of local ids {
 			gen elect=`r(mean)'*100
 			su cellnoelect if q==1 [aw=wgt]
 			gen cellnoel=`r(mean)'*100
-			contract countrycode year cell elect cellnoel
+			su cellelect if q==1 [aw=wgt]
+			gen cellel=`r(mean)'*100
+			contract countrycode year cell elect cellnoel cellel
 			append using `cy'
 			save `cy', replace
 			
@@ -92,23 +95,23 @@ qui foreach id of local ids {
 	}
 }
 u `cy', clear
-
+s
 bys country: egen myr=max(year)
 bys country: egen miyr=min(year)
 keep if year==myr|year==miyr
 bys country: egen n=count(year)
 keep if n>1
-
+s
 label var cell "Cell Phone"	
 label var elect "Electricity"	
 label var cellnoel "Cell Phone w/o Electricity"
 
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cell elect cellnoel if countrycode=="`c'", ///
-	over( year) name("`c'", replace)  subtitle("`c'")	///
+	graph bar cellnoel cellel if countrycode=="`c'", ///
+	over( year) stack name("`c'", replace)  subtitle("`c'")	///
 	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order( 1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
+	legend(order( 1 "Cell Phone with Electricity" 2 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
 
 
 	graph export "${path}/`c'.png", replace	
