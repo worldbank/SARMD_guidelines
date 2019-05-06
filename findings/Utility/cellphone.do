@@ -53,12 +53,13 @@ qui foreach id of local ids {
 		local country = "`1'"
 
 		local year = "`3'"	
-
+/*
 	if ("`country'" == "IND" & `year'==2011) {
 		local surveyid "IND_2011_NSS68-SCH10"
 
 	}
 	else local surveyid ""
+	*/
 	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
@@ -95,13 +96,13 @@ qui foreach id of local ids {
 	}
 }
 u `cy', clear
-s
+
 bys country: egen myr=max(year)
 bys country: egen miyr=min(year)
 keep if year==myr|year==miyr
 bys country: egen n=count(year)
 keep if n>1
-s
+
 label var cell "Cell Phone"	
 label var elect "Electricity"	
 label var cellnoel "Cell Phone w/o Electricity"
@@ -116,7 +117,7 @@ foreach c of loc countries {
 
 	graph export "${path}/`c'.png", replace	
 	}
-	
+s	
 grc1leg AFG BGD BTN LKA NPL PAK, ycommon title("Access to Cell Phone & Electricity among Poor (%)")  
 graph export "${path}/all.png", replace	
 
