@@ -53,13 +53,13 @@ qui foreach id of local ids {
 		local country = "`1'"
 
 		local year = "`3'"	
-/*
+
 	if ("`country'" == "IND" & `year'==2011) {
-		local surveyid "IND_2011_NSS68-SCH10"
+		local surveyid "NSS68-SCH1.0-T1"
 
 	}
 	else local surveyid ""
-	*/
+	
 	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
