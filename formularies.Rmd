@@ -1,4 +1,5 @@
 # Expenditure components
+***
 
 Household surveys capture a wide variety of development indicators in such areas as poverty, food security, labor market performance, demography, education, health, gender equality, housing and agriculture. In this chapter, we present the results of a Metadata analysis focusing mostly on the household surveys' ability to measure food, non-food, durables, and housing expenditures with different data collection methods. 
 
