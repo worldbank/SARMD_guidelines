@@ -17,7 +17,7 @@ options(dplyr.print_min = 6, dplyr.print_max = 6)
 
 # install and load packages that have not been installed before
 pkg <-  c("sf", "sp", "raster", "spData", "ggplot2", "dplyr", "readr", 
-          "png", "grid")
+          "png", "grid","DiagrammeR")
 new.pkg <- pkg[!(pkg %in% installed.packages()[,"Package"])] # check installed packages
 load.pkg <- pkg[!(pkg %in% loadedNamespaces())]              # check loaded packages
 
