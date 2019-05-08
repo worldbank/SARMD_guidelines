@@ -32,7 +32,7 @@ gen id=country+"_"+strofreal(years)
 
 local varlist "`r(varlist)'"
 di in red "`r(varlist)'"
-
+s
 *---------- Evaluate initical conditions
 *countries
 if ("`countries'" == "") {
@@ -117,7 +117,7 @@ foreach c of loc countries {
 
 	graph export "${path}/`c'.png", replace	
 	}
-s	
-grc1leg AFG BGD BTN LKA NPL PAK, ycommon title("Access to Cell Phone & Electricity among Poor (%)")  
+
+grc1leg AFG BGD BTN IND LKA NPL PAK, ycommon title("Access to Cell Phone (%)")  
 graph export "${path}/all.png", replace	
 
