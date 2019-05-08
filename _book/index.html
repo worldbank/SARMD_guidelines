@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines">
-  <meta name="generator" content="bookdown 0.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -28,7 +28,7 @@
 <meta name="author" content="Francisco Javier Parada Gomez Urquiza">
 
 
-<meta name="date" content="2019-05-06">
+<meta name="date" content="2019-05-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,6 +39,7 @@
 <link rel="next" href="introduction.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -52,6 +53,69 @@
 
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -69,7 +133,9 @@
 <li><a href="./">SARMD User Guidelines</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="part"><span><b>I Basics</b></span></li>
 <li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to foundamentals of SARMD</a></li>
@@ -206,15 +272,70 @@
 <p class="author"><em>R.Andres Castaneda</em></p>
 <p class="author"><em>Jayne Junqsun Yoo</em></p>
 <p class="author"><em>Francisco Javier Parada Gomez Urquiza</em></p>
-<p class="date"><em>2019-05-06</em></p>
+<p class="date"><em>2019-05-07</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
-<div style="float:right;position: relative; top: -80px;">
+<div style="float:right;position: relative;">
 <p><img src="figures/SAR-Emblem.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
-<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet, consectetur, adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur</p>
+<p>This book will teach you everything you need to know about the South Asia Region MicroDatabase (SARMD). You will learn how to get acces to the microdata through the <code>datalibweb</code> system, how to perform basic (and not so basic) socioeconomic calculations, howe comparable and similar household surveys are across the region,how good the harmonization process is, and how to make analysis at the regional or country level by providing a series of case studies and findings.</p>
+<p>This book has been written in <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> syntax and compiled with the <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> package. The source files are available in the Word Bank Github repo <a href="https://github.com/randrescastaneda/SARMD_guidelines">DDDD</a>. In order to become a contributor of this project, please send an email to … requesting for access. Once you’re granted for access, you may clone of fork this repo and start contributing.</p>
+<p>There are several advantages to compose books (specially technical book) in the Rmarkdown way:</p>
+<ol style="list-style-type: decimal">
+<li>You are able to create different types of output formats such as PDF, HTML, WORD, EPub, and even Kindle files.</li>
+<li>Everything is written using plain text, so you may enjoy the benefits of tracking changes and collaborative platforms as Git.</li>
+<li>You can execute <code>R</code> or <code>Stata</code> code directly from the text as well as include code chunks and/or its corresponding results inline wherever you want within the document.</li>
+<li>You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and imported <a href="https://www.gitbook.com">GitBook</a> style to create elegant and beautiful books.</li>
+</ol>
+<div id="software-information-and-conventions" class="section level2 unnumbered">
+<h2>Software information and conventions</h2>
+<p>The R session information used when this book was compiled is as follows</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()
+<span class="co">#&gt; R version 3.5.3 (2019-03-11)</span>
+<span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
+<span class="co">#&gt; Running under: Windows 10 x64 (build 17134)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] LC_COLLATE=English_United States.1252 </span>
+<span class="co">#&gt; [2] LC_CTYPE=English_United States.1252   </span>
+<span class="co">#&gt; [3] LC_MONETARY=English_United States.1252</span>
+<span class="co">#&gt; [4] LC_NUMERIC=C                          </span>
+<span class="co">#&gt; [5] LC_TIME=English_United States.1252    </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] grid      stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">#&gt; [8] base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt; [1] png_0.1-7     readr_1.3.1   dplyr_0.8.0.1 ggplot2_3.1.1 spData_0.3.0 </span>
+<span class="co">#&gt; [6] raster_2.8-19 sp_1.3-1      sf_0.7-3      xml2_1.2.0   </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;  [1] tidyselect_0.2.5 xfun_0.6         purrr_0.3.2      lattice_0.20-38 </span>
+<span class="co">#&gt;  [5] colorspace_1.3-2 htmltools_0.3.6  yaml_2.1.19      rlang_0.3.4     </span>
+<span class="co">#&gt;  [9] e1071_1.7-1      pillar_1.3.1     later_0.8.0      glue_1.3.1      </span>
+<span class="co">#&gt; [13] withr_2.1.2      DBI_1.0.0        plyr_1.8.4       stringr_1.4.0   </span>
+<span class="co">#&gt; [17] munsell_0.5.0    gtable_0.2.0     codetools_0.2-16 evaluate_0.13   </span>
+<span class="co">#&gt; [21] labeling_0.3     knitr_1.22       httpuv_1.5.1     class_7.3-15    </span>
+<span class="co">#&gt; [25] highr_0.7        Rcpp_1.0.1       scales_0.5.0     promises_1.0.1  </span>
+<span class="co">#&gt; [29] classInt_0.3-1   jsonlite_1.6     mime_0.5         servr_0.13      </span>
+<span class="co">#&gt; [33] hms_0.4.2        packrat_0.4.9-3  digest_0.6.18    stringi_1.4.3   </span>
+<span class="co">#&gt; [37] bookdown_0.9     tools_3.5.3      magrittr_1.5     lazyeval_0.2.1  </span>
+<span class="co">#&gt; [41] tibble_2.1.1     crayon_1.3.4     pkgconfig_2.0.2  assertthat_0.2.0</span>
+<span class="co">#&gt; [45] rmarkdown_1.12   rstudioapi_0.10  R6_2.2.2         units_0.6-2     </span>
+<span class="co">#&gt; [49] compiler_3.5.3</span></code></pre>
+<p>All the pieces of written <code>like this</code> and sometimes you my find chunks of code like this</p>
+<pre class="stata"><code>This is a chunk of code,
+and everything in it can be copied and
+pasted directly into the corresponding
+execution console, which could be 
+Stata or R.</code></pre>
+<p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> langauge as well.</p>
 
+</div>
 </div>
             </section>
 
@@ -242,7 +363,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -252,6 +373,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
