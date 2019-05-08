@@ -3,4 +3,5 @@
 # Introduction to metadata analysis {#metadata .unnumbered}
 
 ***
-In this section 
+The second part of this book studies the available metadata for household surveys in SARMD. Metadata is documentation that describes data and may take many different forms. Chapter 4 focuses on survey availability to present precisely which surveys are available where and when. Chapter 5 goes deeper into the survey questionnaires to compare what information is collected by the surveys in relation to the four main expenditure components: food, non-food, durables, and rent. 
+

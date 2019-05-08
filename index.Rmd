@@ -1,6 +1,6 @@
 ---
 title: "South Asia Regional Micro Database (SARMD) User Guidelines" 
-author: ["South Asia Region Team for Statistical Development (SARTSD)", "R.Andres Castaneda", "Jayne Junqsun Yoo", "Francisco Javier Parada Gomez Urquiza"]
+author: ["South Asia Region Team for Statistical Development (SARTSD)", "Raúl Andrés Castañeda Aguilar ", "Jayne Jungsun Yoo", "Francisco Javier Parada Gómez Urquiza "]
 date: "`r Sys.Date()`" 
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site 
@@ -27,4 +27,4 @@ knitr::include_graphics("figures/SAR-Emblem.png")
 ```
 </div>
 
-Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet, consectetur, adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur
+This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.

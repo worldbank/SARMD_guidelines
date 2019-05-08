@@ -1,7 +1,7 @@
 # Harmonized variables
 ***
 
-Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. The following Tableau dashboards display which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
+Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. 
 
 ```{r,eval=FALSE,echo=FALSE}
 This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
@@ -9,10 +9,36 @@ This chapter presents the harmonized data from the South Asia Micro Database (SA
 
 ## Basic survey characteristics
 
+
+```{r boxes_and_circles, echo=FALSE}
+library('DiagrammeR')
+grViz("
+digraph boxes_and_circles {
+
+graph [layout = dot, color=crimson]
+#  rankdir = LR  overlap=true, fontsize=20
+node [shape = box, style = filled, color= orange]
+countrycode year survey veralt vermast idh idp wgt pop_wgt int_year int_month subnatid1 subnatid2 psu strata spdef
+node [shape = box, style = filled, color= grey]
+Basic 
+node [shape = box, style = filled, color= lightgrey]
+Survey Version Identifiers Weight Date Location Other
+# add edge statements
+Basic -> Survey -> countrycode -> survey  -> year; Basic -> Version -> vermast ->veralt; Basic -> Identifiers -> idh -> idp ; Basic -> Weight -> wgt -> pop_wgt; 
+Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnatid2; Basic -> Other -> psu -> strata -> spdef; 
+}      
+")
+```
+
+The essential variables that identify each dataset and individual within a household are ``countrycode``, ``year``, ``survey``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgtxhsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
+
+The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
+
+
 [![](figures/harm_1.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 
-```{r table0, echo=FALSE, results='asis'}
+```{r table0, echo=FALSE, eval=FALSE, results='asis'}
 cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
 |------------:|-----------:|------------:|--------------:|
 |      year|         idh|     int_year| psu|
@@ -21,22 +47,42 @@ cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
 ```
 
 
-The essential variables that identify each dataset are **countrycode**, **year**, **survey**, **vermast**, **veralt**, **idh**, and **idp**. Weights are defined as **wgt** and **pop_wgt=wgtxhsize**. The dates of the survey are recorded as **int_year** and **int_month**. The geographical location within the country’s administrative division is recorded as **subnatid1**, and in some cases, **subnatid2** may provide a more specific location. 
-**psu**
-**strata**
-**spdef** 
-
 ## Demographic variables
+
+```{r boxe, echo=FALSE }
+library('DiagrammeR')
+grViz("
+digraph boxe {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+age male hsize relationcs relationharm marital
+node [shape = box, style = filled, color= grey]
+Demographic 
+node [shape = box, style = filled, color= lightgrey]
+Numerical Dummy Categorical
+
+# add edge statements
+Demographic -> Numerical -> age  -> hsize  
+Demographic ->  Dummy -> male
+Demographic ->  Categorical -> relationcs  -> relationharm  -> marital
+
+}      
+")
+```
+
+There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. 
+The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
 
 [![](figures/harm_2.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-```{r table1, echo=FALSE, results='asis', eval=FALSE}
+```{r table1, echo=FALSE, eval=FALSE, results='asis', eval=FALSE}
 cat('|      age|    male|    hsize|
 |------------:|-----------:|------------:|
 |      relationcs|        relationharm|        marital|')
 ```
 
-There are currently six essential demographic variables in SARMD: **age**,  **hsize**, **male (0/1)**, **relationcs**, **relationharm** and **marital**. 
+
 
 ### age
 
@@ -99,7 +145,7 @@ This variable refers to the simplified categories that indicate the relationship
 
 ### marital
 
-This variables classifies individuals according to their marital status into this simplified categories: 
+This variable classifies individuals according to their marital status into these simplified categories: 
 
 - Never Married
 - Married 
@@ -115,9 +161,33 @@ knitr::include_graphics("./figures/Pyramid.png")
 
 ## Education
 
+
+```{r boxes, echo=FALSE }
+library('DiagrammeR')
+grViz("
+digraph boxes {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, educat7
+node [shape = box, style = filled, color= grey]
+Education 
+node [shape = box, style = filled, color= lightgrey]
+Numerical Dummy Categorical
+
+# add edge statements
+Education -> Numerical -> ed_mod_age -> educy  
+Education ->  Dummy -> literacy -> atschool -> everattend
+Education ->  Categorical -> educat4 -> educat5 -> educat7
+
+}      
+")
+```
+
+There are currently eight essential education variables in SARMD: ``literacy``, ``atschool``, ``everattend``, ``ed_mod_age``, ``educy``, ``educat4``, ``educat5``, and ``educat7``.
+
 [![](figures/harm_3.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-There are currently eight essential education variables in SARMD: literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, and educat7.
 
 ```{r table2, echo=FALSE, eval=FALSE, results='asis'}
 cat('|      atschool|    ed_mod_age|    everattend|   literacy|
@@ -133,31 +203,66 @@ The adult literacy rate – referring to the population aged 15 and over – is 
 
 ### atschool
 
+Dummy variable that indicates whether individual is currently enrolled in school. 
+
 ### everattend
+
+Dummy variable that indicates whether individual has ever attended school. 
 
 ### ed_mod_age
 
+Minimum age level at which the education module of the questionnaire is applied. 
+
 ### educy
 
-Should not include pre-school. 
+Number of years of education of an individual. Should not include pre-school. 
 
 ### educat4
+
+Education categories divided into four groups. 
 
 [![](figures/educat4_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### educat5
 
+Education categories divided into five groups. 
+
 [![](figures/educat5_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### educat7
+
+Education categories divided into seven groups. 
 
 [![](figures/educat7_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ## Durable assets
 
+```{r assetsdiagram, echo=FALSE }
+library('DiagrammeR')
+grViz("
+digraph assetsdiagram {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+bicycle buffalo cellphone chicken computer cow fan lamp landphone motorcar motorcycle  radio refrigerator sewingmachine  television washingmachine
+node [shape = box, style = filled, color= grey]
+Assets 
+node [shape = box, style = filled, color= lightgrey]
+Transport Livestock Electric
+# add edge statements
+Assets -> Transport -> bicycle -> motorcar -> motorcycle
+Assets -> Livestock -> buffalo -> chicken -> cow
+Assets -> Electric -> cellphone -> computer -> fan -> lamp 
+Assets -> Electric -> landphone ->  radio -> refrigerator 
+Assets -> Electric -> sewingmachine  -> television -> washingmachine
+}      
+")
+```
+
+
 [![](figures/harm_4.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
-```{r table3, echo=FALSE, results='asis'}
+```{r table3, echo=FALSE, eval=FALSE, results='asis'}
 cat('|      bicycle|    computer|    landphone|   refrigerator|
 |------------:|-----------:|------------:|--------------:|
 |      buffalo|         cow|     motorcar| sewing machine|
