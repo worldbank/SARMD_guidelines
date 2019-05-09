@@ -1,11 +1,11 @@
 # SARMD Inventory {#inventory}
 
 ***
-[![](figures/Bubbles.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Cover "The user may learn more about sample size with this Tableau dashboard by clicking on the figure.")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 850px;'><object class='tableauViz' width='1000' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Cover' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 SARMD is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. 
 
-This chapter provides an inventory of household surveys available in the South Asia Micro Database (SARMD) with the support of a series of accompanying Tableau dynamic dashboards. You may access the Tableau dashboards by clicking on them and on the figures' titles. The datasets may be accessed in STATA as shown in the next example:
+This chapter provides an inventory of household surveys available in the South Asia Micro Database (SARMD) with the support of a series of accompanying Tableau dynamic dashboards. The datasets may be accessed in STATA as shown in the next example:
 
 ```stata
 * Example: Opening a dataset in SARMD using STATA
@@ -26,24 +26,15 @@ Considering that the South Asia region has the second largest poor population in
 
 Extreme data deprivation may be measured as having less than two data points in a ten-year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
 
-```{r inv, echo=FALSE, eval=FALSE, fig.cap='[SARMD Inventory](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability)', fig.align='center'}
-knitr::include_graphics("./figures/Inventory.png")
-```
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Availability' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-[![](figures/Inventory.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability "Number of surveys available in SARMD by country.")
-
-[![](figures/Inventory_map.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Map "Number of surveys available in SARMD by country.")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Map' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ## Sample size
 
-India’s household survey is by far the largest covering 100,000 households in the 2009 and 2011 rounds as shown in Figure \@ref(fig:ssize). Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
+India’s household survey is by far the largest covering 100,000 households in the 2009 and 2011 rounds as shown in the following dashboard. Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
 
-```{r ssize, echo=FALSE, eval=FALSE, fig.cap='[Sample Size](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines)', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("./figures/Survey_size.png")
-```
-
-[![](figures/Survey_size.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines "Survey size")
-
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Lines' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ## Country descriptions
 
