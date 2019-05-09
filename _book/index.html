@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines">
-  <meta name="generator" content="bookdown 0.7.8 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -23,12 +23,12 @@
   
 
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
-<meta name="author" content="R.Andres Castaneda">
-<meta name="author" content="Jayne Junqsun Yoo">
-<meta name="author" content="Francisco Javier Parada Gomez Urquiza">
+<meta name="author" content="Raúl Andrés Castañeda Aguilar">
+<meta name="author" content="Jayne Jungsun Yoo">
+<meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-03">
+<meta name="date" content="2019-05-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,6 +39,7 @@
 <link rel="next" href="introduction.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -55,7 +56,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -68,13 +69,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -134,10 +133,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">SARMD User Guidelines</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i><b>0.1</b> About the technical composition of this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="part"><span><b>I Basics</b></span></li>
-<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to foundamentals of SARMD</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to fundamentals of SARMD</a></li>
 <li class="chapter" data-level="1" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html"><i class="fa fa-check"></i><b>1</b> Datalibweb: Getting Access to SARMD</a><ul>
 <li class="chapter" data-level="1.1" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#request-access-to-the-system"><i class="fa fa-check"></i><b>1.1</b> Request access to the system</a></li>
 <li class="chapter" data-level="1.2" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#install-the-datalibweb-command-in-stata"><i class="fa fa-check"></i><b>1.2</b> Install the <code>datalibweb</code> command in Stata</a><ul>
@@ -268,16 +270,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">South Asia Regional Micro Database (SARMD) User Guidelines</h1>
 <p class="author"><em>South Asia Region Team for Statistical Development (SARTSD)</em></p>
-<p class="author"><em>R.Andres Castaneda</em></p>
-<p class="author"><em>Jayne Junqsun Yoo</em></p>
-<p class="author"><em>Francisco Javier Parada Gomez Urquiza</em></p>
-<p class="date"><em>2019-05-03</em></p>
+<p class="author"><em>Raúl Andrés Castañeda Aguilar</em></p>
+<p class="author"><em>Jayne Jungsun Yoo</em></p>
+<p class="author"><em>Francisco Javier Parada Gómez Urquiza</em></p>
+<p class="date"><em>2019-05-08</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
+<div style="float:right;position: relative;">
 <p><img src="figures/SAR-Emblem.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>This is a test</p>
+</div>
+<p>This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.</p>
+<p>These guidelines are intended to teach you everything you need to know to work efficiently with the South Asia Region MicroDatabase (SARMD). You will learn how to get acces to the microdata through the <code>datalibweb</code> system, how to perform basic (and not so basic) socioeconomic calculations, howe comparable and similar household surveys are across the region,how good the harmonization process is, and how to make analysis at the regional or country level by providing a series of case studies and findings.</p>
+<div id="about-the-technical-composition-of-this-book" class="section level2">
+<h2><span class="header-section-number">0.1</span> About the technical composition of this book</h2>
+<p>This book has been written in <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> syntax and compiled with the <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> package. The source files are available in the Word Bank Github repo <a href="https://github.com/randrescastaneda/SARMD_guidelines">DDDD</a>. In order to become a contributor of this project, please send an email to … requesting for access. Once you’re granted for access, you may clone of fork this repo and start contributing.</p>
+<p>There are several advantages to compose books (specially technical book) using Markdown:</p>
+<ol style="list-style-type: decimal">
+<li>You are able to create different types of output formats such as PDF, HTML, WORD, EPub, and even Kindle files.</li>
+<li>Everything is written using plain text, so you may enjoy the benefits of tracking changes and collaborative platforms as Git.</li>
+<li>You can execute <code>R</code> or <code>Stata</code> code directly from the text as well as include code chunks and/or its corresponding results inline wherever you want within the document.</li>
+<li>You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and imported <a href="https://www.gitbook.com">GitBook</a> style to create elegant and beautiful books.</li>
+</ol>
+</div>
+<div id="software-information-and-conventions" class="section level2 unnumbered">
+<h2>Software information and conventions</h2>
+<p>The R session information used when this book was compiled is as follows</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()
+<span class="co">#&gt; R version 3.5.3 (2019-03-11)</span>
+<span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
+<span class="co">#&gt; Running under: Windows 10 x64 (build 17134)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Matrix products: default</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; locale:</span>
+<span class="co">#&gt; [1] LC_COLLATE=English_United States.1252 </span>
+<span class="co">#&gt; [2] LC_CTYPE=English_United States.1252   </span>
+<span class="co">#&gt; [3] LC_MONETARY=English_United States.1252</span>
+<span class="co">#&gt; [4] LC_NUMERIC=C                          </span>
+<span class="co">#&gt; [5] LC_TIME=English_United States.1252    </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; attached base packages:</span>
+<span class="co">#&gt; [1] grid      stats     graphics  grDevices utils     datasets  methods  </span>
+<span class="co">#&gt; [8] base     </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; other attached packages:</span>
+<span class="co">#&gt; [1] png_0.1-7     readr_1.3.1   dplyr_0.8.0.1 ggplot2_3.1.1 spData_0.3.0 </span>
+<span class="co">#&gt; [6] raster_2.8-19 sp_1.3-1      sf_0.7-3      xml2_1.2.0   </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; loaded via a namespace (and not attached):</span>
+<span class="co">#&gt;  [1] tidyselect_0.2.5 xfun_0.6         purrr_0.3.2      lattice_0.20-38 </span>
+<span class="co">#&gt;  [5] colorspace_1.3-2 htmltools_0.3.6  yaml_2.1.19      rlang_0.3.4     </span>
+<span class="co">#&gt;  [9] e1071_1.7-1      pillar_1.3.1     later_0.8.0      glue_1.3.1      </span>
+<span class="co">#&gt; [13] withr_2.1.2      DBI_1.0.0        plyr_1.8.4       stringr_1.4.0   </span>
+<span class="co">#&gt; [17] munsell_0.5.0    gtable_0.2.0     codetools_0.2-16 evaluate_0.13   </span>
+<span class="co">#&gt; [21] labeling_0.3     knitr_1.22       httpuv_1.5.1     class_7.3-15    </span>
+<span class="co">#&gt; [25] highr_0.7        Rcpp_1.0.1       scales_0.5.0     promises_1.0.1  </span>
+<span class="co">#&gt; [29] classInt_0.3-1   jsonlite_1.6     mime_0.5         servr_0.13      </span>
+<span class="co">#&gt; [33] hms_0.4.2        packrat_0.4.9-3  digest_0.6.18    stringi_1.4.3   </span>
+<span class="co">#&gt; [37] bookdown_0.9     tools_3.5.3      magrittr_1.5     lazyeval_0.2.1  </span>
+<span class="co">#&gt; [41] tibble_2.1.1     crayon_1.3.4     pkgconfig_2.0.2  assertthat_0.2.0</span>
+<span class="co">#&gt; [45] rmarkdown_1.12   rstudioapi_0.10  R6_2.2.2         units_0.6-2     </span>
+<span class="co">#&gt; [49] compiler_3.5.3</span></code></pre>
+<p>All the pieces of code are written <code>like this</code> and sometimes you my find chunks of code like this:</p>
+<pre class="stata"><code>This is a chunk of code,
+and everything in it can be copied and
+pasted directly into the corresponding
+execution console, which could be 
+Stata or R.</code></pre>
+<p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> langauge as well.</p>
 
+</div>
 </div>
             </section>
 
@@ -305,7 +368,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -318,6 +381,10 @@ gitbook.start({
 "link": null,
 "text": null
 },
+"history": {
+"link": null,
+"text": null
+},
 "download": ["SARMD-Guidelines.pdf", "SARMD-Guidelines.epub"],
 "toc": {
 "collapse": "section",
@@ -327,19 +394,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

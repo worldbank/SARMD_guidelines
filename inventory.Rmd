@@ -22,13 +22,15 @@ knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available
 
 ## Inventory
 
-Considering that the South Asia region has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. Figure \@ref(fig:inv) presents the surveys that make part of the South Asia Micro Database (SARMD). Six countries have released recent rounds of household surveys (Pakistan 2015, Afghanistan 2016, Bangladesh 2016, Maldives 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. 
+Considering that the South Asia region has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. The following dashboard presents the surveys that make part of the South Asia Micro Database (SARMD). Six countries have released recent rounds of household surveys (Pakistan 2015, Afghanistan 2016, Bangladesh 2016, Maldives 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey. 
 
 Extreme data deprivation may be measured as having less than two data points in a ten-year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
 
-```{r inv, echo=FALSE, fig.cap='[SARMD Inventory](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability)', fig.asp=.75, fig.align='center'}
+```{r inv, echo=FALSE, eval=FALSE, fig.cap='[SARMD Inventory](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability)', fig.align='center'}
 knitr::include_graphics("./figures/Inventory.png")
 ```
+
+[![](figures/Inventory.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Availability "Number of surveys available in SARMD by country.")
 
 [![](figures/Inventory_map.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Map "Number of surveys available in SARMD by country.")
 
@@ -36,9 +38,12 @@ knitr::include_graphics("./figures/Inventory.png")
 
 India’s household survey is by far the largest covering 100,000 households in the 2009 and 2011 rounds as shown in Figure \@ref(fig:ssize). Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
 
-```{r ssize, echo=FALSE, fig.cap='[Sample Size](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines)', fig.asp=.75, fig.align='center'}
+```{r ssize, echo=FALSE, eval=FALSE, fig.cap='[Sample Size](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines)', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("./figures/Survey_size.png")
 ```
+
+[![](figures/Survey_size.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Lines "Survey size")
+
 
 ## Country descriptions
 

@@ -1,5 +1,6 @@
 # (PART) Basics {-}
 
-# Introduction to foundamentals of SARMD {#basics .unnumbered}
+# Introduction to fundamentals of SARMD {#basics .unnumbered}
 
-The goal of the first part 
+***
+The first three chapters of this book introduce poverty measurement using SARMD. Chapter 1 explains how the user may obtain access to the household surveys in SARMD. Chapter 2 provides a brief presentation of the most recent poverty measures generated for the countries in South Asia. Chapter 3 describes the methodology followed to go from consumption expenditures collected by household surveys to internationally-comparable poverty measures. 

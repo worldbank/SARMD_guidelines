@@ -5,6 +5,31 @@
 >
 > School enrollment over age has the shape of a pleateau (or trapezoid) in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, we find evidence of school enrollment having the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are still concerning even among primary school children aged 4 to 12 years.
 
+```{r, echo=FALSE}
+grViz("
+digraph boxes_and_circles {
+node [shape = box]
+1 2 3 4 5 6 7 8 9 10 11 12 13
+node [shape = circle]
+Primary; Upper{Upper Secondary}; Lower
+# add edge statements
+Primary->1;
+Primary->2;
+Primary->3;
+Primary->4;
+Primary->5;
+Lower->6;
+Lower->7;
+Lower->8;
+Upper{Upper Secondary}->9;
+Upper->10;
+Upper->11;
+Upper->12;
+Upper->13;
+}      
+")
+```
+
 Countries in South Asia (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) have achieved different levels of progress regarding school enrollment. Sri Lanka achieved near-universal primary education decades ago, while Afghanistan and Pakistan still lag significantly behind other South Asian countries. In this analysis, we compare the education levels achieved across countries considering their different education systems. 
 
 In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary
