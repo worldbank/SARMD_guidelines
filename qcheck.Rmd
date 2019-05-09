@@ -3,6 +3,11 @@
 
 Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. 
 
+The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Missing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+
 ```{r,eval=FALSE,echo=FALSE}
 This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
 ```
@@ -32,10 +37,6 @@ Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnat
 
 The essential variables that identify each dataset and individual within a household are ``countrycode``, ``year``, ``survey``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgtxhsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
 
-The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
-
-
-[![](figures/harm_1.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 
 ```{r table0, echo=FALSE, eval=FALSE, results='asis'}
@@ -72,9 +73,6 @@ Demographic ->  Categorical -> relationcs  -> relationharm  -> marital
 ```
 
 There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. 
-The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
-
-[![](figures/harm_2.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ```{r table1, echo=FALSE, eval=FALSE, results='asis', eval=FALSE}
 cat('|      age|    male|    hsize|
@@ -105,7 +103,7 @@ The following dashboard shows how average household size declines as we move to 
 knitr::include_graphics("./figures/Children.png")
 ```
 
-[![](figures/Children.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Children "The user may interact with this Tableau dashboard by clicking on the figure.")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Children' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ### male
 
@@ -155,9 +153,7 @@ This variable classifies individuals according to their marital status into thes
 
 Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.  
 
-```{r pyramid, echo=FALSE, fig.cap='[Population Pyramid for Afghanistan (2013)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Demographics/Pyramid)', fig.align='center'}
-knitr::include_graphics("./figures/Pyramid.png")
-```
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Pyramid' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ## Education
 
@@ -185,8 +181,6 @@ Education ->  Categorical -> educat4 -> educat5 -> educat7
 ```
 
 There are currently eight essential education variables in SARMD: ``literacy``, ``atschool``, ``everattend``, ``ed_mod_age``, ``educy``, ``educat4``, ``educat5``, and ``educat7``.
-
-[![](figures/harm_3.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 
 ```{r table2, echo=FALSE, eval=FALSE, results='asis'}
@@ -260,7 +254,6 @@ Assets -> Electric -> sewingmachine  -> television -> washingmachine
 ```
 
 
-[![](figures/harm_4.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ```{r table3, echo=FALSE, eval=FALSE, results='asis'}
 cat('|      bicycle|    computer|    landphone|   refrigerator|
@@ -292,17 +285,14 @@ Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage
 
 ## Housing
 
-[![](figures/harm_5.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
 
 ## Labor
 
-[![](figures/harm_6.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ## Welfare
 
-[![](figures/harm_7.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Missing "The user may interact with this Tableau dashboard by clicking on the figure.")
 
 ### Poverty
 
