@@ -1,6 +1,6 @@
 
 # preview just one chpater
-file <- "index.Rmd"
+file <- "intro.Rmd"
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 
