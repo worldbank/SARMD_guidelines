@@ -119,25 +119,3 @@ replace  cellelect=3 if cellphone==1& electricity==0
 replace  cellelect=4 if cellphone==1& electricity==1
 ta cellelect, gen(cell_el)
 
-
-label var cell "Cell Phone"	
-label var elect "Electricity"	
-label var cellnoel "Cell Phone w/o Electricity"
-foreach v in cell_el3 cell_el4 {
-gen `v'100=`v'*100
-}
-
-
-levelsof countrycode, loc(countries)
-foreach c of loc countries {
-	graph bar cell_el3100 cell_el4100  if countrycode=="`c'" [aw=wgt], ///
-	 over( year) stack name("`c'", replace)  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	 ///
-	legend(order( 1 "No Access to Electricity" 2 "Access to Cellphone" )) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
-
-
-	graph export "${path}/`c'_check.png", replace	
-	}
-
-grc1leg AFG BGD BTN IND LKA PAK, ycommon title("Access to Cell Phone (%)")  
-graph export "${path}/all.png", replace	
