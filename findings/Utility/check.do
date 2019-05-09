@@ -29,14 +29,14 @@ contract country years survname
 
 
 drop if year<2000 
-
+drop if	(country=="AFG"&year==2013)
 bys country: egen myr=max(year)
 bys country: egen miyr=min(year)
 keep if year==myr|year==miyr
 bys country: egen n=count(year)
 keep if n>1
 preserve
-keep if (country=="NPL"|country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
+keep if (country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
 	keep if myr==years
 tempfile 00
 save `00', replace
@@ -51,13 +51,13 @@ drop if country=="IND"&survname!="NSS-SCH1"
 
 contract country years survname
 
-keep if (country=="NPL"&year==2013) |	///
+keep if (country=="NPL"&year==2003) |	///
+		(country=="NPL"&year==2010) |	///
 		(country=="LKA"&year==2006) |	///
 		(country=="PAK"&year==2004) |	///
-		(country=="IND"&year==2004) |	///
+		(country=="IND"&year==2009) |	///
 		(country=="BGD"&year==2005)
 append using `01'
-	
 
 ds
 gen id=country+"_"+strofreal(years)
@@ -93,8 +93,11 @@ qui foreach id of local ids {
 	else local surveyid ""
 		cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
-					
-			cap keep countrycode year idh idp wgt cellphone electricity
+			cap rename welfare_v2 welfare
+			cap ren welfareother welfare
+			quantiles welfare [aw=wgt], gen(q) n(5)
+				
+			cap keep countrycode year idh idp wgt cellphone electricity welfare q
 			append using `cy'
 			save `cy', replace
 		}
@@ -109,24 +112,10 @@ qui foreach id of local ids {
 	}
 
 u `cy', clear
-
-s
-
-label var cell "Cell Phone"	
-label var elect "Electricity"	
-label var cellnoel "Cell Phone w/o Electricity"
-
-levelsof countrycode, loc(countries)
-foreach c of loc countries {
-	graph bar cellnoel cellel if countrycode=="`c'", ///
-	over( year) stack name("`c'", replace)  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order( 1 "Cell Phone with Electricity" 2 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
-
-
-	graph export "${path}/`c'.png", replace	
-	}
-
-grc1leg AFG BGD BTN IND LKA NPL PAK, ycommon title("Access to Cell Phone (%)")  
-graph export "${path}/all.png", replace	
+gen cellelect=.
+replace  cellelect=1 if cellphone==0& electricity==0
+replace  cellelect=2 if cellphone==0& electricity==1
+replace  cellelect=3 if cellphone==1& electricity==0
+replace  cellelect=4 if cellphone==1& electricity==1
+ta cellelect, gen(cell_el)
 

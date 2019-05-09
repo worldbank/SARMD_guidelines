@@ -25,14 +25,46 @@ cap datalibweb, repo(create `reponame', force) type(SARMD)
 ren (code year) (country years)
 drop if country=="IND"&survname!="NSS-SCH1"
 
-contract country years survname 
+contract country years survname
+
+
+drop if year<2000 
+drop if	(country=="AFG"&year==2013)
+bys country: egen myr=max(year)
+bys country: egen miyr=min(year)
+keep if year==myr|year==miyr
+bys country: egen n=count(year)
+keep if n>1
+preserve
+keep if (country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
+	keep if myr==years
+tempfile 00
+save `00', replace
+restore
+drop if (country=="NPL"|country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
+append using `00'
+tempfile 01
+save `01' , replace
+cap datalibweb, repo(create `reponame', force) type(SARMD)
+ren (code year) (country years)
+drop if country=="IND"&survname!="NSS-SCH1"
+
+contract country years survname
+
+keep if (country=="NPL"&year==2003) |	///
+		(country=="NPL"&year==2010) |	///
+		(country=="LKA"&year==2006) |	///
+		(country=="PAK"&year==2004) |	///
+		(country=="IND"&year==2009) |	///
+		(country=="BGD"&year==2005)
+append using `01'
 
 ds
 gen id=country+"_"+strofreal(years)
 
 local varlist "`r(varlist)'"
 di in red "`r(varlist)'"
-s
+
 *---------- Evaluate initical conditions
 *countries
 if ("`countries'" == "") {
@@ -59,33 +91,17 @@ qui foreach id of local ids {
 
 	}
 	else local surveyid ""
-	
-	cap {
+		cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
-
-			set trace off
-			gen cellnoelect=(cellphone==1&electricity==0)
-			gen cellelect=(cellphone==1&electricity==1)		
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
-			cap rename cpi_v2 cpi
-			cap rename ppp_v2 ppp
-			cap confirm var welfare 
-			if _rc==0 {
 			quantiles welfare [aw=wgt], gen(q) n(5)
-			su cellphone if q==1 [aw=wgt]
-			gen cell=`r(mean)'*100
-			su electricity if q==1 [aw=wgt]
-			gen elect=`r(mean)'*100
-			su cellnoelect if q==1 [aw=wgt]
-			gen cellnoel=`r(mean)'*100
-			su cellelect if q==1 [aw=wgt]
-			gen cellel=`r(mean)'*100
-			contract countrycode year cell elect cellnoel cellel
+				
+			cap keep countrycode year idh idp wgt cellphone electricity welfare q
 			append using `cy'
 			save `cy', replace
-			
 		}
+
 		if (_rc) {
 			noi disp in red "Error on `country' `year'"
 		}
@@ -94,30 +110,34 @@ qui foreach id of local ids {
 		}
 
 	}
-}
-u `cy', clear
 
-bys country: egen myr=max(year)
-bys country: egen miyr=min(year)
-keep if year==myr|year==miyr
-bys country: egen n=count(year)
-keep if n>1
+u `cy', clear
+gen cellelect=.
+replace  cellelect=1 if cellphone==0& electricity==0
+replace  cellelect=2 if cellphone==0& electricity==1
+replace  cellelect=3 if cellphone==1& electricity==0
+replace  cellelect=4 if cellphone==1& electricity==1
+ta cellelect, gen(cell_el)
+
 
 label var cell "Cell Phone"	
 label var elect "Electricity"	
 label var cellnoel "Cell Phone w/o Electricity"
+foreach v in cell_el3 cell_el4 {
+gen `v'100=`v'*100
+}
+
 
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cellnoel cellel if countrycode=="`c'", ///
-	over( year) stack name("`c'", replace)  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order( 1 "Cell Phone with Electricity" 2 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
+	graph bar cell_el3100 cell_el4100  if countrycode=="`c'" [aw=wgt], ///
+	 over( year) stack name("`c'", replace)  subtitle("`c'")	///
+	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	 ///
+	legend(order( 1 "No Access to Electricity" 2 "Access to Cellphone" )) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
 
 
-	graph export "${path}/`c'.png", replace	
+	graph export "${path}/`c'_check.png", replace	
 	}
 
-grc1leg AFG BGD BTN IND LKA NPL PAK, ycommon title("Access to Cell Phone (%)")  
+grc1leg AFG BGD BTN IND LKA PAK, ycommon title("Access to Cell Phone (%)")  
 graph export "${path}/all.png", replace	
-
