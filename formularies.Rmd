@@ -1,9 +1,12 @@
 # Expenditure components
 ***
 
-Household surveys capture a wide variety of development indicators in such areas as poverty, food security, labor market performance, demography, education, health, gender equality, housing and agriculture. In this chapter, we present the results of a Metadata analysis focusing mostly on the household surveys' ability to measure food, non-food, durables, and housing expenditures with different data collection methods. 
+In this chapter, we present a metadata analysis focusing on the household surveys' ability to measure food, non-food, durables, and housing expenditures through different data collection methods. 
 
 ```{r,eval=FALSE,echo=FALSE}
+
+Household surveys capture a wide variety of development indicators in such areas as poverty, food security, labor market performance, demography, education, health, gender equality, housing and agriculture. 
+
 In South Asia, poverty is defined as the inability of an individual to command sufficient resources to satisfy basic needs defined by the poverty line. In order to provide information on poverty and food security among the population, a nominal consumption aggregate is needed. The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a Metadata formulary (see attached?).
 ```
 
@@ -48,7 +51,7 @@ We provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Information on self-production
 - Information on transfers to and from the household 
 
-[![](figures/Food.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Food "Metadata Analysis: Food Click on this figure to interact with the Tableau dashboard attached.")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Food' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 
 ## Non-food
@@ -88,7 +91,7 @@ We provide a [Tableau Dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Data collection reference periods (daily, weekly, bi-weekly, monthly, and/or yearly) 
 - Whether they provide information on transfers to and from the household 
 
-[![](figures/Nonfood.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/NonFood "Click")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;NonFood' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ## Durable assets
 
@@ -111,7 +114,7 @@ knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 #This section provides a summary for data collection methods for durable assets for the household surveys available in SARMD.
 ```
 
-[![](figures/Durables.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Durables "Click")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Durables' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ## Housing
 
@@ -149,7 +152,6 @@ The most relevant dwelling characteristics displayed in the following [Tableau d
 - Travel time to reach services 
 - Others such as access to an Internet connection
 
-[![](figures/Housing.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Metadata/Housing "Click")
-
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Housing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 
