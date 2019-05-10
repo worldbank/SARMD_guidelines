@@ -17,33 +17,49 @@ world_asia <- world %>%
 
 According to the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.org/en/publication/poverty-and-shared-prosperity), the number of extreme poor in South Asia dropped to 216 million people in 2015, compared to half a billion in 1990, and Nigeria may already have overtaken India as the country with the most extreme poor in the world. Still, to achieve the [Sustainable Development Goals](https://www.un.org/sustainabledevelopment/poverty/), progress in poverty reduction needs to continue in India and the rest of South Asia. 
 
-The latest poverty measures from the Poverty and Shared Prosperity Report (2018) are shown in Table \@ref(tab:pspr):
+The latest poverty measures from the Poverty and Shared Prosperity Report (2018) are shown in Table \@ref(tab:psprtb):
 
-```{r pspr, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+```{r psprtb, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 
-pspr <- read_csv("./tables/pspr.csv",col_names = TRUE, col_types = cols())
+pspr <- readr::read_csv("./tables/pspr.csv",col_names = TRUE, col_types = cols())
 
 # Table
 knitr::kable(pspr,booktabs=TRUE, caption = 'Poverty Measures in Poverty and Shared Prosperity Report (2018)')
+```
 
-par(mfrow=c(1,2))
+As expected, the number of poor in each country is proportional to the size of the country (Figure \@ref(fig:psprfg))
 
-# Simple Pie Chart
-slices <- unlist(pspr[1:5,4])
-lbls <- unlist(pspr[1:5,1])
-pie(slices, labels = lbls, main="Extreme poor by country")
+```{r psprfg, echo=FALSE, fig.cap = "share of poor population in SAR allocated by country", fig.align = 'left'}
+# par(mfrow=c(1,2))
+# 
+# # Simple Pie Chart
+# slices <- unlist(pspr[1:5,4])
+# lbls <- unlist(pspr[1:5,1])
+# pie(slices, labels = lbls, main="Extreme poor by country")
+# 
+# # Simple Pie Chart
+# slices <- unlist(pspr[1:8,3])
+# lbls <- unlist(pspr[1:8,1])
+# pie(slices, labels = lbls, main="Population by country", font=1)
+# 
+# # ggplot
+# # Barplot
+# bp<- ggplot(pspr, aes(x="", y=slices, fill=lbls))+
+#   geom_bar(width = 1, stat = "identity")
+# pie <- bp + coord_polar("y", start=0)
+# 
 
-# Simple Pie Chart
-slices <- unlist(pspr[1:8,3])
-lbls <- unlist(pspr[1:8,1])
-pie(slices, labels = lbls, main="Population by country", font=1)
+pspr %>% 
+  tidyr::gather(`Number of poor (millions)`, Population, key = "set", value = "Npeople") %>% 
+  select(Country, set, Npeople) %>% 
+  arrange(Npeople) %>% 
+  ggplot(aes(x = set, y = Npeople, fill = Country)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "Pastel1") +
+  xlab("") +
+  ylab("Share of SAR population")
 
-# ggplot
-library(ggplot2)
-# Barplot
-bp<- ggplot(pspr, aes(x="", y=slices, fill=lbls))+
-geom_bar(width = 1, stat = "identity")
-pie <- bp + coord_polar("y", start=0)
 ```
 
 Based on the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.org/en/publication/poverty-and-shared-prosperity), we can provide the following highlights:
@@ -60,15 +76,17 @@ Even as much of the region leaves extreme poverty behind, poverty is becoming mo
 
 The World Bank’s poverty and inequality measures for South Asia provided by [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) are described in Table \@ref(tab:povcalnet) and may be accessed by interacting with figure \@ref(fig:povcalnetdata):
 
+```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+povcalnet <- read_csv("./tables/povcalnet.csv",col_names = TRUE, col_types = cols())
+knitr::kable(povcalnet,booktabs=TRUE, caption = 'Poverty Measures in PovcalNet')
+```
+
+A summary of PovcalNet data can be seen in Figure \@ref(fig:povcalnetdata):
+
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Poverty&#47;PovcalNet' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ```{r  povcalnetdata,  echo=FALSE, fig.cap = "PovcalNet socioeconomic data at country level", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-library(readr)
-povcalnet <- read_csv("./tables/povcalnet.csv",col_names = TRUE, col_types = cols())
-knitr::kable(povcalnet,booktabs=TRUE, caption = 'Poverty Measures in PovcalNet')
-```
 
