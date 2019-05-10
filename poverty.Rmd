@@ -29,7 +29,7 @@ knitr::kable(pspr,booktabs=TRUE, caption = 'Poverty Measures in Poverty and Shar
 
 As expected, the number of poor in each country is proportional to the size of the country (Figure \@ref(fig:psprfg))
 
-```{r psprfg, echo=FALSE, fig.cap = "share of poor population in SAR allocated by country", fig.align = 'left'}
+```{r psprfg, echo=FALSE, fig.cap = "South Asia region shares of poor and total population by country", fig.align = 'left'}
 # par(mfrow=c(1,2))
 # 
 # # Simple Pie Chart

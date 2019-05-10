@@ -29,7 +29,7 @@ knitr::include_graphics("figures/SAR-Emblem.png")
 
 This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.
 
-These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the `datalibweb` system, how to perform basic (and not so basic) socioeconomic calculations, how comparable household surveys are across the region, how good the harmonization process is, and how to make analysis at the regional or country level by providing a series of case studies and findings. 
+These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the `datalibweb` system, how to perform basic (and not so basic) socioeconomic calculations, how comparable household surveys are across the region, how good the harmonization process is, and how to conduct analysis at the regional or country level by providing a series of case studies and findings. 
 
 ## About the technical composition of this book {-}
 
