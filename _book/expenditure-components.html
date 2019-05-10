@@ -28,7 +28,7 @@
 <meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-09">
+<meta name="date" content="2019-05-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,75 +51,8 @@
 
 
 
-<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -280,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this chapter, we present a metadata analysis focusing on the household surveys’ ability to measure food, non-food, durables, and housing expenditures through different data collection methods.</p>
 <div id="food" class="section level2">
 <h2><span class="header-section-number">6.1</span> Food</h2>
-<p><img src="figures/icon_food.png" height="200"></p>
+<p><img src="figures/icon_food.png" width="20%" style="float:left; padding:10px" style="display: block; margin: auto;" /></p>
 <p>The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food items. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Household surveys sometimes include a food expenditure diary, but this is not common in South Asia where most information on food is collected based on recalling what a household has consumed and purchased over the last seven days.</p>
 <p>The ideal reference period should be a week, but in this analysis we have found reference periods still vary from yearly, to monthly, to biweekly, to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible.</p>
 <p>In most cases, countries modify their food baskets and change their data collection methods over time. A wide mixture of data collection methods characterizes the most recent rounds of household surveys. Bangladesh HIES 2016 collects daily household food consumption (both quantity and value) for a period of 14 days. In addition, it collects weekly consumption of a series of spices. Bhutan LSS 2017 collects food consumption (both quantity and value) by asking the respondent to recall their consumption in the last seven days, the last thirty days, and the last year. In some cases, such as Afghanistan LCS 2016, the female respondents are the ones asked about household food consumption. These methods can be very diverse and we provide a brief description for the latest survey available for each country in Table <a href="expenditure-components.html#tab:food">6.1</a>.</p>
@@ -383,10 +316,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Food' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
 </object>
 </div>
+<div class="figure" style="text-align: left"><span id="fig:fooddash"></span>
+<img src="figures/fake_figure.PNG" alt="Food expenditure" width="70%" height="10%" />
+<p class="caption">
+Figure 6.1: Food expenditure
+</p>
+</div>
 </div>
 <div id="non-food" class="section level2">
 <h2><span class="header-section-number">6.2</span> Non-food</h2>
-<p><img src="figures/icon_nf.png" height="200"></p>
+<p><img src="figures/icon_nf.png" width="20%" style="float:left; padding:10px" style="display: block; margin: auto;" /></p>
 <p>The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases like clothing, footwear, kitchen equipment, curtains, bedcovers, etc. In most cases, the non-food expenditures component must be constructed by aggregating expenditures on goods and services from different sections of a survey.</p>
 <p>A homogenous definition of what constitutes non-food expenditures is required. The Classification of Individual Consumption According to Purpose (COICOP) is the international reference classification for household expenditures. We define non-food expenditures as categories 2-12 of the COICOP:</p>
 <ol style="list-style-type: decimal">
@@ -431,7 +370,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="durable-assets" class="section level2">
 <h2><span class="header-section-number">6.3</span> Durable assets</h2>
-<p><img src="figures/icon_durable.png" height="200"></p>
+<p><img src="figures/icon_durable.png" width="20%" style="float:left; padding:10px" style="display: block; margin: auto;" /></p>
 <p>The third component is consumer flows from durable assets. The consumer flows from durable assets (also referred to as user costs or rental equivalents) represent the opportunity cost of money invested in these goods taking into account their lifetime and depreciation. The most important finding regarding the collection of data on durable assets through household surveys in South Asia is that the data collection methods followed can be very different.</p>
 <p>It is expected for data collection methods to vary over time and from one country to another. However, even for items within a country’s particular survey we can find different data collection methods. For example, even though both cows and cars may be considered productive assets, the information available for these two assets within a survey may be very different and would be contained in different sections of the survey. Even for more similar goods, like a washing machine and a sewing machine, the information provided by a survey may differ. For that reason, we found it necessary to characterize each item’s data collection method separately. Data available for household assets (e.g. a car) may be different from data available for agricultural assets (e.g. a tractor). Some assets are grouped together, while others are collected individually, and some may even have their own section in the survey. This is the case for cellphones, which are durable assets, but are usually given special treatment and collected separately in the surveys.</p>
 <p>Long-lived goods (automobiles, appliances, furniture) have a positive and significant impact on living standards. These durable assets may deliver useful services to consumers through repeated use over an extended period of time. For that reason, surveys should collect data on all assets available to the household, not just the ones purchased recently. This is unfortunately the case for India 2011 and Pakistan 2015. Pakistan 2015 collects information on durable assets only if they were purchased in the last year. India 2011 collects specific details only for assets acquired in the last 30 days or in the last year.</p>
@@ -507,7 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="housing" class="section level2">
 <h2><span class="header-section-number">6.4</span> Housing</h2>
-<p><img src="figures/icon_house.png" height="200"></p>
+<p><img src="figures/icon_house.png" width="20%" style="float:left; padding:10px" style="display: block; margin: auto;" /></p>
 <p>The fourth component is rent, which is in some cases observed directly for households who rent their house or apartment. For the rest, rent is obtained either by asking a household how much they would expect to receive each month for this house if they rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent or house values. Therefore, there are three types of rent:</p>
 <ol style="list-style-type: decimal">
 <li>Rent paid by households when they are not owners of their dwelling: i.e. How much do you pay per month?</li>
@@ -643,19 +582,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
