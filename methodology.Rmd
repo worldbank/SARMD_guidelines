@@ -68,3 +68,8 @@ where N is the sample size, $$\bar{u}$$ is the scalar-valued poverty line, $$u_{
 The variable `welfare` contains the monthly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in the following dashboard. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Distribution' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  povcalnetdata,  echo=FALSE, fig.cap = "Distribution of daily expenditure per person in 2011 PPP (ln scale)", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+

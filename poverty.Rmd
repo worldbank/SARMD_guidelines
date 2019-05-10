@@ -58,9 +58,13 @@ Based on the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.
 
 Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and remains predominantly rural, with the highest share of labor force in agriculture (73%) in the region as of 2016. The Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. In the case of Afghanistan, poverty is increasing as violence continues to affect the security of livelihoods and economic activity in the country. 
 
-The World Bank’s poverty measures for South Asia provided by [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) are described in Table \@ref(tab:povcalnet) and may be accessed by interacting with the following figure:
+The World Bank’s poverty and inequality measures for South Asia provided by [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) are described in Table \@ref(tab:povcalnet) and may be accessed by interacting with figure \@ref(fig:povcalnetdata):
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Poverty&#47;PovcalNet' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  povcalnetdata,  echo=FALSE, fig.cap = "PovcalNet socioeconomic data at country level", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
