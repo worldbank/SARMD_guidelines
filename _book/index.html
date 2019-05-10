@@ -28,7 +28,7 @@
 <meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-08">
+<meta name="date" content="2019-05-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,6 +51,10 @@
 
 
 
+<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -134,10 +138,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i><b>0.1</b> About the technical composition of this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#original"><i class="fa fa-check"></i>Original</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#complementary-visualizations-of-this-book"><i class="fa fa-check"></i>Complementary visualizations of this book</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#parts-of-the-book"><i class="fa fa-check"></i>Parts of the book</a></li>
+</ul></li>
 <li class="part"><span><b>I Basics</b></span></li>
 <li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to fundamentals of SARMD</a></li>
 <li class="chapter" data-level="1" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html"><i class="fa fa-check"></i><b>1</b> Datalibweb: Getting Access to SARMD</a><ul>
@@ -273,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="author"><em>Raúl Andrés Castañeda Aguilar</em></p>
 <p class="author"><em>Jayne Jungsun Yoo</em></p>
 <p class="author"><em>Francisco Javier Parada Gómez Urquiza</em></p>
-<p class="date"><em>2019-05-08</em></p>
+<p class="date"><em>2019-05-09</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
@@ -281,21 +289,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figures/SAR-Emblem.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
 <p>This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.</p>
-<p>These guidelines are intended to teach you everything you need to know to work efficiently with the South Asia Region MicroDatabase (SARMD). You will learn how to get acces to the microdata through the <code>datalibweb</code> system, how to perform basic (and not so basic) socioeconomic calculations, howe comparable and similar household surveys are across the region,how good the harmonization process is, and how to make analysis at the regional or country level by providing a series of case studies and findings.</p>
-<div id="about-the-technical-composition-of-this-book" class="section level2">
-<h2><span class="header-section-number">0.1</span> About the technical composition of this book</h2>
-<p>This book has been written in <a href="https://rmarkdown.rstudio.com/">Rmarkdown</a> syntax and compiled with the <a href="https://bookdown.org/yihui/bookdown/">Bookdown</a> package. The source files are available in the Word Bank Github repo <a href="https://github.com/randrescastaneda/SARMD_guidelines">DDDD</a>. In order to become a contributor of this project, please send an email to … requesting for access. Once you’re granted for access, you may clone of fork this repo and start contributing.</p>
-<p>There are several advantages to compose books (specially technical book) using Markdown:</p>
+<p>These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the <code>datalibweb</code> system, how to perform basic (and not so basic) socioeconomic calculations, how comparable household surveys are across the region, how good the harmonization process is, and how to make analysis at the regional or country level by providing a series of case studies and findings.</p>
+<div id="about-the-technical-composition-of-this-book" class="section level2 unnumbered">
+<h2>About the technical composition of this book</h2>
+<p>This book is written in <a href="https://rmarkdown.rstudio.com/">R Markdown</a> syntax and compiled with the <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> package. The source files are available in the World Bank Github repository <a href="https://github.com/randrescastaneda/SARMD_guidelines">DDDD</a>. To become a contributor to this project, please send an email to … requesting for access. Once you are granted access, you may clone or fork this repository and start contributing.</p>
+<p>There are several advantages to composing books (especially technical books) using Markdown:</p>
 <ol style="list-style-type: decimal">
-<li>You are able to create different types of output formats such as PDF, HTML, WORD, EPub, and even Kindle files.</li>
-<li>Everything is written using plain text, so you may enjoy the benefits of tracking changes and collaborative platforms as Git.</li>
-<li>You can execute <code>R</code> or <code>Stata</code> code directly from the text as well as include code chunks and/or its corresponding results inline wherever you want within the document.</li>
-<li>You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and imported <a href="https://www.gitbook.com">GitBook</a> style to create elegant and beautiful books.</li>
+<li>You can create different types of output formats such as PDF, HTML, WORD, EPub, and even Kindle files.</li>
+<li>Everything is written using plain text, so you may enjoy the benefits of tracking changes through collaborative platforms as Git.</li>
+<li>You can execute <code>R</code> or <code>Stata</code> code directly from the text, include code chunks, and present its corresponding results inline wherever you want within the document.</li>
+<li>You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and import <a href="https://www.gitbook.com">GitBook</a> styles to create elegant and beautiful books.</li>
 </ol>
 </div>
 <div id="software-information-and-conventions" class="section level2 unnumbered">
 <h2>Software information and conventions</h2>
-<p>The R session information used when this book was compiled is as follows</p>
+<p>The R session information used when this book was compiled is the following:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()
 <span class="co">#&gt; R version 3.5.3 (2019-03-11)</span>
 <span class="co">#&gt; Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
@@ -332,13 +340,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="co">#&gt; [41] tibble_2.1.1     crayon_1.3.4     pkgconfig_2.0.2  assertthat_0.2.0</span>
 <span class="co">#&gt; [45] rmarkdown_1.12   rstudioapi_0.10  R6_2.2.2         units_0.6-2     </span>
 <span class="co">#&gt; [49] compiler_3.5.3</span></code></pre>
-<p>All the pieces of code are written <code>like this</code> and sometimes you my find chunks of code like this:</p>
+<p>All the pieces of code are written <code>like this</code> and sometimes you may find chunks of code like this:</p>
 <pre class="stata"><code>This is a chunk of code,
-and everything in it can be copied and
+and everything in it may be copied and
 pasted directly into the corresponding
 execution console, which could be 
 Stata or R.</code></pre>
-<p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> langauge as well.</p>
+<p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> language as well.</p>
 
 </div>
 </div>
@@ -394,6 +402,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
