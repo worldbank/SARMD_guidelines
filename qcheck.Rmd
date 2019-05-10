@@ -6,7 +6,9 @@ Harmonized variables in SARMD are organized in 7 categories: basic, demographic,
 The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Missing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
-
+```{r  inventory,  echo=FALSE, fig.cap = "SARMD Availability and missing observations", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ```{r,eval=FALSE,echo=FALSE}
 This chapter presents the harmonized data from the South Asia Micro Database (SARMD) with a series of quality checks to verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A static quality check evaluates whether the harmonized variables are present and whether there is a high percentage of missing values. It also delves deeper into variables that may be interrelated with other variables. For example, a high percentage of households that have access to a television, but do not have access to electricity may raise questions on how these variables were constructed. A dynamic quality check evaluates the inconsistencies in measurement of harmonized data over time. It provides a better overview on whether categorical variables have changed over time and provides poverty and inequality measures. 
@@ -15,10 +17,10 @@ This chapter presents the harmonized data from the South Asia Micro Database (SA
 ## Basic survey characteristics
 
 
-```{r boxes_and_circles, echo=FALSE}
+```{r boxesAndCircles, echo=FALSE, fig.cap="Basic survey characteristics"}
 library('DiagrammeR')
 grViz("
-digraph boxes_and_circles {
+digraph boxesAndCircles {
 
 graph [layout = dot, color=crimson]
 #  rankdir = LR  overlap=true, fontsize=20
@@ -267,14 +269,14 @@ This section analyzes whether the sixteen asset variables in SARMD have been ade
 
 Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
 
-```{r assets, fig.cap='Harmonized asset ownership in latest household survey round', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r assets, echo=FALSE, fig.cap='Harmonized asset ownership in latest household survey round', out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("./figures/Assets.png")
 ```
 
 see Figure \@ref(fig:assets) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets 
 
 
-```{r scatter, fig.cap='Access to refrigerator and access to electricity across surveys', out.width='80%', fig.asp=.75, fig.align='center'}
+```{r scatter, echo=FALSE, fig.cap='Access to refrigerator and access to electricity across surveys', out.width='80%', fig.asp=.75, fig.align='center'}
 knitr::include_graphics("./figures/Scatter.png")
 ```
 

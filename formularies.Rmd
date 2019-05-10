@@ -11,9 +11,11 @@ In South Asia, poverty is defined as the inability of an individual to command s
 ``` 
  
 ## Food 
- 
-<img src="figures/icon_food.png" height="200">    
- 
+
+```{r foodfg, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/icon_food.png")
+```
+
 The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food items. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Household surveys sometimes include a food expenditure diary, but this is not common in South Asia where most information on food is collected based on recalling what a household has consumed and purchased over the last seven days.  
  
 The ideal reference period should be a week, but in this analysis we have found reference periods still vary from yearly, to monthly, to biweekly, to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible. 
@@ -22,7 +24,7 @@ In most cases, countries modify their food baskets and change their data collect
  
 ```{r food, echo=FALSE, messages=FALSE, warning=FALSE} 
 food <- read_csv("./tables/food.csv", col_types = cols()) 
-knitr::kable(food,booktabs=TRUE, caption = 'Mixture of collection methods for food at home') 
+knitr::kable(food,booktabs = TRUE, caption = 'Mixture of collection methods for food at home') 
 ``` 
  
 Food is composed of all edible goods that are purchased and consumed by the household with the purpose of nourishing. Food baskets are usually organized by categories into: 
@@ -52,12 +54,17 @@ We provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Information on transfers to and from the household  
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Food' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
- 
- 
+
+```{r  fooddash,  echo=FALSE, fig.cap = "Food expenditure", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
 ## Non-food 
  
-<img src="figures/icon_nf.png" height="200">  
- 
+```{r nonfoodfg, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/icon_nf.png")
+```
+
 The second component, non-food expenditures, includes frequently purchased goods and services like soap, cleaning supplies, newspapers, and personal care items. It also includes some less frequent but regular purchases like clothing, footwear, kitchen equipment, curtains, bedcovers, etc.  In most cases, the non-food expenditures component must be constructed by aggregating expenditures on goods and services from different sections of a survey.  
  
 A homogenous definition of what constitutes non-food expenditures is required. The Classification of Individual Consumption According to Purpose (COICOP) is the international reference classification for household expenditures. We define non-food expenditures as categories 2-12 of the COICOP: 
@@ -95,7 +102,9 @@ We provide a [Tableau Dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
  
 ## Durable assets 
  
-<img src="figures/icon_durable.png" height="200"> 
+```{r durablefg, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/icon_durable.png")
+```
  
 The third component is consumer flows from durable assets. The consumer flows from durable assets (also referred to as user costs or rental equivalents) represent the opportunity cost of money invested in these goods taking into account their lifetime and depreciation. The most important finding regarding the collection of data on durable assets through household surveys in South Asia is that the data collection methods followed can be very different.  
  
@@ -117,9 +126,11 @@ knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Durables' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
  
 ## Housing 
- 
-<img src="figures/icon_house.png" height="200"> 
- 
+
+```{r houseingfg, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/icon_house.png")
+```
+
 The fourth component is rent, which is in some cases observed directly for households who rent their house or apartment. For the rest, rent is obtained either by asking a household how much they would expect to receive each month for this house if they rented it out to someone, or by using a hedonic housing regression model based on dwelling characteristics and actual rent or house values. Therefore, there are three types of rent: 
  
 1. Rent paid by households when they are not owners of their dwelling: i.e. How much do you pay per month? 
