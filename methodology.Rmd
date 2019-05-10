@@ -8,10 +8,8 @@ In this book, we  overview the data availability of household consumption survey
 First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure \@ref(fig:cpi) displays how the CPI has changed for each country in South Asia over time. 
 
 ```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)"}
-library(readr)
 cpi <- read_csv("./tables/cpi.csv",col_names = TRUE, col_types = cols())
 
-library(ggplot2)
 ggplot(data=cpi, aes(x=year, y=cpi, group=country)) +
   geom_line(aes(linetype=country))+
   geom_point(aes(shape=country))
@@ -36,23 +34,23 @@ A fourth adjustment is dividing total household expenditure by some measure of t
 
 The FGT measures devised by @fgt remain the most commonly used to measure poverty. A headcount ratio may be calculated in STATA as in the example below:
 
-```markdown
-# Example: Calculating poverty headcounts with 1.90 poverty line
+```stata
+* Example: Calculating poverty headcounts with 1.90 poverty line
 
-# Calculate per capita expenditures by dividing total expenditures 
-# by the number of household members 
+* Calculate per capita expenditures by dividing total expenditures 
+* by the number of household members 
   gen welfare=total_exp/hsize 
 
-# Calculate real per capita expenditures by turning nominal  
-# per capita expenditures into 2011 purchasing power parity (PPP) dollars
+* Calculate real per capita expenditures by turning nominal  
+* per capita expenditures into 2011 purchasing power parity (PPP) dollars
   welfare_ppp = welfare/cpi2011/icp2011/365*12
 
-# Generate a dummy variable to determine whether real per capita expenditures
-# fall below the 1.90 2011 PPP dollars poverty line
+* Generate a dummy variable to determine whether real per capita expenditures
+* fall below the 1.90 2011 PPP dollars poverty line
   gen poor190 = welfare_ppp < 1.90
 
-# Calculate the weighted average of the dummy variable to measure the proportion
-# of the population that falls below the 1.90 2011 PPP dollars poverty line
+* Calculate the weighted average of the dummy variable to measure the proportion
+* of the population that falls below the 1.90 2011 PPP dollars poverty line
   sum poor190 [aw=wgt]
 ```
 ```{r,eval=FALSE,echo=FALSE}
