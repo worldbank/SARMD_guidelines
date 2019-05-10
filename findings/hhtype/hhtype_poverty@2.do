@@ -93,3 +93,50 @@ qui foreach id of local ids {
 	}
 
 u `cy', clear
+
+*Female head
+gen fhead=(male==0&relationharm==1)
+gen mhead=(male==1&relationharm==1)
+gen spouse=(relationharm==2)
+gen child=(age<18&relationharm==3)
+gen parent=(relationharm==4)
+gen other=(relationharm==5)
+preserve
+collapse (max) fhead mhead spouse child parent other, by(countrycode year idh)
+sort idh
+tempfile hh
+save `hh', replace
+restore
+drop  fhead mhead spouse child parent other
+sort idh
+merge idh using `hh'
+ta _m
+drop _m
+
+
+foreach v in f m {
+gen	`v'scpo	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	1)
+gen	`v'scp	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	0)
+
+gen	`v'sco	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	1)
+gen	`v'sc	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	0)
+gen	`v'spo	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	1)
+gen	`v'sp	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	0)
+gen	`v'so	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	1)
+gen	`v's	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	0)
+gen	`v'cpo	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	1)
+gen	`v'cp	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	0)
+gen	`v'co	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	1)
+gen	`v'c	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	0)
+gen	`v'po	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	1)
+gen	`v'p	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	0)
+gen	`v'o	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	1)
+gen	`v'	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	0)
+
+}
+
+collapse (mean) fscpo fscp fsco fsc fspo fsp fso fs fcpo fcp fco fc fpo fp fo f 	///
+		mscpo mscp msco msc mspo msp mso ms mcpo mcp mco mc mpo mp mo m [aw=wgt] if q==1, by(countrycode year)
+sort countrycode year
+
+		
