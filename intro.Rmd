@@ -18,7 +18,7 @@ Despite the disadvantages of ex--post harmonization, harmonized variables in SAR
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 850px;'><object class='tableauViz' width='700' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Subnational&#47;Subnational' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-```{r  bicyclef,  echo=FALSE, fig.cap = "this is a test", out.height='10%', fig.align = 'left'}
+```{r  bicyclef,  echo=FALSE, fig.cap = "Average of harmonized variables at subnational level", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
