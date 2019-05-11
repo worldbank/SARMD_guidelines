@@ -132,11 +132,43 @@ gen	`v'po	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	1)
 gen	`v'p	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	0)
 gen	`v'o	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	1)
 gen	`v'	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	0)
-
+gen `v'ext=(`v'scpo==1|`v'sco==1)
+gen s`v'ext=(fcpo==1|fcp==1|fco)
 }
+gen ext=(fext==1|mext==1)
+gen sext=(sfext==1|smext==1)
+gen scp=(fscp==1|mscp==1)
+gen sc=(fsc==1|msc==1)
+gen c=(fc==1|mc==1)
+gen onep=(f==1|m==1)
 
-collapse (mean) fscpo fscp fsco fsc fspo fsp fso fs fcpo fcp fco fc fpo fp fo f 	///
-		mscpo mscp msco msc mspo msp mso ms mcpo mcp mco mc mpo mp mo m [aw=wgt] if q==1, by(countrycode year)
+
+gen 	agecat=age
+recode 	agecat 0/9=1 10/14=2 15/19=3 20/24=4 25/29=5 30/34=6 35/39=7 40/44=8 45/49=9 50/54=10 55/59=11 60/64=12 65/150=13
+/*
+preserve
+collapse (mean) fext sfext fscp fsc fc  	///
+		mext smext mscp msc mc  [aw=wgt] if q<=2, by(countrycode year agecat)
 sort countrycode year
+tempfile poor
+save `poor', replace
+restore
+
+collapse (mean) fext sfext fscp fsc fc  	///
+		mext smext mscp msc mc  [aw=wgt] , by(countrycode year agecat)
+
+foreach v in fext sfext fscp fsc fc mext smext mscp msc mc {
+ren `v' all_`v'
+}
+*/
+sort countrycode year
+merge countrycode year using `poor'
+ta _m
+drop _m
+ren * re_*
+drop if agecat==.
+ren (re_countrycode re_year re_agecat) (countrycode year agecat)
+reshape long re_, i(countrycode year agecat) j(var, string)
+reshape wide re_, i(countrycode year var) j(agecat)
 
 		
