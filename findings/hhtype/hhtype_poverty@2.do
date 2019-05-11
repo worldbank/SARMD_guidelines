@@ -117,7 +117,6 @@ drop _m
 foreach v in f m {
 gen	`v'scpo	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	1)
 gen	`v'scp	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	0)
-
 gen	`v'sco	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	1)
 gen	`v'sc	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	0)
 gen	`v'spo	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	1)
@@ -132,7 +131,7 @@ gen	`v'po	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	1)
 gen	`v'p	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	0)
 gen	`v'o	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	1)
 gen	`v'	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	0)
-gen `v'ext=(`v'scpo==1|`v'sco==1)
+gen `v'ext=(`v'scpo==1|`v'sco==1|`v'o==1)
 gen s`v'ext=(fcpo==1|fcp==1|fco)
 }
 gen ext=(fext==1|mext==1)
@@ -145,6 +144,9 @@ gen onep=(f==1|m==1)
 
 gen 	agecat=age
 recode 	agecat 0/9=1 10/14=2 15/19=3 20/24=4 25/29=5 30/34=6 35/39=7 40/44=8 45/49=9 50/54=10 55/59=11 60/64=12 65/150=13
+label define agecat 1 "0-9" 2 "10-14" 3 "15-19" 4 "20-24" 5 "25-29" 6 "30-34" 7 "35-39" 8 "40-44" 9 "45-49" 10 "50-54" 11 "55-59" 12 "60-64" 13 "65+"
+label value agecat agecat
+			
 /*
 preserve
 collapse (mean) fext sfext fscp fsc fc  	///
@@ -161,14 +163,35 @@ foreach v in fext sfext fscp fsc fc mext smext mscp msc mc {
 ren `v' all_`v'
 }
 */
+
+preserve
+collapse (mean) ext sext scp sc c onep 	///
+  [aw=wgt] if q<=2, by(countrycode year agecat)
+sort countrycode year
+tempfile poor
+save `poor', replace
+restore
+
+collapse (mean) ext sext scp sc c onep   	///
+  [aw=wgt] , by(countrycode year agecat)
+
+foreach v in ext sext scp sc c onep {
+ren `v' all_`v'
+}
+
+
 sort countrycode year
 merge countrycode year using `poor'
 ta _m
 drop _m
 ren * re_*
-drop if agecat==.
 ren (re_countrycode re_year re_agecat) (countrycode year agecat)
+drop if agecat==.
+
 reshape long re_, i(countrycode year agecat) j(var, string)
+s
+export excel using "C:\Users\WB502818\Desktop\hhtype.xls", sheetreplace firstrow(variables)
+
 reshape wide re_, i(countrycode year var) j(agecat)
 
 		
