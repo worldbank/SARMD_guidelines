@@ -33,6 +33,7 @@ save `00', replace
 restore
 
 
+
 bys country: egen myr=max(year)
 
 keep if year==myr
@@ -78,7 +79,7 @@ qui foreach id of local ids {
 			cap ren welfareother welfare
 			quantiles welfare [aw=wgt], gen(q) n(5)
 				
-			cap keep countrycode year idh idp wgt relationharm relationcs age male welfare q
+			cap keep countrycode year idh idp wgt relationharm relationcs age male welfare q 
 			append using `cy'
 			save `cy', replace
 		}
@@ -98,11 +99,13 @@ u `cy', clear
 gen fhead=(male==0&relationharm==1)
 gen mhead=(male==1&relationharm==1)
 gen spouse=(relationharm==2)
-gen child=(age<18&relationharm==3)
+gen child=(relationharm==3)
 gen parent=(relationharm==4)
 gen other=(relationharm==5)
+gen chld18=(age<18&relationharm==3)
+gen norel=(relationharm==6)
 preserve
-collapse (max) fhead mhead spouse child parent other, by(countrycode year idh)
+collapse (max) fhead mhead spouse child parent other chld18 norel, by(countrycode year idh)
 sort idh
 tempfile hh
 save `hh', replace
@@ -113,34 +116,40 @@ merge idh using `hh'
 ta _m
 drop _m
 
+bys countrycode year idh: egen hhsize=count(idp)
+
 
 foreach v in f m {
-gen	`v'scpo	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	1)
-gen	`v'scp	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	0)
-gen	`v'sco	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	1)
-gen	`v'sc	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	0)
-gen	`v'spo	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	1)
-gen	`v'sp	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	0)
-gen	`v'so	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	1)
-gen	`v's	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	0)
-gen	`v'cpo	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	1)
-gen	`v'cp	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	0)
-gen	`v'co	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	1)
-gen	`v'c	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	0)
-gen	`v'po	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	1)
-gen	`v'p	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	0)
-gen	`v'o	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	1)
-gen	`v'	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	0)
-gen `v'ext=(`v'scpo==1|`v'sco==1|`v'o==1)
-gen s`v'ext=(fcpo==1|fcp==1|fco)
+gen	`v'scpo	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	1&norel==0)
+gen	`v'scp	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	1	&other==	0&norel==0)
+gen	`v'sco	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	1&norel==0)
+gen	`v'sc	=	(`v'head==	1	&spouse==	1	&child==	1	&parent==	0	&other==	0&norel==0)
+gen	`v'spo	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	1&norel==0)
+gen	`v'sp	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	1	&other==	0&norel==0)
+gen	`v'so	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	1&norel==0)
+gen	`v's	=	(`v'head==	1	&spouse==	1	&child==	0	&parent==	0	&other==	0&norel==0)
+gen	`v'cpo	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	1&norel==0)
+gen	`v'cp	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	1	&other==	0&norel==0)
+gen	`v'co	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	1&norel==0)
+gen	`v'c	=	(`v'head==	1	&spouse==	0	&child==	1	&parent==	0	&other==	0&norel==0)
+gen	`v'po	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	1&norel==0)
+gen	`v'p	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	1	&other==	0&norel==0)
+gen	`v'o	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	1&norel==0)
+gen	`v'	=	(`v'head==	1	&spouse==	0	&child==	0	&parent==	0	&other==	0&norel==0)
+gen `v'ext=(`v'scpo==1|`v'sco==1|`v'o==1)&norel==0
+gen s`v'ext=(`v'cpo==1|`v'cp==1|`v'co==1)&norel==0
 }
 gen ext=(fext==1|mext==1)
 gen sext=(sfext==1|smext==1)
 gen scp=(fscp==1|mscp==1)
 gen sc=(fsc==1|msc==1)
 gen c=(fc==1|mc==1)
+gen p=(fp==1|mp==1)
 gen onep=(f==1|m==1)
-
+gen nuc=(sc==1|p==1)
+foreach v in ext sext scp nuc c onep {
+gen `v'_ch=(`v'==1&chld18==1)
+}
 
 gen 	agecat=age
 recode 	agecat 0/9=1 10/14=2 15/19=3 20/24=4 25/29=5 30/34=6 35/39=7 40/44=8 45/49=9 50/54=10 55/59=11 60/64=12 65/150=13
@@ -163,35 +172,42 @@ foreach v in fext sfext fscp fsc fc mext smext mscp msc mc {
 ren `v' all_`v'
 }
 */
-
+drop if age>80
 preserve
-collapse (mean) ext sext scp sc c onep 	///
-  [aw=wgt] if q<=2, by(countrycode year agecat)
+collapse (mean) ext sext scp sc c onep nuc	ext_ch sext_ch scp_ch nuc_ch c_ch  ///
+		fext sfext fscp fsc fc  	///
+		mext smext mscp msc mc  [aw=wgt] if q<=1, by(countrycode year agecat)
 sort countrycode year
 tempfile poor
 save `poor', replace
 restore
 
-collapse (mean) ext sext scp sc c onep   	///
-  [aw=wgt] , by(countrycode year agecat)
 
-foreach v in ext sext scp sc c onep {
+collapse (mean) ext sext scp sc c onep 	nuc ext_ch sext_ch scp_ch nuc_ch c_ch  ///
+		fext sfext fscp fsc fc  	///
+		mext smext mscp msc mc [aw=wgt] , by(countrycode year agecat )
+
+foreach v in ext sext scp sc c onep nuc ext_ch sext_ch scp_ch nuc_ch c_ch  	///
+		fext sfext fscp fsc fc  	///
+		mext smext mscp msc mc {
 ren `v' all_`v'
 }
 
 
 sort countrycode year
+
 merge countrycode year using `poor'
 ta _m
 drop _m
 ren * re_*
-ren (re_countrycode re_year re_agecat) (countrycode year agecat)
-drop if agecat==.
+ren (re_countrycode re_year re_agecat  ) (countrycode year agecat)
+*drop if agecat==.
 
 reshape long re_, i(countrycode year agecat) j(var, string)
-s
-export excel using "C:\Users\WB502818\Desktop\hhtype.xls", sheetreplace firstrow(variables)
+export excel using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\hhtype\hhtype_agecat.xls", sheetreplace firstrow(variables)
 
+
+s
 reshape wide re_, i(countrycode year var) j(agecat)
 
 		
