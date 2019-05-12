@@ -1,0 +1,41 @@
+# Understanding poverty through household and individual level characteristics
+
+Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include a household's location, the age, education, and gender of the household head, and household size. These characteristics may be classified at the individual (age, gender, marital status), household (housing, access to assets), community (urban/rural), and regional (state/province) levels. 
+
+In this section, we provide a template for any user attempting to explain the levels of expenditure per capita (the dependent variable) as a function of a variety of harmonized independent variables contained in SARMD. A typical analysis of expenditures per capita may look something like this:
+
+Equation 1
+
+$$f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k}$$
+
+$$
+\begin{equation} 
+  \ln (\frac{y_{i)}}{1.90}) = \beta_{0} +\beta X_{i}+\varepsilon _{i}
+\end{equation} 
+$$
+
+where $X_{i}$ are the independent variables for household $i$ and $\beta$ are the coefficients we are tring to estimate. 
+
+```stata
+gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
+gen age_squared=age^2
+local controls "age age_squared i.male hsize educy i.educat7 i.literacy \\
+  i.marital i.urban i. electricity i.ownhouse i.subnatid1"
+sum `controls' if relationharm==1 [aw=pop_wgt]
+eststo: reg ln_welfare_perc `controls' if relationharm==1 [aw=pop_wgt]
+esttab
+```
+
+```{r shcregtable, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types = cols())
+knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
+```
+
+
+
+
+
+```{r worldpop, out.width='100%', fig.asp=1, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE, fig.cap='South Asia Population Estimates from [WorldPop](https://www.worldpop.org/)', fig.align='center'}
+knitr::include_graphics("./figures/map_asia_2020_morado.png")
+```
+
