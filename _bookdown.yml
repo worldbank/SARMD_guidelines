@@ -27,8 +27,9 @@ rmd_files: [
   "qcheck.Rmd",
 
   "PartAnalysis.Rmd",
-  "welfareAssets.Rmd",
-  "SchoolEnrollment.Rmd",
+  "Note1.Rmd",
+  "Note2.Rmd",
+  "Note3.Rmd",
   "HHComposition.Rmd",
 
   "references.Rmd",
