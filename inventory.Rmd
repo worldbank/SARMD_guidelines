@@ -1,7 +1,11 @@
 # SARMD Inventory {#inventory}
-
 ***
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1000px; height: 850px;'><object class='tableauViz' width='1000' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Cover' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Cover' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  inventoryz,  echo=FALSE, fig.cap = "SARMD inventory", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 SARMD is a regional database of socio-economic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. SARMD consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period. 
 
@@ -16,7 +20,7 @@ Table \@ref(tab:latest) shows the latest available household surveys in SARMD an
 
 ```{r latest, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 latest <- read_csv("./tables/latest.csv",col_names = TRUE, col_types = cols())
-knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
+knitr::kable(latest,booktabs = TRUE, caption = 'Latest household surveys available in SARMD')
 ```
 
 
@@ -26,15 +30,33 @@ Considering that the South Asia region has the second largest poor population in
 
 Extreme data deprivation may be measured as having less than two data points in a ten-year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India. 
 
+Figure \@ref(fig:inventory2) presents the current status of the SARMD harmonization process and its previous rounds for each country:
+
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Availability' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Map' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+```{r  inventory2,  echo=FALSE, fig.cap = "Harmonization status of SARMD", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+You may be wondering how does this compare to other regions of the world? Figure \@ref(fig:inventory3) provides the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC where some countries even provide yearly updates, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period). Note that we are omitting certain countries for which there are no surveys available. Therefore, we are overestimating these frequencies.
+
+The case of India is particularly important because the frequency of its poverty data is too low for a country with such an important role in global poverty monitoring. Its most recent survey conducted in 2016-17 has not been harmonized nor released yet. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 850px;'><object class='tableauViz' width='700' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_GMD&#47;Map' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  inventory3,  echo=FALSE, fig.cap = "Number of surveys in GMD in the last 10 years (2008-2017)", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ## Sample size
 
-India’s household survey is by far the largest covering 100,000 households in the 2009 and 2011 rounds as shown in the following dashboard. Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
+As shown in Figure \@ref(fig:samplesize), India’s household survey is by far the largest in South Asia covering 100,000 households in the 2009 and 2011 rounds. Maldives' survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Lines' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  samplesize,  echo=FALSE, fig.cap = "Sample size", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ## Country descriptions
 
@@ -42,8 +64,8 @@ The content of these household surveys varies widely and their comparison over t
 
 ### Afghanistan
 
-```{r afg, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
-knitr::include_graphics("./figures/Flag_of_Afghanistan.svg")
+```{r afg, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/Flag_of_Afghanistan.svg")
 ```
 
 The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces for the latest round between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas. 
@@ -52,8 +74,8 @@ The Central Statistics Organization (CSO) (http://cso.gov.af/) has used the ALCS
 
 ### Bangladesh
 
-```{r bgd,  echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
-knitr::include_graphics("./figures/Flag_of_Bangladesh.svg")
+```{r bgd,  echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
+knitr::include_graphics("figures/Flag_of_Bangladesh.svg")
 ```
 
 The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (http://bbs.gov.bd/) in 2000, 2005, and 2010. As of 2016, Bangladesh had eight administrative divisions. These were Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur and Sylhet. These 8 divisions of the country were stratified by rural, urban and city corporation, however, city corporations were only considered for Dhaka, Chittagong, Khulna and Rajshahi. This brought the number of strata to 20 (8 rural divisions, 8 urban divisions, and 4 city corporations). 
@@ -62,7 +84,7 @@ Based on the HIES 2016, the BBS reports that poverty was reduced substantially b
 
 ### Bhutan
 
-```{r btn,  echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+```{r btn,  echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_Bhutan.svg")
 ```
 
@@ -74,7 +96,7 @@ The NSB has also analyzed subjective happiness ratings by dzongkhags. Pema Gatsh
 
 ### India
 
-```{r ind, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+```{r ind, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_India.svg")
 ```
 
@@ -84,7 +106,7 @@ In the 68th round two schedule types exist. The two schedule types differ by the
 
 ### Maldives
 
-```{r mdv, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+```{r mdv, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_Maldives.svg")
 ```
 
@@ -93,7 +115,7 @@ The latest round of the Maldives Household Income and Expenditure Survey (HIES) 
 
 ### Nepal
 
-```{r npl, echo=FALSE, out.width='35%', fig.asp=.75, fig.align='left'}
+```{r npl, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_Nepal.svg.png")
 ```
 
@@ -103,7 +125,7 @@ The new administrative division of Nepal consists of seven provinces, some of wh
 
 ### Pakistan
 
-```{r pak, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+```{r pak, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_Pakistan.svg")
 ```
 
@@ -113,7 +135,7 @@ The incidence of poverty is uneven across Pakistan's provinces. Khyber Pakhtunkh
 
 ### Sri Lanka
 
-```{r lka, echo=FALSE, out.width='40%', fig.asp=.75, fig.align='left'}
+```{r lka, echo=FALSE, out.width = '20%', out.extra='style="float:left; padding:20px"'}
 knitr::include_graphics("./figures/Flag_of_Sri_Lanka.svg")
 ```
 
