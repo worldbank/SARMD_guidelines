@@ -1,4 +1,8 @@
 # Understanding poverty through household and individual level characteristics
+***
+> **Abstract:** 
+>
+> sdfjsahufhsdfi
 
 Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include a household's location, the age, education, and gender of the household head, and household size. These characteristics may be classified at the individual (age, gender, marital status), household (housing, access to assets), community (urban/rural), and regional (state/province) levels. 
 
