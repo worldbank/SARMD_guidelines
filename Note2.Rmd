@@ -1,11 +1,10 @@
 # School enrollment in South Asia
-
 ***
 > **Abstract:** 
 >
 > Countries in South Asia (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka) have achieved different levels of progress regarding school enrollment. School enrollment over age has the shape of a plateau (or trapezoid) in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, we find evidence of school enrollment having the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are still concerning even among primary school children aged 4 to 12 years.
 
-In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary education. These investments have led to more children retained in school. According to @students_sar, enrollment in South Asia’s primary schools rose from 75 percent in 2000 to 89 percent in 2010, bringing it closer to that of the Latin America and the Caribbean (94 percent) and East Asia and the Pacific (94.8 percent) regions. Between 1999 and 2010, the number of out-of-school children ages 8–14 years fell from 35 million to 13 million, and the number of out-of-school girls in the region dropped by 59 percent. 
+In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary education. These investments have led to more children retained in school. According to @students_sar, enrollment in South Asia’s primary schools rose from 75 percent in 2000 to 89 percent in 2010, bringing it closer to enrollment levels in Latin America and the Caribbean (94 percent) and East Asia and the Pacific (94.8 percent). Between 1999 and 2010, the number of out-of-school children ages 8–14 years fell from 35 million to 13 million, and the number of out-of-school girls in the region dropped by 59 percent. 
 
 In this analysis, we compare the education levels achieved across countries considering their different education systems. [Sustainable Development Goal 4](https://www.un.org/sustainabledevelopment/education/) has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Equality in primary education between girls and boys has improved, but not at all levels of education. Sri Lanka achieved near-universal primary education decades ago, while Afghanistan and Pakistan still lag significantly behind other South Asian countries. 
 
@@ -26,7 +25,7 @@ The most vulnerable group in terms of low literacy is women older than 65 years.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='Note3&#47;Literacy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-```{r  note2_map,  echo=FALSE, fig.cap = "Average literacy", out.height='10%', fig.align = 'left'}
+```{r  literacymap,  echo=FALSE, fig.cap = "Literacy rates at subnational level", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
@@ -88,7 +87,7 @@ Our analysis of school enrollment of school-age children and young adults (`age<
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_atschool&#47;atschool' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-```{r  note2_dash,  echo=FALSE, fig.cap = "School enrollment over age", out.height='10%', fig.align = 'left'}
+```{r  note2dash,  echo=FALSE, fig.cap = "School enrollment over age", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
@@ -114,7 +113,7 @@ Unfortunately, surveys from India do not collect enough information about indivi
 
 Our figures show how universal primary education has been achieved in Maldives. Still, a wide gap between male and female enrollment rates remains at higher levels of education.
  
-## Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="40">
+## Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="30">
 
 Primary education in Nepal consists of grades one through eight. Secondary education are grades nine and ten, and Higher Secondary Levels cover grades eleven and twelve. Pre-primary education is available in some areas, and students usually begin grade one at age six. A Basic Education Examination is given on grade eight. A national Secondary Education Exam examination is conducted at the end of grade 10. Completing grade 12 examination leads to the School Leaver's Certificate. However, it is clear from the figures that enrollment rates start to fall before reaching grade 12. 
 
