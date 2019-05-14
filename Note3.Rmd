@@ -43,7 +43,37 @@ latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types =
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
 
+## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 
+![](figures/Violins/afghanistan_violins.png "")
+
+## Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40"> {-}
+
+![](figures/Violins/bangladesh_violins.png "")
+
+## Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40"> {-}
+
+![](figures/Violins/bhutan_violins.png "")
+
+## India         <img src="figures/Flag_of_India.svg" width="40"> {-}
+
+![](figures/Violins/india_violins.png "")
+
+## Maldives      <img src="figures/Flag_of_Maldives.svg" width="40"> {-}
+
+![](figures/Violins/maldives_violins.png "")
+
+## Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="30"> {-}
+
+![](figures/Violins/nepal_violins.png "")
+
+## Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40"> {-}
+
+![](figures/Violins/pakistan_violins.png "")
+
+## Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40"> {-}
+
+![](figures/Violins/srilanka_violins.png "")
 
 
 
