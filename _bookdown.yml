@@ -24,6 +24,7 @@ rmd_files: [
   "formularies.Rmd",
 
   "PartqualityControl.Rmd",
+  "dictionary.Rmd",
   "qcheck.Rmd",
 
   "PartAnalysis.Rmd",
