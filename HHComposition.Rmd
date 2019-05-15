@@ -25,10 +25,16 @@ What does it imply?
 knitr::include_graphics("./figures/all.png")
 ```
 
-There has been a global phenomenon that more people have access to mobile phones. South Asia region is no exception on this where a large share of poor people have access to mobile phones than to electricity or improved water. For all countries in the region, cell phone users have significantyl grew.Even among those who don't have access to electricity still have access to cell phone which implies lower entry barriers to obtain them.  
+One of the most unexpected phenomenena in developing countries is that more people have access to mobile phones even than to electricity. South Asia region is no exception for this development. Cell phone users have significantly grew in all countries in the region. Even among those who don't have access to electricity still have access to cell phone.
 
-Why do they have rapid increase in cell phone usage?
+With the exception of Afganistan, at least 80 percent of total population has access to cell phone in recent years. In Bhutan, the percentage of access to cell phone was less than 1 percent in 2003 but the ownership rate has jumped upto about 84 percent within 14 years. In Sri Lanka and Pakistan, 9 out of 10 housesholds use cell phones. 
 
-What does it imply?
-Effective usage of technology may help reduce poverty in developing countries most of which have difficulties in investing in public infrastructure. Also, the low participation in development projects have casted the issue of accessibility of aid programs to local people. With hight percentage of cell phone users, we can compensate the shortcomings of aid program especially in eduation, health and agriculture sectors by efficiently sharing knowledge with people. 
+Another interesting finding is that among the housholds with cell phone, some of them live out of electricity. In india and Bangladesh, among the cell phone users of 84.4 and 68.7 percent respectively, 15.1 and 12.8 percent of them do not have access to electricity. This implies higher entry barriers of accessing basic infrastructure in developing countries due to the lack of financial resources to establish them. 
+
+However, sharp growth in the access to technology such as cell phone presents greater opportnunities for developing countries.Effective usage of technology may help reduce poverty in developing countries most of which have difficulties in investing in public infrastructure. Also, the low participation in development projects have casted the issue of accessibility of aid programs to local people. With hight percentage of cell phone users, we can compensate the shortcomings of aid program especially in eduation, health and agriculture sectors by efficiently sharing knowledge with people. 
+
+One prominent example of using this digital development is a mobile banking platform which already started to grow in India and Bangladesh with the aid of many development agencies. This mobile money transfer service allows users to pay for everyday goods and services, take out and repay loans, and send remittances to family in remote locations.
+
+Technology may not address development challenges alone in SAR, but facilitating the usage of cell phones in development projects may help reducing poverty more effectively. 
+
 
