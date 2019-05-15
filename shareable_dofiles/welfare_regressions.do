@@ -78,6 +78,7 @@ qui foreach country of local countries {
 			
 			* Define control variables
 			gen age_squared=age^2
+			label var age "Age"
 			label var age_squared "Age squared"
 			label define lbl_electricity  0 "No Electricity" 1 "Electricity" 
 			label define lbl_ownhouse  0 "Not own house" 1 "Own house" 
@@ -137,6 +138,14 @@ qui foreach country of local countries {
 
 	local addnote_BGD ("Note psu not available in 2005.")
 
+	local plotlabels_AFG plotlabels("2007" "2011")
+	local plotlabels_BGD plotlabels("2000" "2005" "2010" "2016")
+	local plotlabels_BTN plotlabels("2003" "2007" "2012" "2017")
+	local plotlabels_IND plotlabels("1993" "2004" "2009" "2011")
+	local plotlabels_MDV plotlabels("2002" "2009" "2016")
+	local plotlabels_NPL plotlabels("2003" "2010")
+	local plotlabels_PAK plotlabels("2001" "2004" "2005" "2007" "2010" "2011" "2013" "2015")
+	local plotlabels_LKA plotlabels("2002" "2006" "2009" "2012" "2016")
 
 
 	esttab model1_linear_`country'* using model1_linear_`country'.csv, se r2 label replace nogaps   ///
@@ -149,7 +158,24 @@ qui foreach country of local countries {
 	title(Logit regression: Dependent variable poor_int)       ///
 	addnote(`addnote_`country'')
 
+	coefplot model1_linear_`country'*, bylabel(Linear regression) ///
+    || model2_logit_`country'*, bylabel(Logit regression)  ///
+    ||,  xline(0) bycoefs byopts(xrescale title("`country' Regression Results")) `plotlabels_`country'' ///
+	drop(?cons *.subnatid1) legend(pos(3) row(1))
+	graph export `country'.png, replace
+	
+	coefplot model1_linear_`country'*, bylabel(Year) ///
+	xline(0) bycoefs byopts(title("`country' Linear Regression Results")) `plotlabels_`country'' ///
+	drop(?cons *.subnatid1) legend(pos(3) row(1))
+	graph export `country'_linear.png, replace
+	
+	coefplot model2_logit_`country'*, bylabel(Year) ///
+	xline(0) bycoefs byopts(title("`country' Logit Regression Results")) `plotlabels_`country'' ///
+	drop(?cons *.subnatid1) legend(pos(3) row(1))
+	graph export `country'_logit.png, replace
+	
 	
 }
+
 
 
