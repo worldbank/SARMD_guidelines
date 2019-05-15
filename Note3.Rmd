@@ -68,52 +68,63 @@ sum ln_welfare_perc poor_int `controls' if relationharm==1 [aw=pop_wgt]
 eststo model1_linear: svy: reg ln_welfare_perc `controls' if relationharm==1
 eststo model2_logit: svy: logit poor_int `controls' if relationharm==1
 
-* Present results
+* Present results in table
 esttab *, se r2 label
+
+* Present results in figure
+coefplot
 ```
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 
 ![](figures/Violins/afghanistan_violins.png "")
 
+![](tables/Regressions/coefplot/AFG.png "")
+
 ## Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40"> {-}
 
 ![](figures/Violins/bangladesh_violins.png "")
 
-```{r bgd_model1}
-bgd_model1 <- read_csv("./tables/Regressions/model1_linear_BGD.csv")
-knitr::kable(bgd_model1, caption = 'Linear regression: Dependent variable ln_welfare_perc')
-```
-
-```{r bgd_model2, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-bgd_model2 <- read_csv("./tables/Regressions/model2_logit_BGD.csv")
-knitr::kable(bgd_model2,booktabs=TRUE, caption = 'Logit regression: Dependent variable poor_int')
-```
+![](tables/Regressions/coefplot/BGD.png "")
 
 
 ## Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40"> {-}
 
 ![](figures/Violins/bhutan_violins.png "")
 
+![](tables/Regressions/coefplot/BTN.png "")
+
 ## India         <img src="figures/Flag_of_India.svg" width="40"> {-}
 
 ![](figures/Violins/india_violins.png "")
+
+![](tables/Regressions/coefplot/IND.png "")
 
 ## Maldives      <img src="figures/Flag_of_Maldives.svg" width="40"> {-}
 
 ![](figures/Violins/maldives_violins.png "")
 
+![](tables/Regressions/coefplot/MDV.png "")
+
+
+
 ## Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="30"> {-}
 
 ![](figures/Violins/nepal_violins.png "")
+
+![](tables/Regressions/coefplot/NPL.png "")
 
 ## Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40"> {-}
 
 ![](figures/Violins/pakistan_violins.png "")
 
+![](tables/Regressions/coefplot/PAK.png "")
+
 ## Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40"> {-}
 
 ![](figures/Violins/srilanka_violins.png "")
+
+![](tables/Regressions/coefplot/LKA.png "")
 
 
 
