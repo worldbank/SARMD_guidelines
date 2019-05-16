@@ -11,8 +11,8 @@ First, a consumer price index (CPI) is necessary to measure by how much the gene
 cpi <- read_csv("./tables/cpi.csv",col_names = TRUE, col_types = cols())
 
 ggplot(data=cpi, aes(x=year, y=cpi, group=country)) +
-  geom_line(aes(linetype=country))+
-  geom_point(aes(shape=country))
+  geom_line(aes(color=country))+
+  geom_point(aes(color=country)) + scale_color_brewer(palette="Dark2")
 ```
 
 Second, spatial price differences, typically between urban and rural areas, can also be large and it is important to take them into account. In South Asia, price levels for rural households are often lower than for urban households. The ideal way to control for spatial differences in prices is to use a Paasche or Laspeyres index to account for differences in the cost of living across space. 
