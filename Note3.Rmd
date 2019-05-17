@@ -49,7 +49,8 @@ clear all
 eststo clear
 
 * Open data
-datalibweb, country(BGD) year(2016) type(SARMD) mod(IND) vermast(01) veralt(03) surveyid(HIES)
+datalibweb, country(BGD) year(2016) type(SARMD) mod(IND) ///
+vermast(01) veralt(03) surveyid(HIES)
 
 * Declare survey design for dataset
 svyset psu [pw=pop_wgt], strata(strata)
@@ -59,7 +60,8 @@ gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
 
 * Define control variables
 gen age_squared=age^2
-local controls "i.male age age_squared hsize i.urban i. electricity i.ownhouse i.subnatid1"
+local controls "i.male age age_squared hsize i.urban i. ///
+electricity i.ownhouse i.subnatid1"
 
 * Describe data
 sum ln_welfare_perc poor_int `controls' if relationharm==1 [aw=pop_wgt]
