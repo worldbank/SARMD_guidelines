@@ -155,10 +155,10 @@ bys countrycode year idh: egen nfemadults=sum(femadults)
 gen maladults=(male==1&age>=25&age<=55)
 bys countrycode year idh: egen nmaladults=sum(maladults)
 
-gen femearners=(male==0&lstatus==1&age>=20&age<=60)
+gen femearners=(male==0&lstatus==1&age>=25&age<=55)
 bys countrycode year idh: egen nfemearners=sum(femearners)
 
-gen malearners=(male==1&lstatus==1&age>=20&age<=60)
+gen malearners=(male==1&lstatus==1&age>=25&age<=55)
 bys countrycode year idh: egen nmalearners=sum(malearners)
 
 foreach v in mal fem {
@@ -187,36 +187,16 @@ foreach v in /*share_malearn share_femearn*/ mfemhhedu mmalhhedu {
 	save `00', replace
 	restore
 }
-foreach v in share_malearn share_femearn {
-	*preserve
+
 	collapse (mean) share_malearn share_femearn  [aw=wgt] if women_24==1, by(countrycode year earlym_all)
 	*gen indicator="`v'"
-	
-	reshape long share_*, i(countrycode year earlym_all) j(indicator)
-	ren earlym_all category
+	reshape long share_, i(countrycode year earlym_all) j(indicator, string)
+	ren (earlym_all share_) (category value)
 	*keep countrycode year value indicator
 	append using `00'
 	save `00', replace
-	restore
-}
-u `00', clear
 
-s
 
-/*wbopendata, country(AFG;BGD;BTN;IND;LKA;MDV;NPL;PAK) indicator(NY.GDP.MKTP.PP.KD ) long clear
-keep countrycode year ny_gdp_mktp_pp_kd
-sort countrycode year
-tempfile gdp
-save `gdp', replace*/
+sort countrycode year indicator category
 
-use `cy', clear
-levelsof countrycode, loc(countries)
-	glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Urban Poverty"	
-	foreach c of loc countries {
-	graph bar value  if countrycode=="`c'", ///
-	over(year )	name("`c'", replace) title("Urban Poverty")  subtitle("`c'")
-	graph export "${path}/`c'.png", replace	
-	}
-
-	graph combine  `countiries',  title("Urban Poverty")  subtitle("`c'")	
-	graph export "${path}/all.png", replace	 
+export excel using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\demographic\earlymarriage.xls", sheetreplace firstrow(variables)
