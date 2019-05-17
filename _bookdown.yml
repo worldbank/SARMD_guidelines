@@ -33,7 +33,11 @@ rmd_files: [
   "Note1.Rmd",
   "Note2.Rmd",
   "Note3.Rmd",
-  "HHComposition.Rmd",
+  "NoteA.Rmd",
+  "NoteB.Rmd",
+  "NoteC.Rmd",
+  "NoteD.Rmd",
+  "NoteE.Rmd",
 
   "references.Rmd",
 ]
