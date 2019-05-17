@@ -1,5 +1,5 @@
 book_filename: "SARMD-Guidelines"
-repo: https://github.com/randrescastaneda/SARMD_guidelines/
+repo: https://github.com/worldbank/SARMD_guidelines/
 output_dir: _book
 delete_merged_file: true
 language:
