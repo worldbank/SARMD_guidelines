@@ -10,9 +10,14 @@ References:
 Output:             
 ==================================================*/
 
-cap ssc install blindschemes
-set scheme plotplain, permanently
+clear 
+set more off 
+*cap ssc install blindschemes
+*set scheme plotplain, permanently
 graph set window fontface "Times New Roman"
+
+tempfile 00
+save `00', replace emptyok
 
 local reponame  "sarmd"
 local countries ""
@@ -99,15 +104,9 @@ qui foreach id of local ids {
 		*di in red "`country'" "`year'"
 		*cap keep countrycode year idh urban ownhouse piped_water pipedwater_acc sewage_toilet toilet_acc q p welfare wgt improved_sanitation sanitation_source
 
-		cap keep countrycode idh year age male marital educat4 relationharm
-		gen gchild_=(age<18&male==0)
-		gen fedu_=educat4 if relationharm<=2&male==0
-		gen medu_=educat4 if relationharm<=2&male==1	
-		foreach v in fedu medu gchild {
-				bys countrycode year idh: egen `v'=max(`v'_)
-				drop `v'_
-				}
-		keep if age<18 &male==0
+		cap keep countrycode idh year age male marital educat4 relationharm educat7 educy lstatus empstat wgt
+
+		*keep if age<18 &male==0
 					append using `cy'
 			save `cy', replace
 		*correlate urban ownhouse piped_water pipedwater_acc sewage_toilet toilet_acc if q<=1		
@@ -122,8 +121,88 @@ qui foreach id of local ids {
 		}
 	}
 use `cy', clear
-gen earlym=(marital==1)
+/*
+		gen gchild_=(age<18&male==0)
+		gen fedu_=educat4 if relationharm<=2&male==0
+		gen medu_=educat4 if relationharm<=2&male==1	
+		foreach v in fedu medu gchild {
+				bys countrycode year idh: egen `v'=max(`v'_)
+				drop `v'_
+				}
+*/
+**********************************************
+*EARLY MARRIAGE INDICATOR
+**********************************************
+gen earlym=(age<18&male==0&marital!=2&marital!=.)
+replace earlym=. if marital==.
+
+bys countrycode year idh: gen child=age if relationharm==3
+ bys countrycode year idh: egen childage=max(child)
+ 
+gen earlym_all=((age==20&male==0&relationharm<3&childage>1)|	///
+				(age==21&male==0&relationharm<3&childage>2)|	///
+				(age==23&male==0&relationharm<3&childage>3)|	///
+				(age==24&male==0&relationharm<3&childage>4))|	///
+				earlym==1
+gen women_24=(male==0&age<=24)
+replace women_24=. if marital==.
+
+**********************************************
+*SHARE OF EMPLOYED AMONG MEMBERS IN PRODUCTIVE AGE
+**********************************************
+gen femadults=(male==0&age>=25&age<=55)
+bys countrycode year idh: egen nfemadults=sum(femadults)
+gen maladults=(male==1&age>=25&age<=55)
+bys countrycode year idh: egen nmaladults=sum(maladults)
+
+gen femearners=(male==0&lstatus==1&age>=20&age<=60)
+bys countrycode year idh: egen nfemearners=sum(femearners)
+
+gen malearners=(male==1&lstatus==1&age>=20&age<=60)
+bys countrycode year idh: egen nmalearners=sum(malearners)
+
+foreach v in mal fem {
+	gen share_`v'earn=n`v'earners/n`v'adults*100
+}
+**********************************************
+*HIGHEST EDUCATION AMONG MEMBERS >25
+**********************************************
+cap drop femhhedu mfemhhedu
+gen femhhedu=educat4 if male==0&age>=25
+replace femhhedu=0 if femhhedu==.
+bys countrycode year idh: egen mfemhhedu=max(femhhedu)
+
+gen malhhedu=educat4 if male==1&earlym_all!=1
+replace malhhedu=0 if malhhedu==.
+bys countrycode year idh: egen mmalhhedu=max(malhhedu)
+
+foreach v in /*share_malearn share_femearn*/ mfemhhedu mmalhhedu {
+	preserve
+	collapse (mean) earlym_all [aw=wgt] if women_24==1, by(countrycode year `v')
+	ren earlym_all value
+	gen indicator="`v'"
+	replace value=value*100
+	ren `v' category
+	append using `00'
+	save `00', replace
+	restore
+}
+foreach v in share_malearn share_femearn {
+	*preserve
+	collapse (mean) share_malearn share_femearn  [aw=wgt] if women_24==1, by(countrycode year earlym_all)
+	*gen indicator="`v'"
+	
+	reshape long share_*, i(countrycode year earlym_all) j(indicator)
+	ren earlym_all category
+	*keep countrycode year value indicator
+	append using `00'
+	save `00', replace
+	restore
+}
+u `00', clear
+
 s
+
 /*wbopendata, country(AFG;BGD;BTN;IND;LKA;MDV;NPL;PAK) indicator(NY.GDP.MKTP.PP.KD ) long clear
 keep countrycode year ny_gdp_mktp_pp_kd
 sort countrycode year
