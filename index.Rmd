@@ -1,6 +1,6 @@
 ---
 title: "South Asia Regional Micro Database (SARMD) User Guidelines" 
-author: ["South Asia Region Team for Statistical Development (SARTSD)", "Raúl Andrés Castañeda Aguilar ", "Jayne Jungsun Yoo", "Francisco Javier Parada Gómez Urquiza "]
+author: ["South Asia Region Team for Statistical Development (SARTSD)", "Raúl Andrés Castañeda Aguilar", "Jayne Jungsun Yoo", "Francisco Javier Parada Gómez Urquiza"]
 date: "`r Sys.Date()`" 
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site 
