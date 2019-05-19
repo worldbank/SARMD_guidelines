@@ -1,0 +1,136 @@
+# Understanding poverty through household and individual level characteristics
+***
+> **Abstract:** 
+>
+> We apply multivariate regression modeling to identify key characteristics of poor households. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. This type of analysis has allowed us to reject a few hypotheses. For example, it is not true in general that female-headed households have lower levels of expenditures per capita. 
+
+Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include independent variables at the individual (age, gender, marital status), household (household size, housing, access to assets), community (urban/rural), and regional (state/province) levels. These variables have been harmonized in SARMD. For example, the characteristics of the household head, such as `age`, `educy`, and `male`, may be identified using `relationharm==1` or `relationcs==1`. 
+
+In this chapter, we provide a template for any user attempting to explain the levels of expenditure per capita (the dependent variable) as a function of a variety of harmonized independent variables contained in SARMD. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. 
+
+A typical analysis of expenditures per capita may look something like this:
+
+$$
+\begin{equation} 
+  \ln \left( \frac{y_{i}}{1.90} \right) = \beta_{0} +\beta_1 X_{i}+\beta_2 Z_{i}+\varepsilon _{i}
+\end{equation} 
+$$
+
+This equation is said to be in the semi-log form because only the dependent variable is in logarithm. The coefficients in the semi-log model are partial or semi-elasticities. The model assumes a linear relationship between $\ln (y_{i}/1.90)$, $X_{i}$, and $Z_{i}$, where $X_{i}$ are independent variables for household head $i$ and $Z_{i}$ are independent variables for household $i$. The $\beta$'s are the coefficients we are trying to estimate. $\varepsilon _{i}$ represents a normally-distributed random error term. 
+
+The regression analysis of a binary variable determines what is the probability of an outcome rather than an alternative outcome, in this case, falling below the poverty line or not:
+
+$$
+\begin{equation} 
+  poor\_int = \begin{cases}
+      1 & if & \ln \left( \frac{y_{i}}{1.90} \right) < 0\\
+      0 & if & \ln \left( \frac{y_{i}}{1.90} \right) \geq 0
+    \end{cases}
+\end{equation} 
+$$
+
+Logistic regression, also called a logit model, is used to model dichotomous outcome variables. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
+
+A two-step sample design, first selecting clusters and then households, generates a sample in which households are not randomly distributed over space. One complication of clustering is that the error term is correlated within cluster. Interviewing several households on a same block reduces survey costs, but may also lead to data being influenced by common unobserved cluster-specific characteristics. Surveys are also commonly designed to generate statistics for population subgroups defined by geographical area or ethnicity. Stratification guarantees there will be enough observations to permit estimates for each of these groups. @deaton provides an example. Suppose we know average rural income is lower than average urban income. A stratified survey would be two identical surveys, one rural and one urban, each of which would estimate average income. The average income for the whole country would be calculated by weighting together the urban and rural means using the proportion of the population in each group as weights. 
+
+Unfortunately, `psu` and `strata` are not always available in SARMD as shown in Figure \@ref(fig:note3variables), but we use them whenever they are available. We selected `male`, `age`, `hsize`, `urban`, `electricity`, `ownhouse`, and `subnatid1` as control variables because they are present in most of the surveys and they have a low percentage of missing observations. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Note3Variables' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3variables,  echo=FALSE, fig.cap = "Summary statistics", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+An example of how to conduct these regressions is provided below:
+
+```stata
+* Preamble
+clear all
+eststo clear
+
+* Open data
+datalibweb, country(BGD) year(2016) type(SARMD) mod(IND) ///
+vermast(01) veralt(03) surveyid(HIES)
+
+* Declare survey design for dataset
+svyset psu [pw=pop_wgt], strata(strata)
+
+* Generate dependent variable
+gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
+
+* Define control variables
+gen age_squared=age^2
+local controls "i.male age age_squared hsize i.urban i. ///
+electricity i.ownhouse i.subnatid1"
+
+* Describe data
+sum ln_welfare_perc poor_int `controls' if relationharm==1 [aw=pop_wgt]
+
+* Conduct regressions
+eststo model1_linear: svy: reg ln_welfare_perc `controls' if relationharm==1
+eststo model2_logit: svy: logit poor_int `controls' if relationharm==1
+
+* Present results in table
+esttab *, se r2 label
+
+* Present results in figure
+coefplot
+```
+
+## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
+
+![](figures/Violins/afghanistan_violins.png "")
+
+![](tables/Regressions/coefplot/AFG.png "")
+
+## Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40"> {-}
+
+![](figures/Violins/bangladesh_violins.png "")
+
+![](tables/Regressions/coefplot/BGD.png "")
+
+
+## Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40"> {-}
+
+![](figures/Violins/bhutan_violins.png "")
+
+![](tables/Regressions/coefplot/BTN.png "")
+
+## India         <img src="figures/Flag_of_India.svg" width="40"> {-}
+
+![](figures/Violins/india_violins.png "")
+
+![](tables/Regressions/coefplot/IND.png "")
+
+## Maldives      <img src="figures/Flag_of_Maldives.svg" width="40"> {-}
+
+![](figures/Violins/maldives_violins.png "")
+
+![](tables/Regressions/coefplot/MDV.png "")
+
+
+
+## Nepal         <img src="figures/Flag_of_Nepal.svg.png" width="30"> {-}
+
+![](figures/Violins/nepal_violins.png "")
+
+![](tables/Regressions/coefplot/NPL.png "")
+
+## Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40"> {-}
+
+![](figures/Violins/pakistan_violins.png "")
+
+![](tables/Regressions/coefplot/PAK.png "")
+
+## Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40"> {-}
+
+![](figures/Violins/srilanka_violins.png "")
+
+![](tables/Regressions/coefplot/LKA.png "")
+
+
+
+```{r worldpop, out.width='100%', fig.asp=1, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE, fig.cap='South Asia Population Estimates from [WorldPop](https://www.worldpop.org/)', fig.align='center'}
+knitr::include_graphics("./figures/map_asia_2020_morado.png")
+```
+
