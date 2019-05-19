@@ -53,8 +53,6 @@ We provide a [Tableau dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Information on self-production 
 - Information on transfers to and from the household  
  
-_Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
-
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Food' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
 
 ```{r  fooddash,  echo=FALSE, fig.cap = "Food expenditure", out.height='10%', fig.align = 'left'}
@@ -99,14 +97,8 @@ We provide a [Tableau Dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_
 - Whether they collect the quantity and/or value of non-food items 
 - Data collection reference periods (daily, weekly, bi-weekly, monthly, and/or yearly)  
 - Whether they provide information on transfers to and from the household  
-
-_Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;NonFood' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
-
-```{r  nonfooddash,  echo=FALSE, fig.cap = "Non-food expenditure", out.height='10%', fig.align = 'left'}
-knitr::include_graphics("figures/fake_figure.PNG")
-```
  
 ## Durable assets 
  
@@ -131,13 +123,7 @@ knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 #This section provides a summary for data collection methods for durable assets for the household surveys available in SARMD. 
 ``` 
  
- _Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
- 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Durables' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
-
-```{r  durablesdash,  echo=FALSE, fig.cap = "Durables assets expenditure", out.height='10%', fig.align = 'left'}
-knitr::include_graphics("figures/fake_figure.PNG")
-```
  
 ## Housing 
 
@@ -177,10 +163,5 @@ The most relevant dwelling characteristics displayed in the following [Tableau d
 - Travel time to reach services  
 - Others such as access to an Internet connection 
  
- _Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
- 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Housing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
  
- ```{r  housedash,  echo=FALSE, fig.cap = "Housing expenditure", out.height='10%', fig.align = 'left'}
-knitr::include_graphics("figures/fake_figure.PNG")
-```
