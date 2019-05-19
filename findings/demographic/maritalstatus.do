@@ -121,6 +121,7 @@ qui foreach id of local ids {
 		}
 	}
 use `cy', clear
+
 /*
 		gen gchild_=(age<18&male==0)
 		gen fedu_=educat4 if relationharm<=2&male==0
@@ -148,7 +149,7 @@ gen women_24=(male==0&age<=24)
 replace women_24=. if marital==.
 
 **********************************************
-*SHARE OF EMPLOYED AMONG MEMBERS IN PRODUCTIVE AGE
+*EMPSTAT AMONG MEMBERS IN PRODUCTIVE AGE
 **********************************************
 gen femadults=(male==0&age>=25&age<=55)
 bys countrycode year idh: egen nfemadults=sum(femadults)
@@ -161,42 +162,87 @@ bys countrycode year idh: egen nfemearners=sum(femearners)
 gen malearners=(male==1&lstatus==1&age>=25&age<=55)
 bys countrycode year idh: egen nmalearners=sum(malearners)
 
+gen femwage=(male==0&empstat==1&age>=25&age<=55)
+bys countrycode year idh: egen nfemwage=sum(femwage)
+
+gen malwage=(male==1&empstat==1&age>=25&age<=55)
+bys countrycode year idh: egen nmalwage=sum(malwage)
+
+gen femself=(male==0&(empstat==2|empstat==3|empstat==4)&age>=25&age<=55)
+bys countrycode year idh: egen nfemself=sum(femself)
+
+gen malself=(male==1&(empstat==2|empstat==3|empstat==4)&age>=25&age<=55)
+bys countrycode year idh: egen nmalself=sum(malself)
+
+gen femunemp=(male==0&(lstatus==2)&age>=25&age<=55)
+bys countrycode year idh: egen nfemunemp=sum(femunemp)
+
+gen malunemp=(male==1&(lstatus==2)&age>=25&age<=55)
+bys countrycode year idh: egen nmalunemp=sum(malunemp)
+
+gen femolf=(male==0&(lstatus==3)&age>=25&age<=55)
+bys countrycode year idh: egen nfemolf=sum(femolf)
+
+gen malolf=(male==1&(lstatus==3)&age>=25&age<=55)
+bys countrycode year idh: egen nmalolf=sum(malolf)
+
 foreach v in mal fem {
-	gen share_`v'earn=n`v'earners/n`v'adults*100
+	foreach f in earners wage self unemp olf {
+	gen share_`v'`f'=n`v'`f'/n`v'adults*100
+	}
 }
 **********************************************
 *HIGHEST EDUCATION AMONG MEMBERS >25
 **********************************************
 cap drop femhhedu mfemhhedu
 gen femhhedu=educat4 if male==0&age>=25
-replace femhhedu=0 if femhhedu==.
+*replace femhhedu=0 if femhhedu==.
 bys countrycode year idh: egen mfemhhedu=max(femhhedu)
 
 gen malhhedu=educat4 if male==1&earlym_all!=1
-replace malhhedu=0 if malhhedu==.
+*replace malhhedu=0 if malhhedu==.
 bys countrycode year idh: egen mmalhhedu=max(malhhedu)
 
-foreach v in /*share_malearn share_femearn*/ mfemhhedu mmalhhedu {
-	preserve
-	collapse (mean) earlym_all [aw=wgt] if women_24==1, by(countrycode year `v')
-	ren earlym_all value
-	gen indicator="`v'"
-	replace value=value*100
-	ren `v' category
-	append using `00'
-	save `00', replace
-	restore
+glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\demographic"
+tempname bc
+postfile `bc' str10 country double year str30 indicator str30 category  double value  ///
+using "${path}/output.dta", replace
+set trace off
+*quietly {
+*Part 1
+
+
+ta countrycode, gen(code)
+ta  mfemhhedu, gen(feducat)
+ta  mmalhhedu, gen(meducat)
+levelsof countrycode, loc(code)
+foreach c of loc code {
+	foreach v in feducat meducat {
+		
+			foreach n in 1 2 3 4 {
+				if `n'==1 loc category="No Education"
+				if `n'==2 loc category="Primary"
+				if `n'==3 loc category="Secondary"
+				if `n'==4 loc category="Tertiary"
+				su `v'`n' [aw=wgt]
+				loc value=(r(mean)*100)
+				su year if countrycode=="`c'"
+				loc year=(r(mean)) 
+				loc indicator="`v'"
+				loc country="`c'"
+			post `bc' ("`country'") (`year') ("`indicator'") ("`category'") (`value')
+			}
+			}	
 }
 
-	collapse (mean) share_malearn share_femearn  [aw=wgt] if women_24==1, by(countrycode year earlym_all)
-	*gen indicator="`v'"
-	reshape long share_, i(countrycode year earlym_all) j(indicator, string)
-	ren (earlym_all share_) (category value)
-	*keep countrycode year value indicator
-	append using `00'
-	save `00', replace
+postclose `bc'
+timer off 11
 
 
-sort countrycode year indicator category
+use "${path}/output.dta", clear
+compress
 
-export excel using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\demographic\earlymarriage.xls", sheetreplace firstrow(variables)
+
+export excel using "${path}/earlymarriage@2.xlsx", sheet("master") sheetreplace first(variable)
+
+	
