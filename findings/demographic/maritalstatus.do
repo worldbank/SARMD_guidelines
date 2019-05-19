@@ -1,5 +1,5 @@
 /*==================================================
-Project:       Household Composition and Poverty Status
+Project:       Early Marriage Distribution
 Author:        Jayne Yoo and Javier Parada and Andres Castaneda 
 Dependencies:  The World Bank
 ----------------------------------------------------
@@ -216,15 +216,16 @@ ta countrycode, gen(code)
 ta  mfemhhedu, gen(feducat)
 ta  mmalhhedu, gen(meducat)
 levelsof countrycode, loc(code)
+
+foreach v in feducat meducat {
 foreach c of loc code {
-	foreach v in feducat meducat {
-		
-			foreach n in 1 2 3 4 {
+
+foreach n in 1 2 3 4 {
 				if `n'==1 loc category="No Education"
 				if `n'==2 loc category="Primary"
 				if `n'==3 loc category="Secondary"
 				if `n'==4 loc category="Tertiary"
-				su `v'`n' [aw=wgt]
+				su `v'`n' [aw=wgt] if earlym_all==1&countrycode=="`c'"
 				loc value=(r(mean)*100)
 				su year if countrycode=="`c'"
 				loc year=(r(mean)) 
