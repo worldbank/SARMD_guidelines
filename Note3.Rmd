@@ -2,7 +2,7 @@
 ***
 > **Abstract:** 
 >
-> We apply multivariate regression modeling to identify key characteristics of poor households. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. This type of analysis has allowed us to reject a few hypotheses. For example, it is not true in general that female-headed households have lower levels of expenditures per capita. 
+> We apply multivariate regression modeling to identify key characteristics of poor households. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. This type of analysis has allowed us to reject a few hypotheses. For example, it is not true in general that female-headed households have lower levels of expenditures per capita. It is true, however, that urban households have significantly higher expenditures per capita. 
 
 Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include independent variables at the individual (age, gender, marital status), household (household size, housing, access to assets), community (urban/rural), and regional (state/province) levels. These variables have been harmonized in SARMD. For example, the characteristics of the household head, such as `age`, `educy`, and `male`, may be identified using `relationharm==1` or `relationcs==1`. 
 
@@ -60,15 +60,19 @@ gen ln_welfare_perc=ln(welfare/cpi/ppp/365*12/1.90)
 
 * Define control variables
 gen age_squared=age^2
-local controls "i.male age age_squared hsize i.urban i. ///
-electricity i.ownhouse i.subnatid1"
+local controls "i.male age age_squared hsize i.urban ///
+i.electricity i.ownhouse i.subnatid1"
 
 * Describe data
-sum ln_welfare_perc poor_int `controls' if relationharm==1 [aw=pop_wgt]
+sum ln_welfare_perc poor_int `controls' ///
+  if relationharm==1 [aw=pop_wgt]
 
 * Conduct regressions
-eststo model1_linear: svy: reg ln_welfare_perc `controls' if relationharm==1
-eststo model2_logit: svy: logit poor_int `controls' if relationharm==1
+eststo model1_linear: svy: reg ln_welfare_perc ///
+`controls' if relationharm==1
+
+eststo model2_logit: svy: logit poor_int ///
+`controls' if relationharm==1
 
 * Present results in table
 esttab *, se r2 label
@@ -76,37 +80,48 @@ esttab *, se r2 label
 * Present results in figure
 coefplot
 ```
+## Linear Model results
+
+Figure \@ref(fig:note3byvarsmodel1) displays the results of the linear model regression by variable. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariable' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3byvarsmodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+Figure \@ref(fig:note3bycountrymodel1) displays the results of the linear model regression by survey.  
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurvey' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3bycountrymodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 
 ![](figures/Violins/afghanistan_violins.png "")
 
-![](tables/Regressions/coefplot/AFG.png "")
 
 ## Bangladesh    <img src="figures/Flag_of_Bangladesh.svg" width="40"> {-}
 
 ![](figures/Violins/bangladesh_violins.png "")
 
-![](tables/Regressions/coefplot/BGD.png "")
 
 
 ## Bhutan        <img src="figures/Flag_of_Bhutan.svg" width="40"> {-}
 
 ![](figures/Violins/bhutan_violins.png "")
 
-![](tables/Regressions/coefplot/BTN.png "")
 
 ## India         <img src="figures/Flag_of_India.svg" width="40"> {-}
 
 ![](figures/Violins/india_violins.png "")
 
-![](tables/Regressions/coefplot/IND.png "")
 
 ## Maldives      <img src="figures/Flag_of_Maldives.svg" width="40"> {-}
 
 ![](figures/Violins/maldives_violins.png "")
-
-![](tables/Regressions/coefplot/MDV.png "")
 
 
 
@@ -114,19 +129,14 @@ coefplot
 
 ![](figures/Violins/nepal_violins.png "")
 
-![](tables/Regressions/coefplot/NPL.png "")
 
 ## Pakistan      <img src="figures/Flag_of_Pakistan.svg" width="40"> {-}
 
 ![](figures/Violins/pakistan_violins.png "")
 
-![](tables/Regressions/coefplot/PAK.png "")
-
 ## Sri Lanka     <img src="figures/Flag_of_Sri_Lanka.svg" width="40"> {-}
 
 ![](figures/Violins/srilanka_violins.png "")
-
-![](tables/Regressions/coefplot/LKA.png "")
 
 
 
