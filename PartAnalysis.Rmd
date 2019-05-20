@@ -1,7 +1,7 @@
 # (PART) Analytical Notes {-}
 
-# Introduction to the Analytical Notes {#analysis .unnumbered}
+# Introduction to the analytical notes {#analysis .unnumbered}
 ***
 
-This chapter provides analytic applications of SARMD for research in a variety of topics. We first present access to durable assets that vary by expenditures. Next, we show the patterns of school enrollment by age to figure how each country has progressed in educational attainment. Information on demographic characteristics also enables to analyze the relationship between poverty and household composition. Finally, we present new possibilities with technology by showing the evidence of improved cell phone access to reduce poverty among developing countries in South Asia. Users may access the Stata do-files to replicate and modify these analytical notes. We also allow users the possibility to interact with the Tableau dashboards by clicking on them.  
+In this part, we present some applications of SARMD for research purposes. The user may access the Stata do-files to replicate and modify these analytical notes and may also interact with the Tableau dashboards. 
 

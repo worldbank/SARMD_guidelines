@@ -25,39 +25,7 @@ cap datalibweb, repo(create `reponame', force) type(SARMD)
 ren (code year) (country years)
 drop if country=="IND"&survname!="NSS-SCH1"
 
-contract country years survname
-
-
-drop if year<2000 
-drop if	(country=="AFG"&year==2013)
-bys country: egen myr=max(year)
-bys country: egen miyr=min(year)
-keep if year==myr|year==miyr
-bys country: egen n=count(year)
-keep if n>1
-preserve
-keep if (country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
-	keep if myr==years
-tempfile 00
-save `00', replace
-restore
-drop if (country=="NPL"|country=="LKA"|country=="PAK"|country=="IND"|country=="BGD") 
-append using `00'
-tempfile 01
-save `01' , replace
-cap datalibweb, repo(create `reponame', force) type(SARMD)
-ren (code year) (country years)
-drop if country=="IND"&survname!="NSS-SCH1"
-
-contract country years survname
-
-keep if (country=="NPL"&year==2003) |	///
-		(country=="NPL"&year==2010) |	///
-		(country=="LKA"&year==2006) |	///
-		(country=="PAK"&year==2004) |	///
-		(country=="IND"&year==2009) |	///
-		(country=="BGD"&year==2005)
-append using `01'
+contract country years survname 
 
 ds
 gen id=country+"_"+strofreal(years)
@@ -87,21 +55,33 @@ qui foreach id of local ids {
 		local year = "`3'"	
 
 	if ("`country'" == "IND" & `year'==2011) {
-		local surveyid "NSS68-SCH1.0-T1"
+		local surveyid "IND_2011_NSS68-SCH10"
 
 	}
 	else local surveyid ""
-		cap {
+	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
+
+			set trace off
+			gen cellnoelect=(cellphone==1&electricity==0)
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
+			cap rename cpi_v2 cpi
+			cap rename ppp_v2 ppp
+			cap confirm var welfare 
+			if _rc==0 {
 			quantiles welfare [aw=wgt], gen(q) n(5)
-				
-			cap keep countrycode year idh idp wgt cellphone electricity welfare q
+			su cellphone if q==1 [aw=wgt]
+			gen cell=`r(mean)'*100
+			su electricity if q==1 [aw=wgt]
+			gen elect=`r(mean)'*100
+			su cellnoelect if q==1 [aw=wgt]
+			gen cellnoel=`r(mean)'*100
+			contract countrycode year cell elect cellnoel
 			append using `cy'
 			save `cy', replace
+			
 		}
-
 		if (_rc) {
 			noi disp in red "Error on `country' `year'"
 		}
@@ -110,38 +90,30 @@ qui foreach id of local ids {
 		}
 
 	}
-
-u `cy', clear
-gen cellelect=.
-replace  cellelect=1 if cellphone==0& electricity==0
-replace  cellelect=2 if cellphone==0& electricity==1
-replace  cellelect=3 if cellphone==1& electricity==0
-replace  cellelect=4 if cellphone==1& electricity==1
-ta cellelect, gen(cell_el)
-
-gen cellelect_poor=.
-replace  cellelect=1 if cellphone==0& electricity==0
-replace  cellelect=2 if cellphone==0& electricity==1
-replace  cellelect=3 if cellphone==1& electricity==0
-replace  cellelect=4 if cellphone==1& electricity==1
-ta cellelect, gen(cell_el)
-
-foreach v in cell_el3 cell_el4 {
-gen `v'100=`v'*100
 }
+u `cy', clear
 
+bys country: egen myr=max(year)
+bys country: egen miyr=min(year)
+keep if year==myr|year==miyr
+bys country: egen n=count(year)
+keep if n>1
+
+label var cell "Cell Phone"	
+label var elect "Electricity"	
+label var cellnoel "Cell Phone w/o Electricity"
 
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cell_el3100 cell_el4100   if countrycode=="`c'" [aw=wgt], ///
-	 over( year) stack name("`c'", replace)  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange)) 	 ///
-	legend(order( 1 "No Access to Electricity" 2 "Access to Electricity")) legend(pos(6) row(1)) blabel(bar, format(%9.1f)) 
+	graph bar cell elect cellnoel if countrycode=="`c'", ///
+	over( year) name("`c'", replace)  subtitle("`c'")	///
+	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
+	legend(order( 1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
 
 
-	graph export "${path}/`c'_check.png", replace	
+	graph export "${path}/`c'.png", replace	
 	}
-
-grc1leg AFG BGD BTN IND LKA PAK, ycommon title("Access to Cell Phone (%)")  
+	
+grc1leg AFG BGD BTN LKA NPL PAK, ycommon title("Access to Cell Phone & Electricity among Poor (%)")  
 graph export "${path}/all.png", replace	
-graph export "C:\Users\WB502818\Documents\SARMD_guidelines\figures/all.png", replace	
+
