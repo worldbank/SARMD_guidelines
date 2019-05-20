@@ -29,8 +29,6 @@ $$
 \end{equation} 
 $$
 
-Logistic regression, also called a logit model, is used to model dichotomous outcome variables. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
-
 A two-step sample design, first selecting clusters and then households, generates a sample in which households are not randomly distributed over space. One complication of clustering is that the error term is correlated within cluster. Interviewing several households on a same block reduces survey costs, but may also lead to data being influenced by common unobserved cluster-specific characteristics. Surveys are also commonly designed to generate statistics for population subgroups defined by geographical area or ethnicity. Stratification guarantees there will be enough observations to permit estimates for each of these groups. @deaton provides an example. Suppose we know average rural income is lower than average urban income. A stratified survey would be two identical surveys, one rural and one urban, each of which would estimate average income. The average income for the whole country would be calculated by weighting together the urban and rural means using the proportion of the population in each group as weights. 
 
 Unfortunately, `psu` and `strata` are not always available in SARMD as shown in Figure \@ref(fig:note3variables), but we use them whenever they are available. We selected `male`, `age`, `hsize`, `urban`, `electricity`, `ownhouse`, and `subnatid1` as control variables because they are present in most of the surveys and they have a low percentage of missing observations. 
@@ -80,11 +78,13 @@ esttab *, se r2 label
 * Present results in figure
 coefplot
 ```
-## Linear Model results
+## Linear model results
+
+The confidence interval gives a range of values such that if the experiment was run many times (e.g., 10,000 times), the range would contain the true parameter 95% of the time. 
 
 Figure \@ref(fig:note3byvarsmodel1) displays the results of the linear model regression by variable. 
 
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariable' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ```{r  note3byvarsmodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
@@ -92,11 +92,39 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 Figure \@ref(fig:note3bycountrymodel1) displays the results of the linear model regression by survey.  
 
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurvey' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurveyM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ```{r  note3bycountrymodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
+
+## Logit model results
+
+Logistic regression, also called a logit model, is used to model dichotomous outcome variables. In the logit model the log odds ratio of the outcome is modeled as a linear combination of the predictor variables:
+
+$$
+\begin{equation} 
+  \log \left( \frac{p}{1-p} \right) = \beta_{0} +\beta_1 X_{i}+\beta_2 Z_{i}+\varepsilon _{i}
+\end{equation} 
+$$
+where $p$ is the probability of being poor (defined as expenditures per capita being below the $1.90 poverty line). The dependent variable now maps probability ranging between 0 and 1 to log odds ratio ranging from negative infinity to positive infinity.
+
+Figure \@ref(fig:note3byvarsmodel2) displays the results of the logit model regression by variable. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3byvarsmodel2,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+Figure \@ref(fig:note3bycountrymodel2) displays the results of the logit model regression by survey.  
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurveyM2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3bycountrymodel2,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 
