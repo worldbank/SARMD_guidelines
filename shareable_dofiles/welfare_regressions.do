@@ -4,10 +4,10 @@ Author:        Javier Parada and Andres Castaneda
 Dependencies:  The World Bank
 ----------------------------------------------------
 Creation Date:    	14 May 2019
-Modification Date:  
+Modification Date:  20 May 2019
 Do-file version:    01
 References:         
-Output:             csv files
+Output:             betas.xls
 ==================================================*/
 cap ssc install blindschemes
 set scheme plotplain, permanently
@@ -53,9 +53,14 @@ drop _all
 tempfile cy // countries and years
 save `cy', emptyok 
 
+gen Country=.
+save betas, replace
+
+eststo clear
+
 qui foreach country of local countries {
 	
-	eststo clear
+	*eststo clear
 	
 	mata: st_local("years",                   /*   set local years 
 	 */          invtokens(                   /*    create tokens out of matrix
@@ -110,14 +115,23 @@ qui foreach country of local countries {
 
 			* Conduct regressions
 			eststo model1_linear_`country'_`year': svy: reg ln_welfare_perc `controls_`country'' if relationharm==1
+			regsave using betas, ci cmdline autoid append addlabel(Country,`country',Year,`year',Model,Linear)
+			
 			eststo model2_logit_`country'_`year': svy: logit poor_int `controls_`country'' if relationharm==1
-		
+			regsave using betas, ci cmdline autoid append addlabel(Country,`country',Year,`year',Model,Logit)
+			
 		}
 		
 		if (_rc) {
 			noi disp in red "Error on `country' `year' `surveyid'"
-			cap eststo model1_linear_`country'_`year': reg ln_welfare_perc `controls_`country'' if relationharm==1
-			cap eststo model2_logit_`country'_`year': logit poor_int `controls_`country'' if relationharm==1
+			cap {
+			eststo model1_linear_`country'_`year': reg ln_welfare_perc `controls_`country'' if relationharm==1
+			regsave using betas, ci cmdline autoid append addlabel(Country,`country',Year,`year',Model,Linear)
+			}
+			cap {
+			eststo model2_logit_`country'_`year': logit poor_int `controls_`country'' if relationharm==1
+			regsave using betas, ci cmdline autoid append addlabel(Country,`country',Year,`year',Model,Logit)
+			}
 		}
 		else {
 			noi disp in y "`country' `year' `surveyid' Done."
@@ -177,5 +191,51 @@ qui foreach country of local countries {
 	
 }
 
+coefplot model1_linear_*, bylabel(Survey) ///
+xline(0) bycoefs byopts(xrescale title("Linear Regression Results")) ///
+drop(?cons *.subnatid1) legend(pos(3) row(1))
+graph export linear.png, replace
 
+coefplot model2_logit_*, bylabel(Survey) ///
+xline(0) bycoefs byopts(xrescale title("Logit Regression Results")) ///
+drop(?cons *.subnatid1) legend(pos(3) row(1))
+graph export logit.png, replace
 
+coefplot model2_logit_*, bylabel(Survey) ///
+xline(0) bycoefs byopts(xrescale title("Logit Regression Results (Odds ratio)")) ///
+drop(?cons *.subnatid1) legend(pos(3) row(1)) eform
+graph export logit2.png, replace
+
+/********************* Export results to Tableau *********************/
+
+use "betas.dta", clear
+
+order Country Year Model
+gen BetaCoefficient=coef
+gen BetaLower_Bound=ci_lower
+gen BetaUpper_Bound=ci_upper
+rename var Variable
+rename stderr Standard_Error
+rename r2 R2
+
+reshape long Beta, i(_id Variable) j(Type) string
+drop if Standard_Error==0
+tostring Year, replace
+gen Country_Year=Country +"_"+ Year
+
+split Variable, parse(:)
+replace Variable=Variable2 if Variable1=="poor_int"
+replace Variable=Variable2 if Variable1=="poor_int_v2"
+drop Variable1 Variable2
+
+split Variable, parse(.)
+drop if Variable2=="subnatid1"
+replace Variable=Variable2 if Variable2!=""
+drop Variable1 Variable2
+
+split cmdline, parse(:)
+gen Svyset="No"
+replace  Svyset="Yes" if cmdline1=="svy "
+drop cmdline1 cmdline2
+
+export excel using "betas.xls", firstrow(variables) replace
