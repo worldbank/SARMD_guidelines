@@ -2,9 +2,9 @@
 ***
 > **Abstract:** 
 >
-> We apply multivariate regression modeling to identify key characteristics of poor households. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. This type of analysis has allowed us to reject a few hypotheses. For example, it is not true in general that female-headed households have lower levels of expenditures per capita. It is true, however, that urban households have significantly higher expenditures per capita. 
+> We apply household-level multivariate regression modeling to identify key characteristics of poor households in South Asia. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. This type of analysis has allowed us to reject a few hypotheses. For example, it is not true in general that female-headed households have lower levels of expenditures per capita. It is true, however, that urban households have significantly higher expenditures per capita. Increasing the size of the household increases the probability of falling below the poverty line. This analysis has allowed to quantify the magnitude of these effects using harmonized variables for surveys available in SARMD.  
 
-Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita. Some of these characteristics may include independent variables at the individual (age, gender, marital status), household (household size, housing, access to assets), community (urban/rural), and regional (state/province) levels. These variables have been harmonized in SARMD. For example, the characteristics of the household head, such as `age`, `educy`, and `male`, may be identified using `relationharm==1` or `relationcs==1`. 
+Regression analysis is commonly undertaken to identify the effects of different characteristics on expenditures per capita and poverty. Some of these characteristics may include independent variables at the individual (age, gender, marital status), household (household size, housing, access to assets), community (urban/rural), and regional (state/province) levels. These variables have been harmonized in SARMD. For example, the characteristics of the household head, such as `age`, `educy`, and `male`, may be identified using `relationharm==1` or `relationcs==1`. 
 
 In this chapter, we provide a template for any user attempting to explain the levels of expenditure per capita (the dependent variable) as a function of a variety of harmonized independent variables contained in SARMD. In the linear regression model, the dependent variable is the logarithm of expenditures per capita divided by the $1.90 poverty line. In the logit model, the dependent variable is binary and indicates whether the household is poor or not. 
 
@@ -18,7 +18,7 @@ $$
 
 This equation is said to be in the semi-log form because only the dependent variable is in logarithm. The coefficients in the semi-log model are partial or semi-elasticities. The model assumes a linear relationship between $\ln (y_{i}/1.90)$, $X_{i}$, and $Z_{i}$, where $X_{i}$ are independent variables for household head $i$ and $Z_{i}$ are independent variables for household $i$. The $\beta$'s are the coefficients we are trying to estimate. $\varepsilon _{i}$ represents a normally-distributed random error term. 
 
-The regression analysis of a binary variable determines what is the probability of an outcome rather than an alternative outcome, in this case, falling below the poverty line or not:
+The regression analysis of a binary variable determines the probability of an outcome rather than an alternative outcome, in this case, falling below the poverty line or not:
 
 $$
 \begin{equation} 
@@ -28,8 +28,6 @@ $$
     \end{cases}
 \end{equation} 
 $$
-
-Logistic regression, also called a logit model, is used to model dichotomous outcome variables. In the logit model the log odds of the outcome is modeled as a linear combination of the predictor variables.
 
 A two-step sample design, first selecting clusters and then households, generates a sample in which households are not randomly distributed over space. One complication of clustering is that the error term is correlated within cluster. Interviewing several households on a same block reduces survey costs, but may also lead to data being influenced by common unobserved cluster-specific characteristics. Surveys are also commonly designed to generate statistics for population subgroups defined by geographical area or ethnicity. Stratification guarantees there will be enough observations to permit estimates for each of these groups. @deaton provides an example. Suppose we know average rural income is lower than average urban income. A stratified survey would be two identical surveys, one rural and one urban, each of which would estimate average income. The average income for the whole country would be calculated by weighting together the urban and rural means using the proportion of the population in each group as weights. 
 
@@ -80,11 +78,18 @@ esttab *, se r2 label
 * Present results in figure
 coefplot
 ```
-## Linear Model results
+## Linear model results
 
-Figure \@ref(fig:note3byvarsmodel1) displays the results of the linear model regression by variable. 
+Figure \@ref(fig:note3byvarsmodel1) displays the results of the linear model regression by variable. The confidence interval gives a range of values such that if the experiment was run many times (e.g., 10,000 times), the range would contain the true parameter 95% of the time. Note how the confidence intervals become wider when we incorporate the survey design variables `psu` and `strata`. In a semi-log model, semi elasticities are interpreted as proportionate changes rather than levels of changes. For example, given $\beta=0.02$, a one-unit change in $x$ is associated with a proportionate increase of 2% in $E(y|x)$.
 
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariable' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+Based on this analysis, we provide the following highlights:
+
+> - Urban expenditures per capita are 20-30% above rural, once controlling for other household characteristics. 
+> - Age of the household head follows the expected non-linear behavior. The coefficient on age is positive, while the coefficient on age squared is negative. 
+> - The mixed results obtained from gender of the household head must be treated with caution, but they suggest it is not true in general that female-headed households have lower levels of expenditures per capita as one may expect.
+> - Increasing the size of the household consistently reduces expenditures per capita within a range from -2% to -13%. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ```{r  note3byvarsmodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
@@ -92,11 +97,39 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 Figure \@ref(fig:note3bycountrymodel1) displays the results of the linear model regression by survey.  
 
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurvey' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurveyM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
 ```{r  note3bycountrymodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
+
+## Logit model results
+
+Logistic regression, also called a logit model, is used to model dichotomous outcome variables. In the logit model the log odds ratio of the outcome is modeled as a linear combination of the predictor variables:
+
+$$
+\begin{equation} 
+  \log \left( \frac{p}{1-p} \right) = \beta_{0} +\beta_1 X_{i}+\beta_2 Z_{i}+\varepsilon _{i}
+\end{equation} 
+$$
+where $p$ is the probability of being poor (defined as expenditures per capita being below the $1.90 poverty line). In this model, the dependent variable maps probability ranging between 0 and 1 to log odds ratio ranging from negative infinity to positive infinity.
+
+Figure \@ref(fig:note3byvarsmodel2) displays the results of the logit model regression by variable. As expected, the signs are reversed to those obtained from the linear regression. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3byvarsmodel2,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+Figure \@ref(fig:note3bycountrymodel2) displays the results of the logit model regression by survey.  
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;BySurveyM2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3bycountrymodel2,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 
