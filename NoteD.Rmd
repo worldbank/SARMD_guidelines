@@ -1,5 +1,28 @@
-# Note D
+# Water, Sanitation and Hygiene (WASH)
 
+## Improvement of Water Supply and Sanitation Over Time {-}
 ***
+
+Introduction
+
+```{r  sanitation,  echo=FALSE, fig.cap = "Sanitation Indicatorse", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/sanitation.PNG")
+```
+
+
+There are several variables that present the information on water and sanitation condition. Indicators that show hygiene level are not available in the harnomized data yet. The most commonly found indicators in the data include "piped_water" and "toilet_acc", the binary variables that give information whether a household has access to piped water and basic sanitation facility. 
+
+Overall, except for Bhutan, less than half of population do not have access to piped water. Piped water is considered as better water supply than surface water, unprotected and possibly contaminated wells. However,  quality of the drinking water depends on the source of the water supplied, This information can be found from the variable, source of drinking water, but not all countries have this information. 
+
+
+```{r  piped water,  echo=FALSE, fig.cap = "Access to Piped Wate", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/piped.PNG")
+```
+
+-Toilet access
+
+```{r  toilet,  echo=FALSE, fig.cap = "Access to Toilet", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/toilet.PNG")
+```
 
 

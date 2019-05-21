@@ -1,7 +1,7 @@
 # Household Composition and Poverty
 
 ***
-## Certain types of household are more susceptible to poverty
+## Relationwhip between Household Characteristics and Poverty
 
 
 ```{r hhtype, fig.cap='Household Type and Probability', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
