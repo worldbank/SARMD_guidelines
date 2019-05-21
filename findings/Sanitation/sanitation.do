@@ -50,7 +50,7 @@ drop _all
 tempfile cy // countries and years
 save `cy', emptyok 
 
-glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Utility"
+glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Sanitation"
 set trace off
 
 qui foreach id of local ids {
@@ -79,20 +79,27 @@ qui foreach id of local ids {
 			cap recode pipedwater_acc   (2=1)
 			cap ren pipedwater_acc piped_water
 			recode toilet_acc (2 3=1)
+			
 			cap confirm var welfare 
 			if _rc==0 {
 			drop if welfare==.
-			quantiles welfare [aw=wgt], gen(q) n(5)
+			quantiles welfare [aw=wgt], gen(q) n(5)		
 			gen poor=(q<=2)
-			preserve
-			collapse (mean)  piped_water  toilet_acc [aw=wgt], by(countrycode year )
-			gen poor=2
+			gen npoor=(q>2)
+
+
+			foreach v in toilet_acc piped_water {
+				g p_`v'=(`v'==1&poor==1)
+				g np_`v'=(`v'==1&poor==0)	
+				g ur_`v'=(`v'==1&urban==1)
+				g ru_`v'=(`v'==1&urban==0)
+			}
+			
+			cap ta water_source, gen(wat_)
+
+			collapse (mean) toilet_acc piped_water p_* np_* ur_* ru_* wat_* [aw=wgt], by(countrycode year )
 			append using `cy'
 			save `cy', replace
-			restore
-			collapse (mean)  piped_water  toilet_acc [aw=wgt], by(countrycode year poor)
-			append using `cy'
-			save `cy', replace			
 		
 		}
 		
@@ -107,17 +114,12 @@ qui foreach id of local ids {
 }
 
 u `cy', clear
+foreach v in toilet_acc piped_water p_* np_* ur_* ru_* {
+ren `v' re_`v'
+}
 
-gen label =""
-replace label="All" if poor==2
-replace label="Poor" if poor==1
-replace label="Non Poor" if poor==0
-
-ren (piped_water toilet_acc) (re_piped_water re_toilet_acc)
-reshape long re_, i(countrycode year poor) j(indicator, string)
+reshape long re_, i(countrycode year) j(indicator, string)
 ren re_ value
-
-
 
 export excel using "${path}/sanitation.xlsx", sheet("master") sheetreplace first(variable)
 

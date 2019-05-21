@@ -51,10 +51,12 @@ if ("`countries'" == "") {
 
 *---------- Loop over countries
 drop _all
-tempfile cy pp
+tempfile pp 
+tempfile pp1
 
-	save `cy', emptyok 
+	
 	save `pp', emptyok 
+	save `pp1', emptyok 
 
 
 
@@ -84,36 +86,34 @@ tempfile cy pp
 			gen welfare_ppp=welfare/ppp/cpi/365*12
 			cap ren industry_orig_v2 industry
 			recode industry (2 3 4 5=2) (6 7 8 9=3) (10=4) (11 12 13 14=.)
+			drop if industry==.
 			ta  industry, g(ind_)
 			cap confirm var welfare 
 			if _rc==0 {
 			drop if welfare==.
 			quantiles welfare [aw=wgt], gen(q) n(5)
-			*gen poor=(q<=2)
+			gen poor=(q<=1)
+			gen top=(q==5)
+
 			
 			preserve
-			collapse (mean)  ind_* [aw=wgt], by(countrycode year  )
-			append using `cy'
-			save `cy', replace
-			
-			restore
-			
-			*preserve
-			collapse (mean)  welfare_ppp [aw=wgt], by(countrycode year industry )
-			gen label=""
-			replace label="Agriculture" if industry==1
-			replace label="Manufacturing" if industry==2
-			replace label="Services" if industry==3
-			replace label="Other" if industry==4
-			drop industry
+			collapse (mean)  ind_* [aw=wgt] if q==1, by(countrycode year  )
+			gen label="q1"
 			append using `pp'
 			save `pp', replace	
-			*			restore
+			restore
+			
+			collapse (mean)  ind_* [aw=wgt] if q==5, by(countrycode year  )
+			gen label="q5"
+			append using `pp1'
+			save `pp1', replace	
+			
 			/*
 			collapse (mean)  ind_* [aw=wgt], by(countrycode year q)
 			
 			append using `qi'
 			save `qi', replace
+			*/
 			*/
 		
 		}
@@ -128,23 +128,16 @@ tempfile cy pp
 	}
 }
 
-u `cy', clear
-*drop if industry==.
-ren ind* re_ind*
-reshape long re_, i(countrycode year) j(label, string)
-ren re_ value
-append using `pp'
-s
-gen label =""
-replace label="All" if poor==2
-replace label="Poor" if poor==1
-replace label="Non Poor" if poor==0
+u `pp', clear
 
-ren (piped_water toilet_acc) (re_piped_water re_toilet_acc)
-reshape long re_, i(countrycode year poor) j(indicator, string)
-ren re_ value
+append using `pp1'
+
+append using `pp1'
+			ren ind* re_ind*
+			reshape long re_, i(countrycode year label ) j(indicator, string)
+			ren re_ value
 
 
 
-export excel using "${path}/sanitation.xlsx", sheet("master") sheetreplace first(variable)
+export excel using "${path}/labor.xlsx", sheet("master") sheetreplace first(variable)
 
