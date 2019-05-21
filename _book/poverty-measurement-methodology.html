@@ -28,7 +28,7 @@
 <meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.5" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#citing-datalibweb"><i class="fa fa-check"></i><b>2.5</b> Citing datalibweb:</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html"><i class="fa fa-check"></i><b>3</b> Poverty measures in South Asia</a><ul>
-<li class="chapter" data-level="" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html#poverty-and-shared-prosperity"><i class="fa fa-check"></i>Poverty and shared prosperity</a></li>
+<li class="chapter" data-level="" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i>Poverty and shared prosperity report</a></li>
 <li class="chapter" data-level="" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html#povcalnet"><i class="fa fa-check"></i>PovcalNet</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="poverty-measurement-methodology.html"><a href="poverty-measurement-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a></li>
@@ -252,7 +252,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="poverty-measurement-methodology" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Poverty measurement methodology</h1>
 <hr />
-<p>The World Bank set a target of reducing extreme poverty to <a href="https://sdg-tracker.org/no-poverty">less than 3 percent by 2030</a> and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line.</p>
 <p>In this book, we overview the data availability of household consumption surveys in the region of South Asia and the procedure followed for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (<span class="citation">Serajuddin et al. (<a href="#ref-serajuddin2015data">2015</a>)</span>). Several spatial and temporal adjustments are necessary to take into account differences in costs of living.</p>
 <p>First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure <a href="poverty-measurement-methodology.html#fig:cpi">4.1</a> displays how the CPI has changed for each country in South Asia over time.</p>
 <div class="figure" style="text-align: center"><span id="fig:cpi"></span>
@@ -318,20 +317,22 @@ Figure 4.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/
 <p>The FGT measures devised by <span class="citation">Foster, Greer, and Thorbecke (<a href="#ref-fgt">1984</a>)</span> remain the most commonly used to measure poverty. A headcount ratio may be calculated in STATA as in the example below:</p>
 <pre class="stata"><code>* Example: Calculating poverty headcounts with 1.90 poverty line
 
-* Calculate per capita expenditures by dividing total expenditures 
-* by the number of household members 
+* Calculate per capita expenditures by dividing total
+* expenditures by the number of household members 
   gen welfare=total_exp/hsize 
 
 * Calculate real per capita expenditures by turning nominal  
-* per capita expenditures into 2011 purchasing power parity (PPP) dollars
+* per capita expenditures into 2011 purchasing power parity 
+* (PPP) dollars
   welfare_ppp = welfare/cpi2011/icp2011/365*12
 
-* Generate a dummy variable to determine whether real per capita expenditures
-* fall below the 1.90 2011 PPP dollars poverty line
+* Generate a dummy variable to determine whether real per capita
+* expenditures fall below the 1.90 2011 PPP dollars poverty line
   gen poor190 = welfare_ppp &lt; 1.90
 
-* Calculate the weighted average of the dummy variable to measure the proportion
-* of the population that falls below the 1.90 2011 PPP dollars poverty line
+* Calculate the weighted average of the dummy variable to measure
+* the proportion of the population that falls below the 1.90 2011
+* PPP dollars poverty line
   sum poor190 [aw=wgt]</code></pre>
 <p>The variable <code>welfare</code> contains the monthly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure <a href="poverty-measurement-methodology.html#fig:povcalnetdata2">4.2</a>. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
