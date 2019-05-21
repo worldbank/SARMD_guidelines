@@ -142,17 +142,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="part"><span><b>II Metadata Analysis</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
-<li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#inventory"><i class="fa fa-check"></i><b>5.1</b> Inventory</a></li>
-<li class="chapter" data-level="5.2" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.2</b> Sample size</a></li>
-<li class="chapter" data-level="5.3" data-path="inventory.html"><a href="inventory.html#country-descriptions"><i class="fa fa-check"></i><b>5.3</b> Country descriptions</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="inventory.html"><a href="inventory.html#afghanistan"><i class="fa fa-check"></i><b>5.3.1</b> Afghanistan</a></li>
-<li class="chapter" data-level="5.3.2" data-path="inventory.html"><a href="inventory.html#bangladesh"><i class="fa fa-check"></i><b>5.3.2</b> Bangladesh</a></li>
-<li class="chapter" data-level="5.3.3" data-path="inventory.html"><a href="inventory.html#bhutan"><i class="fa fa-check"></i><b>5.3.3</b> Bhutan</a></li>
-<li class="chapter" data-level="5.3.4" data-path="inventory.html"><a href="inventory.html#india"><i class="fa fa-check"></i><b>5.3.4</b> India</a></li>
-<li class="chapter" data-level="5.3.5" data-path="inventory.html"><a href="inventory.html#maldives"><i class="fa fa-check"></i><b>5.3.5</b> Maldives</a></li>
-<li class="chapter" data-level="5.3.6" data-path="inventory.html"><a href="inventory.html#nepal"><i class="fa fa-check"></i><b>5.3.6</b> Nepal</a></li>
-<li class="chapter" data-level="5.3.7" data-path="inventory.html"><a href="inventory.html#pakistan"><i class="fa fa-check"></i><b>5.3.7</b> Pakistan</a></li>
-<li class="chapter" data-level="5.3.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.3.8</b> Sri Lanka</a></li>
+<li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.1</b> Sample size</a></li>
+<li class="chapter" data-level="5.2" data-path="inventory.html"><a href="inventory.html#country-descriptions"><i class="fa fa-check"></i><b>5.2</b> Country descriptions</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="inventory.html"><a href="inventory.html#afghanistan"><i class="fa fa-check"></i><b>5.2.1</b> Afghanistan</a></li>
+<li class="chapter" data-level="5.2.2" data-path="inventory.html"><a href="inventory.html#bangladesh"><i class="fa fa-check"></i><b>5.2.2</b> Bangladesh</a></li>
+<li class="chapter" data-level="5.2.3" data-path="inventory.html"><a href="inventory.html#bhutan"><i class="fa fa-check"></i><b>5.2.3</b> Bhutan</a></li>
+<li class="chapter" data-level="5.2.4" data-path="inventory.html"><a href="inventory.html#india"><i class="fa fa-check"></i><b>5.2.4</b> India</a></li>
+<li class="chapter" data-level="5.2.5" data-path="inventory.html"><a href="inventory.html#maldives"><i class="fa fa-check"></i><b>5.2.5</b> Maldives</a></li>
+<li class="chapter" data-level="5.2.6" data-path="inventory.html"><a href="inventory.html#nepal"><i class="fa fa-check"></i><b>5.2.6</b> Nepal</a></li>
+<li class="chapter" data-level="5.2.7" data-path="inventory.html"><a href="inventory.html#pakistan"><i class="fa fa-check"></i><b>5.2.7</b> Pakistan</a></li>
+<li class="chapter" data-level="5.2.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.2.8</b> Sri Lanka</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="expenditure-components.html"><a href="expenditure-components.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
@@ -252,7 +251,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="expenditure-components" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Expenditure components</h1>
 <hr />
-<p>In this chapter, we present a metadata analysis focusing on the household surveys’ ability to measure food, non-food, durables, and housing expenditures through different data collection methods.</p>
+<p>In this chapter, we present a metadata analysis focusing on the household surveys’ ability to measure food, non-food, durables, and housing expenditures through different data collection methods.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a Metadata formulary. This metadata collection tool may be accessed in the folder <a href="https://github.com/worldbank/SARMD_guidelines/tree/master/metadata_collection_tool">metadata_collection_tool</a>.</p>
+<ul>
+<li>We provide a METADATA FORMULARY (BLANK) and an example of a filled out formulary that you may use as reference. See “SAR_PAK_2015 (Example).xlsm”.</li>
+<li>You must keep the filled out formularies in the same folder where you also keep the file “consumption surveys metadata.xlsx”. Once you have filled out the information for a formulary, click on the Submit button. This will record all of the content of your formulary as a new row in “consumption surveys metadata.xlsx”.</li>
+<li>The Stata metaform.ado program transforms “consumption surveys metadata.xlsx” into a shape to be used in Tableau.</li>
+</ul>
 <div id="food" class="section level2">
 <h2><span class="header-section-number">6.1</span> Food</h2>
 <p><img src="figures/icon_food.png" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
@@ -594,6 +598,12 @@ Figure 6.4: Housing expenditure
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>We would like to thank Gabriel Nicolás Camargo Toledo for his support in the conduction of this metadata analysis.<a href="expenditure-components.html#fnref2">↩</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
