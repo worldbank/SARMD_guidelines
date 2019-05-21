@@ -1,7 +1,11 @@
 # Datalibweb: Getting Access to SARMD
 ***
 
-SARMD is only available through the [datalibweb](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/datalibweb.aspx) system to guarantee replicability, security, and efficiency. Datalibweb is a data system specifically designed to enable users to access the most up-to-date versions of non-harmonized (original raw data) and harmonized datasets of different collections across Global Practices. SARMD is one collection among other collections available through datalibweb. This section provides reference to the documentation provided by the [Global Team for Statistical Development](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/Main.aspx) (GTSD) in the Poverty and Equity Global Practice. 
+```{r, echo=FALSE, out.width = '40%', out.extra='style="float:right; padding:10px"'}
+knitr::include_graphics("figures/datalibweb.png")
+```
+
+SARMD is exclusively available through the [datalibweb](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/datalibweb.aspx) system to guarantee replicability, security, and efficiency. Datalibweb is a data system specifically designed to enable users to access the most up-to-date versions of non-harmonized (original raw data) and harmonized datasets of different collections across Global Practices. SARMD is one collection among other collections available through datalibweb. This section provides reference to the documentation provided by the [Global Team for Statistical Development](http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/Main.aspx) (GTSD) in the Poverty and Equity Global Practice. 
 
 Using the datalibweb system has several advantages:
 

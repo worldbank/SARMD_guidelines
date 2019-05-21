@@ -1,8 +1,6 @@
 # Poverty measurement methodology 
 ***
 
-The World Bank set a target of reducing extreme poverty to [less than 3 percent by 2030](https://sdg-tracker.org/no-poverty) and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
-
 In this book, we  overview the data availability of household consumption surveys in the region of South Asia and the procedure followed for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Several spatial and temporal adjustments are necessary to take into account differences in costs of living. 
 
 First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure \@ref(fig:cpi) displays how the CPI has changed for each country in South Asia over time. 
@@ -37,20 +35,22 @@ The FGT measures devised by @fgt remain the most commonly used to measure povert
 ```stata
 * Example: Calculating poverty headcounts with 1.90 poverty line
 
-* Calculate per capita expenditures by dividing total expenditures 
-* by the number of household members 
+* Calculate per capita expenditures by dividing total
+* expenditures by the number of household members 
   gen welfare=total_exp/hsize 
 
 * Calculate real per capita expenditures by turning nominal  
-* per capita expenditures into 2011 purchasing power parity (PPP) dollars
+* per capita expenditures into 2011 purchasing power parity 
+* (PPP) dollars
   welfare_ppp = welfare/cpi2011/icp2011/365*12
 
-* Generate a dummy variable to determine whether real per capita expenditures
-* fall below the 1.90 2011 PPP dollars poverty line
+* Generate a dummy variable to determine whether real per capita
+* expenditures fall below the 1.90 2011 PPP dollars poverty line
   gen poor190 = welfare_ppp < 1.90
 
-* Calculate the weighted average of the dummy variable to measure the proportion
-* of the population that falls below the 1.90 2011 PPP dollars poverty line
+* Calculate the weighted average of the dummy variable to measure
+* the proportion of the population that falls below the 1.90 2011
+* PPP dollars poverty line
   sum poor190 [aw=wgt]
 ```
 ```{r,eval=FALSE,echo=FALSE}
