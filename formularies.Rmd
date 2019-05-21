@@ -1,13 +1,19 @@
 # Expenditure components 
 *** 
  
-In this chapter, we present a metadata analysis focusing on the household surveys' ability to measure food, non-food, durables, and housing expenditures through different data collection methods.  
+In this chapter, we present a metadata analysis focusing on the household surveys' ability to measure food, non-food, durables, and housing expenditures through different data collection methods.[^agradece] The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a metadata formulary. This metadata collection tool may be accessed in the folder [metadata_collection_tool](https://github.com/worldbank/SARMD_guidelines/tree/master/metadata_collection_tool). 
+
+- We provide a METADATA FORMULARY (BLANK) and an example of a filled out formulary that you may use as reference. See "SAR_PAK_2015 (Example).xlsm".
+- You must keep the filled out formularies in the same folder where you also keep the file "consumption surveys metadata.xlsx". Once you have filled out the information for a formulary, click on the Submit button. This will record all of the content of your formulary as a new row in "consumption surveys metadata.xlsx". 
+- The Stata metaform.ado program transforms "consumption surveys metadata.xlsx" into a shape to be used in Tableau. 
+
+[^agradece]: We would like to thank Gabriel Nicolás Camargo Toledo for his support in the conduction of this metadata analysis. 
  
 ```{r,eval=FALSE,echo=FALSE} 
  
 Household surveys capture a wide variety of development indicators in such areas as poverty, food security, labor market performance, demography, education, health, gender equality, housing and agriculture.  
  
-In South Asia, poverty is defined as the inability of an individual to command sufficient resources to satisfy basic needs defined by the poverty line. In order to provide information on poverty and food security among the population, a nominal consumption aggregate is needed. The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a Metadata formulary (see attached?). 
+In South Asia, poverty is defined as the inability of an individual to command sufficient resources to satisfy basic needs defined by the poverty line. In order to provide information on poverty and food security among the population, a nominal consumption aggregate is needed. 
 ``` 
  
 ## Food 

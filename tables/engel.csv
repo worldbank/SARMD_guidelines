@@ -1,5 +1,4 @@
 Wealth,Quantity,types
-0,,Necessity
 0.1,0.316227766,Necessity
 0.2,0.447213595,Necessity
 0.3,0.547722558,Necessity
@@ -31,7 +30,6 @@ Wealth,Quantity,types
 2.9,1.702938637,Necessity
 3,1.732050808,Necessity
 3.1,1.760681686,Necessity
-0,,Luxury
 0.1,6.67E-05,Luxury
 0.2,0.000533333,Luxury
 0.3,0.0018,Luxury
