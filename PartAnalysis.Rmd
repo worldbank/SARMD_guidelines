@@ -3,5 +3,7 @@
 # Introduction to the analytical notes {#analysis .unnumbered}
 ***
 
-In this part, we present some applications of SARMD for research purposes. The user may access the Stata do-files to replicate and modify these analytical notes and may also interact with the Tableau dashboards. 
+In this part, we present some applications of SARMD for research purposes. The user may access the Stata do-files in our folder [do_files](https://github.com/worldbank/SARMD_guidelines/tree/master/shareable_dofiles) to replicate and modify these analytical notes. The user may also interact with our Tableau dashboards and access the files used to create these dashboards in our folder [tableau](https://github.com/worldbank/SARMD_guidelines/tree/master/tableau). 
+
+
 

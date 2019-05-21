@@ -130,6 +130,7 @@ Figure \@ref(fig:note3bycountrymodel2) displays the results of the logit model r
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
+You may access our full Stata do-file by accessing the following [link](https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/welfare_regressions.do).
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 

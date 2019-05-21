@@ -68,3 +68,4 @@ povcalnet <- read_csv("./tables/note1_conclusions.csv",col_names = TRUE, col_typ
 knitr::kable(povcalnet,booktabs=TRUE, caption = 'Access to assets and welfare')
 ```
 
+You may access our full Stata do-file by accessing the following [link](https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/welfare_distribution_and_assets.do).
