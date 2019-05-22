@@ -1,7 +1,7 @@
 # Poverty measurement methodology 
 ***
 
-In this book, we  overview the data availability of household consumption surveys in the region of South Asia and the procedure followed for poverty measurement. The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Several spatial and temporal adjustments are necessary to take into account differences in costs of living. 
+The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region of South Asia is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.  
 
 First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure \@ref(fig:cpi) displays how the CPI has changed for each country in South Asia over time. 
 
