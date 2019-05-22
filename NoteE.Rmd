@@ -1,6 +1,6 @@
-# Labor 
+# Employment 
 
-## Welare and Industry {-}
+## Welfare and Industry {-}
 ***
 
 ```{r labor, fig.cap='Welfare by Industry over time', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
