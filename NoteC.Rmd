@@ -28,13 +28,14 @@ gen earlym_all=((age==20&male==0&relationharm<3&childage>1)|	///
 				(age==24&male==0&relationharm<3&childage>4))|	///
 				earlym==1
 ```
+
 -distribution of child marriage share
 
 ```{r earlymarriage, fig.cap='Early Marriage and Education Level of HH Members', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
 knitr::include_graphics("./findings/demographic/earlymarriage.png")
 ```
 
--education and ealry marriage 
+-education and early marriage 
 female members education highly correlated with the incidence of child marriage.
 the education level among men rather increased the incidence of early child marriage. 
 
