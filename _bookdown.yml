@@ -1,6 +1,6 @@
 book_filename: "SARMD-Guidelines"
 repo: https://github.com/worldbank/SARMD_guidelines/
-output_dir: _book
+output_dir: "docs"
 delete_merged_file: true
 language:
   label:
