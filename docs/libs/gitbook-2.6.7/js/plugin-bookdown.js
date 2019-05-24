@@ -28,10 +28,6 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
       }
     });
 
-<<<<<<< HEAD
-    // add the Download button
-=======
->>>>>>> finding_21
     var down = config.download;
     var normalizeDownload = function() {
       if (!down || !(down instanceof Array) || down.length === 0) return;
@@ -68,26 +64,6 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
       });
     }
 
-<<<<<<< HEAD
-    // add the Information button
-    var info = ['Keyboard shortcuts (<> indicates arrow keys):',
-      '<left>/<right>: navigate to previous/next page',
-      's: Toggle sidebar'];
-    if (config.search !== false) info.push('f: Toggle search input ' +
-      '(use <up>/<down>/Enter in the search input to navigate through search matches; ' +
-      'press Esc to cancel search)');
-    gitbook.toolbar.createButton({
-      icon: 'fa fa-info',
-      label: 'Information about the toolbar',
-      position: 'left',
-      onClick: function(e) {
-        e.preventDefault();
-        window.alert(info.join('\n\n'));
-      }
-    });
-
-=======
->>>>>>> finding_21
     // highlight the current section in TOC
     var href = window.location.pathname;
     href = href.substr(href.lastIndexOf('/') + 1);
@@ -214,12 +190,9 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
   var chapterTitle = function() {
     return bookInner.find('.page-inner').find('h1,h2').first().text();
   };
-<<<<<<< HEAD
-=======
   var bookTitle = function() {
     return bookInner.find('.book-header > h1').first().text();
   };
->>>>>>> finding_21
   var saveScrollPos = function(e) {
     // save scroll position before page is reloaded
     gs.set('bodyScrollTop', {
@@ -237,13 +210,6 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
     try { inIframe = window.self !== window.top; } catch (e) {}
     return inIframe;
   };
-<<<<<<< HEAD
-  if (inIFrame()) {
-    $(window).on('blur unload', saveScrollPos);
-  }
-
-  $(function(e) {
-=======
   $(window).on('blur unload', function(e) {
     if (inIFrame()) saveScrollPos(e);
     gs.set('bookTitle', bookTitle());
@@ -251,20 +217,14 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
 
   $(function(e) {
     if (gs.get('bookTitle', '') !== bookTitle()) localStorage.clear();
->>>>>>> finding_21
     var pos = gs.get('bodyScrollTop');
     if (pos) {
       if (pos.title === chapterTitle()) {
         if (pos.body !== 0) bookBody.scrollTop(pos.body);
         if (pos.inner !== 0) bookInner.scrollTop(pos.inner);
       }
-<<<<<<< HEAD
-    }
-    if ((pos && pos.focused) || !inIFrame()) bookInner.find('.page-wrapper').focus();
-=======
       if (pos.focused) bookInner.find('.page-wrapper').focus();
     }
->>>>>>> finding_21
     // clear book body scroll position
     gs.remove('bodyScrollTop');
   });

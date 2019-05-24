@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines</title>
-  <meta name="description" content="SARMD User Guidelines" />
-  <meta name="generator" content="bookdown 0.10 and GitBook 2.6.7" />
+  <meta name="description" content="SARMD User Guidelines">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -21,17 +22,17 @@
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
 
-<meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
-<meta name="author" content="Raúl Andrés Castañeda Aguilar" />
-<meta name="author" content="Jayne Jungsun Yoo" />
-<meta name="author" content="Francisco Javier Parada Gómez Urquiza" />
+<meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)">
+<meta name="author" content="Raúl Andrés Castañeda Aguilar">
+<meta name="author" content="Jayne Jungsun Yoo">
+<meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-22" />
+<meta name="date" content="2019-05-24">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="basics.html">
@@ -50,74 +51,48 @@
 
 
 
-<script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
 <script src="libs/viz-0.3/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -244,14 +219,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="household-composition-and-poverty.html"><a href="household-composition-and-poverty.html"><i class="fa fa-check"></i><b>14</b> Household Composition and Poverty</a><ul>
-<li class="chapter" data-level="14.1" data-path="household-composition-and-poverty.html"><a href="household-composition-and-poverty.html#certain-types-of-household-are-more-susceptible-to-poverty"><i class="fa fa-check"></i><b>14.1</b> Certain types of household are more susceptible to poverty</a></li>
+<li class="chapter" data-level="14.1" data-path="household-composition-and-poverty.html"><a href="household-composition-and-poverty.html#relationwhip-between-household-characteristics-and-poverty"><i class="fa fa-check"></i><b>14.1</b> Relationwhip between Household Characteristics and Poverty</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="access-to-goods.html"><a href="access-to-goods.html"><i class="fa fa-check"></i><b>15</b> Access to Goods</a><ul>
-<li class="chapter" data-level="" data-path="access-to-goods.html"><a href="access-to-goods.html#cell-phones-are-more-common-than-access-to-electricity"><i class="fa fa-check"></i>Cell phones are more common than access to electricity</a></li>
+<li class="chapter" data-level="" data-path="access-to-goods.html"><a href="access-to-goods.html#development-of-access-to-cell-phone"><i class="fa fa-check"></i>Development of Access to Cell Phone</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="note-c.html"><a href="note-c.html"><i class="fa fa-check"></i><b>16</b> Note C</a></li>
-<li class="chapter" data-level="17" data-path="note-d.html"><a href="note-d.html"><i class="fa fa-check"></i><b>17</b> Note D</a></li>
-<li class="chapter" data-level="18" data-path="note-e.html"><a href="note-e.html"><i class="fa fa-check"></i><b>18</b> Note E</a></li>
+<li class="chapter" data-level="16" data-path="marital-status.html"><a href="marital-status.html"><i class="fa fa-check"></i><b>16</b> Marital Status</a><ul>
+<li class="chapter" data-level="" data-path="marital-status.html"><a href="marital-status.html#child-marriage-in-sar"><i class="fa fa-check"></i>Child Marriage in SAR</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="water-sanitation-and-hygiene-wash.html"><a href="water-sanitation-and-hygiene-wash.html"><i class="fa fa-check"></i><b>17</b> Water, Sanitation and Hygiene (WASH)</a><ul>
+<li class="chapter" data-level="" data-path="water-sanitation-and-hygiene-wash.html"><a href="water-sanitation-and-hygiene-wash.html#improvement-of-water-supply-and-sanitation-over-time"><i class="fa fa-check"></i>Improvement of Water Supply and Sanitation Over Time</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="employment.html"><a href="employment.html"><i class="fa fa-check"></i><b>18</b> Employment</a><ul>
+<li class="chapter" data-level="" data-path="employment.html"><a href="employment.html#welfare-and-industry"><i class="fa fa-check"></i>Welfare and Industry</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
@@ -290,7 +271,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="request-access-to-the-system" class="section level2">
 <h2><span class="header-section-number">2.1</span> Request access to the system</h2>
 <p>Unlike GMD, access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically. Most datasets in SARMD are not public and the user must be granted access for internal use. Each user must submit a request for the different collections and surveys specifying the purpose of the data request. Users must contact the regional/collection focal point and ask for permission to use the data. Without any subscription, users will only be able to check the availability of the data, and query relevant metadata of all surveys.</p>
-<p>To get access to SARMD, send an email to <a href="mailto:fparadagomezurqu@worldbank.org">Francisco Javier Parada Gomez Urquiza</a> and the <a href="mailto:datalibweb@worldbank.org">datalibweb team</a>, specifying the following:</p>
+<p>To get access to SARMD, you may send an email to <a href="mailto:fparadagomezurqu@worldbank.org">Francisco Javier Parada Gomez Urquiza</a> and the <a href="mailto:datalibweb@worldbank.org">datalibweb team</a> specifying the following:</p>
 <ul>
 <li>Small description of the project in which you are planning to use the data</li>
 <li>Particular survey, country, year or collection that you are interested in accessing</li>
@@ -305,10 +286,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Option 1. Direct Installation</h3>
 <ul>
 <li>Close all Stata sessions</li>
-<li>Enter the following lines in Stata</li>
-</ul>
+<li><p>Enter the following lines in Stata</p>
 <pre><code>net from &quot;http://eca/povdata/datalibweb/_ado&quot;`
-net install datalibweb</code></pre>
+net install datalibweb</code></pre></li>
+</ul>
 </div>
 <div id="option-2.-manual-installation" class="section level3 unnumbered">
 <h3>Option 2. Manual Installation</h3>
@@ -338,7 +319,14 @@ net install datalibweb</code></pre>
 <p>Using <code>datalibweb</code> is straightforward. You may read the help file, which is detailed and clear, but you may also dive right in to get your data. There are two possible ways to access a dataset:</p>
 <div id="clicking-on-the-stata-results-window" class="section level3 unnumbered">
 <h3>Clicking on the Stata results window</h3>
-<p>You may access the data by typing <code>datalibweb</code> in Stata and hitting Enter. Then, click <code>SAR</code> on Stata’s results window and then click on the ISO code of your country of preference. Click <code>PAK</code> in this case. Then, select either the modules of the collection or its vintages next to <code>SARMD</code>. Finally, click <code>01-02</code>, which refers to the version of the harmonization, to load the data.</p>
+<p>You may access the data by typing <code>datalibweb</code> in Stata and hitting Enter (see Figure <a href="datalibweb-getting-access-to-sarmd.html#fig:dlwexample">2.1</a>). Then, click <code>SAR</code> on Stata’s results window and then click on the ISO code of your country of preference. Click <code>PAK</code> in this case. Then, select either the modules of the collection or its vintages next to <code>SARMD</code>. Finally, click <code>01-02</code>, which refers to the version of the harmonization, to load the data.</p>
+<p><img src="figures/dlw.png" width="70%" style="display: block; margin: auto;" /></p>
+<div class="figure" style="text-align: left"><span id="fig:dlwexample"></span>
+<img src="figures/fake_figure.PNG" alt="Accessing datalibweb in Stata" width="70%" height="10%" />
+<p class="caption">
+Figure 2.1: Accessing datalibweb in Stata
+</p>
+</div>
 </div>
 <div id="providing-the-complete-datalibweb-syntax" class="section level3 unnumbered">
 <h3>Providing the complete datalibweb syntax</h3>
@@ -353,12 +341,12 @@ net install datalibweb</code></pre>
 <h2><span class="header-section-number">2.5</span> Citing datalibweb:</h2>
 <p><code>datalibweb</code> is a Stata program developed and supported by the Global Poverty Team for Statistical Development of the World Bank, with the contribution of many different teams:</p>
 <ul>
-<li><p>Stata front-end application: Minh Cong Nguyen, R. Andrés Castañeda Aguilar, José Montes, and João Pedro Azevedo, with support from Paul Andres Corral Rodas.</p></li>
-<li><p>Plugin, IT coordinator/support: Paul Ricci, Louis Wahsieh Elliott, Antonio Ramos-Izquierdo.</p></li>
-<li><p>SharePoint web application: Intekhab Alam Sheikh, Monisha Menon, Nishant Nitin Trivedi.</p></li>
+<li><p>Stata front-end application: Minh Cong Nguyen, Raúl Andrés Castañeda Aguilar, José Montes, and João Pedro Azevedo, with support from Paul Andrés Corral Rodas.</p></li>
+<li><p>Plugin, IT coordinator/support: Paul Ricci, Louis Wahsieh Elliott, and Antonio Ramos-Izquierdo.</p></li>
+<li><p>SharePoint web application: Intekhab Alam Sheikh, Monisha Menon, and Nishant Nitin Trivedi.</p></li>
 <li><p>Overall datalibweb project supervision: João Pedro Azevedo and Minh Cong Nguyen.</p></li>
 </ul>
-<p><code>datalibweb</code> was based on the initial effort of <code>datalib</code> created by R. Andrés Castañeda Aguilar and João Pedro Azevedo in LAC TSD; and Datalib2 created by Cesar Cancho and João Pedro Azevedo in ECA TSD.</p>
+<p><code>datalibweb</code> was based on the initial effort of <code>datalib</code> created by Raúl Andrés Castañeda Aguilar and João Pedro Azevedo in LAC TSD; and Datalib2 created by César Cancho and João Pedro Azevedo in ECA TSD.</p>
 <p>Please cite the use of <code>datalibweb</code> and SARMD in one or several of the following ways depending on the nature of your work.</p>
 <ol style="list-style-type: decimal">
 <li>“Source: SARMD (SARTSD/World Bank)”</li>
@@ -425,7 +413,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

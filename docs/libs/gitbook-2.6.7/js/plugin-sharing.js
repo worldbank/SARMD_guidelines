@@ -103,12 +103,7 @@ gitbook.require(["gitbook", "lodash", "jQuery"], function(gitbook, _, $) {
 
             gitbook.toolbar.createButton({
                 icon: site.icon,
-<<<<<<< HEAD
-                label: site.label,
-                title: site.label,
-=======
                 label: site.text,
->>>>>>> finding_21
                 position: 'right',
                 onClick: site.onClick
             });
