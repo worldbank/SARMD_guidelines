@@ -1,6 +1,6 @@
 
 # preview just one chapter
-file <- "NoteA.Rmd"
+file <- "dictionary.Rmd"
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 

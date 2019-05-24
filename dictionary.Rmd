@@ -1,12 +1,72 @@
 # Harmonized variables
 ***
 
-Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. 
+The SARMD harmonized variables in Figure \@ref(fig:categories) are organized into seven categories: basic, demographic, education, assets, house, labor, and welfare. 
 
-The following Tableau dashboard displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
+
+```{r categories, echo=FALSE, fig.cap="Seven categories of harmonized variables"}
+categories <- "
+digraph categories {
+graph [layout = dot, rankdir=LR,]
+node [shape = box,
+      style = filled, 
+      color= grey,
+      fontname=Helvetica]
+SA [label = '@@1']
+node [shape = box,
+      style = filled, 
+      color= grey,
+      fontname=Helvetica]
+Basic 
+Demographic 
+Education 
+Assets
+House 
+Labor 
+Welfare 
+
+node [shape = box,
+      style = filled, 
+      color= white,
+      fontname=Helvetica]
+
+basicvars [label = '@@2']
+demvars [label = '@@3']
+educvars [label = '@@4']
+assetvars [label = '@@5']
+housevars [label = '@@6']
+laborvars [label = '@@7']
+welfarevars [label = '@@8']
+
+edge [color = black]
+
+SA -> {Basic, Demographic, Education, Assets, House, Labor, Welfare}
+Basic -> basicvars
+Demographic -> demvars
+Education -> educvars
+Assets -> assetvars
+House -> housevars
+Labor ->laborvars
+Welfare ->welfarevars
+
+}
+[1]: 'SARMD  \\n Harmonized  \\n Variables'
+[2]: 'countrycode, idh, idp, int_month, \\n int_year, pop_wgt, psu, spdef, strata, \\n subnatid1, subnatid2, survey, veralt, \\n vermast, wgt, year'
+[3]: 'age, hsize, male, marital, \\n relationcs, relationharm, soc'
+[4]: 'atschool, ed_mod_age, educat4, \\n educat5, educat7, educy, everattend, \\n literacy'
+[5]: 'bicycle, buffalo, cellphone, \\n chicken, computer, cow, fan, lamp, \\n landphone, motorcar, motorcycle, radio, \\n refrigerator, sewingmachine, \\n television, washingmachine'
+[6]: 'electricity, internet, ownhouse, \\n piped_water, sar_improved_toilet, \\n sar_improved_water, sewage_toilet, \\n toilet_jmp, toilet_orig, urban, water_jmp, water_orig'
+[7]: 'empstat, empstat_2, empstat_2_year, \\n firmsize_l, industry, industry_2, \\n industry_orig, industry_orig_2, \\n lb_mod_age, lstatus, njobs, nlfreason, \\n occup, ocusec, unitwage, unitwage_2, wage, \\n wage_2, whours'
+[8]: 'cpi, cpiperiod, pline_int, \\n pline_nat, poor_int, poor_nat, ppp, \\n welfare, welfaredef, welfarenat, \\n welfarenom, welfareother, \\n welfareothertype, welfaretype, \\n welfshprosperity'
+"
+grViz(categories, height=650)
+```
+
+Figure \@ref(fig:summary) displays which variables are currently available for each household survey. The different colors indicate a variable's percentage of missing values.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Missing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
-```{r  inventory,  echo=FALSE, fig.cap = "SARMD Availability and missing observations", fig.align = 'left'}
+
+```{r  summary,  echo=FALSE, fig.cap = "SARMD Availability and missing observations", fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
@@ -17,11 +77,10 @@ This chapter presents the harmonized data from the South Asia Micro Database (SA
 ## Basic survey characteristics
 
 
-```{r boxesAndCircles, echo=FALSE, fig.cap="Basic survey characteristics"}
+```{r basic, echo=FALSE, fig.cap="Basic survey characteristics"}
 library('DiagrammeR')
-grViz("
-digraph boxesAndCircles {
-
+basic2 <-"
+digraph basic {
 graph [layout = dot, color=crimson]
 #  rankdir = LR  overlap=true, fontsize=20
 node [shape = box, style = filled, color= orange]
@@ -32,9 +91,10 @@ node [shape = box, style = filled, color= lightgrey]
 Survey Version Identifiers Weight Date Location Other
 # add edge statements
 Basic -> Survey -> countrycode -> survey  -> year; Basic -> Version -> vermast ->veralt; Basic -> Identifiers -> idh -> idp ; Basic -> Weight -> wgt -> pop_wgt; 
-Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnatid2; Basic -> Other -> psu -> strata -> spdef; 
+Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnatid2; Basic -> Other -> psu -> strata -> spdef 
 }      
-")
+"
+grViz(basic2)
 ```
 
 The essential variables that identify each dataset and individual within a household are ``countrycode``, ``year``, ``survey``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgtxhsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
