@@ -82,18 +82,18 @@ coefplot
 
 Figure \@ref(fig:note3byvarsmodel1) displays the results of the linear model regression by variable. The confidence interval gives a range of values such that if the experiment was run many times (e.g., 10,000 times), the range would contain the true parameter 95% of the time. Note how the confidence intervals become wider when we incorporate the survey design variables `psu` and `strata`. In a semi-log model, semi elasticities are interpreted as proportionate changes rather than levels of changes. For example, given $\beta=0.02$, a one-unit change in $x$ is associated with a proportionate increase of 2% in $E(y|x)$.
 
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  note3byvarsmodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
 Based on this analysis, we provide the following highlights:
 
 > - Urban expenditures per capita are 20-30% above rural, once controlling for other household characteristics. 
 > - Age of the household head follows the expected non-linear behavior. The coefficient on age is positive, while the coefficient on age squared is negative. 
 > - The mixed results obtained from gender of the household head must be treated with caution, but they suggest it is not true in general that female-headed households have lower levels of expenditures per capita as one may expect.
 > - Increasing the size of the household consistently reduces expenditures per capita within a range from -2% to -13%. 
-
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_regressions&#47;ByVariableM1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
-
-```{r  note3byvarsmodel1,  echo=FALSE, fig.cap = "Linear regression estimates", out.height='10%', fig.align = 'left'}
-knitr::include_graphics("figures/fake_figure.PNG")
-```
 
 Figure \@ref(fig:note3bycountrymodel1) displays the results of the linear model regression by survey.  
 
@@ -131,6 +131,8 @@ knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/welfare_regressions.do).
+
+margins
 
 ## Afghanistan   <img src="figures/Flag_of_Afghanistan.svg" width="40"> {-}
 

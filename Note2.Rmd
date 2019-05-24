@@ -2,7 +2,7 @@
 ***
 > **Abstract:** 
 >
-> Countries in South Asia have achieved different levels of progress regarding school enrollment at different educational stages (pre-primary, primary, secondary, and tertiary). We study how school enrollment of school-age children and young adults (age<25) changes over time in each country depending on gender and location (urban/rural). School enrollment over age has the shape of a plateau in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, school enrollment still has the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are concerning even among primary school children aged 4 to 12 years.
+> Countries in South Asia have achieved different levels of progress regarding school enrollment at different educational stages (pre-primary, primary, secondary, and tertiary). We study how school enrollment of school-age children and young adults (age<25) changes over time in each country depending on gender and location (urban/rural). School enrollment over age is flat for children in primary school and resembles a trapezoid in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, school enrollment still has the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are concerning even among primary school children aged 4 to 12 years.
 
 In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary education. These investments have led to more children retained in primary school. According to @students_sar, enrollment in South Asia’s primary schools rose from 75 percent in 2000 to 89 percent in 2010, bringing it closer to enrollment levels in Latin America and the Caribbean (94 percent) and East Asia and the Pacific (94.8 percent). Between 1999 and 2010, the number of out-of-school children ages 8–14 years fell from 35 million to 13 million, and the number of out-of-school girls in the region dropped by 59 percent. 
 
@@ -35,19 +35,65 @@ Primary, secondary and tertiary education are defined differently in each countr
 
 ```{r educationsystems, echo=FALSE, eval=TRUE, fig.cap="Standard education system definition"}
 grViz("
-digraph boxes_and_circles {
-graph [layout = dot, color=crimson, overlap=true, fontsize=20, width=100]
 
-node [shape = box, style = filled, color= lightCoral]
-1 2 3 4 5 6 7 8 9 10 11 12 13
-node [shape = circle, style = filled, color= grey]
-Primary; Upper_Secondary; Lower_Secondary; Tertiary
-# add edge statements
-Primary ->{1 2 3 4 5};
-Lower_Secondary ->{6 7 8};
-Upper_Secondary ->{9 10 11 12 13};
-}      
-")
+digraph boxes_and_circles {
+
+  graph [layout = dot, color=crimson, overlap=true, fontsize=20, width=1000, rankdir=LR, arrowhead=none]
+  
+  # Draw grades 
+  node [shape = box,
+        style = filled, 
+        color= grey,
+        fontname=Helvetica]
+  1 [label = '@@6'];   2 [label = '@@7'];   3  [label = '@@8'];   4  [label = '@@9'];
+  5  [label = '@@10'];   6  [label = '@@11'];   7  [label = '@@12'];   8  [label = '@@13'];
+  9  [label = '@@14'];   10  [label = '@@15'];   11  [label = '@@16'];   12  [label = '@@17'];
+  13  [label = '@@18'];   14  [label = '@@19'];   15  [label = '@@20'];   16  [label = '@@21'];
+  17  [label = '@@22']
+  
+  # Drag levels
+  node [shape = box, 
+        style = filled, 
+        color= grey]
+  School [label = '@@1'];
+  Primary [label = '@@2'];
+  Lower_Secondary [label = '@@3'];
+  Upper_Secondary [label = '@@4'];
+  Tertiary [label = '@@5']
+  
+  # add edge statements
+  School -> {Primary Lower_Secondary Upper_Secondary Tertiary};
+  Primary -> {1 2 3 4 5}
+  Lower_Secondary -> {6 7 8};
+  Upper_Secondary -> {9 10 11 12 13};
+  Tertiary -> {14 15 16 17};
+  
+}  
+[1]: 'School system'
+[2]: 'Primary School: \\n Ages 5-10'
+[3]: 'Lower Secondary School: \\n Ages 10-13'
+[4]: 'Upper Secondary School: \\n Ages 13-18'
+[5]: 'Tertiary School: \\n Ages 18-22'
+[6]: 'Grade 1'
+[7]: 'Grade 2'
+[8]: 'Grade 3'
+[9]: 'Grade 4'
+[10]: 'Grade 5'
+[11]: 'Grade 6'
+[12]: 'Grade 7'
+[13]: 'Grade 8'
+[14]: 'Grade 9'
+[15]: 'Grade 10'
+[16]: 'Grade 11'
+[17]: 'Grade 12'
+[18]: 'Grade 13'
+[19]: 'Grade 14'
+[20]: 'Grade 15'
+[21]: 'Grade 16'
+[22]: 'Grade 17'
+
+", height=900)
+
 ```
 
 Secondary education, in particular, has significantly different meanings across countries as shown in this [dashboard](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Frequency). In Bangladesh, the education system is divided into three levels: 
