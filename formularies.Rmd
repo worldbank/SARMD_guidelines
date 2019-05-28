@@ -1,7 +1,7 @@
 # Expenditure components 
 *** 
  
-In this chapter, we present a metadata analysis focusing on the household surveys' ability to measure food, non-food, durables, and housing expenditures through different data collection methods.[^agradece] The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a metadata formulary. This metadata collection tool may be accessed in the folder [metadata_collection_tool](https://github.com/worldbank/SARMD_guidelines/tree/master/metadata_collection_tool). 
+In this chapter, we present a metadata analysis focusing on the household surveys' ability to measure food, non-food, durables, and housing expenditures through different data collection methods. The characteristics of each household survey and their ability to construct a nominal consumption aggregate were collected by filling a metadata formulary.[^agradece] This metadata collection tool may be accessed in the folder [metadata_collection_tool](https://github.com/worldbank/SARMD_guidelines/tree/master/metadata_collection_tool). 
 
 - We provide an empty formulary and an example of a filled out formulary that you may use as reference. See "SAR_PAK_2015 (Example).xlsm".
 - You must keep the filled out formularies in the same folder where you also keep the file "consumption surveys metadata.xlsx". Once you have filled out the information for a formulary, click on the Submit button. This will record all of the content of your formulary as a new row in "consumption surveys metadata.xlsx". 
