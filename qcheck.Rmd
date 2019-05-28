@@ -1,4 +1,4 @@
-# Harmonized variables
+# Dictionary
 ***
 
 Harmonized variables in SARMD are organized in 7 categories: basic, demographic, education, assets, house, labor, and welfare. 
