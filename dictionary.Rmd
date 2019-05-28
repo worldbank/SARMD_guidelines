@@ -1,4 +1,4 @@
-# Harmonized variables
+# Dictionary
 ***
 
 The SARMD harmonized variables in Figure \@ref(fig:categories) are organized into seven categories: basic, demographic, education, assets, house, labor, and welfare. 
@@ -109,6 +109,23 @@ cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
 |      vermast|        wgt|        subnatid1|spdef|')
 ```
 
+
+### countrycode
+### year
+### survey
+### vermast
+### veralt
+### idh
+### idp
+### wgt 
+### pop_wgt
+### int_year 
+### int_month
+### subnatid1
+### subnatid2
+### psu
+### strata 
+### spdef  
 
 ## Demographic variables
 
@@ -349,30 +366,78 @@ see Figure \@ref(fig:scatter) at https://tab.worldbank.org/#/site/WBG/views/SAR_
 
 Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
 
+### bicycle
+### buffalo
+### cellphone
+### chicken
+### computer
+### cow
+### fan
+### lamp
+### landphone
+### motorcar
+### motorcycle
+### radio
+### refrigerator
+### sewingmachine
+### television
+### washingmachine
+
 ## Housing
 
 
 The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
 
+### electricity
+### internet
+### ownhouse
+### piped_water
+### sar_improved_toilet
+### sar_improved_water
+### sewage_toilet
+### toilet_jmp
+### toilet_orig
+### urban
+### water_jmp
+### water_orig
+
 ## Labor
 
+### empstat
+### empstat_2
+### empstat_2_year
+### firmsize_l
+### industry
+### industry_2
+### industry_orig
+### industry_orig_2
+### lb_mod_age
+### lstatus
+### njobs
+### nlfreason
+### occup
+### ocusec
+### unitwage
+### unitwage_2
+### wage
+### wage_2
+### whours
 
 ## Welfare
 
+### cpi
+### cpiperiod
+### pline_int
+### pline_nat
+### poor_int
+### poor_nat
+### ppp
+### welfare
+### welfaredef
+### welfarenat
+### welfarenom
+### welfareother
+### welfareothertype
+### welfaretype
+### welfshprosperity
 
-### Poverty
-
-This section presents the latest data on regional extreme poverty rates using the international poverty line of US$1.90 in 2011 purchasing power parity dollars. Even though, Afghanistan is missing, the ALCS 2016-17 recorded a sharp deterioration in welfare of the Afghan population. The proportion of population living below the national poverty line increased from 34 percent in 2007-08 to 55 percent in 2016-17. The latest poverty figures imply that at the time of the survey, close to 16 million Afghans lived in poverty. 
-
-Urban poverty lower than rural poverty. 
-
-
-datalibweb, country(PAK) year(2015) type(GMD) mod(ALL) vermast(01) veralt(02) surveyid(PSLM)
-gen welf_ppp = welfare/cpi2011/icp2011/365
-gen poor190 = welf_ppp < 1.9
-sum poor190 [aw=weight_h]
-
-
-
-### Inequality
-The Gini index for Afghanistan showed a small decrease between the surveys of 2011-12 and 2016-17, from 0.30 to 0.29. 
