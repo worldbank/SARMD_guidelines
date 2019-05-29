@@ -5,10 +5,10 @@
 ***
 This third section presents the harmonized variables in SARMD and provides the results of conducting a quality check (qckeck) on these variables. 
 
-**Chapter 7** is a dictionary of harmonized variables. It presents all the harmonized variables available in SARMD. 
+**Chapter 7** provides a dictionary of harmonized variables. It presents all the harmonized variables available in SARMD. 
 
 **Chapter 8**  tabulates the frequencies in the values of categorical variables.   
 
 **Chapter 9** presents the frequency of missing values and zeros in the variables. 
 
-**Chapter 10** 
+**Chapter 10** provides a static quality check for variables within a given survey. This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 

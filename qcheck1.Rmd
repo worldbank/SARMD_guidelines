@@ -16,4 +16,4 @@ Figure \@ref(fig:catqcheck2) does the same, but presents the results for all eig
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
  
-This tool is useful to evaluate whether categorical variables have been harmonized properly. A large change in the relative frequency of values in a categorical variable could indicate that the harmonization process has been inconsistent. For example, if someone mistakenly exchanges the value labels for `urban' (i.e., rural=1 urban=0 instead of rural=0 urban=1), the inconsistency with previous survey rounds could be easily detected in these dashboards. 
+This tool is useful to evaluate whether categorical variables have been harmonized properly. A large change in the relative frequency of values in a categorical variable could indicate that the harmonization process has been inconsistent. For example, if someone mistakenly exchanges the value labels for `urban` (i.e., rural=1 urban=0 instead of rural=0 urban=1), the inconsistency with previous survey rounds could be easily detected in these dashboards. 
