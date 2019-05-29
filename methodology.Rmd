@@ -32,7 +32,7 @@ A fourth adjustment is dividing total household expenditure by some measure of t
 
 The FGT measures devised by @fgt remain the most commonly used to measure poverty. A headcount ratio may be calculated in STATA as in the example below:
 
-```stata
+```{stata, eval = FALSE}
 * Example: Calculating poverty headcounts with 1.90 poverty line
 
 * Calculate per capita expenditures by dividing total
@@ -53,6 +53,7 @@ The FGT measures devised by @fgt remain the most commonly used to measure povert
 * PPP dollars poverty line
   sum poor190 [aw=wgt]
 ```
+
 ```{r,eval=FALSE,echo=FALSE}
 The FGT measures devised by Foster, Greer and Thorbecke (1984)  remain the most commonly used to measure poverty. They are defined as:
 
