@@ -3,7 +3,6 @@
 
 The SARMD harmonized variables in Figure \@ref(fig:categories) are organized into seven categories: basic, demographic, education, assets, house, labor, and welfare. 
 
-
 ```{r categories, echo=FALSE, fig.cap="Seven categories of harmonized variables"}
 categories <- "
 digraph categories {
@@ -78,7 +77,6 @@ This chapter presents the harmonized data from the South Asia Micro Database (SA
 
 
 ```{r basic, echo=FALSE, fig.cap="Basic survey characteristics"}
-library('DiagrammeR')
 basic2 <-"
 digraph basic {
 graph [layout = dot, color=crimson]
@@ -97,40 +95,86 @@ Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnat
 grViz(basic2)
 ```
 
-The essential variables that identify each dataset and individual within a household are ``countrycode``, ``year``, ``survey``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgtxhsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
-
-
-
-```{r table0, echo=FALSE, eval=FALSE, results='asis'}
-cat('|      countrycode|    veralt|    pop_wgt|   subnatid2|
-|------------:|-----------:|------------:|--------------:|
-|      year|         idh|     int_year| psu|
-|    survey|         idp|   int_month|     strata|
-|      vermast|        wgt|        subnatid1|spdef|')
-```
-
+The essential variables that identify each dataset and individual within a household are ``countrycode``, ``survey``, ``year``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgt*hsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
 
 ### countrycode
-### year
+
+`countrycode` is a string variable that takes the following values:
+
+| Country     	| `countrycode` 	|
+|-------------	|---------------	|
+| Afghanistan 	| AFG           	|
+| Bangladesh  	| BGD           	|
+| Bhutan      	| BTN           	|
+| India       	| IND           	|
+| Sri Lanka   	| LKA           	|
+| Maldives    	| MDV           	|
+| Nepal       	| NPL           	|
+| Pakistan    	| PAK           	|
+
 ### survey
+
+`survey` is a string variable 
+
+### year
+
+`year` is a four digit numeric variable. 
+
 ### vermast
+
+`vermast` is a two digit string variable that indicates the master version. 
+
 ### veralt
+
+`veralt` is a two digit string variable that indicates the harmonization version. 
+
 ### idh
+
+`idh` is a string variable that serves as household id or household identificator.
+
 ### idp
+
+`idp` is a string variable that serves as individual id or individual identificator.
+
 ### wgt 
+
+`wgt` is a numeric variable, also called an estimation weight, that is used to obtain estimates of population parameters of interest. The weight of a given individual may be interpreted as the number of individuals from the population that are represented by this sample unit. For example, if a random sample of 25 individuals has been selected from a population of 100, then each of the 25 sampled individuals may be viewed as representing 4 individuals of the population (@weights).
+
 ### pop_wgt
+
+``pop_wgt=wgt*hsize`` is a numeric variable that is used to obtain estimates of population parameters of interest when the survey data is collapsed at the household level. 
+
 ### int_year 
+
+`int_year` is a four digit numeric variable that specifies the year of the interview. 
+
 ### int_month
+
+`int_month` is a numeric variable that specifies the month of the interview (e.g., 1=January, 2=February, 3=March, etc.)
+
 ### subnatid1
+
+`subnatid1` is a country-specific categorical string variable to identify the highest level of subnational regional identifiers at which the survey is representative. 
+
 ### subnatid2
+
+`subnatid2` is a country-specific categorical string variable to identify the second highest level of subnational regional identifiers at which the survey is representative. 
+
 ### psu
+
+`psu` identifies the primary sampling units, which are the groups selected as the first stage of a multi-stage sample.
+
 ### strata 
+
+`strata` identifies the sampling strata.
+
 ### spdef  
+
+`spdef` identifies the spatial deflator. 
 
 ## Demographic variables
 
 ```{r boxe, echo=FALSE }
-library('DiagrammeR')
 grViz("
 digraph boxe {
 
@@ -151,48 +195,40 @@ Demographic ->  Categorical -> relationcs  -> relationharm  -> marital
 ")
 ```
 
-There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. 
+There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.  
 
-```{r table1, echo=FALSE, eval=FALSE, results='asis', eval=FALSE}
-cat('|      age|    male|    hsize|
-|------------:|-----------:|------------:|
-|      relationcs|        relationharm|        marital|')
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Pyramid' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  pyramid,  echo=FALSE, fig.cap = "Population pyramids", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
 ```
-
-
 
 ### age
 
-The youngest country in the region is Afghanistan. The oldest is Sri Lanka. 
-
-[![](figures/dem_age.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
+`age` is a numeric variable that indicates the age of an individual in years. Age is an important variable for most socio-economic analyses and must be established as accurately as possible especially for children aged less than 5 years. `age>= 98` must be coded as 98. Missing values should be recorded as `age=.`, never use `age=99`. According to SARMD, the youngest country in the region is Afghanistan and the oldest is Sri Lanka. 
 
 ### hsize
 
-Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
+`hsize` is a numeric variable that measures household size. Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
 
-[![](figures/dem_hsize.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
-
-[//]: # (## Household composition and expenditures)
-
-
-The following dashboard shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
-
-```{r children, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, fig.cap='Average household size by per capita consumption quintile', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("./figures/Children.png")
-```
+Figure \@ref(fig:children) shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Children' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
+```{r  children,  echo=FALSE, fig.cap = "Household composition and expenditures", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
 ### male
 
-Sex ratio is used to describe the number of females per 1000 of males. In India, and some other countries in South Asia, this ratio may be heavily skewed towards men.
+`male` indicates the gender of the household member. 
 
-[![](figures/dem_male.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart "The user may interact with this Tableau dashboard by clicking on the figure.")
+- 1=Male 
+- 0=Female 
 
 ### relationcs
 
-This variable refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories as:
+`relationcs` refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories as:
 
 - Household Head
 - Husband/Wife
@@ -211,38 +247,29 @@ This variable refers to the original categories that indicate the relationship o
 
 ### relationharm
 
-This variable refers to the simplified categories that indicate the relationship of an individual to the household head: 
+`relationharm` refers to the simplified categories that indicate the relationship of an individual to the household head: 
 
-- Household Head
-- Spouse
-- Children
-- Parents
-- Other relatives
-- Non-relatives
+- 1=Household Head
+- 2=Spouse
+- 3=Children
+- 4=Parents
+- 5=Other relatives
+- 6=Non-relatives
 
 ### marital
 
-This variable classifies individuals according to their marital status into these simplified categories: 
+`marital` classifies individuals according to their marital status into these simplified categories: 
 
-- Never Married
-- Married 
-- Divorced/separated
-- Widowed
-- Living Together
-
-Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.  
-
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Pyramid' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
-
-```{r  pyramid,  echo=FALSE, fig.cap = "Population pyramids", out.height='10%', fig.align = 'left'}
-knitr::include_graphics("figures/fake_figure.PNG")
-```
+- 1=Married 
+- 2=Never Married
+- 3=Living Together
+- 4=Divorced/separated
+- 5=Widowed
 
 ## Education
 
 
 ```{r boxes, echo=FALSE }
-library('DiagrammeR')
 grViz("
 digraph boxes {
 
@@ -265,57 +292,76 @@ Education ->  Categorical -> educat4 -> educat5 -> educat7
 
 There are currently eight essential education variables in SARMD: ``literacy``, ``atschool``, ``everattend``, ``ed_mod_age``, ``educy``, ``educat4``, ``educat5``, and ``educat7``.
 
-
-```{r table2, echo=FALSE, eval=FALSE, results='asis'}
-cat('|      atschool|    ed_mod_age|    everattend|   literacy|
-|------------:|-----------:|------------:|--------------:|
-|      educat4|        educat5|        educat7|educy|')
-```
-
 ### literacy
 
-The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. 
+`literacy` is a dummy variable that indicates whether an individual is able to both read and write. A person is considered literate if she can both read and write and not just one or the other. A semi-literate person (one who can read, but cannot write) is said to be illiterate. In the case where the survey asks only whether a person can read but does not ask if they can write, literacy cannot be determined, and must be coded as missing. 
 
-[![](figures/Literacy.png)](https://tab.worldbank.org/#/site/WBG/views/Note3/Literacy "The user may interact with this Tableau dashboard by clicking on the figure.")
+The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. Figure \@ref(fig:literacy) allows the user to plot literacy rates at a subnational level by gender and age groups. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='Note3&#47;Literacy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  literacy,  echo=FALSE, fig.cap = "Harmonized asset ownership in latest household survey round", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ### atschool
 
-Dummy variable that indicates whether individual is currently enrolled in school. 
+`atschool` is a dummy variable that indicates whether individual is currently enrolled in school. 
 
 ### everattend
 
-Dummy variable that indicates whether individual has ever attended school. 
+`everattend` is a dummy variable that indicates whether individual has ever attended school. 
 
 ### ed_mod_age
 
-Minimum age level at which the education module of the questionnaire is applied. 
+`ed_mod_age` is the minimum age level at which the education module of the questionnaire is applied. 
 
 ### educy
 
-Number of years of education of an individual. Should not include pre-school. 
+`educy` is a numeric variable that measures the number of years of education of an individual. It should not include pre-school. 
 
 ### educat4
 
-Education categories divided into four groups. 
+`educat4` is a numeric categorical variable that presents the level of education of an individual in four categories:
 
-[![](figures/educat4_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
+- 1=No education
+- 2=Primary (complete or incomplete)
+- 3=Secondary (complete or incomplete)
+- 4=Tertiary (complete or incomplete)	
+
+Secondary is everything from the end of primary to before tertiary (for example, grade 7 through 12). Figure \@ref(fig:educat) allows the user to present the absolute and relative frequencies of these categorical variables by survey. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 850px;'><object class='tableauViz' width='700' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNAEducationbycategories&#47;Percentages' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  educat,  echo=FALSE, fig.cap = "Level of education categories", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
 
 ### educat5
 
-Education categories divided into five groups. 
+`educat5` is a numeric categorical variable that presents the level of education of an individual in five categories:
 
-[![](figures/educat5_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
+- 1=No education
+- 2=Primary incomplete
+- 3=Primary complete but secondary incomplete
+- 4=Secondary complete
+- 5=Some tertiary/post-secondary
 
 ### educat7
 
-Education categories divided into seven groups. 
+`educat7` is a numeric categorical variable that presents the level of education of an individual in seven categories:
 
-[![](figures/educat7_tab.png)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Percentages "The user may interact with this Tableau dashboard by clicking on the figure.")
+- 1=No education 
+- 2=Primary incomplete
+- 3=Primary complete
+- 4=Secondary incomplete
+- 5=Secondary complete 
+- 6=Higher than secondary but not university 
+- 7=University incomplete or complete
 
 ## Durable assets
 
 ```{r assetsdiagram, echo=FALSE }
-library('DiagrammeR')
 grViz("
 digraph assetsdiagram {
 
@@ -330,114 +376,489 @@ Transport Livestock Electric
 Assets -> Transport -> bicycle -> motorcar -> motorcycle
 Assets -> Livestock -> buffalo -> chicken -> cow
 Assets -> Electric -> cellphone -> computer -> fan -> lamp 
-Assets -> Electric -> landphone ->  radio -> refrigerator 
-Assets -> Electric -> sewingmachine  -> television -> washingmachine
+Electric -> landphone ->  radio -> refrigerator 
+Electric -> sewingmachine  -> television -> washingmachine
+}      
+")
+```
+
+The sixteen asset binary variables (1=Yes, 0=No) in SARMD represent whether households have access to a particular durable asset. They do not indicate the quantity of assets available or who is the owner of the asset within the household. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. Therefore, a household where every member owns a cellphone and a household where only one member owns a cellphone are both `cellphone=1` and cannot be distinguished.
+
+The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken, and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire. 
+
+Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Assets' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  assets,  echo=FALSE, fig.cap = "Harmonized asset ownership in latest household survey round", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Scatter' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  scatter,  echo=FALSE, fig.cap = "Access to refrigerator and access to electricity across surveys", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
+### bicycle
+
+`bicycle` is a dummy variable that indicates the availability of bicycles in the household (1=Yes, 0=No).
+
+### buffalo
+
+`buffalo` is a dummy variable that indicates the availability of buffaloes in the household (1=Yes, 0=No).
+
+### cellphone
+
+`cellphone` is a dummy variable that indicates the availability of cellphones in the household (1=Yes, 0=No).
+
+### chicken
+
+`chicken` is a dummy variable that indicates the availability of chicken in the household (1=Yes, 0=No).
+
+### computer
+
+`computer` is a dummy variable that indicates the availability of computers in the household (1=Yes, 0=No).
+
+### cow
+
+`cow` is a dummy variable that indicates the availability of cows in the household (1=Yes, 0=No).
+
+### fan
+
+`fan` is a dummy variable that indicates the availability of fans in the household (1=Yes, 0=No).
+
+### lamp
+
+`lamp` is a dummy variable that indicates the availability of lamps in the household (1=Yes, 0=No).
+
+### landphone
+
+`landphone` is a dummy variable that indicates the availability of land phones in the household (1=Yes, 0=No).
+
+### motorcar
+
+`motorcar` is a dummy variable that indicates the availability of motor cars in the household (1=Yes, 0=No).
+
+### motorcycle
+
+`motorcycle` is a dummy variable that indicates the availability of motorcycles in the household (1=Yes, 0=No).
+
+### radio
+
+`radio` is a dummy variable that indicates the availability of radios in the household (1=Yes, 0=No).
+
+### refrigerator
+
+`refrigerator` is a dummy variable that indicates the availability of refrigerators in the household (1=Yes, 0=No).
+
+### sewingmachine
+
+`sewingmachine` is a dummy variable that indicates the availability of sewing machines in the household (1=Yes, 0=No).
+
+### television
+
+`television` is a dummy variable that indicates the availability of televisions in the household (1=Yes, 0=No).
+
+### washingmachine
+
+`washingmachine` is a dummy variable that indicates the availability of washing machines in the household (1=Yes, 0=No).
+
+## Housing
+
+```{r housediagram, echo=FALSE }
+grViz("
+digraph housediagram {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+electricity internet ownhouse piped_water sar_improved_toilet sar_improved_water sewage_toilet toilet_jmp toilet_orig urban water_jmp water_orig
+node [shape = box, style = filled, color= grey]
+Housing  
+node [shape = box, style = filled, color= lightgrey]
+Water Toilet Other
+# add edge statements
+Housing -> Other -> electricity -> internet -> ownhouse  -> urban 
+Housing -> Water -> piped_water -> sar_improved_water -> water_jmp -> water_orig
+Housing -> Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig
+
+}      
+")
+```
+
+Adequatwe h are The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
+
+### electricity
+
+`electricity` is a dummy variable that indicates the availability of electricity in the household (1=Yes, 0=No).
+
+### internet
+
+`internet` is a dummy variable that indicates the availability of internet in the household (1=Yes, 0=No).
+
+### ownhouse
+
+`ownhouse` is a dummy variable that indicates the ownership status of the dwelling unit by the household residing in it. 
+
+- 0=No: refers to renters, squatters, housing received for free, among others
+- 1=Yes: includes ownership whether or not full-payment has yet been made
+
+### piped_water
+
+`piped_water` is a dummy variable that indicates the availability of piped water in the household (1=Yes, 0=No).
+
+### sar_improved_toilet
+
+`sar_improved_toilet` is a dummy variable that indicates whether a household has access to an improved type of sanitation facility using country-specific definitions. 
+
+- 0=Unimproved
+- 1=Improved 
+
+### sar_improved_water
+
+`sar_improved_water` is a dummy variable that indicates whether a household has access to an improved source of drinking water using country-specific definitions. 
+
+- 0=Unimproved
+- 1=Improved 
+
+### sewage_toilet
+
+`sewage_toilet` is a dummy variable that indicates the availability of a sewage toilet in the household (1=Yes, 0=No).
+
+### toilet_jmp
+
+`toilet_jmp` is a categorical variable that indicates the type of toilet using the Joint Monitoring Program categories:
+
+- 1=Flush to piped sewer  system
+- 2=Flush to septic tank
+- 3=Flush to pit latrine
+- 4=Flush to somewhere else
+- 5=Flush, don't know where
+- 6=Ventilated improved pit latrine
+- 7=Pit latrine with slab
+- 8=Pit latrine without slab/open pit
+- 9=Composting toilet
+- 10=Bucket toilet
+- 11=Hanging toilet/hanging latrine
+- 12=No facility/bush/field
+- 13=Other
+
+### toilet_orig
+
+`toilet_orig` is a categorical variable that indicates the type of toilet using the original categories provided by the survey. 
+
+### urban
+
+`urban` is a dummy variable that indicates whether a household is located in an urban or rural area. 
+
+- 0=Rural
+- 1=Urban
+
+### water_jmp
+
+`water_jmp` is a categorical variable that indicates the source of drinking water using the Joint Monitoring Program categories:
+
+- 1=Piped into dwelling 
+- 2=Piped into compound, yard or plot 
+- 3=Public tap / standpipe 
+- 4=Tubewell, Borehole 
+- 5=Protected well
+- 6=Unprotected well
+- 7=Protected spring
+- 8=Unprotected spring
+- 9=Rain water
+- 10=Tanker-truck or other vendor
+- 11=Cart with small tank / drum
+- 12=Surface water (river, stream, dam, lake, pond)
+- 13=Bottled water
+- 14=Other
+
+### water_orig
+
+`water_orig` is a categorical variable that indicates the source of drinking water using the original categories provided by the survey. 
+
+## Labor
+
+```{r labordiagram, echo=FALSE }
+grViz("
+digraph labordiagram {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+empstat empstat_2 empstat_2_year firmsize_l industry industry_2 industry_orig industry_orig_2 lb_mod_age lstatus njobs nlfreason occup ocusec unitwage unitwage_2 wage wage_2 whours
+node [shape = box, style = filled, color= grey]
+Labor  
+node [shape = box, style = filled, color= lightgrey]
+Status Industry Wage Units Other
+
+# add edge statements
+Labor -> Status -> empstat -> empstat_2 -> empstat_2_year 
+Labor -> Industry -> industry -> industry_2 
+Industry -> industry_orig -> industry_orig_2 
+Labor -> Wage -> wage -> wage_2 -> whours
+Labor -> Units -> unitwage -> unitwage_2 
+Labor -> Other -> lb_mod_age -> lstatus -> njobs -> nlfreason 
+Other -> occup -> ocusec -> firmsize_l 
+
+
 }      
 ")
 ```
 
 
-
-```{r table3, echo=FALSE, eval=FALSE, results='asis'}
-cat('|      bicycle|    computer|    landphone|   refrigerator|
-|------------:|-----------:|------------:|--------------:|
-|      buffalo|         cow|     motorcar| sewing machine|
-|    cellphone|         fan|   motorcycle|     television|
-|      chicken|        lamp|        radio|washing machine|')
-```
-
-This section analyzes whether the sixteen asset variables in SARMD have been adequately harmonized and may be used for research purposes. These binary variables (Yes=1, No=0) represent whether households have access to a particular durable asset. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken, and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire. 
-
-Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure \@ref(fig:assets) displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum. 
-
-```{r assets, echo=FALSE, fig.cap='Harmonized asset ownership in latest household survey round', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("./figures/Assets.png")
-```
-
-see Figure \@ref(fig:assets) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Assets 
-
-
-```{r scatter, echo=FALSE, fig.cap='Access to refrigerator and access to electricity across surveys', out.width='80%', fig.asp=.75, fig.align='center'}
-knitr::include_graphics("./figures/Scatter.png")
-```
-
-see Figure \@ref(fig:scatter) at https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/Scatter 
-
-
-Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage of households that have access to electricity and the percentage of households that have access to a refrigerator. A similar relationship with electricity was found for television, washing machine, and fan. A quality check was conducted to identify the number of observations where the household had no access to electricity, but still had access to an asset. In some cases, it might seem illogical, for example, for a household to own a television if it does not have access to electricity. In Afghanistan (2013), 7,771 out of 20,773 households seemed to have a television and no electricity. However, a mistake in the harmonization process was identified and this number was reduced to 3,119 out of 20,773 households once the mistake was fixed. Still, 13-20% of observations in Afghanistan have consistently reported having a television and no electricity. 
-
-### bicycle
-### buffalo
-### cellphone
-### chicken
-### computer
-### cow
-### fan
-### lamp
-### landphone
-### motorcar
-### motorcycle
-### radio
-### refrigerator
-### sewingmachine
-### television
-### washingmachine
-
-## Housing
-
-
-The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
-
-### electricity
-### internet
-### ownhouse
-### piped_water
-### sar_improved_toilet
-### sar_improved_water
-### sewage_toilet
-### toilet_jmp
-### toilet_orig
-### urban
-### water_jmp
-### water_orig
-
-## Labor
-
 ### empstat
+
+`empstat` is a categorical variable that indicates the type of employment of the first job:
+
+- 1=Paid Employee 
+- 2=Non-Paid Employee 
+- 3=Employer 
+- 4=Self-employed
+- 5=Other, workers not classifiable by status
+
 ### empstat_2
+
+`empstat_2` is a categorical variable that indicates the type of employment of the second job:
+
+- 1=Paid Employee 
+- 2=Non-Paid Employee 
+- 3=Employer 
+- 4=Self-employed
+- 5=Other, workers not classifiable by status
+
 ### empstat_2_year
+
+`empstat_2_year`
+
 ### firmsize_l
+
+`firmsize_l` indicates the firm size. 
+
 ### industry
+
+`industry` classifies the first job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
+
+- 1=Agriculture, Hunting, Fishing, etc. 
+- 2=Mining
+- 3=Manufacturing 
+- 4=Public Utility Services 
+- 5=Construction 
+- 6=Commerce
+- 7=Transport and Communications 
+- 8=Financial and Business Services 
+- 9=Public Administration 
+- 10=Others Services, Unspecified
+
 ### industry_2
+
+`industry_2` classifies the second job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
+
+- 1=Agriculture, Hunting, Fishing, etc. 
+- 2=Mining
+- 3=Manufacturing 
+- 4=Public Utility Services 
+- 5=Construction 
+- 6=Commerce
+- 7=Transport and Communications 
+- 8=Financial and Business Services 
+- 9=Public Administration 
+- 10=Others Services, Unspecified
+
 ### industry_orig
+
+`industry_orig` is a categorical variable that indicates the original country-specific industry codes for the first job. 
+
 ### industry_orig_2
+
+`industry_orig_2` is a categorical variable that indicates the original country-specific industry codes for the second job. 
+
 ### lb_mod_age
+
+`lb_mod_age` is a numerical variable that indicates the age at which the labor module starts being applied. 
+
 ### lstatus
+
+`lstatus` is a categorical variable that indicates the labor force status of an individual. All persons are considered active in the labor force if they presently have a job (formal or informal) or do not have a job but are actively seeking work (unemployed). 
+
+- 1=Employed 
+- 2=Unemployed 
+- 3=Not in labor force
+
 ### njobs
+
+`njobs` indicates the total number of jobs of an individual.
+
 ### nlfreason
+
+`nlfreason` is a categorical variable that indicates the reason for an individual to not be in the labor force. This variable is constructed for all those who are not presently employed and are not looking for work with `lstatus=3` and missing otherwise.
+
+- 1=Student
+- 2=Housewife 
+- 3=Retired 
+- 4=Disabled 
+- 5=Other
+
 ### occup
+
+`occup` is a categorical variable that classifies jobs according to the following 1 digit occupational classification:
+
+- 1=Managers 
+- 2=Professionals 
+- 3=Technicians and associate professionals 
+- 4= Clerical support workers 
+- 5=Service and sales workers 
+- 6=Skilled agricultural, forestry and fishery workers
+- 7=Craft and related trades workers
+- 8=Plant and machine operators, and assemblers 
+- 9=Elementary occupations 
+- 10=Armed forces occupations 
+- 99=Other/unspecified
+
 ### ocusec
+
+`ocusec` is a categorical variable that classifies jobs according to their sector of activity:
+
+- 1=Public sector, Central Government, Army, NGO
+- 2=Private
+- 3=State owned 
+- 4=Public or State-owned, but cannot distinguish
+
 ### unitwage
+
+`unitwage` states the first job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
+
+- 1=Daily 
+- 2=Weekly 
+- 3=Every two weeks 
+- 4=Every two months
+- 5=Monthly 
+- 6=Quarterly
+- 7=Every six months
+- 8=Annually
+- 9=Hourly 
+- 10=Other
+
 ### unitwage_2
+
+`unitwage_2` states the second job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
+
+- 1=Daily 
+- 2=Weekly 
+- 3=Every two weeks 
+- 4=Every two months
+- 5=Monthly 
+- 6=Quarterly
+- 7=Every six months
+- 8=Annually
+- 9=Hourly 
+- 10=Other
+
 ### wage
+
+`wage` indicates the last wage payment of the first job where the time unit is `unitwage`. 
+
 ### wage_2
+
+`wage_2` indicates the last wage payment of the second job where the time unit is `unitwage_2`. 
+
 ### whours
+
+`whours` indicates the number of hours worked in the last week. 
 
 ## Welfare
 
+```{r welfarediagram, echo=FALSE }
+grViz("
+digraph welfarediagram {
+
+graph [layout = dot, color=crimson]
+node [shape = box, style = filled, color= orange]
+cpi cpiperiod pline_int pline_nat poor_int poor_nat ppp welfare welfaredef welfarenat welfarenom welfareother welfareothertype welfaretype welfshprosperity
+node [shape = box, style = filled, color= grey]
+Welfare  
+node [shape = box, style = filled, color= lightgrey]
+CPI Poor PLines Aggregates Type
+# add edge statements
+Welfare -> CPI -> cpi -> cpiperiod -> ppp
+Welfare -> Poor -> poor_int -> poor_nat 
+Welfare -> PLines -> pline_int -> pline_nat
+Welfare -> Aggregates -> welfare -> welfaredef -> welfarenat 
+Aggregates -> welfarenom -> welfareother -> welfshprosperity
+Welfare -> Type -> welfaretype  -> welfareothertype 
+
+}      
+")
+```
+
 ### cpi
+
+`cpi` is the value of the Consumer Price Index based on 2011 to convert local currency units. 
+
 ### cpiperiod
+
+`cpiperiod` indicates the periodicity of Consumer Price Index, which could be by year, year and month, year and quarter, or weighted. 
+
 ### pline_int
+
+`pline_int` provides the value of the international poverty line. 
+
 ### pline_nat
+
+`pline_nat` provides the value of the national poverty line. 
+
 ### poor_int
+
+`poor_int` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the international poverty line. 
+
 ### poor_nat
+
+`poor_nat` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the national poverty line. 
+
 ### ppp
+
+`ppp` provides the value of the Purchasing Power Parity exchange rate. 
+
 ### welfare
+
+`welfare` is the welfare aggregate used to compare to the international poverty line to estimate international poverty. 
+
 ### welfaredef
+
+`welfaredef` is the spatially-deflated welfare aggregate used to compare to the poverty lines to estimate poverty. 
+
 ### welfarenat
+
+`welfarenat` is the welfare aggregate used to compare to the national poverty line to estimate national poverty. 
+
 ### welfarenom
+
+`welfarenom` is the welfare aggregate in nominal terms. 
+
 ### welfareother
-### welfareothertype
+
+`welfareother` presents a welfare aggregate if different welfare type is used from welfare, welfarenom, or welfaredef. 
+
 ### welfaretype
+
+`welfaretype` specifies the type of welfare measure for the variables `welfare`, `welfarenom` and `welfaredef`. 
+
+- INC=income
+- CONS=consumption
+- EXP=expenditure
+
+### welfareothertype
+
+`welfareothertype` specifies the type of welfare measure for the variable `welfareother`.
+
+- INC=income
+- CONS=consumption
+- EXP=expenditure
+
 ### welfshprosperity
+
+`welfshprosperity` presents a welfare aggregate for shared prosperity (if different from poverty)
+
+
 
