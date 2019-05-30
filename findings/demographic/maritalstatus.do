@@ -192,7 +192,7 @@ foreach v in mal fem {
 	}
 }
 **********************************************
-*HIGHEST EDUCATION AMONG MEMBERS >25
+*HIGHEST EDUCATION AMONG MEMBERS >25 by gender
 **********************************************
 cap drop femhhedu mfemhhedu
 gen femhhedu=educat4 if male==0&age>=25
@@ -217,15 +217,16 @@ ta  mfemhhedu, gen(feducat)
 ta  mmalhhedu, gen(meducat)
 levelsof countrycode, loc(code)
 
-foreach v in feducat meducat earlym_all {
+foreach v in feducat meducat femhhedu_mal malhhedu_fem {
 foreach c of loc code {
 
 foreach n in 1 2 3 4 {
+	set trace off
 				if `n'==1 loc category="No Education"
 				if `n'==2 loc category="Primary"
 				if `n'==3 loc category="Secondary"
 				if `n'==4 loc category="Tertiary"
-				su `v'`n' [aw=wgt] if earlym_all==1&countrycode=="`c'"
+				su `v'`n' [aw=wgt] if earlym_all==1&countrycode=="`c'"				
 				*su `v' [aw=wgt] if earlym_all==1&countrycode=="`c'"
 				loc value=(r(mean)*100)
 				su year if countrycode=="`c'"
