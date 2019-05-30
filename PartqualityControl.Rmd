@@ -3,7 +3,7 @@
 # Introduction to quality control {#qcheck .unnumbered}
 
 ***
-This third section presents the harmonized variables in SARMD and provides the results of conducting a quality check (qckeck) on these variables. 
+The third part of the book presents the harmonized variables in SARMD and provides the results of conducting a quality check (qckeck) on these variables. 
 
 **Chapter 7** provides a dictionary of harmonized variables. It presents all the harmonized variables available in SARMD. 
 

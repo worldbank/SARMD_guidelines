@@ -107,14 +107,14 @@ The essential variables that identify each dataset and individual within a house
 | Bangladesh  	| BGD           	|
 | Bhutan      	| BTN           	|
 | India       	| IND           	|
-| Sri Lanka   	| LKA           	|
 | Maldives    	| MDV           	|
 | Nepal       	| NPL           	|
 | Pakistan    	| PAK           	|
+| Sri Lanka   	| LKA           	|
 
 ### survey
 
-`survey` is a string variable 
+`survey` is a string variable that specifies the name of the survey. 
 
 ### year
 
@@ -150,7 +150,7 @@ The essential variables that identify each dataset and individual within a house
 
 ### int_month
 
-`int_month` is a numeric variable that specifies the month of the interview (e.g., 1=January, 2=February, 3=March, etc.)
+`int_month` is a numeric variable that specifies the month of the interview (e.g., 1=January, 2=February, 3=March, etc.).
 
 ### subnatid1
 
@@ -195,7 +195,7 @@ Demographic ->  Categorical -> relationcs  -> relationharm  -> marital
 ")
 ```
 
-There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. About 63.7 percent of Afghans are under 25 years of age, reflecting a steep pyramid age structure.  
+There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. For example, about 63.7 percent of Afghans are under 25 years of age, which reflects a steep pyramid age structure.  
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Pyramid' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -205,7 +205,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 ### age
 
-`age` is a numeric variable that indicates the age of an individual in years. Age is an important variable for most socio-economic analyses and must be established as accurately as possible especially for children aged less than 5 years. `age>= 98` must be coded as 98. Missing values should be recorded as `age=.`, never use `age=99`. According to SARMD, the youngest country in the region is Afghanistan and the oldest is Sri Lanka. 
+`age` is a numeric variable that indicates the age of an individual in years. `age` is an important variable for most socio-economic analyses and must be established as accurately as possible especially for children aged less than 5 years. `age>= 98` must be coded as 98. Missing values should be recorded as `age=.`, never use `age=99`. According to SARMD, the youngest country in the region is Afghanistan and the oldest is Sri Lanka. 
 
 ### hsize
 
@@ -228,7 +228,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 ### relationcs
 
-`relationcs` refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories as:
+`relationcs` refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories like:
 
 - Household Head
 - Husband/Wife
@@ -488,7 +488,9 @@ Housing -> Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toile
 ")
 ```
 
-Adequatwe h are The living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people – 83 percent – live in dwellings that are constructed with non-durable materials and 44 percent live in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers – 72 percent – live in slums or inadequate housing. 
+Housing is an essential component of household living conditions. For example, the living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people live in dwellings that are constructed with non-durable materials and in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers live in slums or in inadequate housing. 
+
+SARMD includes the following 12 harmonized variables related to housing: 
 
 ### electricity
 
@@ -818,7 +820,7 @@ Welfare -> Type -> welfaretype  -> welfareothertype
 
 ### ppp
 
-`ppp` provides the value of the Purchasing Power Parity exchange rate. 
+`ppp` provides the value of the 2011 Purchasing Power Parity exchange rate. 
 
 ### welfare
 
@@ -858,7 +860,7 @@ Welfare -> Type -> welfaretype  -> welfareothertype
 
 ### welfshprosperity
 
-`welfshprosperity` presents a welfare aggregate for shared prosperity (if different from poverty)
+`welfshprosperity` presents a welfare aggregate for shared prosperity (if different from poverty). 
 
 
 
