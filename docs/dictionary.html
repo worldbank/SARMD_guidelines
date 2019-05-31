@@ -28,7 +28,7 @@
 <meta name="author" content="Francisco Javier Parada Gómez Urquiza">
 
 
-<meta name="date" content="2019-05-30">
+<meta name="date" content="2019-05-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -57,43 +57,6 @@
 <script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #f8f8f8; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-pre, code { background-color: #f8f8f8; }
-code > span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code > span.dt { color: #204a87; } /* DataType */
-code > span.dv { color: #0000cf; } /* DecVal */
-code > span.bn { color: #0000cf; } /* BaseN */
-code > span.fl { color: #0000cf; } /* Float */
-code > span.ch { color: #4e9a06; } /* Char */
-code > span.st { color: #4e9a06; } /* String */
-code > span.co { color: #8f5902; font-style: italic; } /* Comment */
-code > span.ot { color: #8f5902; } /* Other */
-code > span.al { color: #ef2929; } /* Alert */
-code > span.fu { color: #000000; } /* Function */
-code > span.er { color: #a40000; font-weight: bold; } /* Error */
-code > span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #000000; } /* Constant */
-code > span.sc { color: #000000; } /* SpecialChar */
-code > span.vs { color: #4e9a06; } /* VerbatimString */
-code > span.ss { color: #4e9a06; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #000000; } /* Variable */
-code > span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code > span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code > span.ex { } /* Extension */
-code > span.at { color: #c4a000; } /* Attribute */
-code > span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code > span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -339,8 +302,8 @@ code > span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Inf
 <hr />
 <p>The SARMD harmonized variables in Figure <a href="dictionary.html#fig:categories">7.1</a> are organized into seven categories: basic, demographic, education, assets, house, labor, and welfare.</p>
 <div class="figure" style="text-align: center"><span id="fig:categories"></span>
-<div id="htmlwidget-1d9f9b9fdca3023baa83" style="width:70%;height:650px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1d9f9b9fdca3023baa83">{"x":{"diagram":"\ndigraph categories {\ngraph [layout = dot, rankdir=LR,]\nnode [shape = box,\n      style = filled, \n      color= grey,\n      fontname=Helvetica]\nSA [label = \"SARMD  \n Harmonized  \n Variables\"]\nnode [shape = box,\n      style = filled, \n      color= grey,\n      fontname=Helvetica]\nBasic \nDemographic \nEducation \nAssets\nHouse \nLabor \nWelfare \n\nnode [shape = box,\n      style = filled, \n      color= white,\n      fontname=Helvetica]\n\nbasicvars [label = \"countrycode, idh, idp, int_month, \n int_year, pop_wgt, psu, spdef, strata, \n subnatid1, subnatid2, survey, veralt, \n vermast, wgt, year\"]\ndemvars [label = \"age, hsize, male, marital, \n relationcs, relationharm, soc\"]\neducvars [label = \"atschool, ed_mod_age, educat4, \n educat5, educat7, educy, everattend, \n literacy\"]\nassetvars [label = \"bicycle, buffalo, cellphone, \n chicken, computer, cow, fan, lamp, \n landphone, motorcar, motorcycle, radio, \n refrigerator, sewingmachine, \n television, washingmachine\"]\nhousevars [label = \"electricity, internet, ownhouse, \n piped_water, sar_improved_toilet, \n sar_improved_water, sewage_toilet, \n toilet_jmp, toilet_orig, urban, water_jmp, water_orig\"]\nlaborvars [label = \"empstat, empstat_2, empstat_2_year, \n firmsize_l, industry, industry_2, \n industry_orig, industry_orig_2, \n lb_mod_age, lstatus, njobs, nlfreason, \n occup, ocusec, unitwage, unitwage_2, wage, \n wage_2, whours\"]\nwelfarevars [label = \"cpi, cpiperiod, pline_int, \n pline_nat, poor_int, poor_nat, ppp, \n welfare, welfaredef, welfarenat, \n welfarenom, welfareother, \n welfareothertype, welfaretype, \n welfshprosperity\"]\n\nedge [color = black]\n\nSA -> {Basic, Demographic, Education, Assets, House, Labor, Welfare}\nBasic -> basicvars\nDemographic -> demvars\nEducation -> educvars\nAssets -> assetvars\nHouse -> housevars\nLabor ->laborvars\nWelfare ->welfarevars\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-2ae622211a824c064fbd" style="width:70%;height:650px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2ae622211a824c064fbd">{"x":{"diagram":"\ndigraph categories {\ngraph [layout = dot, rankdir=LR,]\nnode [shape = box,\n      style = filled, \n      color= grey,\n      fontname=Serif]\nSA [label = \"SARMD  \n Harmonized  \n Variables\"]\nnode [shape = box,\n      style = filled, \n      color= grey,\n      fontname=Serif]\nBasic \nDemographic \nEducation \nAssets\nHouse \nLabor \nWelfare \n\nnode [shape = box,\n      style = filled, \n      color= white,\n      fontname=Serif]\n\nbasicvars [label = \"countrycode, idh, idp, int_month, \n int_year, pop_wgt, psu, spdef, strata, \n subnatid1, subnatid2, survey, veralt, \n vermast, wgt, year\"]\ndemvars [label = \"age, hsize, male, marital, \n relationcs, relationharm, soc\"]\neducvars [label = \"atschool, ed_mod_age, educat4, \n educat5, educat7, educy, everattend, \n literacy\"]\nassetvars [label = \"bicycle, buffalo, cellphone, \n chicken, computer, cow, fan, lamp, \n landphone, motorcar, motorcycle, radio, \n refrigerator, sewingmachine, \n television, washingmachine\"]\nhousevars [label = \"electricity, internet, ownhouse, \n piped_water, sar_improved_toilet, \n sar_improved_water, sewage_toilet, \n toilet_jmp, toilet_orig, urban, water_jmp, water_orig\"]\nlaborvars [label = \"empstat, empstat_2, empstat_2_year, \n firmsize_l, industry, industry_2, \n industry_orig, industry_orig_2, \n lb_mod_age, lstatus, njobs, nlfreason, \n occup, ocusec, unitwage, unitwage_2, wage, \n wage_2, whours\"]\nwelfarevars [label = \"cpi, cpiperiod, pline_int, \n pline_nat, poor_int, poor_nat, ppp, \n welfare, welfaredef, welfarenat, \n welfarenom, welfareother, \n welfareothertype, welfaretype, \n welfshprosperity\"]\n\nedge [color = black]\n\nSA -> {Basic, Demographic, Education, Assets, House, Labor, Welfare}\nBasic -> basicvars\nDemographic -> demvars\nEducation -> educvars\nAssets -> assetvars\nHouse -> housevars\nLabor ->laborvars\nWelfare ->welfarevars\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 7.1: Seven categories of harmonized variables
 </p>
@@ -361,8 +324,8 @@ Figure 7.2: SARMD Availability and missing observations
 <div id="basic-survey-characteristics" class="section level2">
 <h2><span class="header-section-number">7.1</span> Basic survey characteristics</h2>
 <div class="figure" style="text-align: center"><span id="fig:basic"></span>
-<div id="htmlwidget-b18b48ec4ad649442f3b" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b18b48ec4ad649442f3b">{"x":{"diagram":"\ndigraph basic {\ngraph [layout = dot, color=crimson]\n#  rankdir = LR  overlap=true, fontsize=20\nnode [shape = box, style = filled, color= orange]\ncountrycode year survey veralt vermast idh idp wgt pop_wgt int_year int_month subnatid1 subnatid2 psu strata spdef\nnode [shape = box, style = filled, color= grey]\nBasic \nnode [shape = box, style = filled, color= lightgrey]\nSurvey Version Identifiers Weight Date Location Other\n# add edge statements\nBasic -> Survey -> countrycode -> survey  -> year; Basic -> Version -> vermast ->veralt; Basic -> Identifiers -> idh -> idp ; Basic -> Weight -> wgt -> pop_wgt; \nBasic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnatid2; Basic -> Other -> psu -> strata -> spdef \n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c6cef737dd6a83c62169" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6cef737dd6a83c62169">{"x":{"diagram":"\ndigraph basic {\ngraph [layout = dot, color=crimson]\n#  rankdir = LR  overlap=true, fontsize=20\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nBasic \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nSurvey Version Identifiers Weight Date Location Other\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\ncountrycode year survey veralt vermast idh idp wgt pop_wgt int_year int_month subnatid1 subnatid2 psu strata spdef\n# add edge statements\nBasic -> Survey\nBasic -> Version\nBasic -> Identifiers\nBasic -> Weight\nBasic -> Date \nBasic -> Location\nBasic -> Other\nedge [arrowhead=none]\nSurvey -> countrycode -> survey  -> year; \nVersion -> vermast ->veralt; \nIdentifiers -> idh -> idp ; \nWeight -> wgt -> pop_wgt; \nDate -> int_year -> int_month; \nLocation -> subnatid1 -> subnatid2; \nOther -> psu -> strata -> spdef \n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 7.3: Basic survey characteristics
 </p>
@@ -477,8 +440,8 @@ Figure 7.3: Basic survey characteristics
 </div>
 <div id="demographic-variables" class="section level2">
 <h2><span class="header-section-number">7.2</span> Demographic variables</h2>
-<div id="htmlwidget-514d280a38cf86ead40b" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-514d280a38cf86ead40b">{"x":{"diagram":"\ndigraph boxe {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\nage male hsize relationcs relationharm marital\nnode [shape = box, style = filled, color= grey]\nDemographic \nnode [shape = box, style = filled, color= lightgrey]\nNumerical Dummy Categorical\n\n# add edge statements\nDemographic -> Numerical -> age  -> hsize  \nDemographic ->  Dummy -> male\nDemographic ->  Categorical -> relationcs  -> relationharm  -> marital\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-868fa95f2212c2b3c328" style="width:70%;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-868fa95f2212c2b3c328">{"x":{"diagram":"\ndigraph boxe {\n\ngraph [layout = dot, color=grey, fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nDemographic \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nNumerical Dummy Categorical\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\n# add edge statements\nage male hsize relationcs relationharm marital\nDemographic -> Numerical\nDemographic ->  Dummy\nDemographic ->  Categorical\nedge [arrowhead=none]\nNumerical -> age  -> hsize  \nDummy -> male\nCategorical -> relationcs  -> relationharm  -> marital\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>There are currently six essential demographic variables in SARMD: <code>age</code>, <code>hsize</code>, <code>male</code>, <code>relationcs</code>, <code>relationharm</code> and <code>marital</code>. Population pyramids such as the one provided in Figure <a href="dictionary.html#fig:pyramid">7.4</a> allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. For example, about 63.7 percent of Afghans are under 25 years of age, which reflects a steep pyramid age structure.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
@@ -567,8 +530,8 @@ Figure 7.5: Household composition and expenditures
 </div>
 <div id="education" class="section level2">
 <h2><span class="header-section-number">7.3</span> Education</h2>
-<div id="htmlwidget-74434d812ec23342fdce" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-74434d812ec23342fdce">{"x":{"diagram":"\ndigraph boxes {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\nliteracy, atschool, everattend, ed_mod_age, educy, educat4, educat5, educat7\nnode [shape = box, style = filled, color= grey]\nEducation \nnode [shape = box, style = filled, color= lightgrey]\nNumerical Dummy Categorical\n\n# add edge statements\nEducation -> Numerical -> ed_mod_age -> educy  \nEducation ->  Dummy -> literacy -> atschool -> everattend\nEducation ->  Categorical -> educat4 -> educat5 -> educat7\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-99c3e94ea8569a159b98" style="width:70%;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-99c3e94ea8569a159b98">{"x":{"diagram":"\ndigraph boxes {\n\ngraph [layout = dot, color=grey, fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nEducation \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nNumerical Dummy Categorical\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\nliteracy, atschool, everattend, ed_mod_age, educy, educat4, educat5, educat7\n# add edge statements\nEducation -> Numerical\nEducation ->  Dummy\nEducation ->  Categorical \nedge [arrowhead=none]\nNumerical -> ed_mod_age -> educy  \nDummy -> literacy -> atschool -> everattend\nCategorical -> educat4 -> educat5 -> educat7\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>There are currently eight essential education variables in SARMD: <code>literacy</code>, <code>atschool</code>, <code>everattend</code>, <code>ed_mod_age</code>, <code>educy</code>, <code>educat4</code>, <code>educat5</code>, and <code>educat7</code>.</p>
 <div id="literacy" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> literacy</h3>
@@ -653,8 +616,8 @@ Figure 7.7: Level of education categories
 </div>
 <div id="durable-assets-1" class="section level2">
 <h2><span class="header-section-number">7.4</span> Durable assets</h2>
-<div id="htmlwidget-124fb78127817ec02cd9" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-124fb78127817ec02cd9">{"x":{"diagram":"\ndigraph assetsdiagram {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\nbicycle buffalo cellphone chicken computer cow fan lamp landphone motorcar motorcycle  radio refrigerator sewingmachine  television washingmachine\nnode [shape = box, style = filled, color= grey]\nAssets \nnode [shape = box, style = filled, color= lightgrey]\nTransport Livestock Electric\n# add edge statements\nAssets -> Transport -> bicycle -> motorcar -> motorcycle\nAssets -> Livestock -> buffalo -> chicken -> cow\nAssets -> Electric -> cellphone -> computer -> fan -> lamp \nElectric -> landphone ->  radio -> refrigerator \nElectric -> sewingmachine  -> television -> washingmachine\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-abcdda0cacd8bfd420cb" style="width:70%;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-abcdda0cacd8bfd420cb">{"x":{"diagram":"\ndigraph assetsdiagram {\n\ngraph [layout = dot, color=crimson,fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nAssets \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nTransport Livestock Electric\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\nbicycle buffalo cellphone chicken computer cow fan lamp landphone motorcar motorcycle  radio refrigerator sewingmachine  television washingmachine\n\n# add edge statements\nAssets -> Transport \nAssets -> Livestock \nAssets -> Electric \nedge [arrowhead=none]\nTransport -> bicycle -> motorcar -> motorcycle\nLivestock -> buffalo -> chicken -> cow\nElectric -> cellphone -> computer -> fan -> lamp -> landphone  \nElectric ->  radio -> refrigerator -> sewingmachine  -> television -> washingmachine\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>The sixteen asset binary variables (1=Yes, 0=No) in SARMD represent whether households have access to a particular durable asset. They do not indicate the quantity of assets available or who is the owner of the asset within the household. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. Therefore, a household where every member owns a cellphone and a household where only one member owns a cellphone are both <code>cellphone=1</code> and cannot be distinguished.</p>
 <p>The harmonization of these asset variables is limited by their availability in the household questionnaire. For example, cow, chicken, and buffalo cannot be harmonized if a survey does not cover live-stocking activities. It may also be that some of these assets are unnecessary (a fan in cold weather), obsolete (land phone), or too basic (lamp) to be included in a questionnaire.</p>
 <p>Quality checks were conducted to make sure that these variables could only be equal to 0 or 1. We also verified that the value was the same within each household. A deeper look at these asset variables allowed to identify some interesting trends. Figure <a href="dictionary.html#fig:assets">7.8</a> displays the percentage of households that have access to an asset by country for the latest survey round available. It shows that cellphones are the most accessible assets and that there can be a wide range between the minimum and the maximum.</p>
@@ -750,8 +713,8 @@ Figure 7.9: Access to refrigerator and access to electricity across surveys
 </div>
 <div id="housing-1" class="section level2">
 <h2><span class="header-section-number">7.5</span> Housing</h2>
-<div id="htmlwidget-dd0a51033db44e820d90" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dd0a51033db44e820d90">{"x":{"diagram":"\ndigraph housediagram {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\nelectricity internet ownhouse piped_water sar_improved_toilet sar_improved_water sewage_toilet toilet_jmp toilet_orig urban water_jmp water_orig\nnode [shape = box, style = filled, color= grey]\nHousing  \nnode [shape = box, style = filled, color= lightgrey]\nWater Toilet Other\n# add edge statements\nHousing -> Other -> electricity -> internet -> ownhouse  -> urban \nHousing -> Water -> piped_water -> sar_improved_water -> water_jmp -> water_orig\nHousing -> Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-41c6fff5c0ae3f9b920c" style="width:70%;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-41c6fff5c0ae3f9b920c">{"x":{"diagram":"\ndigraph housediagram {\n\ngraph [layout = dot, color=crimson, fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nHousing  \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nWater Toilet Other\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\nelectricity internet ownhouse piped_water sar_improved_toilet sar_improved_water sewage_toilet toilet_jmp toilet_orig urban water_jmp water_orig\n\n# add edge statements\nHousing -> Other \nHousing -> Water \nHousing -> Toilet \nedge [arrowhead=none]\nOther -> electricity -> internet -> ownhouse  -> urban \nWater -> piped_water -> sar_improved_water -> water_jmp -> water_orig\nToilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <p>Housing is an essential component of household living conditions. For example, the living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people live in dwellings that are constructed with non-durable materials and in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers live in slums or in inadequate housing.</p>
 <p>SARMD includes the following 12 harmonized variables related to housing:</p>
 <div id="electricity" class="section level3">
@@ -852,8 +815,8 @@ Figure 7.9: Access to refrigerator and access to electricity across surveys
 </div>
 <div id="labor" class="section level2">
 <h2><span class="header-section-number">7.6</span> Labor</h2>
-<div id="htmlwidget-80fb537b5ba0bd90fb93" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-80fb537b5ba0bd90fb93">{"x":{"diagram":"\ndigraph labordiagram {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\nempstat empstat_2 empstat_2_year firmsize_l industry industry_2 industry_orig industry_orig_2 lb_mod_age lstatus njobs nlfreason occup ocusec unitwage unitwage_2 wage wage_2 whours\nnode [shape = box, style = filled, color= grey]\nLabor  \nnode [shape = box, style = filled, color= lightgrey]\nStatus Industry Wage Units Other\n\n# add edge statements\nLabor -> Status -> empstat -> empstat_2 -> empstat_2_year \nLabor -> Industry -> industry -> industry_2 \nIndustry -> industry_orig -> industry_orig_2 \nLabor -> Wage -> wage -> wage_2 -> whours\nLabor -> Units -> unitwage -> unitwage_2 \nLabor -> Other -> lb_mod_age -> lstatus -> njobs -> nlfreason \nOther -> occup -> ocusec -> firmsize_l \n\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-5fe564842c318b64a092" style="width:70%;height:600px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5fe564842c318b64a092">{"x":{"diagram":"\ndigraph labordiagram {\n\ngraph [layout = dot, color=crimson, fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nLabor  \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nStatus Industry Wage Units Other\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\nempstat empstat_2 empstat_2_year firmsize_l industry industry_2 industry_orig industry_orig_2 lb_mod_age lstatus njobs nlfreason occup ocusec unitwage unitwage_2 wage wage_2 whours\n\n\n# add edge statements\nLabor -> Status \nLabor -> Industry\nLabor -> Wage\nLabor -> Units\nLabor -> Other \nedge [arrowhead=none]\n\nStatus -> lstatus -> empstat -> empstat_2 -> empstat_2_year \nIndustry -> industry -> industry_2 -> industry_orig -> industry_orig_2 \nWage -> wage -> wage_2 -> whours\nUnits -> unitwage -> unitwage_2 \nOther -> lb_mod_age  -> njobs -> nlfreason -> occup -> ocusec -> firmsize_l \n\n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div id="empstat" class="section level3">
 <h3><span class="header-section-number">7.6.1</span> empstat</h3>
 <p><code>empstat</code> is a categorical variable that indicates the type of employment of the first job:</p>
@@ -1026,8 +989,8 @@ Figure 7.9: Access to refrigerator and access to electricity across surveys
 </div>
 <div id="welfare" class="section level2">
 <h2><span class="header-section-number">7.7</span> Welfare</h2>
-<div id="htmlwidget-beeafef17c4840807f51" style="width:70%;height:355.968px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-beeafef17c4840807f51">{"x":{"diagram":"\ndigraph welfarediagram {\n\ngraph [layout = dot, color=crimson]\nnode [shape = box, style = filled, color= orange]\ncpi cpiperiod pline_int pline_nat poor_int poor_nat ppp welfare welfaredef welfarenat welfarenom welfareother welfareothertype welfaretype welfshprosperity\nnode [shape = box, style = filled, color= grey]\nWelfare  \nnode [shape = box, style = filled, color= lightgrey]\nCPI Poor PLines Aggregates Type\n# add edge statements\nWelfare -> CPI -> cpi -> cpiperiod -> ppp\nWelfare -> Poor -> poor_int -> poor_nat \nWelfare -> PLines -> pline_int -> pline_nat\nWelfare -> Aggregates -> welfare -> welfaredef -> welfarenat \nAggregates -> welfarenom -> welfareother -> welfshprosperity\nWelfare -> Type -> welfaretype  -> welfareothertype \n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-234a00f466fa8377b924" style="width:70%;height:700px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-234a00f466fa8377b924">{"x":{"diagram":"\ndigraph welfarediagram {\n\ngraph [layout = dot, color=crimson, fontsize=15]\nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nWelfare  \nnode [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]\nCPI Poor PLines Aggregates Type\nnode [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]\ncpi cpiperiod pline_int pline_nat poor_int poor_nat ppp welfare welfaredef welfarenat welfarenom welfareother welfareothertype welfaretype welfshprosperity\n\n# add edge statements\nWelfare -> CPI\nWelfare -> Poor\nWelfare -> PLines \nWelfare -> Aggregates \nWelfare -> Type\n\nedge [arrowhead=none]\n\nCPI -> cpi -> cpiperiod -> ppp\nPoor -> poor_int -> poor_nat \nPLines -> pline_int -> pline_nat\nAggregates -> welfare -> welfaredef -> welfarenat -> welfarenom -> welfareother -> welfshprosperity\nType -> welfaretype  -> welfareothertype \n\n}      \n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div id="cpi" class="section level3">
 <h3><span class="header-section-number">7.7.1</span> cpi</h3>
 <p><code>cpi</code> is the value of the Consumer Price Index based on 2011 to convert local currency units.</p>
@@ -1159,19 +1122,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
