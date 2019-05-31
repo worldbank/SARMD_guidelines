@@ -10,12 +10,12 @@ graph [layout = dot, rankdir=LR,]
 node [shape = box,
       style = filled, 
       color= grey,
-      fontname=Helvetica]
+      fontname=Serif]
 SA [label = '@@1']
 node [shape = box,
       style = filled, 
       color= grey,
-      fontname=Helvetica]
+      fontname=Serif]
 Basic 
 Demographic 
 Education 
@@ -27,7 +27,7 @@ Welfare
 node [shape = box,
       style = filled, 
       color= white,
-      fontname=Helvetica]
+      fontname=Serif]
 
 basicvars [label = '@@2']
 demvars [label = '@@3']
@@ -81,15 +81,28 @@ basic2 <-"
 digraph basic {
 graph [layout = dot, color=crimson]
 #  rankdir = LR  overlap=true, fontsize=20
-node [shape = box, style = filled, color= orange]
-countrycode year survey veralt vermast idh idp wgt pop_wgt int_year int_month subnatid1 subnatid2 psu strata spdef
-node [shape = box, style = filled, color= grey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Basic 
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Survey Version Identifiers Weight Date Location Other
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+countrycode year survey veralt vermast idh idp wgt pop_wgt int_year int_month subnatid1 subnatid2 psu strata spdef
 # add edge statements
-Basic -> Survey -> countrycode -> survey  -> year; Basic -> Version -> vermast ->veralt; Basic -> Identifiers -> idh -> idp ; Basic -> Weight -> wgt -> pop_wgt; 
-Basic -> Date -> int_year -> int_month; Basic -> Location -> subnatid1 -> subnatid2; Basic -> Other -> psu -> strata -> spdef 
+Basic -> Survey
+Basic -> Version
+Basic -> Identifiers
+Basic -> Weight
+Basic -> Date 
+Basic -> Location
+Basic -> Other
+edge [arrowhead=none]
+Survey -> countrycode -> survey  -> year; 
+Version -> vermast ->veralt; 
+Identifiers -> idh -> idp ; 
+Weight -> wgt -> pop_wgt; 
+Date -> int_year -> int_month; 
+Location -> subnatid1 -> subnatid2; 
+Other -> psu -> strata -> spdef 
 }      
 "
 grViz(basic2)
@@ -178,21 +191,24 @@ The essential variables that identify each dataset and individual within a house
 grViz("
 digraph boxe {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-age male hsize relationcs relationharm marital
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=grey, fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Demographic 
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Numerical Dummy Categorical
-
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
 # add edge statements
-Demographic -> Numerical -> age  -> hsize  
-Demographic ->  Dummy -> male
-Demographic ->  Categorical -> relationcs  -> relationharm  -> marital
+age male hsize relationcs relationharm marital
+Demographic -> Numerical
+Demographic ->  Dummy
+Demographic ->  Categorical
+edge [arrowhead=none]
+Numerical -> age  -> hsize  
+Dummy -> male
+Categorical -> relationcs  -> relationharm  -> marital
 
 }      
-")
+", height=500)
 ```
 
 There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. For example, about 63.7 percent of Afghans are under 25 years of age, which reflects a steep pyramid age structure.  
@@ -273,21 +289,24 @@ knitr::include_graphics("figures/fake_figure.PNG")
 grViz("
 digraph boxes {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, educat7
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=grey, fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Education 
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Numerical Dummy Categorical
-
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+literacy, atschool, everattend, ed_mod_age, educy, educat4, educat5, educat7
 # add edge statements
-Education -> Numerical -> ed_mod_age -> educy  
-Education ->  Dummy -> literacy -> atschool -> everattend
-Education ->  Categorical -> educat4 -> educat5 -> educat7
+Education -> Numerical
+Education ->  Dummy
+Education ->  Categorical 
+edge [arrowhead=none]
+Numerical -> ed_mod_age -> educy  
+Dummy -> literacy -> atschool -> everattend
+Categorical -> educat4 -> educat5 -> educat7
 
 }      
-")
+", height=500)
 ```
 
 There are currently eight essential education variables in SARMD: ``literacy``, ``atschool``, ``everattend``, ``ed_mod_age``, ``educy``, ``educat4``, ``educat5``, and ``educat7``.
@@ -365,21 +384,25 @@ knitr::include_graphics("figures/fake_figure.PNG")
 grViz("
 digraph assetsdiagram {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-bicycle buffalo cellphone chicken computer cow fan lamp landphone motorcar motorcycle  radio refrigerator sewingmachine  television washingmachine
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=crimson,fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Assets 
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Transport Livestock Electric
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+bicycle buffalo cellphone chicken computer cow fan lamp landphone motorcar motorcycle  radio refrigerator sewingmachine  television washingmachine
+
 # add edge statements
-Assets -> Transport -> bicycle -> motorcar -> motorcycle
-Assets -> Livestock -> buffalo -> chicken -> cow
-Assets -> Electric -> cellphone -> computer -> fan -> lamp 
-Electric -> landphone ->  radio -> refrigerator 
-Electric -> sewingmachine  -> television -> washingmachine
+Assets -> Transport 
+Assets -> Livestock 
+Assets -> Electric 
+edge [arrowhead=none]
+Transport -> bicycle -> motorcar -> motorcycle
+Livestock -> buffalo -> chicken -> cow
+Electric -> cellphone -> computer -> fan -> lamp -> landphone  
+Electric ->  radio -> refrigerator -> sewingmachine  -> television -> washingmachine
 }      
-")
+", height=600)
 ```
 
 The sixteen asset binary variables (1=Yes, 0=No) in SARMD represent whether households have access to a particular durable asset. They do not indicate the quantity of assets available or who is the owner of the asset within the household. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. Therefore, a household where every member owns a cellphone and a household where only one member owns a cellphone are both `cellphone=1` and cannot be distinguished.
@@ -472,20 +495,25 @@ knitr::include_graphics("figures/fake_figure.PNG")
 grViz("
 digraph housediagram {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-electricity internet ownhouse piped_water sar_improved_toilet sar_improved_water sewage_toilet toilet_jmp toilet_orig urban water_jmp water_orig
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=crimson, fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Housing  
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Water Toilet Other
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+electricity internet ownhouse piped_water sar_improved_toilet sar_improved_water sewage_toilet toilet_jmp toilet_orig urban water_jmp water_orig
+
 # add edge statements
-Housing -> Other -> electricity -> internet -> ownhouse  -> urban 
-Housing -> Water -> piped_water -> sar_improved_water -> water_jmp -> water_orig
-Housing -> Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig
+Housing -> Other 
+Housing -> Water 
+Housing -> Toilet 
+edge [arrowhead=none]
+Other -> electricity -> internet -> ownhouse  -> urban 
+Water -> piped_water -> sar_improved_water -> water_jmp -> water_orig
+Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig
 
 }      
-")
+", height=600)
 ```
 
 Housing is an essential component of household living conditions. For example, the living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people live in dwellings that are constructed with non-durable materials and in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers live in slums or in inadequate housing. 
@@ -587,26 +615,32 @@ SARMD includes the following 12 harmonized variables related to housing:
 grViz("
 digraph labordiagram {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-empstat empstat_2 empstat_2_year firmsize_l industry industry_2 industry_orig industry_orig_2 lb_mod_age lstatus njobs nlfreason occup ocusec unitwage unitwage_2 wage wage_2 whours
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=crimson, fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Labor  
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Status Industry Wage Units Other
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+empstat empstat_2 empstat_2_year firmsize_l industry industry_2 industry_orig industry_orig_2 lb_mod_age lstatus njobs nlfreason occup ocusec unitwage unitwage_2 wage wage_2 whours
+
 
 # add edge statements
-Labor -> Status -> empstat -> empstat_2 -> empstat_2_year 
-Labor -> Industry -> industry -> industry_2 
-Industry -> industry_orig -> industry_orig_2 
-Labor -> Wage -> wage -> wage_2 -> whours
-Labor -> Units -> unitwage -> unitwage_2 
-Labor -> Other -> lb_mod_age -> lstatus -> njobs -> nlfreason 
-Other -> occup -> ocusec -> firmsize_l 
+Labor -> Status 
+Labor -> Industry
+Labor -> Wage
+Labor -> Units
+Labor -> Other 
+edge [arrowhead=none]
+
+Status -> lstatus -> empstat -> empstat_2 -> empstat_2_year 
+Industry -> industry -> industry_2 -> industry_orig -> industry_orig_2 
+Wage -> wage -> wage_2 -> whours
+Units -> unitwage -> unitwage_2 
+Other -> lb_mod_age  -> njobs -> nlfreason -> occup -> ocusec -> firmsize_l 
 
 
 }      
-")
+", height=600)
 ```
 
 
@@ -775,23 +809,31 @@ Other -> occup -> ocusec -> firmsize_l
 grViz("
 digraph welfarediagram {
 
-graph [layout = dot, color=crimson]
-node [shape = box, style = filled, color= orange]
-cpi cpiperiod pline_int pline_nat poor_int poor_nat ppp welfare welfaredef welfarenat welfarenom welfareother welfareothertype welfaretype welfshprosperity
-node [shape = box, style = filled, color= grey]
+graph [layout = dot, color=crimson, fontsize=15]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 Welfare  
-node [shape = box, style = filled, color= lightgrey]
+node [shape = box, style = filled, color= grey, fontname=Serif, fontize=15]
 CPI Poor PLines Aggregates Type
+node [shape = box, style = filled, color= WhiteSmoke, fontname=Serif, fontize=15]
+cpi cpiperiod pline_int pline_nat poor_int poor_nat ppp welfare welfaredef welfarenat welfarenom welfareother welfareothertype welfaretype welfshprosperity
+
 # add edge statements
-Welfare -> CPI -> cpi -> cpiperiod -> ppp
-Welfare -> Poor -> poor_int -> poor_nat 
-Welfare -> PLines -> pline_int -> pline_nat
-Welfare -> Aggregates -> welfare -> welfaredef -> welfarenat 
-Aggregates -> welfarenom -> welfareother -> welfshprosperity
-Welfare -> Type -> welfaretype  -> welfareothertype 
+Welfare -> CPI
+Welfare -> Poor
+Welfare -> PLines 
+Welfare -> Aggregates 
+Welfare -> Type
+
+edge [arrowhead=none]
+
+CPI -> cpi -> cpiperiod -> ppp
+Poor -> poor_int -> poor_nat 
+PLines -> pline_int -> pline_nat
+Aggregates -> welfare -> welfaredef -> welfarenat -> welfarenom -> welfareother -> welfshprosperity
+Type -> welfaretype  -> welfareothertype 
 
 }      
-")
+", height=700)
 ```
 
 ### cpi
