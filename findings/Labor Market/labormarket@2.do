@@ -71,7 +71,7 @@ tempfile pp1
 
 	}
 	else local surveyid ""
-	cap {
+	*cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
 			set trace off
@@ -92,6 +92,7 @@ tempfile pp1
 			if _rc==0 {
 			drop if welfare==.
 			quantiles welfare [aw=wgt], gen(q) n(5)
+			quantiles welfare [aw=wgt], gen(p) n(10)
 			gen poor=(q<=1)
 			gen top=(q==5)
 
@@ -103,11 +104,54 @@ tempfile pp1
 			save `pp', replace	
 			restore
 			
+			preserve
 			collapse (mean)  ind_* [aw=wgt] if q==5, by(countrycode year  )
 			gen label="q5"
-			append using `pp1'
-			save `pp1', replace	
+			append using `pp'
+			save `pp', replace	
+			restore
 			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p==1, by(countrycode year  )
+			gen label="p1"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p==10, by(countrycode year  )
+			gen label="p10"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p<=4, by(countrycode year  )
+			gen label="p40"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p>=5&p<=10, by(countrycode year  )
+			gen label="p60"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p<=3, by(countrycode year  )
+			gen label="p30"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p>=4&p<=10, by(countrycode year  )
+			gen label="p70"
+			append using `pp'
+			save `pp', replace	
+			restore
 			/*
 			collapse (mean)  ind_* [aw=wgt], by(countrycode year q)
 			
@@ -130,9 +174,7 @@ tempfile pp1
 
 u `pp', clear
 
-append using `pp1'
 
-append using `pp1'
 			ren ind* re_ind*
 			reshape long re_, i(countrycode year label ) j(indicator, string)
 			ren re_ value
