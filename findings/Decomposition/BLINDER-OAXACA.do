@@ -28,14 +28,12 @@ ren (code year) (country years)
 *drop if country=="IND"&survname!="NSS-SCH1"
 
 contract country years survname 
-/*drop if country=="IND" |country=="MDV"
+drop if country=="AFG"
 
+/*drop if country=="IND" |country=="MDV"
 drop if country=="LKA"&year==2002
 *keep if country=="MDV" &year>2002*/
 
-drop if country=="MDV"& year==2002
-drop if country=="LKA"
-*keep if country=="BGD"
 ds
 gen id=country+"_"+strofreal(years)
 
@@ -51,14 +49,8 @@ if ("`countries'" == "") {
 
 *---------- Loop over countries
 drop _all
-tempfile pp 
-tempfile pp1
-
-	
-	save `pp', emptyok 
-	save `pp1', emptyok 
-
-
+tempfile 00
+	save `00', emptyok 
 
  foreach id of local ids {
 		tokenize `id', parse("_")
@@ -71,7 +63,7 @@ tempfile pp1
 
 	}
 	else local surveyid ""
-	*cap {
+	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
 			set trace off
@@ -81,85 +73,29 @@ tempfile pp1
 			cap rename welfare_v2 welfare
 			cap rename cpi_v2 cpi
 			cap rename ppp_v2 ppp
-			
+			cap ren (educat4_v2 lstatus_v2) (educat4 lstatus)
 			* Generate household density by per capita expenditures
-			gen welfare_ppp=welfare/ppp/cpi/365*12
+
 			cap ren industry_orig_v2 industry
 			recode industry (2 3 4 5=2) (6 7 8 9=3) (10=4) (11 12 13 14=.)
-			drop if industry==.
-			ta  industry, g(ind_)
+			*drop if industry==.
+*			ta  industry, g(ind_)
 			cap confirm var welfare 
 			if _rc==0 {
 			drop if welfare==.
-			quantiles welfare [aw=wgt], gen(q) n(5)
-			quantiles welfare [aw=wgt], gen(p) n(10)
-			gen poor=(q<=1)
-			gen top=(q==5)
+			cap gen welfare_ppp=welfare/ppp/cpi/365*12
+			gen ln_welfare=log(welfare_ppp)
+			scalar pline_190=ln(1.90)
+			scalar pline_320=ln(3.20)
+			scalar pline_550=ln(5.50)
+			scalar list
+			gen poor=welfare_ppp<1.9 if welfare!=.			
+			keep if relationharm==1
+			keep countrycode year educat4 lstatus industry welfare_ppp wgt
 
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if q==1, by(countrycode year  )
-			gen label="q1"
-			append using `pp'
-			save `pp', replace	
+			append using `00'
+			save `00', replace	
 			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if q==5, by(countrycode year  )
-			gen label="q5"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p==1, by(countrycode year  )
-			gen label="p1"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p==10, by(countrycode year  )
-			gen label="p10"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p<=4, by(countrycode year  )
-			gen label="p40"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p>=5&p<=10, by(countrycode year  )
-			gen label="p60"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p<=3, by(countrycode year  )
-			gen label="p30"
-			append using `pp'
-			save `pp', replace	
-			restore
-			
-			preserve
-			collapse (mean)  ind_* [aw=wgt] if p>=4&p<=10, by(countrycode year  )
-			gen label="p70"
-			append using `pp'
-			save `pp', replace	
-			restore
-			/*
-			collapse (mean)  ind_* [aw=wgt], by(countrycode year q)
-			
-			append using `qi'
-			save `qi', replace
-			*/
-			*/
-		
 		}
 		
 		if (_rc) {
@@ -172,14 +108,57 @@ tempfile pp1
 	}
 }
 
-u `pp', clear
+u `00', clear
 
+drop if countrycode=="BGD" &year<2010
+drop if countrycode=="IND"
+drop if countrycode=="LKA" & (year==2012|year<2009)
+drop if countrycode=="MDV"
+drop if countrycode=="PAK" & (year==2011|year==2013|year<2010)
 
+save "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\data.dta", replace
+u "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\data.dta", clear
+
+keep if countrycode=="BGD"
+
+replace educat4=educat4_v2 if educat4==.
+replace lstatus=lstatus_v2 if lstatus==.
+
+gen education_none = (educat4==1)
+gen education_prim = (educat4==2)
+gen education_seco = (educat4==3)
+gen education_tert = (educat4==4)
+gen education_miss = (educat4==.)
+cap drop educat4 lstatus_v2 educat4_v2
+
+*gen lfs_inac = (lfs_head==0)
+gen lfs_empl = (lstatus==1)
+gen lfs_unem = (lstatus==2)
+gen lfs_OLF = (lstatus==3)
+gen lfs_miss = (lstatus==.)
+	
+gen industry_agri = (industry==1)
+gen industry_indu = (industry==2)
+gen industry_service= (industry==3)
+gen industry_other = (industry==4)
+gen industry_miss = (industry==.)
+drop industry
+replace poor_190=poor_190*100
+levelsof countrycode, loc(code)
+foreach c of loc code {
+oaxaca poor_190 educ* lfs* industry* [iw=wgt] if countrycode=="`c'", by(year) swap relax  ///
+categorical(educ*, lfs*, industry*) logit
+outreg2 using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\results@2.xls", replace ctitle("`c'")
+}
+
+s
+
+append using `pp1'
 			ren ind* re_ind*
 			reshape long re_, i(countrycode year label ) j(indicator, string)
 			ren re_ value
 
 
 
-export excel using "${path}/labor.xlsx", sheet("master") sheetreplace first(variable)
+export excel using "${path}/decomposition.xlsx", sheet("master") sheetreplace first(variable)
 
