@@ -1,6 +1,4 @@
-# Access to Goods
-
-## Development of Access to Cell Phone {-}
+# Development of Access to Cell Phone
 ***
 
 ```{r cellphone, fig.cap='Access to Cell Phone and Electricity', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}

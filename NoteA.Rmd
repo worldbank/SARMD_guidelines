@@ -1,15 +1,26 @@
-# Decomposition of Poverty Change
-
+# Decomposing changes in poverty into endowments and returns in Bangladesh
 ***
-## Decomposing changes in poverty into endowments and returns
-
-
-```{r decomp, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-latest <- read_csv("./tables/decomp.csv",col_names = TRUE, col_types = cols())
-knitr::kable(latest,booktabs = TRUE, caption = 'Decomposing changes in poverty into endowments and returns in Bangladesh')
-```
 
 Oaxaca decomposes gap in mean of poverty rate between two years. The "endowments effect" is the expected change of previous year's mean outcome, if previous year's variables had next year's predictor levels. The "coefficients effect" quantifies the expected change in previous year's mean outcome, if previous year's variables had next year's coefficients. Using this approach, the change in poverty is decomposed into that part that is due to return in endowment (education, employment or employment in high return sector)  on the one hand, and endowment accumulation  (by increases in the education level of household heads), on the other. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
+
+Table x: Decomposing changes in poverty into endowments and returns in Bangladesh
+
+| Category                             | Effects from endowments | Effects from returns to endowments |
+|--------------------------------------|:------------------------:|:-----------------------------------:|
+| Total effect                         | -2.5                    | -1.3                               |
+| Education of household head          |                         |                                    |
+| None                                 | -10.3                   | -1.48                              |
+| Primary                              | 0.8                     | -0.5                               |
+| Secondary                            | -1.5                    | -0.4                               |
+| Tertiary                             | 0.4                     | 0.6                                |
+| Labor force status of household head |                         |                                    |
+| Employed                             | 0.02                    | 0.3                                |
+| Unemployed                           | 0.0048                  | 0.04                               |
+| OLF                                  | 0.0048                  | -0.03                              |
+| Sector of household head             |                         |                                    |
+| Agriculture                          | -0.23                   | 1.5                                |
+| Industry                             | 0.02                    | -0.4                               |
+| Services                             | -0.0022                 | -0.1                               |
 
 The figure breaks down the decline in the poverty rate of 4.4 percentage points from 2010 to 2016 by whether it is driven by endowments (the education level, labor force status or sector of work of the household head) or by the return to these endowments using the Blinder-Oaxaca decomposition method. A negative number of, say, -2.5 means that this factor implied a 2.5 percentage point decline in poverty. The sum of the effects does not add up to 4.4 percentage points since residual effects and some categories related to households with missing observations are left out of the table.
 
