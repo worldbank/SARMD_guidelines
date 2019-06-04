@@ -1,6 +1,4 @@
-# Marital Status
-
-## Child Marriage in SAR {-}
+# Child Marriage in SAR
 ***
 
 Child Marriage refers to formal marriages and informal unions of a girl or boy before the age of 18. Child marriage affects both girls and boys, but it mostly occurs among girls especially in South Asia. Many girls aged between 15 and 19 in the region have been forced to get married as child brides due to poverty and cultural norms, leading many of them to encounter heath hazard, lowe education and even domestic violence. 
@@ -33,8 +31,10 @@ gen earlym_all=((age<=18&age<=20&male==0&relationharm<3&childage>1)|	///
 
 It is already well known that more educated girls are less likely to be in the danger of child or early marriage. However, decisions to send children as child brides are made by adults in households. This highlights that education and gender perspectives among household members are crucial in eliminating child marriage. 
 
-```{r earlymarriage2, fig.cap='Early Marriage and Education Level of HH Members', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-knitr::include_graphics("./findings/demographic/earlymarriage.png")
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteC&#47;1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r NoteCdash1,  echo=FALSE, fig.cap = "Early Marriage and Education Level of Household Members", out.height='10%', fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
 The figure above shows that highest education level among female household members is more associated with the incidence of child marriage than that among male members. For example, in India, female members in 80 percent of housholds with child marriage did not receive any education while 42.4 percent of child those households have male members who finished secondary school. In other words, if a household has a female member who completed secondary school, the incidence of child marriage drastically falls down compared to the housholds with uneducated women but this pattern is the opposite for male members in most countries in South Asia. 
