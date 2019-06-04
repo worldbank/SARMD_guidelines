@@ -1,0 +1,15 @@
+,Effects from endowments,Effects from returns to endowments
+Total effect,-2.5,-1.3
+Education of household head,,
+   None,-10.3,-1.48
+   Primary,0.8,-0.5
+   Secondary,-1.5,-0.4
+   Tertiary,0.4,0.6
+Labor force status of household head,,
+  Employed,0.02,0.3
+   Unemployed,0.0048,0.04
+   OLS,0.0048,-0.03
+Sector of household head,,
+   Agriculture,-0.23,1.5
+   Industry,0.02,-0.4
+   Services,-0.0022,-0.1

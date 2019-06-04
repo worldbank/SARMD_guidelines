@@ -1,16 +1,16 @@
-# Household Composition and Poverty
+# Decomposition of Poverty Change
 
 ***
-## Relationwhip between Household Characteristics and Poverty
+## Decomposing changes in poverty into endowments and returns
 
 
-```{r hhtype, fig.cap='Household Type and Probability', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
-knitr::include_graphics("./figures/poor_hhtype.png")
+```{r decomp, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
+latest <- read_csv("./tables/decomp.csv",col_names = TRUE, col_types = cols())
+knitr::kable(latest,booktabs = TRUE, caption = 'Decomposing changes in poverty into endowments and returns in Bangladesh')
 ```
 
-Among differnt household types, couple with children and single parent households are more susceptible to poverty. According to multinomial logit analysis, controlling for demographic conditions including age, education level, and household size, probability of being in lowerst quintile level is higher among parents and single parent household in most of the countries in the region. Households classified as couple with children also include grand parents and grand children and the share of female singe parents is bigger than male single parents. The finding shows that households with old or female caregivers may need more social protection to support their children as well as their own welfare. 
+Oaxaca decomposes gap in mean of poverty rate between two years. The "endowments effect" is the expected change of previous year's mean outcome, if previous year's variables had next year's predictor levels. The "coefficients effect" quantifies the expected change in previous year's mean outcome, if previous year's variables had next year's coefficients. Using this approach, the change in poverty is decomposed into that part that is due to return in endowment (education, employment or employment in high return sector)  on the one hand, and endowment accumulation  (by increases in the education level of household heads), on the other. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
 
-What does it imply?
-- Household with less earners and socially marginalized members are more likely to remain poor
-- The family structure makes it difficult for housholds to depart from poverty 
-- How social protection can effectively target vulnerable groups among the poor
+The figure breaks down the decline in the poverty rate of 4.4 percentage points from 2010 to 2016 by whether it is driven by endowments (the education level, labor force status or sector of work of the household head) or by the return to these endowments using the Blinder-Oaxaca decomposition method. A negative number of, say, -2.5 means that this factor implied a 2.5 percentage point decline in poverty. The sum of the effects does not add up to 4.4 percentage points since residual effects and some categories related to households with missing observations are left out of the table.
+
+For the period under consideration, poverty was driven both by changes in returns to endowments. Return to endowment induced around 4 percentage point decline in the poverty rate between 2010 and 2016. Looking at effects from the accumulation of endowment reducing poverty,  the decreasing share of household heads that had no education, and heads engaged in agriculture sector triggered a decrease in the poverty rate. Although the share of unemployed household head declined and the share of households with more years of schooling increased over time, households whose heads are unemployed and have lower educational attainment have a higher chance to stay poor.  This finding highlight the important role of human capital to escape poverty in Bangladesh.
