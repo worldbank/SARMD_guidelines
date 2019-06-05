@@ -35,11 +35,11 @@ These guidelines are intended to teach you everything you need to work efficient
 
 ## Team {-}
 
-This book has been created by the SAR Team for Statistical Development under the direction of Benu Bidani. The team id composed by R.Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. The is greatful for the comments and suggestions received from... 
+This book has been created by the SAR Team for Statistical Development under the direction of Benu Bidani. The team is composed by R.Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. We are greatful for the comments and suggestions made by ... 
 
-## Replicability
+## Replicability {-}
 
-This book is fully replicable. All the text files, codes, underlying data, and tableau dashboards can be found in the [GitHub repository](https://github.com/worldbank/SARMD_guidelines). However, The code contained in this book is simultaneously available under the [MIT license](https://opensource.org/licenses/MIT); this means that you are free to use it in your own projects, as long as you cite the source.
+This book is fully replicable. All the text files, codes, underlying data, and tableau dashboards can be found in its [GitHub repository](https://github.com/worldbank/SARMD_guidelines). You are granted to download an use any of the files in the repository, but keep in mind that all the files---in particular de code---contained in this book is simultaneously available under the [MIT license](https://opensource.org/licenses/MIT); this means that you are free to use it in your own projects, as long as you cite the source.
 
 ## About the technical composition of this book {-}
 
