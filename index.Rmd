@@ -1,6 +1,6 @@
 ---
 title: "South Asia Regional Micro Database (SARMD) User Guidelines" 
-author: ["South Asia Region Team for Statistical Development (SARTSD)", "Raúl Andrés Castañeda Aguilar", "Jayne Jungsun Yoo", "Francisco Javier Parada Gómez Urquiza"]
+author: ["South Asia Region Team for Statistical Development (SARTSD)"]
 date: "`r Sys.Date()`" 
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site 
@@ -21,6 +21,8 @@ documentclass: book
 
 # Welcome {-} 
 
+<font color="red" size="6" >This is a preliminary draft. Please do not cite or distribute without permission of the SARTSD</font>
+
 <div style= "float:right;position: relative;">
 ```{r echo=FALSE}
 knitr::include_graphics("figures/SAR-Emblem.png")
@@ -30,6 +32,14 @@ knitr::include_graphics("figures/SAR-Emblem.png")
 This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.
 
 These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the `datalibweb` system and how to perform basic (and not so basic) socioeconomic calculations. We will study how comparable household surveys are across the region and evaluate the quality of the harmonization process. We also provide several examples on how to conduct analysis at the regional or country level in our analytical notes. 
+
+## Team {-}
+
+This book has been created by the SAR Team for Statistical Development under the direction of Benu Bidani. The team id composed by R.Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. The is greatful for the comments and suggestions received from... 
+
+## Replicability
+
+This book is fully replicable. All the text files, codes, underlying data, and tableau dashboards can be found in the [GitHub repository](https://github.com/worldbank/SARMD_guidelines). However, The code contained in this book is simultaneously available under the [MIT license](https://opensource.org/licenses/MIT); this means that you are free to use it in your own projects, as long as you cite the source.
 
 ## About the technical composition of this book {-}
 
@@ -42,13 +52,8 @@ There are several advantages to composing books (especially technical books) usi
 3. You can execute `R` or `Stata` code directly from the text, include code chunks, and present its corresponding results inline wherever you want within the document. 
 4. You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and import [GitBook](https://www.gitbook.com) styles to create elegant and beautiful books.
 
+
 ## Software information and conventions {-}
-
-The R session information used when this book was compiled is the following:
-
-```{r session}
-sessionInfo()
-```
 
 All the pieces of code are written `like this` and sometimes you may find chunks of code like this:
 
@@ -61,4 +66,10 @@ Stata or R.
 ```
 
 Most of the code chunks in this book are written in `Stata` syntax, but you may find some pieces of code written in `R` language as well.  
+
+The R session information used when this book was compiled is the following:
+
+```{r session}
+sessionInfo()
+```
 
