@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 11 Welfare and access to durable assets in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 11 Welfare and access to durable assets in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 11 Welfare and access to durable assets in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="basics.html">
-<link rel="next" href="poverty-measures.html">
+<link rel="prev" href="analysis.html">
+<link rel="next" href="school-enrollment-in-south-asia.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -347,106 +347,211 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="datalibweb-getting-access-to-sarmd" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Datalibweb: Getting Access to SARMD</h1>
+<div id="notes-assest" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Welfare and access to durable assets in South Asia</h1>
 <hr />
-<p><img src="figures/datalibweb.png" width="40%" style="float:right; padding:10px" style="display: block; margin: auto;" /></p>
-<p>SARMD is exclusively available through the <a href="http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/datalibweb.aspx">datalibweb</a> system to guarantee replicability, security, and efficiency. Datalibweb is a data system specifically designed to enable users to access the most up-to-date versions of non-harmonized (original raw data) and harmonized datasets of different collections across Global Practices. SARMD is one collection among other collections available through datalibweb. This section provides reference to the documentation provided by the <a href="http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/Main.aspx">Global Team for Statistical Development</a> (GTSD) in the Poverty and Equity Global Practice.</p>
-<p>Using the datalibweb system has several advantages:</p>
-<ul>
-<li>Instant access to raw and harmonized surveys ready to use for country or regional level analysis</li>
-<li>Automatically generated time-deflated variables and poverty lines</li>
-<li>User friendly interactive interface in Stata</li>
-<li>A suitable Stata command for replicability, research, and programing purposes</li>
-<li>Ability to combine different country surveys and survey years</li>
-<li>Merging raw data and modules of harmonized collections on the fly (option in progress)</li>
-</ul>
-<div id="request-access-to-the-system" class="section level2">
-<h2><span class="header-section-number">2.1</span> Request access to the system</h2>
-<p>Unlike GMD, access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically. Most datasets in SARMD are not public and the user must be granted access for internal use. Each user must submit a request for the different collections and surveys specifying the purpose of the data request. Users must contact the regional/collection focal point and ask for permission to use the data. Without any subscription, users will only be able to check the availability of the data, and query relevant metadata of all surveys.</p>
-<p>To get access to SARMD, you may send an email to <a href="mailto:fparadagomezurqu@worldbank.org">Francisco Javier Parada Gomez Urquiza</a> and the <a href="mailto:datalibweb@worldbank.org">datalibweb team</a> specifying the following:</p>
-<ul>
-<li>Small description of the project in which you are planning to use the data</li>
-<li>Particular survey, country, year or collection that you are interested in accessing</li>
-<li>Who is the TTL in charge of the project</li>
-<li>Names and UPIs of the people who will be working directly with the data</li>
-</ul>
-</div>
-<div id="install-the-datalibweb-command-in-stata" class="section level2">
-<h2><span class="header-section-number">2.2</span> Install the <code>datalibweb</code> command in Stata</h2>
-<p>The datalibweb system can be accessed through the <code>datalibweb</code> Stata command. This command is already installed in all World Bank computers with an official Stata licence. In case it is not installed on your computer, you could do the following:</p>
-<div id="option-1.-direct-installation" class="section level3 unnumbered">
-<h3>Option 1. Direct Installation</h3>
-<ul>
-<li>Close all Stata sessions</li>
-<li>Enter the following lines in Stata</li>
-</ul>
-<pre><code>net from &quot;http://eca/povdata/datalibweb/_ado&quot;`
-net install datalibweb</code></pre>
-</div>
-<div id="option-2.-manual-installation" class="section level3 unnumbered">
-<h3>Option 2. Manual Installation</h3>
-<ul>
-<li>Get the file from this <a href="http://eca/povdata/datalibweb/_ado/datalibweb.zip">link</a></li>
-<li>Copy with replacement all the files into c:/ado without changing the folder structure.</li>
-</ul>
-</div>
-</div>
-<div id="filename-structure" class="section level2">
-<h2><span class="header-section-number">2.3</span> Filename structure</h2>
-<p>All the data filenames in the SARMD repository follow the convention established by the International Household Survey Network (IHSN) for <a href="http://www.ihsn.org/archiving">archiving and managing data</a>. This structure can be generalized as follows:</p>
-<pre><code>CCC_YYYY_SSSS_ vNN_M_vNN_A_TYPE_MODULE</code></pre>
-<p>where,</p>
-<ul>
-<li><code>CCC</code> refers to 3 letter ISO country code</li>
-<li><code>YYYY</code> refers to survey year when data collection started</li>
-<li><code>SSSS</code> refers to survey acronym (e.g., LSMS, CWIQ, HBS, etc.)</li>
-<li><code>vNN</code> is the version vintage of the raw/master data if followed by an <code>M</code> or of the alternative/adapted data if followed by an <code>A</code>. The first version will always be v01, and when a newer version is available it should be named sequentially (e.g. v02, v03, etc.). Note that when a new version is available, the previous ones must still be kept.</li>
-<li><code>TYPE</code> refers to the collection name. In the case of the South Asia region the user would refer to SARMD or, at the global level, to the GMD collection type.</li>
-<li><code>MODULE</code> refers to the module of the collection. In the case of SARMD, it could be <code>IND</code>, which refers to the questions at the individual level, or <code>FULL</code>, which refers to the whole survey.</li>
-</ul>
-<p>For example, if the user wanted to load the most recent version of the harmonized Pakistani Household Survey of 2015, she would refer to the file <code>PAK_2015_PSLM_v01_M_v02_A_SARMD_IND.dta</code>. In this case, PSLM refers to the acronym of the Pakistan Social and Living Standards Measurement Survey. v01_M means that the version of the raw data has not changed since it is still the first. v02_A means that the most recent version of the harmonization is 02.</p>
-</div>
-<div id="using-datalibweb" class="section level2">
-<h2><span class="header-section-number">2.4</span> Using <code>datalibweb</code></h2>
-<p>Using <code>datalibweb</code> is straightforward. You may read the help file, which is detailed and clear, but you may also dive right in to get your data. There are two possible ways to access a dataset:</p>
-<div id="clicking-on-the-stata-results-window" class="section level3 unnumbered">
-<h3>Clicking on the Stata results window</h3>
-<p>You may access the data by typing <code>datalibweb</code> in Stata and hitting Enter (see Figure <a href="datalibweb-getting-access-to-sarmd.html#fig:dlwexample">2.1</a>). Then, click <code>SAR</code> on Stata’s results window and then click on the ISO code of your country of preference. Click <code>PAK</code> in this case. Then, select either the modules of the collection or its vintages next to <code>SARMD</code>. Finally, click <code>01-02</code>, which refers to the version of the harmonization, to load the data.</p>
-<p><img src="figures/dlw.png" width="70%" style="display: block; margin: auto;" /></p>
-<div class="figure" style="text-align: left"><span id="fig:dlwexample"></span>
-<img src="figures/fake_figure.PNG" alt="Accessing datalibweb in Stata" width="70%" height="10%" />
+<blockquote>
+<p><strong>Abstract:</strong></p>
+<p>Economic inequality may cover a wide variety of topics, most commonly, the distribution of income, expenditures, and wealth. In this analysis, we study the unequal distribution of durable assets between different groups in South Asia. We find that the cumulative percentage of access to assets by expenditures per capita rarely behaves as a flat line, which means access to assets is unequal. We find access to most assets has increased rapidly in South Asia, although unevenly for different levels of welfare. A few exceptions are assets that may be becoming obsolete, such as radios and land phones, for which access has decreased over time across the region for all levels of welfare. For most assets, including energy-using assets such as refrigerators and televisions, we see a positive relationship between access and expenditures per capita as expected. In contrast, assets may become less accessible in some cases as households become richer (for example, bicycles), suggesting they may have the characteristics of inferior goods.</p>
+</blockquote>
+<p>Energy-using appliances, such as refrigerators, are taken for granted among households in developed countries. However, in South Asia these assets are still scarce and owning a refrigerator, for example, can have important consequences on the well-being of a family. Refrigerators may be common in urban areas of New Delhi, but they are almost non-existent in central Afghanistan. We study how access to assets increases with welfare with the help of harmonized data from SARMD. The possession of valuable assets that facilitate family labor in a meaningful way are quick indicators of household purchasing power and economic development in the region.</p>
+<p>In microeconomics, an Engel curve describes how household expenditure on a good or service varies with households’ purchasing power. For normal goods, the Engel curve has a positive gradient. That is, as purchasing power increases, the quantity of assets demanded increases. For inferior goods, the Engel curve has a negative gradient. Both Engel curves in Figure <a href="notes-assest.html#fig:engel">11.1</a> are upward sloping, but one bends toward the X-axis for necessities and the other towards the Y-axis for luxury goods.</p>
+<div class="figure" style="text-align: center"><span id="fig:engel"></span>
+<img src="SARMD-Guidelines_files/figure-html/engel-1.png" alt="Engel curves for normal goods" width="70%" />
 <p class="caption">
-Figure 2.1: Accessing datalibweb in Stata
+Figure 11.1: Engel curves for normal goods
 </p>
 </div>
+<p>The harmonized asset variables in SARMD indicate, not the quantity demanded, but whether households have access to assets. For example:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>bicycle</code></td>
+<td>Household has access to a bicycle (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>cellphone</code></td>
+<td>Household has access to a cellphone (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>computer</code></td>
+<td>Household has access to a computer (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>landphone</code></td>
+<td>Household has access to a landphone (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>motorcar</code></td>
+<td>Household has access to a motorcar (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>motorcycle</code></td>
+<td>Household has access to a motorcycle (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>radio</code></td>
+<td>Household has access to a radio (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>refrigerator</code></td>
+<td>Household has access to a refrigerator (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>sewingmachine</code></td>
+<td>Household has access to a sewing machine (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>television</code></td>
+<td>Household has access to a television (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>washingmachine</code></td>
+<td>Household has access to a washing machine (1 = Yes 0 = No)</td>
+</tr>
+</tbody>
+</table>
+<p>Therefore, we do not know the quantity of assets demanded by each household and we are not able to present an Engel curve as described above. However, we may calculate the percentage of households with access to assets as shown in Figure <a href="notes-assest.html#fig:note1assets">11.2</a>. Access to assets like motorcars and computers is low on average in all of the surveys in SARMD, while access to cellphones and televisions may be low or high depending on the survey and year. Note that there is not a single asset for which access was high across all surveys.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
+<object class="tableauViz" width="700" height="827" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Assets' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
 </div>
-<div id="providing-the-complete-datalibweb-syntax" class="section level3 unnumbered">
-<h3>Providing the complete datalibweb syntax</h3>
-<p>Alternatively, a more efficient method when coding is to type the following to load your data:</p>
-<p><code>datalibweb, country(PAK) year(2015) type(SARMD) vermast(01) veralt(02) survey(PSLM) clear</code></p>
-<p>Because there is only one survey for Pakistan in 2015 and you are interested in the most recent version, you could access that same dataset with a shorter version of the command:</p>
-<p><code>datalibweb, country(PAK) year(2015) type(SARMD) clear</code></p>
-<p>Only when you request a previous version of the dataset or when there is more than one survey available for a country in a given year, you would need to specify the name of the survey and the version. Otherwise, you may just use the shorter command.</p>
+<div class="figure" style="text-align: left"><span id="fig:note1assets"></span>
+<img src="figures/fake_figure.PNG" alt="Access to assets by survey" width="70%" height="10%" />
+<p class="caption">
+Figure 11.2: Access to assets by survey
+</p>
 </div>
+<p>As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ purchases of durable assets and energy use. An estimated 368 million people live without electricity in their homes in South Asia, and even among those who do have access, many do not own basic assets such as refrigerators, televisions, or washing machines. <span class="citation">Wolfram, Shelef, and Gertler (<a href="#ref-wolframm">2012</a>)</span> estimate the impact of increasing access to energy-using assets. According to their estimates, if one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent.</p>
+<p>Figure <a href="notes-assest.html#fig:note1lines">11.3</a> displays the wide gap that exists between countries in the percentage of households with access to these assets. For example, almost every household in the Maldives has access to a refrigerator, while access to a refrigerator is lower in the rest of the countries. The user may use the filters to display the same figure for different durable assets.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
+<object class="tableauViz" width="700" height="827" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;LineChart' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
 </div>
-<div id="citing-datalibweb" class="section level2">
-<h2><span class="header-section-number">2.5</span> Citing datalibweb:</h2>
-<p><code>datalibweb</code> is a Stata program developed and supported by the Global Poverty Team for Statistical Development of the World Bank, with the contribution of many different teams:</p>
-<ul>
-<li><p>Stata front-end application: Minh Cong Nguyen, Raúl Andrés Castañeda Aguilar, José Montes, and João Pedro Azevedo, with support from Paul Andrés Corral Rodas.</p></li>
-<li><p>Plugin, IT coordinator/support: Paul Ricci, Louis Wahsieh Elliott, and Antonio Ramos-Izquierdo.</p></li>
-<li><p>SharePoint web application: Intekhab Alam Sheikh, Monisha Menon, and Nishant Nitin Trivedi.</p></li>
-<li><p>Overall datalibweb project supervision: João Pedro Azevedo and Minh Cong Nguyen.</p></li>
-</ul>
-<p><code>datalibweb</code> was based on the initial effort of <code>datalib</code> created by Raúl Andrés Castañeda Aguilar and João Pedro Azevedo in LAC TSD; and Datalib2 created by César Cancho and João Pedro Azevedo in ECA TSD.</p>
-<p>Please cite the use of <code>datalibweb</code> and SARMD in one or several of the following ways depending on the nature of your work.</p>
-<ol style="list-style-type: decimal">
-<li>“Source: SARMD (SARTSD/World Bank)”</li>
-<li>“Source: SARMD Harmonization (SARTSD)”</li>
-<li>SARTSD 2019 DATALIBWEB: SARMD Ex-post Harmonization. Countries: [country names/years (separated by semi-colon)]. As of [date of access (dd/mm/yyyy)]</li>
-</ol>
+<div class="figure" style="text-align: left"><span id="fig:note1lines"></span>
+<img src="figures/fake_figure.PNG" alt="Assets to assets over time" width="70%" height="10%" />
+<p class="caption">
+Figure 11.3: Assets to assets over time
+</p>
+</div>
+<p>We model the non-linear relationship between welfare and access to assets as in <span class="citation">Gertler et al. (<a href="#ref-fuchs">2016</a>)</span>. These authors provide a theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A non-linear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase assets. Households faced with credit constraints only become likely to purchase assets once their income passes certain threshold levels.</p>
+<p>Figure <a href="notes-assest.html#fig:note1dashboard">11.4</a> presents the cumulative percentage of access to assets by expenditures per capita. A horizontal line would represent perfect equality in asset distribution, but that is rarely the case in the figures below. These figures show how unequal is the distribution of access to assets. In some cases, as in <span class="citation">Gertler et al. (<a href="#ref-fuchs">2016</a>)</span>, we find an S-shaped relationship between households’ per capita expenditures and access to durable assets.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 850px;">
+<object class="tableauViz" width="700" height="850" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_access_to_assets&#47;AssetsandWelfare' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
+</div>
+<div class="figure" style="text-align: left"><span id="fig:note1dashboard"></span>
+<img src="figures/fake_figure.PNG" alt="Cumulative access to assets by expenditures per capita" width="70%" height="10%" />
+<p class="caption">
+Figure 11.4: Cumulative access to assets by expenditures per capita
+</p>
+</div>
+<p>We provide some highlights from this analysis for each of the assets:</p>
+<table>
+<caption><span id="tab:note1conclusions">Table 11.1: </span>Access to assets and welfare</caption>
+<thead>
+<tr class="header">
+<th align="left">Asset</th>
+<th align="left">Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Bicycle</td>
+<td align="left">A negative slope may suggest bicycles are an inferior good, that is, it is more common for poor households to have access to them.</td>
+</tr>
+<tr class="even">
+<td align="left">Cellphone</td>
+<td align="left">We see a quick increase in access to cellphones over time at all levels of welfare.</td>
+</tr>
+<tr class="odd">
+<td align="left">Computer</td>
+<td align="left">Access to computers only increases at levels of welfare above the poverty lines.</td>
+</tr>
+<tr class="even">
+<td align="left">Electricity</td>
+<td align="left">Access to electricity is clearly lower for individuals below the 1.90 poverty line.</td>
+</tr>
+<tr class="odd">
+<td align="left">Ever attend school</td>
+<td align="left">This variable is technically not an asset, but we decided to include in this analysis. We can see positive slopes in every country, that is, poorer individuals are more likely to answer they have never attended any school.</td>
+</tr>
+<tr class="even">
+<td align="left">Fan</td>
+<td align="left">Having access to a fan is clearly related to welfare. Richer individuals may afford this luxury and may also be the only ones with access to electricity to be able to use a fan.</td>
+</tr>
+<tr class="odd">
+<td align="left">Land phone</td>
+<td align="left">Having access to a land phone is clearly becoming obsolete, especially compared to the levels of access to cellphones.</td>
+</tr>
+<tr class="even">
+<td align="left">Literacy</td>
+<td align="left">Literacy is increasing over time and still related to welfare. Illiteracy is clearly more common among the poorest individuals.</td>
+</tr>
+<tr class="odd">
+<td align="left">Motorcar</td>
+<td align="left">Having access to a motorcar seems to be more common for rich individuals in Afghanistan and Bhutan.</td>
+</tr>
+<tr class="even">
+<td align="left">Motorcycle</td>
+<td align="left">Having access to a motorcycle is more common than having access to a motorcar. Having access to motorcycles has become more frequent over time, especially among richer individuals.</td>
+</tr>
+<tr class="odd">
+<td align="left">Own house</td>
+<td align="left">Compared to other assets, most households own the house they live in. Renting is common only among richer households in urban areas.</td>
+</tr>
+<tr class="even">
+<td align="left">Piped water</td>
+<td align="left">Only Bhutan shows having almost universal access to piped water.</td>
+</tr>
+<tr class="odd">
+<td align="left">Radio</td>
+<td align="left">Another good that may be becoming obsolete are radios, with less households reporting having access to a radio over time at all levels of welfare.</td>
+</tr>
+<tr class="even">
+<td align="left">Refrigerator</td>
+<td align="left">Having access to a refrigerator seems to be strongly related to welfare, with average access to it growing fast around the 3.2 poverty line.</td>
+</tr>
+<tr class="odd">
+<td align="left">Sewage toilet</td>
+<td align="left">No country shows evidence of high access to sewage toilets.</td>
+</tr>
+<tr class="even">
+<td align="left">Sewing machine</td>
+<td align="left">Sewing machines seem to remain highly valuable in Afghanistan and Pakistan with more than 50% of individuals reporting having access to it.</td>
+</tr>
+<tr class="odd">
+<td align="left">Television</td>
+<td align="left">Televisions are a highly-desirable durable asset and are clearly more common among richer households. Having access to a television depends on having access to electricity. Both electricity and television follow similar trends.</td>
+</tr>
+<tr class="even">
+<td align="left">Washing machine</td>
+<td align="left">Having access to a washing machine is clearly a luxury and only common among the wealthiest.</td>
+</tr>
+</tbody>
+</table>
+<p>You may access our full Stata do-file by accessing the following <a href="https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/welfare_distribution_and_assets.do">link</a>.</p>
 
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-fuchs">
+<p>Gertler, Paul J., Orie Shelef, Catherine D. Wolfram, and Alan Fuchs. 2016. “The Demand for Energy-Using Assets Among the World’s Rising Middle Classes.” <em>The American Economic Review</em> 106 (6): 1366–1401. <a href="http://www.jstor.org/stable/43861125">http://www.jstor.org/stable/43861125</a>.</p>
+</div>
+<div id="ref-wolframm">
+<p>Wolfram, Catherine, Orie Shelef, and Paul Gertler. 2012. “How Will Energy Demand Develop in the Developing World?” <em>Journal of Economic Perspectives</em> 26 (1): 119–38. <a href="https://doi.org/10.1257/jep.26.1.119">https://doi.org/10.1257/jep.26.1.119</a>.</p>
 </div>
 </div>
             </section>
@@ -454,8 +559,8 @@ Figure 2.1: Accessing datalibweb in Stata
           </div>
         </div>
       </div>
-<a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="poverty-measures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="school-enrollment-in-south-asia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

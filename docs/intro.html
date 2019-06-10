@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 1 Introduction | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 1 Introduction | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Datalibweb: Getting Access to SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="basics.html">
-<link rel="next" href="poverty-measures.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="basics.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -347,115 +347,64 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="datalibweb-getting-access-to-sarmd" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Datalibweb: Getting Access to SARMD</h1>
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
 <hr />
-<p><img src="figures/datalibweb.png" width="40%" style="float:right; padding:10px" style="display: block; margin: auto;" /></p>
-<p>SARMD is exclusively available through the <a href="http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/datalibweb.aspx">datalibweb</a> system to guarantee replicability, security, and efficiency. Datalibweb is a data system specifically designed to enable users to access the most up-to-date versions of non-harmonized (original raw data) and harmonized datasets of different collections across Global Practices. SARMD is one collection among other collections available through datalibweb. This section provides reference to the documentation provided by the <a href="http://globalpractices.worldbank.org/teamsites/Poverty/GPDP/SitePages/Main.aspx">Global Team for Statistical Development</a> (GTSD) in the Poverty and Equity Global Practice.</p>
-<p>Using the datalibweb system has several advantages:</p>
+<p>The South Asia Regional Micro Database (SARMD) is a regional database of socioeconomic indicators established in 2014 and managed by the South Asia Region Team for Statistical Development (SARTSD). It follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the welfare aggregate used for global poverty monitoring. It consists of raw household survey data, documentation, questionnaires, and a repository of do files to reconstruct harmonized variables, consumption aggregates, and poverty estimates. SARMD currently includes the eight countries in the region (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka), contemplates forty-three surveys, and contains close to a hundred harmonized variables covering the 1993-2017 period.</p>
+<p>SARMD follows the Global Monitoring Database (GMD) harmonization guidelines, including the construction of the <code>welfare</code> aggregate that is used for global poverty monitoring. Given that GMD contains a limited number of variables, SARMD provides users with a larger set of harmonized variables that are comparable across the countries of the South Asia region, though may not be comparable with countries from other regions. As GMD expands, new variables could be incorporated until users may be referred only to GMD.</p>
+<p>Harmonization facilitates the use of household data at a regional level because all the databases in SARMD have a common set of approximately 100 variables with the same variable names (for example, <code>welfare</code>), variable labels and value labels. Technically speaking, this does not mean that each variable in each dataset refers to the same thing. For example, even though the variable <code>welfare</code> refers to the per capita welfare aggregate used to calculate official poverty rates and inequality indicators, it may include imputed rents in some countries (e.g., Bhutan and Bangladesh), but not in others (e.g., India and Afghanistan). This is so because questionnaires, sample frames, recollection periods, and several other factors make a strict harmonization and perfect comparability impossible across countries.</p>
+<p>The best solution to lack of perfect comparability across countries is known as <em>ex–post</em> harmonization, which is a harmonization effort that starts from non-harmonized raw data. Two main approaches can be followed on <em>ex–post</em> harmonization:</p>
 <ul>
-<li>Instant access to raw and harmonized surveys ready to use for country or regional level analysis</li>
-<li>Automatically generated time-deflated variables and poverty lines</li>
-<li>User friendly interactive interface in Stata</li>
-<li>A suitable Stata command for replicability, research, and programing purposes</li>
-<li>Ability to combine different country surveys and survey years</li>
-<li>Merging raw data and modules of harmonized collections on the fly (option in progress)</li>
+<li><p><strong>The minimum common denominator approach</strong> refers to harmonizing variables according to the minimum common set of characteristics that all datasets share with respect to one variable. For example, if the minimum number of industrial sectors common to all surveys in all countries were two (e.g., agriculture and non-agriculture), the harmonized variable <code>industcat</code>, which is a categorical variable for industrial sectors, would only have two values in all datasets. This approach guarantees that all the variables are fully comparable, but it suffers from loss of information. Imagine, for example, that a single survey in the SARMD collection only has these two categories for industrial sectors while all the other surveys have five or more. If that were the case, the <code>industcat</code> ex-post harmonized variable would not capture all the valuable information on industrial sectors across countries.</p></li>
+<li><p><strong>The benchmark approach</strong> refers to harmonizing each variable according to a previously established ideal definition. For instance, at the beginning of the project, it could be agreed that the ideal number of industrial sectors should be ten (1 agriculture, 2 mining, 3 manufacturing, etc.). It would not matter whether any of the surveys has ten categories for industrial sectors. If some of them have more, then it would be necessary to aggregate some of the categories into broader ones. If some of them had less categories than ten, it might not be possible to disaggregate some of these categories into smaller ones.</p></li>
 </ul>
-<div id="request-access-to-the-system" class="section level2">
-<h2><span class="header-section-number">2.1</span> Request access to the system</h2>
-<p>Unlike GMD, access to regional harmonized collections like SARMD or to the original raw datasets is not given to users automatically. Most datasets in SARMD are not public and the user must be granted access for internal use. Each user must submit a request for the different collections and surveys specifying the purpose of the data request. Users must contact the regional/collection focal point and ask for permission to use the data. Without any subscription, users will only be able to check the availability of the data, and query relevant metadata of all surveys.</p>
-<p>To get access to SARMD, you may send an email to <a href="mailto:fparadagomezurqu@worldbank.org">Francisco Javier Parada Gomez Urquiza</a> and the <a href="mailto:datalibweb@worldbank.org">datalibweb team</a> specifying the following:</p>
-<ul>
-<li>Small description of the project in which you are planning to use the data</li>
-<li>Particular survey, country, year or collection that you are interested in accessing</li>
-<li>Who is the TTL in charge of the project</li>
-<li>Names and UPIs of the people who will be working directly with the data</li>
-</ul>
+<p>As you may imagine, no approach to ex–post harmonization is perfect. However, SARMD follows the <em>benchmark approach</em>. The main reason for choosing this approach is that household surveys get better over time, and the minimum common denominator approach applied to both old and new surveys would inevitably drag down the content of SARMD to the old surveys’ methodological structure. In contrast, the benchmark approach takes advantage of the structure of new surveys. Once the benchmark stops reflecting the features of newer surveys, there is always room for updating and refining the benchmark and readapting old surveys to it.</p>
+<p>Despite the disadvantages of ex–post harmonization, harmonized variables in SARMD may be used for research purposes in many ways. Let’s take for instance dichotomous variables (i.e., variables that take on onw of only two possible values, say Yes=1, No=0) of access to assets. The dashboard bellow (Fig. <a href="intro.html#fig:bicyclef">1.1</a>) shows the share of household at a subnational level (stata or providence) with access to each of the assets in SARMD. For example, household access to at least one <code>bicycle</code> is averaged at a subnational (state or province) level and plotted in a map in Figure <a href="intro.html#fig:bicyclef">1.1</a> for the most recent survey available in each country. Even though survey characteristics vary, and data comes from different years, having access to a <code>bicycle</code> seems to be significantly more common for households in Eastern India than in other areas of South Asia. As explined in a <a href="notes-assest.html#notes-assest">Chapter bellow</a>, the poorer the household is the more likely it is to have a bycycle.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 850px;">
+<object class="tableauViz" width="700" height="850" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Subnational&#47;Subnational' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
 </div>
-<div id="install-the-datalibweb-command-in-stata" class="section level2">
-<h2><span class="header-section-number">2.2</span> Install the <code>datalibweb</code> command in Stata</h2>
-<p>The datalibweb system can be accessed through the <code>datalibweb</code> Stata command. This command is already installed in all World Bank computers with an official Stata licence. In case it is not installed on your computer, you could do the following:</p>
-<div id="option-1.-direct-installation" class="section level3 unnumbered">
-<h3>Option 1. Direct Installation</h3>
-<ul>
-<li>Close all Stata sessions</li>
-<li>Enter the following lines in Stata</li>
-</ul>
-<pre><code>net from &quot;http://eca/povdata/datalibweb/_ado&quot;`
-net install datalibweb</code></pre>
-</div>
-<div id="option-2.-manual-installation" class="section level3 unnumbered">
-<h3>Option 2. Manual Installation</h3>
-<ul>
-<li>Get the file from this <a href="http://eca/povdata/datalibweb/_ado/datalibweb.zip">link</a></li>
-<li>Copy with replacement all the files into c:/ado without changing the folder structure.</li>
-</ul>
-</div>
-</div>
-<div id="filename-structure" class="section level2">
-<h2><span class="header-section-number">2.3</span> Filename structure</h2>
-<p>All the data filenames in the SARMD repository follow the convention established by the International Household Survey Network (IHSN) for <a href="http://www.ihsn.org/archiving">archiving and managing data</a>. This structure can be generalized as follows:</p>
-<pre><code>CCC_YYYY_SSSS_ vNN_M_vNN_A_TYPE_MODULE</code></pre>
-<p>where,</p>
-<ul>
-<li><code>CCC</code> refers to 3 letter ISO country code</li>
-<li><code>YYYY</code> refers to survey year when data collection started</li>
-<li><code>SSSS</code> refers to survey acronym (e.g., LSMS, CWIQ, HBS, etc.)</li>
-<li><code>vNN</code> is the version vintage of the raw/master data if followed by an <code>M</code> or of the alternative/adapted data if followed by an <code>A</code>. The first version will always be v01, and when a newer version is available it should be named sequentially (e.g. v02, v03, etc.). Note that when a new version is available, the previous ones must still be kept.</li>
-<li><code>TYPE</code> refers to the collection name. In the case of the South Asia region the user would refer to SARMD or, at the global level, to the GMD collection type.</li>
-<li><code>MODULE</code> refers to the module of the collection. In the case of SARMD, it could be <code>IND</code>, which refers to the questions at the individual level, or <code>FULL</code>, which refers to the whole survey.</li>
-</ul>
-<p>For example, if the user wanted to load the most recent version of the harmonized Pakistani Household Survey of 2015, she would refer to the file <code>PAK_2015_PSLM_v01_M_v02_A_SARMD_IND.dta</code>. In this case, PSLM refers to the acronym of the Pakistan Social and Living Standards Measurement Survey. v01_M means that the version of the raw data has not changed since it is still the first. v02_A means that the most recent version of the harmonization is 02.</p>
-</div>
-<div id="using-datalibweb" class="section level2">
-<h2><span class="header-section-number">2.4</span> Using <code>datalibweb</code></h2>
-<p>Using <code>datalibweb</code> is straightforward. You may read the help file, which is detailed and clear, but you may also dive right in to get your data. There are two possible ways to access a dataset:</p>
-<div id="clicking-on-the-stata-results-window" class="section level3 unnumbered">
-<h3>Clicking on the Stata results window</h3>
-<p>You may access the data by typing <code>datalibweb</code> in Stata and hitting Enter (see Figure <a href="datalibweb-getting-access-to-sarmd.html#fig:dlwexample">2.1</a>). Then, click <code>SAR</code> on Stata’s results window and then click on the ISO code of your country of preference. Click <code>PAK</code> in this case. Then, select either the modules of the collection or its vintages next to <code>SARMD</code>. Finally, click <code>01-02</code>, which refers to the version of the harmonization, to load the data.</p>
-<p><img src="figures/dlw.png" width="70%" style="display: block; margin: auto;" /></p>
-<div class="figure" style="text-align: left"><span id="fig:dlwexample"></span>
-<img src="figures/fake_figure.PNG" alt="Accessing datalibweb in Stata" width="70%" height="10%" />
+<div class="figure" style="text-align: left"><span id="fig:bicyclef"></span>
+<img src="figures/fake_figure.PNG" alt="Subnational averages for harmonized variables" width="70%" height="10%" />
 <p class="caption">
-Figure 2.1: Accessing datalibweb in Stata
+Figure 1.1: Subnational averages for harmonized variables
 </p>
 </div>
-</div>
-<div id="providing-the-complete-datalibweb-syntax" class="section level3 unnumbered">
-<h3>Providing the complete datalibweb syntax</h3>
-<p>Alternatively, a more efficient method when coding is to type the following to load your data:</p>
-<p><code>datalibweb, country(PAK) year(2015) type(SARMD) vermast(01) veralt(02) survey(PSLM) clear</code></p>
-<p>Because there is only one survey for Pakistan in 2015 and you are interested in the most recent version, you could access that same dataset with a shorter version of the command:</p>
-<p><code>datalibweb, country(PAK) year(2015) type(SARMD) clear</code></p>
-<p>Only when you request a previous version of the dataset or when there is more than one survey available for a country in a given year, you would need to specify the name of the survey and the version. Otherwise, you may just use the shorter command.</p>
-</div>
-</div>
-<div id="citing-datalibweb" class="section level2">
-<h2><span class="header-section-number">2.5</span> Citing datalibweb:</h2>
-<p><code>datalibweb</code> is a Stata program developed and supported by the Global Poverty Team for Statistical Development of the World Bank, with the contribution of many different teams:</p>
+<div id="parts-of-the-book" class="section level2 unnumbered">
+<h2>Parts of the book</h2>
+<p>This book provides the user of SARMD a complete understanding of the harmonization of variables in three main areas:</p>
+<p><strong>Part 1</strong> Begins with an explanation on how to get access to the SARMD collection through the Stata command <code>datalibweb</code>. The next chapter presents an overview of the current poverty status in South Asia followed by an additional chapter about basic concepts for poverty measurement.</p>
+<p><strong>Part 2</strong> presents a metadata analysis of SARMD, which may be broadly described as an overview of the household survey questionnaires and other survey characteristics. This part studies the household surveys’ raw data, sampling methodology, coverage, data capturing methods, and ability to measure food, non-food, durables, and housing expenditures.</p>
+<p><strong>Part 3</strong> presents the harmonized variables in SARMD. The names of harmonized variables in this book are always emphasized as <code>country</code>, <code>year</code>, <code>wgt</code>, <code>hsize</code>, <code>age</code>, <code>male</code>, <code>bicycle</code> to help identify harmonized variables more easily. We inspect the quality of these harmonized variables and verify that each harmonized variable has been constructed properly. Two kinds of quality checks of the harmonized data have been conducted. A <em>static quality check</em> evaluates the coherence of each variable and its consistency with the rest of the variables in the dataset. At the individual level, for example, the variable <code>age</code>, which refers to the age of the individual, might be required to pass the following quality checks:</p>
 <ul>
-<li><p>Stata front-end application: Minh Cong Nguyen, Raúl Andrés Castañeda Aguilar, José Montes, and João Pedro Azevedo, with support from Paul Andrés Corral Rodas.</p></li>
-<li><p>Plugin, IT coordinator/support: Paul Ricci, Louis Wahsieh Elliott, and Antonio Ramos-Izquierdo.</p></li>
-<li><p>SharePoint web application: Intekhab Alam Sheikh, Monisha Menon, and Nishant Nitin Trivedi.</p></li>
-<li><p>Overall datalibweb project supervision: João Pedro Azevedo and Minh Cong Nguyen.</p></li>
+<li>It should not have negative values (internal coherence) <code>age&gt;=0</code></li>
+<li>All of its values should fall within a reasonable range (e.g., 0-120)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> <code>0&lt;=age&lt;=120</code></li>
+<li>The number of years of education of an individual <code>educy</code> should not be greater than <code>age</code> (internal consistency with other variables) <code>educy&lt;age</code></li>
 </ul>
-<p><code>datalibweb</code> was based on the initial effort of <code>datalib</code> created by Raúl Andrés Castañeda Aguilar and João Pedro Azevedo in LAC TSD; and Datalib2 created by César Cancho and João Pedro Azevedo in ECA TSD.</p>
-<p>Please cite the use of <code>datalibweb</code> and SARMD in one or several of the following ways depending on the nature of your work.</p>
-<ol style="list-style-type: decimal">
-<li>“Source: SARMD (SARTSD/World Bank)”</li>
-<li>“Source: SARMD Harmonization (SARTSD)”</li>
-<li>SARTSD 2019 DATALIBWEB: SARMD Ex-post Harmonization. Countries: [country names/years (separated by semi-colon)]. As of [date of access (dd/mm/yyyy)]</li>
-</ol>
+<p>At the household level, for example, a high number of households that report having access to a <code>television</code> while not having access to <code>electricity</code>, that is, <code>television==1 &amp; electricity==0</code>, may raise questions on whether these variables were harmonized incorrectly or whether the inconsistency comes from the raw data.</p>
+<p>On the other hand, a <em>dynamic quality check</em> evaluates the inconsistencies in measurement of harmonized data and provides a better overview on whether categorical variables have changed over time. We tab the absolute and relative frequencies for the categories in categorical variables such as <code>marital</code>, <code>urban</code>, and <code>educat7</code>. In this section, it is also possible to see how the poverty dummy indicator used to generate extreme poverty headcounts, <code>poor_int</code>, changes over time.</p>
+<p><strong>Part 4</strong> presents a set of socioeconomic findings at the regional level using SARMD. Each of these analytical notes is a brief example of the potential analyses that may be conducted using SARMD. These examples provide the Stata code that may be used to replicate the results. That way, users become more familiar with SARMD and may use these pieces of code as starting points for their own projects.</p>
 
 </div>
+</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Even though it is possible to find in surveys people older than 120 years, it is not only unlikely, but also problematic for anonymization.<a href="intro.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="poverty-measures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
