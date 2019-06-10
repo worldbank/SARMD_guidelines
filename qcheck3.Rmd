@@ -1,4 +1,4 @@
-# Tests
+# Tests {#qcheck-tests}
 ***
 
 Figure \@ref(fig:qchecktests) presents the results of a static quality check for variables within a given survey. This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 

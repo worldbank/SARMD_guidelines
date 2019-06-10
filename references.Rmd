@@ -1,5 +1,5 @@
 
-# References {-}
+# References {#references .unnumbered}
 ***
 
 `r if (knitr::is_html_output()) ' 

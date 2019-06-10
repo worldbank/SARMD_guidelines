@@ -1,4 +1,4 @@
-# Welfare level and employment by industry over time
+# Welfare level and employment by industry over time {#note-industry}
 ***
 
 Welfare improvement can be disaggregated by industry to identify which sector favors high income earners. Countries including Bangladesh, Bhutan, and Pakistan have consistent labor market indicators and welfare aggregate, allowing for analyzing the trend and important features in labor markets. Figure below shows that the service sector, followed by manufacturing and agriculture, pays higher income and thus lead to more consumption. The gap of average welfare between service and agriculture becomes larger over time in three countries. In Bhutan and Pakistan, the welfare aggregate in service industry doubles than that in agriculture, implying inequality in industry development. 

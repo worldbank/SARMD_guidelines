@@ -66,7 +66,7 @@ In contrast, Sri Lanka's education structure is divided into five parts: primary
 
 ```{r harmonizededuc, echo=FALSE, warning=FALSE, eval=FALSE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 library(readr)
-harmonized_educ <- read_csv("./tables/harmonized_educ.csv",col_names = TRUE, col_types = cols())
+harmonized_educ <- readr:: read_csv("./tables/harmonized_educ.csv",col_names = TRUE, col_types = readr::cols())
 knitr::kable(harmonized_educ,booktabs=TRUE, caption = 'Harmonized education levels')
 ```
 
@@ -182,7 +182,7 @@ esttab
 ```
 
 ```{r shcregtable, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-latest <- read_csv("./tables/regression table.csv",col_names = TRUE, col_types = cols())
+latest <- readr:: read_csv("./tables/regression table.csv",col_names = TRUE, col_types = readr::cols())
 knitr::kable(latest,booktabs=TRUE, caption = 'Latest household surveys available in SARMD')
 ```
 

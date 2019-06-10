@@ -1,4 +1,4 @@
-# Availability, missing values, and zeros
+# Availability, missing values, and zeros {#qcheck-avialabitliy}
 ***
 
 Figures \@ref(fig:qcheckl1), \@ref(fig:qcheckl2), and \@ref(fig:qcheckl3) provide three ways of visualizing the availability, percentage of missing values and frequency of zeros in the harmonized variables. 

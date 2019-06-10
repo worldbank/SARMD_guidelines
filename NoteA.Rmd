@@ -1,4 +1,4 @@
-# Decomposing changes in poverty into endowments and returns in Bangladesh
+# Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}
 ***
 
 Oaxaca decomposes gap in mean of poverty rate between two years. The "endowments effect" is the expected change of previous year's mean outcome, if previous year's variables had next year's predictor levels. The "coefficients effect" quantifies the expected change in previous year's mean outcome, if previous year's variables had next year's coefficients. Using this approach, the change in poverty is decomposed into that part that is due to return in endowment (education, employment or employment in high return sector)  on the one hand, and endowment accumulation  (by increases in the education level of household heads), on the other. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
