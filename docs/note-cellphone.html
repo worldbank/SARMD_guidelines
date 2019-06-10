@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 SARMD Inventory | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 15 Development of Access to Cell Phone | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 SARMD Inventory | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 15 Development of Access to Cell Phone | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 SARMD Inventory | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 15 Development of Access to Cell Phone | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="metadata.html">
-<link rel="next" href="expenditure.html">
+<link rel="prev" href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html">
+<link rel="next" href="note-childmarriage.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -347,202 +347,30 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="inventory" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> SARMD Inventory</h1>
+<div id="note-cellphone" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Development of Access to Cell Phone</h1>
 <hr />
-<p>This chapter provides an inventory of household surveys available in the South Asia Micro Database (SARMD) with the support of a series of accompanying Tableau dynamic dashboards. The datasets may be accessed in STATA as shown in the next example:</p>
-<pre class="stata"><code>* Example: Opening a dataset in SARMD using STATA
-  datalibweb, country(BGD) years(2016) type(SARMD) clear</code></pre>
-<p>Table <a href="inventory.html#tab:latest">5.1</a> shows the latest available household surveys in SARMD and provides links to the National Statistics Offices’ websites.</p>
-<table>
-<caption><span id="tab:latest">Table 5.1: </span>Latest household surveys available in SARMD</caption>
-<thead>
-<tr class="header">
-<th align="left">Country</th>
-<th align="left">Name of the survey</th>
-<th align="left">National Statistics Office</th>
-<th align="right">Sample size: Number of households</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Afghanistan, 2016</td>
-<td align="left">Living Conditions Survey</td>
-<td align="left"><a href="http://cso.gov.af/">Central Statistics Organization</a></td>
-<td align="right">NA</td>
-</tr>
-<tr class="even">
-<td align="left">Bangladesh, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://bbs.gov.bd/">Bangladesh Bureau of Statistics</a></td>
-<td align="right">46068</td>
-</tr>
-<tr class="odd">
-<td align="left">Bhutan, 2017</td>
-<td align="left">Living Standards Survey</td>
-<td align="left"><a href="http://nsb.gov.bt">National Statistics Bureau</a></td>
-<td align="right">11396</td>
-</tr>
-<tr class="even">
-<td align="left">India, 2017</td>
-<td align="left">National Sample Survey</td>
-<td align="left"><a href="http://mospi.gov.in/">Ministry of Statistics and Programme Implementation</a></td>
-<td align="right">NA</td>
-</tr>
-<tr class="odd">
-<td align="left">Maldives, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://statisticsmaldives.gov.mv/">National Bureau of Statistics</a></td>
-<td align="right">4910</td>
-</tr>
-<tr class="even">
-<td align="left">Nepal, 2016</td>
-<td align="left">Annual Household Survey</td>
-<td align="left"><a href="http://cbs.gov.np/">Central Bureau of Statistics</a></td>
-<td align="right">4500</td>
-</tr>
-<tr class="odd">
-<td align="left">Pakistan, 2015</td>
-<td align="left">Social and Living Standards Measurement Survey</td>
-<td align="left"><a href="http://www.pbs.gov.pk/">Pakistan Bureau of Statistics</a></td>
-<td align="right">24238</td>
-</tr>
-<tr class="even">
-<td align="left">Sri Lanka, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://www.statistics.gov.lk/">Department of Census and Statistics</a></td>
-<td align="right">21756</td>
-</tr>
-</tbody>
-</table>
-<p>Considering that the South Asia region has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. The following dashboard presents the surveys that make part of the South Asia Micro Database (SARMD). Six countries have released recent rounds of household surveys (Pakistan 2015, Afghanistan 2016, Bangladesh 2016, Maldives 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (India 2017). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey.</p>
-<p>Extreme data deprivation may be measured as having less than two data points in a ten-year period. The inventory section shows that in 2019 the region of South Asia is not considered extremely data deprived. Still, unless they collect surveys more frequently, three countries are vulnerable to extreme data deprivation by 2022: Bangladesh, Maldives and India.</p>
-<p>Figure <a href="inventory.html#fig:inventory2">5.1</a> presents the current status of the SARMD harmonization process and its previous rounds for each country:</p>
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
-<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
-<object class="tableauViz" width="700" height="827" style="display:none;">
-<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Availability' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
-</object>
-</div>
-<div class="figure" style="text-align: left"><span id="fig:inventory2"></span>
-<img src="figures/fake_figure.PNG" alt="Harmonization status of SARMD" width="70%" height="10%" />
+<div class="figure" style="text-align: center"><span id="fig:cellphone"></span>
+<img src="figures/all.png" alt="Access to Cell Phone and Electricity" width="80%" />
 <p class="caption">
-Figure 5.1: Harmonization status of SARMD
+Figure 15.1: Access to Cell Phone and Electricity
 </p>
 </div>
-<p>You may be wondering how does this compare to other regions of the world? Figures <a href="inventory.html#fig:inventory3">5.2</a> and <a href="inventory.html#fig:inventory4">5.3</a> provide the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC where some countries even provide yearly updates, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period). Note that we are omitting certain countries for which there are no surveys available. Therefore, we are overestimating these frequencies.</p>
-<p>The case of India is particularly important because the frequency of its poverty data is too low for a country with such an important role in global poverty monitoring. Its most recent survey conducted in 2016-17 has not been harmonized nor released yet.</p>
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
-<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
-<object class="tableauViz" width="700" height="827" style="display:none;">
-<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_GMD&#47;Map' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
-</object>
-</div>
-<div class="figure" style="text-align: left"><span id="fig:inventory3"></span>
-<img src="figures/fake_figure.PNG" alt="GMD inventory in the last 10 years (2008-2017)" width="70%" height="10%" />
-<p class="caption">
-Figure 5.2: GMD inventory in the last 10 years (2008-2017)
-</p>
-</div>
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
-<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
-<object class="tableauViz" width="700" height="827" style="display:none;">
-<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_GMD&#47;Count' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
-</object>
-</div>
-<div class="figure" style="text-align: left"><span id="fig:inventory4"></span>
-<img src="figures/fake_figure.PNG" alt="Number of surveys in GMD in the last 10 years (2008-2017)" width="70%" height="10%" />
-<p class="caption">
-Figure 5.3: Number of surveys in GMD in the last 10 years (2008-2017)
-</p>
-</div>
-<div id="sample-size" class="section level2">
-<h2><span class="header-section-number">5.1</span> Sample size</h2>
-<p>As shown in Figure <a href="inventory.html#fig:inventoryz">5.4</a>, India’s household survey is by far the largest in South Asia covering 100,000 households in the 2009 and 2011 rounds. Maldives’ survey is the smallest covering 4,910 households in the 2016 round. Most surveys have a stable sample size over time. A clear exception is Bangladesh 2016, which almost quadrupled its sample size compared to its predecessor in 2010. Household size is close to seven in Afghanistan and Pakistan, and much closer to 4-5 in the rest of the countries. Sri Lanka is the country with the smallest average household size. All surveys cover both urban and rural areas and the proportion of rural surveys can vary significantly. The latest Afghanistan and Sri Lanka surveys have collected a large proportion of surveys in rural households (above 80% of households).</p>
-<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
-<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
-<object class="tableauViz" width="700" height="827" style="display:none;">
-<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Cover' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
-</object>
-</div>
-<div class="figure" style="text-align: left"><span id="fig:inventoryz"></span>
-<img src="figures/fake_figure.PNG" alt="SARMD inventory" width="70%" height="10%" />
-<p class="caption">
-Figure 5.4: SARMD inventory
-</p>
-</div>
-</div>
-<div id="country-descriptions" class="section level2">
-<h2><span class="header-section-number">5.2</span> Country descriptions</h2>
-<p>The content of these household surveys varies widely and their comparison over time even within the same country is a major challenge. We provide a brief overview of survey collection for each country below:</p>
-<div id="afghanistan" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Afghanistan</h3>
-<p><img src="figures/Flag_of_Afghanistan.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The Afghanistan Living Conditions Survey (ALCS) 2016-2017 represents the entire population of Afghanistan and may be disaggregated by urban and rural population, and by the nomadic Kuchi population. Previously, the survey was named National Risk and Vulnerability Assessment (NRVA). This survey covers 35 strata, 34 for the provinces of Afghanistan and one for the nomadic Kuchi population. Stratification by season was achieved by equal distribution of data collection over 12 months within the provinces for the latest round between April 2016 and March 2017. In the first three months of fieldwork, areas that were inaccessible due to insecurity were replaced by sampled areas that were scheduled for a later month, in the hope that over time security conditions would improve. Eventually, some clusters in inaccessible areas were replaced by clusters that excluded insecure areas.</p>
-<p>The Central Statistics Organization (CSO) (<a href="http://cso.gov.af/" class="uri">http://cso.gov.af/</a>) has used the ALCS 2016 to report that poverty rates in Afghanistan have experienced a sharp increase since 2011-12, especially in rural areas. Households of larger size face a higher poverty rate. Although larger land size is no guarantee for escaping poverty, the smaller the size of land owned by households, the higher is the proportion that falls below the poverty line. Lack of education is another important correlate of poverty in Afghanistan. Low levels of educational attainment are pervasive and households with illiterate heads account for 74 percent of the population.</p>
-</div>
-<div id="bangladesh" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Bangladesh</h3>
-<p><img src="figures/Flag_of_Bangladesh.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The Household Income and Expenditure Survey (HIES) is the comprehensive nationally representative survey used to measure poverty in Bangladesh. The HIES 2016/17 is the fourth round in the series of HIES conducted by the Bangladesh Bureau of Statistics (BBS) (<a href="http://bbs.gov.bd/" class="uri">http://bbs.gov.bd/</a>) in 2000, 2005, and 2010. In Bangladesh, the eight divisions are the first-level administrative geographical partitions of the country. As of 2016, the country had eight divisions: Barisal, Chittagong, Dhaka, Khulna, Mymensingh, Rajshahi, Rangpur, and Sylhet. The divisions are subsequently divided into 64 districts or zilas. Each district is further subdivided into smaller geographic areas with clear rural and urban designations. In addition, the cities of Chittagong, Dhaka, Khulna and Rajshahi are classified into City Corporations (CCs) or metropolitan areas.</p>
-<p>For the HIES 2016/17, BBS decided to produce poverty statistics at the division level for urban and rural areas. As a result, BBS had to change the sampling design significantly and the sample size for the HIES 2016/17 increased almost fourfold compared to the previous 2010 round (see <span class="citation">Ahmed et al. (<a href="#ref-bangladesh_faiz">2017</a>)</span>). The HIES 2016/17 is stratified at the district level (64 districts times two for urban/rural areas) plus four main city corporations (Chittagong, Dhaka, Khulna, and Rajshahi). Then we have 132 sub-strata: 64 urban, 64 rural, and four city corporations.</p>
-<p>Based on the HIES 2016, the BBS reports that poverty was reduced substantially between 2010 and 2016. In 2010, the poverty headcount ratio, using a higher poverty line, was 31.5% which reduced to 24.3% in 2016. Using a lower poverty line, the headcount ratio also reduced from 17.6% in 2010 to 12.9% in 2016. Using the higher upper poverty line, Rangpur had the highest incidence of poverty at 47.2%, followed by Mymensingh 32.8%, Rajshahi 28.9% and Khulna 27.5%. On the other hand, Dhaka recorded the lowest headcount ratio of 16.0%, followed by Sylhet 16.2%, and Chittagong 18.4%.</p>
-</div>
-<div id="bhutan" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> Bhutan</h3>
-<p><img src="figures/Flag_of_Bhutan.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The Bhutan Living Standards Survey (BLSS) 2017 is the fourth in a series of living standards surveys undertaken by the National Statistics Bureau (NSB) (<a href="http://nsb.gov.bt" class="uri">http://nsb.gov.bt</a>). Earlier surveys were done in 2003, 2007, and 2012 to collect information on the demographics, education, health, employment, housing, access to services, asset ownership, credit, self-perceived poverty, and happiness of the population. The BLSS 2017 included 11,660 households with 48,639 individuals. The sample for BLSS 2017 was designed to provide estimates for many indicators on the living conditions of Bhutanese in both urban and rural areas of the twenty Dzongkhags, including the four Thromdes (Thimphu, Phuentsholing, Gelephu and Samdrup Jongkhar).</p>
-<p>The NSB reports a population poverty rate of 8.2% in 2017. The 2017 BLSS shows that the mean monthly household expenditure for the country is Nu33,542: Nu45,508 in urban areas, and Nu26,937 in rural areas. The mean monthly per capita household expenditure is Nu7,939. The monthly per capita household expenditure of Nu11,452 in urban areas is 85% higher than that in rural areas (Nu6,174). The mean per capita expenditure of households in the richest per capita consumption quintile of Nu17,802 is more than seven times that of households in the poorest per capita consumption quintile (Nu2,468).</p>
-<p>The NSB has also analyzed subjective happiness ratings by dzongkhags. Pema Gatshel is the happiest Dzongkhag (94%) followed by Samtse (more than 88%) and Trongsa Dzongkhags (more than 86%). The exception is Dagana Dzongkhag, where only four in every 10 respondents reported they are happy. Dagana also stands out as the Dzongkhag with the highest poverty rate.</p>
-</div>
-<div id="india" class="section level3">
-<h3><span class="header-section-number">5.2.4</span> India</h3>
-<p><img src="figures/Flag_of_India.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>Despite India’s remarkable progress in reducing poverty, poverty remains widespread especially in the highly-populated Eastern states of Bihar, Chhattisgarh, Jharkhand, Madhya Pradesh, Odisha, and Uttar Pradesh. The national poverty estimates for India are based on rounds of Household Consumption Expenditure Surveys conducted by the National Sample Survey Office (NSSO) (<a href="http://mospi.gov.in/" class="uri">http://mospi.gov.in/</a>). The 68th round (July 2011-June 2012) of NSS is designated to measure household consumer expenditure, employment, and unemployment. The 68th round is the most recent round for which consumption data is currently available in SARMD. The survey covers the whole of the Indian Union except interior villages of Nagaland situated beyond five kilometers of the bus route and villages in Andaman and Nicobar Islands which remain inaccessible throughout the year.</p>
-<p>In the 68th round two schedule types exist. The two schedule types differ by their reference periods (in the 68th round, Schedule Type 1 and Schedule Type 2 use the same reference periods as in the 66th round). Sample households were divided into two sets: Schedule Type 1 was canvassed in one set and Schedule Type 2 in the other. Schedule Type 1 requires that for certain non-food items (clothing, bedding, footwear, education, medical (institutional), durable goods), the same household should report data for two reference periods: the last 30 days and the last 365 days. For these same non-food items, the reference period used in Schedule Type 2 is only the last 365 days. As in the 66th round, items of food, pan, tobacco and intoxicants (food-plus category) are split into 2 blocks, block 5.1 and block 5.2, instead of being placed in a single block. Block 5.1 consists of cereals, pulses, milk and milk products, sugar and salt. This block has a reference period of 30 days in both Schedule Type 1 and Schedule Type 2. Block 5.2 consists of the other items of food, along with pan, tobacco and intoxicants. This block is assigned a reference period of last 30 days in Schedule Type 1 and a reference period of last 7 days in Schedule Type 2.</p>
-<p>The 75th round of the National Sample Survey conducted in July 2017-June 2018 is expected to be released in 2019. It covers Household Consumer Expenditure, Household Social Consumption, and Education. Its design is similar to Schedule 1.0 Type 2 in NSS 68th Round, i.e., with Modified Mixed Reference Period (MMRP). Even though the data has not been released yet, the questionnaires are available at <a href="http://mospi.nic.in/schedule-instructions" class="uri">http://mospi.nic.in/schedule-instructions</a>.</p>
-</div>
-<div id="maldives" class="section level3">
-<h3><span class="header-section-number">5.2.5</span> Maldives</h3>
-<p><img src="figures/Flag_of_Maldives.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The latest round of the Maldives Household Income and Expenditure Survey (HIES) took place in 2016 with other rounds conducted in 2003 and 2009-10. The sample (4,910 households and 26,453 individuals) was designed by the National Bureau of Statistics (NBS) (<a href="http://statisticsmaldives.gov.mv/" class="uri">http://statisticsmaldives.gov.mv/</a>) in such a way that the results are representative for each of the 20 individual atolls and the capital Male’. The HIES 2016 questionnaire was completely revised and includes important survey improvements, particularly in the measurement of poverty, which also hinders comparability with past survey years (<span class="citation">Wieser, Vecchi, and Mancini (<a href="#ref-maldives_2018">2018</a>)</span>). Improvements include the inclusion of rent and durable goods in the construction of the welfare aggregate, and change from diary to recall of food items. According to the national poverty line, the poverty is highest in Gdh. atoll and the lowest is in V. atoll. The Gini coefficient for Maldives is 0.313, and is slightly higher in Male’ than in the Atolls.</p>
-</div>
-<div id="nepal" class="section level3">
-<h3><span class="header-section-number">5.2.6</span> Nepal</h3>
-<p><img src="figures/Flag_of_Nepal.svg.png" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>National poverty estimates in Nepal are produced by the Central Bureau of Statistics (CBS) (<a href="http://cbs.gov.np/" class="uri">http://cbs.gov.np/</a>). The last national poverty update in Nepal was based on the 2010 Nepal Living Standard Survey (NLSS-III). Three rounds of the Nepal Living Standards Surveys (NLSS) have been carried out in 1995/96, 2003/04, and 2010/11. These surveys follow the World Bank’s Living Standards Measurement Survey methodology and cover a wide range of topics: demography, consumption, income, access to facilities, housing, education, health, employment, credit, remittances, etc. While the data from the next round of the NLSS is unlikely to be available until the end of 2019, the CBS has conducted five rounds of the Annual Household Survey (AHS) from 2012-13 to 2016-17. Before the release of the next national poverty rate estimates from NLSS-IV, the World Bank plans to prepare the poverty update report using the recent AHS.</p>
-<p>The new administrative division of Nepal consists of seven provinces, some of which have not been named yet. These seven provinces are currently referred as Province No. 1, Province No. 2, Province No. 3, Gandaki, Province No. 5, Karnali, and Sudurpashchim. This new administrative division of Nepal was implemented with the new constitution on September 20, 2015. Before 2015, instead of provinces, Nepal was divided into developmental regions and administrative zones.</p>
-</div>
-<div id="pakistan" class="section level3">
-<h3><span class="header-section-number">5.2.7</span> Pakistan</h3>
-<p><img src="figures/Flag_of_Pakistan.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The latest round of the Pakistan Social and Living Standards Measurement Survey (PSLM) 2015-2016 conducted by the Pakistan Bureau of Statistics (PBS) (<a href="http://www.pbs.gov.pk/" class="uri">http://www.pbs.gov.pk/</a>) covers 24,238 households. It provides information on household income, savings, liabilities, consumption expenditures, and consumption patterns at national and provincial levels. Before this survey, six rounds were conducted during 2004-05, 2005-06, 2007-08, 2010-11, 2011-12 and 2013-14. The PSLM covers all urban and rural areas of the four provinces of Pakistan (Punjab, Khyber Pakhtunkhwa, Sindh, and Balochistan) excluding Federally Administered Tribal Areas (FATA) and military restricted areas.</p>
-<p>The incidence of poverty is uneven across Pakistan’s provinces. Khyber Pakhtunkhwa is the province with the lowest poverty headcount in 2015, while Balochistan accounts for the highest poverty rate. As in the rest of the region, poverty is higher in rural areas than in urban areas.</p>
-</div>
-<div id="sri-lanka" class="section level3">
-<h3><span class="header-section-number">5.2.8</span> Sri Lanka</h3>
-<p><img src="figures/Flag_of_Sri_Lanka.svg" width="20%" style="float:left; padding:20px" style="display: block; margin: auto;" /></p>
-<p>The Household Income and Expenditure Survey (HIES) conducted by the Department of Census and Statistics (DCS) (<a href="http://www.statistics.gov.lk/" class="uri">http://www.statistics.gov.lk/</a>) is the main data source used to calculate poverty indices for Sri Lanka. The HIES 2016 is the ninth in the HIES series and was conducted in January-December 2016. SARMD also contains four of the previous rounds conducted in 2002, 2006, 2009, and 2012. THE HIES covers all 9 provinces (Central Province, Eastern Province, North Central Province, Northern Province, North Western Province, Sabaragamuwa, Southern Province, Uva, and Western Province) and 25 districts in the country. The survey provides information on household income and consumption expenditure to measure changes in living conditions. According to the DCS, the poverty headcount ratio declined from 6.7% in 2012/13 to 4.1% in 2016. Despite progress, pockets of deep poverty remain in the North and the East. Among the districts, Kilinochchi district reported the highest headcount index (18.2%) and Colombo had the lowest (0.9%).</p>
+<p>One of the most unexpected phenomenena in developing countries is that more people have access to mobile phones even than to electricity. South Asia region is no exception for this developmen as cell phone users have significantly grew in all countries. Even among those who don’t have access to electricity still have access to cell phones.</p>
+<p>With the exception of Afganistan, at least 80 percent of total population has access to cell phone in most recent years. In Nepal, the percentage of access to cell phone was less than 1 percent in 2003 but the ownership rate has jumped to 90 percent within 13 years. Even in other countries, 9 out of 10 housesholds own cell phones.</p>
+<p>Another interesting finding is that Some households with cell phones live out of electricity. In Bangladesh and Nepal, 68.4 and 89.9 percent of households have access to cell phone but about 12.8 and 15.3 percen of those cell phone holders do not have electricity in their dwelling. This implies higher entry barriers for accessing basic infrastructure in developing countries as financial resources and administrative capacity are limited in those countries.</p>
+<p>Sharp growth in the access to cell phone presents greater opportnunities for developing countries.Effective usage of technology may help compensate the shortage of infrastructure in those countries. Low participation in development aid projects shows limited accessibility of aid programs among vulnerable households who need assistance as well. Cell phones have been widely used in eduation, health and agriculture sectors by efficiently sharing knowledge with people without any costs.</p>
+<p>One prominent example of using this digital development is a mobile banking platform which already started to grow in India and Bangladesh with the aid of many development agencies. This mobile money transfer service allows users to pay for everyday goods and services, take out and repay loans, and send remittances to family in remote locations.</p>
+<p>Technology may not address development challenges alone in SAR, but facilitating the usage of cell phones in development projects may help reducing poverty more effectively.</p>
 
-</div>
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-bangladesh_faiz">
-<p>Ahmed, Faizuddin, Dipankar Roy, Monica Yanez-Pagans, and Nobuo Yoshida. 2017. “Design of a Multi-Stage Stratified Sample for Poverty and Welfare Monitoring with Multiple Objectives: A Bangladesh Case Study.” <a href="https://openknowledge.worldbank.org/handle/10986/26239">https://openknowledge.worldbank.org/handle/10986/26239</a>.</p>
-</div>
-<div id="ref-maldives_2018">
-<p>Wieser, Christina, Giovani Vecchi, and Giulia Mancini. 2018. <em>Poverty Measurement Methodology in the Maldives</em>. World Bank Technical Report.</p>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="metadata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="expenditure.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="note-childmarriage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="datalibweb-getting-access-to-sarmd.html">
-<link rel="next" href="poverty-measurement-methodology.html">
+<link rel="next" href="poverty-methodology.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,8 +47,74 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -95,7 +161,7 @@
 <li class="chapter" data-level="3.1" data-path="poverty-measures.html"><a href="poverty-measures.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i><b>3.1</b> Poverty and shared prosperity report</a></li>
 <li class="chapter" data-level="3.2" data-path="poverty-measures.html"><a href="poverty-measures.html#povcalnet"><i class="fa fa-check"></i><b>3.2</b> PovcalNet</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="poverty-measurement-methodology.html"><a href="poverty-measurement-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a></li>
+<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a></li>
 <li class="part"><span><b>II Metadata Analysis</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
@@ -111,11 +177,11 @@
 <li class="chapter" data-level="5.2.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.2.8</b> Sri Lanka</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="expenditure-components.html"><a href="expenditure-components.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
-<li class="chapter" data-level="6.1" data-path="expenditure-components.html"><a href="expenditure-components.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
-<li class="chapter" data-level="6.2" data-path="expenditure-components.html"><a href="expenditure-components.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
-<li class="chapter" data-level="6.3" data-path="expenditure-components.html"><a href="expenditure-components.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
-<li class="chapter" data-level="6.4" data-path="expenditure-components.html"><a href="expenditure-components.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
+<li class="chapter" data-level="6" data-path="expenditure.html"><a href="expenditure.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
+<li class="chapter" data-level="6.1" data-path="expenditure.html"><a href="expenditure.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
+<li class="chapter" data-level="6.2" data-path="expenditure.html"><a href="expenditure.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
+<li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
+<li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
 </ul></li>
 <li class="part"><span><b>III Quality Check</b></span></li>
 <li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control</a></li>
@@ -227,39 +293,39 @@
 <li class="chapter" data-level="7.7.15" data-path="dictionary.html"><a href="dictionary.html#welfshprosperity"><i class="fa fa-check"></i><b>7.7.15</b> welfshprosperity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="categorical-frequencies.html"><a href="categorical-frequencies.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
-<li class="chapter" data-level="9" data-path="availability-missing-values-and-zeros.html"><a href="availability-missing-values-and-zeros.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
-<li class="chapter" data-level="10" data-path="tests.html"><a href="tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
+<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
+<li class="chapter" data-level="9" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
+<li class="chapter" data-level="10" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
 <li class="part"><span><b>IV Analytical Notes</b></span></li>
 <li class="chapter" data-level="" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i>Introduction to the analytical notes</a></li>
 <li class="chapter" data-level="11" data-path="notes-assest.html"><a href="notes-assest.html"><i class="fa fa-check"></i><b>11</b> Welfare and access to durable assets in South Asia</a></li>
-<li class="chapter" data-level="12" data-path="school-enrollment-in-south-asia.html"><a href="school-enrollment-in-south-asia.html"><i class="fa fa-check"></i><b>12</b> School enrollment in South Asia</a><ul>
-<li><a href="school-enrollment-in-south-asia.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+<li class="chapter" data-level="12" data-path="school-enrollment-in-south-asia-note-school.html"><a href="school-enrollment-in-south-asia-note-school.html"><i class="fa fa-check"></i><b>12</b> School enrollment in South Asia #{note-school}</a><ul>
+<li><a href="school-enrollment-in-south-asia-note-school.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html"><i class="fa fa-check"></i><b>13</b> Understanding poverty through household and individual level characteristics</a><ul>
-<li class="chapter" data-level="13.1" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#linear-model-results"><i class="fa fa-check"></i><b>13.1</b> Linear model results</a></li>
-<li class="chapter" data-level="13.2" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#logit-model-results"><i class="fa fa-check"></i><b>13.2</b> Logit model results</a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+<li class="chapter" data-level="13" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>13</b> Understanding poverty through household and individual level characteristics</a><ul>
+<li class="chapter" data-level="13.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>13.1</b> Linear model results</a></li>
+<li class="chapter" data-level="13.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>13.2</b> Logit model results</a></li>
+<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh.html"><i class="fa fa-check"></i><b>14</b> Decomposing changes in poverty into endowments and returns in Bangladesh</a></li>
-<li class="chapter" data-level="15" data-path="development-of-access-to-cell-phone.html"><a href="development-of-access-to-cell-phone.html"><i class="fa fa-check"></i><b>15</b> Development of Access to Cell Phone</a></li>
-<li class="chapter" data-level="16" data-path="child-marriage-in-sar.html"><a href="child-marriage-in-sar.html"><i class="fa fa-check"></i><b>16</b> Child Marriage in SAR</a></li>
-<li class="chapter" data-level="17" data-path="improvement-of-water-supply-and-sanitation-over-time.html"><a href="improvement-of-water-supply-and-sanitation-over-time.html"><i class="fa fa-check"></i><b>17</b> Improvement of Water Supply and Sanitation Over Time</a></li>
-<li class="chapter" data-level="18" data-path="welfare-level-and-employment-by-industry-over-time.html"><a href="welfare-level-and-employment-by-industry-over-time.html"><i class="fa fa-check"></i><b>18</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="14" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>14</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="15" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>15</b> Development of Access to Cell Phone</a></li>
+<li class="chapter" data-level="16" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>16</b> Child Marriage in SAR</a></li>
+<li class="chapter" data-level="17" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>17</b> Improvement of Water Supply and Sanitation Over Time</a></li>
+<li class="chapter" data-level="18" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>18</b> Welfare level and employment by industry over time</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
@@ -284,7 +350,7 @@
 <div id="poverty-measures" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Poverty measures in South Asia</h1>
 <hr />
-<p>The World Bank set a target of reducing global extreme poverty to <a href="https://sdg-tracker.org/no-poverty">less than 3 percent by 2030</a> and to ensure continued focus and steady progress toward that goal.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. With the exception of Afghanistan, countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line.</p>
+<p>The World Bank set a target of reducing global extreme poverty to <a href="https://sdg-tracker.org/no-poverty">less than 3 percent by 2030</a> and to ensure continued focus and steady progress toward that goal.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. With the exception of Afghanistan, countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line.</p>
 <p>Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and remains predominantly rural, with the highest share of labor force in agriculture (73%) in the region as of 2016. The Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. Even though the international poverty line cannot be used in Afghanistan, official poverty rates present a steady increase as violence continues to affect the security of livelihoods and economic activity in the country.</p>
 <p>In this chapter, we will present two World Bank sources for poverty measures: the Poverty and Shared Prosperity Report and PovcalNet.</p>
 <div id="poverty-and-shared-prosperity-report" class="section level2">
@@ -482,8 +548,8 @@ Figure 3.3: PovcalNet poverty and inequality measures
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>The Wordl Bank also set an interim target of 9 percent by 2020.<a href="poverty-measures.html#fnref1" class="footnote-back">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>The Wordl Bank also set an interim target of 9 percent by 2020.<a href="poverty-measures.html#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -492,7 +558,7 @@ Figure 3.3: PovcalNet poverty and inequality measures
         </div>
       </div>
 <a href="datalibweb-getting-access-to-sarmd.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="poverty-measurement-methodology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="poverty-methodology.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -538,6 +604,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
