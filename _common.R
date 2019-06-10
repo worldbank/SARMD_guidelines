@@ -23,7 +23,8 @@ pkg <-  c("sf", "sp", "raster", "spData", "ggplot2", "dplyr", "readr",
 new.pkg <- pkg[!(pkg %in% installed.packages()[,"Package"])] # check installed packages
 load.pkg <- pkg[!(pkg %in% loadedNamespaces())]              # check loaded packages
 
+knitr::write_bib(pkg, "packages.bib")
 
-if (length(new.pkg)) install.packages(new.pkg)     # Install missing packages
+  if (length(new.pkg)) install.packages(new.pkg)     # Install missing packages
 inst = lapply(load.pkg, library, character.only = TRUE) # load all packages
 

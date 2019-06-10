@@ -47,74 +47,8 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -161,7 +95,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="poverty-measures.html"><a href="poverty-measures.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i><b>3.1</b> Poverty and shared prosperity report</a></li>
 <li class="chapter" data-level="3.2" data-path="poverty-measures.html"><a href="poverty-measures.html#povcalnet"><i class="fa fa-check"></i><b>3.2</b> PovcalNet</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a></li>
+<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a><ul>
+<li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
+<li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
+<li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+</ul></li>
 <li class="part"><span><b>II Metadata Analysis</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
@@ -350,7 +289,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="poverty-methodology" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Poverty measurement methodology</h1>
 <hr />
-<p>The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region of South Asia is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time <span class="citation">(Serajuddin et al. <a href="#ref-serajuddin2015data">2015</a>)</span>. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.</p>
+<p>Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally it should be not only available at reasonably frequent intervals, but be also comparable over time <span class="citation">(Serajuddin et al. <a href="#ref-serajuddin2015data">2015</a>)</span>. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.</p>
+<div id="components-of-the-consumption-welfare-aggregate" class="section level2">
+<h2><span class="header-section-number">4.1</span> Components of the consumption welfare aggregate</h2>
+<p>food, non-food, durables, housing, and price deflation</p>
+</div>
+<div id="additional-factors-that-affect-the-welfare-aggregate" class="section level2">
+<h2><span class="header-section-number">4.2</span> Additional factors that affect the welfare aggregate</h2>
 <p>First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure <a href="poverty-methodology.html#fig:cpi">4.1</a> displays how the CPI has changed for each country in South Asia over time.</p>
 <div class="figure" style="text-align: center"><span id="fig:cpi"></span>
 <img src="SARMD-Guidelines_files/figure-html/cpi-1.png" alt="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)" width="70%" />
@@ -412,18 +357,38 @@ Figure 4.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/
 </tbody>
 </table>
 <p>A fourth adjustment is dividing total household expenditure by some measure of the number of people in the household, and to assign the resulting per capita welfare measure to each household member as an individual. Later in the applications, we show how larger households typically have lower per capita expenditure levels than smaller households. In South Asia, the consequences of dividing total household expenditures by a greater number of individuals would not be complete without considering the extent of economies of scale within the household and a discussion of how much children and the elderly typically consume compared to adults.</p>
-<p>The FGT measures devised by <span class="citation">Foster, Greer, and Thorbecke (<a href="#ref-fgt">1984</a>)</span> remain the most commonly used to measure poverty. A headcount ratio may be calculated in STATA as in the example below:</p>
-<pre class="stata"><code>* Example: Calculating poverty headcounts with 1.90 poverty line
+</div>
+<div id="estimation-of-poverty" class="section level2">
+<h2><span class="header-section-number">4.3</span> Estimation of poverty</h2>
+<p>The FGT measures devised by <span class="citation">Foster, Greer, and Thorbecke (<a href="#ref-fgt">1984</a>)</span> remain the most commonly used to measure poverty. They are defines as:</p>
+<p><span class="math display">\[\begin{equation}
+P_{\alpha}=\frac{1}{N}\sum^{N}_{i=1}I_{i}\left(\frac{\bar{u}-u_{i}}{\bar{u}}\right)^{\alpha}
+\end{equation}\]</span></p>
+<p>where N is the sample size, <span class="math inline">\(\bar{u}\)</span> is the scalar-valued poverty line, <span class="math inline">\(u_{i}\)</span> is the flow-based measure of welfare (income, expenditures, assets), <span class="math inline">\(I_{i}\)</span> is an indicator variable taking value one if <span class="math inline">\(u_{i} &lt; \bar{u}\)</span> and zero otherwise, and <span class="math inline">\(\alpha\)</span> is a parameter reflecting the weight placed on the severity of poverty. Setting <span class="math inline">\(\alpha =0\)</span> yields the poverty headcount ratio <span class="math inline">\(P_{0}\)</span> (the share of a population falling below the poverty line). The higher order measures, <span class="math inline">\(P_{1}\)</span> and <span class="math inline">\(P_{2}\)</span>, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from <span class="math inline">\(P_{0}\)</span> to <span class="math inline">\(P_{1}\)</span> to <span class="math inline">\(P_{2}\)</span>, the <span class="math inline">\(P_{\alpha}\)</span> measure gets more and more sensitive to extremely low incomes.</p>
+</div>
+<div id="a-technical-example" class="section level2">
+<h2><span class="header-section-number">4.4</span> A Technical example</h2>
+<pre class="stata"><code>
+* 1. Let us first load any household survey. 
 
-* Calculate per capita expenditures by dividing total
-* expenditures by the number of household members 
-  gen welfare=total_exp/hsize 
+datalibweb, country(PAK) year(2015) type(SARMD) clear
 
-* Calculate real per capita expenditures by turning nominal  
-* per capita expenditures into 2011 purchasing power parity 
-* (PPP) dollars
-  welfare_ppp = welfare/cpi2011/icp2011/365*12
+* 2. we deflate the `welfare` aggragate to PPP 2011 values.
 
+/* Calculate per capita expenditures by dividing total
+ expenditures by the number of household members */
+gen welfare=total_exp/hsize 
+
+/* Calculate real per capita expenditures by turning nominal  
+ per capita expenditures into 2011 purchasing power parity 
+ (PPP) dollars */
+
+gen double welfare_ppp = welfare/cpi2011/icp2011/365
+
+table year [w = weight_p], c(mean welfare mean welfare_ppp) format(%11.2f)
+</code></pre>
+<p>A headcount ratio may be calculated in STATA like this:</p>
+<pre class="stata"><code>
 * Generate a dummy variable to determine whether real per capita
 * expenditures fall below the 1.90 2011 PPP dollars poverty line
   gen poor190 = welfare_ppp &lt; 1.90
@@ -432,6 +397,23 @@ Figure 4.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/
 * the proportion of the population that falls below the 1.90 2011
 * PPP dollars poverty line
   sum poor190 [aw=wgt]</code></pre>
+<p>If you want to calculate all the FGT family at once, you could do something like this:</p>
+<pre class="stata"><code>/*==================================================
+poverty measures             
+==================================================*/
+
+local plines &quot;1.9 3.2 5.5&quot;
+local wvar &quot;welfare_ppp&quot;
+foreach pl of local plines  {
+    gen pl_`=100*`pl&#39;&#39; = `pl&#39;
+    forval a=0/2    {
+        gen fgt`a&#39;_`=100*`pl&#39;&#39; = 100*((`wvar&#39;&lt;`pl&#39;)*(1-(`wvar&#39;/`pl&#39;))^`a&#39;)
+    }
+}
+
+tabstat fgt0* [`w&#39; = weight_p], by(year) nototal
+* tabstatmat 
+table year [`w&#39; = weight_p], c(mean fgt0_190 mean fgt0_320 mean fgt0_550 )</code></pre>
 <p>The variable <code>welfare</code> contains the monthly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure <a href="poverty-methodology.html#fig:povcalnetdata2">4.2</a>. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
@@ -446,6 +428,7 @@ Figure 4.2: Distribution of daily expenditure per person in 2011 PPP (ln scale)
 </p>
 </div>
 
+</div>
 </div>
 
 
