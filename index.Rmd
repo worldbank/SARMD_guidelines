@@ -29,7 +29,7 @@ knitr::include_graphics("figures/SAR-Emblem.png")
 ```
 </div>
 
-This book is about the analysis of household surveys from South Asian countries and is intended to be used as a manual by any researcher interested in using the South Asia Regional Micro Database (SARMD). The household surveys contained in SARMD provide a rich and open source of data on economic behavior and expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.
+This book is the user guidelines of the South Asia Regional Micro Database (SARMD); a collection of harmonizaed household surveys in the South Asia Region (SAR) that is used as underlying data for estimating comparable socieconomic indicators at the country and regional levels in SAR. In addition, SARMD is used in the Global Monitorind Database, a global comparable microdata across countries, regions and years for global poverty monitoring and welfare measurement hosted by the World Bank. The household surveys contained in SARMD provide a rich environment on expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.
 
 These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the `datalibweb` system and how to perform basic (and not so basic) socioeconomic calculations. We will study how comparable household surveys are across the region and evaluate the quality of the harmonization process. We also provide several examples on how to conduct analysis at the regional or country level in our analytical notes. 
 
@@ -57,7 +57,7 @@ There are several advantages to composing books (especially technical books) usi
 
 All the pieces of code are written `like this` and sometimes you may find chunks of code like this:
 
-```stata
+```{stata, eval = FALSE}
 This is a chunk of code,
 and everything in it may be copied and
 pasted directly into the corresponding
