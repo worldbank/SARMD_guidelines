@@ -41,6 +41,17 @@ This book has been created by the South Asia Region Team for Statistical Develop
 
 This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its [GitHub repository](https://github.com/worldbank/SARMD_guidelines). You are allowed to download and use any of the files in the repository, but please keep in mind that all the files---in particular the code---contained in this book are simultaneously available under the [MIT license](https://opensource.org/licenses/MIT). This means that you are free to use them in your own projects, as long as you cite the source.
 
+## How to read this book {-}
+
+This book is not intended to be read from cover to cover. We present each chapter independent from each other; yet we added some cross reference along the book for clarification and expansion of certain topics. The book is divided into four main topics:
+
+*	**Basic information** on how to use SARMD through datalibweb and basic understanding of poverty in the SAR. 
+*	**Metadata analysis**. This section contains a clear understanding of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) in all the surveys of the region
+*	**Quality check**. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the writeups in the chapters. 
+*	**Analytical notes**. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. This notes could be easily converted into blogs. 
+
+In addition, many of the graphs in this book are interactive Tableau dashboards. Figure \@ref(fig:bicyclef), for isntance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to `bicycle` to access to a `computer` or `cellphone` by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.
+
 ## About the technical composition of this book {-}
 
 This book is written in [R Markdown](https://rmarkdown.rstudio.com/) syntax and compiled with the [bookdown](https://bookdown.org/yihui/bookdown/) package. The source files are available in the World Bank Github repository [worldbank/SARMD_guidelines](https://github.com/worldbank/SARMD_guidelines). To become a contributor to this project, please send an email to ... requesting for access. Once you are granted access, you may clone or fork this repository and start contributing. 
