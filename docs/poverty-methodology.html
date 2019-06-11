@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-10" />
+<meta name="date" content="2019-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -289,10 +289,12 @@
 <div id="poverty-methodology" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Poverty measurement methodology</h1>
 <hr />
-<p>Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally it should be not only available at reasonably frequent intervals, but be also comparable over time <span class="citation">(Serajuddin et al. <a href="#ref-serajuddin2015data">2015</a>)</span>. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.</p>
+<p>In its most basic form, poverty measurement refers to identify those individuals or household that live below a predefined threshould of welfare. Such a threshold is generally known as a “poverty line” and the welfare aggregate that ranks the population from poorest to richest is usually measured on monetary terms like income or consumption expenditures. Given that SAR household surveys are consumption based, the rest of the book refers to “welfare aggregate” and “consumption aggregate” indistinguishably.</p>
+<p>Many books, reports, and papers have been written on regards to the best practices to construct welfare aggreagtes, calculate poverty lines, and estimate poverty. Thus, this chapter is not in any sence an attempt to replace or summarize those resources. Instead, this chapter presents a brief explanation of the most important concepts, shows a technical examples in Stata on how to calculate poverty rates using SARMD, and showcases valuable resources with which the user should get familiar in order to understand poverty measurement properly.</p>
 <div id="components-of-the-consumption-welfare-aggregate" class="section level2">
 <h2><span class="header-section-number">4.1</span> Components of the consumption welfare aggregate</h2>
-<p>food, non-food, durables, housing, and price deflation</p>
+<p>Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally it should be not only available at reasonably frequent intervals, but be also comparable over time <span class="citation">(Serajuddin et al. <a href="#ref-serajuddin_data_2015">2015</a>)</span>. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.</p>
+<p>The assumption of comparable household surveys is strong given the considerations explained in the <a href="intro.html#intro">introduction</a>. Yet, in a general sense most consumption aggregates account for four basic subcompoenents of expenditure: food, non-food, durables, and housing. Section 3 of <span class="citation">Deaton and Zaidi (<a href="#ref-deaton_guidelines_2002">2002</a>)</span> provides a detailed explanation on how to estimate each of such components. In addition, valuable and applied insights about the general idea of constructing a welfare aggregate might be found in <span class="citation">Lanjouw (<a href="#ref-lanjouw_constructing_2009">2009</a>)</span>. The takeaway of this exercise is to realize that the welfare aggregates from two different household surveys won’t ever be fully comparable because, my nature of the questionnaires, the subdomponents of each consumption aggregate will be different. In SARMD, the <strong>consumption aggregate used to measure welbeing is provided by the National Statistics Office of each country, rather than being calculated by the SARTSD.</strong></p>
 </div>
 <div id="additional-factors-that-affect-the-welfare-aggregate" class="section level2">
 <h2><span class="header-section-number">4.2</span> Additional factors that affect the welfare aggregate</h2>
@@ -360,61 +362,73 @@ Figure 4.1: <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/
 </div>
 <div id="estimation-of-poverty" class="section level2">
 <h2><span class="header-section-number">4.3</span> Estimation of poverty</h2>
-<p>The FGT measures devised by <span class="citation">Foster, Greer, and Thorbecke (<a href="#ref-fgt">1984</a>)</span> remain the most commonly used to measure poverty. They are defines as:</p>
-<p><span class="math display">\[\begin{equation}
+<p>The FGT measures devised by <span class="citation">Foster, Greer, and Thorbecke (<a href="#ref-foster_class_1984">1984</a>)</span> remain the most commonly used to measure poverty. They are defines as:</p>
+<p><span class="math display">\[
+\begin{equation}
 P_{\alpha}=\frac{1}{N}\sum^{N}_{i=1}I_{i}\left(\frac{\bar{u}-u_{i}}{\bar{u}}\right)^{\alpha}
-\end{equation}\]</span></p>
+\end{equation}
+\]</span></p>
 <p>where N is the sample size, <span class="math inline">\(\bar{u}\)</span> is the scalar-valued poverty line, <span class="math inline">\(u_{i}\)</span> is the flow-based measure of welfare (income, expenditures, assets), <span class="math inline">\(I_{i}\)</span> is an indicator variable taking value one if <span class="math inline">\(u_{i} &lt; \bar{u}\)</span> and zero otherwise, and <span class="math inline">\(\alpha\)</span> is a parameter reflecting the weight placed on the severity of poverty. Setting <span class="math inline">\(\alpha =0\)</span> yields the poverty headcount ratio <span class="math inline">\(P_{0}\)</span> (the share of a population falling below the poverty line). The higher order measures, <span class="math inline">\(P_{1}\)</span> and <span class="math inline">\(P_{2}\)</span>, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from <span class="math inline">\(P_{0}\)</span> to <span class="math inline">\(P_{1}\)</span> to <span class="math inline">\(P_{2}\)</span>, the <span class="math inline">\(P_{\alpha}\)</span> measure gets more and more sensitive to extremely low incomes.</p>
 </div>
 <div id="a-technical-example" class="section level2">
 <h2><span class="header-section-number">4.4</span> A Technical example</h2>
+<p>The following lines of code show a simple of how to calculate poverty rates in Stata using the SARMD and the GMD collections.</p>
 <pre class="stata"><code>
-* 1. Let us first load any household survey. 
+qui {
+  /*==================================================
+      USING SARMD
+  ==================================================*/
+  cap datalibweb, country(PAK) year(2015) type(SARMD) clear
+  gen double welfare_ppp = welfare/cpi/ppp/365
+  
+  /*==================================================
+      USING GMD
+  ==================================================*/
+  cap datalibweb, country(PAK) year(2015) type(GMD) clear
+  gen double welfare_ppp = welfare/cpi2011/icp2011/365
 
-datalibweb, country(PAK) year(2015) type(SARMD) clear
-
-* 2. we deflate the `welfare` aggragate to PPP 2011 values.
-
-/* Calculate per capita expenditures by dividing total
- expenditures by the number of household members */
-gen welfare=total_exp/hsize 
-
-/* Calculate real per capita expenditures by turning nominal  
- per capita expenditures into 2011 purchasing power parity 
- (PPP) dollars */
-
-gen double welfare_ppp = welfare/cpi2011/icp2011/365
-
-table year [w = weight_p], c(mean welfare mean welfare_ppp) format(%11.2f)
-</code></pre>
-<p>A headcount ratio may be calculated in STATA like this:</p>
-<pre class="stata"><code>
-* Generate a dummy variable to determine whether real per capita
-* expenditures fall below the 1.90 2011 PPP dollars poverty line
-  gen poor190 = welfare_ppp &lt; 1.90
-
-* Calculate the weighted average of the dummy variable to measure
-* the proportion of the population that falls below the 1.90 2011
-* PPP dollars poverty line
-  sum poor190 [aw=wgt]</code></pre>
-<p>If you want to calculate all the FGT family at once, you could do something like this:</p>
-<pre class="stata"><code>/*==================================================
-poverty measures             
-==================================================*/
-
-local plines &quot;1.9 3.2 5.5&quot;
-local wvar &quot;welfare_ppp&quot;
-foreach pl of local plines  {
+  /*==================================================
+  poverty measures             
+  ==================================================*/
+  local plines &quot;1.9 3.2 5.5&quot;
+  local wvar &quot;welfare_ppp&quot;
+  foreach pl of local plines    {
     gen pl_`=100*`pl&#39;&#39; = `pl&#39;
     forval a=0/2    {
         gen fgt`a&#39;_`=100*`pl&#39;&#39; = 100*((`wvar&#39;&lt;`pl&#39;)*(1-(`wvar&#39;/`pl&#39;))^`a&#39;)
     }
-}
+  }
+  
 
-tabstat fgt0* [`w&#39; = weight_p], by(year) nototal
-* tabstatmat 
-table year [`w&#39; = weight_p], c(mean fgt0_190 mean fgt0_320 mean fgt0_550 )</code></pre>
-<p>The variable <code>welfare</code> contains the monthly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure <a href="poverty-methodology.html#fig:povcalnetdata2">4.2</a>. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty.</p>
+  noi tabstat fgt0* [aw = weight], by(year) nototal
+  * tabstatmat 
+  noi table year [aw = weight], c(mean fgt0_190 mean fgt0_320 mean fgt0_550 )
+}
+ r; t=5.81 16:37:31
+
+
+. 
+. qui {
+
+Summary statistics: mean
+  by categories of: year (4 digit year of the survey)
+
+    year |  fgt0_190  fgt0_320  fgt0_550
+---------+------------------------------
+    2015 |  3.941213  34.71227  75.41372
+----------------------------------------
+
+----------------------------------------------------------
+4 digit   |
+year of   |
+the       |
+survey    | mean(fgt0_190)  mean(fgt0_320)  mean(fgt0_550)
+----------+-----------------------------------------------
+     2015 |       3.941213        34.71227        75.41372
+----------------------------------------------------------
+r; t=44.99 16:38:16
+r; t=44.100 16:38:16</code></pre>
+<p>The variable <code>welfare</code> contains the yearly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure <a href="poverty-methodology.html#fig:povcalnetdata2">4.2</a>. The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
 <object class="tableauViz" width="700" height="827" style="display:none;">
@@ -435,10 +449,16 @@ Figure 4.2: Distribution of daily expenditure per person in 2011 PPP (ln scale)
 
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-fgt">
+<div id="ref-deaton_guidelines_2002">
+<p>Deaton, Angus, and Salman Zaidi. 2002. <em>Guidelines for Constructing Consumption Aggregates for Welfare Analysis</em>. Washington, DC: World Bank Publications. <a href="http://ideas.repec.org/p/fth/priwds/192.html">http://ideas.repec.org/p/fth/priwds/192.html</a>.</p>
+</div>
+<div id="ref-foster_class_1984">
 <p>Foster, James, Joel Greer, and Erik Thorbecke. 1984. “A Class of Decomposable Poverty Measures.” <em>Econometrica</em> 52 (3): 761–66. <a href="https://EconPapers.repec.org/RePEc:ecm:emetrp:v:52:y:1984:i:3:p:761-66">https://EconPapers.repec.org/RePEc:ecm:emetrp:v:52:y:1984:i:3:p:761-66</a>.</p>
 </div>
-<div id="ref-serajuddin2015data">
+<div id="ref-lanjouw_constructing_2009">
+<p>Lanjouw, Peter. 2009. “Constructing a Consumption Aggregate for the Purpose of Welfare Analysis: Principles, Issues and Recommendations Arising from the Case of Brazil,” January.</p>
+</div>
+<div id="ref-serajuddin_data_2015">
 <p>Serajuddin, Umar, Hiroki Uematsu, Christina Wieser, Nobuo Yoshida, and Andrew Dabalen. 2015. <em>Data Deprivation: Another Deprivation to End</em>. The World Bank Policy Research working paper; no. WPS 7252. <a href="http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end">http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end</a>.</p>
 </div>
 </div>
