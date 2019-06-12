@@ -151,7 +151,7 @@ The essential variables that identify each dataset and individual within a house
 
 ### wgt 
 
-`wgt` is a numeric variable, also called an estimation weight, that is used to obtain estimates of population parameters of interest. The weight of a given individual may be interpreted as the number of individuals from the population that are represented by this sample unit. For example, if a random sample of 25 individuals has been selected from a population of 100, then each of the 25 sampled individuals may be viewed as representing 4 individuals of the population (@weights).
+`wgt` is a numeric variable, also called an estimation weight, that is used to obtain estimates of population parameters of interest. The weight of a given individual may be interpreted as the number of individuals from the population that are represented by this sample unit. For example, if a random sample of 25 individuals has been selected from a population of 100, then each of the 25 sampled individuals may be viewed as representing 4 individuals of the population (@lavallee_why_2015).
 
 ### pop_wgt
 
