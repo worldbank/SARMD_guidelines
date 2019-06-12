@@ -1,6 +1,8 @@
 # Datalibweb: Getting Access to SARMD
 ***
->Please refer to the [Datalibweb Terms of Use](#datalibweb-tou) in the appendix of this book for a clear understanding of your responsabilities as a `datalibweb` user. 
+>This chapter is mainly composed by Joan Van Ommeren, Melissa  Cockrell, Victoria Harper, and Minh Cong Nguyen. Please refer to the [Datalibweb Terms of Use](#datalibweb-tou) in the appendix of this book for a clear understanding of your responsabilities as a `datalibweb` user. 
+
+## SARMD in `Datalibweb`
 
 ```{r, echo=FALSE, out.width = '40%', out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("figures/datalibweb.png")
@@ -16,6 +18,71 @@ Using the datalibweb system has several advantages:
 * A suitable Stata command for replicability, research, and programing purposes
 * Ability to combine different country surveys and survey years
 * Merging raw data and modules of harmonized collections on the fly (option in progress)
+
+
+## Introduction
+Datalibweb is an API data platform designed to enable users to access the most up-to-date data and documentation available in the World Bank. It allows users to access current and historical versions of raw, non-harmonized data as well as different harmonized collections across Global Practices. It is integrated with Stata through the Datalibweb/Stata package. 
+
+Datalibweb facilitates fast and reliable access to micro data to be used in analysis relevant to the World Bank’s twin goals of ending extreme poverty and promoting shared prosperity. The use of Datalibweb also ensures replicability of the analysis conducted. 
+
+User subscription and access to the data follows country-specific terms of use. All usage of the data is recorded in the system for auditing purposes and is relayed back to the country and regional teams.
+
+## Purpose of user guide
+This guide provides an overview of Datalibweb features and how to use them. The following details are included:
+
+* How to register an account with the site 
+* How to view and subscribe to data
+* How to sign disclaimers and approve or reject data requests
+* How to add/remove files from cart
+* How to view subscription history
+* How to classify surveys as public/private and hide them from the master list
+* How to assign a Country Team Task Lead (TTL) to the survey
+* How to assign a memorandum of understanding (MOU) to the survey
+* How to add a new MOU
+
+## Instructions for use
+
+### Registration
+All users must register with the site to see the data. 
+
+1.	Type [INSERT URL] into the browser.
+2.	Enter requested information (if not pre-populated).
+```{r dlw_registration, echo=FALSE, fig.cap = "Datalibweb Registration"}
+knitr::include_graphics("figures/dlw_registration.png")
+```
+3. "Intended Use" section is manditory and must be completed with description of intended use of the data
+4. Check the checkbox agreeing to the terms and conditions.  
+5. Click “Register”
+
+After the user registers, they will see a minimum of four tabs. The tabs are:
+
+* My Subscriptions
+* Directory
+* Pending
+* History
+
+If the user is designated as a Collection Admin or Super Admin, they will see two additional tabs: 
+
+* Public/Licensed
+* Country TTL and MOU
+
+### My Subscriptions Tab
+In the My Subscriptions tab, user subscriptions are displayed. 
+Subscriptions can be sorted by:
+
+* Classification
+* Server Name
+* Country
+* Year
+* Collection
+* Survey Name
+* Type
+```{r dlw_subscription, echo=FALSE, fig.cap = "Datalibweb Registration"}
+knitr::include_graphics("figures/dlw_subscription.png")
+```
+
+### Directory Tab
+
 
 
 ## Request access to the system

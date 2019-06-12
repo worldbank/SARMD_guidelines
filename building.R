@@ -1,6 +1,6 @@
 
 # preview just one chapter
-file <- "intro.Rmd"
+file <- "datalibweb.Rmd"
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 
