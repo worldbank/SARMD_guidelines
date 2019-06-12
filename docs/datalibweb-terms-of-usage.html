@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>A Datalibweb – Terms of usage | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="A Datalibweb – Terms of usage | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="A Datalibweb – Terms of usage | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html">
+<link rel="prev" href="note-industry.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -357,109 +357,41 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">South Asia Regional Micro Database (SARMD) User Guidelines</h1>
-<p class="author"><em>South Asia Region Team for Statistical Development (SARTSD)</em></p>
-<p class="date"><em>2019-06-12</em></p>
-</div>
-<div id="welcome" class="section level1 unnumbered">
-<h1>Welcome</h1>
-<p><font color="red" size="6" >This is a preliminary draft. Please do not cite or distribute without permission of the SARTSD</font></p>
-<div style="float:right;position: relative;">
-<p><img src="figures/SAR-Emblem.png" width="70%" style="display: block; margin: auto;" /></p>
-</div>
-<p>This book is the user guidelines of the South Asia Regional Micro Database (SARMD); a collection of harmonizaed household surveys in the South Asia Region (SAR) that is used as underlying data for estimating comparable socieconomic indicators at the country and regional levels in SAR. In addition, SARMD is used in the Global Monitorind Database, a global comparable microdata across countries, regions and years for global poverty monitoring and welfare measurement hosted by the World Bank. The household surveys contained in SARMD provide a rich environment on expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.</p>
-<p>These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the <code>datalibweb</code> system and how to perform basic (and not so basic) socioeconomic calculations. We will study how comparable household surveys are across the region and evaluate the quality of the harmonization process. We also provide several examples on how to conduct analysis at the regional or country level in our analytical notes.</p>
-<div id="team" class="section level2 unnumbered">
-<h2>Team</h2>
-<p>This book has been created by the South Asia Region Team for Statistical Development (SARTSD) under the direction of Benu Bidani. The team is composed by Raúl Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. We are greatful for the comments and suggestions made by…</p>
-</div>
-<div id="replicability" class="section level2 unnumbered">
-<h2>Replicability</h2>
-<p>This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its <a href="https://github.com/worldbank/SARMD_guidelines">GitHub repository</a>. You are allowed to download and use any of the files in the repository, but please keep in mind that all the files—in particular the code—contained in this book are simultaneously available under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. This means that you are free to use them in your own projects, as long as you cite the source.</p>
-</div>
-<div id="how-to-read" class="section level2 unnumbered">
-<h2>How to read this book</h2>
-<p>This book is not intended to be read from cover to cover. We present each chapter independent from each other; yet we added some cross reference along the book for clarification and expansion of certain topics. The book is divided into four main topics:</p>
+<div id="datalibweb-terms-of-usage" class="section level1">
+<h1><span class="header-section-number">A</span> Datalibweb – Terms of usage</h1>
+<blockquote>
+<p>This chapter was fully composed by the Poverty and Equity Global Practice at the World Bank Group. For any question about the terms of use of <code>datalibweb</code> please contact Minh Cong Nguyen <a href="mailto:mnguyen3@worldbank.org" class="email">mnguyen3@worldbank.org</a>.</p>
+</blockquote>
+<p>The Datalibweb is available for use by World Bank staff. The catalogs that make up the Datalibweb are only accessible from the World Bank intranet. Authentication to the system occurs through your World Bank UPI should be automatic if you are already logged into the World Bank network and use the Datalibweb system.</p>
+<p>Datasets made available through the Datalibweb API platform are made available to users in their capacity as World Bank employees in order to facilitate, inform and further work being done on World Bank business. Data obtained through the Datalibweb API or Datalibweb Stata should not be distributed outside the Bank without first obtaining further approval from the data producer or owner.</p>
+<p>To protect the confidentiality of individual information and to meet the requirements of the data owners who provide the microdata sets, the Datalibweb has various types of access that may be applied to specific datasets. The various possible access policies under which data may be made accessible include internal direct access, licensed files. These various options are described in generic terms below; the exact formulation of these policies may differ when applied by external contributing repositories.</p>
+<p>Regardless of the access method in place for any dataset, all potential users are required to agree to the Terms of Use applicable to the Datalibweb.</p>
+<div id="internal-direct-access" class="section level2">
+<h2><span class="header-section-number">A.1</span> Internal direct access</h2>
+<p>Internal direct access files are available to all Bank staff agreeing to respect a core set of easy-to-meet conditions. These data are made easily accessible because the risk of identifying individual respondents or data providers is considered to be low. In most cases the World Bank either owns or has a license to use these datasets for official World Bank related business. Before gaining access to these data, users need to log into the Datalibweb application within Bank-intranet network and to read and agree on the following conditions.</p>
 <ul>
-<li><strong>Basic information</strong> on how to use SARMD through datalibweb and basic understanding of poverty in the SAR.</li>
-<li><strong>Metadata analysis</strong>. This section contains a clear understanding of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) in all the surveys of the region</li>
-<li><strong>Quality check</strong>. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the writeups in the chapters.</li>
-<li><strong>Analytical notes</strong>. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. This notes could be easily converted into blogs.</li>
+<li>The data will be used for World Bank related business use only. They will be used solely for generating and perhaps reporting, aggregated information and not for investigations into specific individuals or organizations. In other words, the data shall be treated as a finished product - it may be used as a foundation for further work, but no reverse engineering or “upstream research” into the sources of the data itself will be permitted.</li>
+<li>No attempt will be made to identify respondents or microdata providers, and no use will be made of the identity of any person, facility or establishment discovered inadvertently. Any such discovery would immediately be reported to the Datalibweb team, to allow us to evaluate further use, apply further statistical disclosure control methods, impose further restrictions on access, or appropriately re-classify the data.</li>
+<li>No attempt will be made to create links among datasets provided by the Datalibweb or among data from the Datalibweb and other datasets with the intended purpose of identify individuals or organizations.</li>
+<li>Any books, articles, conference papers, theses, dissertations, reports or other publications employing data obtained from the Datalibweb will cite the source and vintage of data if necessary, in line with the citation requirement provided with the dataset.</li>
+<li>The original collector of the data, the Datalibweb, and the relevant funding agencies bear no responsibility for any use of the data or for interpretations or inferences based upon such uses.</li>
+<li>When downloading datasets published under the internal direct access policy, users shall signify their agreement to comply with the above-stated terms and conditions and agree that the use of statistical data obtained from the Datalibweb will conform to these widely-accepted standards of practice and any other legal restrictions to protect the confidentiality of respondents.</li>
 </ul>
-<p>In addition, many of the graphs in this book are interactive Tableau dashboards. Figure <a href="intro.html#fig:bicyclef">1.1</a>, for isntance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to <code>bicycle</code> to access to a <code>computer</code> or <code>cellphone</code> by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.</p>
 </div>
-<div id="about-the-technical-composition-of-this-book" class="section level2 unnumbered">
-<h2>About the technical composition of this book</h2>
-<p>This book is written in <a href="https://rmarkdown.rstudio.com/">R Markdown</a> syntax and compiled with the <a href="https://bookdown.org/yihui/bookdown/">bookdown</a> package. The source files are available in the World Bank Github repository <a href="https://github.com/worldbank/SARMD_guidelines">worldbank/SARMD_guidelines</a>. To become a contributor to this project, please send an email to … requesting for access. Once you are granted access, you may clone or fork this repository and start contributing.</p>
-<p>There are several advantages to composing books (especially technical books) using Markdown:</p>
-<ol style="list-style-type: decimal">
-<li>You can create different types of output formats such as PDF, HTML, WORD, EPub, and even Kindle files.</li>
-<li>Everything is written using plain text, so you may enjoy the benefits of tracking changes through collaborative platforms as Git.</li>
-<li>You can execute <code>R</code> or <code>Stata</code> code directly from the text, include code chunks, and present its corresponding results inline wherever you want within the document.</li>
-<li>You can add features like multi-page HTML output, numbering and cross-referencing figures/tables/sections/equations, inserting parts/appendices, and import <a href="https://www.gitbook.com">GitBook</a> styles to create elegant and beautiful books.</li>
-</ol>
-</div>
-<div id="software-information-and-conventions" class="section level2 unnumbered">
-<h2>Software information and conventions</h2>
-<p>All the pieces of code are written <code>like this</code> and sometimes you may find chunks of code like this:</p>
-<pre class="stata"><code>This is a chunk of code,
-and everything in it may be copied and
-pasted directly into the corresponding
-execution console, which could be 
-Stata or R.</code></pre>
-<p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> language as well.</p>
-<p>The R session information used when this book was compiled is the following:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()
-<span class="co">## R version 3.5.3 (2019-03-11)</span>
-<span class="co">## Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
-<span class="co">## Running under: Windows 10 x64 (build 17134)</span>
-<span class="co">## </span>
-<span class="co">## Matrix products: default</span>
-<span class="co">## </span>
-<span class="co">## locale:</span>
-<span class="co">## [1] LC_COLLATE=English_United States.1252 </span>
-<span class="co">## [2] LC_CTYPE=English_United States.1252   </span>
-<span class="co">## [3] LC_MONETARY=English_United States.1252</span>
-<span class="co">## [4] LC_NUMERIC=C                          </span>
-<span class="co">## [5] LC_TIME=English_United States.1252    </span>
-<span class="co">## </span>
-<span class="co">## attached base packages:</span>
-<span class="co">## [1] grid      stats     graphics  grDevices utils     datasets  methods  </span>
-<span class="co">## [8] base     </span>
-<span class="co">## </span>
-<span class="co">## other attached packages:</span>
-<span class="co">##  [1] bib2df_1.1.1     tidyr_0.8.3      xml2_1.2.0       readr_1.3.1     </span>
-<span class="co">##  [5] DiagrammeR_1.0.1 png_0.1-7        dplyr_0.8.1      ggplot2_3.1.1   </span>
-<span class="co">##  [9] spData_0.3.0     raster_2.9-5     sp_1.3-1         sf_0.7-4        </span>
-<span class="co">## </span>
-<span class="co">## loaded via a namespace (and not attached):</span>
-<span class="co">##  [1] httr_1.4.0          viridis_0.5.1       jsonlite_1.6       </span>
-<span class="co">##  [4] viridisLite_0.3.0   shiny_1.3.2         assertthat_0.2.1   </span>
-<span class="co">##  [7] highr_0.8           yaml_2.2.0          pillar_1.4.1       </span>
-<span class="co">## [10] backports_1.1.4     lattice_0.20-38     glue_1.3.1         </span>
-<span class="co">## [13] downloader_0.4      digest_0.6.19       RColorBrewer_1.1-2 </span>
-<span class="co">## [16] promises_1.0.1      colorspace_1.4-1    htmltools_0.3.6    </span>
-<span class="co">## [19] httpuv_1.5.1        plyr_1.8.4          XML_3.98-1.19      </span>
-<span class="co">## [22] pkgconfig_2.0.2     bookdown_0.11       purrr_0.3.2        </span>
-<span class="co">## [25] xtable_1.8-4        scales_1.0.0        brew_1.0-6         </span>
-<span class="co">## [28] later_0.8.0         tibble_2.1.2        influenceR_0.1.0   </span>
-<span class="co">## [31] withr_2.1.2         humaniformat_0.6.0  fortunes_1.5-4     </span>
-<span class="co">## [34] lazyeval_0.2.2      cli_1.1.0           rgexf_0.15.3       </span>
-<span class="co">## [37] magrittr_1.5        crayon_1.3.4        mime_0.6           </span>
-<span class="co">## [40] evaluate_0.14       fansi_0.4.0         class_7.3-15       </span>
-<span class="co">## [43] Rook_1.1-1          tools_3.5.3         hms_0.4.2          </span>
-<span class="co">## [46] formatR_1.6         stringr_1.4.0       munsell_0.5.0      </span>
-<span class="co">## [49] packrat_0.5.0       compiler_3.5.3      e1071_1.7-1        </span>
-<span class="co">## [52] rlang_0.3.4         classInt_0.3-3      units_0.6-3        </span>
-<span class="co">## [55] rstudioapi_0.10     htmlwidgets_1.3     visNetwork_2.0.7   </span>
-<span class="co">## [58] igraph_1.2.4.1      miniUI_0.1.1.1      labeling_0.3       </span>
-<span class="co">## [61] rmarkdown_1.13      gtable_0.3.0        codetools_0.2-16   </span>
-<span class="co">## [64] DBI_1.0.0           R6_2.4.0            gridExtra_2.3      </span>
-<span class="co">## [67] knitr_1.23          utf8_1.1.4          zeallot_0.1.0      </span>
-<span class="co">## [70] addinexamples_0.1.0 KernSmooth_2.23-15  stringi_1.4.3      </span>
-<span class="co">## [73] Rcpp_1.0.1          vctrs_0.1.0         tidyselect_0.2.5   </span>
-<span class="co">## [76] xfun_0.7</span></code></pre>
+<div id="licensed" class="section level2">
+<h2><span class="header-section-number">A.2</span> Licensed</h2>
+<p>Licensed files are files whose dissemination is restricted to bona fide users – World Bank users with legitimate need to access the data - who have received authorization to access them after submitting a documented application and signing an agreement governing the data’s use. These users must be conducting World Bank related business and take responsibility for the use of these datasets. The following conditions apply (specific datasets may differ in formulation, but will have similar principles):</p>
+<ul>
+<li>Data and other material provided by the Datalibweb will be used solely by the World Bank employee/employees authorized to use the data. The datasets shall not be redistributed to other individuals, institutions or organizations without the Datalibweb’s prior written consent and only subject to such conditions as may accompany such consent.</li>
+<li>The data will be used for World Bank related business use only. They will be used solely for generating and perhaps reporting, aggregated information and not for investigations into specific individuals or organizations. In other words, the data shall be treated as a finished product - it may be used as a foundation for further work, but no reverse engineering or “upstream research” into the sources of the data itself will be permitted.</li>
+<li>No attempt will be made to identify respondents or microdata providers, and no use will be made of the identity of any person, facility or establishment discovered inadvertently. Any such discovery would immediately be reported to the Datalibweb, to allow us to evaluate further use, apply further statistical disclosure control methods, impose further restrictions on access, or appropriately re-classify the data.</li>
+<li>No attempt will be made to create links among datasets provided by the Datalibweb or among data from the Datalibweb and other datasets with the intended purpose of identify individuals or organizations.</li>
+<li>Any books, articles, conference papers, theses, dissertations, reports or other publications employing data obtained from the Datalibweb will cite the source, in line with the citation requirement provided with the dataset.</li>
+<li>The Datalibweb and the relevant funding agencies bear no responsibility for the data’s use or for interpretation or inferences based upon it.</li>
+<li>As a condition to access Licensed Files, the principal and other researchers who will be involved in using the data must be identified. The principal researcher may be asked to sign a license. Any violation of the Datalibweb’s Terms of Use may result in measures to sanction such misconduct, which may include denying any further and future access to other Licensed Files in the Datalibweb.</li>
+<li>The intended use of the data, including a list of expected outputs must be identified and no additional uses shall be permitted without prior written consent from the Datalibweb.</li>
+<li>When downloading datasets published under the licensed files policy, users shall signify their agreement to comply with the above-stated terms and conditions and agree that the use of statistical data obtained from the Datalibweb will conform to these widely-accepted standards of practice and any other legal restrictions to protect the confidentiality of respondents.</li>
+</ul>
 
 </div>
 </div>
@@ -468,8 +400,8 @@ Stata or R.</code></pre>
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="note-industry.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,37 @@
+# (APPENDIX) Appendix {#datalibweb-tou .unnumbered}
+
+# Datalibweb – Terms of usage
+> This  chapter was fully composed by the Poverty and Equity Global Practice at the World Bank Group. For any question about the terms of use of `datalibweb` please contact Minh Cong Nguyen <mnguyen3@worldbank.org>. 
+
+The Datalibweb is available for use by World Bank staff. The catalogs that make up the Datalibweb are only accessible from the World Bank intranet. Authentication to the system occurs through your World Bank UPI should be automatic if you are already logged into the World Bank network and use the Datalibweb system.
+
+Datasets made available through the Datalibweb API platform are made available to users in their capacity as World Bank employees in order to facilitate, inform and further work being done on World Bank business. Data obtained through the Datalibweb API or Datalibweb Stata should not be distributed outside the Bank without first obtaining further approval from the data producer or owner. 
+
+To protect the confidentiality of individual information and to meet the requirements of the data owners who provide the microdata sets, the Datalibweb has various types of access that may be applied to specific datasets. The various possible access policies under which data may be made accessible include internal direct access, licensed files. These various options are described in generic terms below; the exact formulation of these policies may differ when applied by external contributing repositories.
+
+Regardless of the access method in place for any dataset, all potential users are required to agree to the Terms of Use applicable to the Datalibweb.
+
+## Internal direct access 
+Internal direct access files are available to all Bank staff agreeing to respect a core set of easy-to-meet conditions. These data are made easily accessible because the risk of identifying individual respondents or data providers is considered to be low. In most cases the World Bank either owns or has a license to use these datasets for official World Bank related business. Before gaining access to these data, users need to log into the Datalibweb application within Bank-intranet network and to read and agree on the following conditions.
+
+* The data will be used for World Bank related business use only. They will be used solely for generating and perhaps reporting, aggregated information and not for investigations into specific individuals or organizations. In other words, the data shall be treated as a finished product - it may be used as a foundation for further work, but no reverse engineering or "upstream research" into the sources of the data itself will be permitted.
+* No attempt will be made to identify respondents or microdata providers, and no use will be made of the identity of any person, facility or establishment discovered inadvertently. Any such discovery would immediately be reported to the Datalibweb team, to allow us to evaluate further use, apply further statistical disclosure control methods, impose further restrictions on access, or appropriately re-classify the data.
+* No attempt will be made to create links among datasets provided by the Datalibweb or among data from the Datalibweb and other datasets with the intended purpose of identify individuals or organizations.
+* Any books, articles, conference papers, theses, dissertations, reports or other publications employing data obtained from the Datalibweb will cite the source and vintage of data if necessary, in line with the citation requirement provided with the dataset.
+* The original collector of the data, the Datalibweb, and the relevant funding agencies bear no responsibility for any use of the data or for interpretations or inferences based upon such uses.
+* When downloading datasets published under the internal direct access policy, users shall signify their agreement to comply with the above-stated terms and conditions and agree that the use of statistical data obtained from the Datalibweb will conform to these widely-accepted standards of practice and any other legal restrictions to protect the confidentiality of respondents.
+
+## Licensed 
+Licensed files are files whose dissemination is restricted to bona fide users – World Bank users with legitimate need to access the data - who have received authorization to access them after submitting a documented application and signing an agreement governing the data's use. These users must be conducting World Bank related business and take responsibility for the use of these datasets. The following conditions apply (specific datasets may differ in formulation, but will have similar principles):
+
+*	Data and other material provided by the Datalibweb will be used solely by the World Bank employee/employees authorized to use the data. The datasets shall not be redistributed to other individuals, institutions or organizations without the Datalibweb’s prior written consent and only subject to such conditions as may accompany such consent.
+* The data will be used for World Bank related business use only. They will be used solely for generating and perhaps reporting, aggregated information and not for investigations into specific individuals or organizations. In other words, the data shall be treated as a finished product - it may be used as a foundation for further work, but no reverse engineering or "upstream research" into the sources of the data itself will be permitted.
+* No attempt will be made to identify respondents or microdata providers, and no use will be made of the identity of any person, facility or establishment discovered inadvertently. Any such discovery would immediately be reported to the Datalibweb, to allow us to evaluate further use, apply further statistical disclosure control methods, impose further restrictions on access, or appropriately re-classify the data.
+* No attempt will be made to create links among datasets provided by the Datalibweb or among data from the Datalibweb and other datasets with the intended purpose of identify individuals or organizations.
+* Any books, articles, conference papers, theses, dissertations, reports or other publications employing data obtained from the Datalibweb will cite the source, in line with the citation requirement provided with the dataset.
+* The Datalibweb and the relevant funding agencies bear no responsibility for the data's use or for interpretation or inferences based upon it.
+* As a condition to access Licensed Files, the principal and other researchers who will be involved in using the data must be identified. The principal researcher may be asked to sign a license. Any violation of the Datalibweb’s Terms of Use may result in measures to sanction such misconduct, which may include denying any further and future access to other Licensed Files in the Datalibweb.
+* The intended use of the data, including a list of expected outputs must be identified and no additional uses shall be permitted without prior written consent from the Datalibweb.
+* When downloading datasets published under the licensed files policy, users shall signify their agreement to comply with the above-stated terms and conditions and agree that the use of statistical data obtained from the Datalibweb will conform to these widely-accepted standards of practice and any other legal restrictions to protect the confidentiality of respondents.
+
+

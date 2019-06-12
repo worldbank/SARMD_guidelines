@@ -39,6 +39,7 @@ rmd_files: [
   "NoteD.Rmd",
   "NoteE.Rmd",
 
+  "datalibweb_tou.Rmd",
   "references.Rmd",
 ]
 
