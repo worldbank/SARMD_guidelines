@@ -1,13 +1,13 @@
-# Poverty measures in South Asia
+# Poverty measures in South Asia {#poverty-measures}
 ***
 
-The World Bank set a target of reducing extreme poverty to [less than 3 percent by 2030](https://sdg-tracker.org/no-poverty) and to ensure continued focus and steady progress toward the goal, the institution set an interim target of 9 percent by 2020. Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. All eight countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
+The World Bank set a target of reducing global extreme poverty to [less than 3 percent by 2030](https://sdg-tracker.org/no-poverty) and to ensure continued focus and steady progress toward that goal.[^povgoal] Progress towards this goal is measured by monitoring the share of the global population living below the international poverty line, currently set at US$1.90 in 2011 purchasing power parity (PPP) dollars. With the exception of Afghanistan, countries in South Asia measure the international extreme poverty status of an individual by comparing consumption expenditures per capita against this poverty line. 
 
-Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and remains predominantly rural, with the highest share of labor force in agriculture (73%) in the region as of 2016. The Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. In the case of Afghanistan, poverty is increasing as violence continues to affect the security of livelihoods and economic activity in the country. 
+Even as much of the region leaves extreme poverty behind, poverty is becoming more entrenched and harder to root out in certain areas, particularly in countries burdened by violent conflict and weak institutions. Nepal experienced devastating earthquakes in 2015 and remains predominantly rural, with the highest share of labor force in agriculture (73%) in the region as of 2016. The Maldives were devastated by the 2004 tsunami while its tourism industry is seriously threatened by climate change. Even though the international poverty line cannot be used in Afghanistan, official poverty rates present a steady increase as violence continues to affect the security of livelihoods and economic activity in the country. 
 
 In this chapter, we will present two World Bank sources for poverty measures: the Poverty and Shared Prosperity Report and PovcalNet. 
 
-## Poverty and shared prosperity report {-}
+## Poverty and shared prosperity report
 
 According to the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.org/en/publication/poverty-and-shared-prosperity), the number of extreme poor in South Asia dropped to 216 million people in 2015, compared to half a billion in 1990, and Nigeria may already have overtaken India as the country with the most extreme poor in the world. Still, to achieve the [Sustainable Development Goals](https://www.un.org/sustainabledevelopment/poverty/), progress in poverty reduction needs to continue in India and the rest of South Asia. 
 
@@ -23,7 +23,9 @@ The latest poverty measures from the Poverty and Shared Prosperity Report (2018)
 
 ```{r psprtb, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
 
-pspr <- readr::read_csv("./tables/pspr.csv",col_names = TRUE, col_types = cols())
+pspr <- readr::read_csv("./tables/pspr.csv", 
+                        col_names = TRUE, 
+                        col_types = readr::cols())
 
 # Table
 knitr::kable(pspr,booktabs=TRUE, caption = 'Measures in Poverty and Shared Prosperity Report 2018')
@@ -74,9 +76,9 @@ Based on the [Poverty and Shared Prosperity Report (2018)](http://www.worldbank.
 - In the Maldives, extreme poverty is nearly nonexistent according to the latest survey data.  
 >
 
-## PovcalNet {-}
+## PovcalNet
 
-[PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) is an interactive computational tool that allows you to replicate the calculations made by the World Bank's researchers in estimating the extent of absolute poverty in the world. The poverty and inequality measures provided by [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) for South Asia are described in Table \@ref(tab:povcalnet) and may be accessed by interacting with Figure \@ref(fig:povcalnetdata):
+As explained in the official website, [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx)  is an interactive computational tool that allows the user to replicate the calculations made by the World Bank's researchers in estimating the extent of absolute poverty in the world. PovcalNet also allows you to calculate the poverty measures under different assumptions and to assemble the estimates using alternative economy groupings or for any set of individual economies of the user’s choosing. PovcalNet is self-contained; it has reliable built-in software that quickly does the relevant calculations for the user from the built-in database. SARMD is the underlying data used in PovcalNet for the South Asia Region. The poverty and inequality measures provided by [PovcalNet](http://iresearch.worldbank.org/PovcalNet/home.aspx) for South Asia are described in Table \@ref(tab:povcalnet) and may be accessed by interacting with Figure \@ref(fig:povcalnetdata):
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Poverty&#47;PovcalNet' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -85,8 +87,11 @@ knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
 ```{r povcalnet, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-povcalnet <- read_csv("./tables/povcalnet.csv",col_names = TRUE, col_types = cols())
+povcalnet <- readr::read_csv("./tables/povcalnet.csv",
+                             col_names = TRUE, 
+                             col_types = readr::cols())
 knitr::kable(povcalnet,booktabs=TRUE, caption = 'PovcalNet measures')
 ```
 
 
+ [^povgoal]: The Wordl Bank also set an interim target of 9 percent by 2020.

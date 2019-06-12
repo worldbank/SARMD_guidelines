@@ -4,9 +4,9 @@ author: ["South Asia Region Team for Statistical Development (SARTSD)"]
 date: "`r Sys.Date()`" 
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site 
-bibliography: [book.bib, packages.bib] 
-biblio-style: apalike 
-link-citations: yes
+bibliography: [SARMD_guidelines.bib, packages.bib] 
+biblio-style: "apalike" 
+link-citations: true
 links-as-notes: true
 colorlinks: yes
 lot: yes
@@ -19,7 +19,7 @@ description: "SARMD User Guidelines"
 documentclass: book 
 ---
 
-# Welcome {-} 
+# Welcome {#welcome .unnumbered}
 
 <font color="red" size="6" >This is a preliminary draft. Please do not cite or distribute without permission of the SARTSD</font>
 
@@ -40,6 +40,17 @@ This book has been created by the South Asia Region Team for Statistical Develop
 ## Replicability {-}
 
 This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its [GitHub repository](https://github.com/worldbank/SARMD_guidelines). You are allowed to download and use any of the files in the repository, but please keep in mind that all the files---in particular the code---contained in this book are simultaneously available under the [MIT license](https://opensource.org/licenses/MIT). This means that you are free to use them in your own projects, as long as you cite the source.
+
+## How to read this book {#how-to-read .unnumbered}
+
+This book is not intended to be read from cover to cover. We present each chapter independent from each other; yet we added some cross reference along the book for clarification and expansion of certain topics. The book is divided into four main topics:
+
+*	**Basic information** on how to use SARMD through datalibweb and basic understanding of poverty in the SAR. 
+*	**Metadata analysis**. This section contains a clear understanding of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) in all the surveys of the region
+*	**Quality check**. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the writeups in the chapters. 
+*	**Analytical notes**. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. This notes could be easily converted into blogs. 
+
+In addition, many of the graphs in this book are interactive Tableau dashboards. Figure \@ref(fig:bicyclef), for isntance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to `bicycle` to access to a `computer` or `cellphone` by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.
 
 ## About the technical composition of this book {-}
 

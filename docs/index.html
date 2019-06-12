@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-10" />
+<meta name="date" content="2019-06-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 
-<link rel="next" href="introduction.html">
+<link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -47,6 +47,10 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -131,12 +135,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability"><i class="fa fa-check"></i>Replicability</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#interacting-with-data-visualizations"><i class="fa fa-check"></i>Interacting with data visualizations</a></li>
-<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#parts-of-the-book"><i class="fa fa-check"></i>Parts of the book</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#parts-of-the-book"><i class="fa fa-check"></i>Parts of the book</a></li>
 </ul></li>
 <li class="part"><span><b>I Basics</b></span></li>
 <li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to fundamentals of SARMD</a></li>
@@ -153,11 +157,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#citing-datalibweb"><i class="fa fa-check"></i><b>2.5</b> Citing datalibweb:</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html"><i class="fa fa-check"></i><b>3</b> Poverty measures in South Asia</a><ul>
-<li class="chapter" data-level="" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i>Poverty and shared prosperity report</a></li>
-<li class="chapter" data-level="" data-path="poverty-measures-in-south-asia.html"><a href="poverty-measures-in-south-asia.html#povcalnet"><i class="fa fa-check"></i>PovcalNet</a></li>
+<li class="chapter" data-level="3" data-path="poverty-measures.html"><a href="poverty-measures.html"><i class="fa fa-check"></i><b>3</b> Poverty measures in South Asia</a><ul>
+<li class="chapter" data-level="3.1" data-path="poverty-measures.html"><a href="poverty-measures.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i><b>3.1</b> Poverty and shared prosperity report</a></li>
+<li class="chapter" data-level="3.2" data-path="poverty-measures.html"><a href="poverty-measures.html#povcalnet"><i class="fa fa-check"></i><b>3.2</b> PovcalNet</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="poverty-measurement-methodology.html"><a href="poverty-measurement-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a></li>
+<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a><ul>
+<li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
+<li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
+<li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+</ul></li>
 <li class="part"><span><b>II Metadata Analysis</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
@@ -173,11 +182,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.2.8</b> Sri Lanka</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="expenditure-components.html"><a href="expenditure-components.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
-<li class="chapter" data-level="6.1" data-path="expenditure-components.html"><a href="expenditure-components.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
-<li class="chapter" data-level="6.2" data-path="expenditure-components.html"><a href="expenditure-components.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
-<li class="chapter" data-level="6.3" data-path="expenditure-components.html"><a href="expenditure-components.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
-<li class="chapter" data-level="6.4" data-path="expenditure-components.html"><a href="expenditure-components.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
+<li class="chapter" data-level="6" data-path="expenditure.html"><a href="expenditure.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
+<li class="chapter" data-level="6.1" data-path="expenditure.html"><a href="expenditure.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
+<li class="chapter" data-level="6.2" data-path="expenditure.html"><a href="expenditure.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
+<li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
+<li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
 </ul></li>
 <li class="part"><span><b>III Quality Check</b></span></li>
 <li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control</a></li>
@@ -289,39 +298,39 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.7.15" data-path="dictionary.html"><a href="dictionary.html#welfshprosperity"><i class="fa fa-check"></i><b>7.7.15</b> welfshprosperity</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="categorical-frequencies.html"><a href="categorical-frequencies.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
-<li class="chapter" data-level="9" data-path="availability-missing-values-and-zeros.html"><a href="availability-missing-values-and-zeros.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
-<li class="chapter" data-level="10" data-path="tests.html"><a href="tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
+<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
+<li class="chapter" data-level="9" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
+<li class="chapter" data-level="10" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
 <li class="part"><span><b>IV Analytical Notes</b></span></li>
 <li class="chapter" data-level="" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i>Introduction to the analytical notes</a></li>
-<li class="chapter" data-level="11" data-path="welfare-and-access-to-durable-assets-in-south-asia.html"><a href="welfare-and-access-to-durable-assets-in-south-asia.html"><i class="fa fa-check"></i><b>11</b> Welfare and access to durable assets in South Asia</a></li>
-<li class="chapter" data-level="12" data-path="school-enrollment-in-south-asia.html"><a href="school-enrollment-in-south-asia.html"><i class="fa fa-check"></i><b>12</b> School enrollment in South Asia</a><ul>
-<li><a href="school-enrollment-in-south-asia.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="school-enrollment-in-south-asia.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+<li class="chapter" data-level="11" data-path="notes-assest.html"><a href="notes-assest.html"><i class="fa fa-check"></i><b>11</b> Welfare and access to durable assets in South Asia</a></li>
+<li class="chapter" data-level="12" data-path="school-enrollment-in-south-asia-note-school.html"><a href="school-enrollment-in-south-asia-note-school.html"><i class="fa fa-check"></i><b>12</b> School enrollment in South Asia #{note-school}</a><ul>
+<li><a href="school-enrollment-in-south-asia-note-school.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html"><i class="fa fa-check"></i><b>13</b> Understanding poverty through household and individual level characteristics</a><ul>
-<li class="chapter" data-level="13.1" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#linear-model-results"><i class="fa fa-check"></i><b>13.1</b> Linear model results</a></li>
-<li class="chapter" data-level="13.2" data-path="understanding-poverty-through-household-and-individual-level-characteristics.html"><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#logit-model-results"><i class="fa fa-check"></i><b>13.2</b> Logit model results</a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="understanding-poverty-through-household-and-individual-level-characteristics.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+<li class="chapter" data-level="13" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>13</b> Understanding poverty through household and individual level characteristics</a><ul>
+<li class="chapter" data-level="13.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>13.1</b> Linear model results</a></li>
+<li class="chapter" data-level="13.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>13.2</b> Logit model results</a></li>
+<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh.html"><i class="fa fa-check"></i><b>14</b> Decomposing changes in poverty into endowments and returns in Bangladesh</a></li>
-<li class="chapter" data-level="15" data-path="development-of-access-to-cell-phone.html"><a href="development-of-access-to-cell-phone.html"><i class="fa fa-check"></i><b>15</b> Development of Access to Cell Phone</a></li>
-<li class="chapter" data-level="16" data-path="child-marriage-in-sar.html"><a href="child-marriage-in-sar.html"><i class="fa fa-check"></i><b>16</b> Child Marriage in SAR</a></li>
-<li class="chapter" data-level="17" data-path="improvement-of-water-supply-and-sanitation-over-time.html"><a href="improvement-of-water-supply-and-sanitation-over-time.html"><i class="fa fa-check"></i><b>17</b> Improvement of Water Supply and Sanitation Over Time</a></li>
-<li class="chapter" data-level="18" data-path="welfare-level-and-employment-by-industry-over-time.html"><a href="welfare-level-and-employment-by-industry-over-time.html"><i class="fa fa-check"></i><b>18</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="14" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>14</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="15" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>15</b> Development of Access to Cell Phone</a></li>
+<li class="chapter" data-level="16" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>16</b> Child Marriage in SAR</a></li>
+<li class="chapter" data-level="17" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>17</b> Improvement of Water Supply and Sanitation Over Time</a></li>
+<li class="chapter" data-level="18" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>18</b> Welfare level and employment by industry over time</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
@@ -346,7 +355,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">South Asia Regional Micro Database (SARMD) User Guidelines</h1>
 <p class="author"><em>South Asia Region Team for Statistical Development (SARTSD)</em></p>
-<p class="date"><em>2019-06-10</em></p>
+<p class="date"><em>2019-06-11</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
@@ -363,6 +372,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="replicability" class="section level2 unnumbered">
 <h2>Replicability</h2>
 <p>This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its <a href="https://github.com/worldbank/SARMD_guidelines">GitHub repository</a>. You are allowed to download and use any of the files in the repository, but please keep in mind that all the files—in particular the code—contained in this book are simultaneously available under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. This means that you are free to use them in your own projects, as long as you cite the source.</p>
+</div>
+<div id="how-to-read" class="section level2 unnumbered">
+<h2>How to read this book</h2>
+<p>This book is not intended to be read from cover to cover. We present each chapter independent from each other; yet we added some cross reference along the book for clarification and expansion of certain topics. The book is divided into four main topics:</p>
+<ul>
+<li><strong>Basic information</strong> on how to use SARMD through datalibweb and basic understanding of poverty in the SAR.</li>
+<li><strong>Metadata analysis</strong>. This section contains a clear understanding of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) in all the surveys of the region</li>
+<li><strong>Quality check</strong>. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the writeups in the chapters.</li>
+<li><strong>Analytical notes</strong>. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. This notes could be easily converted into blogs.</li>
+</ul>
+<p>In addition, many of the graphs in this book are interactive Tableau dashboards. Figure <a href="intro.html#fig:bicyclef">1.1</a>, for isntance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to <code>bicycle</code> to access to a <code>computer</code> or <code>cellphone</code> by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.</p>
 </div>
 <div id="about-the-technical-composition-of-this-book" class="section level2 unnumbered">
 <h2>About the technical composition of this book</h2>
@@ -404,30 +424,37 @@ Stata or R.</code></pre>
 <span class="co">## [8] base     </span>
 <span class="co">## </span>
 <span class="co">## other attached packages:</span>
-<span class="co">##  [1] xml2_1.2.0       tidyr_0.8.3      DiagrammeR_1.0.1 png_0.1-7       </span>
-<span class="co">##  [5] readr_1.3.1      dplyr_0.8.0.1    ggplot2_3.1.1    spData_0.3.0    </span>
-<span class="co">##  [9] raster_2.8-19    sp_1.3-1         sf_0.7-3        </span>
+<span class="co">##  [1] bib2df_1.1.1     tidyr_0.8.3      xml2_1.2.0       readr_1.3.1     </span>
+<span class="co">##  [5] DiagrammeR_1.0.1 png_0.1-7        dplyr_0.8.1      ggplot2_3.1.1   </span>
+<span class="co">##  [9] spData_0.3.0     raster_2.9-5     sp_1.3-1         sf_0.7-4        </span>
 <span class="co">## </span>
 <span class="co">## loaded via a namespace (and not attached):</span>
-<span class="co">##  [1] tidyselect_0.2.5   xfun_0.6           Rook_1.1-1        </span>
-<span class="co">##  [4] purrr_0.3.2        lattice_0.20-38    colorspace_1.3-2  </span>
-<span class="co">##  [7] viridisLite_0.3.0  htmltools_0.3.6    yaml_2.2.0        </span>
-<span class="co">## [10] XML_3.98-1.11      rlang_0.3.4        e1071_1.7-1       </span>
-<span class="co">## [13] pillar_1.3.1       glue_1.3.1         withr_2.1.2       </span>
-<span class="co">## [16] DBI_1.0.0          RColorBrewer_1.1-2 plyr_1.8.4        </span>
-<span class="co">## [19] stringr_1.4.0      munsell_0.5.0      gtable_0.2.0      </span>
-<span class="co">## [22] visNetwork_2.0.6   htmlwidgets_1.2    codetools_0.2-16  </span>
-<span class="co">## [25] evaluate_0.13      knitr_1.22         class_7.3-15      </span>
-<span class="co">## [28] Rcpp_1.0.1         scales_0.5.0       classInt_0.3-1    </span>
-<span class="co">## [31] jsonlite_1.6       rgexf_0.15.3       gridExtra_2.3     </span>
-<span class="co">## [34] brew_1.0-6         hms_0.4.2          packrat_0.4.9-3   </span>
-<span class="co">## [37] digest_0.6.18      stringi_1.4.3      bookdown_0.10     </span>
-<span class="co">## [40] influenceR_0.1.0   tools_3.5.3        magrittr_1.5      </span>
-<span class="co">## [43] lazyeval_0.2.1     tibble_2.1.1       crayon_1.3.4      </span>
-<span class="co">## [46] pkgconfig_2.0.2    downloader_0.4     viridis_0.5.1     </span>
-<span class="co">## [49] assertthat_0.2.0   rmarkdown_1.12     rstudioapi_0.10   </span>
-<span class="co">## [52] R6_2.2.2           units_0.6-2        igraph_1.2.1      </span>
-<span class="co">## [55] compiler_3.5.3</span></code></pre>
+<span class="co">##  [1] httr_1.4.0          viridis_0.5.1       jsonlite_1.6       </span>
+<span class="co">##  [4] viridisLite_0.3.0   shiny_1.3.2         assertthat_0.2.1   </span>
+<span class="co">##  [7] highr_0.8           yaml_2.2.0          pillar_1.4.1       </span>
+<span class="co">## [10] backports_1.1.4     lattice_0.20-38     glue_1.3.1         </span>
+<span class="co">## [13] downloader_0.4      digest_0.6.19       RColorBrewer_1.1-2 </span>
+<span class="co">## [16] promises_1.0.1      colorspace_1.4-1    htmltools_0.3.6    </span>
+<span class="co">## [19] httpuv_1.5.1        plyr_1.8.4          XML_3.98-1.19      </span>
+<span class="co">## [22] pkgconfig_2.0.2     bookdown_0.11       purrr_0.3.2        </span>
+<span class="co">## [25] xtable_1.8-4        scales_1.0.0        brew_1.0-6         </span>
+<span class="co">## [28] later_0.8.0         tibble_2.1.2        influenceR_0.1.0   </span>
+<span class="co">## [31] withr_2.1.2         humaniformat_0.6.0  fortunes_1.5-4     </span>
+<span class="co">## [34] lazyeval_0.2.2      cli_1.1.0           rgexf_0.15.3       </span>
+<span class="co">## [37] magrittr_1.5        crayon_1.3.4        mime_0.6           </span>
+<span class="co">## [40] evaluate_0.14       fansi_0.4.0         class_7.3-15       </span>
+<span class="co">## [43] Rook_1.1-1          tools_3.5.3         hms_0.4.2          </span>
+<span class="co">## [46] formatR_1.6         stringr_1.4.0       munsell_0.5.0      </span>
+<span class="co">## [49] packrat_0.5.0       compiler_3.5.3      e1071_1.7-1        </span>
+<span class="co">## [52] rlang_0.3.4         classInt_0.3-3      units_0.6-3        </span>
+<span class="co">## [55] rstudioapi_0.10     htmlwidgets_1.3     visNetwork_2.0.7   </span>
+<span class="co">## [58] igraph_1.2.4.1      miniUI_0.1.1.1      labeling_0.3       </span>
+<span class="co">## [61] rmarkdown_1.13      gtable_0.3.0        codetools_0.2-16   </span>
+<span class="co">## [64] DBI_1.0.0           R6_2.4.0            gridExtra_2.3      </span>
+<span class="co">## [67] knitr_1.23          utf8_1.1.4          zeallot_0.1.0      </span>
+<span class="co">## [70] addinexamples_0.1.0 KernSmooth_2.23-15  stringi_1.4.3      </span>
+<span class="co">## [73] Rcpp_1.0.1          vctrs_0.1.0         tidyselect_0.2.5   </span>
+<span class="co">## [76] xfun_0.7</span></code></pre>
 
 </div>
 </div>
@@ -437,7 +464,7 @@ Stata or R.</code></pre>
         </div>
       </div>
 
-<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -483,6 +510,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

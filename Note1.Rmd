@@ -11,7 +11,7 @@ In microeconomics, an Engel curve describes how household expenditure on a good 
 ```{r engel, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="Engel curves for normal goods"}
 
 read_csv("./tables/engel.csv", 
-         col_names = TRUE, col_types = cols()) %>% 
+         col_names = TRUE, col_types = readr::cols()) %>% 
   ggplot(aes(x=Wealth, y=Quantity))  +   
     geom_line(aes(color=types))
 
@@ -41,7 +41,7 @@ Therefore, we do not know the quantity of assets demanded by each household and 
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ purchases of durable assets and energy use. An estimated 368 million people live without electricity in their homes in South Asia, and even among those who do have access, many do not own basic assets such as refrigerators, televisions, or washing machines. @wolframm estimate the impact of increasing access to energy-using assets. According to their estimates, if one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent. 
+As more households currently living in poverty benefit from overall economic development, we would expect a considerable increase in households’ purchases of durable assets and energy use. An estimated 368 million people live without electricity in their homes in South Asia, and even among those who do have access, many do not own basic assets such as refrigerators, televisions, or washing machines. @wolfram_how_2012 estimate the impact of increasing access to energy-using assets. According to their estimates, if one half of the households in India who do not own refrigerators were to buy one, annual nationwide electricity demand would rise by over 10 percent. 
 
 Figure \@ref(fig:note1lines) displays the wide gap that exists between countries in the percentage of households with access to these assets. For example, almost every household in the Maldives has access to a refrigerator, while access to a refrigerator is lower in the rest of the countries. The user may use the filters to display the same figure for different durable assets. 
 
@@ -51,9 +51,9 @@ Figure \@ref(fig:note1lines) displays the wide gap that exists between countries
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-We model the non-linear relationship between welfare and access to assets as in @fuchs. These authors provide a theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A non-linear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase assets. Households faced with credit constraints only become likely to purchase assets once their income passes certain threshold levels. 
+We model the non-linear relationship between welfare and access to assets as in @gertler_demand_2016. These authors provide a theoretical framework to characterize the effect of income growth on asset purchases when consumers face credit constraints. A non-linear Engel curve means that as income goes up from initially very low levels, credit-constrained households do not immediately become more likely to purchase assets. Households faced with credit constraints only become likely to purchase assets once their income passes certain threshold levels. 
 
-Figure \@ref(fig:note1dashboard) presents the cumulative percentage of access to assets by expenditures per capita. A horizontal line would represent perfect equality in asset distribution, but that is rarely the case in the figures below. These figures show how unequal is the distribution of access to assets. In some cases, as in @fuchs, we find an S-shaped relationship between households' per capita expenditures and access to durable assets. 
+Figure \@ref(fig:note1dashboard) presents the cumulative percentage of access to assets by expenditures per capita. A horizontal line would represent perfect equality in asset distribution, but that is rarely the case in the figures below. These figures show how unequal is the distribution of access to assets. In some cases, as in @gertler_demand_2016, we find an S-shaped relationship between households' per capita expenditures and access to durable assets. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 850px;'><object class='tableauViz' width='700' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_access_to_assets&#47;AssetsandWelfare' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -64,7 +64,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 We provide some highlights from this analysis for each of the assets: 
 
 ```{r note1conclusions, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE}
-povcalnet <- read_csv("./tables/note1_conclusions.csv",col_names = TRUE, col_types = cols())
+povcalnet <- readr:: read_csv("./tables/note1_conclusions.csv",col_names = TRUE, col_types = readr::cols())
 knitr::kable(povcalnet,booktabs=TRUE, caption = 'Access to assets and welfare')
 ```
 

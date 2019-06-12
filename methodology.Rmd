@@ -1,16 +1,29 @@
-# Poverty measurement methodology 
+# Poverty measurement methodology {#poverty-methodology}
 ***
 
-The starting point in monitoring progress in poverty reduction and enhancing shared prosperity in the region of South Asia is to have household consumption survey data that are not only available at reasonably frequent intervals, but are also comparable over time (@serajuddin2015data). Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries.  
+In its most basic form, poverty measurement refers to identify those individuals or household that live below a predefined threshould of welfare. Such a threshold is generally known as a "poverty line" and the welfare aggregate that ranks the population from poorest to richest is usually measured on monetary terms like income or consumption expenditures. Given that SAR household surveys are consumption based, the rest of the book refers to "welfare aggregate" and "consumption aggregate" indistinguishably. 
+
+Many books, reports, and papers have been written on regards to the best practices to construct welfare aggreagtes, calculate poverty lines, and estimate poverty. Thus, this chapter is not in any sence an attempt to replace or summarize those resources. Instead, this chapter presents a brief explanation of the most important concepts, shows a technical examples in Stata on how to calculate poverty rates using SARMD, and showcases valuable resources with which the user should get familiar in order to understand poverty measurement properly. 
+
+## Components of the consumption welfare aggregate
+
+Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally it should be not only available at reasonably frequent intervals, but be also comparable over time [@serajuddin_data_2015]. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries. 
+
+The assumption of comparable household surveys is strong given the considerations explained in the [introduction](#intro). Yet, in a general sense most consumption aggregates account for four basic subcompoenents of expenditure: food, non-food, durables, and housing. Section 3 of @deaton_guidelines_2002 provides a detailed explanation on how to estimate each of such components. In addition, valuable and applied insights about the general idea of constructing a welfare aggregate might be found in @lanjouw_constructing_2009. The takeaway of this exercise is to realize that the welfare aggregates from two different household surveys won't ever be fully comparable because, my nature of the questionnaires, the subdomponents of each consumption aggregate will be different. In SARMD, the **consumption aggregate used to measure welbeing is provided by the National Statistics Office of each country, rather than being calculated by the SARTSD.**
+
+## Additional factors that affect the welfare aggregate
 
 First, a consumer price index (CPI) is necessary to measure by how much the general price level in a country has changed over time. Deflating all nominal expenditures to real expenditures allows to ensure that welfare comparisons between two periods are not being driven by inflation. Figure \@ref(fig:cpi) displays how the CPI has changed for each country in South Asia over time. 
 
 ```{r cpi, echo=FALSE, warning=FALSE, eval=TRUE, error=FALSE, results='markup', tidy=TRUE, cache=FALSE,  fig.cap="[Consumer Price Index (CPI)](https://tab.worldbank.org/#/site/WBG/views/SAR_MNA_Summary/LineChart)"}
-cpi <- read_csv("./tables/cpi.csv",col_names = TRUE, col_types = cols())
+cpi <- readr::read_csv("./tables/cpi.csv",
+                        col_names = TRUE, 
+                        col_types = readr::cols())
 
-ggplot(data=cpi, aes(x=year, y=cpi, group=country)) +
-  geom_line(aes(color=country))+
-  geom_point(aes(color=country)) + scale_color_brewer(palette="Dark2")
+ggplot(data = cpi, aes(x = year, y = cpi, group = country)) +
+  geom_line(aes(color = country))  +
+  geom_point(aes(color = country)) + 
+  scale_color_brewer(palette = "Dark2")
 ```
 
 Second, spatial price differences, typically between urban and rural areas, can also be large and it is important to take them into account. In South Asia, price levels for rural households are often lower than for urban households. The ideal way to control for spatial differences in prices is to use a Paasche or Laspeyres index to account for differences in the cost of living across space. 
@@ -30,41 +43,60 @@ Third, it is necessary to convert expenditures to a common currency taking into 
 
 A fourth adjustment is dividing total household expenditure by some measure of the number of people in the household, and to assign the resulting per capita welfare measure to each household member as an individual. Later in the applications, we show how larger households typically have lower per capita expenditure levels than smaller households. In South Asia, the consequences of dividing total household expenditures by a greater number of individuals would not be complete without considering the extent of economies of scale within the household and a discussion of how much children and the elderly typically consume compared to adults. 
 
-The FGT measures devised by @fgt remain the most commonly used to measure poverty. A headcount ratio may be calculated in STATA as in the example below:
+## Estimation of poverty
 
-```{stata, eval = FALSE}
-* Example: Calculating poverty headcounts with 1.90 poverty line
+The FGT measures devised by @foster_class_1984 remain the most commonly used to measure poverty. They are defines as:
 
-* Calculate per capita expenditures by dividing total
-* expenditures by the number of household members 
-  gen welfare=total_exp/hsize 
-
-* Calculate real per capita expenditures by turning nominal  
-* per capita expenditures into 2011 purchasing power parity 
-* (PPP) dollars
-  welfare_ppp = welfare/cpi2011/icp2011/365*12
-
-* Generate a dummy variable to determine whether real per capita
-* expenditures fall below the 1.90 2011 PPP dollars poverty line
-  gen poor190 = welfare_ppp < 1.90
-
-* Calculate the weighted average of the dummy variable to measure
-* the proportion of the population that falls below the 1.90 2011
-* PPP dollars poverty line
-  sum poor190 [aw=wgt]
-```
-
-```{r,eval=FALSE,echo=FALSE}
-The FGT measures devised by Foster, Greer and Thorbecke (1984)  remain the most commonly used to measure poverty. They are defined as:
-
-$$\begin{equation}
+$$
+\begin{equation}
 P_{\alpha}=\frac{1}{N}\sum^{N}_{i=1}I_{i}\left(\frac{\bar{u}-u_{i}}{\bar{u}}\right)^{\alpha}
-\end{equation}$$
+\end{equation}
+$$
 
-where N is the sample size, $$\bar{u}$$ is the scalar-valued poverty line, $$u_{i}$$ is the flow-based measure of welfare (income, expenditures, assets), $$I_{i}$$ is an indicator variable taking value one if $u_{i} < \bar{u}$ and zero otherwise, and $$\alpha$$ is a parameter reflecting the weight placed on the severity of poverty. Setting $$\alpha =0$$ yields the poverty headcount ratio $P_{0}$ (the share of a population falling below the poverty line). The higher order measures, $$P_{1}$$ and $$P_{2}$$, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from $$P_{0}$$ to $$P_{1}$$ to $$P_{2}$$, the $$P_{\alpha}$$ measure gets more and more sensitive to extremely low incomes.
+where N is the sample size, $\bar{u}$ is the scalar-valued poverty line, $u_{i}$ is the flow-based measure of welfare (income, expenditures, assets), $I_{i}$ is an indicator variable taking value one if $u_{i} < \bar{u}$ and zero otherwise, and $\alpha$ is a parameter reflecting the weight placed on the severity of poverty. Setting $\alpha =0$ yields the poverty headcount ratio $P_{0}$ (the share of a population falling below the poverty line). The higher order measures, $P_{1}$ and $P_{2}$, yield the poverty gap measure (the money metric measure of the average financial transfer needed to bring all poor households up to the poverty line) and the squared poverty gap (an indicator of the severity of poverty that is sensitive to the distribution of well-being among the poor). As we progress from $P_{0}$ to $P_{1}$ to $P_{2}$, the $P_{\alpha}$ measure gets more and more sensitive to extremely low incomes.
+
+
+## A Technical example
+
+The following lines of code show a simple of how to calculate poverty rates in Stata using the SARMD and the GMD collections. 
+
+
+```{stata statapov, echo=TRUE, collapse=TRUE, comment=""}
+
+qui {
+  /*==================================================
+      USING SARMD
+  ==================================================*/
+  cap datalibweb, country(PAK) year(2015) type(SARMD) clear
+  gen double welfare_ppp = welfare/cpi/ppp/365
+  
+  /*==================================================
+      USING GMD
+  ==================================================*/
+  cap datalibweb, country(PAK) year(2015) type(GMD) clear
+  gen double welfare_ppp = welfare/cpi2011/icp2011/365
+
+  /*==================================================
+  poverty measures             
+  ==================================================*/
+  local plines "1.9 3.2 5.5"
+  local wvar "welfare_ppp"
+  foreach pl of local plines	{
+  	gen pl_`=100*`pl'' = `pl'
+  	forval a=0/2	{
+  		gen fgt`a'_`=100*`pl'' = 100*((`wvar'<`pl')*(1-(`wvar'/`pl'))^`a')
+  	}
+  }
+  
+
+  noi tabstat fgt0* [aw = weight], by(year) nototal
+  * tabstatmat 
+  noi table year [aw = weight], c(mean fgt0_190 mean fgt0_320 mean fgt0_550 )
+}
 ```
 
-The variable `welfare` contains the monthly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure \@ref(fig:povcalnetdata2). The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty. 
+
+The variable `welfare` contains the yearly nominal expenditures per capita in local currency. Once turned into daily 2011 USD (PPP), these values may be compared over time and between countries as in Figure \@ref(fig:povcalnetdata2). The area to the left of the US$1.90 extreme poverty line represents the proportion of individuals living in extreme poverty. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Summary&#47;Distribution' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
