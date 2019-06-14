@@ -1,5 +1,5 @@
 /*==================================================
-Project:       Household Composition and Poverty Status
+Project:       Cell Phone
 Author:        Jayne Yoo and Javier Parada and Andres Castaneda 
 Dependencies:  The World Bank
 ----------------------------------------------------
@@ -91,10 +91,6 @@ keep if (countrycode=="BGD"&(year==2005|year==2016))|	///
 (countrycode=="BTN"&(year==2007|year==2017))|	///
 (countrycode=="NPL"&(year==2003|year==2016))|	///
 (countrycode=="LKA"&(year==2006|year==2016))
-
-
-
-
 
 label var cell00 "Cell Phone w/o Electricity"	
 label var cell01 "Cell Phone w/ Electricity"
