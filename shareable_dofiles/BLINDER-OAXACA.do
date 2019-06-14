@@ -1,5 +1,5 @@
 /*==================================================
-Project:       Industry
+Project:       Oaxaca Decomposition
 Author:        Jayne Yoo and Javier Parada and Andres Castaneda 
 Dependencies:  The World Bank
 ----------------------------------------------------
