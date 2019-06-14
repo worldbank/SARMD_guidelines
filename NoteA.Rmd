@@ -1,27 +1,76 @@
 # Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}
 ***
 
-Oaxaca decomposes gap in mean of poverty rate between two years. The "endowments effect" is the expected change of previous year's mean outcome, if previous year's variables had next year's predictor levels. The "coefficients effect" quantifies the expected change in previous year's mean outcome, if previous year's variables had next year's coefficients. Using this approach, the change in poverty is decomposed into that part that is due to return in endowment (education, employment or employment in high return sector)  on the one hand, and endowment accumulation  (by increases in the education level of household heads), on the other. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
+Using the poverty indicators and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method (Blinder 1973; Oaxaca 1973) decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, the change in poverty is decomposed into that part that is due to endowment accumulation  (by increases in the education level of household heads) on the one hand, and return in endowment (education, employment or employment in high return sector). This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
 
-Table x: Decomposing changes in poverty into endowments and returns in Bangladesh
+Table 1: Decomposing changes in poverty into endowments and returns in Bangladesh
 
-| Category                             | Effects from endowments | Effects from returns to endowments |
-|--------------------------------------|:------------------------:|:-----------------------------------:|
-| Total effect                         | -2.5                    | -1.3                               |
-| Education of household head          |                         |                                    |
-| None                                 | -10.3                   | -1.48                              |
-| Primary                              | 0.8                     | -0.5                               |
-| Secondary                            | -1.5                    | -0.4                               |
-| Tertiary                             | 0.4                     | 0.6                                |
-| Labor force status of household head |                         |                                    |
-| Employed                             | 0.02                    | 0.3                                |
-| Unemployed                           | 0.0048                  | 0.04                               |
-| OLF                                  | 0.0048                  | -0.03                              |
-| Sector of household head             |                         |                                    |
-| Agriculture                          | -0.23                   | 1.5                                |
-| Industry                             | 0.02                    | -0.4                               |
-| Services                             | -0.0022                 | -0.1                               |
+| Category     	| Effects  	|
+|--------------	|:----------:|
+| Year=2016    	| 21.63154 	|
+| Year=2010    	| 28.49356 	|
+| Difference   	| -6.86202 	|
+| Endowments   	| -1.66113 	|
+| Coefficients 	| -5.61915 	|
+| Interaction  	| 0.418259 	|
 
-The figure breaks down the decline in the poverty rate of 4.4 percentage points from 2010 to 2016 by whether it is driven by endowments (the education level, labor force status or sector of work of the household head) or by the return to these endowments using the Blinder-Oaxaca decomposition method. A negative number of, say, -2.5 means that this factor implied a 2.5 percentage point decline in poverty. The sum of the effects does not add up to 4.4 percentage points since residual effects and some categories related to households with missing observations are left out of the table.
+Table 1 reports the poverty rate following national poverty line in 2010 and 2016 and the difference. The poverty rate in Bangladesh declined by 6.86 percentage points between two periods, and this reduction is decomposed into three components; effects from endowment accumulation, returns from endowment and interaction. Poverty reduction was both driven by endowment effects, but its return played a dominant role, leading to a decrease in poverty by 5.61 percentage points. 
 
-For the period under consideration, poverty was driven both by changes in returns to endowments. Return to endowment induced around 4 percentage point decline in the poverty rate between 2010 and 2016. Looking at effects from the accumulation of endowment reducing poverty,  the decreasing share of household heads that had no education, and heads engaged in agriculture sector triggered a decrease in the poverty rate. Although the share of unemployed household head declined and the share of households with more years of schooling increased over time, households whose heads are unemployed and have lower educational attainment have a higher chance to stay poor.  This finding highlight the important role of human capital to escape poverty in Bangladesh.
+The ???rst part re???ects the mean change in poverty rate if explanatory indicators in 2010 had the same characteristics as the ones in 2016. The decline of -1.66 in Table 1 indicates that di???erences in literacy, gender, labor force status, and sector employment account for about less them 10 percent of the change. The second term for coefficients shows the change in poverty rate in 2010 when applying the coe???cients in 2016 to the indicators in 2010. The interaction term that measures the simultaneous e???ect of di???erences in endowments and coe???cients.
+
+Table 2: Decomposing changes in poverty into endowments and returns in Bangladesh by Components
+
+|  Category                                           |  Effects from endowments  |  Effects from returns to endowments    |
+|-----------------------------------------------------|:---------------------------:|:----------------------------------------:|
+|  Total effect                                       | -1.66                     | -5.62                                  |
+|  Literacy                                           | -1.4                      | 3.73                                   |
+|  Male                                               | 0.02                      | -1.69                                |
+|  Labor force status of household head               |                           |                                        |
+|  Employed                                           | -0.04                     | 0.06                                   |
+|  Unemployed                                         | 0.12                      | -0.01                                  |
+|  OLF                                                | -0.02                     | -1.04                                  |
+|  Sector of household head                           |                           |                                        |
+|  Agriculture                                        | -0.11                     | 1.4                                    |
+|  Mining                                             | 0.13                      | -1.01                                  |
+|  Manufacturing                                      | -0.002                    | -0.62                                  |
+|  Public Administration                              | -0.005                    | -0.06                                  |
+
+
+The figure breaks down the decline in the poverty rate of 6.86 percentage points from 2010 to 2016 at more disaggregated level, identifying whether the decrease was driven by literacy level, gender, labor force status or sector of work of the household head. The sum of the effects does not add up to 6.86 percentage points since residual effects and some categories with missing observations are not included in the table.
+
+In terms of the effects from endowment accumulation, the increasing share of household heads that can write or read, and decreasing share of heads engaged in agriculture sector triggered a decrease in the poverty rate. Decreasing illiteracy rate among household heads led to a delclined in poverty rate by 1.4 percentage point. As employment in agriculture falls, moving to manufacturing or service sectors, the effects from endowment in agriculture lowered poverty rate by 0.11 percentage point.
+
+Although the increase in the share of male household head didn't affect poverty reduction, being a female head raises a chance of staying poor by 3.73 percentage pounts.  This finding implies gender discrimination in Bangladesh in poverty reduction. Also, employment in agriculture does not affect poverty reduction but the effects from returns to endowment in manufacturing or service industry indicate advantages of departing agriculture sector or the importance of increasing productivity of agriculture. 
+
+You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/BLINDER-OAXACA.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
+
+```stata
+* Example: Decomposing changes in poverty into endowments and returns
+
+* Open dataset
+datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
+
+* Generate explanatory variables
+
+keep if relationharm==1
+
+gen lfs_empl = (lstatus==1)
+gen lfs_unem = (lstatus==2)
+gen lfs_OLF = (lstatus==3)
+gen lfs_miss = (lstatus==.)
+	
+gen industry_agri = (industry==1)
+gen industry_ining = (industry==2)
+gen industry_manu= (industry==3)
+gen industry_public = (industry==4)
+gen industry_miss = (industry==.)
+drop industry
+g poor_190=poor_nat*100
+drop if poor_nat==.
+
+* Blinder-Oaxaca decomposition 
+
+oaxaca poor_190 urban literacy  male lfs* industry* [aw=wgt] , by(year) swap relax  ///
+categorical( lfs*, industry*) 
+
+```

@@ -1,5 +1,5 @@
 /*==================================================
-Project:       Household Composition and Poverty Status
+Project:       Cell Phone
 Author:        Jayne Yoo and Javier Parada and Andres Castaneda 
 Dependencies:  The World Bank
 ----------------------------------------------------
@@ -26,7 +26,6 @@ ren (code year) (country years)
 drop if country=="IND"&survname!="NSS-SCH1"
 
 contract country years survname 
-
 ds
 gen id=country+"_"+strofreal(years)
 
@@ -61,23 +60,15 @@ qui foreach id of local ids {
 	else local surveyid ""
 	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
-
 			set trace off
-			gen cellnoelect=(cellphone==1&electricity==0)
-			cap rename welfare_v2 welfare
-			cap ren welfareother welfare
-			cap rename cpi_v2 cpi
-			cap rename ppp_v2 ppp
-			cap confirm var welfare 
-			if _rc==0 {
-			quantiles welfare [aw=wgt], gen(q) n(5)
-			su cellphone if q==1 [aw=wgt]
-			gen cell=`r(mean)'*100
-			su electricity if q==1 [aw=wgt]
-			gen elect=`r(mean)'*100
-			su cellnoelect if q==1 [aw=wgt]
-			gen cellnoel=`r(mean)'*100
-			contract countrycode year cell elect cellnoel
+			keep countrycode year cellphone electricity wgt
+			gen cellelec=(cellphone==1&electricity==1)
+			gen cellnoelec=(cellphone==1&electricity==0)
+			su cellelec [aw=wgt]
+			gen cell01=`r(mean)'*100
+			su cellnoelec [aw=wgt]
+			gen cell00=`r(mean)'*100
+			contract countrycode year cell01 cell00	
 			append using `cy'
 			save `cy', replace
 			
@@ -90,30 +81,31 @@ qui foreach id of local ids {
 		}
 
 	}
-}
+
 u `cy', clear
 
-bys country: egen myr=max(year)
-bys country: egen miyr=min(year)
-keep if year==myr|year==miyr
-bys country: egen n=count(year)
-keep if n>1
+drop if countrycode=="AFG"&year==2011
+drop if countrycode=="PAK"&year==2010
+drop if countrycode=="IND"
+keep if (countrycode=="BGD"&(year==2005|year==2016))|	///
+(countrycode=="BTN"&(year==2007|year==2017))|	///
+(countrycode=="NPL"&(year==2003|year==2016))|	///
+(countrycode=="LKA"&(year==2006|year==2016))
 
-label var cell "Cell Phone"	
-label var elect "Electricity"	
-label var cellnoel "Cell Phone w/o Electricity"
+label var cell00 "Cell Phone w/o Electricity"	
+label var cell01 "Cell Phone w/ Electricity"
 
 levelsof countrycode, loc(countries)
 foreach c of loc countries {
-	graph bar cell elect cellnoel if countrycode=="`c'", ///
-	over( year) name("`c'", replace)  subtitle("`c'")	///
-	bar(1, color(blue)) bar(2, color(orange))  bar(3, color(green))	///
-	legend(order( 1 "Cell Phone" 2 "Electricity" 3 "Cell Phone w/o Electricity")) legend(pos(6) row(1)) blabel(total, format(%9.1f)) 
+	graph bar cell00 cell01  if countrycode=="`c'" , ///
+	stack over( year) name("`c'", replace)  subtitle("`c'")	///
+	bar(1, color(blue)) bar(2, color(orange)) 	///
+	legend(order( 1 "No Access to Electricityy" 2 "Access to Electricity")) legend(pos(6) row(1)) blabel(bar, pos(center) format(%9.1f)) 
 
 
 	graph export "${path}/`c'.png", replace	
 	}
 	
-grc1leg AFG BGD BTN LKA NPL PAK, ycommon title("Access to Cell Phone & Electricity among Poor (%)")  
+grc1leg  BGD BTN LKA NPL, ycommon title("Access to Cell Phone (%)")  
 graph export "${path}/all.png", replace	
 
