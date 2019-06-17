@@ -1,9 +1,10 @@
 # (PART) Metadata Analysis {-}
 
 # Introduction to metadata analysis {#metadata .unnumbered}
+>From the archivist's and the end user's perspective, a ‘good’ dataset is one that is easy to use. Its documentation is clear and easy to understand, the data contain no surprises, and users are able to access the dataset with relatively little start-up time.[@inter-university_consortium_for_political_and_social_research_icpsr_guide_2012]
 
 ***
-The second part of this book studies the available metadata for household surveys in SARMD. Metadata is documentation that describes data and may take many different forms. 
+The second part of this book studies the available metadata for household surveys in SARMD. Metadata is documentation that describes data and, though it may take many different forms, it most meet certain objectives such help the user to find the data they are interested in, understand what the data are measuring and hot the data have been created, and assess the quality of the data. In addition, good metadata also reduced the burden of the data producer/maintainer, as it reduces the need to provide regular support to users of the data [@ihsn_microdata_2014]. Thus, this part contains two simple chapters:
 
 **Chapter 4** focuses on survey availability to present precisely which surveys are available where and when. 
 
