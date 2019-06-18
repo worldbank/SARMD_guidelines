@@ -6,8 +6,6 @@ In this chapter, we present a metadata analysis focusing on the household survey
 - We provide an empty formulary and an example of a filled out formulary that you may use as reference. See "SAR_PAK_2015 (Example).xlsm".
 - You must keep the filled out formularies in the same folder where you also keep the file "consumption surveys metadata.xlsx". Once you have filled out the information for a formulary, click on the Submit button. This will record all of the content of your formulary as a new row in "consumption surveys metadata.xlsx". 
 - The Stata metaform.ado program transforms "consumption surveys metadata.xlsx" into a shape to be used in Tableau. 
-
-[^agradece]: We would like to thank Gabriel Nicolás Camargo Toledo for his support in the conduction of this metadata analysis. 
  
 ```{r,eval=FALSE,echo=FALSE} 
  
@@ -24,13 +22,16 @@ knitr::include_graphics("figures/icon_food.png")
 
 The first component is food expenditures, which should include not only food produced and/or consumed at home, but also food purchases outside of home, and food transfers to and from the household. This component is sometimes thought to be easier to measure than non-food items. When household members eat from a common pot, it is common to find a single well-informed individual who can act as respondent and provide information about how much the household has consumed. Household surveys sometimes include a food expenditure diary, but this is not common in South Asia where most information on food is collected based on recalling what a household has consumed and purchased over the last seven days.  
  
-The ideal reference period should be a week, but in this analysis we have found reference periods still vary from yearly, to monthly, to biweekly, to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty. This is an issue that has not been much investigated, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible. 
+The ideal reference period should be a week, but in this analysis we have found reference periods still vary from yearly, to monthly, to biweekly, to daily across surveys. In recent years, the Indian National Sample Survey Organization has experimented with 7-day and 30-day recall periods for a number of items, and discovered that the 7-day recall cuts Indian poverty rates by half, removing some 200 million people from dollar-a-day poverty [add reference](). This is an issue that has not been much investigated, but has recently moved into the forefront of research. In other words, methods matter and it is important to standardize data collection as much as possible. 
  
 In most cases, countries modify their food baskets and change their data collection methods over time. A wide mixture of data collection methods characterizes the most recent rounds of household surveys. Bangladesh HIES 2016 collects daily household food consumption (both quantity and value) for a period of 14 days. In addition, it collects weekly consumption of a series of spices. Bhutan LSS 2017 collects food consumption (both quantity and value) by asking the respondent to recall their consumption in the last seven days, the last thirty days, and the last year. In some cases, such as Afghanistan LCS 2016, the female respondents are the ones asked about household food consumption. These methods can be very diverse and we provide a brief description for the latest survey available for each country in Table \@ref(tab:food).  
  
 ```{r food, echo=FALSE, messages=FALSE, warning=FALSE} 
-food <- readr:: read_csv("./tables/food.csv", col_types = readr::cols()) 
-knitr::kable(food,booktabs = TRUE, caption = 'Mixture of collection methods for food at home') 
+food <- readr::read_csv("./tables/food.csv", 
+                        col_types = readr::cols())
+knitr::kable(food, 
+             booktabs = TRUE, 
+             caption = 'Mixture of collection methods for food at home') 
 ``` 
  
 Food is composed of all edible goods that are purchased and consumed by the household with the purpose of nourishing. Food baskets are usually organized by categories into: 
@@ -59,7 +60,7 @@ We provide a Tableau dashboard where the user may compare surveys according to:
 - Information on self-production 
 - Information on transfers to and from the household  
  
-_Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
+_Instructions: The user may interact with this dashboard by filtering the observations. Try clicking on Bangladhesh in the bottom panel. This will filter the data in the upper and bottom graphs  to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Food' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
 
@@ -106,7 +107,7 @@ We provide a Tableau Dashboard where the user may compare surveys according to:
 - Data collection reference periods (daily, weekly, bi-weekly, monthly, and/or yearly)  
 - Whether they provide information on transfers to and from the household  
 
-_Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
+_Instructions: The user may interact with this dashboard by filtering the observations. Try clicking on Bangladhesh in the bottom panel. This will filter the data in the upper and bottom graphs  to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._  
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;NonFood' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
 
@@ -137,7 +138,7 @@ knitr::kable(durables,booktabs=TRUE, caption = 'Durables')
 #This section provides a summary for data collection methods for durable assets for the household surveys available in SARMD. 
 ``` 
  
- _Instructions: The user may interact with this dashboard by filtering the observations. Try selecting Bangladhesh in the bottom panel. This will filter the data in order to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
+ _Instructions: The user may interact with this dashboard by filtering the observations. Try clicking on Bangladhesh in the bottom panel. This will filter the data in the upper and bottom graphs  to show only the characteristics of the surveys in Bangladesh. The same is possible by selecting a single question, a single answer to a question, a single year, etc._ 
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Metadata&#47;Durables' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div> 
 
@@ -190,3 +191,6 @@ The most relevant dwelling characteristics displayed in the following Tableau da
  ```{r  housedash,  echo=FALSE, fig.cap = "Housing expenditure", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
+
+[^agradece]: We would like to thank Gabriel Nicolás Camargo Toledo for his support in the recollection and organization of the input data for this metadata analysis. 
+

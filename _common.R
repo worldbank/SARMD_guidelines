@@ -1,4 +1,5 @@
 
+
 set.seed(1234)
 options(digits = 3)
 
@@ -65,3 +66,14 @@ if (length(load.pkg)) {
 }
 
 knitr::write_bib(pkg, "packages.bib")
+
+
+if (Sys.info()[7] == "wb384996") {
+  if (("bib2df" %in% loadedNamespaces()) == FALSE) {
+    library("bib2df")
+  }
+  load_bib = function() {
+    df <- bib2df("SARMD_guidelines.bib")
+    df %>% dplyr::select(BIBTEXKEY, AUTHOR, TITLE) %>% View()
+  }
+}
