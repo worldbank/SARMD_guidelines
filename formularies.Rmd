@@ -96,7 +96,8 @@ Still, each country may determine its own definition of what constitutes non-foo
 Similarly to what found studying the food component, non-food items are also collected for different reference periods, for example, from consumption in the last 30 days, past 3 months, or the last year. Monthly is the most frequent collection period for non-food expenditures. Both food and non-food expenditures have insufficient coverage on transfers.  
  
 ```{r nonfood, echo=FALSE,eval=FALSE} 
-nonfood <- readr:: read_csv("./tables/nonfood.csv", col_types = readr::cols()) 
+nonfood <- readr::read_csv("./tables/nonfood.csv", 
+                            col_types = readr::cols()) 
 knitr::kable(nonfood,booktabs=TRUE, caption = 'Non-Food') 
 ``` 
  
@@ -132,9 +133,10 @@ To measure the flows from using durable goods over extended periods of time, we 
 Table \@ref(tab:durables) provides a quick comparison between countries by presenting the number of assets collected, and their collection method (i.e. quantity and/or value). In addition, we provide a Tableau dashboard where the user may identify which surveys collect insufficient information regarding durable assets.  
  
 ```{r durables, echo=FALSE} 
-durables <- readr:: read_csv("./tables/durables.csv", col_types = readr::cols()) 
-knitr::kable(durables,booktabs=TRUE, caption = 'Durables') 
- 
+durables <- readr::read_csv("./tables/durables.csv",
+                            col_types = readr::cols())
+knitr::kable(durables, booktabs = TRUE, caption = 'Durables')
+
 #This section provides a summary for data collection methods for durable assets for the household surveys available in SARMD. 
 ``` 
  
@@ -167,8 +169,10 @@ For Bangladesh HIES 2016, the housing expenditure component may include the thre
 In the rest of the countries, households are asked for their hypothetical rental values, not for the value of their dwelling. Table \@ref(tab:housing) summarizes how each survey collects rent or dwelling values for households who own their dwelling. For Bhutan LSS 2017, households were asked for the amount of rent they pay for their dwelling in a month. People who own their dwelling or stay in rent-free houses were asked to estimate the monthly house rent for their dwellings. The question was "How much would you pay if you had to rent this dwelling?". A similar question is included in the surveys Maldives HIES 2016, Nepal AHS 2016 and Sri Lanka HIES 2016. India 2011 and Pakistan 2015 still lack enough data to measure rents.  
  
 ```{r housing, echo=FALSE} 
-housing <- readr:: read_csv("./tables/housing.csv", col_types = readr::cols()) 
-knitr::kable(housing,booktabs=TRUE, caption = 'Housing') 
+housing <-
+        readr::read_csv("./tables/housing.csv", 
+                        col_types = readr::cols())
+knitr::kable(housing, booktabs = TRUE, caption = 'Housing') 
 ``` 
  
 The most relevant dwelling characteristics displayed in the following Tableau dashboard are: 
