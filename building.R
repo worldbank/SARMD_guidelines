@@ -1,9 +1,9 @@
 
 # preview just one chapter
-file <- "formularies.Rmd"
+file <- c("Partmetadata.Rmd", "PartqualityControl.Rmd")
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
-beep(5)
+beepr::beep(5)
 
 # render the whole book
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
