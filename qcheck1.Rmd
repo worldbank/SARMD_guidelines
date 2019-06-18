@@ -1,4 +1,4 @@
-# Categorical frequencies {#qcheck-categorical}
+# Temporal consistency of categorical variables {#qcheck-categorical}
 ***
 Unlike continuous variables for which averages, standard deviations, and ranges may be computed, categorical variables may be analyzed by tabulating the frequency of their values. Figure \@ref(fig:catqcheck1) allows to plot the relative frequencies of categorical variables over time for a single country. For example, the user may tabulate the absolute and relative frequencies for the values in categorical variables such as `relationharm`, `marital`, `urban`, and `educat7` for Pakistan as presented below.
 

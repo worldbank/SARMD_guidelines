@@ -108,82 +108,61 @@ Other -> psu -> strata -> spdef
 grViz(basic2)
 ```
 
-The essential variables that identify each dataset and individual within a household are ``countrycode``, ``survey``, ``year``, ``vermast``, ``veralt``, ``idh``, and ``idp``. Weights are defined as ``wgt`` and ``pop_wgt=wgt*hsize``. The dates of the survey are recorded as ``int_year`` and ``int_month``. The geographical location within the country’s administrative division is recorded as ``subnatid1``, and in some cases, ``subnatid2`` may provide a more specific location. Unfortunately, the variables ``psu`` and ``strata`` are only available for a few surveys. The same is true for the spatial deflator ``spdef``.  
+The essential variables that identify each dataset and individual within a household are `countrycode`, `survey`, `year`, `vermast`, `veralt`, `idh`, and `idp`. Household weights are homogenoursly defined for all the members of the household in the variable `wgt`. So, to have individual level estimation when working on a household level dataset, you need to multiply household size household weight, `pop_wgt=wgt*hsize`. When working on an indidividual household survey, you use `wgt`. The dates of the survey are recorded as `int_year` and `int_month`. The geographical location within the country’s administrative division is recorded as `subnatid1`, and in some cases, `subnatid2` may provide a more specific location. Unfortunately, the variables `psu` and `strata` are only available for a few surveys. The same is true for the spatial deflator `spdef`. 
 
-### countrycode
+### Short description of each variable {-}
 
-`countrycode` is a string variable that takes the following values:
+* `countrycode`: String variable with ISO3 code of each country. It takes the following values: 
 
-| Country     	| `countrycode` 	|
-|-------------	|---------------	|
-| Afghanistan 	| AFG           	|
-| Bangladesh  	| BGD           	|
-| Bhutan      	| BTN           	|
-| India       	| IND           	|
-| Maldives    	| MDV           	|
-| Nepal       	| NPL           	|
-| Pakistan    	| PAK           	|
-| Sri Lanka   	| LKA           	|
+```{r countryvar, echo = FALSE}
+df <- tribble(
+      ~Country,       ~countrycode,
+	#--------------/-------------
+   "Afghanistan" , "AFG",
+   "Bangladesh"  , "BGD",
+   "Bhutan"      , "BTN",
+   "India"       , "IND",
+   "Maldives"    , "MDV",
+   "Nepal"       , "NPL",
+   "Pakistan"    , "PAK",
+   "Sri Lanka"   , "LKA"
+)
 
-### survey
+knitr::kable(
+  df, booktabs = TRUE,
+  caption = 'ISO3 codes of SAR countries'
+)
+```
 
-`survey` is a string variable that specifies the name of the survey. 
+* `survey`: String variable with the acronym of the name of the survey. For instance, the acronym of the Household Income and Expenditure Survey of Bangladesh would be HIES.
 
-### year
+* `year`: Four--digit numeric variable that refers to the year to which the consumption welfare aggregate refers.  
 
-`year` is a four digit numeric variable. 
+* `vermast`: Two--digit string variable that indicates the version of the master (raw) data. 
 
-### vermast
+* `veralt`: Two--digit string variable that indicates the version of the harmonization (alternative) collection. 
 
-`vermast` is a two digit string variable that indicates the master version. 
+* `idh`: String variable that serves as household id or household identificator.
 
-### veralt
+* `idp`: String variable that serves as individual id or individual identificator.
 
-`veralt` is a two digit string variable that indicates the harmonization version. 
+* `wgt`: Numeric variable, also called an estimation weight, that is used to obtain estimates of population parameters of interest. The weight of a given individual may be interpreted as the number of individuals from the population that are represented by this sample unit. For example, if a random sample of 25 individuals has been selected from a population of 100, then each of the 25 sampled individuals may be viewed as representing 4 individuals of the population (@lavallee_why_2015).
 
-### idh
+* `pop_wgt`: Numeric variable that is used to obtain estimates of population parameters of interest when the survey data is collapsed at the household level. You may calculate it like this: `=wgt*hsize`
 
-`idh` is a string variable that serves as household id or household identificator.
+* `int_year`: Four--digit numeric variable that specifies the year the household survey was conducted in each household. This value may differ from variable `year` as it could be the case that some households were interviewed in a different year than the one to which the welfare aggregate refers. 
 
-### idp
+* `int_month`: Numeric variable that specifies the month of the interview (e.g., 1=January, 2=February, 3=March, etc.).
 
-`idp` is a string variable that serves as individual id or individual identificator.
+* `subnatid1`: Country-specific categorical string variable to identify the highest level of subnational regional identifiers at which the survey is representative. 
 
-### wgt 
+* `subnatid2`: Country-specific categorical string variable to identify the second highest level of subnational regional identifiers at which the survey is representative. 
 
-`wgt` is a numeric variable, also called an estimation weight, that is used to obtain estimates of population parameters of interest. The weight of a given individual may be interpreted as the number of individuals from the population that are represented by this sample unit. For example, if a random sample of 25 individuals has been selected from a population of 100, then each of the 25 sampled individuals may be viewed as representing 4 individuals of the population (@lavallee_why_2015).
+* `psu` identifies the primary sampling unit, which are the groups selected as the first stage of a multi-stage sample.
 
-### pop_wgt
+* `strata` identifies the sampling strata.
 
-``pop_wgt=wgt*hsize`` is a numeric variable that is used to obtain estimates of population parameters of interest when the survey data is collapsed at the household level. 
-
-### int_year 
-
-`int_year` is a four digit numeric variable that specifies the year of the interview. 
-
-### int_month
-
-`int_month` is a numeric variable that specifies the month of the interview (e.g., 1=January, 2=February, 3=March, etc.).
-
-### subnatid1
-
-`subnatid1` is a country-specific categorical string variable to identify the highest level of subnational regional identifiers at which the survey is representative. 
-
-### subnatid2
-
-`subnatid2` is a country-specific categorical string variable to identify the second highest level of subnational regional identifiers at which the survey is representative. 
-
-### psu
-
-`psu` identifies the primary sampling units, which are the groups selected as the first stage of a multi-stage sample.
-
-### strata 
-
-`strata` identifies the sampling strata.
-
-### spdef  
-
-`spdef` identifies the spatial deflator. 
+* `spdef` identifies the spatial deflator if avaialable. 
 
 ## Demographic variables
 
@@ -211,7 +190,7 @@ Categorical -> relationcs  -> relationharm  -> marital
 ", height=500)
 ```
 
-There are currently six essential demographic variables in SARMD: ``age``,  ``hsize``, ``male``, ``relationcs``, ``relationharm`` and ``marital``. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. For example, about 63.7 percent of Afghans are under 25 years of age, which reflects a steep pyramid age structure.  
+There are currently six essential demographic variables in SARMD: `age`,  `hsize`, `male`, `relationcs`, `relationharm` and `marital`. Population pyramids such as the one provided in Figure \@ref(fig:pyramid) allow to see how countries’ demographics change over time while showing whether the marital status of individuals has been harmonized adequately. For example, about 63.7 percent of Afghans are under 25 years of age, which reflects a steep pyramid age structure.  
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_Demographics&#47;Pyramid' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -219,13 +198,9 @@ There are currently six essential demographic variables in SARMD: ``age``,  ``hs
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-### age
+* `age` is a numeric variable that indicates the age of an individual in years. `age` is an important variable for most socio-economic analyses and must be established as accurately as possible especially for children aged less than 5 years. `age>= 98` must be coded as 98. Missing values should be recorded as `age=.`, never use `age==99`. According to SARMD, the youngest country in the region is Afghanistan and the oldest is Sri Lanka. 
 
-`age` is a numeric variable that indicates the age of an individual in years. `age` is an important variable for most socio-economic analyses and must be established as accurately as possible especially for children aged less than 5 years. `age>= 98` must be coded as 98. Missing values should be recorded as `age=.`, never use `age=99`. According to SARMD, the youngest country in the region is Afghanistan and the oldest is Sri Lanka. 
-
-### hsize
-
-`hsize` is a numeric variable that measures household size. Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
+* `hsize` is a numeric variable that measures household size. Household size is close to seven in Afghanistan, Pakistan and Maldives, and much closer to 4-5 in the rest of the countries. 
 
 Figure \@ref(fig:children) shows how average household size declines as we move to higher quintiles of per capita expenditures. Average household size is 9.66 in the poorest per capita expenditure quintile of Afghanistan, compared to 3.91 in the richest per capita expenditure quintile of Sri Lanka. Having more children (individuals < 15 years old) is negatively correlated with household per capita expenditures. We would expect higher poverty rates among large households and households with more children. 
 
@@ -235,52 +210,44 @@ Figure \@ref(fig:children) shows how average household size declines as we move 
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-### male
+* `male` indicates the gender of the household member. 
 
-`male` indicates the gender of the household member. 
+  - 1=Male 
+  - 0=Female 
 
-- 1=Male 
-- 0=Female 
+* `relationcs` refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories like:
 
-### relationcs
+  - Household Head
+  - Husband/Wife
+  - Son/Daughter
+  - Grandchildren
+  - Grandfather/Grandmother
+  - Father or mother
+  - Father-in-law/Mother-in-law
+  - Brother or sister 
+  - Brother-in-law/sister-in-law 
+  - Nephew or niece
+  - Domestic servants
+  - Employee
+  - Other family relative
+  - Unrelated member
 
-`relationcs` refers to the original categories that indicate the relationship of an individual to the household head. They change from survey to survey and may include categories like:
+* `relationharm` refers to the simplified categories that indicate the relationship of an individual to the household head: 
 
-- Household Head
-- Husband/Wife
-- Son/Daughter
-- Grandchildren
-- Grandfather/Grandmother
-- Father or mother
-- Father-in-law/Mother-in-law
-- Brother or sister 
-- Brother-in-law/sister-in-law 
-- Nephew or niece
-- Domestic servants
-- Employee
-- Other family relative
-- Unrelated member
+  - 1=Household Head
+  - 2=Spouse
+  - 3=Children
+  - 4=Parents
+  - 5=Other relatives
+  - 6=Non-relatives
 
-### relationharm
+* `marital` classifies individuals according to their marital status into these simplified categories: 
 
-`relationharm` refers to the simplified categories that indicate the relationship of an individual to the household head: 
-
-- 1=Household Head
-- 2=Spouse
-- 3=Children
-- 4=Parents
-- 5=Other relatives
-- 6=Non-relatives
-
-### marital
-
-`marital` classifies individuals according to their marital status into these simplified categories: 
-
-- 1=Married 
-- 2=Never Married
-- 3=Living Together
-- 4=Divorced/separated
-- 5=Widowed
+  - 1=Married 
+  - 2=Never Married
+  - 3=Living Together
+  - 4=Divorced/separated
+  - 5=Widowed
 
 ## Education
 
@@ -311,11 +278,9 @@ Categorical -> educat4 -> educat5 -> educat7
 
 There are currently eight essential education variables in SARMD: ``literacy``, ``atschool``, ``everattend``, ``ed_mod_age``, ``educy``, ``educat4``, ``educat5``, and ``educat7``.
 
-### literacy
+### Dummy variables of education
 
-`literacy` is a dummy variable that indicates whether an individual is able to both read and write. A person is considered literate if she can both read and write and not just one or the other. A semi-literate person (one who can read, but cannot write) is said to be illiterate. In the case where the survey asks only whether a person can read but does not ask if they can write, literacy cannot be determined, and must be coded as missing. 
-
-The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. Figure \@ref(fig:literacy) allows the user to plot literacy rates at a subnational level by gender and age groups. 
+The dashboard below summarizes the share of the population that is lerate (`literacy`), attends school (`atschool`), and has ever attended school (`everattend`). 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='Note3&#47;Literacy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -323,32 +288,22 @@ The adult literacy rate – referring to the population aged 15 and over – is 
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-### atschool
+* `literacy` is a dummy variable that indicates whether an individual is able to both read and write. A person is considered literate if she can both read and write and not just one or the other. A semi-literate person (one who can read, but cannot write) is said to be illiterate. In the case where the survey asks only whether a person can read but does not ask if they can write, literacy cannot be determined, and must be coded as missing. 
+  The adult literacy rate – referring to the population aged 15 and over – is an indicator that measures the accumulated achievement of the education system. The youth literacy rate – the literacy rate in the population aged 15-24 – reflects the outcomes of primary education over roughly the previous 10 years and is a measure of recent educational progress. Figure \@ref(fig:literacy) allows the user to plot literacy rates at a subnational level by gender and age groups. 
 
-`atschool` is a dummy variable that indicates whether individual is currently enrolled in school. 
+* `atschool` is a dummy variable that indicates whether individual is currently enrolled in school. 
 
-### everattend
+* `everattend` is a dummy variable that indicates whether individual has ever attended school. 
 
-`everattend` is a dummy variable that indicates whether individual has ever attended school. 
+### Numerical variables of education
 
-### ed_mod_age
+* `ed_mod_age` is the minimum age level at which the education module of the questionnaire is applied. 
 
-`ed_mod_age` is the minimum age level at which the education module of the questionnaire is applied. 
+* `educy` is a numeric variable that measures the number of years of education of an individual. It should not include pre-school. 
 
-### educy
+### Categorical variables of education
 
-`educy` is a numeric variable that measures the number of years of education of an individual. It should not include pre-school. 
-
-### educat4
-
-`educat4` is a numeric categorical variable that presents the level of education of an individual in four categories:
-
-- 1=No education
-- 2=Primary (complete or incomplete)
-- 3=Secondary (complete or incomplete)
-- 4=Tertiary (complete or incomplete)	
-
-Secondary is everything from the end of primary to before tertiary (for example, grade 7 through 12). Figure \@ref(fig:educat) allows the user to present the absolute and relative frequencies of these categorical variables by survey. 
+The dashboard below summarizes the categorical viariables of education. For instance, secondary education is everything from the end of primary to before tertiary (for example, grade 7 through 12). Figure \@ref(fig:educat) allows the user to present the absolute and relative frequencies of these categorical variables by survey. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 850px;'><object class='tableauViz' width='700' height='850' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNAEducationbycategories&#47;Percentages' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -356,27 +311,27 @@ Secondary is everything from the end of primary to before tertiary (for example,
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-### educat5
+* `educat4` is a numeric categorical variable that presents the level of education of an individual in four categories: 
+  - 1=No education
+  - 2=Primary (complete or incomplete)
+  - 3=Secondary (complete or incomplete)
+  - 4=Tertiary (complete or incomplete)	
 
-`educat5` is a numeric categorical variable that presents the level of education of an individual in five categories:
+* `educat5` is a numeric categorical variable that presents the level of education of an individual in five categories: 
+  - 1=No education
+  - 2=Primary incomplete
+  - 3=Primary complete but secondary incomplete
+  - 4=Secondary complete
+  - 5=Some tertiary/post-secondary
 
-- 1=No education
-- 2=Primary incomplete
-- 3=Primary complete but secondary incomplete
-- 4=Secondary complete
-- 5=Some tertiary/post-secondary
-
-### educat7
-
-`educat7` is a numeric categorical variable that presents the level of education of an individual in seven categories:
-
-- 1=No education 
-- 2=Primary incomplete
-- 3=Primary complete
-- 4=Secondary incomplete
-- 5=Secondary complete 
-- 6=Higher than secondary but not university 
-- 7=University incomplete or complete
+* `educat7` is a numeric categorical variable that presents the level of education of an individual in seven categories: 
+  - 1=No education 
+  - 2=Primary incomplete
+  - 3=Primary complete
+  - 4=Secondary incomplete
+  - 5=Secondary complete 
+  - 6=Higher than secondary but not university 
+  - 7=University incomplete or complete
 
 ## Durable assets
 
@@ -402,7 +357,8 @@ Livestock -> buffalo -> chicken -> cow
 Electric -> cellphone -> computer -> fan -> lamp -> landphone  
 Electric ->  radio -> refrigerator -> sewingmachine  -> television -> washingmachine
 }      
-", height=600)
+", height = 500)
+
 ```
 
 The sixteen asset binary variables (1=Yes, 0=No) in SARMD represent whether households have access to a particular durable asset. They do not indicate the quantity of assets available or who is the owner of the asset within the household. The variables are defined at the household level and do not represent whether each individual owns an asset in particular, but whether the household as a whole has access to it. Therefore, a household where every member owns a cellphone and a household where only one member owns a cellphone are both `cellphone=1` and cannot be distinguished.
@@ -425,69 +381,37 @@ Figure \@ref(fig:scatter) shows a clear exponential trend between the percentage
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-### bicycle
+* `bicycle` is a dummy variable that indicates the availability of bicycles in the household (1=Yes, 0=No).
 
-`bicycle` is a dummy variable that indicates the availability of bicycles in the household (1=Yes, 0=No).
+* `buffalo` is a dummy variable that indicates the availability of buffaloes in the household (1=Yes, 0=No).
 
-### buffalo
+* `cellphone` is a dummy variable that indicates the availability of cellphones in the household (1=Yes, 0=No).
 
-`buffalo` is a dummy variable that indicates the availability of buffaloes in the household (1=Yes, 0=No).
+* `chicken` is a dummy variable that indicates the availability of chicken in the household (1=Yes, 0=No).
 
-### cellphone
+* `computer` is a dummy variable that indicates the availability of computers in the household (1=Yes, 0=No).
 
-`cellphone` is a dummy variable that indicates the availability of cellphones in the household (1=Yes, 0=No).
+* `cow` is a dummy variable that indicates the availability of cows in the household (1=Yes, 0=No).
 
-### chicken
+* `fan` is a dummy variable that indicates the availability of fans in the household (1=Yes, 0=No).
 
-`chicken` is a dummy variable that indicates the availability of chicken in the household (1=Yes, 0=No).
+* `lamp` is a dummy variable that indicates the availability of lamps in the household (1=Yes, 0=No).
 
-### computer
+* `landphone` is a dummy variable that indicates the availability of land phones in the household (1=Yes, 0=No).
 
-`computer` is a dummy variable that indicates the availability of computers in the household (1=Yes, 0=No).
+* `motorcar` is a dummy variable that indicates the availability of motor cars in the household (1=Yes, 0=No).
 
-### cow
+* `motorcycle` is a dummy variable that indicates the availability of motorcycles in the household (1=Yes, 0=No).
 
-`cow` is a dummy variable that indicates the availability of cows in the household (1=Yes, 0=No).
+* `radio` is a dummy variable that indicates the availability of radios in the household (1=Yes, 0=No).
 
-### fan
+* `refrigerator` is a dummy variable that indicates the availability of refrigerators in the household (1=Yes, 0=No).
 
-`fan` is a dummy variable that indicates the availability of fans in the household (1=Yes, 0=No).
+* `sewingmachine` is a dummy variable that indicates the availability of sewing machines in the household (1=Yes, 0=No).
 
-### lamp
+* `television` is a dummy variable that indicates the availability of televisions in the household (1=Yes, 0=No).
 
-`lamp` is a dummy variable that indicates the availability of lamps in the household (1=Yes, 0=No).
-
-### landphone
-
-`landphone` is a dummy variable that indicates the availability of land phones in the household (1=Yes, 0=No).
-
-### motorcar
-
-`motorcar` is a dummy variable that indicates the availability of motor cars in the household (1=Yes, 0=No).
-
-### motorcycle
-
-`motorcycle` is a dummy variable that indicates the availability of motorcycles in the household (1=Yes, 0=No).
-
-### radio
-
-`radio` is a dummy variable that indicates the availability of radios in the household (1=Yes, 0=No).
-
-### refrigerator
-
-`refrigerator` is a dummy variable that indicates the availability of refrigerators in the household (1=Yes, 0=No).
-
-### sewingmachine
-
-`sewingmachine` is a dummy variable that indicates the availability of sewing machines in the household (1=Yes, 0=No).
-
-### television
-
-`television` is a dummy variable that indicates the availability of televisions in the household (1=Yes, 0=No).
-
-### washingmachine
-
-`washingmachine` is a dummy variable that indicates the availability of washing machines in the household (1=Yes, 0=No).
+* `washingmachine` is a dummy variable that indicates the availability of washing machines in the household (1=Yes, 0=No).
 
 ## Housing
 
@@ -513,101 +437,77 @@ Water -> piped_water -> sar_improved_water -> water_jmp -> water_orig
 Toilet -> sar_improved_toilet -> sewage_toilet -> toilet_jmp -> toilet_orig
 
 }      
-", height=600)
+", height=500)
 ```
 
 Housing is an essential component of household living conditions. For example, the living conditions of the Afghan population are to a large extent determined by the conditions of housing, including facilities for drinking water and sanitation. Most people live in dwellings that are constructed with non-durable materials and in conditions of overcrowding, meaning that there are more than three persons per room. The large majority of urban dwellers live in slums or in inadequate housing. 
 
 SARMD includes the following 12 harmonized variables related to housing: 
 
-### electricity
+* `electricity` is a dummy variable that indicates the availability of electricity in the household (1=Yes, 0=No).
 
-`electricity` is a dummy variable that indicates the availability of electricity in the household (1=Yes, 0=No).
+* `internet` is a dummy variable that indicates the availability of internet in the household (1=Yes, 0=No).
 
-### internet
+* `ownhouse` is a dummy variable that indicates the ownership status of the dwelling unit by the household residing in it. 
 
-`internet` is a dummy variable that indicates the availability of internet in the household (1=Yes, 0=No).
+  - 0 == No: refers to renters, squatters, housing received for free, among others
+  - 1 == Yes: includes ownership whether or not full-payment has yet been made
 
-### ownhouse
+* `piped_water` is a dummy variable that indicates the availability of piped water in the household (1=Yes, 0=No).
 
-`ownhouse` is a dummy variable that indicates the ownership status of the dwelling unit by the household residing in it. 
+* `sar_improved_toilet` is a dummy variable that indicates whether a household has access to an improved type of sanitation facility using country-specific definitions. 
 
-- 0=No: refers to renters, squatters, housing received for free, among others
-- 1=Yes: includes ownership whether or not full-payment has yet been made
+  - 0 == Unimproved
+  - 1 == Improved 
 
-### piped_water
+* `sar_improved_water` is a dummy variable that indicates whether a household has access to an improved source of drinking water using country-specific definitions. 
 
-`piped_water` is a dummy variable that indicates the availability of piped water in the household (1=Yes, 0=No).
+  - 0 == Unimproved
+  - 1 == Improved 
 
-### sar_improved_toilet
+* `sewage_toilet` is a dummy variable that indicates the availability of a sewage toilet in the household (1=Yes, 0=No).
 
-`sar_improved_toilet` is a dummy variable that indicates whether a household has access to an improved type of sanitation facility using country-specific definitions. 
+* `toilet_jmp` is a categorical variable that indicates the type of toilet using the Joint Monitoring Program categories:
 
-- 0=Unimproved
-- 1=Improved 
+  - 1=Flush to piped sewer  system
+  - 2=Flush to septic tank
+  - 3=Flush to pit latrine
+  - 4=Flush to somewhere else
+  - 5=Flush, don't know where
+  - 6=Ventilated improved pit latrine
+  - 7=Pit latrine with slab
+  - 8=Pit latrine without slab/open pit
+  - 9=Composting toilet
+  - 10=Bucket toilet
+  - 11=Hanging toilet/hanging latrine
+  - 12=No facility/bush/field
+  - 13=Other
 
-### sar_improved_water
+* `toilet_orig` is a categorical variable that indicates the type of toilet using the original categories provided by the survey. 
 
-`sar_improved_water` is a dummy variable that indicates whether a household has access to an improved source of drinking water using country-specific definitions. 
+* `urban` is a dummy variable that indicates whether a household is located in an urban or rural area. 
 
-- 0=Unimproved
-- 1=Improved 
+  - 0=Rural
+  - 1=Urban
 
-### sewage_toilet
+* `water_jmp` is a categorical variable that indicates the source of drinking water using the Joint Monitoring Program categories:
 
-`sewage_toilet` is a dummy variable that indicates the availability of a sewage toilet in the household (1=Yes, 0=No).
+  - 1=Piped into dwelling 
+  - 2=Piped into compound, yard or plot 
+  - 3=Public tap / standpipe 
+  - 4=Tubewell, Borehole 
+  - 5=Protected well
+  - 6=Unprotected well
+  - 7=Protected spring
+  - 8=Unprotected spring
+  - 9=Rain water
+  - 10=Tanker-truck or other vendor
+  - 11=Cart with small tank / drum
+  - 12=Surface water (river, stream, dam, lake, pond)
+  - 13=Bottled water
+  - 14=Other
 
-### toilet_jmp
-
-`toilet_jmp` is a categorical variable that indicates the type of toilet using the Joint Monitoring Program categories:
-
-- 1=Flush to piped sewer  system
-- 2=Flush to septic tank
-- 3=Flush to pit latrine
-- 4=Flush to somewhere else
-- 5=Flush, don't know where
-- 6=Ventilated improved pit latrine
-- 7=Pit latrine with slab
-- 8=Pit latrine without slab/open pit
-- 9=Composting toilet
-- 10=Bucket toilet
-- 11=Hanging toilet/hanging latrine
-- 12=No facility/bush/field
-- 13=Other
-
-### toilet_orig
-
-`toilet_orig` is a categorical variable that indicates the type of toilet using the original categories provided by the survey. 
-
-### urban
-
-`urban` is a dummy variable that indicates whether a household is located in an urban or rural area. 
-
-- 0=Rural
-- 1=Urban
-
-### water_jmp
-
-`water_jmp` is a categorical variable that indicates the source of drinking water using the Joint Monitoring Program categories:
-
-- 1=Piped into dwelling 
-- 2=Piped into compound, yard or plot 
-- 3=Public tap / standpipe 
-- 4=Tubewell, Borehole 
-- 5=Protected well
-- 6=Unprotected well
-- 7=Protected spring
-- 8=Unprotected spring
-- 9=Rain water
-- 10=Tanker-truck or other vendor
-- 11=Cart with small tank / drum
-- 12=Surface water (river, stream, dam, lake, pond)
-- 13=Bottled water
-- 14=Other
-
-### water_orig
-
-`water_orig` is a categorical variable that indicates the source of drinking water using the original categories provided by the survey. 
+* `water_orig` is a categorical variable that indicates the source of drinking water using the original categories provided by the survey. 
 
 ## Labor
 
@@ -640,168 +540,129 @@ Other -> lb_mod_age  -> njobs -> nlfreason -> occup -> ocusec -> firmsize_l
 
 
 }      
-", height=600)
+", height=500)
 ```
 
+* `empstat` is a categorical variable that indicates the type of employment of the first job:
 
-### empstat
+  - 1=Paid Employee 
+  - 2=Non-Paid Employee 
+  - 3=Employer 
+  - 4=Self-employed
+  - 5=Other, workers not classifiable by status
 
-`empstat` is a categorical variable that indicates the type of employment of the first job:
+* `empstat_2` is a categorical variable that indicates the type of employment of the second job:
 
-- 1=Paid Employee 
-- 2=Non-Paid Employee 
-- 3=Employer 
-- 4=Self-employed
-- 5=Other, workers not classifiable by status
+  - 1=Paid Employee 
+  - 2=Non-Paid Employee 
+  - 3=Employer 
+  - 4=Self-employed
+  - 5=Other, workers not classifiable by status
 
-### empstat_2
+* `empstat_2_year`
 
-`empstat_2` is a categorical variable that indicates the type of employment of the second job:
+* `firmsize_l` indicates the firm size. 
 
-- 1=Paid Employee 
-- 2=Non-Paid Employee 
-- 3=Employer 
-- 4=Self-employed
-- 5=Other, workers not classifiable by status
+* `industry` classifies the first job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
 
-### empstat_2_year
+  - 1=Agriculture, Hunting, Fishing, etc. 
+  - 2=Mining
+  - 3=Manufacturing 
+  - 4=Public Utility Services 
+  - 5=Construction 
+  - 6=Commerce
+  - 7=Transport and Communications 
+  - 8=Financial and Business Services 
+  - 9=Public Administration 
+  - 10=Others Services, Unspecified
 
-`empstat_2_year`
+* `industry_2` classifies the second job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
 
-### firmsize_l
+  - 1=Agriculture, Hunting, Fishing, etc. 
+  - 2=Mining
+  - 3=Manufacturing 
+  - 4=Public Utility Services 
+  - 5=Construction 
+  - 6=Commerce
+  - 7=Transport and Communications 
+  - 8=Financial and Business Services 
+  - 9=Public Administration 
+  - 10=Others Services, Unspecified
 
-`firmsize_l` indicates the firm size. 
+* `industry_orig` is a categorical variable that indicates the original country-specific industry codes for the first job. 
 
-### industry
+* `industry_orig_2` is a categorical variable that indicates the original country-specific industry codes for the second job. 
 
-`industry` classifies the first job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
+* `lb_mod_age` is a numerical variable that indicates the age at which the labor module starts being applied. 
 
-- 1=Agriculture, Hunting, Fishing, etc. 
-- 2=Mining
-- 3=Manufacturing 
-- 4=Public Utility Services 
-- 5=Construction 
-- 6=Commerce
-- 7=Transport and Communications 
-- 8=Financial and Business Services 
-- 9=Public Administration 
-- 10=Others Services, Unspecified
-
-### industry_2
-
-`industry_2` classifies the second job of any individual with a job, i.e., `lstatus=1`, and is missing otherwise. These single digit codes are based on the UN International Standard Industrial Classification (revision 3.1). 
-
-- 1=Agriculture, Hunting, Fishing, etc. 
-- 2=Mining
-- 3=Manufacturing 
-- 4=Public Utility Services 
-- 5=Construction 
-- 6=Commerce
-- 7=Transport and Communications 
-- 8=Financial and Business Services 
-- 9=Public Administration 
-- 10=Others Services, Unspecified
-
-### industry_orig
-
-`industry_orig` is a categorical variable that indicates the original country-specific industry codes for the first job. 
-
-### industry_orig_2
-
-`industry_orig_2` is a categorical variable that indicates the original country-specific industry codes for the second job. 
-
-### lb_mod_age
-
-`lb_mod_age` is a numerical variable that indicates the age at which the labor module starts being applied. 
-
-### lstatus
-
-`lstatus` is a categorical variable that indicates the labor force status of an individual. All persons are considered active in the labor force if they presently have a job (formal or informal) or do not have a job but are actively seeking work (unemployed). 
+* `lstatus` is a categorical variable that indicates the labor force status of an individual. All persons are considered active in the labor force if they presently have a job (formal or informal) or do not have a job but are actively seeking work (unemployed). 
 
 - 1=Employed 
 - 2=Unemployed 
 - 3=Not in labor force
 
-### njobs
+* `njobs` indicates the total number of jobs of an individual.
 
-`njobs` indicates the total number of jobs of an individual.
+* `nlfreason` is a categorical variable that indicates the reason for an individual to not be in the labor force. This variable is constructed for all those who are not presently employed and are not looking for work with `lstatus=3` and missing otherwise.
 
-### nlfreason
+  - 1=Student
+  - 2=Housewife 
+  - 3=Retired 
+  - 4=Disabled 
+  - 5=Other
 
-`nlfreason` is a categorical variable that indicates the reason for an individual to not be in the labor force. This variable is constructed for all those who are not presently employed and are not looking for work with `lstatus=3` and missing otherwise.
+* `occup` is a categorical variable that classifies jobs according to the following 1 digit occupational classification:
 
-- 1=Student
-- 2=Housewife 
-- 3=Retired 
-- 4=Disabled 
-- 5=Other
+  - 1=Managers 
+  - 2=Professionals 
+  - 3=Technicians and associate professionals 
+  - 4= Clerical support workers 
+  - 5=Service and sales workers 
+  - 6=Skilled agricultural, forestry and fishery workers
+  - 7=Craft and related trades workers
+  - 8=Plant and machine operators, and assemblers 
+  - 9=Elementary occupations 
+  - 10=Armed forces occupations 
+  - 99=Other/unspecified
 
-### occup
+* `ocusec` is a categorical variable that classifies jobs according to their sector of activity:
 
-`occup` is a categorical variable that classifies jobs according to the following 1 digit occupational classification:
+  - 1=Public sector, Central Government, Army, NGO
+  - 2=Private
+  - 3=State owned 
+  - 4=Public or State-owned, but cannot distinguish
 
-- 1=Managers 
-- 2=Professionals 
-- 3=Technicians and associate professionals 
-- 4= Clerical support workers 
-- 5=Service and sales workers 
-- 6=Skilled agricultural, forestry and fishery workers
-- 7=Craft and related trades workers
-- 8=Plant and machine operators, and assemblers 
-- 9=Elementary occupations 
-- 10=Armed forces occupations 
-- 99=Other/unspecified
+* `unitwage` states the first job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
 
-### ocusec
+  - 1=Daily 
+  - 2=Weekly 
+  - 3=Every two weeks 
+  - 4=Every two months
+  - 5=Monthly 
+  - 6=Quarterly
+  - 7=Every six months
+  - 8=Annually
+  - 9=Hourly 
+  - 10=Other
 
-`ocusec` is a categorical variable that classifies jobs according to their sector of activity:
+* `unitwage_2` states the second job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
 
-- 1=Public sector, Central Government, Army, NGO
-- 2=Private
-- 3=State owned 
-- 4=Public or State-owned, but cannot distinguish
+  - 1=Daily 
+  - 2=Weekly 
+  - 3=Every two weeks 
+  - 4=Every two months
+  - 5=Monthly 
+  - 6=Quarterly
+  - 7=Every six months
+  - 8=Annually
+  - 9=Hourly 
+  - 10=Other
 
-### unitwage
+* `wage` indicates the last wage payment of the first job where the time unit is `unitwage`. 
 
-`unitwage` states the first job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
+* `wage_2` indicates the last wage payment of the second job where the time unit is `unitwage_2`. 
 
-- 1=Daily 
-- 2=Weekly 
-- 3=Every two weeks 
-- 4=Every two months
-- 5=Monthly 
-- 6=Quarterly
-- 7=Every six months
-- 8=Annually
-- 9=Hourly 
-- 10=Other
-
-### unitwage_2
-
-`unitwage_2` states the second job's time measurement unit of an employed of any individual `lstatus=1 & empstat=1`. Should be missing otherwise.
-
-- 1=Daily 
-- 2=Weekly 
-- 3=Every two weeks 
-- 4=Every two months
-- 5=Monthly 
-- 6=Quarterly
-- 7=Every six months
-- 8=Annually
-- 9=Hourly 
-- 10=Other
-
-### wage
-
-`wage` indicates the last wage payment of the first job where the time unit is `unitwage`. 
-
-### wage_2
-
-`wage_2` indicates the last wage payment of the second job where the time unit is `unitwage_2`. 
-
-### whours
-
-`whours` indicates the number of hours worked in the last week. 
+* `whours` indicates the number of hours worked in the last week. 
 
 ## Welfare
 
@@ -833,76 +694,46 @@ Aggregates -> welfare -> welfaredef -> welfarenat -> welfarenom -> welfareother 
 Type -> welfaretype  -> welfareothertype 
 
 }      
-", height=700)
+", height=500)
 ```
 
-### cpi
+* `cpi` is the value of the Consumer Price Index based on 2011 to convert local currency units. 
 
-`cpi` is the value of the Consumer Price Index based on 2011 to convert local currency units. 
+* `cpiperiod` indicates the periodicity of Consumer Price Index, which could be by year, year and month, year and quarter, or weighted. 
 
-### cpiperiod
+* `pline_int` provides the value of the international poverty line. 
 
-`cpiperiod` indicates the periodicity of Consumer Price Index, which could be by year, year and month, year and quarter, or weighted. 
+* `pline_nat` provides the value of the national poverty line. 
 
-### pline_int
+* `poor_int` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the international poverty line. 
 
-`pline_int` provides the value of the international poverty line. 
+* `poor_nat` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the national poverty line. 
 
-### pline_nat
+* `ppp` provides the value of the 2011 Purchasing Power Parity exchange rate. 
 
-`pline_nat` provides the value of the national poverty line. 
+* `welfare` is the welfare aggregate used to compare to the international poverty line to estimate international poverty. 
 
-### poor_int
+* `welfaredef` is the spatially-deflated welfare aggregate used to compare to the poverty lines to estimate poverty. 
 
-`poor_int` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the international poverty line. 
+* `welfarenat` is the welfare aggregate used to compare to the national poverty line to estimate national poverty. 
 
-### poor_nat
+* `welfarenom` is the welfare aggregate in nominal terms. 
 
-`poor_nat` is a dummy variable that indicates whether an individual has been classified as poor (1=Yes, 0=No) as a result of being below the national poverty line. 
+* `welfareother` presents a welfare aggregate if different welfare type is used from welfare, welfarenom, or welfaredef. 
 
-### ppp
+* `welfaretype` specifies the type of welfare measure for the variables `welfare`, `welfarenom` and `welfaredef`. 
 
-`ppp` provides the value of the 2011 Purchasing Power Parity exchange rate. 
+  - INC=income
+  - CONS=consumption
+  - EXP=expenditure
 
-### welfare
+* `welfareothertype` specifies the type of welfare measure for the variable `welfareother`.
 
-`welfare` is the welfare aggregate used to compare to the international poverty line to estimate international poverty. 
+  - INC=income
+  - CONS=consumption
+  - EXP=expenditure
 
-### welfaredef
-
-`welfaredef` is the spatially-deflated welfare aggregate used to compare to the poverty lines to estimate poverty. 
-
-### welfarenat
-
-`welfarenat` is the welfare aggregate used to compare to the national poverty line to estimate national poverty. 
-
-### welfarenom
-
-`welfarenom` is the welfare aggregate in nominal terms. 
-
-### welfareother
-
-`welfareother` presents a welfare aggregate if different welfare type is used from welfare, welfarenom, or welfaredef. 
-
-### welfaretype
-
-`welfaretype` specifies the type of welfare measure for the variables `welfare`, `welfarenom` and `welfaredef`. 
-
-- INC=income
-- CONS=consumption
-- EXP=expenditure
-
-### welfareothertype
-
-`welfareothertype` specifies the type of welfare measure for the variable `welfareother`.
-
-- INC=income
-- CONS=consumption
-- EXP=expenditure
-
-### welfshprosperity
-
-`welfshprosperity` presents a welfare aggregate for shared prosperity (if different from poverty). 
+* `welfshprosperity` presents a welfare aggregate for shared prosperity (if different from poverty). 
 
 
 

@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-17" />
+<meta name="date" content="2019-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,8 +47,74 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -101,7 +167,7 @@
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
 <li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
 </ul></li>
-<li class="part"><span><b>II Metadata Analysis</b></span></li>
+<li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
 <li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.1</b> Sample size</a></li>
@@ -122,117 +188,24 @@
 <li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
 <li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
 </ul></li>
-<li class="part"><span><b>III Quality Check</b></span></li>
-<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control</a></li>
+<li class="part"><span><b>III Quality Check of SARMD</b></span></li>
+<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control of SARMD</a></li>
 <li class="chapter" data-level="7" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>7</b> Dictionary</a><ul>
 <li class="chapter" data-level="7.1" data-path="dictionary.html"><a href="dictionary.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>7.1</b> Basic survey characteristics</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="dictionary.html"><a href="dictionary.html#countrycode"><i class="fa fa-check"></i><b>7.1.1</b> countrycode</a></li>
-<li class="chapter" data-level="7.1.2" data-path="dictionary.html"><a href="dictionary.html#survey"><i class="fa fa-check"></i><b>7.1.2</b> survey</a></li>
-<li class="chapter" data-level="7.1.3" data-path="dictionary.html"><a href="dictionary.html#year"><i class="fa fa-check"></i><b>7.1.3</b> year</a></li>
-<li class="chapter" data-level="7.1.4" data-path="dictionary.html"><a href="dictionary.html#vermast"><i class="fa fa-check"></i><b>7.1.4</b> vermast</a></li>
-<li class="chapter" data-level="7.1.5" data-path="dictionary.html"><a href="dictionary.html#veralt"><i class="fa fa-check"></i><b>7.1.5</b> veralt</a></li>
-<li class="chapter" data-level="7.1.6" data-path="dictionary.html"><a href="dictionary.html#idh"><i class="fa fa-check"></i><b>7.1.6</b> idh</a></li>
-<li class="chapter" data-level="7.1.7" data-path="dictionary.html"><a href="dictionary.html#idp"><i class="fa fa-check"></i><b>7.1.7</b> idp</a></li>
-<li class="chapter" data-level="7.1.8" data-path="dictionary.html"><a href="dictionary.html#wgt"><i class="fa fa-check"></i><b>7.1.8</b> wgt</a></li>
-<li class="chapter" data-level="7.1.9" data-path="dictionary.html"><a href="dictionary.html#pop_wgt"><i class="fa fa-check"></i><b>7.1.9</b> pop_wgt</a></li>
-<li class="chapter" data-level="7.1.10" data-path="dictionary.html"><a href="dictionary.html#int_year"><i class="fa fa-check"></i><b>7.1.10</b> int_year</a></li>
-<li class="chapter" data-level="7.1.11" data-path="dictionary.html"><a href="dictionary.html#int_month"><i class="fa fa-check"></i><b>7.1.11</b> int_month</a></li>
-<li class="chapter" data-level="7.1.12" data-path="dictionary.html"><a href="dictionary.html#subnatid1"><i class="fa fa-check"></i><b>7.1.12</b> subnatid1</a></li>
-<li class="chapter" data-level="7.1.13" data-path="dictionary.html"><a href="dictionary.html#subnatid2"><i class="fa fa-check"></i><b>7.1.13</b> subnatid2</a></li>
-<li class="chapter" data-level="7.1.14" data-path="dictionary.html"><a href="dictionary.html#psu"><i class="fa fa-check"></i><b>7.1.14</b> psu</a></li>
-<li class="chapter" data-level="7.1.15" data-path="dictionary.html"><a href="dictionary.html#strata"><i class="fa fa-check"></i><b>7.1.15</b> strata</a></li>
-<li class="chapter" data-level="7.1.16" data-path="dictionary.html"><a href="dictionary.html#spdef"><i class="fa fa-check"></i><b>7.1.16</b> spdef</a></li>
+<li class="chapter" data-level="" data-path="dictionary.html"><a href="dictionary.html#short-description-of-each-variable"><i class="fa fa-check"></i>Short description of each variable</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="dictionary.html"><a href="dictionary.html#age"><i class="fa fa-check"></i><b>7.2.1</b> age</a></li>
-<li class="chapter" data-level="7.2.2" data-path="dictionary.html"><a href="dictionary.html#hsize"><i class="fa fa-check"></i><b>7.2.2</b> hsize</a></li>
-<li class="chapter" data-level="7.2.3" data-path="dictionary.html"><a href="dictionary.html#male"><i class="fa fa-check"></i><b>7.2.3</b> male</a></li>
-<li class="chapter" data-level="7.2.4" data-path="dictionary.html"><a href="dictionary.html#relationcs"><i class="fa fa-check"></i><b>7.2.4</b> relationcs</a></li>
-<li class="chapter" data-level="7.2.5" data-path="dictionary.html"><a href="dictionary.html#relationharm"><i class="fa fa-check"></i><b>7.2.5</b> relationharm</a></li>
-<li class="chapter" data-level="7.2.6" data-path="dictionary.html"><a href="dictionary.html#marital"><i class="fa fa-check"></i><b>7.2.6</b> marital</a></li>
-</ul></li>
+<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a></li>
 <li class="chapter" data-level="7.3" data-path="dictionary.html"><a href="dictionary.html#education"><i class="fa fa-check"></i><b>7.3</b> Education</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#literacy"><i class="fa fa-check"></i><b>7.3.1</b> literacy</a></li>
-<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#atschool"><i class="fa fa-check"></i><b>7.3.2</b> atschool</a></li>
-<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#everattend"><i class="fa fa-check"></i><b>7.3.3</b> everattend</a></li>
-<li class="chapter" data-level="7.3.4" data-path="dictionary.html"><a href="dictionary.html#ed_mod_age"><i class="fa fa-check"></i><b>7.3.4</b> ed_mod_age</a></li>
-<li class="chapter" data-level="7.3.5" data-path="dictionary.html"><a href="dictionary.html#educy"><i class="fa fa-check"></i><b>7.3.5</b> educy</a></li>
-<li class="chapter" data-level="7.3.6" data-path="dictionary.html"><a href="dictionary.html#educat4"><i class="fa fa-check"></i><b>7.3.6</b> educat4</a></li>
-<li class="chapter" data-level="7.3.7" data-path="dictionary.html"><a href="dictionary.html#educat5"><i class="fa fa-check"></i><b>7.3.7</b> educat5</a></li>
-<li class="chapter" data-level="7.3.8" data-path="dictionary.html"><a href="dictionary.html#educat7"><i class="fa fa-check"></i><b>7.3.8</b> educat7</a></li>
+<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#dummy-variables-of-education"><i class="fa fa-check"></i><b>7.3.1</b> Dummy variables of education</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#numerical-variables-of-education"><i class="fa fa-check"></i><b>7.3.2</b> Numerical variables of education</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#categorical-variables-of-education"><i class="fa fa-check"></i><b>7.3.3</b> Categorical variables of education</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="dictionary.html"><a href="dictionary.html#bicycle"><i class="fa fa-check"></i><b>7.4.1</b> bicycle</a></li>
-<li class="chapter" data-level="7.4.2" data-path="dictionary.html"><a href="dictionary.html#buffalo"><i class="fa fa-check"></i><b>7.4.2</b> buffalo</a></li>
-<li class="chapter" data-level="7.4.3" data-path="dictionary.html"><a href="dictionary.html#cellphone"><i class="fa fa-check"></i><b>7.4.3</b> cellphone</a></li>
-<li class="chapter" data-level="7.4.4" data-path="dictionary.html"><a href="dictionary.html#chicken"><i class="fa fa-check"></i><b>7.4.4</b> chicken</a></li>
-<li class="chapter" data-level="7.4.5" data-path="dictionary.html"><a href="dictionary.html#computer"><i class="fa fa-check"></i><b>7.4.5</b> computer</a></li>
-<li class="chapter" data-level="7.4.6" data-path="dictionary.html"><a href="dictionary.html#cow"><i class="fa fa-check"></i><b>7.4.6</b> cow</a></li>
-<li class="chapter" data-level="7.4.7" data-path="dictionary.html"><a href="dictionary.html#fan"><i class="fa fa-check"></i><b>7.4.7</b> fan</a></li>
-<li class="chapter" data-level="7.4.8" data-path="dictionary.html"><a href="dictionary.html#lamp"><i class="fa fa-check"></i><b>7.4.8</b> lamp</a></li>
-<li class="chapter" data-level="7.4.9" data-path="dictionary.html"><a href="dictionary.html#landphone"><i class="fa fa-check"></i><b>7.4.9</b> landphone</a></li>
-<li class="chapter" data-level="7.4.10" data-path="dictionary.html"><a href="dictionary.html#motorcar"><i class="fa fa-check"></i><b>7.4.10</b> motorcar</a></li>
-<li class="chapter" data-level="7.4.11" data-path="dictionary.html"><a href="dictionary.html#motorcycle"><i class="fa fa-check"></i><b>7.4.11</b> motorcycle</a></li>
-<li class="chapter" data-level="7.4.12" data-path="dictionary.html"><a href="dictionary.html#radio"><i class="fa fa-check"></i><b>7.4.12</b> radio</a></li>
-<li class="chapter" data-level="7.4.13" data-path="dictionary.html"><a href="dictionary.html#refrigerator"><i class="fa fa-check"></i><b>7.4.13</b> refrigerator</a></li>
-<li class="chapter" data-level="7.4.14" data-path="dictionary.html"><a href="dictionary.html#sewingmachine"><i class="fa fa-check"></i><b>7.4.14</b> sewingmachine</a></li>
-<li class="chapter" data-level="7.4.15" data-path="dictionary.html"><a href="dictionary.html#television"><i class="fa fa-check"></i><b>7.4.15</b> television</a></li>
-<li class="chapter" data-level="7.4.16" data-path="dictionary.html"><a href="dictionary.html#washingmachine"><i class="fa fa-check"></i><b>7.4.16</b> washingmachine</a></li>
+<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a></li>
+<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a></li>
+<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a></li>
+<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="dictionary.html"><a href="dictionary.html#electricity"><i class="fa fa-check"></i><b>7.5.1</b> electricity</a></li>
-<li class="chapter" data-level="7.5.2" data-path="dictionary.html"><a href="dictionary.html#internet"><i class="fa fa-check"></i><b>7.5.2</b> internet</a></li>
-<li class="chapter" data-level="7.5.3" data-path="dictionary.html"><a href="dictionary.html#ownhouse"><i class="fa fa-check"></i><b>7.5.3</b> ownhouse</a></li>
-<li class="chapter" data-level="7.5.4" data-path="dictionary.html"><a href="dictionary.html#piped_water"><i class="fa fa-check"></i><b>7.5.4</b> piped_water</a></li>
-<li class="chapter" data-level="7.5.5" data-path="dictionary.html"><a href="dictionary.html#sar_improved_toilet"><i class="fa fa-check"></i><b>7.5.5</b> sar_improved_toilet</a></li>
-<li class="chapter" data-level="7.5.6" data-path="dictionary.html"><a href="dictionary.html#sar_improved_water"><i class="fa fa-check"></i><b>7.5.6</b> sar_improved_water</a></li>
-<li class="chapter" data-level="7.5.7" data-path="dictionary.html"><a href="dictionary.html#sewage_toilet"><i class="fa fa-check"></i><b>7.5.7</b> sewage_toilet</a></li>
-<li class="chapter" data-level="7.5.8" data-path="dictionary.html"><a href="dictionary.html#toilet_jmp"><i class="fa fa-check"></i><b>7.5.8</b> toilet_jmp</a></li>
-<li class="chapter" data-level="7.5.9" data-path="dictionary.html"><a href="dictionary.html#toilet_orig"><i class="fa fa-check"></i><b>7.5.9</b> toilet_orig</a></li>
-<li class="chapter" data-level="7.5.10" data-path="dictionary.html"><a href="dictionary.html#urban"><i class="fa fa-check"></i><b>7.5.10</b> urban</a></li>
-<li class="chapter" data-level="7.5.11" data-path="dictionary.html"><a href="dictionary.html#water_jmp"><i class="fa fa-check"></i><b>7.5.11</b> water_jmp</a></li>
-<li class="chapter" data-level="7.5.12" data-path="dictionary.html"><a href="dictionary.html#water_orig"><i class="fa fa-check"></i><b>7.5.12</b> water_orig</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="dictionary.html"><a href="dictionary.html#empstat"><i class="fa fa-check"></i><b>7.6.1</b> empstat</a></li>
-<li class="chapter" data-level="7.6.2" data-path="dictionary.html"><a href="dictionary.html#empstat_2"><i class="fa fa-check"></i><b>7.6.2</b> empstat_2</a></li>
-<li class="chapter" data-level="7.6.3" data-path="dictionary.html"><a href="dictionary.html#empstat_2_year"><i class="fa fa-check"></i><b>7.6.3</b> empstat_2_year</a></li>
-<li class="chapter" data-level="7.6.4" data-path="dictionary.html"><a href="dictionary.html#firmsize_l"><i class="fa fa-check"></i><b>7.6.4</b> firmsize_l</a></li>
-<li class="chapter" data-level="7.6.5" data-path="dictionary.html"><a href="dictionary.html#industry"><i class="fa fa-check"></i><b>7.6.5</b> industry</a></li>
-<li class="chapter" data-level="7.6.6" data-path="dictionary.html"><a href="dictionary.html#industry_2"><i class="fa fa-check"></i><b>7.6.6</b> industry_2</a></li>
-<li class="chapter" data-level="7.6.7" data-path="dictionary.html"><a href="dictionary.html#industry_orig"><i class="fa fa-check"></i><b>7.6.7</b> industry_orig</a></li>
-<li class="chapter" data-level="7.6.8" data-path="dictionary.html"><a href="dictionary.html#industry_orig_2"><i class="fa fa-check"></i><b>7.6.8</b> industry_orig_2</a></li>
-<li class="chapter" data-level="7.6.9" data-path="dictionary.html"><a href="dictionary.html#lb_mod_age"><i class="fa fa-check"></i><b>7.6.9</b> lb_mod_age</a></li>
-<li class="chapter" data-level="7.6.10" data-path="dictionary.html"><a href="dictionary.html#lstatus"><i class="fa fa-check"></i><b>7.6.10</b> lstatus</a></li>
-<li class="chapter" data-level="7.6.11" data-path="dictionary.html"><a href="dictionary.html#njobs"><i class="fa fa-check"></i><b>7.6.11</b> njobs</a></li>
-<li class="chapter" data-level="7.6.12" data-path="dictionary.html"><a href="dictionary.html#nlfreason"><i class="fa fa-check"></i><b>7.6.12</b> nlfreason</a></li>
-<li class="chapter" data-level="7.6.13" data-path="dictionary.html"><a href="dictionary.html#occup"><i class="fa fa-check"></i><b>7.6.13</b> occup</a></li>
-<li class="chapter" data-level="7.6.14" data-path="dictionary.html"><a href="dictionary.html#ocusec"><i class="fa fa-check"></i><b>7.6.14</b> ocusec</a></li>
-<li class="chapter" data-level="7.6.15" data-path="dictionary.html"><a href="dictionary.html#unitwage"><i class="fa fa-check"></i><b>7.6.15</b> unitwage</a></li>
-<li class="chapter" data-level="7.6.16" data-path="dictionary.html"><a href="dictionary.html#unitwage_2"><i class="fa fa-check"></i><b>7.6.16</b> unitwage_2</a></li>
-<li class="chapter" data-level="7.6.17" data-path="dictionary.html"><a href="dictionary.html#wage"><i class="fa fa-check"></i><b>7.6.17</b> wage</a></li>
-<li class="chapter" data-level="7.6.18" data-path="dictionary.html"><a href="dictionary.html#wage_2"><i class="fa fa-check"></i><b>7.6.18</b> wage_2</a></li>
-<li class="chapter" data-level="7.6.19" data-path="dictionary.html"><a href="dictionary.html#whours"><i class="fa fa-check"></i><b>7.6.19</b> whours</a></li>
-</ul></li>
-<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="dictionary.html"><a href="dictionary.html#cpi"><i class="fa fa-check"></i><b>7.7.1</b> cpi</a></li>
-<li class="chapter" data-level="7.7.2" data-path="dictionary.html"><a href="dictionary.html#cpiperiod"><i class="fa fa-check"></i><b>7.7.2</b> cpiperiod</a></li>
-<li class="chapter" data-level="7.7.3" data-path="dictionary.html"><a href="dictionary.html#pline_int"><i class="fa fa-check"></i><b>7.7.3</b> pline_int</a></li>
-<li class="chapter" data-level="7.7.4" data-path="dictionary.html"><a href="dictionary.html#pline_nat"><i class="fa fa-check"></i><b>7.7.4</b> pline_nat</a></li>
-<li class="chapter" data-level="7.7.5" data-path="dictionary.html"><a href="dictionary.html#poor_int"><i class="fa fa-check"></i><b>7.7.5</b> poor_int</a></li>
-<li class="chapter" data-level="7.7.6" data-path="dictionary.html"><a href="dictionary.html#poor_nat"><i class="fa fa-check"></i><b>7.7.6</b> poor_nat</a></li>
-<li class="chapter" data-level="7.7.7" data-path="dictionary.html"><a href="dictionary.html#ppp"><i class="fa fa-check"></i><b>7.7.7</b> ppp</a></li>
-<li class="chapter" data-level="7.7.8" data-path="dictionary.html"><a href="dictionary.html#welfare-1"><i class="fa fa-check"></i><b>7.7.8</b> welfare</a></li>
-<li class="chapter" data-level="7.7.9" data-path="dictionary.html"><a href="dictionary.html#welfaredef"><i class="fa fa-check"></i><b>7.7.9</b> welfaredef</a></li>
-<li class="chapter" data-level="7.7.10" data-path="dictionary.html"><a href="dictionary.html#welfarenat"><i class="fa fa-check"></i><b>7.7.10</b> welfarenat</a></li>
-<li class="chapter" data-level="7.7.11" data-path="dictionary.html"><a href="dictionary.html#welfarenom"><i class="fa fa-check"></i><b>7.7.11</b> welfarenom</a></li>
-<li class="chapter" data-level="7.7.12" data-path="dictionary.html"><a href="dictionary.html#welfareother"><i class="fa fa-check"></i><b>7.7.12</b> welfareother</a></li>
-<li class="chapter" data-level="7.7.13" data-path="dictionary.html"><a href="dictionary.html#welfaretype"><i class="fa fa-check"></i><b>7.7.13</b> welfaretype</a></li>
-<li class="chapter" data-level="7.7.14" data-path="dictionary.html"><a href="dictionary.html#welfareothertype"><i class="fa fa-check"></i><b>7.7.14</b> welfareothertype</a></li>
-<li class="chapter" data-level="7.7.15" data-path="dictionary.html"><a href="dictionary.html#welfshprosperity"><i class="fa fa-check"></i><b>7.7.15</b> welfshprosperity</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
+<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Temporal consistency of categorical variables</a></li>
 <li class="chapter" data-level="9" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
 <li class="chapter" data-level="10" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
 <li class="part"><span><b>IV Analytical Notes</b></span></li>
@@ -294,68 +267,142 @@
   datalibweb, country(BGD) years(2016) type(SARMD) clear</code></pre>
 <p>Table <a href="inventory.html#tab:latest">5.1</a> shows the latest available household surveys in SARMD and provides links to the National Statistics Offices’ websites.</p>
 <table>
-<caption><span id="tab:latest">Table 5.1: </span>Latest household surveys available in SARMD</caption>
+<caption>
+<span id="tab:latest">Table 5.1: </span>Latest household surveys available in SARMD
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Country</th>
-<th align="left">Name of the survey</th>
-<th align="left">National Statistics Office</th>
-<th align="right">Sample size: Number of households</th>
+<tr>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:left;">
+Name of the survey
+</th>
+<th style="text-align:left;">
+National Statistics Office
+</th>
+<th style="text-align:right;">
+Sample size: Number of households
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Afghanistan, 2016</td>
-<td align="left">Living Conditions Survey</td>
-<td align="left"><a href="http://cso.gov.af/">Central Statistics Organization</a></td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+Afghanistan, 2016
+</td>
+<td style="text-align:left;">
+Living Conditions Survey
+</td>
+<td style="text-align:left;">
+<a href="http://cso.gov.af/">Central Statistics Organization</a>
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="even">
-<td align="left">Bangladesh, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://bbs.gov.bd/">Bangladesh Bureau of Statistics</a></td>
-<td align="right">46068</td>
+<tr>
+<td style="text-align:left;">
+Bangladesh, 2016
+</td>
+<td style="text-align:left;">
+Household Income and Expenditure Survey
+</td>
+<td style="text-align:left;">
+<a href="http://bbs.gov.bd/">Bangladesh Bureau of Statistics</a>
+</td>
+<td style="text-align:right;">
+46068
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Bhutan, 2017</td>
-<td align="left">Living Standards Survey</td>
-<td align="left"><a href="http://nsb.gov.bt">National Statistics Bureau</a></td>
-<td align="right">11396</td>
+<tr>
+<td style="text-align:left;">
+Bhutan, 2017
+</td>
+<td style="text-align:left;">
+Living Standards Survey
+</td>
+<td style="text-align:left;">
+<a href="http://nsb.gov.bt">National Statistics Bureau</a>
+</td>
+<td style="text-align:right;">
+11396
+</td>
 </tr>
-<tr class="even">
-<td align="left">India, 2017</td>
-<td align="left">National Sample Survey</td>
-<td align="left"><a href="http://mospi.gov.in/">Ministry of Statistics and Programme Implementation</a></td>
-<td align="right">NA</td>
+<tr>
+<td style="text-align:left;">
+India, 2017
+</td>
+<td style="text-align:left;">
+National Sample Survey
+</td>
+<td style="text-align:left;">
+<a href="http://mospi.gov.in/">Ministry of Statistics and Programme Implementation</a>
+</td>
+<td style="text-align:right;">
+NA
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Maldives, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://statisticsmaldives.gov.mv/">National Bureau of Statistics</a></td>
-<td align="right">4910</td>
+<tr>
+<td style="text-align:left;">
+Maldives, 2016
+</td>
+<td style="text-align:left;">
+Household Income and Expenditure Survey
+</td>
+<td style="text-align:left;">
+<a href="http://statisticsmaldives.gov.mv/">National Bureau of Statistics</a>
+</td>
+<td style="text-align:right;">
+4910
+</td>
 </tr>
-<tr class="even">
-<td align="left">Nepal, 2016</td>
-<td align="left">Annual Household Survey</td>
-<td align="left"><a href="http://cbs.gov.np/">Central Bureau of Statistics</a></td>
-<td align="right">4500</td>
+<tr>
+<td style="text-align:left;">
+Nepal, 2016
+</td>
+<td style="text-align:left;">
+Annual Household Survey
+</td>
+<td style="text-align:left;">
+<a href="http://cbs.gov.np/">Central Bureau of Statistics</a>
+</td>
+<td style="text-align:right;">
+4500
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Pakistan, 2015</td>
-<td align="left">Social and Living Standards Measurement Survey</td>
-<td align="left"><a href="http://www.pbs.gov.pk/">Pakistan Bureau of Statistics</a></td>
-<td align="right">24238</td>
+<tr>
+<td style="text-align:left;">
+Pakistan, 2015
+</td>
+<td style="text-align:left;">
+Social and Living Standards Measurement Survey
+</td>
+<td style="text-align:left;">
+<a href="http://www.pbs.gov.pk/">Pakistan Bureau of Statistics</a>
+</td>
+<td style="text-align:right;">
+24238
+</td>
 </tr>
-<tr class="even">
-<td align="left">Sri Lanka, 2016</td>
-<td align="left">Household Income and Expenditure Survey</td>
-<td align="left"><a href="http://www.statistics.gov.lk/">Department of Census and Statistics</a></td>
-<td align="right">21756</td>
+<tr>
+<td style="text-align:left;">
+Sri Lanka, 2016
+</td>
+<td style="text-align:left;">
+Household Income and Expenditure Survey
+</td>
+<td style="text-align:left;">
+<a href="http://www.statistics.gov.lk/">Department of Census and Statistics</a>
+</td>
+<td style="text-align:right;">
+21756
+</td>
 </tr>
 </tbody>
 </table>
 <p>Considering that the South Asia region has the second largest poor population in the world, it is essential to improve the frequency and regularity of poverty data. The following dashboard presents the surveys that make part of the South Asia Micro Database (SARMD). Six countries have released recent rounds of household surveys (Pakistan 2015, Afghanistan 2016, Bangladesh 2016, Maldives 2016, Sri Lanka 2016, and Bhutan 2017) while others are about to release a new round in the next year (India 2017-2018). Nepal has collected five rounds of its Annual Household Survey (AHS) while it waits for the fourth round of the Nepal Living Standards Survey.</p>
-<p>In a general sense, <em>data deprivation for poverty monitoring</em> refers to the state of a country in which there is less than two household surveys in a ten-year period. Those countries without any data point in a ten-year period are considered <em>extremely</em> data deprived, whereas those with only one data point are considered <em>moderately</em> deprived <span class="citation">(Serajuddin et al. <a href="#ref-serajuddin_data_2015-1">2015</a>, 8)</span>. In the case of the South Asia region, three countries (Bangladesh, Maldives and India) might be classified as <em>vulnerable to data deprivation</em>, as the time interval between two surveys is larger than five years at any ten-year period. Given that the rest of the countries collect three or more data points in any ten-year period, they are considered to be <em>satisfactory for data needs</em>.</p>
+<p>In a general sense, <em>data deprivation for poverty monitoring</em> refers to the state of a country in which there is less than two household surveys in a ten-year period. Those countries without any data point in a ten-year period are considered <em>extremely</em> data deprived, whereas those with only one data point are considered <em>moderately</em> deprived <span class="citation">(Serajuddin, Uematsu, Wieser, Yoshida, and Dabalen <a href="#ref-serajuddin_data_2015-1">2015</a><a href="#ref-serajuddin_data_2015-1">b</a>, 8)</span>. In the case of the South Asia region, three countries (Bangladesh, Maldives and India) might be classified as <em>vulnerable to data deprivation</em>, as the time interval between two surveys is larger than five years at any ten-year period. Given that the rest of the countries collect three or more data points in any ten-year period, they are considered to be <em>satisfactory for data needs</em>.</p>
 <p>Figure <a href="inventory.html#fig:inventory2">5.1</a> presents the current status of the SARMD harmonization process and its previous rounds for each country:</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
@@ -369,7 +416,7 @@
 Figure 5.1: Harmonization status of SARMD
 </p>
 </div>
-<p>You may be wondering how does this compare to other regions of the world? Figures <a href="inventory.html#fig:inventory3">5.2</a> and <a href="inventory.html#fig:inventory4">5.3</a> provide the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC where some countries even provide yearly updates, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period). Note that we are omitting certain countries for which there are no surveys available. Therefore, we are overestimating these frequencies.</p>
+<p>You may be wondering how does this compare to other regions of the world? Figures <a href="inventory.html#fig:inventory3">5.2</a> and <a href="inventory.html#fig:inventory4">5.3</a> provide the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC, where most of the countries produce yearly or biannual househod surveys, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period).<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>The case of India is particularly important because the frequency of its poverty data is too low for a country with such an important role in global poverty monitoring. Its most recent survey conducted in 2016-17 has not been harmonized nor released yet.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
@@ -472,11 +519,17 @@ Figure 5.4: SARMD inventory
 <p>Ahmed, Faizuddin, Dipankar Roy, Monica Yanez-Pagans, and Nobuo Yoshida. 2017. “Design of a Multi-Stage Stratified Sample for Poverty and Welfare Monitoring with Multiple Objectives: A Bangladesh Case Study.” <a href="https://openknowledge.worldbank.org/handle/10986/26239">https://openknowledge.worldbank.org/handle/10986/26239</a>.</p>
 </div>
 <div id="ref-serajuddin_data_2015-1">
-<p>Serajuddin, Umar, Hiroki Uematsu, Christina Wieser, Nobuo Yoshida, and Andrew L. Dabalen. 2015. “Data Deprivation : Another Deprivation to End.” WPS7252. The World Bank. <a href="http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end">http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end</a>.</p>
+<p>Serajuddin, Umar, Hiroki Uematsu, Christina Wieser, Nobuo Yoshida, and Andrew L. Dabalen. 2015b. “Data Deprivation : Another Deprivation to End.” WPS7252. The World Bank. <a href="http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end">http://documents.worldbank.org/curated/en/700611468172787967/Data-deprivation-another-deprivation-to-end</a>.</p>
 </div>
 <div id="ref-wieser_poverty_2018">
 <p>Wieser, Christina, Giovani Vecchi, and Giulia Mancini. 2018. <em>Poverty Measurement Methodology in the Maldives</em>. World Bank Technical Report.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>Note that we are omitting certain countries for which there are no surveys available. Therefore, we are overestimating these frequencies.<a href="inventory.html#fnref3" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -530,6 +583,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

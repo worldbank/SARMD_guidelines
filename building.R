@@ -1,9 +1,9 @@
 
 # preview just one chapter
-file <- c("Partmetadata.Rmd", "PartqualityControl.Rmd")
+file <- c("dictionary.Rmd")
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
-beepr::beep(5)
+beepr::beep(10)
 
 # render the whole book
 bookdown::render_book("index.Rmd", "bookdown::gitbook")

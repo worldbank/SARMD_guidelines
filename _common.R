@@ -50,7 +50,9 @@ pkg <-
     "png",
     "grid",
     "DiagrammeR",
-    "tidyr"
+    "tidyr",
+    "tibble",
+    "kableExtra"
   )
 new.pkg <-
   pkg[!(pkg %in% installed.packages()[, "Package"])] # check installed packages
