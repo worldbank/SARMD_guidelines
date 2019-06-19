@@ -1,14 +1,14 @@
-# (PART) Quality Check {-}
+# (PART) Quality Check of SARMD {-}
 
-# Introduction to quality control {#qcheck .unnumbered}
+# Introduction to quality control of SARMD {#qcheck .unnumbered}
 
 ***
-The third part of the book presents the harmonized variables in SARMD and provides the results of conducting a quality check (qckeck) on these variables. 
+This part of the book presents a broader understanding of the SARMD collection and provides the results of conducting a quality control check on all the harmonized variables of SARMD. The quality control was done using the Stata package **qcheck**, available in the World Bank Github repository: [worldbank/qcheck](https://github.com/worldbank/qcheck)
 
-**Chapter 7** provides a dictionary of harmonized variables. It presents all the harmonized variables available in SARMD. 
+**Chapter 7** provides a dictionary of all the harmonized variables in SARMD, divided in seven broad categories. 
 
-**Chapter 8**  tabulates the frequencies in the values of categorical variables.   
+**Chapter 8** tabulates the frequencies of the values of categorical variables over time. 
 
-**Chapter 9** presents the frequency of missing values and zeros in the variables. 
+**Chapter 9** presents a simple analysis of missing values and zeros in the harmonized variables.
 
-**Chapter 10** provides a static quality check for variables within a given survey. This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 
+**Chapter 10** provides a static quality check for variables within a given survey. We included a wide variety of logical tests to test the internal consistency of each dataset. Then, we created an interactive dashboard that summarized the results. This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 

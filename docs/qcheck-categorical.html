@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Categorical frequencies | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 8 Temporal consistency of categorical variables | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Categorical frequencies | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 8 Temporal consistency of categorical variables | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Categorical frequencies | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 8 Temporal consistency of categorical variables | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-11" />
+<meta name="date" content="2019-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,7 +167,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
 <li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
 </ul></li>
-<li class="part"><span><b>II Metadata Analysis</b></span></li>
+<li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
 <li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
 <li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.1</b> Sample size</a></li>
@@ -188,117 +188,24 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
 <li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
 </ul></li>
-<li class="part"><span><b>III Quality Check</b></span></li>
-<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control</a></li>
+<li class="part"><span><b>III Quality Check of SARMD</b></span></li>
+<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control of SARMD</a></li>
 <li class="chapter" data-level="7" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>7</b> Dictionary</a><ul>
 <li class="chapter" data-level="7.1" data-path="dictionary.html"><a href="dictionary.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>7.1</b> Basic survey characteristics</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="dictionary.html"><a href="dictionary.html#countrycode"><i class="fa fa-check"></i><b>7.1.1</b> countrycode</a></li>
-<li class="chapter" data-level="7.1.2" data-path="dictionary.html"><a href="dictionary.html#survey"><i class="fa fa-check"></i><b>7.1.2</b> survey</a></li>
-<li class="chapter" data-level="7.1.3" data-path="dictionary.html"><a href="dictionary.html#year"><i class="fa fa-check"></i><b>7.1.3</b> year</a></li>
-<li class="chapter" data-level="7.1.4" data-path="dictionary.html"><a href="dictionary.html#vermast"><i class="fa fa-check"></i><b>7.1.4</b> vermast</a></li>
-<li class="chapter" data-level="7.1.5" data-path="dictionary.html"><a href="dictionary.html#veralt"><i class="fa fa-check"></i><b>7.1.5</b> veralt</a></li>
-<li class="chapter" data-level="7.1.6" data-path="dictionary.html"><a href="dictionary.html#idh"><i class="fa fa-check"></i><b>7.1.6</b> idh</a></li>
-<li class="chapter" data-level="7.1.7" data-path="dictionary.html"><a href="dictionary.html#idp"><i class="fa fa-check"></i><b>7.1.7</b> idp</a></li>
-<li class="chapter" data-level="7.1.8" data-path="dictionary.html"><a href="dictionary.html#wgt"><i class="fa fa-check"></i><b>7.1.8</b> wgt</a></li>
-<li class="chapter" data-level="7.1.9" data-path="dictionary.html"><a href="dictionary.html#pop_wgt"><i class="fa fa-check"></i><b>7.1.9</b> pop_wgt</a></li>
-<li class="chapter" data-level="7.1.10" data-path="dictionary.html"><a href="dictionary.html#int_year"><i class="fa fa-check"></i><b>7.1.10</b> int_year</a></li>
-<li class="chapter" data-level="7.1.11" data-path="dictionary.html"><a href="dictionary.html#int_month"><i class="fa fa-check"></i><b>7.1.11</b> int_month</a></li>
-<li class="chapter" data-level="7.1.12" data-path="dictionary.html"><a href="dictionary.html#subnatid1"><i class="fa fa-check"></i><b>7.1.12</b> subnatid1</a></li>
-<li class="chapter" data-level="7.1.13" data-path="dictionary.html"><a href="dictionary.html#subnatid2"><i class="fa fa-check"></i><b>7.1.13</b> subnatid2</a></li>
-<li class="chapter" data-level="7.1.14" data-path="dictionary.html"><a href="dictionary.html#psu"><i class="fa fa-check"></i><b>7.1.14</b> psu</a></li>
-<li class="chapter" data-level="7.1.15" data-path="dictionary.html"><a href="dictionary.html#strata"><i class="fa fa-check"></i><b>7.1.15</b> strata</a></li>
-<li class="chapter" data-level="7.1.16" data-path="dictionary.html"><a href="dictionary.html#spdef"><i class="fa fa-check"></i><b>7.1.16</b> spdef</a></li>
+<li class="chapter" data-level="" data-path="dictionary.html"><a href="dictionary.html#short-description-of-each-variable"><i class="fa fa-check"></i>Short description of each variable</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="dictionary.html"><a href="dictionary.html#age"><i class="fa fa-check"></i><b>7.2.1</b> age</a></li>
-<li class="chapter" data-level="7.2.2" data-path="dictionary.html"><a href="dictionary.html#hsize"><i class="fa fa-check"></i><b>7.2.2</b> hsize</a></li>
-<li class="chapter" data-level="7.2.3" data-path="dictionary.html"><a href="dictionary.html#male"><i class="fa fa-check"></i><b>7.2.3</b> male</a></li>
-<li class="chapter" data-level="7.2.4" data-path="dictionary.html"><a href="dictionary.html#relationcs"><i class="fa fa-check"></i><b>7.2.4</b> relationcs</a></li>
-<li class="chapter" data-level="7.2.5" data-path="dictionary.html"><a href="dictionary.html#relationharm"><i class="fa fa-check"></i><b>7.2.5</b> relationharm</a></li>
-<li class="chapter" data-level="7.2.6" data-path="dictionary.html"><a href="dictionary.html#marital"><i class="fa fa-check"></i><b>7.2.6</b> marital</a></li>
-</ul></li>
+<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a></li>
 <li class="chapter" data-level="7.3" data-path="dictionary.html"><a href="dictionary.html#education"><i class="fa fa-check"></i><b>7.3</b> Education</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#literacy"><i class="fa fa-check"></i><b>7.3.1</b> literacy</a></li>
-<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#atschool"><i class="fa fa-check"></i><b>7.3.2</b> atschool</a></li>
-<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#everattend"><i class="fa fa-check"></i><b>7.3.3</b> everattend</a></li>
-<li class="chapter" data-level="7.3.4" data-path="dictionary.html"><a href="dictionary.html#ed_mod_age"><i class="fa fa-check"></i><b>7.3.4</b> ed_mod_age</a></li>
-<li class="chapter" data-level="7.3.5" data-path="dictionary.html"><a href="dictionary.html#educy"><i class="fa fa-check"></i><b>7.3.5</b> educy</a></li>
-<li class="chapter" data-level="7.3.6" data-path="dictionary.html"><a href="dictionary.html#educat4"><i class="fa fa-check"></i><b>7.3.6</b> educat4</a></li>
-<li class="chapter" data-level="7.3.7" data-path="dictionary.html"><a href="dictionary.html#educat5"><i class="fa fa-check"></i><b>7.3.7</b> educat5</a></li>
-<li class="chapter" data-level="7.3.8" data-path="dictionary.html"><a href="dictionary.html#educat7"><i class="fa fa-check"></i><b>7.3.8</b> educat7</a></li>
+<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#dummy-variables-of-education"><i class="fa fa-check"></i><b>7.3.1</b> Dummy variables of education</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#numerical-variables-of-education"><i class="fa fa-check"></i><b>7.3.2</b> Numerical variables of education</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#categorical-variables-of-education"><i class="fa fa-check"></i><b>7.3.3</b> Categorical variables of education</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="dictionary.html"><a href="dictionary.html#bicycle"><i class="fa fa-check"></i><b>7.4.1</b> bicycle</a></li>
-<li class="chapter" data-level="7.4.2" data-path="dictionary.html"><a href="dictionary.html#buffalo"><i class="fa fa-check"></i><b>7.4.2</b> buffalo</a></li>
-<li class="chapter" data-level="7.4.3" data-path="dictionary.html"><a href="dictionary.html#cellphone"><i class="fa fa-check"></i><b>7.4.3</b> cellphone</a></li>
-<li class="chapter" data-level="7.4.4" data-path="dictionary.html"><a href="dictionary.html#chicken"><i class="fa fa-check"></i><b>7.4.4</b> chicken</a></li>
-<li class="chapter" data-level="7.4.5" data-path="dictionary.html"><a href="dictionary.html#computer"><i class="fa fa-check"></i><b>7.4.5</b> computer</a></li>
-<li class="chapter" data-level="7.4.6" data-path="dictionary.html"><a href="dictionary.html#cow"><i class="fa fa-check"></i><b>7.4.6</b> cow</a></li>
-<li class="chapter" data-level="7.4.7" data-path="dictionary.html"><a href="dictionary.html#fan"><i class="fa fa-check"></i><b>7.4.7</b> fan</a></li>
-<li class="chapter" data-level="7.4.8" data-path="dictionary.html"><a href="dictionary.html#lamp"><i class="fa fa-check"></i><b>7.4.8</b> lamp</a></li>
-<li class="chapter" data-level="7.4.9" data-path="dictionary.html"><a href="dictionary.html#landphone"><i class="fa fa-check"></i><b>7.4.9</b> landphone</a></li>
-<li class="chapter" data-level="7.4.10" data-path="dictionary.html"><a href="dictionary.html#motorcar"><i class="fa fa-check"></i><b>7.4.10</b> motorcar</a></li>
-<li class="chapter" data-level="7.4.11" data-path="dictionary.html"><a href="dictionary.html#motorcycle"><i class="fa fa-check"></i><b>7.4.11</b> motorcycle</a></li>
-<li class="chapter" data-level="7.4.12" data-path="dictionary.html"><a href="dictionary.html#radio"><i class="fa fa-check"></i><b>7.4.12</b> radio</a></li>
-<li class="chapter" data-level="7.4.13" data-path="dictionary.html"><a href="dictionary.html#refrigerator"><i class="fa fa-check"></i><b>7.4.13</b> refrigerator</a></li>
-<li class="chapter" data-level="7.4.14" data-path="dictionary.html"><a href="dictionary.html#sewingmachine"><i class="fa fa-check"></i><b>7.4.14</b> sewingmachine</a></li>
-<li class="chapter" data-level="7.4.15" data-path="dictionary.html"><a href="dictionary.html#television"><i class="fa fa-check"></i><b>7.4.15</b> television</a></li>
-<li class="chapter" data-level="7.4.16" data-path="dictionary.html"><a href="dictionary.html#washingmachine"><i class="fa fa-check"></i><b>7.4.16</b> washingmachine</a></li>
+<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a></li>
+<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a></li>
+<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a></li>
+<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="dictionary.html"><a href="dictionary.html#electricity"><i class="fa fa-check"></i><b>7.5.1</b> electricity</a></li>
-<li class="chapter" data-level="7.5.2" data-path="dictionary.html"><a href="dictionary.html#internet"><i class="fa fa-check"></i><b>7.5.2</b> internet</a></li>
-<li class="chapter" data-level="7.5.3" data-path="dictionary.html"><a href="dictionary.html#ownhouse"><i class="fa fa-check"></i><b>7.5.3</b> ownhouse</a></li>
-<li class="chapter" data-level="7.5.4" data-path="dictionary.html"><a href="dictionary.html#piped_water"><i class="fa fa-check"></i><b>7.5.4</b> piped_water</a></li>
-<li class="chapter" data-level="7.5.5" data-path="dictionary.html"><a href="dictionary.html#sar_improved_toilet"><i class="fa fa-check"></i><b>7.5.5</b> sar_improved_toilet</a></li>
-<li class="chapter" data-level="7.5.6" data-path="dictionary.html"><a href="dictionary.html#sar_improved_water"><i class="fa fa-check"></i><b>7.5.6</b> sar_improved_water</a></li>
-<li class="chapter" data-level="7.5.7" data-path="dictionary.html"><a href="dictionary.html#sewage_toilet"><i class="fa fa-check"></i><b>7.5.7</b> sewage_toilet</a></li>
-<li class="chapter" data-level="7.5.8" data-path="dictionary.html"><a href="dictionary.html#toilet_jmp"><i class="fa fa-check"></i><b>7.5.8</b> toilet_jmp</a></li>
-<li class="chapter" data-level="7.5.9" data-path="dictionary.html"><a href="dictionary.html#toilet_orig"><i class="fa fa-check"></i><b>7.5.9</b> toilet_orig</a></li>
-<li class="chapter" data-level="7.5.10" data-path="dictionary.html"><a href="dictionary.html#urban"><i class="fa fa-check"></i><b>7.5.10</b> urban</a></li>
-<li class="chapter" data-level="7.5.11" data-path="dictionary.html"><a href="dictionary.html#water_jmp"><i class="fa fa-check"></i><b>7.5.11</b> water_jmp</a></li>
-<li class="chapter" data-level="7.5.12" data-path="dictionary.html"><a href="dictionary.html#water_orig"><i class="fa fa-check"></i><b>7.5.12</b> water_orig</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="dictionary.html"><a href="dictionary.html#empstat"><i class="fa fa-check"></i><b>7.6.1</b> empstat</a></li>
-<li class="chapter" data-level="7.6.2" data-path="dictionary.html"><a href="dictionary.html#empstat_2"><i class="fa fa-check"></i><b>7.6.2</b> empstat_2</a></li>
-<li class="chapter" data-level="7.6.3" data-path="dictionary.html"><a href="dictionary.html#empstat_2_year"><i class="fa fa-check"></i><b>7.6.3</b> empstat_2_year</a></li>
-<li class="chapter" data-level="7.6.4" data-path="dictionary.html"><a href="dictionary.html#firmsize_l"><i class="fa fa-check"></i><b>7.6.4</b> firmsize_l</a></li>
-<li class="chapter" data-level="7.6.5" data-path="dictionary.html"><a href="dictionary.html#industry"><i class="fa fa-check"></i><b>7.6.5</b> industry</a></li>
-<li class="chapter" data-level="7.6.6" data-path="dictionary.html"><a href="dictionary.html#industry_2"><i class="fa fa-check"></i><b>7.6.6</b> industry_2</a></li>
-<li class="chapter" data-level="7.6.7" data-path="dictionary.html"><a href="dictionary.html#industry_orig"><i class="fa fa-check"></i><b>7.6.7</b> industry_orig</a></li>
-<li class="chapter" data-level="7.6.8" data-path="dictionary.html"><a href="dictionary.html#industry_orig_2"><i class="fa fa-check"></i><b>7.6.8</b> industry_orig_2</a></li>
-<li class="chapter" data-level="7.6.9" data-path="dictionary.html"><a href="dictionary.html#lb_mod_age"><i class="fa fa-check"></i><b>7.6.9</b> lb_mod_age</a></li>
-<li class="chapter" data-level="7.6.10" data-path="dictionary.html"><a href="dictionary.html#lstatus"><i class="fa fa-check"></i><b>7.6.10</b> lstatus</a></li>
-<li class="chapter" data-level="7.6.11" data-path="dictionary.html"><a href="dictionary.html#njobs"><i class="fa fa-check"></i><b>7.6.11</b> njobs</a></li>
-<li class="chapter" data-level="7.6.12" data-path="dictionary.html"><a href="dictionary.html#nlfreason"><i class="fa fa-check"></i><b>7.6.12</b> nlfreason</a></li>
-<li class="chapter" data-level="7.6.13" data-path="dictionary.html"><a href="dictionary.html#occup"><i class="fa fa-check"></i><b>7.6.13</b> occup</a></li>
-<li class="chapter" data-level="7.6.14" data-path="dictionary.html"><a href="dictionary.html#ocusec"><i class="fa fa-check"></i><b>7.6.14</b> ocusec</a></li>
-<li class="chapter" data-level="7.6.15" data-path="dictionary.html"><a href="dictionary.html#unitwage"><i class="fa fa-check"></i><b>7.6.15</b> unitwage</a></li>
-<li class="chapter" data-level="7.6.16" data-path="dictionary.html"><a href="dictionary.html#unitwage_2"><i class="fa fa-check"></i><b>7.6.16</b> unitwage_2</a></li>
-<li class="chapter" data-level="7.6.17" data-path="dictionary.html"><a href="dictionary.html#wage"><i class="fa fa-check"></i><b>7.6.17</b> wage</a></li>
-<li class="chapter" data-level="7.6.18" data-path="dictionary.html"><a href="dictionary.html#wage_2"><i class="fa fa-check"></i><b>7.6.18</b> wage_2</a></li>
-<li class="chapter" data-level="7.6.19" data-path="dictionary.html"><a href="dictionary.html#whours"><i class="fa fa-check"></i><b>7.6.19</b> whours</a></li>
-</ul></li>
-<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="dictionary.html"><a href="dictionary.html#cpi"><i class="fa fa-check"></i><b>7.7.1</b> cpi</a></li>
-<li class="chapter" data-level="7.7.2" data-path="dictionary.html"><a href="dictionary.html#cpiperiod"><i class="fa fa-check"></i><b>7.7.2</b> cpiperiod</a></li>
-<li class="chapter" data-level="7.7.3" data-path="dictionary.html"><a href="dictionary.html#pline_int"><i class="fa fa-check"></i><b>7.7.3</b> pline_int</a></li>
-<li class="chapter" data-level="7.7.4" data-path="dictionary.html"><a href="dictionary.html#pline_nat"><i class="fa fa-check"></i><b>7.7.4</b> pline_nat</a></li>
-<li class="chapter" data-level="7.7.5" data-path="dictionary.html"><a href="dictionary.html#poor_int"><i class="fa fa-check"></i><b>7.7.5</b> poor_int</a></li>
-<li class="chapter" data-level="7.7.6" data-path="dictionary.html"><a href="dictionary.html#poor_nat"><i class="fa fa-check"></i><b>7.7.6</b> poor_nat</a></li>
-<li class="chapter" data-level="7.7.7" data-path="dictionary.html"><a href="dictionary.html#ppp"><i class="fa fa-check"></i><b>7.7.7</b> ppp</a></li>
-<li class="chapter" data-level="7.7.8" data-path="dictionary.html"><a href="dictionary.html#welfare-1"><i class="fa fa-check"></i><b>7.7.8</b> welfare</a></li>
-<li class="chapter" data-level="7.7.9" data-path="dictionary.html"><a href="dictionary.html#welfaredef"><i class="fa fa-check"></i><b>7.7.9</b> welfaredef</a></li>
-<li class="chapter" data-level="7.7.10" data-path="dictionary.html"><a href="dictionary.html#welfarenat"><i class="fa fa-check"></i><b>7.7.10</b> welfarenat</a></li>
-<li class="chapter" data-level="7.7.11" data-path="dictionary.html"><a href="dictionary.html#welfarenom"><i class="fa fa-check"></i><b>7.7.11</b> welfarenom</a></li>
-<li class="chapter" data-level="7.7.12" data-path="dictionary.html"><a href="dictionary.html#welfareother"><i class="fa fa-check"></i><b>7.7.12</b> welfareother</a></li>
-<li class="chapter" data-level="7.7.13" data-path="dictionary.html"><a href="dictionary.html#welfaretype"><i class="fa fa-check"></i><b>7.7.13</b> welfaretype</a></li>
-<li class="chapter" data-level="7.7.14" data-path="dictionary.html"><a href="dictionary.html#welfareothertype"><i class="fa fa-check"></i><b>7.7.14</b> welfareothertype</a></li>
-<li class="chapter" data-level="7.7.15" data-path="dictionary.html"><a href="dictionary.html#welfshprosperity"><i class="fa fa-check"></i><b>7.7.15</b> welfshprosperity</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Categorical frequencies</a></li>
+<li class="chapter" data-level="8" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>8</b> Temporal consistency of categorical variables</a></li>
 <li class="chapter" data-level="9" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>9</b> Availability, missing values, and zeros</a></li>
 <li class="chapter" data-level="10" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>10</b> Tests</a></li>
 <li class="part"><span><b>IV Analytical Notes</b></span></li>
@@ -353,7 +260,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="qcheck-categorical" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Categorical frequencies</h1>
+<h1><span class="header-section-number">Chapter 8</span> Temporal consistency of categorical variables</h1>
 <hr />
 <p>Unlike continuous variables for which averages, standard deviations, and ranges may be computed, categorical variables may be analyzed by tabulating the frequency of their values. Figure <a href="qcheck-categorical.html#fig:catqcheck1">8.1</a> allows to plot the relative frequencies of categorical variables over time for a single country. For example, the user may tabulate the absolute and relative frequencies for the values in categorical variables such as <code>relationharm</code>, <code>marital</code>, <code>urban</code>, and <code>educat7</code> for Pakistan as presented below.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
