@@ -11,3 +11,5 @@ SARMD-Guidelines\.tex
 
 _book/
 _bookdown_files/
+
+findings/variable_derivation/sarmd_vars_derivation\.dta

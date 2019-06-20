@@ -1,6 +1,6 @@
 
 # preview just one chapter
-file <- c("dictionary.Rmd")
+file <- c("qcheck2.Rmd")
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 beepr::beep(10)
