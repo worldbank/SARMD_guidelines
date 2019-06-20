@@ -18,6 +18,8 @@ Output:
 version 15.1
 drop _all
 
+global var_der_dir "c:\Users\wb384996\OneDrive - WBG\SARTSD\SARMD_guidelines\findings\variable_derivation"
+
 /*==================================================
            Dependencies
 ==================================================*/
@@ -42,7 +44,7 @@ if ("${sarmd_cmds_ssc}" == "") {
 /*==================================================
            1: Find out all do-files
 ==================================================*/
-*##s
+
 *----------1.1: define small mata function
 mata:
 	mata clear
@@ -108,9 +110,8 @@ while ("`dir'" != "")  {
 ==================================================*/
 
 *----------2.1: import variable names
-local var_der_dir "c:\Users\wb384996\OneDrive - WBG\SARTSD\SARMD_guidelines\findings\variable_derivation"
 
-import delimited using "`var_der_dir'/sarmd_vars.csv", clear /* 
+import delimited using "${var_der_dir}/sarmd_vars.csv", clear /* 
  */ varnames(1) encoding("utf-8") 
 
 levelsof vars, local(vars)
@@ -156,7 +157,9 @@ qui foreach i of numlist 1/`nrows' {
 
 compress
 save tempfile, replace // 
-*##e
+*##s
+use tempfile, clear
+
 
 /*==================================================
            3: rearrange file and export
@@ -165,6 +168,9 @@ save tempfile, replace //
 *----------3.1:rename and split
 rename dofile id
 replace id = subinstr(id, ".do","",.)
+replace id = regexs(1) + "-" + regexs(2) if /* 
+ */ regexm(id, "([a-z]+_[0-9]+_[a-z]+)_([a-z0-9]+_v[0-9]+.*)")
+
 
 split id, parse(_) gen(sec)
 rename (sec1 sec2 sec3 sec4 sec6) ///
@@ -175,12 +181,34 @@ replace countrycode = upper(countrycode)
 destring year, force replace
 replace survey = upper(survey)
 order id country year survey ver* var code
-*----------3.2:
+
+*----------3.2: later variable
+replace vermast = subinstr(vermast, "v", "", .)
+replace veralt  = subinstr(veralt, "v", "", .)
+
+destring vermast veralt, replace force 
+
+bysort countrycode year survey: egen mmax = max(vermast)
+bysort countrycode year survey: egen amax = max(veralt) if vermast == 1
+keep if (mmax == vermast & amax == veralt)
+drop mmax amax
+
+tostring vermast veralt, replace force
 
 
+*---------- fix trailing code
+ 
+replace code = ustrtrim(code)
+replace code = subinstr(code, "`=char(10)'`=char(13)' ", "`=char(10)'`=char(13)'", .)
+replace code = subinstr(code, "`=char(10)'", "", .)
+ 
+*----------3.3: export 
+compress
+save "${var_der_dir}/sarmd_vars_derivation.dta", replace
+export delimited "${var_der_dir}/sarmd_vars_derivation.csv", replace quote
+*##e
 
 
-*----------3.3:
 
 
 
