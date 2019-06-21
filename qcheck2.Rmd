@@ -1,16 +1,20 @@
-# Availability, missing values, and zeros {#qcheck-avialabitliy}
+# Availability, missing values, and zeros in SARMD {#qcheck-avialabitliy}
 ***
 
 Figures \@ref(fig:qcheckl1), \@ref(fig:qcheckl2), and \@ref(fig:qcheckl3) provide three ways of visualizing the availability, percentage of missing values and frequency of zeros in the harmonized variables. 
 
+According to the SARMD protocols, if the raw data does not have the necessary information to harmonize a particular SARMD variable, the variable must still be included in the dataset as a vector of missing values. If the variable is absent from the dataset, it could be the case that the raw data contains the necessary information to harmonize such variable, but it has  not been harmonized yet; or that there is no information in the raw data and previous harmonizers decided not to include it in the variable as a vector of missing values. As it is impossible to know what the correct answer is, figure \@ref(fig:qcheckl1) shows all the variables that have not been harmonized in each dataset available in SARMD.  
+
+For example, note that all the variables of the assets category are absent from the datasets of the Maldives in 1997 and 2004. Another example, Pakistan 2015 lacks several variables of the assets category that were present in the surveys of previoues years. Moreoever, some variables like `landphone`, `cellphone`, and `computer` that are present in 2015, were absent before 2015.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_QCheck&#47;Absent' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
-
 
 ```{r  qcheckl1,  echo=FALSE, fig.cap = "Absent variables", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
  
+Figure  
+
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_QCheck&#47;Missing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 

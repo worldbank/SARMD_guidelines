@@ -25,6 +25,7 @@ rmd_files: [
 
   "PartqualityControl.Rmd",
   "dictionary.Rmd",
+  "var_derivation.Rmd",
   "qcheck1.Rmd",
   "qcheck2.Rmd",
   "qcheck3.Rmd",
