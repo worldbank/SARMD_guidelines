@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Variable derivation of SARMD | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <meta name="description" content="SARMD User Guidelines" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Variable derivation of SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="SARMD User Guidelines" />
+  <meta name="github-repo" content="worldbank/SARMD_guidelines" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Variable derivation of SARMD | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  
+  <meta name="twitter:description" content="SARMD User Guidelines" />
+  
+
+<meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
+
+
+<meta name="date" content="2019-06-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dictionary.html">
+<link rel="next" href="qcheck-categorical.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARMD User Guidelines</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability"><i class="fa fa-check"></i>Replicability</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#parts-of-the-book"><i class="fa fa-check"></i>Parts of the book</a></li>
+</ul></li>
+<li class="part"><span><b>I Basics</b></span></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to fundamentals of SARMD</a></li>
+<li class="chapter" data-level="2" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html"><i class="fa fa-check"></i><b>2</b> Datalibweb: Getting Access to SARMD</a><ul>
+<li class="chapter" data-level="2.1" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#request-access-to-the-system"><i class="fa fa-check"></i><b>2.1</b> Request access to the system</a></li>
+<li class="chapter" data-level="2.2" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#install-the-datalibweb-command-in-stata"><i class="fa fa-check"></i><b>2.2</b> Install the <code>datalibweb</code> command in Stata</a><ul>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#option-1.-direct-installation"><i class="fa fa-check"></i>Option 1. Direct Installation</a></li>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#option-2.-manual-installation"><i class="fa fa-check"></i>Option 2. Manual Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#filename-structure"><i class="fa fa-check"></i><b>2.3</b> Filename structure</a></li>
+<li class="chapter" data-level="2.4" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#using-datalibweb"><i class="fa fa-check"></i><b>2.4</b> Using <code>datalibweb</code></a><ul>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#clicking-on-the-stata-results-window"><i class="fa fa-check"></i>Clicking on the Stata results window</a></li>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#providing-the-complete-datalibweb-syntax"><i class="fa fa-check"></i>Providing the complete datalibweb syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#citing-datalibweb"><i class="fa fa-check"></i><b>2.5</b> Citing datalibweb:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="poverty-measures.html"><a href="poverty-measures.html"><i class="fa fa-check"></i><b>3</b> Poverty measures in South Asia</a><ul>
+<li class="chapter" data-level="3.1" data-path="poverty-measures.html"><a href="poverty-measures.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i><b>3.1</b> Poverty and shared prosperity report</a></li>
+<li class="chapter" data-level="3.2" data-path="poverty-measures.html"><a href="poverty-measures.html#povcalnet"><i class="fa fa-check"></i><b>3.2</b> PovcalNet</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a><ul>
+<li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
+<li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
+<li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+</ul></li>
+<li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
+<li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
+<li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
+<li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.1</b> Sample size</a></li>
+<li class="chapter" data-level="5.2" data-path="inventory.html"><a href="inventory.html#country-descriptions"><i class="fa fa-check"></i><b>5.2</b> Country descriptions</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="inventory.html"><a href="inventory.html#afghanistan"><i class="fa fa-check"></i><b>5.2.1</b> Afghanistan</a></li>
+<li class="chapter" data-level="5.2.2" data-path="inventory.html"><a href="inventory.html#bangladesh"><i class="fa fa-check"></i><b>5.2.2</b> Bangladesh</a></li>
+<li class="chapter" data-level="5.2.3" data-path="inventory.html"><a href="inventory.html#bhutan"><i class="fa fa-check"></i><b>5.2.3</b> Bhutan</a></li>
+<li class="chapter" data-level="5.2.4" data-path="inventory.html"><a href="inventory.html#india"><i class="fa fa-check"></i><b>5.2.4</b> India</a></li>
+<li class="chapter" data-level="5.2.5" data-path="inventory.html"><a href="inventory.html#maldives"><i class="fa fa-check"></i><b>5.2.5</b> Maldives</a></li>
+<li class="chapter" data-level="5.2.6" data-path="inventory.html"><a href="inventory.html#nepal"><i class="fa fa-check"></i><b>5.2.6</b> Nepal</a></li>
+<li class="chapter" data-level="5.2.7" data-path="inventory.html"><a href="inventory.html#pakistan"><i class="fa fa-check"></i><b>5.2.7</b> Pakistan</a></li>
+<li class="chapter" data-level="5.2.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.2.8</b> Sri Lanka</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="expenditure.html"><a href="expenditure.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
+<li class="chapter" data-level="6.1" data-path="expenditure.html"><a href="expenditure.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
+<li class="chapter" data-level="6.2" data-path="expenditure.html"><a href="expenditure.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
+<li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
+<li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
+</ul></li>
+<li class="part"><span><b>III Quality Check of SARMD</b></span></li>
+<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control of SARMD</a></li>
+<li class="chapter" data-level="7" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>7</b> Dictionary</a><ul>
+<li class="chapter" data-level="7.1" data-path="dictionary.html"><a href="dictionary.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>7.1</b> Basic survey characteristics</a><ul>
+<li class="chapter" data-level="" data-path="dictionary.html"><a href="dictionary.html#short-description-of-each-variable"><i class="fa fa-check"></i>Short description of each variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a></li>
+<li class="chapter" data-level="7.3" data-path="dictionary.html"><a href="dictionary.html#education"><i class="fa fa-check"></i><b>7.3</b> Education</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#dummy-variables-of-education"><i class="fa fa-check"></i><b>7.3.1</b> Dummy variables of education</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#numerical-variables-of-education"><i class="fa fa-check"></i><b>7.3.2</b> Numerical variables of education</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#categorical-variables-of-education"><i class="fa fa-check"></i><b>7.3.3</b> Categorical variables of education</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a></li>
+<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a></li>
+<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a></li>
+<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="var-derivation.html"><a href="var-derivation.html"><i class="fa fa-check"></i><b>8</b> Variable derivation of SARMD</a></li>
+<li class="chapter" data-level="9" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>9</b> Temporal consistency of categorical variables</a></li>
+<li class="chapter" data-level="10" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>10</b> Availability, missing values, and zeros in SARMD</a></li>
+<li class="chapter" data-level="11" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>11</b> Tests</a></li>
+<li class="part"><span><b>IV Analytical Notes</b></span></li>
+<li class="chapter" data-level="" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i>Introduction to the analytical notes</a></li>
+<li class="chapter" data-level="12" data-path="notes-assest.html"><a href="notes-assest.html"><i class="fa fa-check"></i><b>12</b> Welfare and access to durable assets in South Asia</a></li>
+<li class="chapter" data-level="13" data-path="school-enrollment-in-south-asia-note-school.html"><a href="school-enrollment-in-south-asia-note-school.html"><i class="fa fa-check"></i><b>13</b> School enrollment in South Asia #{note-school}</a><ul>
+<li><a href="school-enrollment-in-south-asia-note-school.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="school-enrollment-in-south-asia-note-school.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
+<li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
+<li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
+<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
+<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child Marriage in SAR</a></li>
+<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Improvement of Water Supply and Sanitation Over Time</a></li>
+<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">South Asia Regional Micro Database (SARMD) User Guidelines</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="var-derivation" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Variable derivation of SARMD</h1>
+<p>In this chapter we present the variable derivation of the most recent versin of the harmonized variables of each dataset in the SARMD collection. Figure <a href="#fir:varderivation"><strong>??</strong></a> shows the Stata code used to create each harmonized variable per country. As some countries have more than two surveys over time, it is necessary to scroll left and right in order to compare the variable derivation across year. Alternatively, you may select a different set of years in the filter at the bottom of the figure.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 854px;">
+<object class="tableauViz" width="700" height="854" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='sarmd_var_derivation&#47;var_derivation' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
+</div>
+<div class="figure" style="text-align: left"><span id="fig:varderivation"></span>
+<img src="figures/fake_figure.PNG" alt="SARMD Availability and missing observations" width="70%" />
+<p class="caption">
+Figure 8.1: SARMD Availability and missing observations
+</p>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dictionary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="qcheck-categorical.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["SARMD-Guidelines.pdf", "SARMD-Guidelines.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

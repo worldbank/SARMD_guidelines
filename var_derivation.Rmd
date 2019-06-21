@@ -1,0 +1,10 @@
+# Variable derivation of SARMD {#var-derivation}
+
+In this chapter we present the variable derivation of the most recent versin of the harmonized variables of each dataset in the SARMD collection. Figure \@ref(fir:varderivation) shows the Stata code used to create each harmonized variable per country. As some countries have more than two surveys over time, it is necessary to scroll left and right in order to compare the variable derivation across year. Alternatively, you may select a different set of years in the filter at the bottom of the figure. 
+
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 854px;'><object class='tableauViz' width='700' height='854' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='sarmd_var_derivation&#47;var_derivation' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+
+```{r  varderivation,  echo=FALSE, fig.cap = "SARMD variable derivation", fig.align = 'left'}
+knitr::include_graphics("figures/fake_figure.PNG")
+```
+
