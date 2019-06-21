@@ -1,6 +1,6 @@
 
 # preview just one chapter
-file <- c("qcheck2.Rmd")
+file <- c("var_derivation.Rmd")
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 beepr::beep(10)
