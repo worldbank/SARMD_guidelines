@@ -1,9 +1,10 @@
 # Improvement of Water Supply and Sanitation Over Time {#note-water}
 ***
 
-There are several variables that contain the information on water and sanitation condition. Indicators that represent the hygiene level, however, are not available in the harnomized data. The most commonly found indicators in the data include "piped_water" and "toilet_acc". The binary variables indicate whether a household has access to piped water and basic sanitation facility. 
+## Analysis {-}
+There are several variables that contain the information on water and sanitation condition. Indicators that represent the hygiene level, however, are not available in the harnomized data. The most commonly found indicators in the data include `piped_water` and `toilet_acc`. The binary variables indicate whether a household has access to piped water and basic sanitation facility. 
 
-Users need to have discretion in comparing the share of access to water and sanitation across countries in the region. Definition of piped water can be different since some countries further specify the location of piped water, and categories of toilet is not universal in the region. Instead, identifying the distribution of the access by welfare level and its trend over time within each country would be reasonable. 
+Users need to have caution in comparing the share of access to water and sanitation across countries in the region, as the definition of piped water is different in each country and categories of toilet is not universal in the region. Instead, identifying the distribution of the access by welfare level and its trend over time within each country would be reasonable. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteD_all&#47;2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -11,7 +12,7 @@ Users need to have discretion in comparing the share of access to water and sani
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-Piped water is considered as improved water supply than surface water, unprotected and possibly contaminated wells. Overall, less than half of population do not have access to piped water. In Afghanistan and Banglaesh, only 9.7 and 11.3 percent of population has access to piped water and rest of them reply on informal and relatively unsafe water source. Beside the two WASH indicators, quality of drinking water can be identified with the source of drinking water supplied. This information can be found in some countries, but majority of the harmonized data in the region do not have this variable. 
+Among the different categories of water supply, piped water is considered improved water supply in contrast to other laternatives such as surface water, unprotected and possibly contaminated wells. Overall, less than half of population do not have access to piped water. In Afghanistan and Banglaesh, only 9.7 and 11.3 percent of population has access to piped water. Besides the two WASH indicators, quality of drinking water can be identified with the source of drinking water supplied. This information can be found in some countries, but majority of the harmonized data in the region do not have this variable. 
 
 Even though the figure on access to toilet shows relatively better condition, more than a third of population except Sri Lanka still do not have proper sanitation system. In Nepal, the condition of access to toilet is worse than that of access to piped water as more than 60 percent of households do not have access to toilet. 
 
@@ -33,4 +34,39 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 The majority of the population in South Asia live without safe water and sanitation and poor people tend to encounter more severe shortage of the access. This limited access to safe water services and sanitation may lead to poor hygiene behaviours, which are the leading causes of child mortality and morbidity. These further contribute to undernutrition and stunting and act as barriers to quality education for girls and boys in the region. Establishing infrastructure especially for marginalized groups is necessary in mitigating greater health and thus poverty challenges. 
 
-You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/sanitation.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
+## Stata code {-}
+The calculations above are performed for all the countries and years avaialable. However, you may find below a short version of the code only for Pakistan 2015. 
+
+```{stata, eval=FALSE} 
+cap which quantiles
+if _rc ssc install quantiles
+
+datalibweb, countr(PAK) year(2015) type(SARMD) clear
+
+drop if welfare==.
+quantiles welfare [aw=wgt], gen(q) n(5)		
+gen poor=(q<=2)
+gen npoor=(q>2)
+foreach v in toilet_acc piped_water {
+	g p_`v'=(`v'==1&poor==1)
+	g np_`v'=(`v'==1&poor==0)	
+	g ur_`v'=(`v'==1&urban==1)
+	g ru_`v'=(`v'==1&urban==0)
+}
+
+cap tab water_source, gen(wat_)
+collapse (mean) toilet_acc piped_water p_* np_* ur_* ru_* wat_* [aw=wgt], by(countrycode year )
+
+foreach v in toilet_acc piped_water p_* np_* ur_* ru_* {
+	ren `v' re_`v'
+}
+
+reshape long re_, i(countrycode year) j(indicator, string)
+ren re_ value
+
+```
+
+
+You may access our full Stata do-file by accessing the following [link](https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/sanitation.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
+
+
