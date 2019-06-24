@@ -25,13 +25,7 @@ glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Labor Market"
 cap datalibweb, repo(create `reponame', force) type(SARMD)
 ren (code year) (country years)
 
-*drop if country=="IND"&survname!="NSS-SCH1"
-
 contract country years survname 
-/*drop if country=="IND" |country=="MDV"
-
-drop if country=="LKA"&year==2002
-*keep if country=="MDV" &year>2002*/
 
 drop if country=="MDV"& year==2002
 drop if country=="LKA"
@@ -71,11 +65,11 @@ tempfile pp1
 
 	}
 	else local surveyid ""
-	*cap {
+	cap {
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
 			set trace off
-			*gen cellnoelect=(cellphone==1&electricity==0)
+
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
 			cap rename welfare_v2 welfare
@@ -152,13 +146,6 @@ tempfile pp1
 			append using `pp'
 			save `pp', replace	
 			restore
-			/*
-			collapse (mean)  ind_* [aw=wgt], by(countrycode year q)
-			
-			append using `qi'
-			save `qi', replace
-			*/
-			*/
 		
 		}
 		
