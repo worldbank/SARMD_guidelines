@@ -1,11 +1,13 @@
 # Tests {#qcheck-tests}
 ***
 
-Figure \@ref(fig:qchecktests) presents the results of a static quality check for variables within a given survey. This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 
+Figure \@ref(fig:qchecktests) presents the results of a static quality check  that  verifies the internal consistent of each variable and its relationship with other variables in the same dataset. That is, it does not only verify that a variable makes sense in itself (e.g, it is not expected to find negative values for age), but also it checks the consistency of one variable with the others (e.g., It is expected that paid workers receive a positive income, rather than zero or missing income). This flexible tool allows to evaluate the frequency of a given condition, for example, `if television==1 & electricity==0`. 
+
+We used the Stata program `qcheck` developed by @r.andres_castaneda_qcheck:_2019. This package is available in Github in the repository [worldbank/qcheck](https://github.com/worldbank/qcheck). 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_QCheck&#47;Static' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-```{r  qchecktests,  echo=FALSE, fig.cap = "Tests", out.height='10%', fig.align = 'left'}
+```{r  qchecktests,  echo=FALSE, fig.cap = "Quality control checks of SARMD", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
  

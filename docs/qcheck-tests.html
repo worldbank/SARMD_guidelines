@@ -47,74 +47,8 @@
 
 
 
-<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
-<script src="libs/viz-0.3/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -263,7 +197,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="qcheck-tests" class="section level1">
 <h1><span class="header-section-number">Chapter 11</span> Tests</h1>
 <hr />
-<p>Figure <a href="qcheck-tests.html#fig:qchecktests">11.1</a> presents the results of a static quality check for variables within a given survey. This flexible tool allows to evaluate the frequency of a given condition, for example, <code>if television==1 &amp; electricity==0</code>.</p>
+<p>Figure <a href="qcheck-tests.html#fig:qchecktests">11.1</a> presents the results of a static quality check that verifies the internal consistent of each variable and its relationship with other variables in the same dataset. That is, it does not only verify that a variable makes sense in itself (e.g, it is not expected to find negative values for age), but also it checks the consistency of one variable with the others (e.g., It is expected that paid workers receive a positive income, rather than zero or missing income). This flexible tool allows to evaluate the frequency of a given condition, for example, <code>if television==1 &amp; electricity==0</code>.</p>
+<p>We used the Stata program <code>qcheck</code> developed by <span class="citation">R.Andres Castañeda, Santiago Garriga, and Laura Liliana Moreno (<a href="#ref-r.andres_castaneda_qcheck:_2019">2019</a>)</span>. This package is available in Github in the repository <a href="https://github.com/worldbank/qcheck">worldbank/qcheck</a>.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
 <object class="tableauViz" width="700" height="827" style="display:none;">
@@ -271,9 +206,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </object>
 </div>
 <div class="figure" style="text-align: left"><span id="fig:qchecktests"></span>
-<img src="figures/fake_figure.PNG" alt="Tests" width="70%" height="10%" />
+<img src="figures/fake_figure.PNG" alt="Quality control checks of SARMD" width="70%" height="10%" />
 <p class="caption">
-Figure 11.1: Tests
+Figure 11.1: Quality control checks of SARMD
 </p>
 </div>
 
@@ -281,6 +216,12 @@ Figure 11.1: Tests
 
 
 
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-r.andres_castaneda_qcheck:_2019">
+<p>R.Andres Castañeda, Santiago Garriga, and Laura Liliana Moreno. 2019. “QCHECK: Stata Package for Quality Control of Household Surveys.” Washington, D.C.: World Bank Group. <a href="https://github.com/worldbank/qcheck">https://github.com/worldbank/qcheck</a>.</p>
+</div>
+</div>
             </section>
 
           </div>
@@ -333,19 +274,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
