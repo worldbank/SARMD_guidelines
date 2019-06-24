@@ -13,15 +13,16 @@ For example, note that all the variables of the assets category are absent from 
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
  
-Figure  
+For thosse varaibles that are not absent in the dataset, figure \@ref(fig:qcheckl2) shows the share of observations with missing values in each dataset. For example, variable `welfare`, which is used to estimate poverty and inequality meadures, is mostly available for all the observations of the SARMD datasets. However, Nepal 2010 has an astonishing 18% of missing values in such a variable. In other words, almost a fifth of the households surveyed in 2010, are not included in the any socioeconomic indicator of Nepal. 
 
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_QCheck&#47;Missing' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
-
-```{r  qcheckl2,  echo=FALSE, fig.cap = "Missing values", out.height='10%', fig.align = 'left'}
+```{r  qcheckl2,  echo=FALSE, fig.cap = "Share of observations with missing values", out.height='10%', fig.align = 'left'}
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
+ 
+Finally, figure \@ref(fig:qcheckl3) shows for each variable its proportion of missings (like fig. \@ref(fig:qcheckl2)), proportion of zeros, and mean. 
  
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_QCheck&#47;Basic' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
