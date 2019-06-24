@@ -25,13 +25,7 @@ glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Labor Market"
 cap datalibweb, repo(create `reponame', force) type(SARMD)
 ren (code year) (country years)
 
-*drop if country=="IND"&survname!="NSS-SCH1"
-
 contract country years survname 
-/*drop if country=="IND" |country=="MDV"
-
-drop if country=="LKA"&year==2002
-*keep if country=="MDV" &year>2002*/
 
 drop if country=="MDV"& year==2002
 drop if country=="LKA"
@@ -51,10 +45,12 @@ if ("`countries'" == "") {
 
 *---------- Loop over countries
 drop _all
-tempfile cy pp
+tempfile pp 
+tempfile pp1
 
-	save `cy', emptyok 
+	
 	save `pp', emptyok 
+	save `pp1', emptyok 
 
 
 
@@ -73,7 +69,7 @@ tempfile cy pp
 			datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
 
 			set trace off
-			*gen cellnoelect=(cellphone==1&electricity==0)
+
 			cap rename welfare_v2 welfare
 			cap ren welfareother welfare
 			cap rename welfare_v2 welfare
@@ -84,37 +80,72 @@ tempfile cy pp
 			gen welfare_ppp=welfare/ppp/cpi/365*12
 			cap ren industry_orig_v2 industry
 			recode industry (2 3 4 5=2) (6 7 8 9=3) (10=4) (11 12 13 14=.)
+			drop if industry==.
 			ta  industry, g(ind_)
 			cap confirm var welfare 
 			if _rc==0 {
 			drop if welfare==.
 			quantiles welfare [aw=wgt], gen(q) n(5)
-			*gen poor=(q<=2)
+			quantiles welfare [aw=wgt], gen(p) n(10)
+			gen poor=(q<=1)
+			gen top=(q==5)
+
 			
 			preserve
-			collapse (mean)  ind_* [aw=wgt], by(countrycode year  )
-			append using `cy'
-			save `cy', replace
-			
-			restore
-			
-			*preserve
-			collapse (mean)  welfare_ppp [aw=wgt], by(countrycode year industry )
-			gen label=""
-			replace label="Agriculture" if industry==1
-			replace label="Manufacturing" if industry==2
-			replace label="Services" if industry==3
-			replace label="Other" if industry==4
-			drop industry
+			collapse (mean)  ind_* [aw=wgt] if q==1, by(countrycode year  )
+			gen label="q1"
 			append using `pp'
 			save `pp', replace	
-			*			restore
-			/*
-			collapse (mean)  ind_* [aw=wgt], by(countrycode year q)
+			restore
 			
-			append using `qi'
-			save `qi', replace
-			*/
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if q==5, by(countrycode year  )
+			gen label="q5"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p==1, by(countrycode year  )
+			gen label="p1"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p==10, by(countrycode year  )
+			gen label="p10"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p<=4, by(countrycode year  )
+			gen label="p40"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p>=5&p<=10, by(countrycode year  )
+			gen label="p60"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p<=3, by(countrycode year  )
+			gen label="p30"
+			append using `pp'
+			save `pp', replace	
+			restore
+			
+			preserve
+			collapse (mean)  ind_* [aw=wgt] if p>=4&p<=10, by(countrycode year  )
+			gen label="p70"
+			append using `pp'
+			save `pp', replace	
+			restore
 		
 		}
 		
@@ -128,23 +159,14 @@ tempfile cy pp
 	}
 }
 
-u `cy', clear
-*drop if industry==.
-ren ind* re_ind*
-reshape long re_, i(countrycode year) j(label, string)
-ren re_ value
-append using `pp'
-s
-gen label =""
-replace label="All" if poor==2
-replace label="Poor" if poor==1
-replace label="Non Poor" if poor==0
+u `pp', clear
 
-ren (piped_water toilet_acc) (re_piped_water re_toilet_acc)
-reshape long re_, i(countrycode year poor) j(indicator, string)
-ren re_ value
+
+			ren ind* re_ind*
+			reshape long re_, i(countrycode year label ) j(indicator, string)
+			ren re_ value
 
 
 
-export excel using "${path}/sanitation.xlsx", sheet("master") sheetreplace first(variable)
+export excel using "${path}/labor.xlsx", sheet("master") sheetreplace first(variable)
 
