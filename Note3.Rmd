@@ -41,7 +41,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 An example of how to conduct these regressions is provided below:
 
-```stata
+```{stata, eval = FALSE}
 * Preamble
 clear all
 eststo clear

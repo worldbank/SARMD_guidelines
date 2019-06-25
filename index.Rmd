@@ -37,9 +37,11 @@ These guidelines are intended to teach you everything you need to work efficient
 
 This book has been created by the South Asia Region Team for Statistical Development (SARTSD) under the direction of Benu Bidani. The team is composed by Raúl Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. We are greatful for the comments and suggestions made by... 
 
-## Replicability {-}
+## Replicability and lincense {-}
 
-This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its [GitHub repository](https://github.com/worldbank/SARMD_guidelines). You are allowed to download and use any of the files in the repository, but please keep in mind that all the files---in particular the code---contained in this book are simultaneously available under the [MIT license](https://opensource.org/licenses/MIT). This means that you are free to use them in your own projects, as long as you cite the source.
+This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its GitHub repository [worldbank/SARMD_guidelines](https://github.com/worldbank/SARMD_guidelines). In addition, all the do-files to harmonize the SARMD collection are available in the [worldbank/SARMD](https://github.com/worldbank/SARMD) Github repository. In the chapter, [Variable derivation of SARMD](#var-derivation) we provide a larger explanation of the harmonization do-files. 
+
+You are allowed to freely download and use any of the files in these repository, but keep in mind that all the files---in particular the code---contained in this book and in the SARMD collection are simultaneously available under the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0). This means that you are free to use any file in your own projects as long as you cite the source and, in case you publish your project, make your source code available as well under the same license. In this way, we guarantee that any source code derived from this project has to be made freely available as well and properly cited. 
 
 ## How to read this book {#how-to-read .unnumbered}
 

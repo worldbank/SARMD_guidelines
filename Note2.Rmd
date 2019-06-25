@@ -1,4 +1,4 @@
-# School enrollment in South Asia #{note-school}
+# School enrollment in South Asia {#note-school}
 ***
 > **Abstract:** 
 >
@@ -167,7 +167,7 @@ Sri Lanka's education structure is divided into five parts: primary, junior seco
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/school_enrollment_by_age.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
 
-```stata
+```{stata, eval = FALSE}
 * Example: Measuring school enrollment by age, gender and urban/rural
 
 * Open dataset
