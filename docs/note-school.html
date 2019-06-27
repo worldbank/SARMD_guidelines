@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introduction to metadata analysis | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <title>Chapter 13 School enrollment in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introduction to metadata analysis | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:title" content="Chapter 13 School enrollment in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="worldbank/SARMD_guidelines" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introduction to metadata analysis | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta name="twitter:title" content="Chapter 13 School enrollment in South Asia | South Asia Regional Micro Database (SARMD) User Guidelines" />
   
   <meta name="twitter:description" content="SARMD User Guidelines" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="poverty-methodology.html">
-<link rel="next" href="inventory.html">
+<link rel="prev" href="notes-assest.html">
+<link rel="next" href="note-hhdchars.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -263,24 +263,236 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="metadata" class="section level1 unnumbered">
-<h1>Introduction to metadata analysis</h1>
-<blockquote>
-<p>From the archivist’s and the end user’s perspective, a ‘good’ dataset is one that is easy to use. Its documentation is clear and easy to understand, the data contain no surprises, and users are able to access the dataset with relatively little start-up time.<span class="citation">(Inter-university Consortium for Political and Social Research (ICPSR) <a href="#ref-inter-university_consortium_for_political_and_social_research_icpsr_guide_2012">2012</a>)</span></p>
-</blockquote>
+<div id="note-school" class="section level1">
+<h1><span class="header-section-number">Chapter 13</span> School enrollment in South Asia</h1>
 <hr />
-<p>The second part of this book studies the available metadata for household surveys in SARMD. Metadata is documentation that describes data and, though it may take many different forms, it most meet certain objectives such help the user to find the data they are interested in, understand what the data are measuring and hot the data have been created, and assess the quality of the data. In addition, good metadata also reduced the burden of the data producer/maintainer, as it reduces the need to provide regular support to users of the data <span class="citation">(IHSN <a href="#ref-ihsn_microdata_2014">2014</a>)</span>. Thus, this part contains two simple chapters:</p>
-<p><strong>Chapter 4</strong> focuses on survey availability to present precisely which surveys are available where and when.</p>
-<p><strong>Chapter 5</strong> goes deeper into the survey questionnaires to compare the information collected by the surveys in relation to the four main expenditure components: food, non-food, durables, and rent.</p>
+<blockquote>
+<p><strong>Abstract:</strong></p>
+<p>Countries in South Asia have achieved different levels of progress regarding school enrollment at different educational stages (pre-primary, primary, secondary, and tertiary). We study how school enrollment of school-age children and young adults (age&lt;25) changes over time in each country depending on gender and location (urban/rural). School enrollment over age is flat for children in primary school and resembles a trapezoid in countries that have achieved almost universal primary education such as Maldives, Bhutan, and Sri Lanka. However, school enrollment still has the shape of an inverted U in Afghanistan, Bangladesh, Nepal, and Pakistan, where dropout rates are concerning even among primary school children aged 4 to 12 years.</p>
+</blockquote>
+<p>In recent years, South Asian countries have invested in school inputs and directed their efforts towards achieving universal access to primary education. These investments have led to more children retained in primary school. According to <span class="citation">Dundar et al. (<a href="#ref-dundar_student_2014">2014</a>)</span>, enrollment in South Asia’s primary schools rose from 75 percent in 2000 to 89 percent in 2010, bringing it closer to enrollment levels in Latin America and the Caribbean (94 percent) and East Asia and the Pacific (94.8 percent). Between 1999 and 2010, the number of out-of-school children ages 8–14 years fell from 35 million to 13 million, and the number of out-of-school girls in the region dropped by 59 percent.</p>
+<p>Progress at other educational stages has not been as consistent and is harder to measure. Early childhood education (kindergarden and preschool) provides foundations for young children to develop skills that can help them succeed in school and over the course of their lives. Still, according to <span class="citation">UNICEF (<a href="#ref-unicef_world_2019">2019</a>)</span>, more than 35 million children in South Asia are not attending age appropriate pre-primary education. In the area of tertiary or higher education there is a wide difference among countries. According to <span class="citation">Tilak (<a href="#ref-tilak_higher_2015">2015</a>)</span>, India has one of the largest systems of higher education in the world, with about 21 million students enrolled in nearly 700 universities and 40 thousand colleges. Bangladesh and Pakistan stand at distant second and third positions, with two million and 1.8 million students in higher education respectively. In contrast, student numbers are very small in value in Sri Lanka and Nepal. Bhutan has only one university and Maldives does not have any.</p>
+<p>In this analysis, we compare the education levels achieved across countries considering their different education systems. <a href="https://www.un.org/sustainabledevelopment/education/">Sustainable Development Goal 4</a> has ten targets encompassing many different aspects of education. The first target is to ensure that by 2030 all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes. Equality in primary education between girls and boys has improved, but not at all levels of education. Sri Lanka achieved near-universal primary education between girls and boys decades ago, while Afghanistan and Pakistan still lag significantly behind other South Asian countries.</p>
+<p>The South Asia Regional Micro Database (SARMD) contains the following harmonized variables at the individual level (when <code>age&gt;=ed_mod_age</code>) to monitor progress towards the achievement of these goals:</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="79%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ed_mod_age</code></td>
+<td>Age at which education module is applied</td>
+</tr>
+<tr class="even">
+<td><code>atschool</code></td>
+<td>Individual attending school (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>everattend</code></td>
+<td>Individual ever attended school (1 = Yes 0 = No)</td>
+</tr>
+<tr class="even">
+<td><code>literacy</code></td>
+<td>Individual can read and write (1 = Yes 0 = No)</td>
+</tr>
+<tr class="odd">
+<td><code>educy</code></td>
+<td>Years of education</td>
+</tr>
+<tr class="even">
+<td><code>educat4</code></td>
+<td>1 = No education 2 = Primary (complete or incomplete) 3 = Secondary (complete or incomplete) 4 = Tertiary (complete or incomplete)</td>
+</tr>
+<tr class="odd">
+<td><code>educat5</code></td>
+<td>1 = No education 2 = Primary incomplete 3 = Primary complete but secondary incomplete 4 = Secondary complete 5 = Some tertiary</td>
+</tr>
+<tr class="even">
+<td><code>educat7</code></td>
+<td>1 = No education 2 = Primary incomplete 3 = Primary complete 4 = Secondary incomplete 5 = Secondary complete 6 = Higher than secondary but not university 7 = University incomplete or complete</td>
+</tr>
+</tbody>
+</table>
+<p>The most vulnerable group in terms of low literacy is women older than 65 years. Even among younger adults and children, the difference in literacy rates between men and women is wide. Figure <a href="note-school.html#fig:literacymap">13.1</a> displays average literacy rates at a subnational level. Afghanistan clearly stands out being one of the countries with the lowest literacy rates in the world. In 2011, it was estimated at about 31 percent of the adult population (15 years or older).</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
+<object class="tableauViz" width="700" height="827" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='Note3&#47;Literacy' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
+</div>
+<div class="figure" style="text-align: left"><span id="fig:literacymap"></span>
+<img src="figures/fake_figure.PNG" alt="Literacy rates at subnational level" width="70%" height="10%" />
+<p class="caption">
+Figure 13.1: Literacy rates at subnational level
+</p>
+</div>
+<p>Primary, secondary and tertiary education are defined differently in each country, but may be summarized as in Figure <a href="note-school.html#fig:educationsystems">13.2</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:educationsystems"></span>
+<div id="htmlwidget-ed78248b32e6634f28e5" style="width:70%;height:900px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ed78248b32e6634f28e5">{"x":{"diagram":"\n\ndigraph boxes_and_circles {\n\n  graph [layout = dot, color=crimson, overlap=true, fontsize=20, width=1000, rankdir=LR, arrowhead=none]\n  \n  # Draw grades \n  node [shape = box,\n        style = filled, \n        color= grey,\n        fontname=Helvetica]\n  1 [label = \"Grade 1\"];   2 [label = \"Grade 2\"];   3  [label = \"Grade 3\"];   4  [label = \"Grade 4\"];\n  5  [label = \"Grade 5\"];   6  [label = \"Grade 6\"];   7  [label = \"Grade 7\"];   8  [label = \"Grade 8\"];\n  9  [label = \"Grade 9\"];   10  [label = \"Grade 10\"];   11  [label = \"Grade 11\"];   12  [label = \"Grade 12\"];\n  13  [label = \"Grade 13\"];   14  [label = \"Grade 14\"];   15  [label = \"Grade 15\"];   16  [label = \"Grade 16\"];\n  17  [label = \"Grade 17\"]\n  \n  # Drag levels\n  node [shape = box, \n        style = filled, \n        color= grey]\n  School [label = \"School system\"];\n  Primary [label = \"Primary School: \n Ages 5-10\"];\n  Lower_Secondary [label = \"Lower Secondary School: \n Ages 10-13\"];\n  Upper_Secondary [label = \"Upper Secondary School: \n Ages 13-18\"];\n  Tertiary [label = \"Tertiary School: \n Ages 18-22\"]\n  \n  # add edge statements\n  School -> {Primary Lower_Secondary Upper_Secondary Tertiary};\n  Primary -> {1 2 3 4 5}\n  Lower_Secondary -> {6 7 8};\n  Upper_Secondary -> {9 10 11 12 13};\n  Tertiary -> {14 15 16 17};\n  \n}  ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 13.2: Standard education system definition
+</p>
+</div>
+<p>Secondary education, in particular, has significantly different meanings across countries as shown in this <a href="https://tab.worldbank.org/#/site/WBG/views/SAR_MNAEducationbycategories/Frequency">dashboard</a>. In Bangladesh, the education system is divided into three levels:</p>
+<ul>
+<li>Primary Level (Class 1–5). Students receive their Primary School Certificate at the end of 5th grade.</li>
+<li>Secondary Level (6-10) or (9-12 at some schools). Students receive their Secondary School Certificate at the end of 10th grade (similar to India and Pakistan). This is equivalent to GCSE in England and the first two years of high school in the United States. There is no middle school system in Bangladesh.</li>
+<li>Tertiary Level (University)</li>
+</ul>
+<p>In contrast, Sri Lanka’s education structure is divided into five parts: primary (kindergarden through grade 5), junior secondary (grades 6-9), senior secondary (grades 10-11), collegiate (grades 12-13), and tertiary (university).</p>
+<p>These differences in education systems mean that the relationships between <code>age</code>, <code>ed_mod_age</code>, <code>educy</code>, <code>educat4</code>, <code>educat5</code>, and <code>educat7</code> vary by country. The following table displays each country’s most recent value for <code>ed_mod_age</code> and provides a summary for how primary, secondary and tertiary school have been harmonized in SARMD:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Country</th>
+<th align="center">ed_mod_age</th>
+<th align="center">Primary (Grades)</th>
+<th align="center">Secondary (Grades)</th>
+<th align="center">Tertiary</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Afghanistan</td>
+<td align="center">6</td>
+<td align="center">1-6</td>
+<td align="center">7-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="even">
+<td>Bangladesh</td>
+<td align="center">5</td>
+<td align="center">1-5</td>
+<td align="center">6-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="odd">
+<td>Bhutan</td>
+<td align="center">2</td>
+<td align="center">1-9</td>
+<td align="center">10-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="even">
+<td>India</td>
+<td align="center">NA</td>
+<td align="center">1-5</td>
+<td align="center">6-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="odd">
+<td>Maldives</td>
+<td align="center">5</td>
+<td align="center">1-5</td>
+<td align="center">6-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="even">
+<td>Nepal</td>
+<td align="center">5</td>
+<td align="center">1-6</td>
+<td align="center">7-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="odd">
+<td>Pakistan</td>
+<td align="center">4</td>
+<td align="center">1-8</td>
+<td align="center">9-12</td>
+<td align="center">13-</td>
+</tr>
+<tr class="even">
+<td>Sri Lanka</td>
+<td align="center">5</td>
+<td align="center">1-6</td>
+<td align="center">7-12</td>
+<td align="center">13-</td>
+</tr>
+</tbody>
+</table>
+<p>Figure <a href="note-school.html#fig:note2dash">13.3</a> presents our analysis of school enrollment of school-age children and young adults (<code>age&lt;25</code>). This analysis consists of studying how <code>atschool</code> changes over time in each country depending on <code>male</code> and <code>urban</code>. It is easy to identify how Bhutan, Maldives and Sri Lanka have achieved near-universal primary education by looking at the shape of the figure, which ressembles a plateau, while enrollment rates in Afghanistan, Bangladesh, Nepal, and Pakistan still have the shape of an inverted U.</p>
+<script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
+<div class="tableauPlaceholder" style="width: 700px; height: 827px;">
+<object class="tableauViz" width="700" height="827" style="display:none;">
+<param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_atschool&#47;atschool' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' />
+</object>
+</div>
+<div class="figure" style="text-align: left"><span id="fig:note2dash"></span>
+<img src="figures/fake_figure.PNG" alt="School enrollment over age" width="70%" height="10%" />
+<p class="caption">
+Figure 13.3: School enrollment over age
+</p>
+</div>
+<p>This analysis has provided the following findings at the country level:</p>
+<div id="afghanistan-1" class="section level2 unnumbered">
+<h2>Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></h2>
+<p>Afghanistan has one of the youngest populations in the world, making quality education particularly critical for the rapidly growing numbers of school aged boys and girls. Afghanistan has the widest gap between male/female and urban/rural enrollment rates. The education system is K–12, that is from kindergarden (K) for 4-6 year-olds through twelfth grade (12) for 17-19 year-olds. Long distance to school and reluctance to send children to school are by far the most common reasons for not starting school (mentioned for 37 and 25 percent of those who never attended school), whereas the need for child labor and perceived irrelevance of further education were the most important reasons for terminating education.</p>
+</div>
+<div id="bangladesh-1" class="section level2 unnumbered">
+<h2>Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></h2>
+<p>In Bangladesh, all citizens must undertake twelve years of compulsory education which consists of eight years at the primary school level and six years at the high school level. Primary and secondary education is financed by the state and free of charge in public schools. Still, enrollment rates fall rapidly especially after age 9. Enrollment rates fall faster for male students than for female students until both lines intersect. At higher levels of education, female enrollment is lower than male enrollment.</p>
+</div>
+<div id="bhutan-1" class="section level2 unnumbered">
+<h2>Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></h2>
+<p>Bhutan has achieved nearly-universal primary education over time and the male/female and urban/rural gaps have narrowed. In Bhutan, primary education is provided free for six years. Secondary education lasts six years and is divided into the lower, middle and higher secondary levels with a duration of two years each.</p>
+</div>
+<div id="india-1" class="section level2 unnumbered">
+<h2>India <img src="figures/Flag_of_India.svg" width="40"></h2>
+<p>Unfortunately, surveys from India do not collect enough information about individuals’ general educational level to complete this analysis.</p>
+</div>
+<div id="maldives-1" class="section level2 unnumbered">
+<h2>Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></h2>
+<p>Our figures show how universal primary education has been achieved in Maldives. Still, a wide gap between male and female enrollment rates remains at higher levels of education.</p>
+</div>
+<div id="nepal-1" class="section level2 unnumbered">
+<h2>Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></h2>
+<p>Primary education in Nepal consists of grades one through eight. Secondary education are grades nine and ten, and Higher Secondary Levels cover grades eleven and twelve. Pre-primary education is available in some areas, and students usually begin grade one at age six. A Basic Education Examination is given on grade eight. A national Secondary Education Exam examination is conducted at the end of grade 10. Completing grade 12 examination leads to the School Leaver’s Certificate. However, it is clear from the figures that enrollment rates start to fall before reaching grade 12.</p>
+</div>
+<div id="pakistan-1" class="section level2 unnumbered">
+<h2>Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></h2>
+<p>In Pakistan, the gap between urban and rural enrollment rates is very clear. There also seems to be a great increase in enrollment of young children from 2013 to 2015. The education system in Pakistan is divided into six levels: preschool (for the age from 3 to 5 years), primary (grades one through five), middle (grades six through eight), high (grades nine and ten, leading to the Secondary School Certificate), intermediate (grades eleven and twelve, leading to a Higher Secondary School Certificate), and university programs leading to undergraduate and graduate degrees.</p>
+</div>
+<div id="sri-lanka-1" class="section level2 unnumbered">
+<h2>Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></h2>
+<p>Sri Lanka’s education structure is divided into five parts: primary, junior secondary, senior secondary, collegiate, and tertiary. Primary education lasts five to six years (Kindergarden through grade 5) and at the end of this period, the students may elect to write a national exam called the Scholarship exam. This exam allows students with exceptional skills to move on to better schools. After primary education, the junior secondary level (referred to as middle school in some schools) lasts for 4 years (Grades 6-9) followed by 2 years (Grades 10-11) of the senior secondary level which is the preparation for the General Certificate of Education (G.C.E) Ordinary Level (O/Ls). According to the Sri Lankan law, it is compulsory that all children go to school till grade 9 (age 14) at which point they can choose to continue their education or drop out and engage in apprenticeship for a job or farming. This is very clear in our figures where enrollment rates drop shortly after age 15.</p>
+<p>You may access our full Stata do-file by accessing the following <a href="https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/school_enrollment_by_age.do">link</a>. Our work consists of running the following command for each dataset and saving the results in order to export to Tableau.</p>
+<pre class="stata"><code>* Example: Measuring school enrollment by age, gender and urban/rural
 
+* Open dataset
+datalibweb, country(`country&#39;) year(`year&#39;) type(SARMD) surveyid(`surveyid&#39;) clear 
+
+* Generate enrollment rates 
+mean atschool [aw=wgt] if age &lt; 25, over(age male urban) // same as anova
+anova atschool i.age##i.male##i.urban  [aw=wgt] if (age &lt; 25) 
+        
+tempfile g u gu a
+margins i.age##i.male         [aw=wgt] if (age &lt; 25), saving(`g&#39;)
+margins i.age##i.urban        [aw=wgt] if (age &lt; 25), saving(`u&#39;)
+
+* Plot figure       
+combomarginsplot  `u&#39; `g&#39;, noci recast(line) legend(cols(2) position(6)) /* 
+         */ plotopts(lpattern(l)) by(_filenumber) labels(&quot;Urban/rural&quot; &quot;Gender&quot;)</code></pre>
+
+</div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-ihsn_microdata_2014">
-<p>IHSN. 2014. “Microdata Documentation.” <em>International Household Survey Network (IHSN)</em>. <a href="http://ihsn.org/node/117">http://ihsn.org/node/117</a>.</p>
+<div id="ref-dundar_student_2014">
+<p>Dundar, Halil, Tara Beteille, Michelle Riboud, and Anil Deolalikar. 2014. <em>Student Learning in South Asia : Challenges, Opportunities, and Policy Priorities.</em> World Bank Group. <a href="http://documents.worldbank.org/curated/en/554381468294334286/Student-learning-in-South-Asia-challenges-opportunities-and-policy-priorities">http://documents.worldbank.org/curated/en/554381468294334286/Student-learning-in-South-Asia-challenges-opportunities-and-policy-priorities</a>.</p>
 </div>
-<div id="ref-inter-university_consortium_for_political_and_social_research_icpsr_guide_2012">
-<p>Inter-university Consortium for Political and Social Research (ICPSR). 2012. <em>Guide to Social Science Data Preparation and Archiving</em>. 5th ed. Ann Arbor, MI 48106: Institute for Social Research University of Michigan. <a href="https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html">https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html</a>.</p>
+<div id="ref-tilak_higher_2015">
+<p>Tilak, Jandhyala B. G. 2015. “Higher Education in South Asia: Crisis and Challenges.” <em>Social Scientist</em> 43 (1/2): 43–59. <a href="http://www.jstor.org/stable/24372963">http://www.jstor.org/stable/24372963</a>.</p>
+</div>
+<div id="ref-unicef_world_2019">
+<p>UNICEF. 2019. <em>A World Ready to Learn: Prioritizing Quality Early Childhood Education.</em> New York. <a href="https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education">https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education</a>.</p>
 </div>
 </div>
             </section>
@@ -288,8 +500,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="poverty-methodology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="inventory.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="notes-assest.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="note-hhdchars.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
