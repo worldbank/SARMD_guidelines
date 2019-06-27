@@ -10,29 +10,31 @@ References:
 Output:             
 ==================================================*/
 
-cap ssc install blindschemes
-set scheme plotplain, permanently
-graph set window fontface "Times New Roman"
+if ("`c(username)'" == "wb384996") {
+	cd "c:/Users/wb384996/OneDrive - WBG/SARTSD/SARMD_guidelines/findings/Decomposition/"
+}
 
-local reponame  "sarmd"
+
+tempfile reponame
+
 local countries ""
 local years     ""
 local surveys   ""
 
-glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Labor Market"
+cap which oaxaca
+if (_rc) ssc install oaxaca
 
 *---------- Get repo
-cap datalibweb, repo(create `reponame', force) type(SARMD)
-ren (code year) (country years)
+datalibweb, repo(create `reponame', force) type(SARMD)
 
 contract country years survname 
 
 keep if country=="BGD" 
-drop if year<2010
+drop if real(years) < 2010
+
+gen id=country+"_"+years
 
 ds
-gen id=country+"_"+strofreal(years)
-
 local varlist "`r(varlist)'"
 di in red "`r(varlist)'"
 
@@ -41,7 +43,8 @@ di in red "`r(varlist)'"
 if ("`countries'" == "") {
 	levelsof country, local(countries)
 }
-	levelsof id, local(ids)
+
+levelsof id, local(ids)
 
 *---------- Loop over countries
 drop _all
@@ -106,4 +109,14 @@ levelsof countrycode, loc(code)
 oaxaca poor_190 urban literacy  male lfs* industry* [aw=wgt] , by(year) swap relax  ///
 categorical( lfs*, industry*) 
 
+// -------------------------------------------------------------------------------------------------
+// Export results
+// -------------------------------------------------------------------------------------------------
+
+mat A =  r(table)
+
+mat B =  A["b", "coefficients:urban".."coefficients:industry_miss"] /*
+*/    \  A["b", "endowments:"]
+mat B = B'
+matrix roweq B = ""
 
