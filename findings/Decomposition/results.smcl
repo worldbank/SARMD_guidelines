@@ -1,0 +1,240 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\results.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}27 Jun 2019, 14:38:59
+
+{com}. do "C:\Users\WB502818\AppData\Local\Temp\STD26ebc_000000.tmp"
+{txt}
+{com}. /*==================================================
+> Project:       Oaxaca Decomposition
+> Author:        Jayne Yoo and Javier Parada and Andres Castaneda 
+> Dependencies:  The World Bank
+> ----------------------------------------------------
+> Creation Date:          21 April 2019
+> Modification Date:  21 April 2019
+> Do-file version:    01
+> References:         
+> Output:             
+> ==================================================*/
+. 
+. cap ssc install blindschemes
+{txt}
+{com}. set scheme plotplain, permanently
+{txt}({cmd:set scheme} preference recorded)
+
+{com}. graph set window fontface "Times New Roman"
+{txt}
+{com}. 
+. local reponame  "sarmd"
+{txt}
+{com}. local countries ""
+{txt}
+{com}. local years     ""
+{txt}
+{com}. local surveys   ""
+{txt}
+{com}. 
+. glo path "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Labor Market"
+{txt}
+{com}. 
+. *---------- Get repo
+. cap datalibweb, repo(create `reponame', force) type(SARMD)
+{txt}
+{com}. ren (code year) (country years)
+{res}{txt}
+{com}. 
+. contract country years survname 
+{txt}
+{com}. 
+. keep if country=="BGD" 
+{txt}(41 observations deleted)
+
+{com}. drop if year<2010
+{txt}(2 observations deleted)
+
+{com}. 
+. ds
+{txt}{col 1}country{col 11}years{col 21}survname{col 31}_freq
+
+{com}. gen id=country+"_"+strofreal(years)
+{txt}
+{com}. 
+. local varlist "`r(varlist)'"
+{txt}
+{com}. di in red "`r(varlist)'"
+{res}{err}country years survname _freq
+{txt}
+{com}. 
+. *---------- Evaluate initical conditions
+. *countries
+. if ("`countries'" == "") {c -(}
+.         levelsof country, local(countries)
+{res}{txt}`"BGD"'
+{com}. {c )-}
+{txt}
+{com}.         levelsof id, local(ids)
+{res}{txt}`"BGD_2010"' `"BGD_2016"'
+
+{com}. 
+. *---------- Loop over countries
+. drop _all
+{txt}
+{com}. tempfile 00
+{txt}
+{com}.         save `00', emptyok 
+{txt}(note: dataset contains 0 observations)
+file C:\Users\WB502818\AppData\Local\Temp\ST_26ebc_000001.tmp saved
+
+{com}. 
+.  foreach id of local ids {c -(}
+{txt}  2{com}.                 tokenize `id', parse("_")
+{txt}  3{com}.                 local country = "`1'"
+{txt}  4{com}. 
+.                 local year = "`3'"      
+{txt}  5{com}. 
+.         if ("`country'" == "IND" & `year'==2011) {c -(}
+{txt}  6{com}.                 local surveyid "IND_2011_NSS68-SCH10"
+{txt}  7{com}. 
+.         {c )-}
+{txt}  8{com}.         else local surveyid ""
+{txt}  9{com}.         cap {c -(}
+{txt} 10{com}.                         datalibweb, countr(`country') year(`year') type(SARMD) clear surveyid(`surveyid')
+{txt} 11{com}.                         cap ren (educat4_v2 lstatus_v2) (educat4 lstatus)
+{txt} 12{com}. 
+.                         cap ren industry_orig_v2 industry
+{txt} 13{com}.                         recode industry (2 3 4 5=2) (6 7 8 9=3) (10=4) (11 12 13 14=.)
+{txt} 14{com}. 
+.                                         
+.                         keep if relationharm==1
+{txt} 15{com}.                         keep countrycode year literacy urban male lstatus industry  wgt poor_nat
+{txt} 16{com}. 
+.                         append using `00'
+{txt} 17{com}.                         save `00', replace      
+{txt} 18{com}.                         restore
+{txt} 19{com}.                 
+.                 
+.                 if (_rc) {c -(}
+{txt} 20{com}.                         noi disp in red "Error on `country' `year'"
+{txt} 21{com}.                 {c )-}
+{txt} 22{com}.                 else {c -(}
+{txt} 23{com}.                         noi disp in y "`country' `year' Done."
+{txt} 24{com}.                 {c )-}
+{txt} 25{com}. 
+.         {c )-}
+{txt} 26{com}. {c )-}
+{txt}
+{com}. 
+. u `00', clear
+{txt}
+{com}. 
+. gen lfs_empl = (lstatus==1)
+{txt}
+{com}. gen lfs_unem = (lstatus==2)
+{txt}
+{com}. gen lfs_OLF = (lstatus==3)
+{txt}
+{com}. gen lfs_miss = (lstatus==.)
+{txt}
+{com}.         
+. gen industry_agri = (industry==1)
+{txt}
+{com}. gen industry_ining = (industry==2)
+{txt}
+{com}. gen industry_manu= (industry==3)
+{txt}
+{com}. gen industry_public = (industry==4)
+{txt}
+{com}. gen industry_miss = (industry==.)
+{txt}
+{com}. drop industry
+{txt}
+{com}. g poor_190=poor_nat*100
+{txt}(251 missing values generated)
+
+{com}. drop if poor_nat==.
+{txt}(251 observations deleted)
+
+{com}. 
+. levelsof countrycode, loc(code)
+{res}{txt}`"BGD"'
+
+{com}. 
+. oaxaca poor_190 urban literacy  male lfs* industry* [aw=wgt] , by(year) swap relax  ///
+> categorical( lfs*, industry*) 
+{res}{txt}(normalized: lfs_empl lfs_unem lfs_OLF lfs_miss, industry_agri industry_ining industry_manu industry_public industry_miss)
+{res}
+{txt}Blinder-Oaxaca decomposition{col 49}Number of obs{col 67}= {res}    57,900
+{txt}{col 51}Model           =     {res}linear
+{txt}Group 1: year = {res}2016{txt}{col 51}N of obs 1      = {res}     45790
+{txt}Group 2: year = {res}2010{txt}{col 51}N of obs 2      = {res}     12110
+
+{txt}{hline 16}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}       poor_190{col 17}{c |}      Coef.{col 29}   Std. Err.{col 41}      z{col 49}   P>|z|{col 57}     [95% Con{col 70}f. Interval]
+{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}overall         {txt}{c |}
+{space 8}group_1 {c |}{col 17}{res}{space 2} 21.63154{col 29}{space 2} .1924328{col 40}{space 1}  112.41{col 49}{space 3}0.000{col 57}{space 4} 21.25438{col 70}{space 3}  22.0087
+{txt}{space 8}group_2 {c |}{col 17}{res}{space 2} 28.49356{col 29}{space 2} .4103536{col 40}{space 1}   69.44{col 49}{space 3}0.000{col 57}{space 4} 27.68928{col 70}{space 3} 29.29784
+{txt}{space 5}difference {c |}{col 17}{res}{space 2}-6.862022{col 29}{space 2} .4532334{col 40}{space 1}  -15.14{col 49}{space 3}0.000{col 57}{space 4}-7.750343{col 70}{space 3}-5.973701
+{txt}{space 5}endowments {c |}{col 17}{res}{space 2}-1.661134{col 29}{space 2} .2180614{col 40}{space 1}   -7.62{col 49}{space 3}0.000{col 57}{space 4}-2.088526{col 70}{space 3}-1.233741
+{txt}{space 3}coefficients {c |}{col 17}{res}{space 2}-5.619147{col 29}{space 2} .4431745{col 40}{space 1}  -12.68{col 49}{space 3}0.000{col 57}{space 4}-6.487753{col 70}{space 3}-4.750541
+{txt}{space 4}interaction {c |}{col 17}{res}{space 2} .4182594{col 29}{space 2} .1939046{col 40}{space 1}    2.16{col 49}{space 3}0.031{col 57}{space 4} .0382134{col 70}{space 3} .7983054
+{txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}endowments      {txt}{c |}
+{space 10}urban {c |}{col 17}{res}{space 2}-.1066041{col 29}{space 2} .0403404{col 40}{space 1}   -2.64{col 49}{space 3}0.008{col 57}{space 4}-.1856698{col 70}{space 3}-.0275384
+{txt}{space 7}literacy {c |}{col 17}{res}{space 2}-1.397617{col 29}{space 2} .1195665{col 40}{space 1}  -11.69{col 49}{space 3}0.000{col 57}{space 4}-1.631963{col 70}{space 3}-1.163271
+{txt}{space 11}male {c |}{col 17}{res}{space 2} .0259218{col 29}{space 2} .0164388{col 40}{space 1}    1.58{col 49}{space 3}0.115{col 57}{space 4}-.0062977{col 70}{space 3} .0581413
+{txt}{space 7}lfs_empl {c |}{col 17}{res}{space 2}-.0433614{col 29}{space 2} .0706184{col 40}{space 1}   -0.61{col 49}{space 3}0.539{col 57}{space 4} -.181771{col 70}{space 3} .0950482
+{txt}{space 7}lfs_unem {c |}{col 17}{res}{space 2} .1161274{col 29}{space 2} .0989572{col 40}{space 1}    1.17{col 49}{space 3}0.241{col 57}{space 4}-.0778251{col 70}{space 3} .3100799
+{txt}{space 8}lfs_OLF {c |}{col 17}{res}{space 2}-.0192748{col 29}{space 2} .0367697{col 40}{space 1}   -0.52{col 49}{space 3}0.600{col 57}{space 4}-.0913421{col 70}{space 3} .0527926
+{txt}{space 7}lfs_miss {c |}{col 17}{res}{space 2} .0005718{col 29}{space 2} .0028559{col 40}{space 1}    0.20{col 49}{space 3}0.841{col 57}{space 4}-.0050257{col 70}{space 3} .0061693
+{txt}{space 2}industry_agri {c |}{col 17}{res}{space 2} -.109114{col 29}{space 2} .0806903{col 40}{space 1}   -1.35{col 49}{space 3}0.176{col 57}{space 4}-.2672641{col 70}{space 3} .0490361
+{txt}{space 1}industry_ining {c |}{col 17}{res}{space 2} .1298007{col 29}{space 2}   .03633{col 40}{space 1}    3.57{col 49}{space 3}0.000{col 57}{space 4} .0585953{col 70}{space 3} .2010062
+{txt}{space 2}industry_manu {c |}{col 17}{res}{space 2} .0024592{col 29}{space 2} .0075259{col 40}{space 1}    0.33{col 49}{space 3}0.744{col 57}{space 4}-.0122912{col 70}{space 3} .0172097
+{txt}industry_public {c |}{col 17}{res}{space 2}-.0057236{col 29}{space 2} .0067428{col 40}{space 1}   -0.85{col 49}{space 3}0.396{col 57}{space 4}-.0189392{col 70}{space 3}  .007492
+{txt}{space 2}industry_miss {c |}{col 17}{res}{space 2}-.2543193{col 29}{space 2} .1487416{col 40}{space 1}   -1.71{col 49}{space 3}0.087{col 57}{space 4}-.5458476{col 70}{space 3} .0372089
+{txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}coefficients    {txt}{c |}
+{space 10}urban {c |}{col 17}{res}{space 2} 1.215148{col 29}{space 2} .2903201{col 40}{space 1}    4.19{col 49}{space 3}0.000{col 57}{space 4} .6461315{col 70}{space 3} 1.784165
+{txt}{space 7}literacy {c |}{col 17}{res}{space 2} 3.735084{col 29}{space 2} .4367173{col 40}{space 1}    8.55{col 49}{space 3}0.000{col 57}{space 4} 2.879134{col 70}{space 3} 4.591034
+{txt}{space 11}male {c |}{col 17}{res}{space 2}-1.692385{col 29}{space 2} 1.379205{col 40}{space 1}   -1.23{col 49}{space 3}0.220{col 57}{space 4}-4.395576{col 70}{space 3} 1.010807
+{txt}{space 7}lfs_empl {c |}{col 17}{res}{space 2} .0551877{col 29}{space 2} 8.738166{col 40}{space 1}    0.01{col 49}{space 3}0.995{col 57}{space 4} -17.0713{col 70}{space 3} 17.18168
+{txt}{space 7}lfs_unem {c |}{col 17}{res}{space 2} -.008561{col 29}{space 2} .0453303{col 40}{space 1}   -0.19{col 49}{space 3}0.850{col 57}{space 4}-.0974067{col 70}{space 3} .0802847
+{txt}{space 8}lfs_OLF {c |}{col 17}{res}{space 2}-1.044891{col 29}{space 2} 1.774663{col 40}{space 1}   -0.59{col 49}{space 3}0.556{col 57}{space 4}-4.523167{col 70}{space 3} 2.433384
+{txt}{space 7}lfs_miss {c |}{col 17}{res}{space 2} .0010083{col 29}{space 2} .0038479{col 40}{space 1}    0.26{col 49}{space 3}0.793{col 57}{space 4}-.0065335{col 70}{space 3}   .00855
+{txt}{space 2}industry_agri {c |}{col 17}{res}{space 2} 1.411823{col 29}{space 2} .4523391{col 40}{space 1}    3.12{col 49}{space 3}0.002{col 57}{space 4} .5252545{col 70}{space 3} 2.298391
+{txt}{space 1}industry_ining {c |}{col 17}{res}{space 2}-1.007637{col 29}{space 2} .2057725{col 40}{space 1}   -4.90{col 49}{space 3}0.000{col 57}{space 4}-1.410944{col 70}{space 3}-.6043305
+{txt}{space 2}industry_manu {c |}{col 17}{res}{space 2}-.6285996{col 29}{space 2} .3007262{col 40}{space 1}   -2.09{col 49}{space 3}0.037{col 57}{space 4}-1.218012{col 70}{space 3}-.0391871
+{txt}industry_public {c |}{col 17}{res}{space 2}-.0577919{col 29}{space 2} .0843309{col 40}{space 1}   -0.69{col 49}{space 3}0.493{col 57}{space 4}-.2230775{col 70}{space 3} .1074937
+{txt}{space 2}industry_miss {c |}{col 17}{res}{space 2} 1.244042{col 29}{space 2} .6594036{col 40}{space 1}    1.89{col 49}{space 3}0.059{col 57}{space 4}-.0483649{col 70}{space 3}  2.53645
+{txt}{space 10}_cons {c |}{col 17}{res}{space 2}-8.841575{col 29}{space 2} 10.48479{col 40}{space 1}   -0.84{col 49}{space 3}0.399{col 57}{space 4}-29.39139{col 70}{space 3} 11.70824
+{txt}{hline 16}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}interaction     {txt}{c |}
+{space 10}urban {c |}{col 17}{res}{space 2} .0570194{col 29}{space 2} .0246288{col 40}{space 1}    2.32{col 49}{space 3}0.021{col 57}{space 4} .0087479{col 70}{space 3} .1052909
+{txt}{space 7}literacy {c |}{col 17}{res}{space 2} .5277423{col 29}{space 2} .0733454{col 40}{space 1}    7.20{col 49}{space 3}0.000{col 57}{space 4}  .383988{col 70}{space 3} .6714966
+{txt}{space 11}male {c |}{col 17}{res}{space 2}-.0141006{col 29}{space 2} .0134127{col 40}{space 1}   -1.05{col 49}{space 3}0.293{col 57}{space 4} -.040389{col 70}{space 3} .0121877
+{txt}{space 7}lfs_empl {c |}{col 17}{res}{space 2}-.0004671{col 29}{space 2} .0739577{col 40}{space 1}   -0.01{col 49}{space 3}0.995{col 57}{space 4}-.1454214{col 70}{space 3} .1444873
+{txt}{space 7}lfs_unem {c |}{col 17}{res}{space 2}-.0206397{col 29}{space 2} .1092604{col 40}{space 1}   -0.19{col 49}{space 3}0.850{col 57}{space 4}-.2347863{col 70}{space 3} .1935068
+{txt}{space 8}lfs_OLF {c |}{col 17}{res}{space 2} .0170225{col 29}{space 2} .0370958{col 40}{space 1}    0.46{col 49}{space 3}0.646{col 57}{space 4} -.055684{col 70}{space 3}  .089729
+{txt}{space 7}lfs_miss {c |}{col 17}{res}{space 2} -.000185{col 29}{space 2}  .001136{col 40}{space 1}   -0.16{col 49}{space 3}0.871{col 57}{space 4}-.0024114{col 70}{space 3} .0020415
+{txt}{space 2}industry_agri {c |}{col 17}{res}{space 2}-.2667442{col 29}{space 2} .0873965{col 40}{space 1}   -3.05{col 49}{space 3}0.002{col 57}{space 4}-.4380383{col 70}{space 3}-.0954501
+{txt}{space 1}industry_ining {c |}{col 17}{res}{space 2}-.1582989{col 29}{space 2} .0404218{col 40}{space 1}   -3.92{col 49}{space 3}0.000{col 57}{space 4}-.2375241{col 70}{space 3}-.0790736
+{txt}{space 2}industry_manu {c |}{col 17}{res}{space 2}-.0037949{col 29}{space 2} .0114545{col 40}{space 1}   -0.33{col 49}{space 3}0.740{col 57}{space 4}-.0262454{col 70}{space 3} .0186555
+{txt}industry_public {c |}{col 17}{res}{space 2}-.0028661{col 29}{space 2} .0050148{col 40}{space 1}   -0.57{col 49}{space 3}0.568{col 57}{space 4}-.0126949{col 70}{space 3} .0069627
+{txt}{space 2}industry_miss {c |}{col 17}{res}{space 2} .2835718{col 29}{space 2} .1526162{col 40}{space 1}    1.86{col 49}{space 3}0.063{col 57}{space 4}-.0155505{col 70}{space 3} .5826942
+{txt}{hline 16}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. 
+{txt}end of do-file
+
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\results.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}27 Jun 2019, 14:39:30
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
