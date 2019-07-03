@@ -100,7 +100,7 @@ foreach c of loc countries {
 	graph bar cell00 cell01  if countrycode=="`c'" , ///
 	stack over( year) name("`c'", replace)  subtitle("`c'")	///
 	bar(1, color(blue)) bar(2, color(orange)) 	///
-	legend(order( 1 "No Access to Electricityy" 2 "Access to Electricity")) legend(pos(6) row(1)) blabel(bar, pos(center) format(%9.1f)) 
+	legend(order( 1 "No Access to Electricity" 2 "Access to Electricity")) legend(pos(6) row(1)) blabel(bar, pos(center) format(%9.1f)) 
 
 
 	graph export "${path}/`c'.png", replace	
