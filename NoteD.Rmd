@@ -25,7 +25,7 @@ Figure \@ref(fig:NoteDdash2) shows the access to piped water and toilet for both
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-Access to toilet has gradually increased for both poor and non-poor groups but this improvement has primarily occurred among richer households. Nepal shows the largest gap where 29 percent of richer households have access to proper sanitation but only 4.3 percent of the bottom 40 group has the access to toilet. A slightly higher growth rate of the access share among poor households still confirms extremely low starting conditions compared to non-poor groups.
+Access to toilet has gradually increased for both poor and non-poor groups but this improvement has primarily occurred among richer households. Nepal shows the largest gap where 29 percent of richer households have access to proper sanitation but only 4.3 percent of the bottom 40 group has access to toilet. A slightly higher growth rate of the access share among poor households still confirms extremely low starting conditions compared to the non-poor.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteD_watertoilet&#47;db_toilet' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -33,7 +33,7 @@ Access to toilet has gradually increased for both poor and non-poor groups but t
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of the basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which become the leading causes of child mortality and morbidity. These further contribute to undernutrition and poor provision of quality education especially for girls and boys in the region. Thus, establishing infrastructure for marginalized groups is necessary in mitigating greater health and thus poverty challenges.
+Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which are generally associated with child mortality, morbidity, undernutrition and, indirectly, poor provision of quality education. Thus, it seems necessary to establish proper infrastructure for marginalized groups to mitigate greater health and thus poverty challenges.
 
 ## Stata code {-}
 The calculations above are performed for all the countries and years avaialable. However, you may find below a short version of the code only for Pakistan 2015. 
