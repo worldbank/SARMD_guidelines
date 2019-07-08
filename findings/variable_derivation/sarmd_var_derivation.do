@@ -171,6 +171,8 @@ replace id = subinstr(id, ".do","",.)
 replace id = regexs(1) + "-" + regexs(2) if /* 
  */ regexm(id, "([a-z]+_[0-9]+_[a-z]+)_([a-z0-9]+_v[0-9]+.*)")
 
+replace id = upper(id)
+replace id = subinstr(id, "_V0", "_v0", .)
 
 split id, parse(_) gen(sec)
 rename (sec1 sec2 sec3 sec4 sec6) ///
