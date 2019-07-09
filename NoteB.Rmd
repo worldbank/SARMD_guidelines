@@ -1,24 +1,22 @@
 # Development of Access to Cell Phone {#note-cellphone}
 ***
+>According to GSMA real-time intelligence data, there are now over 8.97 Billion mobile connections worldwide, which surpasses the current world population of 7.71 Billion implied by UN digital analyst estimates. This data does show that in the world of wireless, 66.53% of the world’s population are now unique mobile subscribers [@turner_1_2018].
+
+South Asia region has also experienced this development. in which cell phone users have significantly grown in all countries in the region during the last ten years. Except for Afghanistan, at least 80 percent of total population has access to cell phone in most recent years. In Nepal, the percentage of access to cell phone was less than 1 percent in 2003 but the ownership rate has jumped to 90 percent within 13 years. Even in other countries, 9 out of 10 households own cell phones. 
+
+Surprisingly, and some of the households with cell phones do not have access electricity in their dwelling. How do they charge their devices?  In Bangladesh and Nepal, 68.4 and 89.9 percent of households have access to cell phone but about 12.8 and 15.3 percent of those cell phone users do not have electricity in their dwelling. 
 
 ```{r cellphone, fig.cap='Access to Cell Phone and Electricity', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
 knitr::include_graphics("./figures/all.png")
 ```
 
-One of the most unexpected changes in developing countries is a sharp increase in the use of cell phones. South Asia region has also experienced this development. Cell phone users have significantly grown in all countries in the region within about ten years, and some households with cell phones do not have electricity in their dwelling.
-
-Except for Afghanistan, at least 80 percent of total population has access to cell phone in most recent years. In Nepal, the percentage of access to cell phone was less than 1 percent in 2003 but the ownership rate has jumped to 90 percent within 13 years. Even in other countries, 9 out of 10 households own cell phones. 
-
-Another interesting finding is that some households live without electricity but still have access to cell phones. In Bangladesh and Nepal, 68.4 and 89.9 percent of households have access to cell phone but about 12.8 and 15.3 percent of those cell phone users do not have electricity in their dwelling. 
-
 This implies higher entry barriers for accessing public infrastructure due to limited financial resources and administrative capacity in those countries compared to obtaining mobile devices.
 
 The sharp growth of the access to cell phone presents greater opportunities for the region. Effective usage of technology such as cell phone may help compensate the shortage of infrastructure inherent in those countries. Also, low participation in development aid projects due to limited accessibility among vulnerable households can be improved since most households have cell phones. 
 
-Many development aid institutions already started utilizing cell phone applications in education, health and agriculture sectors by efficiently sharing knowledge with less expensive costs. One prominent example of taking advantage of this digital development is a mobile banking platform which has largely grown in India and Bangladesh. Mobile money transfer service allows users to pay for everyday goods and services, take out and repay loans, and send remittances to family in remote locations. Researchers have provided empirical evidence that the usage of mobile banking helps reducing poverty and enhancing living conditions. 
+Many development aid institutions already started utilizing cell phone applications in education, health and agriculture sectors by efficiently sharing knowledge with less expensive costs. One prominent example of taking advantage of this digital development is a mobile banking platform which has largely grown in India and Bangladesh **(Jayne, please cite this information)**. Mobile money transfer service allows users to pay for everyday goods and services, take out and repay loans, and send remittances to family in remote locations **(Jayne, please cite this information)**. Researchers have provided empirical evidence that the usage of mobile banking helps reducing poverty and enhancing living conditions **(Jayne, please cite this information)**. 
 
-Technology has the potential to facilitate poverty reduction by overcoming obstacles of accessing important services among poor people. In maximizing such benefits, active investments on infrastructure will be crucial to make people use cell phones more freely, and continued software development that enables knowledge sharing will be a powerful instrument for reducing poverty. 
+**According to.... ** Technology has the potential to facilitate poverty reduction by overcoming obstacles of accessing important services among poor people. In maximizing such benefits, active investments on infrastructure will be crucial to make people use cell phones more freely, and continued software development that enables knowledge sharing will be a powerful instrument for reducing poverty. 
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/cellphone.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
-
 
