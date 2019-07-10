@@ -19,16 +19,16 @@ The findings from SARMD provide evidence that having educated women in a family 
 datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
 
 * Generate child marriage
-gen earlym=(age<18&male==0&marital!=2&marital!=.)
-replace earlym=. if marital==.
+gen earlym=(age<18 & male==0 & marital!=2 & marital!=.)
+replace earlym=. if (marital==.)
 
-gen child=age if relationharm==3
+gen child=age if (relationharm == 3)
 bys countrycode year idh: egen childage=max(child)
  
-gen earlym_all=((age<=18&age<=20&male==0&relationharm<3&childage>1)|	///
-				(age==21&male==0&relationharm<3&childage>2)|	///
-				(age==23&male==0&relationharm<3&childage>3)|	///
-				(age==24&male==0&relationharm<3&childage>4))|	///
+gen earlym_all=((age<=18 & age<=20 & male==0 & relationharm<3 & childage>1)|	///
+				(age==21 & male==0 & relationharm<3 & childage>2)|	///
+				(age==23 & male==0 & relationharm<3 & childage>3)|	///
+				(age==24 & male==0 & relationharm<3 & childage>4))|	///
 				earlym==1
 ```
 
