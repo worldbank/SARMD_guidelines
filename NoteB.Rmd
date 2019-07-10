@@ -14,9 +14,21 @@ This implies higher entry barriers for accessing public infrastructure due to li
 
 The sharp growth of the access to cell phone presents greater opportunities for the region. Effective usage of technology such as cell phone may help compensate the shortage of infrastructure inherent in those countries. Also, low participation in development aid projects due to limited accessibility among vulnerable households can be improved since most households have cell phones. 
 
-Many development aid institutions already started utilizing cell phone applications in education, health and agriculture sectors by efficiently sharing knowledge with less expensive costs. One prominent example of taking advantage of this digital development is a mobile banking platform which has largely grown in India and Bangladesh **(Jayne, please cite this information)**. Mobile money transfer service allows users to pay for everyday goods and services, take out and repay loans, and send remittances to family in remote locations **(Jayne, please cite this information)**. Researchers have provided empirical evidence that the usage of mobile banking helps reducing poverty and enhancing living conditions **(Jayne, please cite this information)**. 
+Many development aid institutions already started utilizing cell phone applications in education, health and agriculture sectors by efficiently sharing knowledge with less expensive costs. One prominent example of taking advantage of this digital development is a mobile banking platform which has largely grown in India and Bangladesh (Lee, 2017; Goyal et al, 2012; Dixit, 2013). Mobile banking service allows users to pay for everyday goods and services, repay loans, and send remittances to family without any physical obstacles (Dermish, 2011). Researchers have provided empirical evidence that the usage of mobile banking helps reducing poverty and enhancing living conditions (Demirguc-Kunt et al, 2017). 
 
-**According to.... ** Technology has the potential to facilitate poverty reduction by overcoming obstacles of accessing important services among poor people. In maximizing such benefits, active investments on infrastructure will be crucial to make people use cell phones more freely, and continued software development that enables knowledge sharing will be a powerful instrument for reducing poverty. 
+Technology has the potential to facilitate poverty reduction by overcoming obstacles of accessing important services among poor people. In maximizing such benefits, active investments on infrastructure will be crucial to make people use cell phones more freely, and continued software development that enables knowledge sharing will be a powerful instrument for reducing poverty (Demirguc-Kunt et al, 2017; Asongu & Odhiambo, 2019). 
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/cellphone.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
 
+Reference
+
+Asongu, S. A., & Odhiambo, N. M. (2019). Mobile banking usage, quality of growth, inequality and poverty in developing countries. Information Development, 35(2), 303-318.
+
+Demirguc-Kunt, A., Klapper, L., & Singer, D. (2017). Financial inclusion and inclusive growth: A review of recent empirical evidence. The World Bank.
+
+Dermish, A., Kneiding, C., Leishman, P., & Mas, I. (2011). Branchless and mobile banking solutions for the poor: a survey of the literature. Innovations: Technology, Governance, Globalization, 6(4), 81-98.
+
+Dixit, R., & Ghosh, M. (2013). Financial inclusion for inclusive growth of India-A study of Indian states. International Journal of Business Management & Research, 3(1), 147-156.
+Goyal, V., Pandey, U. S., & Batra, S. (2012). Mobile banking in India: Practices, challenges and security issues. International Journal of Advanced Trends in Computer Science and Engineering, 1(2).
+
+Lee, J. N., Morduch, J., Ravindran, S., Shonchoyand, A. S., & Zamany, H. (2017). Poverty and Migration in the Digital Age: Experimental Evidence on Mobile Banking in Bangladesh. IGC Working Paper C-89233-BGD-1.
