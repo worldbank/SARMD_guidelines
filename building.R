@@ -1,6 +1,6 @@
 
 # preview just one chapter
-file <- c("NoteD.Rmd")
+file <- c("NoteB.Rmd")
 bookdown::render_book(file, "bookdown::gitbook",
                       preview = TRUE)
 beepr::beep(10)
