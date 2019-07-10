@@ -1,15 +1,15 @@
 # Child/Early Marriage {#note-childmarriage}
 ***
 
-Child Marriage refers to formal marriages and informal unions of a girl or boy before the age of 18. Many girls aged between 15 and 19 have been forced to get married as child brides due to poverty and social norms, leading many of them to face health hazards, inadequate provision of education and even domestic violence. 
+Child Marriage refers to formal marriages and informal unions of a girl or boy before the age of 18 (**Is there a source for this?**). Many girls aged between 15 and 19 have been forced to get married as child brides due to poverty and social norms, leading many of them to face health hazards, inadequate provision of education and even domestic violence (**source for this**). 
 
-Child marriage mostly occurs among girls especially in South Asia. According to UNICEF, South Asia accounts for half of global child marriage. India and Bangladesh belong to top 10 countries with the highest rate of child marriage. Almost half of all women aged 20-24 years reported being married before the age of 18. Bangladesh has the highest rate of child brides under 15 and the second highest rate of child marriage globally. About 74 percent of women currently aged 20-49 in the country were married before they turned 18.
+Child marriage mostly occurs among girls especially in South Asia. According to UNICEF, South Asia accounts for half of global child marriage. India and Bangladesh belong to top 10 countries with the highest rate of child marriage, where almost half of all women aged 20-24 years reported being married before the age of 18. Bangladesh has the highest rate of child brides under 15 and the second highest rate of child marriage globally. About 74 percent of women currently aged 20-49 in the country were married before they turned 18 [@unicef_early_2005].
 
-In delaying or preventing child marriage, expanding quality education among girls has been widely emphasized. Higher education helps girls participate in labor markets to earn income and empowers them to claim their rights in a society, reducing the chance of getting married early.
+In delaying or preventing child marriage, expanding quality education among girls has been widely emphasized (**This sentence is not clear. 'emphasized' by whom?**). Higher education helps girls participate in labor markets to earn income and empowers them to claim their rights in a society, reducing the chance of getting married early (**source**).
 
-It is already well known that more educated girls are less likely to be in the danger of child or early marriage. However, many child marriages are the results of parents' or adult members' decisions. This highlights that education level and gender perspectives among household members are critical for eliminating child marriage. 
+It is already well known that more educated girls are less likely to be in the danger of child or early marriage. However, many child marriages are the results of parents' or adult members' decisions (**Source**). This highlights that education level and gender perspectives among household members are critical for eliminating child marriage (**This sentence does not follow the previous one.**).
 
-The findings from SARMD provide evidence that having educated women in a family can effectively prevent early marriage among girls in their households. We constructed an indicator for early marriage based on demographic variables including marital status, age, and relationship to head. After adding married women under age 18, we found women aged between 20 and 24 with children aged 1 or older. Following STATA code allows to create the early marriage indicator based on the harmonized variables.
+The findings from SARMD provide evidence that having educated women in a family can effectively prevent early marriage among girls in their households. We constructed an indicator for early marriage based on demographic variables including marital status, age, and relationship to head. After adding married women under age 18, we found women aged between 20 and 24 with children aged 1 or older. The following STATA code allows to create the early marriage indicator based on the harmonized variables (**You have to explain what the indicator is about**).
 
 
 ```stata
@@ -19,20 +19,20 @@ The findings from SARMD provide evidence that having educated women in a family 
 datalibweb, country(`country') year(`year') type(SARMD) surveyid(`surveyid') clear 
 
 * Generate child marriage
-gen earlym=(age<18&male==0&marital!=2&marital!=.)
-replace earlym=. if marital==.
+gen earlym=(age<18 & male==0 & marital!=2 & marital!=.)
+replace earlym=. if (marital==.)
 
-gen child=age if relationharm==3
+gen child=age if (relationharm == 3)
 bys countrycode year idh: egen childage=max(child)
  
-gen earlym_all=((age<=18&age<=20&male==0&relationharm<3&childage>1)|	///
-				(age==21&male==0&relationharm<3&childage>2)|	///
-				(age==23&male==0&relationharm<3&childage>3)|	///
-				(age==24&male==0&relationharm<3&childage>4))|	///
+gen earlym_all=((age<=18 & age<=20 & male==0 & relationharm<3 & childage>1)|	///
+				(age==21 & male==0 & relationharm<3 & childage>2)|	///
+				(age==23 & male==0 & relationharm<3 & childage>3)|	///
+				(age==24 & male==0 & relationharm<3 & childage>4))|	///
 				earlym==1
 ```
 
-Then we tabulated the share of households with girls married early by gender and highest level of education among adult household members. This is to prevent the inclusion of current early marriage. Comparing the distribution of the share of education attainment among female and male adults can provide evidence on how education can differently affect the reduction in child marriage by gender. We do not have information on whether other female adults were married before 18. 
+Then we tabulated the share of households with girls married early by gender and highest level of education among adult household members. This is to prevent the inclusion of current early marriage. Comparing the distribution of the share of education attainment among female and male adults can provide evidence on how education can differently affect the reduction in child marriage by gender. We do not have information on whether other female adults were married before 18 (**In think this is the key paragraph of the note, but it is not clear. Please rewrite**). 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteC&#47;1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -40,19 +40,9 @@ Then we tabulated the share of households with girls married early by gender and
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-The figure above shows that highest education level among female members is more negatively associated with the incidence of child marriage than the one among male members. If a household has a female member who completed secondary school, the incidence of child marriage drastically falls compared to households with uneducated women. When male household members are considered, education attainment and the share of child marriage are positively correlated up to secondary education level in most countries in South Asia. In India, for example, 80 percent of early-marriage households have female members without any education while 42.4 percent of households with early-married women have male members who finished secondary school. 
+Figure \@ref(fig:NoteCdash1)shows that highest education level among female members is more negatively associated with the incidence of child marriage than the one among male members. If a household has a female member who completed secondary school, the incidence of child marriage drastically falls compared to households with uneducated women. When male household members are considered, education attainment and the share of child marriage are positively correlated up to secondary education level in most countries in South Asia. In India, for example, 80 percent of early-marriage households have female members without any education while 42.4 percent of households with early-married women have male members who finished secondary school. 
 
 Further analysis should be followed to derive causal relationship between the impact of education on child marriage. However, the drastic difference in the incidence of child marriage between households with non-educated and educated women implies that education may have large impact on overall perspectives on child marriage.
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/maritalstatus.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
-
-
-Reference
-
-UNICEF. (2005). Early marriage a harmful traditional practice a statistical exploration 2005. Unicef.
-
-
-
-
-
 
