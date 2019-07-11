@@ -1,17 +1,20 @@
 # Welfare and Emplomeny by Industry {#note-industry}
 ***
 
-Services and manufacturing industry have consistently favored non-poor households, and the difference of welfare level among sectors has increased over time. Countries including Bangladesh, Bhutan, and Pakistan have consistent labor market indicators and welfare aggregates, allowing for analyzing the industrial composition and its trend in the labor markets. Figure below shows that the service sector, followed by manufacturing and agriculture, pays higher income and thus leads to more consumption of households. The gap of average consumption between service and agriculture becomes larger over time in three countries. In Bhutan and Pakistan, the welfare aggregate in service industry is abour two times higher than the one in agriculture. In order to investigate such gap further, the share of employment by industry can be compared at different welfare levels.
+Harmonized data for Bangladesh, Bhutan, and Pakistan has indicators for labor markets including industry category ("industry") and labor force status ("lstatus") and welfare aggregates, allowing for comparing welfare level by different industry groups. 
+
+Services and manufacturing industry have consistently favored non-poor households. Figure below shows that service industry, followed by manufacturing, pays higher income and thus leads to more consumption among households. In Bhutan and Pakistan, the welfare average in service industry is about two times as much as the one in agriculture. This difference of welfare level among sectors has been also widened over time.
+
 
 ```{r labor1, fig.cap='Welfare by Industry over time', out.width='80%', fig.asp=.75, fig.align='center', echo=FALSE, warning=FALSE}
 knitr::include_graphics("./findings/Labor Market/welfare_ind.png")
 ```
 
-Households in the bottom quintile rely on agriculture whereas rich households mostly work in the service sector. For example, in Bhutan, even though the share of employment in agriculture has gradually decreased, about 90 percent of households in the bottom quintile belong to agriculture and more than 40 percent of the richest households earn their income from service industry. 
+When the industrial composition of employment is compared at different income levels, majority of households in the bottom quintile rely on agriculture whereas richest households work in either service or manufacturing sector. In Bhutan, about 90 percent of households in the bottom quintile belong to agriculture and more than 40 percent of the top 20 households earn their income from service industry. 
 
-Despite such difference in terms of the reliance on agriculture, the share of agriculture employment has declined over time more evidently among bottom 20 groups. More than half of the poorest households depended on agriculture about 20 years ago in Bangladesh and Bhutan, but they moved to different sectors pursuing better income, lowering the share by about 7 and 40 percent respectively. Pakistan is an exception where the share of agriculture employment among poor households increased from 44.7 percent in 2010 to 58.2 percent in 2015. 
+Despite such difference of the reliance on agriculture between poor and non-poor groups, the share of agriculture employment has declined over time more evidently among bottom 20 groups. More than half of the poorest households depended on agriculture about 20 years ago in Bangladesh and Bhutan, but they moved to different sectors pursuing better income, lowering the overall share by about 7 and 40 percent respectively. Pakistan is an exception where the share of agriculture employment among poor households increased from 44.7 percent in 2010 to 58.2 percent in 2015. 
 
-The employment share in the manufacturing sector increased modestly in Bhutan and Pakistan, but a large increase occurred in the service sector. In Bangladesh, however, due to a sharp growth in garment industry, the percent of employment in manufacturing has risen up to 24 percent and 31.4 percent in bottom and top quintile groups. 
+The employment share in the manufacturing sector increased modestly in Bhutan and Pakistan, but a large increase occurred in the service sector. In Bangladesh with a large growth in garment industry, the percent of employment in manufacturing has risen to 24 percent and 31.4 percent in the bottom and top quintile groups.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteE&#47;q1_q5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -19,9 +22,9 @@ The employment share in the manufacturing sector increased modestly in Bhutan an
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-Overall, the trends in employment share among different quintile groups emphasize the growth of service sector in the region. Many development and trade economists argued that globalization may lead developing countries to specialize in either primary or secondary industry including agriculture. However, unlike their expectation, those countries have been gradually dominated by service sectors.
+Overall, the trends in employment share by industry and income level emphasize the growth of service sector in the region. Unlike traditional expectation that globalization will lead developing countries to specialize in primary industry, service sector has gradually expanded in these countries regardless of income levels.
 
-On the other side, the prevalence of agriculture workers among the poorest households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, welfare level has not been enhanced among households in agriculture. Government policies and business development to increase its productivity will facilitate reducing poverty in the region. 
+The prevalence of agriculture workers among poor households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, agriculture workers have enjoyed small growth in welfare aggregate. Government policies and business development to increase its productivity will facilitate reducing poverty in the region.
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteE&#47;All' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
