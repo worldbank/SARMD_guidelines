@@ -1,4 +1,4 @@
-# Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}
+# Decomposing changes in poverty into endowments and returns in Bangladesh {#note-oaxaca}
 ***
 
 Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method (Blinder 1973; Oaxaca 1973) decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, the change in poverty is decomposed into three parts; 1) endowment accumulation  (by increases in the education level of household heads) on the one hand, 2) return to endowment (education, employment or employment in high return sector), and 3) the interatction between endowment and its return. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.
