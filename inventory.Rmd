@@ -32,7 +32,7 @@ Figure \@ref(fig:inventory2) presents the current status of the SARMD harmonizat
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-You may be wondering how does this compare to other regions of the world? Figures \@ref(fig:inventory3) and \@ref(fig:inventory4) provide the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC, where most of the countries produce yearly or biannual househod surveys, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period).[^ExCountries]
+You may be wondering how does this compare to other regions of the world? Figures \@ref(fig:inventory3) and \@ref(fig:inventory4) provide the number of surveys that have been added to GMD over the last ten years. The answer is that compared to ECA and LAC, where most of the countries produce yearly or biannual household surveys, the rest of the developing world is very close to extreme data deprivation (dangerously close to less than two data points in a ten-year period).[^ExCountries]
 
 The case of India is particularly important because the frequency of its poverty data is too low for a country with such an important role in global poverty monitoring. Its most recent survey conducted in 2016-17 has not been harmonized nor released yet. 
 
