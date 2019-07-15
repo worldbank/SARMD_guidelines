@@ -1,15 +1,15 @@
 # Poverty measurement methodology {#poverty-methodology}
 ***
 
-In its most basic form, poverty measurement refers to identify those individuals or household that live below a predefined threshould of welfare. Such a threshold is generally known as a "poverty line" and the welfare aggregate that ranks the population from poorest to richest is usually measured on monetary terms like income or consumption expenditures. Given that SAR household surveys are consumption based, the rest of the book refers to "welfare aggregate" and "consumption aggregate" indistinguishably. 
+In its most basic form, poverty measurement refers to identifying those individuals or households that live below a predefined threshold of welfare. Such a threshold is generally known as a poverty line and the welfare aggregate that ranks the population from poorest to richest is usually measured on monetary terms like income or consumption expenditures. Given that SAR household surveys are consumption based, the rest of the book refers to "welfare aggregate" and "consumption aggregate" indistinguishably. 
 
-Many books, reports, and papers have been written on regards to the best practices to construct welfare aggreagtes, calculate poverty lines, and estimate poverty. Thus, this chapter is not in any sence an attempt to replace or summarize those resources. Instead, this chapter presents a brief explanation of the most important concepts, shows a technical examples in Stata on how to calculate poverty rates using SARMD, and showcases valuable resources with which the user should get familiar in order to understand poverty measurement properly. 
+Many books, reports, and papers have been written regarding the best practices to construct welfare aggregates, calculate poverty lines, and estimate poverty. Thus, this chapter is in no sense an attempt to replace or summarize those resources. Instead, this chapter presents a brief explanation of the most important concepts, shows some technical examples in Stata on how to calculate poverty rates using SARMD, and showcases valuable resources with which the user should get familiar in order to understand poverty measurement properly. 
 
 ## Components of the consumption welfare aggregate
 
-Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally it should be not only available at reasonably frequent intervals, but be also comparable over time [@serajuddin_data_2015]. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries. 
+Household consumption surveys are the starting point in monitoring progress in poverty reduction and enhancing shared prosperity in any country. Ideally they should be not only available at reasonably frequent intervals, but also comparable over time [@serajuddin_data_2015]. Assuming we have computed comparable consumption expenditures at the household level, several spatial and temporal adjustments are necessary to take into account differences in costs of living across time and across countries. 
 
-The assumption of comparable household surveys is strong given the considerations explained in the [introduction](#intro). Yet, in a general sense most consumption aggregates account for four basic subcompoenents of expenditure: food, non-food, durables, and housing. Section 3 of @deaton_guidelines_2002 provides a detailed explanation on how to estimate each of such components. In addition, valuable and applied insights about the general idea of constructing a welfare aggregate might be found in @lanjouw_constructing_2009. The takeaway of this exercise is to realize that the welfare aggregates from two different household surveys won't ever be fully comparable because, my nature of the questionnaires, the subdomponents of each consumption aggregate will be different. In SARMD, the **consumption aggregate used to measure welbeing is provided by the National Statistics Office of each country, rather than being calculated by the SARTSD.**
+The assumption of comparable household surveys is strong given the considerations explained in the [introduction](#intro). Yet, in a general sense most consumption aggregates account for four basic components of expenditure: food, non-food, durables, and housing. Section 3 of @deaton_guidelines_2002 provides a detailed explanation on how to estimate each of such components. In addition, valuable and applied insights about the general idea of constructing a welfare aggregate can be found in @lanjouw_constructing_2009. The takeaway of this exercise is to realize that the welfare aggregates from two different household surveys won't ever be fully comparable because, by nature of the questionnaires, the subcomponents of each consumption aggregate will be different. In SARMD, the **consumption aggregates used to measure well-being are provided by the National Statistics Office of each country, rather than being calculated by the SARTSD.**
 
 ## Additional factors that affect the welfare aggregate
 
@@ -45,7 +45,7 @@ A fourth adjustment is dividing total household expenditure by some measure of t
 
 ## Estimation of poverty
 
-The FGT measures devised by @foster_class_1984 remain the most commonly used to measure poverty. They are defines as:
+The FGT measures devised by @foster_class_1984 remain the most commonly used to measure poverty. They are defined as:
 
 $$
 \begin{equation}
