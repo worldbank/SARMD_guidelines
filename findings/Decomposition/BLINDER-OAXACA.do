@@ -114,6 +114,9 @@ set trace off
 
 			levelsof countrycode, loc(code)
 			foreach c of loc code {
+			su year if countrycode=="`c'"
+			loc y1=r(min)
+			loc y2=r(max)
 			preserve
 				oaxaca poor_190 urban literacy  male lfs_* industry_* [aw=wgt] if countrycode=="`c'" , by(year) swap relax  ///
 				categorical( lfs_*, industry_*) 
@@ -122,9 +125,11 @@ set trace off
 // -------------------------------------------------------------------------------------------------
 
 			mat B = e(b)
+
 			clear
 			svmat2 B
 			gen countrycode="`c'"
+
 			foreach n of numlist 31/43 {
 				drop B`n'
 				}
@@ -148,9 +153,29 @@ set trace off
 				}
 			reshape long B_, i(countrycode) j(variable, string)	
 			
+			*Order variable label
+			label define order  1 Year2	2 Year1	3 Difference	4 Endowments	5 Coefficients	///
+					6 Interaction	7 Urban	8 Literacy	9 Male	10 Employed	11 Unemployed	///
+					12 OLF	13 lstatus_missing	14 Agriculture	15 Industry	16 Service	17 Other	18 Sector_missing	///
+					19 c_Urban	20 c_Literacy	21 c_Male	22 c_Employed	23 c_Unemployed	24 c_OLF	25 c_lstatus_missing		///
+					26 c_Agriculture	27 c_Industry	28 c_Service	29 c_Other	30 c_Sector_missing
+			encode variable, gen(b) label(order)
+			sort b
+			
+			gen category="Total effect" if inrange(b, 1,5)
+			replace category="Endowment" if inrange(b,6,18)
+			replace category="Coefficient" if inrange(b,19,30)
+			replace variable=subinstr(variable,"c_","",.) 
+			replace variable="Poverty rate in `y1'" if variable=="Year1"
+			replace variable="Poverty rate in `y2'" if variable=="Year2"
+			drop if inlist(b, 13, 18, 25, 30)
+			drop b
+			
 			ren B_ value
 
-
+			format value %15.2f
+			
+			order countrycode category variable value
 			append using `01'
 			save `01', replace
 			restore

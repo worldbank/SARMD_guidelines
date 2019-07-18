@@ -5,14 +5,13 @@ Using poverty and  socio-economic indicators observed over two time periods, the
 
 Table 1: Decomposing changes in poverty into endowments and returns in Bangladesh
 
-| Category     	| Effects  	|
-|--------------	|:----------:|
-| Year=2016    	| 21.63154 	|
-| Year=2010    	| 28.49356 	|
-| Difference   	| -6.86202 	|
-| Endowments   	| -1.66113 	|
-| Coefficients 	| -5.61915 	|
-| Interaction  	| 0.418259 	|
+```{r decomp, echo=FALSE, messages=FALSE, warning=FALSE} 
+decom <- readr::read_csv("./findings/Decomposition/toteffect.csv", 
+                        col_types = readr::cols())
+knitr::kable(decom, 
+             booktabs = TRUE, 
+             caption = 'Decomposing changes in poverty into endowments and returns') 
+``` 
 
 Table 1 reports the poverty rate following national poverty line in 2010 and 2016 and the change in poverty rate over time. The poverty rate in Bangladesh declined by 6.86 percentage points between two periods, and this reduction is decomposed into three components; effects from endowment accumulation, returns from endowment and interaction. Poverty reduction was both driven by endowment effects, but its return played a dominant role, leading to a decrease in poverty by 5.61 percentage points. 
 
@@ -20,21 +19,13 @@ The first term for endowments shows the mean change in poverty rate if explanato
 
 Table 2: Decomposing changes in poverty into endowments and returns in Bangladesh by Components
 
-|  Category                                           |  Effects from endowments  |  Effects from returns to endowments    |
-|-----------------------------------------------------|:---------------------------:|:----------------------------------------:|
-|  Total effect                                       | -1.66                     | -5.62                                  |
-|  Literacy                                           | -1.4                      | 3.73                                   |
-|  Male                                               | 0.02                      | -1.69                                |
-|  Labor force status of household head               |                           |                                        |
-|  Employed                                           | -0.04                     | 0.06                                   |
-|  Unemployed                                         | 0.12                      | -0.01                                  |
-|  OLF                                                | -0.02                     | -1.04                                  |
-|  Sector of household head                           |                           |                                        |
-|  Agriculture                                        | -0.11                     | 1.4                                    |
-|  Mining                                             | 0.13                      | -1.01                                  |
-|  Manufacturing                                      | -0.002                    | -0.62                                  |
-|  Public Administration                              | -0.005                    | -0.06                                  |
-
+```{r decomp, echo=FALSE, messages=FALSE, warning=FALSE} 
+decom <- readr::read_csv("./findings/Decomposition/sub_effect.csv", 
+                        col_types = readr::cols())
+knitr::kable(decom, 
+             booktabs = TRUE, 
+             caption = 'Decomposing changes in poverty into endowments and returns') 
+``` 
 
 The figure breaks down the decline in the poverty rate of 6.86 percentage points at more disaggregated level, identifying whether the decrease was driven by the changes in literacy level, gender, labor force status or sector of work of a household head. The sum of the effects does not add up to 6.86 percentage points since residual effects and some categories with missing observations are not included in the table.
 
