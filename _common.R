@@ -10,12 +10,12 @@ if (Sys.info()[7] == "wb384996") {
   stata_eng <- "c:/Program Files (x86)/Stata15/StataMP-64.exe"
 } else if (Sys.info()[7] == "wb459082") {
   # Javier
-  stata_eng <- ""
+  stata_eng <- "c:/Program Files (x86)/Stata15/StataMP-64.exe"
 } else if (Sys.info()[7] == "wb502818") {
   # Jayne
-  stata_eng <- ""
+  stata_eng <- "c:/Program Files (x86)/Stata15/StataMP-64.exe"
 } else {
-  stata_eng <- ""
+  stata_eng <- "c:/Program Files (x86)/Stata15/StataMP-64.exe"
 }
 
 
