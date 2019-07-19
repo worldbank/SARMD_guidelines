@@ -19,7 +19,7 @@ Even though the share of households that have access to toilet is relatively hig
 
 Figure \@ref(fig:NoteDdash2) shows the access to piped water and toilet for both the bottom 40 and top 60 of each country. As expected, large inequality in access to piped water and toilet exist between poor and non-poor households. 
 
-Even though these countries have shown a modest decrease in the inequalities, the figure shows that poor households are highly marginalized in obtaining enough access to clean water.  The gap in the access to piped water between bottom 40 and top 60 groups is extensive in Bangladesh. Only 2.4 percent of poor households have access to piped water whereas the coverage becomes 4 times higher among non-poor households. 
+Even though these countries have shown a modest decrease in the inequalities (**Inequalities of what? If this is a new paragraph, you have to mention again that the inequalies are about**), the figure shows that poor households are highly marginalized in obtaining enough access to clean water.  The gap in the access to piped water between bottom 40 and top 60 groups is extensive in Bangladesh. Only 2.4 percent of poor households have access to piped water whereas the coverage becomes 4 times higher among non-poor households. 
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteD_watertoilet&#47;db_piped' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -35,7 +35,7 @@ Overall improvement in the toilet access has primarily occurred among rich house
 knitr::include_graphics("figures/fake_figure.PNG")
 ```
 
-Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which are generally associated with child mortality, morbidity, undernutrition and, indirectly, poor provision of quality education (WHO/UNICEF 2014). Thus, establishing proper infrastructure for marginalized groups to have more access to water and sanitation would be crucial in mitigating greater health and thus poverty challenges.
+Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which are generally associated with child mortality, morbidity, undernutrition and, indirectly, poor provision of quality education [@world_health_organization_progress_2014]. Thus, establishing proper infrastructure for marginalized groups to have more access to water and sanitation would be crucial in mitigating greater health and thus poverty challenges.
 
 ## Stata code {-}
 The calculations above are performed for all the countries and years avaialable. However, you may find below a short version of the code only for Pakistan 2015. 
@@ -72,6 +72,3 @@ ren re_ value
 
 You may access our full Stata do-file by accessing the following [link](https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/sanitation.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
 
-Reference
-
-WHO/UNICEF Joint Water Supply, & Sanitation Monitoring Programme. (2014). Progress on drinking water and sanitation: 2014 Update. World Health Organization.
