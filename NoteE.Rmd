@@ -24,7 +24,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 Overall, the trends in employment share by industry and income level emphasize the growth of service sector in the region. Unlike traditional expectation that globalization will lead developing countries to specialize in primary industry, service sector has gradually expanded in these countries regardless of income levels.
 
-The prevalence of agriculture workers among poor households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, agriculture workers have enjoyed small growth in welfare aggregate. Government policies and business development to increase its productivity will facilitate reducing poverty in the region.
+The prevalence of agriculture workers among poor households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, agriculture workers have enjoyed small growth in welfare aggregate. Government policies and business development to increase its productivity will facilitate reducing poverty in the region (Irz, 2001; De Janvry & Sadoulet, 2009).
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteE&#47;All' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 
@@ -33,3 +33,8 @@ knitr::include_graphics("figures/fake_figure.PNG")
 ```
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/labormarket.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau. 
 
+Reference
+
+Irz, X., Lin, L., Thirtle, C., & Wiggins, S. (2001). Agricultural productivity growth and poverty alleviation. Development policy review, 19(4), 449-466.
+
+De Janvry, A., & Sadoulet, E. (2009). Agricultural growth and poverty reduction: Additional evidence. The World Bank Research Observer, 25(1), 1-20.
