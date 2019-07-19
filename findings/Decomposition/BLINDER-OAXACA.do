@@ -174,7 +174,6 @@ set trace off
 			ren B_ value
 
 			format value %15.2f
-			
 			order countrycode category variable value
 			append using `01'
 			save `01', replace
@@ -182,6 +181,30 @@ set trace off
 				}
 
 
-			
+// -------------------------------------------------------------------------------------------------
+// Export results as CSV
+// -------------------------------------------------------------------------------------------------			
 u `01', clear
-export excel using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\decomp_results.xls", sheetreplace firstrow(variables)
+
+preserve
+keep if category=="Total effect"
+drop category countrycode
+replace value=round(value,0.01)
+export delimited using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\toteffect.csv", replace
+restore
+
+drop if category=="Total effect"
+reshape wide value, i(category variable) j(countrycode, string)
+ren value* *
+order category variable PAK BTN BGD
+label define order  1 Endowment 2 Coefficient
+encode category, gen(b) label(order)
+label define order2 1 Urban	2 Literacy	3 Male	4 Employed	5 Unemployed	///
+					6 OLF	7 lstatus_missing	8 Agriculture	9 Industry	10 Service	11 Other
+encode variable, gen(c) label(order2)
+sort b c
+drop b c category
+foreach v in PAK BTN BGD {
+	replace `v'=round(`v',0.01)
+	}
+export delimited using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\sub_effect.csv", replace
