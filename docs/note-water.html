@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Water Supply and Sanitation | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Water Supply and Sanitation | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-07-08" />
+<meta name="date" content="2019-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -168,7 +168,12 @@
 <li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
 <li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Decomposing changes in poverty into endowments and returns in Bangladesh</a></li>
+<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-3"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-3"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-3"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
 <li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child/Early Marriage</a></li>
 <li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Water Supply and Sanitation</a><ul>
@@ -199,9 +204,9 @@
 <div id="note-water" class="section level1">
 <h1><span class="header-section-number">Chapter 18</span> Water Supply and Sanitation</h1>
 <hr />
-<p>Indicators related to drinking water, sanitation and hygiene (WASH) monitor progress on basic living conditions of households and provide important information on health, education, and welfare that cannot be captured from monetary expenditure or income variables. In SARMD, there are several variables that represent water and sanitation condition but variables for hygiene are not yet available.</p>
-<p>Whether a household has access to piped water and basic sanitation facility can be estimated by using the binary variables <code>piped_water</code> and <code>toilet_acc</code>, respectively. Besides these two WASH indicators, quality of drinking water can also be identified with variable <code>water_source</code>, which indicates the source of drinking water, but most of the harmonized surveys in the region do not have this variable.</p>
-<p>As explained in the <a href="intro.html#intro">Introduction</a>, the comparability across countries is difficult because of the differences in definitions of certain concepts, including most of the WASH indicators. Thus, you need to be cautions when comparing estimates across countries in the region like the share of access to water and sanitation. For instance, the questionnaires of most countries make explicit distinction between access to piped water from inside or outside the dwelling. However, surveys like the one from Nepal do not make such a distinction, which precludes the comparability across the countries in the region. Also, (some countries have a categorical question that indicates public flush toilet shared among multiple households and includes these category as access to toilet.) <strong>Jayne, please clarify the sentence in parentheses. Provide examples.</strong></p>
+<p>Indicators related to drinking water, sanitation and hygiene (WASH) monitor progress on basic living conditions of households and provide important information on health, education, and welfare that cannot be captured from monetary expenditure or income variables.</p>
+<p>In SARMD, there are several variables that represent water and sanitation condition. The binary variables, <code>piped_water</code> and <code>toilet_acc</code>, indicate whether a household has access to piped water and basic sanitation facility such as a flush toilet. Piped water is considered <em>improved water supply</em> in contrast to other kinds of access to water like surface water, unprotected water, or wells (which, in some cases, are contaminated). Quality of drinking water can also be identified with variable <code>water_source</code>, which indicates the source of drinking water, but most of the harmonized surveys in the region do not have this variable.</p>
+<p>As explained in the <a href="intro.html#intro">Introduction</a>, the comparability across countries is difficult due to different definitions of the WASH indicators. Thus, users need to be cautious when comparing estimates across countries in the region like the share of access to water and sanitation. For instance, the questionnaires of most countries make explicit distinction between access to piped water from inside or outside the dwelling. However, survey data for Nepal does not make such a distinction, which precludes the comparability across the countries in the region. The original toilet variable of survey data for Bangladesh includes three latrine categories, but Nepal surveys includes only one communal latrine. Thus, the access to toilet can be over/under-represented for the question that has more options for flush toilets or other sanitation systems when the indicator is harmonized based on different categories.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
 <object class="tableauViz" width="700" height="827" style="display:none;">
@@ -214,9 +219,9 @@
 Figure 18.1: Access to piped water and toilet
 </p>
 </div>
-<p>Piped water is considered <em>improved water supply</em> in contrast to other kinds of access to water like surface water, unprotected water, or wells (which, in some cases, are contaminated). Overall, less than half of the population do not have access to piped water. In Afghanistan and Bangladesh, only 9.7 and 11.3 percent of the population have access to piped water and the rest of them reply on informal and relatively unsafe water sources.</p>
-<p>Even though the share of households that have access to toilet is relatively higher than the one for piped water supply, more than a third of the population in most countries still do not have proper sanitation system. In Nepal, for instance, the condition of access to toilet is worse than that of access to piped water as more than 60 percent of households do not have access to toilet.</p>
-<p>Figure <a href="note-water.html#fig:NoteDdash2">18.2</a> shows the access to piped water and toilet for both the bottom 40 and top 60 of each country. As expected, poor households suffermore from the shortage of piped water and toilet. The gap of access to piped water between bottom 40 and top 60 groups is extensive in Bangladesh where only 2.4 percent of poor households have access to piped water while this share becomes 4 times higher for non-poor households. Even though these countries have shown a modest improvement of the gap, data shows that poor households are highly marginalized in obtaining enough access to clean water.</p>
+<p>Overall, less than half of the population do not have access to piped water. In Afghanistan and Bangladesh, only 9.7 and 11.3 percent of the population have access to piped water and the rest of them reply on informal and relatively unsafe water sources. Nepal has the highest access among SAR countries, but 60 percent of the population still does not have safe water sources.</p>
+<p>Even though the share of households that have access to toilet is relatively higher than the one for piped-water supply, more than a third of the population in most countries do not have proper sanitation system. Except for Sri Lanka, at least 30 percent of households in each country suffer from the shortage of proper sanitation facility. In Nepal, the condition of access to toilet is even worse where only about 30 percent of the households can use toilet.</p>
+<p>Figure <a href="note-water.html#fig:NoteDdash2">18.2</a> shows the access to piped water and toilet for both the bottom 40 and top 60 of each country. As expected, large inequality in access to piped water and toilet exist between poor and non-poor households. Even though these countries have shown a modest decrease in these inequalities, the figure <a href="note-water.html#fig:NoteDdash2">18.2</a> shows that poor households are highly marginalized in obtaining enough access to clean water. The gap in the access to piped water between bottom 40 and top 60 groups is extensive in Bangladesh. Only 2.4 percent of poor households have access to piped water whereas the coverage becomes 4 times higher among non-poor households.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
 <object class="tableauViz" width="700" height="827" style="display:none;">
@@ -229,7 +234,7 @@ Figure 18.1: Access to piped water and toilet
 Figure 18.2: Access to Piped Water
 </p>
 </div>
-<p>Access to toilet has gradually increased for both poor and non-poor groups but this improvement has primarily occurred among richer households. Nepal shows the largest gap where 29 percent of richer households have access to proper sanitation but only 4.3 percent of the bottom 40 group has access to toilet. A slightly higher growth rate of the access share among poor households still confirms extremely low starting conditions compared to the non-poor.</p>
+<p>Overall improvement in the toilet access has primarily occurred among rich households. In Nepal, 29 percent of non-poor households have access to proper sanitation but only 4.3 percent of the bottom 40 group has access to toilet. A slightly higher growth rate of the access coverage among poor households still confirms that they started with extremely low conditions compared to non-poor households.</p>
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script>
 <div class="tableauPlaceholder" style="width: 700px; height: 827px;">
 <object class="tableauViz" width="700" height="827" style="display:none;">
@@ -242,7 +247,7 @@ Figure 18.2: Access to Piped Water
 Figure 18.3: Access to Toilet
 </p>
 </div>
-<p>Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which are generally associated with child mortality, morbidity, undernutrition and, indirectly, poor provision of quality education. Thus, it seems necessary to establish proper infrastructure for marginalized groups to mitigate greater health and thus poverty challenges.</p>
+<p>Most of the population in South Asia live without safe water and sanitation, and poor people tend to encounter more severe shortage of basic conditions. This limited access to safe water and sanitation may lead to poor hygiene behaviors, which are generally associated with child mortality, morbidity, undernutrition and, indirectly, poor provision of quality education <span class="citation">(World Health Organization and UNICEF <a href="#ref-world_health_organization_progress_2014">2014</a>)</span>. Thus, establishing proper infrastructure for marginalized groups to have more access to water and sanitation would be crucial in mitigating greater health and thus poverty challenges.</p>
 <div id="stata-code" class="section level2 unnumbered">
 <h2>Stata code</h2>
 <p>The calculations above are performed for all the countries and years avaialable. However, you may find below a short version of the code only for Pakistan 2015.</p>
@@ -274,6 +279,12 @@ ren re_ value
 </code></pre>
 <p>You may access our full Stata do-file by accessing the following <a href="https://github.com/worldbank/SARMD_guidelines/blob/master/shareable_dofiles/sanitation.do">link</a>. Our work consists of running the following command for each dataset and saving the results in order to export to Tableau.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-world_health_organization_progress_2014">
+<p>World Health Organization, and UNICEF. 2014. “Progress on Drinking Water and Sanitation.” Geneva, Switzerland: WHO/UNICEF. <a href="https://www.who.int/water_sanitation_health/publications/2014/jmp-report/en/">https://www.who.int/water_sanitation_health/publications/2014/jmp-report/en/</a>.</p>
 </div>
 </div>
             </section>
