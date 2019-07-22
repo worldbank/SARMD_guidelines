@@ -7,6 +7,7 @@ beepr::beep(10)
 
 # render the whole book
 bookdown::render_book("index.Rmd", "bookdown::gitbook")
+beepr::beep(10)
 
 #serve the whole book to see modification on trshe fly
 dir <- getwd()

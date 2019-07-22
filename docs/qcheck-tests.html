@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Tests | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Tests | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-25" />
+<meta name="date" content="2019-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,7 @@
 <script src="libs/viz-0.3/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -59,7 +60,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -134,7 +134,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-lincense"><i class="fa fa-check"></i>Replicability and lincense</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-license"><i class="fa fa-check"></i>Replicability and license</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
@@ -165,7 +165,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
 <li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
-<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A technical example</a></li>
 </ul></li>
 <li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
@@ -225,23 +225,19 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
 <li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
 <li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
-<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-2"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-2"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-2"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
-<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child Marriage in SAR</a></li>
-<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Improvement of Water Supply and Sanitation Over Time</a><ul>
-<li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#analysis-1"><i class="fa fa-check"></i>Analysis</a></li>
+<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child/Early Marriage</a></li>
+<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Water Supply and Sanitation</a><ul>
 <li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#stata-code"><i class="fa fa-check"></i>Stata code</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare and Emplomeny by Industry</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>

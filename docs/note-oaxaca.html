@@ -47,9 +47,74 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/viz-0.3/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.1/grViz.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  { background-color: #f8f8f8; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -69,7 +134,7 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-lincense"><i class="fa fa-check"></i>Replicability and lincense</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-license"><i class="fa fa-check"></i>Replicability and license</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
@@ -100,7 +165,7 @@
 <li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
 <li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
-<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A technical example</a></li>
 </ul></li>
 <li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
@@ -160,19 +225,11 @@
 <li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
 <li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
 <li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
-<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
-<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-3"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
-<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-3"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
-<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-3"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-2"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-2"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-2"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
 <li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
@@ -689,17 +746,17 @@ Other
 </tbody>
 </table>
 <p>The Oaxaca-Blinder decomposition breaks down the decline in the poverty rates points at more disaggregated level, identifying whether the decrease was driven by the changes in literacy level, gender, labor force status or sector of work of a household head. The sum of the effects does not add up to the changes in poverty rates since residual effects and some categories with missing observations are not included in the table. Following sections summarize the findings for each country.</p>
-<div id="pakistan-3" class="section level2">
+<div id="pakistan-2" class="section level2">
 <h2><span class="header-section-number">15.1</span> Pakistan</h2>
 <p>Migration to urban area was the largest contributor to the decline in poverty rate in terms of endowment effects. Compared to the effects of the changes in the share of male, employed heads, and agriculture employment, 2 percentage point increase in urban population in the country lowered its poverty rate by -0.33 percentage point.</p>
 <p>The estimates for returns to endowment show that being a male household head has large advantages in avoiding poverty. Through male headed households, the poverty rate declined by 5.45 percentage points, at least 8 times higher than other effects including employment status, industry and service employment. Industry and service sector workers also experienced poverty reduction whereas agriculture did not help households move out of poverty.</p>
 </div>
-<div id="bhutan-3" class="section level2">
+<div id="bhutan-2" class="section level2">
 <h2><span class="header-section-number">15.2</span> Bhutan</h2>
 <p>When the effect of endowment accumulation is considered, increases in urban population, literacy rate, share of male heads and a decrease in agriculture employment led to poverty reduction. Although the period gap is bigger due to a data availability issue, compared to Pakistan and Bangladesh, the country had gone through a large structural change which lowered agriculture employment and the population with illiteracy.</p>
 <p>The coefficient estimates show that male headed households are more likely to escape poverty and agriculture sector has higher returns to endowment than other sectors do. Being employed, however, does not necessarily lead to poverty reduction, and other indicators including urban and literacy turns out to be minimal in lowering poverty rate.</p>
 </div>
-<div id="bangladesh-3" class="section level2">
+<div id="bangladesh-2" class="section level2">
 <h2><span class="header-section-number">15.3</span> Bangladesh</h2>
 <p>In terms of the effects from endowment accumulation, the increasing share of household heads that can write or read and decreasing share of heads engaged in agriculture sector triggered a decrease in the poverty rate. Decreasing illiteracy rate among household heads led to a declined in poverty rate by 1.4 percentage point. As household heads depart from agriculture sector, moving to manufacturing or service industry, the effects from endowment in agriculture lowered poverty rate by 0.11 percentage point.</p>
 <p>Although the increase in the share of male household head didn’t affect poverty reduction, being a female head raises a chance of staying poor by 3.73 percentage points. This finding implies gender discrimination in Bangladesh in poverty reduction. Also, employment in agriculture does not affect poverty reduction but the effects from returns to endowment in manufacturing or service industry indicate advantages of leaving agriculture sector.</p>
@@ -799,6 +856,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

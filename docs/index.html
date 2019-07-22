@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-25" />
+<meta name="date" content="2019-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,7 @@
 <script src="libs/viz-0.3/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -59,7 +60,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -134,7 +134,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-lincense"><i class="fa fa-check"></i>Replicability and lincense</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-license"><i class="fa fa-check"></i>Replicability and license</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
@@ -165,7 +165,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
 <li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
-<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A technical example</a></li>
 </ul></li>
 <li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
@@ -225,23 +225,19 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
 <li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
 <li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
-<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-2"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-2"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-2"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
-<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child Marriage in SAR</a></li>
-<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Improvement of Water Supply and Sanitation Over Time</a><ul>
-<li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#analysis-1"><i class="fa fa-check"></i>Analysis</a></li>
+<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child/Early Marriage</a></li>
+<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Water Supply and Sanitation</a><ul>
 <li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#stata-code"><i class="fa fa-check"></i>Stata code</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare and Emplomeny by Industry</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
@@ -266,7 +262,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">South Asia Regional Micro Database (SARMD) User Guidelines</h1>
 <p class="author"><em>South Asia Region Team for Statistical Development (SARTSD)</em></p>
-<p class="date"><em>2019-06-25</em></p>
+<p class="date"><em>2019-07-22</em></p>
 </div>
 <div id="welcome" class="section level1 unnumbered">
 <h1>Welcome</h1>
@@ -274,27 +270,27 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div style="float:right;position: relative;">
 <p><img src="figures/SAR-Emblem.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
-<p>This book is the user guidelines of the South Asia Regional Micro Database (SARMD); a collection of harmonizaed household surveys in the South Asia Region (SAR) that is used as underlying data for estimating comparable socieconomic indicators at the country and regional levels in SAR. In addition, SARMD is used in the Global Monitorind Database, a global comparable microdata across countries, regions and years for global poverty monitoring and welfare measurement hosted by the World Bank. The household surveys contained in SARMD provide a rich environment on expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in the region.</p>
-<p>These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the <code>datalibweb</code> system and how to perform basic (and not so basic) socioeconomic calculations. We will study how comparable household surveys are across the region and evaluate the quality of the harmonization process. We also provide several examples on how to conduct analysis at the regional or country level in our analytical notes.</p>
+<p>This book contains the user guidelines of the South Asia Regional Micro Database (SARMD), a collection of harmonized household surveys from the South Asia Region (SAR) that is used as underlying data to estimate comparable socioeconomic indicators at the country and regional levels in SAR. In addition, SARMD is used in the Global Monitoring Database (GMD), a global comparable micro database hosted by the World Bank across countries, regions and years for global poverty monitoring and welfare measurement. The household surveys contained in SARMD provide a rich environment to study expenditure patterns, demographics, educational attainment, employment, the acquisition of durable assets, and housing. The harmonization of these surveys allows to compare social and economic statistics among the eight countries in South Asia.</p>
+<p>These guidelines are intended to teach you everything you need to work efficiently with SARMD. You will learn how to access the microdata through the <code>datalibweb</code> system and how to perform basic (and not so basic) socioeconomic calculations. We will inspect how comparable household surveys are across the region and evaluate the quality of the harmonization process. We also provide several examples on how to conduct analysis at the regional or country level in our analytical notes.</p>
 <div id="team" class="section level2 unnumbered">
 <h2>Team</h2>
-<p>This book has been created by the South Asia Region Team for Statistical Development (SARTSD) under the direction of Benu Bidani. The team is composed by Raúl Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. We are greatful for the comments and suggestions made by…</p>
+<p>This book has been created by the South Asia Region Team for Statistical Development (SARTSD) under the direction of Benu Bidani. The team is composed by Raúl Andrés Castañeda Aguilar, Jayne Jungsun Yoo, and Francisco Javier Parada Gómez Urquiza. We are grateful for the comments and suggestions made by…</p>
 </div>
-<div id="replicability-and-lincense" class="section level2 unnumbered">
-<h2>Replicability and lincense</h2>
-<p>This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its GitHub repository <a href="https://github.com/worldbank/SARMD_guidelines">worldbank/SARMD_guidelines</a>. In addition, all the do-files to harmonize the SARMD collection are available in the <a href="https://github.com/worldbank/SARMD">worldbank/SARMD</a> Github repository. In the chapter, <a href="var-derivation.html#var-derivation">Variable derivation of SARMD</a> we provide a larger explanation of the harmonization do-files.</p>
-<p>You are allowed to freely download and use any of the files in these repository, but keep in mind that all the files—in particular the code—contained in this book and in the SARMD collection are simultaneously available under the <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License v3.0</a>. This means that you are free to use any file in your own projects as long as you cite the source and, in case you publish your project, make your source code available as well under the same license. In this way, we guarantee that any source code derived from this project has to be made freely available as well and properly cited.</p>
+<div id="replicability-and-license" class="section level2 unnumbered">
+<h2>Replicability and license</h2>
+<p>This book is fully replicable. All the text files, codes, underlying data, and Tableau dashboards can be found in its GitHub repository <a href="https://github.com/worldbank/SARMD_guidelines">worldbank/SARMD_guidelines</a>. In addition, all the do-files used to harmonize the SARMD collection are available in the <a href="https://github.com/worldbank/SARMD">worldbank/SARMD</a> Github repository. In Chapter 8 <a href="var-derivation.html#var-derivation">Variable derivation of SARMD</a> we provide a deeper exploration of these harmonization do-files.</p>
+<p>You are allowed to freely download and use any of the files in these repository, but please keep in mind that all the files—in particular the code—contained in this book and in the SARMD collection are simultaneously available under the <a href="https://opensource.org/licenses/GPL-3.0">GNU General Public License v3.0</a>. This means that you are free to use any file in your own projects as long as you cite the source and, in case you publish your project, make your source code available under the same license. This way, we guarantee that any source code derived from this project is made freely available and cited properly.</p>
 </div>
 <div id="how-to-read" class="section level2 unnumbered">
 <h2>How to read this book</h2>
-<p>This book is not intended to be read from cover to cover. We present each chapter independent from each other; yet we added some cross reference along the book for clarification and expansion of certain topics. The book is divided into four main topics:</p>
+<p>This book is not intended to be read from cover to cover. Each chapter is independent from each other; yet we added some cross references along the book for clarification and expansion of certain topics. The book is divided into four main topics:</p>
 <ul>
-<li><strong>Basic information</strong> on how to use SARMD through datalibweb and basic understanding of poverty in the SAR.</li>
-<li><strong>Metadata analysis</strong>. This section contains a clear understanding of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) in all the surveys of the region</li>
-<li><strong>Quality check</strong>. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the writeups in the chapters.</li>
-<li><strong>Analytical notes</strong>. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. This notes could be easily converted into blogs.</li>
+<li><strong>Basic information</strong>. Explains how to use SARMD through datalibweb and provides a basic introduction to poverty measurement in SAR.</li>
+<li><strong>Metadata analysis</strong>. This section contains a clear presentation of the SARMD inventory and the different components of the consumption aggregate (i.e., food, non-food, durables, and housing) for all of the surveys in the region.</li>
+<li><strong>Quality check</strong>. This section summarizes the quality of the raw data and the harmonization. Even though several dashboards have been built to showcase the information, we are still working on the contents of these chapters.</li>
+<li><strong>Analytical notes</strong>. Here we present about five (hopefully eight) analytical notes of socioeconomic findings at the regional level using SARMD. These notes could be easily converted into blogs.</li>
 </ul>
-<p>In addition, many of the graphs in this book are interactive Tableau dashboards. Figure <a href="intro.html#fig:bicyclef">1.1</a>, for isntance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to <code>bicycle</code> to access to a <code>computer</code> or <code>cellphone</code> by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.</p>
+<p>In addition, many of the graphs in this book are interactive Tableau dashboards. Figure <a href="intro.html#fig:bicyclef">1.1</a>, for instance, is an example of these dashboards. You may visualize the share of households with access to a certain asset at a subnational level. You may change access to <code>bicycle</code> to access to a <code>computer</code> or <code>cellphone</code> by using the filters provided. You may also switch to a different category of variables such as demographic or education variables. The filters allow the user to explore SARMD and learn what kind of data is available to study household welfare.</p>
 </div>
 <div id="about-the-technical-composition-of-this-book" class="section level2 unnumbered">
 <h2>About the technical composition of this book</h2>
@@ -317,56 +313,56 @@ execution console, which could be
 Stata or R.</code></pre>
 <p>Most of the code chunks in this book are written in <code>Stata</code> syntax, but you may find some pieces of code written in <code>R</code> language as well.</p>
 <p>The R session information used when this book was compiled is the following:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()
-<span class="co">## R version 3.5.3 (2019-03-11)</span>
-<span class="co">## Platform: x86_64-w64-mingw32/x64 (64-bit)</span>
-<span class="co">## Running under: Windows 10 x64 (build 17134)</span>
-<span class="co">## </span>
-<span class="co">## Matrix products: default</span>
-<span class="co">## </span>
-<span class="co">## locale:</span>
-<span class="co">## [1] LC_COLLATE=English_United States.1252 </span>
-<span class="co">## [2] LC_CTYPE=English_United States.1252   </span>
-<span class="co">## [3] LC_MONETARY=English_United States.1252</span>
-<span class="co">## [4] LC_NUMERIC=C                          </span>
-<span class="co">## [5] LC_TIME=English_United States.1252    </span>
-<span class="co">## </span>
-<span class="co">## attached base packages:</span>
-<span class="co">## [1] grid      stats     graphics  grDevices utils     datasets  methods  </span>
-<span class="co">## [8] base     </span>
-<span class="co">## </span>
-<span class="co">## other attached packages:</span>
-<span class="co">##  [1] bib2df_1.1.1     tidyr_0.8.3      xml2_1.2.0       readr_1.3.1     </span>
-<span class="co">##  [5] DiagrammeR_1.0.1 png_0.1-7        dplyr_0.8.1      ggplot2_3.1.1   </span>
-<span class="co">##  [9] spData_0.3.0     raster_2.9-5     sp_1.3-1         sf_0.7-4        </span>
-<span class="co">## </span>
-<span class="co">## loaded via a namespace (and not attached):</span>
-<span class="co">##  [1] httr_1.4.0          viridis_0.5.1       jsonlite_1.6       </span>
-<span class="co">##  [4] viridisLite_0.3.0   shiny_1.3.2         assertthat_0.2.1   </span>
-<span class="co">##  [7] highr_0.8           yaml_2.2.0          pillar_1.4.1       </span>
-<span class="co">## [10] backports_1.1.4     lattice_0.20-38     glue_1.3.1         </span>
-<span class="co">## [13] downloader_0.4      digest_0.6.19       RColorBrewer_1.1-2 </span>
-<span class="co">## [16] promises_1.0.1      colorspace_1.4-1    htmltools_0.3.6    </span>
-<span class="co">## [19] httpuv_1.5.1        plyr_1.8.4          XML_3.98-1.19      </span>
-<span class="co">## [22] pkgconfig_2.0.2     bookdown_0.11       purrr_0.3.2        </span>
-<span class="co">## [25] xtable_1.8-4        scales_1.0.0        brew_1.0-6         </span>
-<span class="co">## [28] later_0.8.0         tibble_2.1.2        influenceR_0.1.0   </span>
-<span class="co">## [31] withr_2.1.2         humaniformat_0.6.0  fortunes_1.5-4     </span>
-<span class="co">## [34] lazyeval_0.2.2      cli_1.1.0           rgexf_0.15.3       </span>
-<span class="co">## [37] magrittr_1.5        crayon_1.3.4        mime_0.6           </span>
-<span class="co">## [40] evaluate_0.14       fansi_0.4.0         class_7.3-15       </span>
-<span class="co">## [43] Rook_1.1-1          tools_3.5.3         hms_0.4.2          </span>
-<span class="co">## [46] formatR_1.6         stringr_1.4.0       munsell_0.5.0      </span>
-<span class="co">## [49] packrat_0.5.0       compiler_3.5.3      e1071_1.7-1        </span>
-<span class="co">## [52] rlang_0.3.4         classInt_0.3-3      units_0.6-3        </span>
-<span class="co">## [55] rstudioapi_0.10     htmlwidgets_1.3     visNetwork_2.0.7   </span>
-<span class="co">## [58] igraph_1.2.4.1      miniUI_0.1.1.1      labeling_0.3       </span>
-<span class="co">## [61] rmarkdown_1.13      gtable_0.3.0        codetools_0.2-16   </span>
-<span class="co">## [64] DBI_1.0.0           R6_2.4.0            gridExtra_2.3      </span>
-<span class="co">## [67] knitr_1.23          utf8_1.1.4          zeallot_0.1.0      </span>
-<span class="co">## [70] addinexamples_0.1.0 KernSmooth_2.23-15  stringi_1.4.3      </span>
-<span class="co">## [73] Rcpp_1.0.1          vctrs_0.1.0         tidyselect_0.2.5   </span>
-<span class="co">## [76] xfun_0.7</span></code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">sessionInfo</span>()</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="co">## R version 3.5.3 (2019-03-11)</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="co">## Platform: x86_64-w64-mingw32/x64 (64-bit)</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">## Running under: Windows 10 x64 (build 17134)</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">## </span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">## Matrix products: default</span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">## </span></a>
+<a class="sourceLine" id="cb2-8" title="8"><span class="co">## locale:</span></a>
+<a class="sourceLine" id="cb2-9" title="9"><span class="co">## [1] LC_COLLATE=English_United States.1252 </span></a>
+<a class="sourceLine" id="cb2-10" title="10"><span class="co">## [2] LC_CTYPE=English_United States.1252   </span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">## [3] LC_MONETARY=English_United States.1252</span></a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="co">## [4] LC_NUMERIC=C                          </span></a>
+<a class="sourceLine" id="cb2-13" title="13"><span class="co">## [5] LC_TIME=English_United States.1252    </span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">## </span></a>
+<a class="sourceLine" id="cb2-15" title="15"><span class="co">## attached base packages:</span></a>
+<a class="sourceLine" id="cb2-16" title="16"><span class="co">## [1] grid      stats     graphics  grDevices utils     datasets  methods  </span></a>
+<a class="sourceLine" id="cb2-17" title="17"><span class="co">## [8] base     </span></a>
+<a class="sourceLine" id="cb2-18" title="18"><span class="co">## </span></a>
+<a class="sourceLine" id="cb2-19" title="19"><span class="co">## other attached packages:</span></a>
+<a class="sourceLine" id="cb2-20" title="20"><span class="co">##  [1] bib2df_1.1.1     tidyr_0.8.3      xml2_1.2.0       readr_1.3.1     </span></a>
+<a class="sourceLine" id="cb2-21" title="21"><span class="co">##  [5] DiagrammeR_1.0.1 png_0.1-7        dplyr_0.8.1      ggplot2_3.1.1   </span></a>
+<a class="sourceLine" id="cb2-22" title="22"><span class="co">##  [9] spData_0.3.0     raster_2.9-5     sp_1.3-1         sf_0.7-4        </span></a>
+<a class="sourceLine" id="cb2-23" title="23"><span class="co">## </span></a>
+<a class="sourceLine" id="cb2-24" title="24"><span class="co">## loaded via a namespace (and not attached):</span></a>
+<a class="sourceLine" id="cb2-25" title="25"><span class="co">##  [1] httr_1.4.0          viridis_0.5.1       jsonlite_1.6       </span></a>
+<a class="sourceLine" id="cb2-26" title="26"><span class="co">##  [4] viridisLite_0.3.0   shiny_1.3.2         assertthat_0.2.1   </span></a>
+<a class="sourceLine" id="cb2-27" title="27"><span class="co">##  [7] highr_0.8           yaml_2.2.0          pillar_1.4.1       </span></a>
+<a class="sourceLine" id="cb2-28" title="28"><span class="co">## [10] backports_1.1.4     lattice_0.20-38     glue_1.3.1         </span></a>
+<a class="sourceLine" id="cb2-29" title="29"><span class="co">## [13] downloader_0.4      digest_0.6.19       RColorBrewer_1.1-2 </span></a>
+<a class="sourceLine" id="cb2-30" title="30"><span class="co">## [16] promises_1.0.1      colorspace_1.4-1    htmltools_0.3.6    </span></a>
+<a class="sourceLine" id="cb2-31" title="31"><span class="co">## [19] httpuv_1.5.1        plyr_1.8.4          XML_3.98-1.19      </span></a>
+<a class="sourceLine" id="cb2-32" title="32"><span class="co">## [22] pkgconfig_2.0.2     bookdown_0.11       purrr_0.3.2        </span></a>
+<a class="sourceLine" id="cb2-33" title="33"><span class="co">## [25] xtable_1.8-4        scales_1.0.0        brew_1.0-6         </span></a>
+<a class="sourceLine" id="cb2-34" title="34"><span class="co">## [28] later_0.8.0         tibble_2.1.2        influenceR_0.1.0   </span></a>
+<a class="sourceLine" id="cb2-35" title="35"><span class="co">## [31] withr_2.1.2         humaniformat_0.6.0  fortunes_1.5-4     </span></a>
+<a class="sourceLine" id="cb2-36" title="36"><span class="co">## [34] lazyeval_0.2.2      cli_1.1.0           rgexf_0.15.3       </span></a>
+<a class="sourceLine" id="cb2-37" title="37"><span class="co">## [37] magrittr_1.5        crayon_1.3.4        mime_0.6           </span></a>
+<a class="sourceLine" id="cb2-38" title="38"><span class="co">## [40] evaluate_0.14       fansi_0.4.0         class_7.3-15       </span></a>
+<a class="sourceLine" id="cb2-39" title="39"><span class="co">## [43] Rook_1.1-1          tools_3.5.3         hms_0.4.2          </span></a>
+<a class="sourceLine" id="cb2-40" title="40"><span class="co">## [46] formatR_1.6         stringr_1.4.0       munsell_0.5.0      </span></a>
+<a class="sourceLine" id="cb2-41" title="41"><span class="co">## [49] packrat_0.5.0       compiler_3.5.3      e1071_1.7-1        </span></a>
+<a class="sourceLine" id="cb2-42" title="42"><span class="co">## [52] rlang_0.3.4         classInt_0.3-3      units_0.6-3        </span></a>
+<a class="sourceLine" id="cb2-43" title="43"><span class="co">## [55] rstudioapi_0.10     htmlwidgets_1.3     visNetwork_2.0.7   </span></a>
+<a class="sourceLine" id="cb2-44" title="44"><span class="co">## [58] igraph_1.2.4.1      miniUI_0.1.1.1      labeling_0.3       </span></a>
+<a class="sourceLine" id="cb2-45" title="45"><span class="co">## [61] rmarkdown_1.13      gtable_0.3.0        codetools_0.2-16   </span></a>
+<a class="sourceLine" id="cb2-46" title="46"><span class="co">## [64] DBI_1.0.0           R6_2.4.0            gridExtra_2.3      </span></a>
+<a class="sourceLine" id="cb2-47" title="47"><span class="co">## [67] knitr_1.23          utf8_1.1.4          zeallot_0.1.0      </span></a>
+<a class="sourceLine" id="cb2-48" title="48"><span class="co">## [70] addinexamples_0.1.0 KernSmooth_2.23-15  stringi_1.4.3      </span></a>
+<a class="sourceLine" id="cb2-49" title="49"><span class="co">## [73] Rcpp_1.0.1          vctrs_0.1.0         tidyselect_0.2.5   </span></a>
+<a class="sourceLine" id="cb2-50" title="50"><span class="co">## [76] xfun_0.7</span></a></code></pre></div>
 
 </div>
 </div>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | South Asia Regional Micro Database (SARMD) User Guidelines</title>
   <meta name="description" content="SARMD User Guidelines" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | South Asia Regional Micro Database (SARMD) User Guidelines" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
 
 
-<meta name="date" content="2019-06-25" />
+<meta name="date" content="2019-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,7 @@
 <script src="libs/viz-0.3/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
 <script src="libs/grViz-binding-1.0.1/grViz.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -59,7 +60,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -134,7 +134,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-lincense"><i class="fa fa-check"></i>Replicability and lincense</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-license"><i class="fa fa-check"></i>Replicability and license</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
@@ -165,7 +165,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
 <li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
 <li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
-<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A technical example</a></li>
 </ul></li>
 <li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
 <li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
@@ -225,23 +225,19 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
 <li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
 <li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
-<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
-<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
-<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><a href="decomposing-changes-in-poverty-into-endowments-and-returns-in-bangladesh-note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Decomposing changes in poverty into endowments and returns in Bangladesh {note-oaxaca}</a></li>
+<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-2"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-2"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-2"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
+</ul></li>
 <li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
-<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child Marriage in SAR</a></li>
-<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Improvement of Water Supply and Sanitation Over Time</a><ul>
-<li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#analysis-1"><i class="fa fa-check"></i>Analysis</a></li>
+<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child/Early Marriage</a></li>
+<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Water Supply and Sanitation</a><ul>
 <li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#stata-code"><i class="fa fa-check"></i>Stata code</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare level and employment by industry over time</a></li>
+<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare and Emplomeny by Industry</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
@@ -272,10 +268,28 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Ahmed, Faizuddin, Dipankar Roy, Monica Yanez-Pagans, and Nobuo Yoshida. 2017. “Design of a Multi-Stage Stratified Sample for Poverty and Welfare Monitoring with Multiple Objectives: A Bangladesh Case Study.” <a href="https://openknowledge.worldbank.org/handle/10986/26239">https://openknowledge.worldbank.org/handle/10986/26239</a>.</p>
 </div>
 <div>
+<p>Asongu, Simplice A., and Nicholas M. Odhiambo. 2019. “Mobile Banking Usage, Quality of Growth, Inequality and Poverty in Developing Countries.” <em>Information Development</em> 35 (2): 303–18. <a href="https://doi.org/10.1177/0266666917744006">https://doi.org/10.1177/0266666917744006</a>.</p>
+</div>
+<div>
+<p>Blinder, Alan S. 1973. “Wage Discrimination: Reduced Form and Structural Estimates.” <em>The Journal of Human Resources</em> 8 (4): 436–55. <a href="https://doi.org/10.2307/144855">https://doi.org/10.2307/144855</a>.</p>
+</div>
+<div>
+<p>Brown, Gordon. 2012. “Out of Wedlock into School: Combating Child Marriage Through Education.” <em>The Office of Gordon and Sarah Brown Limited</em> 34. <a href="https://www.popline.org/node/535042">https://www.popline.org/node/535042</a>.</p>
+</div>
+<div>
 <p>Deaton, Angus S. 1997. <em>The Analysis of Household Surveys : A Microeconometric Approach to Development Policy</em>. Washington, D.C. : The World Bank. <a href="http://documents.worldbank.org/curated/en/593871468777303124/The-Analysis-of-Household-Surveys-A-Microeconometric-Approach-to-Development-Policy">http://documents.worldbank.org/curated/en/593871468777303124/The-Analysis-of-Household-Surveys-A-Microeconometric-Approach-to-Development-Policy</a>.</p>
 </div>
 <div>
 <p>Deaton, Angus, and Salman Zaidi. 2002. <em>Guidelines for Constructing Consumption Aggregates for Welfare Analysis</em>. Washington, DC: World Bank Publications. <a href="http://ideas.repec.org/p/fth/priwds/192.html">http://ideas.repec.org/p/fth/priwds/192.html</a>.</p>
+</div>
+<div>
+<p>Demirgüç-Kunt, Asli, and Dorothe Singer. 2017. “Financial Inclusion and Inclusive Growth: A Review of Recent Empirical Evidence.” SSRN Scholarly Paper ID 2958542. Rochester, NY: Social Science Research Network. <a href="https://papers.ssrn.com/abstract=2958542">https://papers.ssrn.com/abstract=2958542</a>.</p>
+</div>
+<div>
+<p>Dermish, Ahmed, Christoph Kneiding, Paul Leishman, and Ignacio Mas. 2011. “Branchless and Mobile Banking Solutions for the Poor: A Survey of the Literature.” <em>Innovations: Technology, Governance, Globalization</em> 6 (4): 81–98. <a href="https://ideas.repec.org/a/tpr/inntgg/v6y2011i4p81-98.html">https://ideas.repec.org/a/tpr/inntgg/v6y2011i4p81-98.html</a>.</p>
+</div>
+<div>
+<p>Dixit, Radhika, and Munmun Ghosh. 2013. “Financial Inclusion for Inclusive Growth of India-A Study of Indian States.” <em>International Journal of Business Management &amp; Research</em> 3 (1): 147–56.</p>
 </div>
 <div>
 <p>Dundar, Halil, Tara Beteille, Michelle Riboud, and Anil Deolalikar. 2014. <em>Student Learning in South Asia : Challenges, Opportunities, and Policy Priorities.</em> World Bank Group. <a href="http://documents.worldbank.org/curated/en/554381468294334286/Student-learning-in-South-Asia-challenges-opportunities-and-policy-priorities">http://documents.worldbank.org/curated/en/554381468294334286/Student-learning-in-South-Asia-challenges-opportunities-and-policy-priorities</a>.</p>
@@ -287,16 +301,37 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Gertler, Paul J., Orie Shelef, Catherine D. Wolfram, and Alan Fuchs. 2016. “The Demand for Energy-Using Assets Among the World’s Rising Middle Classes.” <em>The American Economic Review</em> 106 (6): 1366–1401. <a href="http://www.jstor.org/stable/43861125">http://www.jstor.org/stable/43861125</a>.</p>
 </div>
 <div>
+<p>Goyal, Vishal, U. S. Pandey, and Sanjay Batra. 2012. “Mobile Banking in India: Practices, Challenges and Security Issues.” <em>International Journal of Advanced Trends in Computer Science and Engineering</em> 1 (2).</p>
+</div>
+<div>
 <p>IHSN. 2014. “Microdata Documentation.” <em>International Household Survey Network (IHSN)</em>. <a href="http://ihsn.org/node/117">http://ihsn.org/node/117</a>.</p>
 </div>
 <div>
+<p>Ijeoma, Okereke Chinyere, Joseph O. Uwakwe, and Nwamuo Paul. 2013. “Education an Antidote Against Early Marriage for the Girl-Child.” <em>Journal of Educational and Social Research</em> 3 (5): 73. <a href="https://www.mcser.org/journal/index.php/jesr/article/view/641">https://www.mcser.org/journal/index.php/jesr/article/view/641</a>.</p>
+</div>
+<div>
 <p>Inter-university Consortium for Political and Social Research (ICPSR). 2012. <em>Guide to Social Science Data Preparation and Archiving</em>. 5th ed. Ann Arbor, MI 48106: Institute for Social Research University of Michigan. <a href="https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html">https://www.icpsr.umich.edu/icpsrweb/content/deposit/guide/index.html</a>.</p>
+</div>
+<div>
+<p>Irz, Xavier, Lin Lin, Colin Thirtle, and Steve Wiggins. 2001. “Agricultural Productivity Growth and Poverty Alleviation.” <em>Development Policy Review</em> 19 (4): 449–66. <a href="https://doi.org/10.1111/1467-7679.00144">https://doi.org/10.1111/1467-7679.00144</a>.</p>
+</div>
+<div>
+<p>Janvry, Alain de, and Elisabeth Sadoulet. 2010. “Agricultural Growth and Poverty Reduction: Additional Evidence.” <em>The World Bank Research Observer</em> 25 (1): 1–20. <a href="https://doi.org/10.1093/wbro/lkp015">https://doi.org/10.1093/wbro/lkp015</a>.</p>
 </div>
 <div>
 <p>Lanjouw, Peter. 2009. “Constructing a Consumption Aggregate for the Purpose of Welfare Analysis: Principles, Issues and Recommendations Arising from the Case of Brazil,” January.</p>
 </div>
 <div>
 <p>Lavallée, Pierre, and Jean-François Beaumont. 2015. “Why We Should Put Some Weight on Weights. Survey Insights: Methods from the Field, Weighting: Practical Issues and ‘How to’ Approach.” <a href="https://surveyinsights.org/?p=6255">https://surveyinsights.org/?p=6255</a>.</p>
+</div>
+<div>
+<p>Lee, Jean N., Jonathan Morduch, Saravana Ravindran, A. S. Shonchoyand, and H. Zamany. 2017. “Poverty and Migration in the Digital Age: Experimental Evidence on Mobile Banking in Bangladesh.” IGC Working Paper C-89233-BGD-1.</p>
+</div>
+<div>
+<p>Oaxaca, Ronald. 1973. “Male-Female Wage Differentials in Urban Labor Markets.” <em>International Economic Review</em> 14 (3): 693–709. <a href="https://doi.org/10.2307/2525981">https://doi.org/10.2307/2525981</a>.</p>
+</div>
+<div>
+<p>Parsons, Jennifer, Jeffrey Edmeades, Aslihan Kes, Suzanne Petroni, Maggie Sexton, and Quentin Wodon. 2015. “Economic Impacts of Child Marriage: A Review of the Literature.” <em>The Review of Faith &amp; International Affairs</em> 13 (3): 12–22. <a href="https://doi.org/10.1080/15570274.2015.1075757">https://doi.org/10.1080/15570274.2015.1075757</a>.</p>
 </div>
 <div>
 <p>R.Andres Castañeda, Santiago Garriga, and Laura Liliana Moreno. 2019. “QCHECK: Stata Package for Quality Control of Household Surveys.” Washington, D.C.: World Bank Group. <a href="https://github.com/worldbank/qcheck">https://github.com/worldbank/qcheck</a>.</p>
@@ -311,13 +346,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Tilak, Jandhyala B. G. 2015. “Higher Education in South Asia: Crisis and Challenges.” <em>Social Scientist</em> 43 (1/2): 43–59. <a href="http://www.jstor.org/stable/24372963">http://www.jstor.org/stable/24372963</a>.</p>
 </div>
 <div>
-<p>UNICEF. 2019. <em>A World Ready to Learn: Prioritizing Quality Early Childhood Education.</em> New York. <a href="https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education">https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education</a>.</p>
+<p>Turner, Ash. 2018. “1 Billion More Phones Than People in the World! BankMyCell.” <em>BankMyCell</em>. <a href="https://www.bankmycell.com/blog/how-many-phones-are-in-the-world">https://www.bankmycell.com/blog/how-many-phones-are-in-the-world</a>.</p>
+</div>
+<div>
+<p>UNICEF. 2005. <em>Early Marriage: A Harmful Traditional Practice. A Statistical Exploration 2005</em>. UNICEF. <a href="https://www.unicef.org/publications/index_26024.html">https://www.unicef.org/publications/index_26024.html</a>.</p>
+</div>
+<div>
+<p>———. 2019. <em>A World Ready to Learn: Prioritizing Quality Early Childhood Education.</em> New York. <a href="https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education">https://www.unicef.org/rosa/reports/world-ready-learn-prioritizing-quality-early-childhood-education</a>.</p>
 </div>
 <div>
 <p>Wieser, Christina, Giovani Vecchi, and Giulia Mancini. 2018. <em>Poverty Measurement Methodology in the Maldives</em>. World Bank Technical Report.</p>
 </div>
 <div>
 <p>Wolfram, Catherine, Orie Shelef, and Paul Gertler. 2012. “How Will Energy Demand Develop in the Developing World?” <em>Journal of Economic Perspectives</em> 26 (1): 119–38. <a href="https://doi.org/10.1257/jep.26.1.119">https://doi.org/10.1257/jep.26.1.119</a>.</p>
+</div>
+<div>
+<p>World Health Organization, and UNICEF. 2014. “Progress on Drinking Water and Sanitation.” Geneva, Switzerland: WHO/UNICEF. <a href="https://www.who.int/water_sanitation_health/publications/2014/jmp-report/en/">https://www.who.int/water_sanitation_health/publications/2014/jmp-report/en/</a>.</p>
 </div>
 </div>
 </div>
