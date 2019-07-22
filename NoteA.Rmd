@@ -1,7 +1,7 @@
 # Drivers of Poverty Reduction: Decomposing changes in poverty {#note-oaxaca} 
 *** 
  
-Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method (Blinder 1973; Oaxaca 1973) decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, the change in poverty is decomposed into three parts; 1) endowment accumulation  (by increases in the education level of household heads) on the one hand, 2) return to endowment (education, employment or employment in high return sector), and 3) the interatction between endowment and its return. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households. 
+Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method [@blinder_wage_1973; @oaxaca_male-female_1973] decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, changes in poverty rates are decomposed into three parts; [1] endowment accumulation, like increases in the education level of household heads, [2] return to endowments like education, employment or employment in high return sector, and [3] the interatction between endowment and its return. This methodology allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households. 
  
 ```{r decomp, echo=FALSE, messages=FALSE, warning=FALSE} 
 #install.packages("kableExtra")
@@ -18,11 +18,11 @@ knitr::kable(decom[1:15, 1:2],
   pack_rows("BGD", 11, 15) 
 ```   
  
-Table 1 reports poverty rates in both periods, the difference between them, and estimates for endowment and returns from endowment for Pakistan, Bhutan, and Bangladesh. All countries have experienced a large decline in poverty rate, of which magnitude ranges from about 6.9 to 11 percentage points.  When the changes are decomposed into three components, both effects from endowment accumulation and returns from endowment drove the poverty reduction in the region.  
+Table \@ref(tab:decomp) reports poverty rates in both periods, the difference between them, and estimates for endowment and returns from endowment for Pakistan, Bhutan, and Bangladesh. All countries have experienced a large decline in poverty rate, which ranges from 6.9 to 11 percentage points.  When the changes are decomposed into three components, effects from endowment accumulation and returns from endowment drove the poverty reduction in the region.  
  
-The effect of endowment accumulation shows the mean change in poverty rate when explanatory indicators in previous year have the same characteristics as the ones in the next period. The estimates of -0.33, -2.51, and -1.66 for Pakistan, Bhutan, and Bangladesh in Table 1 indicate that changes in literacy, gender, labor force status, and sector employment contributed to the decrease in poverty rates. 
+The effect of endowment accumulation shows the mean change in poverty rate when explanatory indicators in previous year have the same characteristics as the ones in the next period. The estimates in table \@ref(tab:decomp) of -0.33, -2.51, and -1.66 for Pakistan, Bhutan, and Bangladesh, respectively, indicate that changes in literacy, gender, labor force status, and sector employment contributed to the decrease in poverty rates. 
  
-Coefficient terms indicate the estimated change in poverty rate in a previous year when the coefficients in later period are applied to the indicators in the previous year. Returns to endowment largely impacted on the decline. In Pakistan, for example, endowment accumulation triggered poverty reduction by 0.33 percentage point whereas return to endowment lowered the poverty rate by 10.17 percentage points, 5 times higher than endowment effect.  
+Coefficient terms indicate the estimated change in poverty rate in a previous year when the coefficients in later period are applied to the indicators in the previous year (**This sentence is not clear**). Returns to endowment largely impacted on the decline. In Pakistan, for example, endowment accumulation triggered poverty reduction by 0.33 percentage point whereas return to endowment lowered the poverty rate by 10.17 percentage points, 5 times higher than endowment effect.  
  
 ```{r decomp2, echo=FALSE, messages=FALSE, warning=FALSE} 
 decom2 <- readr::read_csv("./findings/Decomposition/sub_effect.csv", 
@@ -38,24 +38,25 @@ knitr::kable(decom2[1:21, 1:4],
 
 The Oaxaca-Blinder decomposition breaks down the decline in the poverty rates points at more disaggregated level, identifying whether the decrease was driven by the changes in literacy level, gender, labor force status or sector of work of a household head. The sum of the effects does not add up to the changes in poverty rates since residual effects and some categories with missing observations are not included in the table. Following sections summarize the findings for each country.  
  
-Pakistan 
+## Pakistan
  
 Migration to urban area was the largest contributor to the decline in poverty rate in terms of endowment effects. Compared to the effects of the changes in the share of male, employed heads, and agriculture employment, 2 percentage point increase in urban population in the country lowered its poverty rate by -0.33 percentage point.  
  
 The estimates for returns to endowment show that being a male household head has large advantages in avoiding poverty. Through male headed households, the poverty rate declined by 5.45 percentage points, at least 8 times higher than other effects including employment status, industry and service employment. Industry and service sector workers also experienced poverty reduction whereas agriculture did not help households move out of poverty.  
  
-Bhutan 
+## Bhutan
  
 When the effect of endowment accumulation is considered, increases in urban population, literacy rate, share of male heads and a decrease in agriculture employment led to poverty reduction. Although the period gap is bigger due to a data availability issue, compared to Pakistan and Bangladesh, the country had gone through a large structural change which lowered agriculture employment and the population with illiteracy.  
  
 The coefficient estimates show that male headed households are more likely to escape poverty and agriculture sector has higher returns to endowment than other sectors do. Being employed, however, does not necessarily lead to poverty reduction, and other indicators including urban and literacy turns out to be minimal in lowering poverty rate.  
  
-Bangladesh 
+## Bangladesh
  
 In terms of the effects from endowment accumulation, the increasing share of household heads that can write or read and decreasing share of heads engaged in agriculture sector triggered a decrease in the poverty rate. Decreasing illiteracy rate among household heads led to a declined in poverty rate by 1.4 percentage point. As household heads depart from agriculture sector, moving to manufacturing or service industry, the effects from endowment in agriculture lowered poverty rate by 0.11 percentage point. 
  
 Although the increase in the share of male household head didn't affect poverty reduction, being a female head raises a chance of staying poor by 3.73 percentage points. This finding implies gender discrimination in Bangladesh in poverty reduction. Also, employment in agriculture does not affect poverty reduction but the effects from returns to endowment in manufacturing or service industry indicate advantages of leaving agriculture sector. 
- 
+
+## Stata code example
 You may access our full Stata do-file by accessing the following [link](https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/BLINDER-OAXACA.do). Our work consists of running the following command for each dataset and saving the results in order to export to Tableau.  
  
 ```stata 
@@ -88,9 +89,4 @@ oaxaca poor_190 urban literacy  male lfs* industry* [aw=wgt] , by(year) swap rel
 categorical( lfs*, industry*)  
  
 ``` 
- 
-Reference 
- 
-Blinder, A. S. (1973). "Wage Discrimination: Reduced Form and Structural Estimates". Journal of Human Resources. 8 (4): 436-455 
- 
-Oaxaca, R. (1973). "Male-Female Wage Differentials in Urban Labor Markets". International Economic Review. 14 (3): 693-709
+
