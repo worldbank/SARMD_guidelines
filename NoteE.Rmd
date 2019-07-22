@@ -1,7 +1,7 @@
 # Welfare and Emplomeny by Industry {#note-industry}
 ***
 
-Harmonized data for Bangladesh, Bhutan, and Pakistan has indicators for labor markets including industry category ("industry") and labor force status ("lstatus") and welfare aggregates, allowing for comparing welfare level by different industry groups. 
+Harmonized data for Bangladesh, Bhutan, and Pakistan have indicators for labor markets including industry category, `industry`, and labor force status, `lstatus`, and welfare aggregates, allowing for comparing welfare level by different industry groups. 
 
 Services and manufacturing industry have consistently favored non-poor households. Figure below shows that service industry, followed by manufacturing, pays higher income and thus leads to more consumption among households. In Bhutan and Pakistan, the welfare average in service industry is about two times as much as the one in agriculture. This difference of welfare level among sectors has been also widened over time.
 
@@ -24,7 +24,7 @@ knitr::include_graphics("figures/fake_figure.PNG")
 
 Overall, the trends in employment share by industry and income level emphasize the growth of service sector in the region. Unlike traditional expectation that globalization will lead developing countries to specialize in primary industry, service sector has gradually expanded in these countries regardless of income levels.
 
-The prevalence of agriculture workers among poor households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, agriculture workers have enjoyed small growth in welfare aggregate. Government policies and business development to increase its productivity will facilitate reducing poverty in the region (Irz, 2001; De Janvry & Sadoulet, 2009).
+The prevalence of agriculture workers among poor households implies the importance of productivity improvement in the agriculture sector. Compared to service and manufacturing industry, agriculture workers have enjoyed small growth in welfare aggregate. Government policies and business development to increase its productivity will facilitate reducing poverty in the region [@irz_agricultural_2001; @de_janvry_agricultural_2010].
 
 <script type='text/javascript' src='https://tab.worldbank.org/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 700px; height: 827px;'><object class='tableauViz' width='700' height='827' style='display:none;'><param name='host_url' value='https%3A%2F%2Ftab.worldbank.org%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='&#47;t&#47;WBG' /><param name='name' value='SAR_MNA_NoteE&#47;All' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
 

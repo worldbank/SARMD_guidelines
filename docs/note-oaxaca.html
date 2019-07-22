@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 15 Drivers of Poverty Reduction: Decomposing changes in poverty | South Asia Regional Micro Database (SARMD) User Guidelines</title>
+  <meta name="description" content="SARMD User Guidelines" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 15 Drivers of Poverty Reduction: Decomposing changes in poverty | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="SARMD User Guidelines" />
+  <meta name="github-repo" content="worldbank/SARMD_guidelines" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 15 Drivers of Poverty Reduction: Decomposing changes in poverty | South Asia Regional Micro Database (SARMD) User Guidelines" />
+  
+  <meta name="twitter:description" content="SARMD User Guidelines" />
+  
+
+<meta name="author" content="South Asia Region Team for Statistical Development (SARTSD)" />
+
+
+<meta name="date" content="2019-07-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="note-hhdchars.html">
+<link rel="next" href="note-cellphone.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SARMD User Guidelines</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#team"><i class="fa fa-check"></i>Team</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#replicability-and-lincense"><i class="fa fa-check"></i>Replicability and lincense</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read"><i class="fa fa-check"></i>How to read this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#about-the-technical-composition-of-this-book"><i class="fa fa-check"></i>About the technical composition of this book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#parts-of-the-book"><i class="fa fa-check"></i>Parts of the book</a></li>
+</ul></li>
+<li class="part"><span><b>I Basics</b></span></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Introduction to fundamentals of SARMD</a></li>
+<li class="chapter" data-level="2" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html"><i class="fa fa-check"></i><b>2</b> Datalibweb: Getting Access to SARMD</a><ul>
+<li class="chapter" data-level="2.1" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#request-access-to-the-system"><i class="fa fa-check"></i><b>2.1</b> Request access to the system</a></li>
+<li class="chapter" data-level="2.2" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#install-the-datalibweb-command-in-stata"><i class="fa fa-check"></i><b>2.2</b> Install the <code>datalibweb</code> command in Stata</a><ul>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#option-1.-direct-installation"><i class="fa fa-check"></i>Option 1. Direct Installation</a></li>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#option-2.-manual-installation"><i class="fa fa-check"></i>Option 2. Manual Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#filename-structure"><i class="fa fa-check"></i><b>2.3</b> Filename structure</a></li>
+<li class="chapter" data-level="2.4" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#using-datalibweb"><i class="fa fa-check"></i><b>2.4</b> Using <code>datalibweb</code></a><ul>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#clicking-on-the-stata-results-window"><i class="fa fa-check"></i>Clicking on the Stata results window</a></li>
+<li class="chapter" data-level="" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#providing-the-complete-datalibweb-syntax"><i class="fa fa-check"></i>Providing the complete datalibweb syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="datalibweb-getting-access-to-sarmd.html"><a href="datalibweb-getting-access-to-sarmd.html#citing-datalibweb"><i class="fa fa-check"></i><b>2.5</b> Citing datalibweb:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="poverty-measures.html"><a href="poverty-measures.html"><i class="fa fa-check"></i><b>3</b> Poverty measures in South Asia</a><ul>
+<li class="chapter" data-level="3.1" data-path="poverty-measures.html"><a href="poverty-measures.html#poverty-and-shared-prosperity-report"><i class="fa fa-check"></i><b>3.1</b> Poverty and shared prosperity report</a></li>
+<li class="chapter" data-level="3.2" data-path="poverty-measures.html"><a href="poverty-measures.html#povcalnet"><i class="fa fa-check"></i><b>3.2</b> PovcalNet</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="poverty-methodology.html"><a href="poverty-methodology.html"><i class="fa fa-check"></i><b>4</b> Poverty measurement methodology</a><ul>
+<li class="chapter" data-level="4.1" data-path="poverty-methodology.html"><a href="poverty-methodology.html#components-of-the-consumption-welfare-aggregate"><i class="fa fa-check"></i><b>4.1</b> Components of the consumption welfare aggregate</a></li>
+<li class="chapter" data-level="4.2" data-path="poverty-methodology.html"><a href="poverty-methodology.html#additional-factors-that-affect-the-welfare-aggregate"><i class="fa fa-check"></i><b>4.2</b> Additional factors that affect the welfare aggregate</a></li>
+<li class="chapter" data-level="4.3" data-path="poverty-methodology.html"><a href="poverty-methodology.html#estimation-of-poverty"><i class="fa fa-check"></i><b>4.3</b> Estimation of poverty</a></li>
+<li class="chapter" data-level="4.4" data-path="poverty-methodology.html"><a href="poverty-methodology.html#a-technical-example"><i class="fa fa-check"></i><b>4.4</b> A Technical example</a></li>
+</ul></li>
+<li class="part"><span><b>II Metadata Analysis of Raw data</b></span></li>
+<li class="chapter" data-level="" data-path="metadata.html"><a href="metadata.html"><i class="fa fa-check"></i>Introduction to metadata analysis</a></li>
+<li class="chapter" data-level="5" data-path="inventory.html"><a href="inventory.html"><i class="fa fa-check"></i><b>5</b> SARMD Inventory</a><ul>
+<li class="chapter" data-level="5.1" data-path="inventory.html"><a href="inventory.html#sample-size"><i class="fa fa-check"></i><b>5.1</b> Sample size</a></li>
+<li class="chapter" data-level="5.2" data-path="inventory.html"><a href="inventory.html#country-descriptions"><i class="fa fa-check"></i><b>5.2</b> Country descriptions</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="inventory.html"><a href="inventory.html#afghanistan"><i class="fa fa-check"></i><b>5.2.1</b> Afghanistan</a></li>
+<li class="chapter" data-level="5.2.2" data-path="inventory.html"><a href="inventory.html#bangladesh"><i class="fa fa-check"></i><b>5.2.2</b> Bangladesh</a></li>
+<li class="chapter" data-level="5.2.3" data-path="inventory.html"><a href="inventory.html#bhutan"><i class="fa fa-check"></i><b>5.2.3</b> Bhutan</a></li>
+<li class="chapter" data-level="5.2.4" data-path="inventory.html"><a href="inventory.html#india"><i class="fa fa-check"></i><b>5.2.4</b> India</a></li>
+<li class="chapter" data-level="5.2.5" data-path="inventory.html"><a href="inventory.html#maldives"><i class="fa fa-check"></i><b>5.2.5</b> Maldives</a></li>
+<li class="chapter" data-level="5.2.6" data-path="inventory.html"><a href="inventory.html#nepal"><i class="fa fa-check"></i><b>5.2.6</b> Nepal</a></li>
+<li class="chapter" data-level="5.2.7" data-path="inventory.html"><a href="inventory.html#pakistan"><i class="fa fa-check"></i><b>5.2.7</b> Pakistan</a></li>
+<li class="chapter" data-level="5.2.8" data-path="inventory.html"><a href="inventory.html#sri-lanka"><i class="fa fa-check"></i><b>5.2.8</b> Sri Lanka</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="expenditure.html"><a href="expenditure.html"><i class="fa fa-check"></i><b>6</b> Expenditure components</a><ul>
+<li class="chapter" data-level="6.1" data-path="expenditure.html"><a href="expenditure.html#food"><i class="fa fa-check"></i><b>6.1</b> Food</a></li>
+<li class="chapter" data-level="6.2" data-path="expenditure.html"><a href="expenditure.html#non-food"><i class="fa fa-check"></i><b>6.2</b> Non-food</a></li>
+<li class="chapter" data-level="6.3" data-path="expenditure.html"><a href="expenditure.html#durable-assets"><i class="fa fa-check"></i><b>6.3</b> Durable assets</a></li>
+<li class="chapter" data-level="6.4" data-path="expenditure.html"><a href="expenditure.html#housing"><i class="fa fa-check"></i><b>6.4</b> Housing</a></li>
+</ul></li>
+<li class="part"><span><b>III Quality Check of SARMD</b></span></li>
+<li class="chapter" data-level="" data-path="qcheck.html"><a href="qcheck.html"><i class="fa fa-check"></i>Introduction to quality control of SARMD</a></li>
+<li class="chapter" data-level="7" data-path="dictionary.html"><a href="dictionary.html"><i class="fa fa-check"></i><b>7</b> Dictionary</a><ul>
+<li class="chapter" data-level="7.1" data-path="dictionary.html"><a href="dictionary.html#basic-survey-characteristics"><i class="fa fa-check"></i><b>7.1</b> Basic survey characteristics</a><ul>
+<li class="chapter" data-level="" data-path="dictionary.html"><a href="dictionary.html#short-description-of-each-variable"><i class="fa fa-check"></i>Short description of each variable</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="dictionary.html"><a href="dictionary.html#demographic-variables"><i class="fa fa-check"></i><b>7.2</b> Demographic variables</a></li>
+<li class="chapter" data-level="7.3" data-path="dictionary.html"><a href="dictionary.html#education"><i class="fa fa-check"></i><b>7.3</b> Education</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="dictionary.html"><a href="dictionary.html#dummy-variables-of-education"><i class="fa fa-check"></i><b>7.3.1</b> Dummy variables of education</a></li>
+<li class="chapter" data-level="7.3.2" data-path="dictionary.html"><a href="dictionary.html#numerical-variables-of-education"><i class="fa fa-check"></i><b>7.3.2</b> Numerical variables of education</a></li>
+<li class="chapter" data-level="7.3.3" data-path="dictionary.html"><a href="dictionary.html#categorical-variables-of-education"><i class="fa fa-check"></i><b>7.3.3</b> Categorical variables of education</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="dictionary.html"><a href="dictionary.html#durable-assets-1"><i class="fa fa-check"></i><b>7.4</b> Durable assets</a></li>
+<li class="chapter" data-level="7.5" data-path="dictionary.html"><a href="dictionary.html#housing-1"><i class="fa fa-check"></i><b>7.5</b> Housing</a></li>
+<li class="chapter" data-level="7.6" data-path="dictionary.html"><a href="dictionary.html#labor"><i class="fa fa-check"></i><b>7.6</b> Labor</a></li>
+<li class="chapter" data-level="7.7" data-path="dictionary.html"><a href="dictionary.html#welfare"><i class="fa fa-check"></i><b>7.7</b> Welfare</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="var-derivation.html"><a href="var-derivation.html"><i class="fa fa-check"></i><b>8</b> Variable derivation of SARMD</a></li>
+<li class="chapter" data-level="9" data-path="qcheck-categorical.html"><a href="qcheck-categorical.html"><i class="fa fa-check"></i><b>9</b> Temporal consistency of categorical variables</a></li>
+<li class="chapter" data-level="10" data-path="qcheck-avialabitliy.html"><a href="qcheck-avialabitliy.html"><i class="fa fa-check"></i><b>10</b> Availability, missing values, and zeros in SARMD</a></li>
+<li class="chapter" data-level="11" data-path="qcheck-tests.html"><a href="qcheck-tests.html"><i class="fa fa-check"></i><b>11</b> Tests</a></li>
+<li class="part"><span><b>IV Analytical Notes</b></span></li>
+<li class="chapter" data-level="" data-path="analysis.html"><a href="analysis.html"><i class="fa fa-check"></i>Introduction to the analytical notes</a></li>
+<li class="chapter" data-level="12" data-path="notes-assest.html"><a href="notes-assest.html"><i class="fa fa-check"></i><b>12</b> Welfare and access to durable assets in South Asia</a></li>
+<li class="chapter" data-level="13" data-path="note-school.html"><a href="note-school.html"><i class="fa fa-check"></i><b>13</b> School enrollment in South Asia</a><ul>
+<li><a href="note-school.html#afghanistan-1">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="note-school.html#bangladesh-1">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="note-school.html#bhutan-1">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="note-school.html#india-1">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="note-school.html#maldives-1">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="note-school.html#nepal-1">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="note-school.html#pakistan-1">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="note-school.html#sri-lanka-1">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="note-hhdchars.html"><a href="note-hhdchars.html"><i class="fa fa-check"></i><b>14</b> Understanding poverty through household and individual level characteristics</a><ul>
+<li class="chapter" data-level="14.1" data-path="note-hhdchars.html"><a href="note-hhdchars.html#linear-model-results"><i class="fa fa-check"></i><b>14.1</b> Linear model results</a></li>
+<li class="chapter" data-level="14.2" data-path="note-hhdchars.html"><a href="note-hhdchars.html#logit-model-results"><i class="fa fa-check"></i><b>14.2</b> Logit model results</a></li>
+<li><a href="note-hhdchars.html#afghanistan-2">Afghanistan <img src="figures/Flag_of_Afghanistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bangladesh-2">Bangladesh <img src="figures/Flag_of_Bangladesh.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#bhutan-2">Bhutan <img src="figures/Flag_of_Bhutan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#india-2">India <img src="figures/Flag_of_India.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#maldives-2">Maldives <img src="figures/Flag_of_Maldives.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#nepal-2">Nepal <img src="figures/Flag_of_Nepal.svg.png" width="30"></a></li>
+<li><a href="note-hhdchars.html#pakistan-2">Pakistan <img src="figures/Flag_of_Pakistan.svg" width="40"></a></li>
+<li><a href="note-hhdchars.html#sri-lanka-2">Sri Lanka <img src="figures/Flag_of_Sri_Lanka.svg" width="40"></a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="note-oaxaca.html"><a href="note-oaxaca.html"><i class="fa fa-check"></i><b>15</b> Drivers of Poverty Reduction: Decomposing changes in poverty</a><ul>
+<li class="chapter" data-level="15.1" data-path="note-oaxaca.html"><a href="note-oaxaca.html#pakistan-3"><i class="fa fa-check"></i><b>15.1</b> Pakistan</a></li>
+<li class="chapter" data-level="15.2" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bhutan-3"><i class="fa fa-check"></i><b>15.2</b> Bhutan</a></li>
+<li class="chapter" data-level="15.3" data-path="note-oaxaca.html"><a href="note-oaxaca.html#bangladesh-3"><i class="fa fa-check"></i><b>15.3</b> Bangladesh</a></li>
+<li class="chapter" data-level="15.4" data-path="note-oaxaca.html"><a href="note-oaxaca.html#stata-code-example"><i class="fa fa-check"></i><b>15.4</b> Stata code example</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="note-cellphone.html"><a href="note-cellphone.html"><i class="fa fa-check"></i><b>16</b> Development of Access to Cell Phone</a></li>
+<li class="chapter" data-level="17" data-path="note-childmarriage.html"><a href="note-childmarriage.html"><i class="fa fa-check"></i><b>17</b> Child/Early Marriage</a></li>
+<li class="chapter" data-level="18" data-path="note-water.html"><a href="note-water.html"><i class="fa fa-check"></i><b>18</b> Water Supply and Sanitation</a><ul>
+<li class="chapter" data-level="" data-path="note-water.html"><a href="note-water.html#stata-code"><i class="fa fa-check"></i>Stata code</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="note-industry.html"><a href="note-industry.html"><i class="fa fa-check"></i><b>19</b> Welfare and Emplomeny by Industry</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/randrescastaneda/SARMD_guidelines" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">South Asia Regional Micro Database (SARMD) User Guidelines</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="note-oaxaca" class="section level1">
+<h1><span class="header-section-number">Chapter 15</span> Drivers of Poverty Reduction: Decomposing changes in poverty</h1>
+<hr />
+<p>Using poverty and socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method <span class="citation">(Blinder <a href="#ref-blinder_wage_1973">1973</a>; Oaxaca <a href="#ref-oaxaca_male-female_1973">1973</a>)</span> decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, changes in poverty rates are decomposed into three parts; [1] endowment accumulation, like increases in the education level of household heads, [2] return to endowments like education, employment or employment in high return sector, and [3] the interatction between endowment and its return. This methodology allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:decomp">Table 15.1: </span>Decomposing changes in poverty into endowments and returns by components
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:right;">
+value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="5">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>PAK</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2015
+</td>
+<td style="text-align:right;">
+19.21
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2011
+</td>
+<td style="text-align:right;">
+29.47
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Difference
+</td>
+<td style="text-align:right;">
+-10.26
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Endowments
+</td>
+<td style="text-align:right;">
+-0.33
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Coefficients
+</td>
+<td style="text-align:right;">
+-10.17
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>BTN</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2017
+</td>
+<td style="text-align:right;">
+5.99
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2007
+</td>
+<td style="text-align:right;">
+16.95
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Difference
+</td>
+<td style="text-align:right;">
+-10.96
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Endowments
+</td>
+<td style="text-align:right;">
+-2.51
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Coefficients
+</td>
+<td style="text-align:right;">
+-10.04
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>BGD</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2016
+</td>
+<td style="text-align:right;">
+21.63
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Poverty rate in 2010
+</td>
+<td style="text-align:right;">
+28.49
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Difference
+</td>
+<td style="text-align:right;">
+-6.86
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Endowments
+</td>
+<td style="text-align:right;">
+-1.66
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Coefficients
+</td>
+<td style="text-align:right;">
+-5.62
+</td>
+</tr>
+</tbody>
+</table>
+<p>Table <a href="note-oaxaca.html#tab:decomp">15.1</a> reports poverty rates in both periods, the difference between them, and estimates for endowment and returns from endowment for Pakistan, Bhutan, and Bangladesh. All countries have experienced a large decline in poverty rate, which ranges from 6.9 to 11 percentage points. When the changes are decomposed into three components, effects from endowment accumulation and returns from endowment drove the poverty reduction in the region.</p>
+<p>The effect of endowment accumulation shows the mean change in poverty rate when explanatory indicators in previous year have the same characteristics as the ones in the next period. The estimates in table <a href="note-oaxaca.html#tab:decomp">15.1</a> of -0.33, -2.51, and -1.66 for Pakistan, Bhutan, and Bangladesh, respectively, indicate that changes in literacy, gender, labor force status, and sector employment contributed to the decrease in poverty rates.</p>
+<p>Coefficient terms indicate the estimated change in poverty rate in a previous year when the coefficients in later period are applied to the indicators in the previous year (<strong>This sentence is not clear</strong>). Returns to endowment largely impacted on the decline. In Pakistan, for example, endowment accumulation triggered poverty reduction by 0.33 percentage point whereas return to endowment lowered the poverty rate by 10.17 percentage points, 5 times higher than endowment effect.</p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:decomp2">Table 15.2: </span>Decomposing changes in poverty into endowments and returns by components
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+variable
+</th>
+<th style="text-align:right;">
+PAK
+</th>
+<th style="text-align:right;">
+BTN
+</th>
+<th style="text-align:right;">
+BGD
+</th>
+</tr>
+</thead>
+<tbody>
+<tr grouplength="11">
+<td colspan="4" style="border-bottom: 1px solid;">
+<strong>Endowment</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Urban
+</td>
+<td style="text-align:right;">
+-0.33
+</td>
+<td style="text-align:right;">
+-0.59
+</td>
+<td style="text-align:right;">
+-0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Literacy
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+-0.70
+</td>
+<td style="text-align:right;">
+-1.40
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Male
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.48
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Employed
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+0.35
+</td>
+<td style="text-align:right;">
+-0.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Unemployed
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+0.03
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+OLF
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+0.10
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Agriculture
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+<td style="text-align:right;">
+-0.89
+</td>
+<td style="text-align:right;">
+-0.11
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Industry
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+0.08
+</td>
+<td style="text-align:right;">
+0.13
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Service
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+<td style="text-align:right;">
+-0.03
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Other
+</td>
+<td style="text-align:right;">
+-0.02
+</td>
+<td style="text-align:right;">
+-0.05
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Interaction
+</td>
+<td style="text-align:right;">
+0.25
+</td>
+<td style="text-align:right;">
+1.60
+</td>
+<td style="text-align:right;">
+0.42
+</td>
+</tr>
+<tr grouplength="10">
+<td colspan="4" style="border-bottom: 1px solid;">
+<strong>Coefficient</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Urban
+</td>
+<td style="text-align:right;">
+1.91
+</td>
+<td style="text-align:right;">
+2.17
+</td>
+<td style="text-align:right;">
+1.22
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Literacy
+</td>
+<td style="text-align:right;">
+1.64
+</td>
+<td style="text-align:right;">
+1.84
+</td>
+<td style="text-align:right;">
+3.74
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Male
+</td>
+<td style="text-align:right;">
+-5.45
+</td>
+<td style="text-align:right;">
+-4.92
+</td>
+<td style="text-align:right;">
+-1.69
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Employed
+</td>
+<td style="text-align:right;">
+-0.28
+</td>
+<td style="text-align:right;">
+17.04
+</td>
+<td style="text-align:right;">
+0.06
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Unemployed
+</td>
+<td style="text-align:right;">
+0.01
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+OLF
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+<td style="text-align:right;">
+-0.76
+</td>
+<td style="text-align:right;">
+-1.04
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Agriculture
+</td>
+<td style="text-align:right;">
+2.23
+</td>
+<td style="text-align:right;">
+-4.58
+</td>
+<td style="text-align:right;">
+1.41
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Industry
+</td>
+<td style="text-align:right;">
+-0.74
+</td>
+<td style="text-align:right;">
+-0.23
+</td>
+<td style="text-align:right;">
+-1.01
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Service
+</td>
+<td style="text-align:right;">
+-0.42
+</td>
+<td style="text-align:right;">
+-0.01
+</td>
+<td style="text-align:right;">
+-0.63
+</td>
+</tr>
+<tr>
+<td style="text-align:left; padding-left: 2em;" indentlevel="1">
+Other
+</td>
+<td style="text-align:right;">
+-0.34
+</td>
+<td style="text-align:right;">
+-0.26
+</td>
+<td style="text-align:right;">
+-0.06
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Oaxaca-Blinder decomposition breaks down the decline in the poverty rates points at more disaggregated level, identifying whether the decrease was driven by the changes in literacy level, gender, labor force status or sector of work of a household head. The sum of the effects does not add up to the changes in poverty rates since residual effects and some categories with missing observations are not included in the table. Following sections summarize the findings for each country.</p>
+<div id="pakistan-3" class="section level2">
+<h2><span class="header-section-number">15.1</span> Pakistan</h2>
+<p>Migration to urban area was the largest contributor to the decline in poverty rate in terms of endowment effects. Compared to the effects of the changes in the share of male, employed heads, and agriculture employment, 2 percentage point increase in urban population in the country lowered its poverty rate by -0.33 percentage point.</p>
+<p>The estimates for returns to endowment show that being a male household head has large advantages in avoiding poverty. Through male headed households, the poverty rate declined by 5.45 percentage points, at least 8 times higher than other effects including employment status, industry and service employment. Industry and service sector workers also experienced poverty reduction whereas agriculture did not help households move out of poverty.</p>
+</div>
+<div id="bhutan-3" class="section level2">
+<h2><span class="header-section-number">15.2</span> Bhutan</h2>
+<p>When the effect of endowment accumulation is considered, increases in urban population, literacy rate, share of male heads and a decrease in agriculture employment led to poverty reduction. Although the period gap is bigger due to a data availability issue, compared to Pakistan and Bangladesh, the country had gone through a large structural change which lowered agriculture employment and the population with illiteracy.</p>
+<p>The coefficient estimates show that male headed households are more likely to escape poverty and agriculture sector has higher returns to endowment than other sectors do. Being employed, however, does not necessarily lead to poverty reduction, and other indicators including urban and literacy turns out to be minimal in lowering poverty rate.</p>
+</div>
+<div id="bangladesh-3" class="section level2">
+<h2><span class="header-section-number">15.3</span> Bangladesh</h2>
+<p>In terms of the effects from endowment accumulation, the increasing share of household heads that can write or read and decreasing share of heads engaged in agriculture sector triggered a decrease in the poverty rate. Decreasing illiteracy rate among household heads led to a declined in poverty rate by 1.4 percentage point. As household heads depart from agriculture sector, moving to manufacturing or service industry, the effects from endowment in agriculture lowered poverty rate by 0.11 percentage point.</p>
+<p>Although the increase in the share of male household head didn’t affect poverty reduction, being a female head raises a chance of staying poor by 3.73 percentage points. This finding implies gender discrimination in Bangladesh in poverty reduction. Also, employment in agriculture does not affect poverty reduction but the effects from returns to endowment in manufacturing or service industry indicate advantages of leaving agriculture sector.</p>
+</div>
+<div id="stata-code-example" class="section level2">
+<h2><span class="header-section-number">15.4</span> Stata code example</h2>
+<p>You may access our full Stata do-file by accessing the following <a href="https://github.com/randrescastaneda/SARMD_guidelines/blob/master/shareable_dofiles/BLINDER-OAXACA.do">link</a>. Our work consists of running the following command for each dataset and saving the results in order to export to Tableau.</p>
+<pre class="stata"><code>* Example: Decomposing changes in poverty into endowments and returns 
+ 
+* Open dataset 
+datalibweb, country(`country&#39;) year(`year&#39;) type(SARMD) surveyid(`surveyid&#39;) clear  
+ 
+* Generate explanatory variables 
+ 
+keep if relationharm==1 
+ 
+gen lfs_empl = (lstatus==1) 
+gen lfs_unem = (lstatus==2) 
+gen lfs_OLF = (lstatus==3) 
+gen lfs_miss = (lstatus==.) 
+     
+gen industry_agri = (industry==1) 
+gen industry_ining = (industry==2) 
+gen industry_manu= (industry==3) 
+gen industry_public = (industry==4) 
+gen industry_miss = (industry==.) 
+drop industry 
+g poor_190=poor_nat*100 
+drop if poor_nat==. 
+ 
+* Blinder-Oaxaca decomposition  
+ 
+oaxaca poor_190 urban literacy  male lfs* industry* [aw=wgt] , by(year) swap relax  /// 
+categorical( lfs*, industry*)  
+ </code></pre>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-blinder_wage_1973">
+<p>Blinder, Alan S. 1973. “Wage Discrimination: Reduced Form and Structural Estimates.” <em>The Journal of Human Resources</em> 8 (4): 436–55. <a href="https://doi.org/10.2307/144855">https://doi.org/10.2307/144855</a>.</p>
+</div>
+<div id="ref-oaxaca_male-female_1973">
+<p>Oaxaca, Ronald. 1973. “Male-Female Wage Differentials in Urban Labor Markets.” <em>International Economic Review</em> 14 (3): 693–709. <a href="https://doi.org/10.2307/2525981">https://doi.org/10.2307/2525981</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="note-hhdchars.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="note-cellphone.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["SARMD-Guidelines.pdf", "SARMD-Guidelines.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
