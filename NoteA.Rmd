@@ -1,7 +1,7 @@
 # Drivers of Poverty Reduction: Decomposing changes in poverty {#note-oaxaca} 
 *** 
  
-Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method (Blinder 1973; Oaxaca 1973) decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, the change in poverty is decomposed into three parts; 1) endowment accumulation  (by increases in the education level of household heads) on the one hand, 2) return to endowment (education, employment or employment in high return sector), and 3) the interatction between endowment and its return. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households. 
+Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method [@blinder_wage_1973; @oaxaca_male-female_1973] decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, the change in poverty is decomposed into three parts; 1) endowment accumulation  (by increases in the education level of household heads) on the one hand, 2) return to endowment (education, employment or employment in high return sector), and 3) the interatction between endowment and its return. This indeed allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households. 
  
 ```{r decomp, echo=FALSE, messages=FALSE, warning=FALSE} 
 #install.packages("kableExtra")
@@ -89,8 +89,3 @@ categorical( lfs*, industry*)
  
 ``` 
  
-Reference 
- 
-Blinder, A. S. (1973). "Wage Discrimination: Reduced Form and Structural Estimates". Journal of Human Resources. 8 (4): 436-455 
- 
-Oaxaca, R. (1973). "Male-Female Wage Differentials in Urban Labor Markets". International Economic Review. 14 (3): 693-709
