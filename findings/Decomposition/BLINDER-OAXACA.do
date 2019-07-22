@@ -166,8 +166,6 @@ set trace off
 			replace category="Endowment" if inrange(b,6,18)
 			replace category="Coefficient" if inrange(b,19,30)
 			replace variable=subinstr(variable,"c_","",.) 
-			replace variable="Poverty rate in `y1'" if variable=="Year1"
-			replace variable="Poverty rate in `y2'" if variable=="Year2"
 			drop if inlist(b, 13, 18, 25, 30)
 			drop b
 			
@@ -188,8 +186,13 @@ u `01', clear
 
 preserve
 keep if category=="Total effect"
-drop category countrycode
 replace value=round(value,0.01)
+reshape wide value, i(variable) j(countrycode, string)
+label define order  1 Year2 2 Year1 3 Difference 4 Endowments 5 Coefficients
+encode variable, gen(b) label(order)
+sort b 
+drop b category
+ren value* *
 export delimited using "C:\Users\WB502818\Documents\SARMD_guidelines\findings\Decomposition\toteffect.csv", replace
 restore
 

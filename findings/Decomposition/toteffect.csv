@@ -1,16 +1,6 @@
-variable,value
-Poverty rate in 2015,19.209999
-Poverty rate in 2011,29.469999
-Difference,-10.26
-Endowments,-.33000001
-Coefficients,-10.17
-Poverty rate in 2017,5.9899998
-Poverty rate in 2007,16.950001
-Difference,-10.96
-Endowments,-2.51
-Coefficients,-10.04
-Poverty rate in 2016,21.629999
-Poverty rate in 2010,28.49
-Difference,-6.8600001
-Endowments,-1.66
-Coefficients,-5.6199999
+variable,BGD,BTN,PAK
+Year2,21.629999,5.9899998,19.209999
+Year1,28.49,16.950001,29.469999
+Difference,-6.8600001,-10.96,-10.26
+Endowments,-1.66,-2.51,-.33000001
+Coefficients,-5.6199999,-10.04,-10.17
