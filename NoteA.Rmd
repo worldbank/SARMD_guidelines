@@ -2,27 +2,28 @@
 *** 
  
 Using poverty and  socio-economic indicators observed over two time periods, the Oaxaca-Blinder decomposition method [@blinder_wage_1973; @oaxaca_male-female_1973] decomposes the poverty decline into endowment accumulation and return to endowment. Using this approach, changes in poverty rates are decomposed into three parts; [1] endowment accumulation, like increases in the education level of household heads, [2] return to endowments like education, employment or employment in high return sector, and [3] the interatction between endowment and its return. This methodology allows to decompose poverty across the full distribution of consumption rather than simply between the poor and the non-poor households. 
- 
 ```{r decomp, echo=FALSE, messages=FALSE, warning=FALSE} 
 #install.packages("kableExtra")
 #library(knitr)
 #library(kableExtra)
 decom <- readr::read_csv("./findings/Decomposition/toteffect.csv", 
                         col_types = readr::cols())
-knitr::kable(decom[1:15, 1:2], 
+knitr::kable(decom[1:5, 1:4], 
              booktabs = TRUE, 
-             caption = 'Decomposing changes in poverty into endowments and returns by components') %>%
-  kable_styling("striped", full_width = F) %>%
-  pack_rows("PAK", 1, 5) %>%
-  pack_rows("BTN", 6, 10) %>%
-  pack_rows("BGD", 11, 15) 
-```   
+             caption = 'Decomposing changes in poverty into endowments and returns by components') 
+           
+knitr::kable(decom[1:5, 1:4], 
+             col.names = c("Variable",
+                           "PAK (2011 vs 2015)",
+                           "BTN (2007 vs 2017)",
+                           "BGD (2010 vs 2016)"))
+```     
  
 Table \@ref(tab:decomp) reports poverty rates in both periods, the difference between them, and estimates for endowment and returns from endowment for Pakistan, Bhutan, and Bangladesh. All countries have experienced a large decline in poverty rate, which ranges from 6.9 to 11 percentage points.  When the changes are decomposed into three components, effects from endowment accumulation and returns from endowment drove the poverty reduction in the region.  
  
-The effect of endowment accumulation shows the mean change in poverty rate when explanatory indicators in previous year have the same characteristics as the ones in the next period. The estimates in table \@ref(tab:decomp) of -0.33, -2.51, and -1.66 for Pakistan, Bhutan, and Bangladesh, respectively, indicate that changes in literacy, gender, labor force status, and sector employment contributed to the decrease in poverty rates. 
+Poverty reduction in each country was partially driven by the change in households head endowment such as gender, literacy, employment status and sector. The estimates in table \@ref(tab:decomp) of -0.33, -2.51, and -1.66 for Pakistan, Bhutan, and Bangladesh, respectively, indicate that changes in literacy, gender, labor force status, and sector employment contributed to the decrease in poverty rates. 
  
-Coefficient terms indicate the estimated change in poverty rate in a previous year when the coefficients in later period are applied to the indicators in the previous year (**This sentence is not clear**). Returns to endowment largely impacted on the decline. In Pakistan, for example, endowment accumulation triggered poverty reduction by 0.33 percentage point whereas return to endowment lowered the poverty rate by 10.17 percentage points, 5 times higher than endowment effect.  
+Estimates for coefficients demonstrate that an increase in endowment returns largely impacted on the poverty decline. In Pakistan, for example, the change in endowment triggered poverty reduction by 0.33 percentage point whereas return to endowments lowered the poverty rate by 10.17 percentage points, 5 times higher than endowment effect.    
  
 ```{r decomp2, echo=FALSE, messages=FALSE, warning=FALSE} 
 decom2 <- readr::read_csv("./findings/Decomposition/sub_effect.csv", 
